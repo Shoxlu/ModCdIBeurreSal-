@@ -31,7 +31,7 @@ void BossAlt()
     anmSelect(1);
     anmSetSprite(1, 107);
     anmSetSprite(2, 116);
-    anmSelect(3);
+    anmSelect(4);
     fog(160.0f, 16728128);
     unless ($SPELL_ID >= 0) goto Boss_1200 @ 1;
     unless (($SPELL_ID >= 2) && ($SPELL_ID <= 5)) goto Boss_996 @ 1;
@@ -56,7 +56,7 @@ void BossAlt1()
     lifeMarker(0, 4000.0f, -24448);
     stars(6);
     moveLimit(0.0f, 128.0f, 280.0f, 8.0f);
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     anmPlay(1, 75);
     playSound(54);
@@ -159,7 +159,7 @@ Boss2_552:
     $CAPTURE = 1;
     setNext(0, 2600, 2520, "BossCardAlt2");
     lifeMarker(0, 2600.0f, -24448);
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     moveLimit(0.0f, 128.0f, 240.0f, 32.0f);
     wait(120);
@@ -271,7 +271,7 @@ Boss3_544:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     setNext(0, 4000, 2820, "BossCardAlt3");
     lifeMarker(0, 4000.0f, -24448);
@@ -284,7 +284,7 @@ Boss3_544:
     wait(50);
     anmPlay(1, 86);
     playSound(6);
-    anmSelect(3);
+    anmSelect(4);
     anmSetSprite(3, 6);
     @BossAlt3_pos() async;
     wait(60);
@@ -434,7 +434,7 @@ Boss4_568:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     setNext(0, 3700, 3300, "BossCardAlt4");
     lifeMarker(0, 3700.0f, -24448);
@@ -447,7 +447,7 @@ Boss4_568:
     wait(50);
     anmPlay(1, 86);
     playSound(6);
-    anmSelect(3);
+    anmSelect(4);
     anmSetSprite(3, 6);
     @BossAlt4_pos() async;
     wait(60);
@@ -558,7 +558,7 @@ Boss5_588:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     wait(160);
     @BossCardAlt5();
@@ -601,7 +601,7 @@ Boss6_564:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     wait(160);
     @BossCardAlt6();
@@ -619,7 +619,7 @@ void BossAlt7()
 Boss7_220:
     etClear(640.0f);
 Boss7_240:
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
 +2: //2
     setChapter(49);
@@ -654,7 +654,7 @@ Boss7_772:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     wait(80);
     anmPlay(1, 75);
@@ -665,7 +665,7 @@ Boss7_772:
     wait(50);
     anmPlay(1, 86);
     playSound(6);
-    anmSelect(3);
+    anmSelect(4);
     anmSetSprite(3, 6);
     @BossAlt4_pos() async;
     @BossCardAlt7();
@@ -964,7 +964,7 @@ BossCard2_1176:
     diffI($D, 2, 3, 4, 4);
     goto BossCard2_1536 @ 94;
 BossCard2_1312:
-    anmSelect(3);
+    anmSelect(4);
     anmSelectedPlay(0);
     @BossCardAlt2_at();
 !E
@@ -984,14 +984,14 @@ BossCard2_1536:
     anmPlay(1, 79);
     anmPlay(1, 75);
     playSound(54);
-    anmSelect(3);
+    anmSelect(4);
     anmSetMain(0, 0);
     wait(60);
     anmPlay(1, 90);
     playSound(6);
-    anmSelect(3);
+    anmSelect(4);
     anm316(0, 0);
-    anmSelect(3);
+    anmSelect(4);
     anmSelectedPlay(0);
     @BossCardAlt2_atb();
 !E
@@ -1250,7 +1250,7 @@ BossCard3_448:
 !*
     movePosTime(60, 4, 0.0f, 144.0f);
     moveLimit(0.0f, 144.0f, 240.0f, 64.0f);
-    anmSelect(3);
+    anmSelect(4);
     anm316(0, 0);
     %F0 = _f(1);
     %A = %ANGLE_PLAYER;
@@ -1264,7 +1264,7 @@ BossCard3_1176:
     anmPlay(1, 73);
     playSound(54);
     wait(30);
-    anmSelect(3);
+    anmSelect(4);
     unless ($DIFF >= 2) goto BossCard3_1784 @ 4;
     @BossCardAlt3_at5(0, 25, _f(-192), _f(0), _f(15), 0.0f) async;
     @BossCardAlt3_at5(1, 26, _f(192), _f(0), _f(15), 1.5707964f) async;
