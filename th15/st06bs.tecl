@@ -1110,7 +1110,7 @@ BossCard5_180:
     enmKillAll();
     unless ($TIMEOUT == 0) goto BossCard5_428 @ 4;
     etCancel(640.0f);
-    goto BossCard5_448 @ 4;
+    goto BossCard5_448 @ 4; 
 BossCard5_428:
     etClear(640.0f);
 BossCard5_448:
