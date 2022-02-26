@@ -777,8 +777,6 @@ void Lignes()
 	float Speed = 5f:4f:4f:4f;
 	flagSet(3);
 	GI0 = 1;
-	anmSelect(2);
-	anmSetMain(0,5);
 	etNew(1);
 	etAim(1, 1);
 	etCount(1, 1, 1);
