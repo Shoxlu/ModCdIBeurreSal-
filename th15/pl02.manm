@@ -36,7 +36,7 @@ entry entry0 {
         sprite20: { x: 129, y: 97, w: 30, h: 46 },
         sprite21: { x: 161, y: 97, w: 30, h: 46 },
         sprite22: { x: 193, y: 97, w: 30, h: 46 },
-        sprite23: { x: 225, y: 97, w: 30, h: 46 },
+        sprite23: { x: 225, y: 97, w: 30, h: 46 },///////////////
         sprite24: { x: 192, y: 176, w: 64, h: 16 },
         sprite25: { x: 16, y: 144, w: 16, h: 16 },
         sprite26: { x: 192, y: 192, w: 16, h: 16 },
@@ -461,14 +461,14 @@ script script15 {
 script script16 {
     layer(6);
     alpha(0);
-    scriptNew(script17);
-    scriptNew(script18);
-    scriptNew(script19);
+    scriptNew(script17);// 1ère partie de bomb
+    scriptNew(script18);// 2eme partie de bomb
+    scriptNew(script19);// 3eme partie de bomb
 +280: // 280
     delete();
 }
 
-script script17 {
+script script17 { // 1ère partie de bomb
     sprite(-1);
     layer(13);
     blendMode(1);
@@ -790,7 +790,7 @@ script script21 {
     alpha(0);
     alphaTime(15, 0, 255);
     pos(-136.0f, 146.0f, 0.0f);
-    layer(25);
+	layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
