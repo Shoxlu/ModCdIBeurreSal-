@@ -1,0 +1,143 @@
+entry entry0 {
+    version: 8,
+    name: "effect/eff_switch.png",
+    format: 5,
+    width: 64,
+    height: 64,
+    memoryPriority: 10,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 8192,
+    THTXFormat: 5,
+    THTXWidth: 64,
+    THTXHeight: 64,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 1, w: 128, h: 128 }
+    }
+}
+
+script script0 {
+-1:
+    layer(20);
+    type(1);
+    blendMode(1);
+    sprite(-1);
+    drawPoly(256.0f, 36);
+    scale(0.0f, 0.0f);
+    color2(255, 80, 255);
+    alpha2(255);
+    color(255, 0, 255);
+    alpha(255);
+    alphaTime(20, 0, 0);
+    wait(20);
+    alpha2Time(40, 0, 0);
+    alphaTime(10, 0, 0);
+    scaleTime(40, 0, 1.5f, 1.5f);
+40:
+    delete();
+}
+
+script script1 {
+    sprite(-1);
+    layer(21);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+    alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
++30: // 30
+    posTime(20, 2, 0.0f, 0.0f, 0.0f);
+    stop();
+}
+
+script script2 {
+    sprite(-1);
+    layer(21);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+    //alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
++30: // 30
+    posTime(20, 2, 32.0f, 0.0f, 0.0f);
+    stop();
+}
+
+script script3 {
+    sprite(-1);
+    layer(21);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+   // alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
++30: // 30
+    posTime(20, 2, -32.0f, 0.0f, 0.0f);
+    stop();
+}
+
+script script4 {
+    sprite(-1);
+    layer(21);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+    alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
++30: // 30
+    posTime(20, 2, 0.0f, 32.0f, 0.0f);
+    stop();
+}
+
+script script5 {
+    sprite(-1);
+    layer(21);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+   // alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
++30: // 30
+    posTime(20, 2, 0.0f, -32.0f, 0.0f);
+    stop();
+}
+
+script script38 {
+    sprite(-1);
+    alpha(0);
+    layer(6);
+    scriptNewPos(script39, 0.0f, 224.0f);
++5: // 5
+    scriptNewPos(script39, 0.0f, 256.0f);
+    scriptNewPos(script39, 32.0f, 224.0f);
+    scriptNewPos(script39, 0.0f, 192.0f);
+    scriptNewPos(script39, -32.0f, 224.0f);
++20: // 25
+    scriptNewPos(script39, 0.0f, 224.0f);
++50: // 75
+    delete();
+}
+
+script script39 {
+    sprite(-1);
+    layer(6);
+    drawPoly(1.0f, 50);
+    blendMode(4);
+    alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(255, 255, 255);
+    scaleTime(50, 2, 600.0f, 600.0f);
+    stop();
+}

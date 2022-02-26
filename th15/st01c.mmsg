@@ -1,0 +1,258 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+		3: {script: "script2", flags: 256},
+        4: {script: "script3", flags: 256},
+        5: {script: "script4", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("確かこの辺にあったのよ");
+    textAdd("探査機みたいなのが");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("ためらいなく");
+    textAdd("撃つぞ！");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
++4: // 140
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    intro(0);
++4: // 144
+    bossFace(3, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("『こちら清蘭");
+    textAdd("　好戦的な地上人と接触した』");
++4: // 148
+    textPause(600);
++4: // 152
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("『これから浄化活動に入る』");
++4: // 156
+    textPause(600);
++4: // 160
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 164
+    textPause(600);
++4: // 168
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("|116,9,イーグルラヴィ");
+    textAdd("我々は月の兎の調査部隊");
++4: // 172
+    textPause(600);
+    musicBoss();
++4: // 176
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    bubbleType(1);
+    textAdd("邪魔する者は消滅せよ！");
++4: // 180
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 210
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("やだー");
+    textAdd("何で援軍が誰も来ないのよー");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("これだから今の兎は命令を守らない屑だ");
+    textAdd("って言われるのよー");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そういえばこの辺で探査……");
+    textAdd("機械の蜘蛛っぽいの見ませんでした？");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("地上探査機の事ですかね");
+    textAdd("それなら今は基地に帰っていますよー");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("ってそんな事私が言ったなんて");
+    textAdd("みんなには内緒だよ！");
++4: // 70
+    textPause(600);
++4: // 74
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("はあはあ、じゃあ内緒ついでに");
+    textAdd("基地の場所も教えて頂けないかと……");
++4: // 78
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 79
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 109
+    end();
+}
+
+script script2 {
+	skippable(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0); //bulle normale
+    bubbleType(1); //bulle énervée
+    bubbleType(2); //bulle thinking
+	bubbleType(3); //bulle vague ("tremblements");
+    bubbleType(4); //bulle agrandie 
+    bubbleType(5); //bulle énervée agrandie
+    bubbleType(6); //bulle think agrandie
+    bubbleType(7); //bulle vague agrandie
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+	playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 206
+    end();
+}
+
+
+script script3 {
+	skippable(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0); //bulle normale
+    bubbleType(1); //bulle énervée
+    bubbleType(2); //bulle thinking
+	bubbleType(3); //bulle vague ("tremblements");
+    bubbleType(4); //bulle agrandie 
+    bubbleType(5); //bulle énervée agrandie
+    bubbleType(6); //bulle think agrandie
+    bubbleType(7); //bulle vague agrandie
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+	playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 206
+    end();
+}
+
+
+script script4 {
+	skippable(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0); //bulle normale
+    bubbleType(1); //bulle énervée
+    bubbleType(2); //bulle thinking
+	bubbleType(3); //bulle vague ("tremblements");
+    bubbleType(4); //bulle agrandie 
+    bubbleType(5); //bulle énervée agrandie
+    bubbleType(6); //bulle think agrandie
+    bubbleType(7); //bulle vague agrandie
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+	playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 206
+    end();
+}

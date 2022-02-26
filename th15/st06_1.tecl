@@ -1,0 +1,134 @@
+anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm";}
+ecli { "st06bs.ecl";}
+
+void MainBossSpell();
+
+void DebugSkipFunc()
+{
+    ins_901();
+    return;
+}
+
+void LogoEnemy()
+{
+    wait(1150);
+    stageLogo();
+    return;
+}
+
+void MainBoss()
+{
+    dialogWait();
+	dialogRead(-1);
+	enmCreateA("Boss", 144.0f, -16.0f, 40, 1000, 1);
+	dialogWait();
++1: //1
+    bossWait();
+    setChapter(81);
++60: //61
+    dialogRead(2);
+    dialogWait();
+}
+
+void MainBossDebug()
+{
++10: //10
+	dialogRead(0);
+    @MainBoss();
+    return;
+}
+
+void MainBossDebug2()
+{
++10: //10
+    dialogRead(-1);
+    @MainBoss();
+    return;
+}
+
+void MainFront()
+{
+    return;
+}
+
+void MainLatter()
+{
+    return;
+}
+
+void MainMBossDebug()
+{
+    wait(2);
+    enmCreateA("MBoss", 112.0f, -32.0f, 40, 1000, 1);
+    goto MainMBossDebug_148 @ 0;
+MainMBossDebug_128:
+    wait(1000);
+MainMBossDebug_148:
+    if (1) goto MainMBossDebug_128 @ 0;
+    return;
+}
+
+void MainMsgDebug()
+{
+    callSTD(1);
++10: //10
+    nop();
+    unless ($MISS_COUNT_GLOBAL == 0) goto MainMsgDebug_196 @ 10;
+    dialogRead(0);
+    goto MainMsgDebug_216 @ 10;
+MainMsgDebug_196:
+    dialogRead(1);
+MainMsgDebug_216:
+    dialogWait();
++1: //11
+    dialogWait();
++60: //71
+    dialogRead(2);
+    dialogWait();
+    goto MainMsgDebug_324 @ 4071;
+MainMsgDebug_308:
++4000: //4071
+    nop();
+MainMsgDebug_324:
+    if (1) goto MainMsgDebug_308 @ 71;
+    return;
+}
+
+void MapleEnemy()
+{
+    flagSet(32);
+    goto MapleEnemy_124 @ 0;
+MapleEnemy_80:
+    anmPlayAbs(1, 106);
+    wait(5);
+MapleEnemy_124:
+    if (1) goto MapleEnemy_80 @ 0;
+    delete();
+}
+void main1()
+{
+    flagSet(32);
+    wait(1);
+    setChapter(0);
+    unless ($SPELL_ID >= 0) goto main_300 @ 0;
+    @MainBossSpell();
+    goto main_256 @ 0;
+main_236:
+    wait(1000);
+main_256:
+    if (1) goto main_236 @ 0;
+main_300:
+    debug22(1, "MainMBossDebug");
+    debug22(2, "MainBossDebug");
+    debug22(3, "MainBossDebug2");
+    debug22(4, "MainMsgDebug");
+    debug22(5, "MainLatter");
+    debug22(6, "DebugSkipFunc");
+    @LogoEnemy() async;
++60: //60
+    nop();
+	dialogRead(0);
+    @MainBoss();
+    wait(1000);
+    delete();
+}

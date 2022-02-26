@@ -1,0 +1,25 @@
+ecli { "default.ecl"; "st06_1.ecl"; "st06_2.ecl";}
+
+void mainalt();
+
+void main1();
+
+
+void main()
+{
+	// flagSet(32);
+	// etNew(0);
+	// etAim(0, 0);
+	// etSprite(0, 12, 1);
+	// etCount(0, GF7, 1);
+	// etAngle(0, 0f, rad(5));
+	// etSpeed(0, 3f, 3f);
+	// etOn(0);
+	// wait(100000);
+	if(SHOTTYPE == 2 || SHOTTYPE == 0)
+	{
+		@mainalt();
+	}else{
+		@main1();
+	}
+}

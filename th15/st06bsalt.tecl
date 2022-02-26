@@ -1,0 +1,2230 @@
+#include "main.tecl"
+
+void BossItemCard();
+
+void BossItemPhase(var A, var B, var C);
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void BossAlt()
+{
+    setBoss(0);
+    setInvuln(120);
+    flagSet(3);
+    $CAPTURE = 1;
+    movePos(0.0f, 128.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 6);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 3);
+    wait(101);
+    anmSelect(4);
+    anmSetMain(0, 0);
+    flagClear(3);
+    flagSet(64);
+    lifeSet(23000);
+    anmSetSprite(0, 0);
+    dialogWait();
+    setChapter(43);
++1: //1
+    setHurtbox(56.0f, 56.0f);
+    setHitbox(50.0f, 50.0f);
+    moveLimit(0.0f, 128.0f, 280.0f, 48.0f);
+    anmSelect(1);
+    anmSetSprite(1, 107);
+    anmSetSprite(2, 116);
+    anmSelect(3);
+    fog(160.0f, 16728128);
+    unless ($SPELL_ID >= 0) goto Boss_1200 @ 1;
+    unless (($SPELL_ID >= 2) && ($SPELL_ID <= 5)) goto Boss_996 @ 1;
+    lifeSet(4000);
+    @BossCardAlt1();
+    goto Boss_1200 @ 1;
+Boss_996:
+    unless (($SPELL_ID >= 6) && ($SPELL_ID <= 9)) goto Boss_1200 @ 1;
+    lifeSet(2600);
+    @BossCardAlt2();
+Boss_1200:
+    debug22(3, "Boss7");
+	lifeSet(200);
+    @BossAlt4();
+    delete();
+}
+
+void BossAlt1()
+{
+    timerReset();
+    setNext(0, 6000, 2400, "BossCardAlt1");
+    lifeMarker(0, 4000.0f, -24448);
+    stars(6);
+    moveLimit(0.0f, 128.0f, 280.0f, 8.0f);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(60);
+    anmPlay(1, 86);
+    playSound(6);
+	@Move() async;
+    @BossAlt1_at() async;
+	@BossAlt1_at1();
+}
+void Move()
+{
+	wait(200);
+	while(1){
+		moveRand(60, 0, 3f);
+		wait(180);
+	}
+}
+void BossAlt1_at()
+{
+	etNew(0);
+	etSprite(0, 11, 15);
+	etAim(0, 5);
+	etCount(0, 15, 1);
+	etAngle(0, rad(90), 0f);
+	etSpeed(0, 4f, 4f);
+	while(1)
+	{
+		etOn(0);
+		wait(20:15:10:5);
+	}
+}
+void BossAlt1_at1()
+{
+	etNew(1);
+	etSprite(1, 11, 8);
+	etAim(1, 2);
+	etCount(1, 30, 1);
+	etAngle(1, 0f, 0f);
+	etSpeed(1, 1f, 1f);
+	etExSet(1, 0, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
+	etExSet(1, 1, 0, EX_VELTIME, 30, NEG, 6f, NEGF);
+	etCopy(2, 1);
+	etSprite(2, 11, 2);
+	etAim(2, 4);
+	while(1)
+	{
+		etOn(1);
+		@SoundEffect() async;
+!HL
+		wait(20);
+		etOn(2);
+		@SoundEffect() async;
+!*
+		wait(35:30:25:15);
+	}
+}
+
+void SoundEffect()
+{
+	wait(60);
+	playSound(38);
+}
+
+void BossAlt2()
+{
+    setInvuln(120);
+    lifeSet(19600);
+    unless ($TIMEOUT == 0) goto Boss2_200 @ 0;
+    etCancel(640.0f);
+    goto Boss2_220 @ 0;
+Boss2_200:
+    etClear(640.0f);
+Boss2_220:
++2: //2
+    setChapter(44);
++2: //4
+    ins_569(5);
+    stars(5);
+    flagClear(3);
+    @BossItemPhase(60, 20, 64.0f);
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss2_532 @ 4;
+    etCancel(640.0f);
+    goto Boss2_552 @ 4;
+Boss2_532:
+    etClear(640.0f);
+Boss2_552:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 2600, 2520, "BossCardAlt2");
+    lifeMarker(0, 2600.0f, -24448);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    moveLimit(0.0f, 128.0f, 240.0f, 32.0f);
+    wait(120);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(60);
+    anmPlay(1, 86);
+    playSound(6);
+Boss2_1168:
+	BossAlt2_at(0, 1f, 0f, 8, 32, 1) async;
+    BossAlt2_at(1, -1f, rad(180), 8, 32, 1) async; 
+	BossAlt2_at(5, 1f, 0f, 8, 33, 4) async;
+    BossAlt2_at(6, -1f, rad(180), 8, 33, 4) async;
+!L
+    BossAlt2_2() async;
+!*	
+    BossAlt2_3();
+    return;
+}
+
+void BossAlt2_at(int etID,float B, float A, int color, int sprite, int color2)
+{
+    etNew(etID);
+    etAim(etID, 3);
+    etCount(etID, 4, 1);
+    etAngle(etID, A, 0f);
+    etSprite(etID, 11, color);
+!EHL
+    etSpeed(etID, 2f, 2f);
+!N
+    etSpeed(etID, 3f, 4f);
+!*
+    etExSet(etID, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
+    etExSet(etID, 1, 0, EX_SETSPRITE, sprite, color2, NEGF, NEGF);
+    while(1){
+    etOn(etID);
+    A = A +(rad(10f)*B);
+    etAngle(etID, A, 0f);
+    wait(10);
+    }
+}
+
+void BossAlt2_2()
+{
+    etNew(3);
+    etAim(3, 1);
+    etCount(3, 5, 1);
+    etAngle(3, rad(90), rad(20));
+    etSprite(3, 22, 2);
+    etSpeed(3, 1f, 1f);
+    
+    etExSet(3, 0, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+    etExSet(3, 1, 0, EX_VEL, NEG, NEG, NEGF, 5f);
+    etExSet2(3, 2, 0, EX_ANGLE, 30, 1, 1, NEG, 0f, 5f, NEGF, NEGF);
+    
+    while(1){
+		etOn(3);
+		wait(90);
+    }
+}
+
+void BossAlt2_3()
+{
+    etNew(2);
+    etAim(2, 2);
+    etCount(2, 20, 1);
+    etAngle(2, rad(90), 0f);
+    etSprite(2, 12, 7);
+    etSpeed(2, 2f, 3f);
+    
+    while(1){
+		etOn(2);
+		wait(35:20:10:20);
+    }
+}
+
+void BossAlt3()
+{
+    lifeSet(21000);
+    unless ($TIMEOUT == 0) goto Boss3_180 @ 0;
+    etCancel(640.0f);
+    goto Boss3_200 @ 0;
+Boss3_180:
+    etClear(640.0f);
+Boss3_200:
++2: //2
+    setChapter(45);
++2: //4
+    ins_569(4);
+    stars(4);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    @BossItemPhase(60, 30, 64.0f);
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss3_524 @ 4;
+    etCancel(640.0f);
+    goto Boss3_544 @ 4;
+Boss3_524:
+    etClear(640.0f);
+Boss3_544:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    anmSelect(3);
+    anmSetMain(0, 0);
+    setNext(0, 4000, 2820, "BossCardAlt3");
+    lifeMarker(0, 4000.0f, -24448);
+    movePosTime(60, 4, 0.0f, 128.0f);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(30);
+    anmPlay(1, 73);
+    playSound(54);
+    wait(50);
+    anmPlay(1, 86);
+    playSound(6);
+    anmSelect(3);
+    anmSetSprite(3, 6);
+    @BossAlt3_pos() async;
+    wait(60);
+    %F0 = 0.017453f;
+    $I0 = 5;
+    goto Boss3_1772 @ 4;
+Boss3_1344:
+!E
+    50;
+!N
+    72;
+!H
+    80;
+!LO
+    90;
+!*
+    @BossAlt3_at($I0, [-1]);
+    unless ($I0 < 10) goto Boss3_1628 @ 4;
+    $I0 = $I0 + 1;
+Boss3_1628:
+    %F0 = %F0 * _f(-1);
+    wait(120);
+    moveRand(60, 4, 1.9f);
+    wait(60);
+Boss3_1772:
+    if (1) goto Boss3_1344 @ 4;
+    return;
+}
+
+void BossAlt3_at(var A, var B)
+{
+    var C, D, E, F;
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 4, 6);
+    etCount(0, $B, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 2.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    %D = %RANDRAD;
+    %E = 6.2831855f / _f($B);
+    $C = -1;
+    $F = $A;
+    goto Boss3_at_900 @ 0;
+Boss3_at_500:
+    $C = $C + 1;
+    etAngle(0, %D, 0.0f);
+    unless ($C < 3) goto Boss3_at_748 @ 0;
+    %D = %RANDRAD;
+    goto Boss3_at_860 @ 0;
+Boss3_at_748:
+    %D = %D + (%E / _f(2));
+Boss3_at_860:
+    etOn(0);
+    wait(10);
+Boss3_at_900:
+    if ($F--) goto Boss3_at_500 @ 0;
+    return;
+}
+
+void BossAlt3_at2()
+{
+    var A, B, C, D, E, F;
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 4, 6);
+    etCount(0, 2, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 5.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    %A = 0.02f;
+    %B = 0.0f;
+    %D = 5.0f;
+    $E = 5;
+    goto Boss3_at2_1224 @ 0;
+Boss3_at2_464:
+    %A = 0.02f;
+    %B = %ANGLE_PLAYER + 1.5707964f;
+    %C = %B;
+    etSpeed(0, %D, 0.0f);
+    %D = %D - 0.5f;
+    $F = 30;
+    goto Boss3_at2_1160 @ 0;
+Boss3_at2_788:
+    etExSet(0, 2, 0, 8, 60, -999999, %A, 0.0f);
+    etAngle(0, %B, 0.0f);
+    etOn(0);
+    etAngle(0, %C, 0.0f);
+    etOn(0);
+    %A = %A - 0.002069f;
+    %B = %B + 0.054165f;
+    %C = %C - 0.054165f;
+Boss3_at2_1160:
+    if ($F--) goto Boss3_at2_788 @ 0;
+    wait(10);
+Boss3_at2_1224:
+    if ($E--) goto Boss3_at2_464 @ 0;
+    return;
+}
+
+void BossAlt3_pos()
+{
+    goto Boss3_pos_104 @ 0;
+Boss3_pos_60:
+    enm322(3, 0);
+    wait(1);
+Boss3_pos_104:
+    if (1) goto Boss3_pos_60 @ 0;
+    return;
+}
+
+void BossAlt4()
+{
+    lifeSet(20700);
+    unless ($TIMEOUT == 0) goto Boss4_180 @ 0;
+    etCancel(640.0f);
+    goto Boss4_200 @ 0;
+Boss4_180:
+    etClear(640.0f);
+Boss4_200:
+    anmSwitch(3, 1);
++2: //2
+    setChapter(46);
++2: //4
+    ins_569(3);
+    stars(3);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    @BossItemPhase(60, 30, 64.0f);
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss4_548 @ 4;
+    etCancel(640.0f);
+    goto Boss4_568 @ 4;
+Boss4_548:
+    etClear(640.0f);
+Boss4_568:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    anmSelect(3);
+    anmSetMain(0, 0);
+    setNext(0, 3700, 3300, "BossCardAlt4");
+    lifeMarker(0, 3700.0f, -24448);
+    movePosTime(60, 4, 0.0f, 128.0f);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(30);
+    anmPlay(1, 73);
+    playSound(54);
+    wait(50);
+    anmPlay(1, 86);
+    playSound(6);
+    anmSelect(3);
+    anmSetSprite(3, 6);
+    @BossAlt4_pos() async;
+    wait(60);
+    %F0 = 0.017453f;
+    goto Boss4_1504 @ 4;
+Boss4_1328:
+    @BossAlt4_at();
+    %F0 = %F0 * _f(-1);
+    wait(60);
+    moveRand(60, 4, 1.9f);
+    wait(60);
+Boss4_1504:
+    if (1) goto Boss4_1328 @ 4;
+    return;
+}
+
+void BossAlt4_at()
+{
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 8, 6);
+!E
+    160;
+!N
+    320;
+!H
+    320;
+!LO
+    320;
+!*
+    etCount(0, [-1], 1);
+    etAngle(0, 0.0f, 0.0f);
+!E
+    3.0f;
+!N
+    3.0f;
+!H
+    4.0f;
+!LO
+    5.0f;
+!*
+    etSpeed(0, [-1.0f], 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+!E
+    1;
+!N
+    3;
+!H
+    4;
+!LO
+    5;
+!*
+    etEx(0, 0, 64, [-1], 3, -999999.0f, -999999.0f);
+    etOffset(0, 0.0f, -670.0f);
+    etDist(0, 640.0f);
+    etOn(0);
+    etOffset(0, 0.0f, 670.0f);
+    etDist(0, 640.0f);
+    etOn(0);
+    return;
+}
+
+void BossAlt4_pos()
+{
+    goto Boss4_pos_104 @ 0;
+Boss4_pos_60:
+    enm322(3, 0);
+    wait(1);
+Boss4_pos_104:
+    if (1) goto Boss4_pos_60 @ 0;
+    return;
+}
+
+void BossAlt5()
+{
+    lifeSet(7000);
+    setInvuln(180);
+    unless ($TIMEOUT == 0) goto Boss5_200 @ 0;
+    etCancel(640.0f);
+    goto Boss5_220 @ 0;
+Boss5_200:
+    etClear(640.0f);
+Boss5_220:
+    anmSwitch(3, 1);
++2: //2
+    setChapter(47);
++2: //4
+    ins_569(2);
+    stars(2);
+    moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
+    @BossItemPhase(60, 30, 64.0f);
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss5_568 @ 4;
+    etCancel(640.0f);
+    goto Boss5_588 @ 4;
+Boss5_568:
+    etClear(640.0f);
+Boss5_588:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    anmSelect(3);
+    anmSetMain(0, 0);
+    wait(160);
+    @BossCardAlt5();
+    return;
+}
+
+void BossAlt6()
+{
+    lifeSet(6000);
+    setInvuln(180);
+    unless ($TIMEOUT == 0) goto Boss6_200 @ 0;
+    etCancel(640.0f);
+    goto Boss6_220 @ 0;
+Boss6_200:
+    etClear(640.0f);
+Boss6_220:
++2: //2
+    setChapter(48);
++2: //4
+    ins_569(1);
+    stars(1);
+    moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
+    @BossItemPhase(60, 30, 64.0f);
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss6_544 @ 4;
+    etCancel(640.0f);
+    goto Boss6_564 @ 4;
+Boss6_544:
+    etClear(640.0f);
+Boss6_564:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    anmSelect(3);
+    anmSetMain(0, 0);
+    wait(160);
+    @BossCardAlt6();
+    return;
+}
+
+void BossAlt7()
+{
+    flagClear(3);
+    lifeSet(8000);
+    setInvuln(180);
+    unless ($TIMEOUT == 0) goto Boss7_220 @ 0;
+    etCancel(640.0f);
+    goto Boss7_240 @ 0;
+Boss7_220:
+    etClear(640.0f);
+Boss7_240:
+    anmSelect(3);
+    anmSetMain(0, 0);
++2: //2
+    setChapter(49);
++2: //4
+    ins_569(1);
+    stars(0);
+    moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
+    unless ($TIMEOUT == 0) goto Boss7_580 @ 4;
+    dropClear();
+    dropMain(3);
+    dropExtra(1, 100);
+    dropExtra(2, 100);
+    dropArea(80.0f, 80.0f);
+    dropItems();
+Boss7_580:
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto Boss7_752 @ 4;
+    etCancel(640.0f);
+    goto Boss7_772 @ 4;
+Boss7_752:
+    etClear(640.0f);
+Boss7_772:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    anmSelect(3);
+    anmSetMain(0, 0);
+    wait(80);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(30);
+    anmPlay(1, 73);
+    playSound(54);
+    wait(50);
+    anmPlay(1, 86);
+    playSound(6);
+    anmSelect(3);
+    anmSetSprite(3, 6);
+    @BossAlt4_pos() async;
+    @BossCardAlt7();
+    return;
+}
+
+void BossCardAlt5()
+{
+    var A, B, C, D, E, F, G, H;
+    unless ($TIMEOUT == 0) goto BossCard1_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard1_180 @ 0;
+BossCard1_160:
+    etClear(640.0f);
+BossCard1_180:
++2: //2
+    setChapter(63);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard1_428 @ 4;
+    etCancel(640.0f);
+    goto BossCard1_448 @ 4;
+BossCard1_428:
+    etClear(640.0f);
+BossCard1_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+	lifeMarker(0, 0.0f, -24448);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 4300, "BossAlt6");
+    spell(94, 4300, 500000, "AutoritÃ© Divine â€Grand Ordre du Beurre SalÃ©â€");
+	anmPlayAbs(4, 27);
+    movePosTime(60, 4, 0.0f, 198.0f);
+    moveLimit(0.0f, 128.0f, 240.0f, 224.0f);
+    anmPlay(1, 79);
+    anmPlay(1, 75);
+    playSound(54);
++90: //94
+    nop();
+    wait(60);
+	@BossCardalt5_at();
+}
+
+void BossCardalt5_at()
+{
+	
+	var A;
+	etNew(0);
+	etAim(0, 1);
+	etCount(0, 1, 1);
+	etSpeed(0, 2f, 2f);
+	etSprite(0, 32, 3);
+	etExSet(0, 1, 0, EX_WAIT, 70, NEG, NEGF, NEGF);
+	etExSet(0, 0, 0, EX_INVULN, 10000, NEG, NEGF, NEGF);
+	etExSet(0, 2, 0, EX_VEL, NEG, NEG, 0f, 0f);
+	etExSet(0, 3, 0, EX_WAIT, 620, NEG, NEGF, NEGF);
+	etExSet(0, 4, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	etCopy(2, 0);
+	etSprite(2, 33, 6);
+	GF1 = 0f;
+	%A = rad(270);
+	// %A = RANDRAD;
+	GF1 = %A;
+	etAngle(0, %A, rad(40));
+	etAngle(2, %A, rad(40));
+	while(1)
+	{
+		times(9)
+		{
+			etOn(0);
+			etOn(2);
+			wait(20);
+			%A = %A + rad(40);
+			etAngle(0, %A, 0f);
+			etAngle(2, %A, 0f);
+		}
+		wait(120);
+		GF0 = 1f;
+		enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
+		GF0 = -1f;
+		enmCreateA("Lignes", 0f, 0f, -1, 1000, 1);
+		wait(580:540:460:400);
+		%A = %RANDRAD;
+		GF1 = %A;
+		etAngle(0, %A, 0f);
+		etAngle(2, %A, 0f);
+		//GF1 += 20f;
+	}
+}
+
+void Lignes()
+{
+	var A, B, angl2, count1;
+	int color = 13;
+	int G = 0;
+	int wait1 = 3:2:2:2;
+	int wait2 = 220:150:120:120;
+	float Speed = 5f:4f:4f:4f;
+	flagSet(3);
+	GI0 = 1;
+	anmSelect(2);
+	anmSetMain(0,5);
+	etNew(1);
+	etAim(1, 1);
+	etCount(1, 1, 1);
+	etSpeed(1, 0f, 0f);
+	etSprite(1, 11, color);
+	etExSet(1, 0, 0, EX_INVULN, 450, NEG, NEGF, NEGF);
+	etExSet(1, 2, 0, EX_VELTIME, 60, 0, 3f, NEGF);
+	move() async;
+	movePos((BOSS_X + cos(GF1)* 140f), BOSS_Y + (sin(GF1) * 140f));
+	mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
+	GI1 = 1;
+	%angl2 = rad(1.75):rad(1.75):rad(2):rad(2.5);
+	$count1 = 4;
+	while(1)
+	{
+				etSprite(1, 11, color);
+				etExSet(1, 1, 0, EX_WAIT, 320, NEG, NEGF, NEGF);
+				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed, NEGF);
+				%B = %A - %angl2 * 1.5f;
+				times($count1)
+				{
+					etAngle(1, %B, 0f);
+					if(color > 14)
+					{
+						color = 13;
+					}
+					etSprite(1, 11, color);
+					etOn(1); // 1. angle = %A + 0‹
+					%B +=%angl2;
+					color += 1;
+				}
+				if(GI0 == 2)
+				{
+					delete();
+				}
+				wait(wait1);
+				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
+				G += 1;
+				etSprite(1, 11, color);
+				etExSet(1, 1, 0, EX_WAIT, wait2+160, NEG, NEGF, NEGF);
+				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 2f, NEGF);
+				%B = %A - %angl2 * 1.5f;
+				times($count1)
+				{
+					etAngle(1, %B, 0f);
+					if(color > 14)
+					{
+						color = 13;
+					}
+					etSprite(1, 11, color);
+					etOn(1); // 1. angle = %A + 0‹
+					%B +=%angl2;
+					color += 1;
+				}
+				if(GI0 == 2)
+				{
+					delete();
+				}
+				wait(wait1);
+				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
+				G += 1;
+				etSprite(1, 11, color);
+				etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
+				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
+				%B = %A - %angl2 * 1.5f;
+				times($count1)
+				{
+					etAngle(1, %B, 0f);
+					if(color > 14)
+					{
+						color = 13;
+					}
+					etSprite(1, 11, color);
+					etOn(1); // 1. angle = %A + 0‹
+					%B +=%angl2;
+					color += 1;
+				}
+				if(GI0 == 2)
+				{
+					delete();
+				}
+				wait(wait1);
+				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
+				G += 1;
+			//G = 0;
+	}
+		
+	wait(10000);
+}
+
+void move()
+{
+	var A;
+	int B = 40;
+	int C = 0;
+	//movePos((BOSS_X + cos(GF1)* 140f)*_f(LIFE)*-1f, BOSS_Y + (sin(GF1) * 140f));
+	//etAngle(1, %A, 0f);
+	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(80)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(80)*_f(LIFE))) * 140f));
+	wait(B);
+	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(160)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(160)*_f(LIFE))) * 140f));
+	wait(B);
+	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(160)*_f(LIFE)*-1f))* 140f), BOSS_Y + (sin(GF1+(rad(160)*_f(LIFE)*-1f)) * 140f));
+	wait(B);
+	// movePosTime(B, 1, (BOSS_X + cos(GF1-rad(40))* 140f)*_f(LIFE), BOSS_Y + (sin(GF1-rad(40)) * 140f));
+	// wait(B);
+	movePosTime(B*2, 1, (BOSS_X + cos(GF1+(rad(40)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(40)*_f(LIFE))) * 140f));
+	wait(B*2);
+	movePosTime(B*2, 1, (BOSS_X + cos(GF1+(rad(120)*_f(LIFE)*-1f))* 140f), BOSS_Y + (sin(GF1+(rad(120)*_f(LIFE)*-1f)) * 140f));
+	wait(B*2);
+	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(120)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(120)*_f(LIFE))) * 140f));
+	wait(B);
+	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(40)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(40)*_f(LIFE))) * 140f));
+	wait(B);
+	// mathAngle(%A, ABS_X, ABS_Y, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
+	// etAngle(1, %A, 0f);
+	// movePosTime(100, 1, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
+	GI0 = 2;
+}
+
+void Explosion()
+{
+	etNew(1);
+	etAim(1, 7);
+	etCount(1, 14, 13);
+	etAngle(1, rad(90), rad(24));
+	etSpeed(1, 1f, 2f);
+	etSprite(1, 8, 1 + RAND % 15);
+	etOn(1);
+}	
+
+void BossCardAlt2()
+{
+    var A, B, C, D;
+    unless ($TIMEOUT == 0) goto BossCard2_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard2_180 @ 0;
+BossCard2_160:
+    etClear(640.0f);
+BossCard2_180:
++2: //2
+    setChapter(63);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard2_428 @ 4;
+    etCancel(640.0f);
+    goto BossCard2_448 @ 4;
+BossCard2_428:
+    etClear(640.0f);
+BossCard2_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 3300, "BossAlt3");
+!EN
+    spell(82, 3300, 500000, "uŽEˆÓ‚Ì•S‡v");
+!HL
+    spell(82, 3300, 500000, "uŽEˆÓ‚Ì•S‡v");
+!*
+    movePosTime(60, 4, 0.0f, 128.0f);
+    anm316(0, 0);
+    anmPlay(1, 73);
++90: //94
+    nop();
+    moveLimit(0.0f, 128.0f, 240.0f, 16.0f);
+    %F0 = 1.3f;
+    $A = 1;
+    $B = -1;
+    $C = 1000;
+    goto BossCard2_2024 @ 94;
+BossCard2_1176:
+    $B = $B + 1;
+    diffI($D, 2, 3, 4, 4);
+    goto BossCard2_1536 @ 94;
+BossCard2_1312:
+    anmSelect(3);
+    anmSelectedPlay(0);
+    @BossCardAlt2_at();
+!E
+    160;
+!N
+    90;
+!H
+    70;
+!LO
+    60;
+!*
+    wait([-1]);
+    moveRand(30, 4, 2.0f);
+    wait(40);
+BossCard2_1536:
+    if ($D--) goto BossCard2_1312 @ 94;
+    anmPlay(1, 79);
+    anmPlay(1, 75);
+    playSound(54);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    wait(60);
+    anmPlay(1, 90);
+    playSound(6);
+    anmSelect(3);
+    anm316(0, 0);
+    anmSelect(3);
+    anmSelectedPlay(0);
+    @BossCardAlt2_atb();
+!E
+    190;
+!N
+    190;
+!H
+    190;
+!LO
+    190;
+!*
+    wait([-1]);
+    moveRand(30, 4, 2.0f);
+    wait(40);
+BossCard2_2024:
+    if ($C--) goto BossCard2_1176 @ 94;
+    goto BossCard2_2112 @ 94;
+BossCard2_2092:
+    wait(1000);
+BossCard2_2112:
+    if (1) goto BossCard2_2092 @ 94;
+    return;
+}
+
+void BossCardAlt2_at()
+{
+    etNew(1);
+    etAim(1, 0);
+    etSprite(1, 33, 0);
+    etCount(1, 1, 1);
+    etAngle(1, 0.0f, 0.34906584f);
+!E
+    4.0f;
+!N
+    6.0f;
+!H
+    6.0f;
+!LO
+    6.0f;
+!*
+    etSpeed(1, [-1.0f], 0.2f);
+    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, 64, 1, 15, -999999.0f, -999999.0f);
+    etExSet(1, 2, 0, 16777216, -999999, -999999, -999999.0f, -999999.0f);
+    etExSub(1, 2, "BossCardAlt2_at2");
+    etExSet(1, 3, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+    etOn(1);
+    return;
+}
+
+void BossCardAlt2_at2()
+{
+    var A;
+    flagSet(288);
+    playSound(52);
+    unless (%FINAL_Y >= _f(440)) goto BossCard2_at2_220 @ 0;
+    %A = -1.570796f;
+    goto BossCard2_at2_548 @ 0;
+BossCard2_at2_220:
+    unless (%FINAL_Y <= _f(8)) goto BossCard2_at2_364 @ 0;
+    %A = 1.570796f;
+    goto BossCard2_at2_548 @ 0;
+BossCard2_at2_364:
+    unless (%FINAL_X < _f(-184)) goto BossCard2_at2_508 @ 0;
+    %A = 0.0f;
+    goto BossCard2_at2_548 @ 0;
+BossCard2_at2_508:
+    %A = 3.141593f;
+BossCard2_at2_548:
+    etNew(0);
+    etSprite(0, 38, 2);
+    etAngle(0, %A, %A);
+    etSpeed(0, 16.0f, 16.0f);
+    laserNew(0, 0.0f, 512.0f, 0.0f, 48.0f);
+    laserTiming(0, 20, 30, 60, 30, 0);
+    etSound(0, 18, -1);
+    laserStOn(0, 0);
+    @BossCardAlt2_at3(%A) async;
+    etNew(2);
+    etSprite(2, 0, 2);
+    etAngle(2, %A + 0.5235988f, %A + 0.5235988f);
+    etSpeed(2, 12.0f, 12.0f);
+    laserNew(2, -1.0f, -1.0f, -1.0f, 28.0f);
+    laserTiming(2, 64, -1, -1, -1, 0);
+    etSound(0, 18, -1);
+    etExSet(2, 0, 1, 8, 30, 0, 0.0f, -0.034906585f);
+    etExSet(2, 1, 1, 8, 30, 30, 0.0f, 0.034906585f);
+    laserCuOn(2);
+    wait(10);
+    etNew(2);
+    etSprite(2, 0, 2);
+    etAngle(2, %A - 0.5235988f, %A - 0.5235988f);
+    etSpeed(2, 12.0f, 12.0f);
+    laserNew(2, -1.0f, -1.0f, -1.0f, 28.0f);
+    laserTiming(2, 64, -1, -1, -1, 0);
+    etSound(0, 18, -1);
+    etExSet(2, 0, 1, 8, 30, 0, 0.0f, 0.034906585f);
+    etExSet(2, 1, 1, 8, 30, 30, 0.0f, -0.034906585f);
+    laserCuOn(2);
+    wait(10);
+    etNew(2);
+    etSprite(2, 0, 2);
+    etAngle(2, %A + 0.7853982f, %A + 0.7853982f);
+    etSpeed(2, 12.0f, 12.0f);
+    laserNew(2, -1.0f, -1.0f, -1.0f, 28.0f);
+    laserTiming(2, 64, -1, -1, -1, 0);
+    etSound(0, 18, -1);
+    etExSet(2, 0, 1, 8, 30, 0, 0.0f, -0.034906585f);
+    etExSet(2, 1, 1, 8, 30, 30, 0.0f, 0.034906585f);
+    laserCuOn(2);
+    wait(10);
+    etNew(2);
+    etSprite(2, 0, 2);
+    etAngle(2, %A - 0.7853982f, %A - 0.7853982f);
+    etSpeed(2, 12.0f, 12.0f);
+    laserNew(2, -1.0f, -1.0f, -1.0f, 28.0f);
+    laserTiming(2, 64, -1, -1, -1, 0);
+    etSound(0, 18, -1);
+    etExSet(2, 0, 1, 8, 30, 0, 0.0f, 0.034906585f);
+    etExSet(2, 1, 1, 8, 30, 30, 0.0f, -0.034906585f);
+    laserCuOn(2);
+    delete();
+}
+
+void BossCardAlt2_at3(var A)
+{
+    var B;
+    etNew(3);
+    etAim(3, 1);
+    etSprite(3, 4, 2);
+    etCount(3, 1, 1);
+    etAngle(3, %A, 0.34906584f);
+    etSpeed(3, 2.0f, 0.2f);
+    etEx(3, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(3, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etEx(3, 0, 2097152, 30, -999999, 1.0f, %A);
+    etEx(3, 0, 4, 90, -999999, 0.03f, %A);
+    diffI($B, 60, 100, 100, 100);
+    goto BossCard2_at3_588 @ 0;
+BossCard2_at3_428:
+    etAngle(3, %A + (%RANDF2 * 1.5707964f), 0.0f);
+    etOn(3);
+    wait(1);
+BossCard2_at3_588:
+    if ($B--) goto BossCard2_at3_428 @ 0;
+    return;
+}
+
+void BossCardAlt2_atb()
+{
+    etNew(1);
+    etAim(1, 1);
+    etSprite(1, 33, 0);
+!E
+    2;
+!N
+    3;
+!H
+    3;
+!LO
+    3;
+!*
+    etCount(1, [-1], 1);
+!E
+    0.785398f;
+!N
+    0.523599f;
+!H
+    0.523599f;
+!LO
+    0.523599f;
+!*
+    etAngle(1, -1.5707964f, [-1.0f]);
+    etSpeed(1, 6.0f, 0.2f);
+    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, 64, 1, 15, -999999.0f, -999999.0f);
+    etExSet(1, 2, 0, 16777216, -999999, -999999, -999999.0f, -999999.0f);
+    etExSub(1, 2, "BossCardAlt2_at2");
+    etExSet(1, 3, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+    etOn(1);
+    etNew(1);
+    etAim(1, 1);
+    etSprite(1, 33, 0);
+!E
+    2;
+!N
+    3;
+!H
+    2;
+!LO
+    2;
+!*
+    etCount(1, [-1], 1);
+!E
+    0.785398f;
+!N
+    0.523599f;
+!H
+    2.617994f;
+!LO
+    1.919862f;
+!*
+    etAngle(1, 1.5707964f, [-1.0f]);
+    etSpeed(1, 6.0f, 0.2f);
+    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, 64, 1, 15, -999999.0f, -999999.0f);
+    etExSet(1, 2, 0, 16777216, -999999, -999999, -999999.0f, -999999.0f);
+    etExSub(1, 2, "BossCardAlt2_at2");
+    etExSet(1, 3, 0, 1024, 0, -999999, -999999.0f, -999999.0f);
+!HL
+    etOn(1);
+!*
+    return;
+}
+
+void BossCardAlt3()
+{
+    var A, B;
+    unless ($TIMEOUT == 0) goto BossCard3_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard3_180 @ 0;
+BossCard3_160:
+    etClear(640.0f);
+BossCard3_180:
++2: //2
+    setChapter(64);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard3_428 @ 4;
+    etCancel(640.0f);
+    goto BossCard3_448 @ 4;
+BossCard3_428:
+    etClear(640.0f);
+BossCard3_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 3600, "BossAlt4");
+!EN
+    spell(86, 3600, 500000, "uŒ´Žn‚Ì_—ìŠEv");
+!H
+    spell(86, 3600, 500000, "uŒ»‘ã‚Ì_—ìŠEv");
+!L
+    spell(86, 3600, 500000, "uŒ»‘ã‚Ì_—ìŠEv");
+!*
+    movePosTime(60, 4, 0.0f, 144.0f);
+    moveLimit(0.0f, 144.0f, 240.0f, 64.0f);
+    anmSelect(3);
+    anm316(0, 0);
+    %F0 = _f(1);
+    %A = %ANGLE_PLAYER;
+    $B = 1000;
+    goto BossCard3_2104 @ 4;
+BossCard3_1176:
+    wait(60);
+    anmPlay(1, 75);
+    playSound(54);
+    wait(30);
+    anmPlay(1, 73);
+    playSound(54);
+    wait(30);
+    anmSelect(3);
+    unless ($DIFF >= 2) goto BossCard3_1784 @ 4;
+    @BossCardAlt3_at5(0, 25, _f(-192), _f(0), _f(15), 0.0f) async;
+    @BossCardAlt3_at5(1, 26, _f(192), _f(0), _f(15), 1.5707964f) async;
+    @BossCardAlt3_at5(2, 27, _f(-192), _f(448), _f(15), -1.5707964f) async;
+    @BossCardAlt3_at5(3, 28, _f(192), _f(448), _f(15), 3.1415927f);
+    goto BossCard3_2008 @ 4;
+BossCard3_1784:
+    unless ($DIFF >= 1) goto BossCard3_1936 @ 4;
+    @BossCardAlt3_at() async;
+    @BossCardAlt3_at2() async;
+BossCard3_1936:
+    @BossCardAlt3_at4() async;
+    @BossCardAlt3_at3();
+BossCard3_2008:
+    wait(400);
+    %F0 = %F0 * _f(-1);
+BossCard3_2104:
+    if ($B--) goto BossCard3_1176 @ 4;
+    goto BossCard3_2192 @ 4;
+BossCard3_2172:
+    wait(1000);
+BossCard3_2192:
+    if (1) goto BossCard3_2172 @ 4;
+    return;
+}
+
+void BossCardAlt3_at()
+{
+    var A, B, C, D, E, F, G;
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 25, 0);
+    etCount(0, 1, 1);
+    etAngle(0, -1.5707964f, 0.034906585f);
+    etSpeed(0, 0.2f, 1.0f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 2097152, 120, -999999, 1.4f, -1.5707964f);
+    %B = _f(448);
+    %C = _f(160);
+    %D = _f(-32) * %F0;
+    %E = 1.570796f;
+    $F = 16;
+    goto BossCard3_at_1468 @ 0;
+BossCard3_at_628:
+    $G = 5;
+    goto BossCard3_at_1160 @ 0;
+BossCard3_at_692:
+    %A = (%C * %RANDF2) + %D;
+    etAngle(0, 1.5707964f + (%RANDF2 * 0.17453292f), 0.0f);
+    etOffsetAbs(0, %A, %B + (%RANDF2 * _f(8)));
+    etOn(0);
+    wait(1);
+    %E = %E + 3.883222f;
+BossCard3_at_1160:
+    if ($G--) goto BossCard3_at_692 @ 0;
+    %C = %C - _f(10);
+    %D = %D + (_f(12) * %F0);
+    %B = %B - _f(16);
+BossCard3_at_1468:
+    if ($F--) goto BossCard3_at_628 @ 0;
+    return;
+}
+
+void BossCardAlt3_at2()
+{
+    var A, B, C, D, E, F, G;
+    etNew(1);
+    etAim(1, 3);
+    etSprite(1, 26, 0);
+    etCount(1, 1, 1);
+    etAngle(1, 1.5707964f, 0.034906585f);
+    etSpeed(1, 0.2f, 1.0f);
+    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    etEx(1, 0, 2097152, 120, -999999, 1.4f, -999999.0f);
+    %B = _f(0);
+    %C = _f(160);
+    %D = _f(32) * %F0;
+    %E = 0.0f;
+    $F = 16;
+    goto BossCard3_at2_1468 @ 0;
+BossCard3_at2_628:
+    $G = 5;
+    goto BossCard3_at2_1160 @ 0;
+BossCard3_at2_692:
+    %A = (%C * %RANDF2) + %D;
+    etAngle(1, 1.5707964f + (%RANDF2 * 0.17453292f), 0.0f);
+    etOffsetAbs(1, %A, %B + (%RANDF2 * 0.13962634f));
+    etOn(1);
+    wait(1);
+    %E = %E + 3.883222f;
+BossCard3_at2_1160:
+    if ($G--) goto BossCard3_at2_692 @ 0;
+    %C = %C - _f(10);
+    %D = %D - (_f(12) * %F0);
+    %B = %B + _f(18);
+BossCard3_at2_1468:
+    if ($F--) goto BossCard3_at2_628 @ 0;
+    return;
+}
+
+void BossCardAlt3_at3()
+{
+    var A, B, C, D, E, F;
+    etNew(2);
+    etAim(2, 3);
+    etSprite(2, 27, 0);
+    etCount(2, 1, 1);
+    etAngle(2, 0.0f, 0.034906585f);
+    etSpeed(2, 0.2f, 1.0f);
+    etEx(2, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(2, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    etEx(2, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    etEx(2, 0, 2097152, 120, -999999, 1.4f, -999999.0f);
+    %B = _f(-192);
+    %C = _f(192);
+    %D = _f(224) - (_f(48) * %F0);
+    $E = 16;
+    goto BossCard3_at3_1388 @ 0;
+BossCard3_at3_624:
+    $F = 8;
+    goto BossCard3_at3_1080 @ 0;
+BossCard3_at3_688:
+    %A = (%C * %RANDF2) + %D;
+    etAngle(2, 1.5707964f + (%RANDF2 * 0.17453292f), 0.0f);
+    etOffsetAbs(2, %B + (%RANDF2 * 0.15707964f), %A);
+    etOn(2);
+    wait(1);
+BossCard3_at3_1080:
+    if ($F--) goto BossCard3_at3_688 @ 0;
+    %C = %C - _f(12);
+    %D = %D + (_f(16) * %F0);
+    %B = %B + _f(18);
+BossCard3_at3_1388:
+    if ($E--) goto BossCard3_at3_624 @ 0;
+    return;
+}
+
+void BossCardAlt3_at4()
+{
+    var A, B, C, D, E, F;
+    etNew(3);
+    etAim(3, 3);
+    etSprite(3, 28, 0);
+    etCount(3, 1, 1);
+    etAngle(3, 3.1415927f, 0.034906585f);
+    etSpeed(3, 0.2f, 1.0f);
+    etEx(3, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(3, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    etEx(3, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+    etEx(3, 0, 2097152, 120, -999999, 1.4f, -999999.0f);
+    %B = _f(192);
+    %C = _f(192);
+    %D = _f(224) + (_f(48) * %F0);
+    $E = 16;
+    goto BossCard3_at4_1388 @ 0;
+BossCard3_at4_624:
+    $F = 8;
+    goto BossCard3_at4_1080 @ 0;
+BossCard3_at4_688:
+    %A = (%C * %RANDF2) + %D;
+    etAngle(3, 1.5707964f + (%RANDF2 * 0.17453292f), 0.0f);
+    etOffsetAbs(3, %B + (%RANDF2 * 0.15707964f), %A);
+    etOn(3);
+    wait(1);
+BossCard3_at4_1080:
+    if ($F--) goto BossCard3_at4_688 @ 0;
+    %C = %C - _f(12);
+    %D = %D - (_f(16) * %F0);
+    %B = %B - _f(18);
+BossCard3_at4_1388:
+    if ($E--) goto BossCard3_at4_624 @ 0;
+    return;
+}
+
+void BossCardAlt3_at5(var A, var B, var C, var D, var E, var F)
+{
+    var G, H, I, J, K;
+    etNew($A);
+    etAim($A, 3);
+    etSprite($A, $B, 0);
+    etCount($A, 1, 1);
+    etAngle($A, 3.1415927f, 0.034906585f);
+    etSpeed($A, 0.2f, 1.0f);
+    etEx($A, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx($A, 0, 1048576, 0, -999999, -999999.0f, -999999.0f);
+    etEx($A, 0, -2147483648, 200, -999999, -999999.0f, -999999.0f);
+!E
+    1.4f;
+!N
+    1.4f;
+!H
+    1.4f;
+!LO
+    1.8f;
+!*
+    etEx($A, 0, 2097152, 120, -999999, [-1.0f], -999999.0f);
+    %I = _f(0);
+    etOffsetAbs($A, %C, %D);
+    diffI($J, 16, 16, 16, 18);
+    goto BossCard3_at5_1036 @ 0;
+BossCard3_at5_576:
+    diffI($K, 8, 8, 8, 8);
+    goto BossCard3_at5_916 @ 0;
+BossCard3_at5_636:
+    etAngle($A, 1.5707964f + (%RANDF2 * 6.2831855f), 0.0f);
+    etOffsetRad($A, %F + (%RANDF2 * 1.5707964f), %I);
+    etOn($A);
+    wait(1);
+BossCard3_at5_916:
+    if ($K--) goto BossCard3_at5_636 @ 0;
+    %I = %I + %E;
+BossCard3_at5_1036:
+    if ($J--) goto BossCard3_at5_576 @ 0;
+    return;
+}
+
+void BossCardAlt4()
+{
+    var A, B, C;
+    unless ($TIMEOUT == 0) goto BossCard4_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard4_180 @ 0;
+BossCard4_160:
+    etClear(640.0f);
+BossCard4_180:
++2: //2
+    setChapter(65);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard4_428 @ 4;
+    etCancel(640.0f);
+    goto BossCard4_448 @ 4;
+BossCard4_428:
+    etClear(640.0f);
+BossCard4_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 3000, "BossAlt5");
+    spell(90, 3000, 500000, "Signe Gras â€Kouign-Amannâ€");
+    movePosTime(60, 4, 0.0f, 128.0f);
+    moveLimit(0.0f, 128.0f, 240.0f, 64.0f);
+    anm316(0, 0);
+    anmPlay(1, 73);
++90: //94
+    nop();
+	BossCardalt4_at() async;
+	BossCardalt4_2();
+    return;
+}
+void BossCardalt4_at() {
+	etNew(0);
+	etAim(0, 7);
+	etSprite(0, 11,13);
+	etCount(0, 3, 2);
+	etSpeed(0, 3f, 5f);
+	etExSet(0, 0, 0, EX_WAIT, 10, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_SETSPRITE, 32, 3, NEGF, NEGF);
+	
+	while(1) {
+	etAngle(0, RANDRAD, RANDRAD);
+	etExSet(0, 2, 0, EX_VEL, NEG, NEG, NEGF, (RANDF * 3f) + 2f );
+	etOn(0);
+!E
+	wait(15);
+!N 
+	wait(10);
+!HL
+	wait(7);
+!*
+	}
+	
+}
+void BossCardalt4_2() {
+	etNew(1);
+	etAim(1,3);
+	etSprite(1, 12 , 7);
+	etSpeed(1, 3f , 3f);
+	etCount(1, 20, 1);
+	
+	while(1) {
+		etAngle(1, RANDRAD, RANDRAD);
+		etOn(1);
+		wait(50);
+	}
+}
+void BossCardAlt1()
+{
+    var A, B, C, D;
+    unless ($TIMEOUT == 0) goto BossCard5_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard5_180 @ 0;
+BossCard5_160:
+    etClear(640.0f);
+BossCard5_180:
++2: //2
+    setChapter(66);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard5_428 @ 4;
+    etCancel(640.0f);
+    goto BossCard5_448 @ 4;
+BossCard5_428:
+    etClear(640.0f);
+BossCard5_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 3600, "BossAlt6");
+!EN
+    spell(78, 3600, 500000, "uƒˆ‚È‚é‹¶‹Cv");
+!H
+    spell(78, 3600, 500000, "uƒˆ‚È‚é‹¶‹Cv");
+!L
+    spell(78, 3600, 500000, "uƒˆ‚È‚é‹¶‹Cv");
+!*
+    movePosTime(60, 4, 0.0f, 192.0f);
+    moveLimitReset();
+    anm316(0, 0);
+    anmPlay(1, 79);
+    anmPlay(1, 75);
+    playSound(54);
++90: //94
+    nop();
+    $A = 120;
+    %F0 = 1.0f;
+    $D = 10000;
+    goto BossCard5_1648 @ 94;
+BossCard5_1224:
+    $I0 = 4;
+    @BossCardAlt1_at();
+    wait(200);
+    playSound(52);
+    wait(130);
+    %F0 = %F0 * -1.0f;
+    $I0 = 2;
+    @BossCardAlt1_at();
+    wait(200);
+    playSound(52);
+    wait(130);
+    %F0 = %F0 * -1.0f;
+BossCard5_1648:
+    if ($D--) goto BossCard5_1224 @ 94;
+    goto BossCard5_1736 @ 94;
+BossCard5_1716:
+    wait(1000);
+BossCard5_1736:
+    if (1) goto BossCard5_1716 @ 94;
+    return;
+}
+
+void BossCardAlt1_at()
+{
+    var A, B, C;
+    etNew(0);
+    etSprite(0, 0, $I0);
+    etAngle(0, 1.5707964f, 1.5707964f);
+    etSpeed(0, 6.0f, 6.0f);
+    laserNew(0, -1.0f, -1.0f, -1.0f, 16.0f);
+    laserTiming(0, 128, -1, -1, -1, 0);
+    etSound(0, 18, -1);
+    etExSet(0, 0, 0, 256, 500, 0, -999999.0f, -999999.0f);
+    etExSet(0, 1, 1, 8, 30, 0, 0.0f, -0.13962634f * %F0);
+    etExSet(0, 2, 1, 8, 30, 30, 0.0f, 0.13962634f * %F0);
+    etExSet(0, 3, 1, 8, 30, 60, -0.12f, -0.06981317f * %F0);
+    etExSet(0, 4, 1, 8, 30, 90, 0.0f, 0.06981317f * %F0);
+    etExSet(0, 5, 1, 8, 30, 120, 0.0f, -0.13962634f * %F0);
+    etExSet(0, 6, 1, 8, 45, 150, 0.0f, 0.12217305f * %F0);
+    unless ($DIFF >= 2) goto BossCard5_at_1100 @ 0;
+    etExSet(0, 7, 1, 8, 60, 300, 0.01f, -0.05235988f * %F0);
+BossCard5_at_1100:
+    %A = %RANDRAD;
+    diffF(%B, 0.3926991f, 0.19634955f, 0.19634955f, 0.17453292f);
+    diffI($C, 16, 32, 32, 36);
+    goto BossCard5_at_1360 @ 0;
+BossCard5_at_1236:
+    etAngle(0, %A, 0.0f);
+    laserCuOn(0);
+    %A = %A + %B;
+BossCard5_at_1360:
+    if ($C--) goto BossCard5_at_1236 @ 0;
+    return;
+}
+
+void BossCardAlt6()
+{
+    var A, B, C;
+    flagSet(3);
+    unless ($TIMEOUT == 0) goto BossCard6_180 @ 0;
+    etCancel(640.0f);
+    goto BossCard6_200 @ 0;
+BossCard6_180:
+    etClear(640.0f);
+BossCard6_200:
++2: //2
+    setChapter(67);
++2: //4
+    ins_569(1);
+    stars(0);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard6_468 @ 4;
+    etCancel(640.0f);
+    goto BossCard6_488 @ 4;
+BossCard6_468:
+    etClear(640.0f);
+BossCard6_488:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 1800, "BossAlt7");
+!EN
+    spell(98, 1800, 500000, "uˆì‚êo‚éàêâqv");
+!H
+    spell(98, 1800, 500000, "uˆì‚êo‚éàêâqv");
+!L
+    spell(98, 1800, 500000, "u’nãâq‚Ìƒ‰»v");
+!*
+    spellTimeout();
+    movePosTime(60, 4, 0.0f, 192.0f);
+    moveLimitReset();
+    anm316(0, 0);
+    anmAlpha(0, 128);
+    anmPlay(1, 79);
+    anmPlay(1, 75);
+    playSound(54);
++90: //94
+    nop();
+    $A = 120;
+    %B = _f(100);
+    %F0 = 1.0f;
+    floatTime(0, %B, 1800, 0, 120.0f, 50.0f);
+    $C = 10000;
+    goto BossCard6_1556 @ 94;
+BossCard6_1384:
+    %F1 = %RANDRAD;
+    @BossCardAlt6_at();
+!L
+    @BossCardAlt6_ath();
+!*
+    $A = _S(%B);
+    wait($A);
+BossCard6_1556:
+    if ($C--) goto BossCard6_1384 @ 94;
+    goto BossCard6_1644 @ 94;
+BossCard6_1624:
+    wait(1000);
+BossCard6_1644:
+    if (1) goto BossCard6_1624 @ 94;
+    return;
+}
+
+void BossCardAlt6_at()
+{
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 5, 2);
+!E
+    10;
+!N
+    22;
+!H
+    26;
+!LO
+    22;
+!*
+    etCount(0, [-1], 1);
+    etAngle(0, %F1, 0.0f);
+    etSpeed(0, 1.5f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 256, 200, 0, -999999.0f, -999999.0f);
+    etEx2(0, 0, 16, 60, 1, 1, 0, 0.0f, 0.0f, -999999.0f, -999999.0f);
+    etEx(0, 0, 4, 120, -999999, 0.02f, -999999.0f);
+    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
+    etDist(0, 48.0f);
+    etOn(0);
+    return;
+}
+
+void BossCardAlt6_ath()
+{
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 5, 6);
+!E
+    10;
+!N
+    22;
+!H
+    11;
+!LO
+    11;
+!*
+    etCount(0, [-1], 1);
+    etAngle(0, %F1, 0.0f);
+    etSpeed(0, 1.5f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 256, 200, 0, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    etEx2(0, 0, 16, 60, 1, 1, 0, 0.0f, 0.0f, -999999.0f, -999999.0f);
+    etEx(0, 0, 4, 120, -999999, 0.04f, -999999.0f);
+    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
+    etDist(0, 48.0f);
+    etOn(0);
+    return;
+}
+
+void BossCardAlt7()
+{
+    var A, B, C, D;
+    unless ($TIMEOUT == 0) goto BossCard7_160 @ 0;
+    etCancel(640.0f);
+    goto BossCard7_180 @ 0;
+BossCard7_160:
+    etClear(640.0f);
+BossCard7_180:
++2: //2
+    setChapter(68);
++2: //4
+    ins_569(1);
+    stars(0);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossCard7_448 @ 4;
+    etCancel(640.0f);
+    goto BossCard7_468 @ 4;
+BossCard7_448:
+    etClear(640.0f);
+BossCard7_468:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 7200, "BossAltDead");
+!EN
+    spell(102, 7200, 500000, "ƒ•„uƒsƒ…ƒAƒŠ[ƒoƒŒƒbƒgƒwƒ‹v");
+!H
+    spell(102, 7200, 500000, "ƒ•„uƒˆ‚È’e–‹’n–v");
+!L
+    spell(102, 7200, 500000, "ƒ•„uƒˆ‚È’e–‹’n–v");
+!*
+    lifeMarker(0, 5500.0f, -24448);
+    lifeMarker(1, 3500.0f, -24448);
+    lifeMarker(2, 1200.0f, -24448);
+    movePosTime(60, 4, 0.0f, 128.0f);
+    moveLimitReset();
+    anm316(0, 0);
+    anmPlay(1, 79);
+    anmPlay(1, 75);
+    playSound(54);
++90: //94
+    nop();
+    $A = 120;
+    @BossCardAlt7_at(5, 2) async;
+    goto BossCard7_1344 @ 94;
+BossCard7_1324:
+    wait(1);
+BossCard7_1344:
+    if (($LIFE > 5500) && ($TIME <= (30 * 60))) goto BossCard7_1324 @ 94;
+    playSound(27);
+    etClear(640.0f);
+    @BossCardAlt7_at2(5, 4) async;
+    @BossCardAlt7_at2b(5, 4) async;
+    goto BossCard7_1720 @ 94;
+BossCard7_1700:
+    wait(1);
+BossCard7_1720:
+    if (($LIFE > 3500) && ($TIME <= (60 * 60))) goto BossCard7_1700 @ 94;
+    playSound(27);
+    etClear(640.0f);
+    @BossCardAlt7_at3(5, 6) async;
+    @BossCardAlt7_at3b(5, 6) async;
+    goto BossCard7_2096 @ 94;
+BossCard7_2076:
+    wait(1);
+BossCard7_2096:
+    if (($LIFE > 1200) && ($TIME <= (90 * 60))) goto BossCard7_2076 @ 94;
+    playSound(27);
+    @BossCardAlt7_at4(20, 3) async;
+    %F0 = 1.0f;
+    $D = 10000;
+    goto BossCard7_2480 @ 94;
+BossCard7_2460:
+    wait(330);
+BossCard7_2480:
+    if ($D--) goto BossCard7_2460 @ 94;
+    goto BossCard7_2568 @ 94;
+BossCard7_2548:
+    wait(1000);
+BossCard7_2568:
+    if (1) goto BossCard7_2548 @ 94;
+    return;
+}
+
+void BossCardAlt7_at(var A, var B)
+{
+    var C, D;
+    $C = 0;
+    etNew($C);
+    etAim($C, 3);
+    etSprite($C, $A, $B);
+!E
+    15;
+!N
+    22;
+!H
+    24;
+!LO
+    28;
+!*
+    etCount($C, [-1], 1);
+    etAngle($C, 1.5707964f, 0.0f);
+    etSpeed($C, 2.0f, 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 48.0f);
+    $D = 10000;
+    goto BossCard7_at_592 @ 0;
+BossCard7_at_444:
+    etOffsetRad($C, %RANDRAD, 32.0f);
+    etOn($C);
+!E
+    30;
+!N
+    30;
+!H
+    30;
+!LO
+    20;
+!*
+    wait([-1]);
+BossCard7_at_592:
+    if ($D--) goto BossCard7_at_444 @ 0;
+    return;
+}
+
+void BossCardAlt7_at2(var A, var B)
+{
+    var C, D;
+    $C = 1;
+    etNew($C);
+    etAim($C, 3);
+    etSprite($C, $A, $B);
+!E
+    7;
+!N
+    10;
+!H
+    10;
+!LO
+    10;
+!*
+    etCount($C, [-1], 1);
+    etAngle($C, 1.5707964f, 0.0f);
+!E
+    1.0f;
+!N
+    1.0f;
+!H
+    1.4f;
+!LO
+    1.9f;
+!*
+    etSpeed($C, [-1.0f], 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 48.0f);
+    etOffsetAbs($C, 96.0f, 144.0f);
+    $D = 10000;
+    goto BossCard7_at2_728 @ 0;
+BossCard7_at2_552:
+    etAngle($C, %RANDRAD, 0.0f);
+    etOffsetRad($C, %RANDRAD, 32.0f);
+    etOn($C);
+!E
+    40;
+!N
+    40;
+!H
+    40;
+!LO
+    30;
+!*
+    wait([-1]);
+BossCard7_at2_728:
+    if ($D--) goto BossCard7_at2_552 @ 0;
+    return;
+}
+
+void BossCardAlt7_at2b(var A, var B)
+{
+    var C, D;
+    $C = 2;
+    etNew($C);
+    etAim($C, 3);
+    etSprite($C, $A, $B);
+!E
+    7;
+!N
+    10;
+!H
+    10;
+!LO
+    10;
+!*
+    etCount($C, [-1], 1);
+    etAngle($C, 1.5707964f, 0.0f);
+!E
+    1.0f;
+!N
+    1.0f;
+!H
+    1.4f;
+!LO
+    1.9f;
+!*
+    etSpeed($C, [-1.0f], 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 48.0f);
+    etOffsetAbs($C, -96.0f, 144.0f);
+    $D = 10000;
+    goto BossCard7_at2b_728 @ 0;
+BossCard7_at2b_552:
+    etAngle($C, %RANDRAD, 0.0f);
+    etOffsetRad($C, %RANDRAD, 32.0f);
+    etOn($C);
+!E
+    40;
+!N
+    40;
+!H
+    40;
+!LO
+    30;
+!*
+    wait([-1]);
+BossCard7_at2b_728:
+    if ($D--) goto BossCard7_at2b_552 @ 0;
+    return;
+}
+
+void BossCardAlt7_at3(var A, var B)
+{
+    var C, D;
+    $C = 3;
+    etNew($C);
+    etAim($C, 3);
+    etSprite($C, $A, $B);
+!E
+    40;
+!N
+    52;
+!H
+    52;
+!LO
+    52;
+!*
+    etCount($C, [-1], 1);
+    etAngle($C, 1.5707964f, 0.0f);
+!E
+    1.5f;
+!N
+    2.0f;
+!H
+    2.4f;
+!LO
+    2.5f;
+!*
+    etSpeed($C, [-1.0f], 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 48.0f);
+    etOffsetAbs($C, 160.0f, 160.0f);
+    $D = 10000;
+    goto BossCard7_at3_728 @ 0;
+BossCard7_at3_552:
+    etAngle($C, %RANDRAD, 0.0f);
+    etOffsetRad($C, %RANDRAD, 32.0f);
+    etOn($C);
+!E
+    120;
+!N
+    110;
+!H
+    100;
+!LO
+    60;
+!*
+    wait([-1]);
+BossCard7_at3_728:
+    if ($D--) goto BossCard7_at3_552 @ 0;
+    return;
+}
+
+void BossCardAlt7_at3b(var A, var B)
+{
+    var C, D;
+    $C = 4;
+    etNew($C);
+    etAim($C, 3);
+    etSprite($C, $A, $B);
+!E
+    40;
+!N
+    52;
+!H
+    52;
+!LO
+    52;
+!*
+    etCount($C, [-1], 1);
+    etAngle($C, 1.5707964f, 0.0f);
+!E
+    1.5f;
+!N
+    2.0f;
+!H
+    2.4f;
+!LO
+    2.5f;
+!*
+    etSpeed($C, [-1.0f], 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 48.0f);
+    etOffsetAbs($C, -160.0f, 160.0f);
+    $D = 10000;
+    goto BossCard7_at3b_728 @ 0;
+BossCard7_at3b_552:
+    etAngle($C, %RANDRAD, 0.0f);
+    etOffsetRad($C, %RANDRAD, 32.0f);
+    etOn($C);
+!E
+    120;
+!N
+    110;
+!H
+    100;
+!LO
+    60;
+!*
+    wait([-1]);
+BossCard7_at3b_728:
+    if ($D--) goto BossCard7_at3b_552 @ 0;
+    return;
+}
+
+void BossCardAlt7_at4(var A, var B)
+{
+    var C, D;
+    $C = 5;
+    etNew($C);
+    etAim($C, 5);
+    etSprite($C, $A, $B);
+    etCount($C, 24, 1);
+    etAngle($C, 1.5707964f, 0.0f);
+    etSpeed($C, 4.0f, 0.2f);
+    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist($C, 64.0f);
+    $D = 10000;
+    goto BossCard7_at4_404 @ 0;
+BossCard7_at4_364:
+    etOn($C);
+    wait(10);
+BossCard7_at4_404:
+    if ($D--) goto BossCard7_at4_364 @ 0;
+    return;
+}
+
+void BossAltDead()
+{
+    flagSet(156);
+    playSound(5);
+    anmPlay(1, 63);
+    moveVel(%RANDRAD, 0.4f);
+    unless ($TIMEOUT == 0) goto BossDead_284 @ 0;
+    enmCreate("Ecl_EtBreak2", 0.0f, 0.0f, 9999, 0, 0);
+    goto BossDead_340 @ 0;
+BossDead_284:
+    enmCreate("Ecl_EtBreak2_ni", 0.0f, 0.0f, 9999, 0, 0);
+BossDead_340:
+    enmKillAll();
+    unless ($SPELL_ID < 0) goto BossDead_456 @ 0;
+    gameSpeed(0.5f);
+BossDead_456:
++60: //60
+    etClearAll();
+    spellEnd();
+    gameSpeed(1.0f);
+    @BossItemPhase(0, 40, 64.0f);
+    setScreenShake(30, 12, 0);
+    anmPlay(1, 64);
+    playSound(5);
+    setBoss(-1);
+    flagSet(32);
+    unless ($SPELL_ID < 0) goto BossDead_820 @ 60;
+    gameSpeed(0.25f);
+    wait(30);
+    gameSpeed(1.0f);
+BossDead_820:
+    delete();
+    delete();
+}
+
+void BossEscape()
+{
+    spellEnd();
+    moveLimitReset();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto BossEscape_208 @ 0;
+    etCancel(640.0f);
+    goto BossEscape_228 @ 0;
+BossEscape_208:
+    etClear(640.0f);
+BossEscape_228:
+    lifeSet(100000);
+    setChapter(43);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, -224.0f, -16.0f);
+    wait(60);
+    delete();
+    delete();
+}

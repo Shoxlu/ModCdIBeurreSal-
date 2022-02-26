@@ -1,0 +1,482 @@
+#pragma mapfile "map\\any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+        2: {script: "script2", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    eclResume();
++180: // 180
+    skippable(0);
+    bossShow(0);
++30: // 210
+    skippable(1);
+    bubbleType(0);
+    bubblePos(370.0, 260.0);
++4: // 214
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 218
+    textPause(600);
++4: // 222
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 226
+    textPause(600);
+    skippable(0);
+    textClear();
+    playerShow(0);
++4: // 230
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 260
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("");
+    textAdd("");
++4: // 264
+    textPause(600);
++4: // 268
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 272
+    textPause(600);
++4: // 276
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 280
+    textPause(600);
++4: // 284
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("");
++4: // 288
+    textPause(600);
++4: // 292
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 296
+    textPause(600);
++4: // 300
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 304
+    textPause(600);
++4: // 308
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    bubbleType(3);
+    textAdd("");
++4: // 312
+    textPause(600);
++4: // 316
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    bubbleType(0);
+    textAdd("");
+    textAdd("");
++4: // 320
+    textPause(600);
++4: // 324
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    intro(0);
+    textAdd("");
++4: // 328
+    textPause(600);
++4: // 332
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 336
+    textPause(600);
++4: // 340
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 344
+    textPause(600);
++4: // 348
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("");
++4: // 352
+    textPause(600);
++4: // 356
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("");
+    textAdd("");
++4: // 360
+    textPause(600);
++4: // 364
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
+    textAdd("");
++4: // 368
+    textPause(600);
++4: // 372
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("");
++4: // 376
+    textPause(600);
++4: // 380
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 384
+    textPause(600);
++4: // 388
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 392
+    textPause(600);
++4: // 396
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("");
++4: // 400
+    textPause(600);
++4: // 404
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
++4: // 408
+    textPause(600);
++4: // 412
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
++4: // 416
+    textPause(600);
++4: // 420
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    musicBoss();
+    playerFace(0);
+    textAdd("");
+    textAdd("");
++4: // 424
+    textPause(600);
++4: // 428
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("");
+    textAdd("");
+    textAdd("");
++4: // 432
+    textPause(600);
++4: // 436
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    bubbleType(1);
+    textAdd("");
+    textAdd("");
++4: // 440
+    textPause(600);
++4: // 444
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    bubbleType(0);
+    textAdd("");
+    textAdd("");
++4: // 448
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 478
+    end();
+}
+
+script script1 {
+    skippable(0);
+    eclResume();
++180: // 180
+    skippable(0);
+    bossShow(0);
++30: // 210
+    skippable(1);
+    bubbleType(0);
+    bubblePos(370.0, 260.0);
++4: // 214
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("IO");
+    textAdd("IO");
++4: // 218
+    textPause(600);
++4: // 222
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("IO");
+    textAdd("io");
++4: // 226
+    textPause(600);
+    skippable(0);
+    textClear();
+    playerShow(0);
++4: // 230
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 260
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("io");
+    textAdd("io");
++4: // 264
+    textPause(600);
++4: // 268
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 272
+    textPause(600);
++4: // 276
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 280
+    textPause(600);
++4: // 284
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("io");
++4: // 288
+    textPause(600);
++4: // 292
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
++4: // 296
+    textPause(600);
++4: // 300
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
++4: // 304
+    textPause(600);
++4: // 308
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    bubbleType(3);
+    textAdd("io");
++4: // 312
+    textPause(600);
++4: // 316
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    bubbleType(0);
+    textAdd("io");
+    textAdd("io");
++4: // 320
+    textPause(600);
++4: // 324
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    intro(0);
+    textAdd("io");
++4: // 328
+    textPause(600);
++4: // 332
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 336
+    textPause(600);
++4: // 340
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 344
+    textPause(600);
++4: // 348
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("io");
++4: // 352
+    textPause(600);
++4: // 356
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("io");
+    textAdd("io");
++4: // 360
+    textPause(600);
++4: // 364
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
+    textAdd("io");
++4: // 368
+    textPause(600);
++4: // 372
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("io");
++4: // 376
+    textPause(600);
++4: // 380
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 384
+    textPause(600);
++4: // 388
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
++4: // 392
+    textPause(600);
++4: // 396
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("io");
++4: // 400
+    textPause(600);
++4: // 404
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
++4: // 408
+    textPause(600);
++4: // 412
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
++4: // 416
+    textPause(600);
++4: // 420
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    musicBoss();
+    playerFace(0);
+    textAdd("io");
+    textAdd("io");
++4: // 424
+    textPause(600);
++4: // 428
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    textAdd("io");
+    textAdd("io");
+    textAdd("io");
++4: // 432
+    textPause(600);
++4: // 436
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    bubbleType(1);
+    textAdd("io");
+    textAdd("io");
++4: // 440
+    textPause(600);
++4: // 444
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 260.0);
+    bubbleType(0);
+    textAdd("io");
+    textAdd("io");
++4: // 448
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 478
+    end();
+}
+
+
+script script2 {
+    skippable(0);
++120: // 120
+    skippable(0);
++60: // 180
+    stageEnd();
++120: // 300
+    musicEnd();
+    end();
+}

@@ -1,0 +1,1149 @@
+entry entry0 {
+    version: 8,
+    name: "player/pl00/pl00.png",
+    format: 5,
+    width: 256,
+    height: 256,
+    memoryPriority: 10,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 131072,
+    THTXFormat: 5,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 1, y: 1, w: 30, h: 46 },
+        sprite1: { x: 33, y: 1, w: 30, h: 46 },
+        sprite2: { x: 65, y: 1, w: 30, h: 46 },
+        sprite3: { x: 97, y: 1, w: 30, h: 46 },
+        sprite4: { x: 129, y: 1, w: 30, h: 46 },
+        sprite5: { x: 161, y: 1, w: 30, h: 46 },
+        sprite6: { x: 193, y: 1, w: 30, h: 46 },
+        sprite7: { x: 225, y: 1, w: 30, h: 46 },
+        sprite8: { x: 1, y: 49, w: 30, h: 46 },
+        sprite9: { x: 33, y: 49, w: 30, h: 46 },
+        sprite10: { x: 65, y: 49, w: 30, h: 46 },
+        sprite11: { x: 97, y: 49, w: 30, h: 46 },
+        sprite12: { x: 129, y: 49, w: 30, h: 46 },
+        sprite13: { x: 161, y: 49, w: 30, h: 46 },
+        sprite14: { x: 193, y: 49, w: 30, h: 46 },
+        sprite15: { x: 225, y: 49, w: 30, h: 46 },
+        sprite16: { x: 1, y: 97, w: 30, h: 46 },
+        sprite17: { x: 33, y: 97, w: 30, h: 46 },
+        sprite18: { x: 65, y: 97, w: 30, h: 46 },
+        sprite19: { x: 97, y: 97, w: 30, h: 46 },
+        sprite20: { x: 129, y: 97, w: 30, h: 46 },
+        sprite21: { x: 161, y: 97, w: 30, h: 46 },
+        sprite22: { x: 193, y: 97, w: 30, h: 46 },
+        sprite23: { x: 225, y: 97, w: 30, h: 46 },
+        sprite24: { x: 192, y: 144, w: 64, h: 16 },
+        sprite25: { x: 192, y: 160, w: 64, h: 16 },
+        sprite26: { x: 16, y: 144, w: 16, h: 16 },
+        sprite27: { x: 32, y: 144, w: 16, h: 16 },
+        sprite28: { x: 48, y: 144, w: 16, h: 16 },
+        sprite29: { x: 64, y: 176, w: 64, h: 16 },
+        sprite30: { x: 128, y: 176, w: 64, h: 16 },
+        sprite31: { x: 0, y: 160, w: 16, h: 16 },
+        sprite32: { x: 16, y: 160, w: 16, h: 16 },
+        sprite33: { x: 32, y: 160, w: 16, h: 16 },
+        sprite34: { x: 48, y: 160, w: 16, h: 16 },
+        sprite35: { x: 0, y: 192, w: 32, h: 32 },
+        sprite36: { x: 32, y: 192, w: 32, h: 32 },
+        sprite37: { x: 64, y: 192, w: 48, h: 32 },
+        sprite38: { x: 112, y: 192, w: 48, h: 32 },
+        sprite39: { x: 64, y: 144, w: 16, h: 16 },
+        sprite40: { x: 80, y: 144, w: 16, h: 16 },
+        sprite41: { x: 96, y: 144, w: 16, h: 16 },
+        sprite42: { x: 1, y: 193, w: 62, h: 62 }
+    }
+}
+
+script script0 {
+-1:
+    type(0);
+    layer(14);
+    resampleMode(1);
+0:
+offset36:
+    sprite(sprite0);
++5: // 5
+    sprite(sprite1);
++5: // 10
+    sprite(sprite2);
++5: // 15
+    sprite(sprite3);
++5: // 20
+    sprite(sprite4);
++5: // 25
+    sprite(sprite5);
++5: // 30
+    sprite(sprite6);
++5: // 35
+    sprite(sprite7);
++5: // 40
+    jmp(offset36, 0);
+}
+
+script script1 {
+-1:
+    type(0);
+    layer(14);
+    resampleMode(1);
+0:
+    sprite(sprite8);
++1: // 1
+    sprite(sprite9);
++1: // 2
+    sprite(sprite10);
++1: // 3
+    sprite(sprite11);
++1: // 4
+offset84:
+    sprite(sprite12);
++5: // 9
+    sprite(sprite13);
++5: // 14
+    sprite(sprite14);
++5: // 19
+    sprite(sprite15);
++4: // 23
+    jmp(offset84, 3);
+}
+
+script script2 {
+-1:
+    type(0);
+    layer(14);
+    resampleMode(1);
+0:
+    sprite(sprite11);
++1: // 1
+    sprite(sprite10);
++1: // 2
+    sprite(sprite9);
++1: // 3
+    sprite(sprite8);
+offset84:
+    sprite(sprite0);
++5: // 8
+    sprite(sprite1);
++5: // 13
+    sprite(sprite2);
++5: // 18
+    sprite(sprite3);
++5: // 23
+    sprite(sprite4);
++5: // 28
+    sprite(sprite5);
++5: // 33
+    sprite(sprite6);
++5: // 38
+    sprite(sprite7);
++5: // 43
+    jmp(offset84, 3);
+}
+
+script script3 {
+-1:
+    type(0);
+    layer(14);
+    resampleMode(1);
+0:
+    sprite(sprite16);
++1: // 1
+    sprite(sprite17);
++1: // 2
+    sprite(sprite18);
++1: // 3
+    sprite(sprite19);
++1: // 4
+offset84:
+    sprite(sprite20);
++5: // 9
+    sprite(sprite21);
++5: // 14
+    sprite(sprite22);
++5: // 19
+    sprite(sprite23);
++4: // 23
+    jmp(offset84, 3);
+}
+
+script script4 {
+-1:
+    type(0);
+    layer(14);
+    resampleMode(1);
+0:
+    sprite(sprite19);
++1: // 1
+    sprite(sprite18);
++1: // 2
+    sprite(sprite17);
++1: // 3
+    sprite(sprite16);
+offset84:
+    sprite(sprite0);
++5: // 8
+    sprite(sprite1);
++5: // 13
+    sprite(sprite2);
++5: // 18
+    sprite(sprite3);
++5: // 23
+    sprite(sprite4);
++5: // 28
+    sprite(sprite5);
++5: // 33
+    sprite(sprite6);
++5: // 38
+    sprite(sprite7);
++5: // 43
+    jmp(offset84, 3);
+}
+
+script script5 {
+-1:
+    layer(13);
+    type(1);
+    alpha(160);
+    zWriteDisable(1);
+    rotateAuto(1);
+0:
+offset60:
+    sprite(sprite24);
++1: // 1
+    sprite(sprite25);
++1: // 2
+    jmp(offset60, 0);
+    stop();
+    case(1);
+    layer(15);
+    alpha(192);
+    alphaTime(30, 0, 0);
+    blendMode(1);
+    type(1);
+    sprite(sprite26);
++10: // 12
+    sprite(sprite27);
++10: // 22
+    sprite(sprite28);
++10: // 32
+    delete();
+}
+
+script script6 {
+-1:
+    layer(13);
+    type(1);
+    alpha(64);
+    zWriteDisable(1);
+    rotateAuto(1);
+    scale(0.2f, 1.0f);
+0:
+    scaleTime(8, 0, 2.0f, 1.0f);
+    alphaTime(6, 0, 255);
+offset120:
+    sprite(sprite29);
++1: // 1
+    sprite(sprite30);
++1: // 2
+    jmp(offset120, 0);
+    stop();
+    case(1);
+    layer(15);
+    fsetDiv(%F0, %RANDRAD, 10.0f);
+    angleVel(0.0f, 0.0f, %F0);
+    rotateAuto(1);
+    sprite(sprite29);
+    type(1);
+    blendMode(1);
+    alpha(192);
++10: // 12
+    alphaTime(10, 0, 0);
++10: // 22
+    delete();
+}
+
+script script7 {
+-1:
+    layer(13);
+    type(1);
+    sprite(sprite43);
+    alpha(0);
+0:
+    iset($I0, 255);
+    fset([10035.0f], 3.1415927f);
+    scriptNewFront(script12);
+    iset($I0, 144);
+    fsub([10035.0f], 1.0471976f);
+    scriptNewFront(script12);
+    iset($I0, 96);
+    fsub([10035.0f], 1.0471976f);
+    scriptNewFront(script12);
+    iset($I0, 48);
+    fsub([10035.0f], 1.0471976f);
+    scriptNewFront(script12);
+    stop();
+    case(1);
++10: // 10
+    delete();
+}
+
+script script8 {
+-1:
+    layer(13);
+    type(1);
+    alpha(128);
+    zWriteDisable(1);
+    rotateAuto(1);
+    sprite(sprite31);
+1:
+    nop();
+offset80:
+    scriptNewRoot(script9);
++1: // 2
+    jmp(offset80, 1);
+    stop();
+    case(1);
+    layer(15);
+    alpha(192);
+    alphaTime(30, 0, 0);
+    scaleTime(10, 0, 4.0f, 4.0f);
+    blendMode(1);
+    type(1);
+    rotateAuto(0);
+    fsetMul(%F0, %RANDRAD, 0.017453292f);
+    angleVel(%F0, 0.0f, %F0);
+    sprite(sprite32);
++10: // 12
+    sprite(sprite33);
+    scaleTime(20, 0, 1.0f, 1.0f);
++10: // 22
+    sprite(sprite34);
++10: // 32
+    delete();
+}
+
+script script9 {
+-1:
+    layer(7);
+    type(1);
+    rotateAuto(1);
+    blendMode(2);
+    alpha(128);
+    //color(136, 191, 191);
+    zWriteDisable(1);
+    sprite(sprite31);
+    alphaTime(5, 0, 0);
+5:
+    delete();
+}
+
+script script10 {
+-1:
+    layer(13);
+    blendMode(1);
+    type(1);
+0:
+    case(2);
+    scale(0.0f, 0.0f);
+    scaleTime(10, 4, 1.4f, 1.4f);
+    sprite(sprite41);
+    angleVel(0.0f, 0.0f, 0.31415927f);
++10: // 10
+    scaleTime(6, 1, 1.0f, 1.0f);
++6: // 16
+    angleVel(0.0f, 0.0f, 0.10471976f);
+    blendMode(0);
+    stop();
+    case(3);
+    scaleTime(20, 4, 0.0f, 0.0f);
++20: // 36
+    stop();
+    case(1);
+    blendMode(1);
+    scaleTime(20, 4, 0.0f, 3.0f);
++20: // 56
+    delete();
+}
+
+script script11 {
+    layer(13);
+    type(1);
+    blendMode(1);
+    alpha(0);
+    case(2);
+    sprite(sprite41);
+    scaleTime(10, 0, 1.5f, 1.5f);
+    alphaTime(10, 0, 128);
+    angleVel(0.0f, 0.0f, -0.10471976f);
+    stop();
+    case(3);
+    scaleTime(20, 4, 0.0f, 0.0f);
++20: // 20
+    stop();
+    case(1);
++10: // 30
+    delete();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "player/pl00/pl00f.png",
+    format: 5,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 131072,
+    THTXFormat: 5,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite43: { x: 0, y: 0, w: 64, h: 64 },
+        sprite44: { x: 0, y: 64, w: 192, h: 192 }
+    }
+}
+
+script script12 {
+-1:
+    layer(13);
+    type(1);
+    zWriteDisable(1);
+    sprite(sprite43);
+    anchorOffset(-16.0f, 16.0f);
+    color(255, 164, 255);
+0:
+    copyVars();
+    alpha($I0);
+    rotate([10035.0f], 0.0f, [10035.0f]);
+    angleVel(0.5235988f, 0.0f, 0.5235988f);
+    stop();
+    case(3);
+    scale(1.0f, 1.0f);
+    color(255, 0, 0);
+    angleVel(0.0f, 0.0f, 0.0f);
++4: // 4
+    angleVel(0.5235988f, 0.0f, 0.5235988f);
+    scale(1.0f, 1.0f);
+    color(255, 164, 255);
+    stop();
+    case(1);
+    layer(15);
+    scaleTime(10, 4, 0.0f, 0.0f);
+    blendMode(1);
++10: // 14
+    delete();
+}
+
+script script13 {
+-1:
+    layer(20);
+    type(1);
+    zWriteDisable(1);
+    sprite(sprite44);
+    anchorOffset(-96.0f, 64.0f);
+0:
+    copyVars();
+    alpha($I0);
+    color(255, $I1, 255);
+    iset($I4, 4);
+offset120:
+    scale(1.0f, 1.0f);
+    rotate(-3.1415927f, 0.0f, -3.1415927f);
+    rotateTime(20, 3, 0.0f, 0.0f, 0.0f);
++20: // 20
+    color(255, 128, 128);
++10: // 30
+    color(255, $I1, 155);
+    scale(-1.0f, 1.0f);
+    rotate(3.1415927f, 0.0f, 3.1415927f);
+    rotateTime(20, 3, 0.0f, 0.0f, 0.0f);
++20: // 50
+    color(255, 128, 128);
++10: // 60
+    color(255, $I1, 255);
+    jmpDec($I4, offset120, 0);
+    case(1);
+    alphaTime(10, 0, 0);
++10: // 70
+    delete();
+}
+
+script script14 {
+-1:
+    layer(20);
+    type(1);
+    alpha(0);
+    iset($I0, 255);
+    iset($I1, 255);
+    iset($I4, 8);
+0:
+offset84:
+    scriptNewFront(script13);
+    isub($I0, 32);
+    isub($I1, 32);
++1: // 1
+    jmpDec($I4, offset84, 0);
+    stop();
+    case(1);
++10: // 11
+    delete();
+}
+
+script script15 {
+    sprite(-1);
+    layer(22);
+    drawPoly(1.0f, 40);
+    blendMode(1);
+    alpha(0);
+    alpha2(255);
+    color(255, 255, 255);
+    color2(128, 0, 0);
+    scaleTime(20, 4, 300.0f, 300.0f);
+    color2Time(20, 0, 128, 0, 0);
+    alpha2Time(20, 0, 0);
++20: // 20
+    delete();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "player/pl00/pl00b.png",
+    format: 1,
+    width: 128,
+    height: 128,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 65536,
+    THTXFormat: 1,
+    THTXWidth: 128,
+    THTXHeight: 128,
+    THTXZero: 0,
+    sprites: {
+        sprite45: { x: 0, y: 0, w: 128, h: 128 }
+    }
+}
+
+script script16 {
+    alpha(0);
+    layer(20);
+    scriptNew(script18);
+    scriptNew(script20);
+    scriptNew(script22);
+    scriptNew(script18);
+    scriptNew(script20);
+    scriptNew(script22);
+    stop();
+    case(1);
+    scriptNew(script19);
+    scriptNew(script21);
+    scriptNew(script23);
+    scriptNew(script19);
+    scriptNew(script21);
+    scriptNew(script23);
+    scriptNew(script17);
++50: // 50
+    delete();
+}
+
+script script17 {
+    sprite(sprite45);
+    layer(20);
+    scale(0.0f, 0.0f);
+    scaleTime(20, 1, 1.0f, 1.0f);
+    type(2);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(255);
+    scaleTime(20, 4, 6.0f, 6.0f);
+    alphaTime(20, 4, 0);
++20: // 20
+    delete();
+}
+
+script script18 {
+    sprite(sprite45);
+    layer(20);
+    scale(0.0f, 0.0f);
+    scaleTime(20, 1, 1.0f, 1.0f);
+    type(1);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(128);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    angleVel(0.0f, 0.0f, %RANDRAD);
+    fsetMul(%F0, %RANDF2, 96.0f);
+    fsetMul(%F1, %RANDF2, 96.0f);
+offset200:
+    fsetMul(%F2, %RANDF2, 96.0f);
+    fsetMul(%F3, %RANDF2, 96.0f);
+    moveBezier(20, %F0, %F1, 0.0f, 0.0f, 0.0f, 0.0f, %F2, %F3, 0.0f);
+    fset(%F0, %F2);
+    fset(%F1, %F3);
++20: // 20
+    jmp(offset200, 0);
+    case(1);
+    delete();
+}
+
+script script19 {
+    sprite(sprite45);
+    layer(20);
+    scale(1.0f, 1.0f);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(255);
+    type(1);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 32.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    pos(%F1, %F2, 0.0f);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 255.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    posTime(50, 4, %F1, %F2, 0.0f);
+    scaleTime(50, 1, 0.0f, 0.0f);
+    alphaTime(50, 1, 0);
++50: // 50
+    delete();
+}
+
+script script20 {
+    sprite(sprite45);
+    layer(20);
+    scale(0.0f, 0.0f);
+    scaleTime(20, 1, 1.0f, 1.0f);
+    type(1);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(128);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    angleVel(0.0f, 0.0f, %RANDRAD);
+    fsetMul(%F0, %RANDF2, 96.0f);
+    fsetMul(%F1, %RANDF2, 96.0f);
+offset200:
+    fsetMul(%F2, %RANDF2, 96.0f);
+    fsetMul(%F3, %RANDF2, 96.0f);
+    moveBezier(20, %F0, %F1, 0.0f, 0.0f, 0.0f, 0.0f, %F2, %F3, 0.0f);
+    fset(%F0, %F2);
+    fset(%F1, %F3);
++20: // 20
+    jmp(offset200, 0);
+    case(1);
+    delete();
+}
+
+script script21 {
+    sprite(sprite45);
+    layer(20);
+    scale(1.0f, 1.0f);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(255);
+    type(1);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 32.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    pos(%F1, %F2, 0.0f);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 255.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    posTime(50, 4, %F1, %F2, 0.0f);
+    scaleTime(50, 1, 0.0f, 0.0f);
+    alphaTime(50, 1, 0);
++50: // 50
+    delete();
+}
+
+script script22 {
+    sprite(sprite45);
+    layer(20);
+    scale(0.0f, 0.0f);
+    scaleTime(20, 1, 1.0f, 1.0f);
+    type(1);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(128);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    angleVel(0.0f, 0.0f, %RANDRAD);
+    fsetMul(%F0, %RANDF2, 96.0f);
+    fsetMul(%F1, %RANDF2, 96.0f);
+offset200:
+    fsetMul(%F2, %RANDF2, 96.0f);
+    fsetMul(%F3, %RANDF2, 96.0f);
+    moveBezier(20, %F0, %F1, 0.0f, 0.0f, 0.0f, 0.0f, %F2, %F3, 0.0f);
+    fset(%F0, %F2);
+    fset(%F1, %F3);
++20: // 20
+    jmp(offset200, 0);
+    case(1);
+    delete();
+}
+
+script script23 {
+    sprite(sprite45);
+    layer(20);
+    scale(1.0f, 1.0f);
+    blendMode(1);
+    color(136, 191, 191);
+    alpha(255);
+    type(1);
+    rotate(0.0f, 0.0f, %RANDRAD);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 32.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    pos(%F1, %F2, 0.0f);
+    fset(%F0, %RANDRAD);
+    fcos(%F1, %F0);
+    fsin(%F2, %F0);
+    fsetMul(%F0, %RANDF, 255.0f);
+    fmul(%F1, %F0);
+    fmul(%F2, %F0);
+    posTime(50, 4, %F1, %F2, 0.0f);
+    scaleTime(50, 1, 0.0f, 0.0f);
+    alphaTime(50, 1, 0);
++50: // 50
+    delete();
+}
+
+script script24 {
+    sprite(-1);
+    layer(3);
+    drawPoly(1.0f, 32);
+    alpha(255);
+    blendMode(0);
+    color(32, 32, 128);
+    color2(128, 32, 32);
+    alpha2(0);
+    scaleTime(60, 1, 600.0f, 600.0f);
++40: // 40
+    alpha2Time(20, 0, 192);
+    colorTime(250, 0, 128, 0, 0);
+    color2Time(250, 0, 128, 0, 0);
+    alpha2Time(250, 0, 255);
+    stop();
+    case(1);
+    alphaTime(20, 0, 0);
++20: // 60
+    delete();
+}
+
+
+entry entry3 {
+    version: 8,
+    name: "face/pl00/face_pl00no.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite46: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry4 {
+    version: 8,
+    name: "face/pl00/face_pl00n2.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite47: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry5 {
+    version: 8,
+    name: "face/pl00/face_pl00hp.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite48: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry6 {
+    version: 8,
+    name: "face/pl00/face_pl00an.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite49: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry7 {
+    version: 8,
+    name: "face/pl00/face_pl00sw.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite50: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry8 {
+    version: 8,
+    name: "face/pl00/face_pl00dp.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite51: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry9 {
+    version: 8,
+    name: "face/pl00/face_pl00pr.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite52: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry10 {
+    version: 8,
+    name: "face/pl00/face_pl00sp.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 340,
+    yOffset: 54,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 196352,
+    THTXFormat: 1,
+    THTXWidth: 236,
+    THTXHeight: 208,
+    THTXZero: 0,
+    sprites: {
+        sprite53: { x: 0, y: 0, w: 236, h: 208 }
+    }
+}
+
+
+entry entry11 {
+    version: 8,
+    name: "face/dummy.png",
+    format: 7,
+    width: 4,
+    height: 4,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 16,
+    THTXFormat: 7,
+    THTXWidth: 4,
+    THTXHeight: 4,
+    THTXZero: 0,
+    sprites: {
+        sprite54: { x: 0, y: 0, w: 4, h: 4 }
+    }
+}
+
+
+entry entry12 {
+    version: 8,
+    name: "face/pl00/face_pl00bs.png",
+    format: 1,
+    width: 1024,
+    height: 1024,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 1980000,
+    THTXFormat: 1,
+    THTXWidth: 750,
+    THTXHeight: 660,
+    THTXZero: 0,
+    sprites: {
+        sprite55: { x: 160, y: 0, w: 590, h: 660 },
+        sprite56: { x: 0, y: 0, w: 0, h: 0 }
+    }
+}
+
+script script25 {
+    sprite(sprite55);
+    anchor(1, 1);
+    ins_431(1);
+    alpha(0);
+    alphaTime(15, 0, 255);
+    pos(-96.0f, 316.0f, 0.0f);
+    layer(25);
+    resolutionMode(2);
+    resampleMode(1);
+    case(3);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, -64.0f, 316.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 96);
++15: // 15
+    stop();
+    case(2);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 5, 0.0f, 300.0f, 0.0f);
+    colorTime(15, 0, 255, 255, 255);
++15: // 30
+    stop();
+    case(7);
+    posTime(2, 0, -8.0f, 292.0f, 0.0f);
++2: // 32
+    posTime(2, 0, -4.0f, 304.0f, 0.0f);
++2: // 34
+    posTime(2, 0, 8.0f, 296.0f, 0.0f);
++2: // 36
+    posTime(2, 0, 4.0f, 308.0f, 0.0f);
++2: // 38
+    posTime(2, 0, 0.0f, 292.0f, 0.0f);
++2: // 40
+    posTime(2, 0, -8.0f, 304.0f, 0.0f);
++2: // 42
+    posTime(2, 0, -4.0f, 296.0f, 0.0f);
++2: // 44
+    posTime(2, 0, 8.0f, 308.0f, 0.0f);
++2: // 46
+    posTime(2, 0, -4.0f, 296.0f, 0.0f);
++2: // 48
+    posTime(2, 0, 0.0f, 304.0f, 0.0f);
++15: // 63
+    stop();
+    case(8);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, -64.0f, 316.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 240);
++15: // 78
+    stop();
+    case(1);
+    posTime(30, 6, -96.0f, 316.0f, 0.0f);
+    alphaTime(30, 0, 0);
++30: // 108
+    delete();
+    case(17);
+    case(18);
+    case(19);
+    case(20);
+    case(21);
+    case(22);
+    case(23);
+    case(24);
+    sprite(sprite55);
+    caseReturn();
+    case(25);
+    sprite(sprite56);
+    caseReturn();
+}
+
+script script26 {
+    layer(25);
+    sprite(sprite46);
+    anchor(1, 1);
+    ins_431(1);
+    alpha(0);
+    alphaTime(15, 0, 255);
+    pos(84.0f, 370.0f, 0.0f);
+    layer(25);
+    resolutionMode(2);
+    resampleMode(1);
+    case(3);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 116.0f, 370.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 96);
++15: // 15
+    stop();
+    case(2);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 5, 180.0f, 354.0f, 0.0f);
+    colorTime(15, 0, 255, 255, 255);
++15: // 30
+    stop();
+    case(7);
+    posTime(2, 0, 172.0f, 346.0f, 0.0f);
++2: // 32
+    posTime(2, 0, 176.0f, 358.0f, 0.0f);
++2: // 34
+    posTime(2, 0, 188.0f, 350.0f, 0.0f);
++2: // 36
+    posTime(2, 0, 184.0f, 362.0f, 0.0f);
++2: // 38
+    posTime(2, 0, 180.0f, 346.0f, 0.0f);
++2: // 40
+    posTime(2, 0, 172.0f, 358.0f, 0.0f);
++2: // 42
+    posTime(2, 0, 176.0f, 350.0f, 0.0f);
++2: // 44
+    posTime(2, 0, 188.0f, 362.0f, 0.0f);
++2: // 46
+    posTime(2, 0, 176.0f, 350.0f, 0.0f);
++2: // 48
+    posTime(2, 0, 180.0f, 358.0f, 0.0f);
++15: // 63
+    stop();
+    case(8);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 116.0f, 370.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 240);
++15: // 78
+    stop();
+    case(1);
+    posTime(30, 6, 84.0f, 370.0f, 0.0f);
+    alphaTime(30, 0, 0);
++30: // 108
+    delete();
+    case(17);
+    sprite(sprite46);
+    caseReturn();
+    case(18);
+    sprite(sprite47);
+    caseReturn();
+    case(19);
+    sprite(sprite48);
+    caseReturn();
+    case(20);
+    sprite(sprite49);
+    caseReturn();
+    case(21);
+    sprite(sprite50);
+    caseReturn();
+    case(22);
+    sprite(sprite51);
+    caseReturn();
+    case(23);
+    sprite(sprite52);
+    caseReturn();
+    case(24);
+    sprite(sprite53);
+    caseReturn();
+    case(25);
+    sprite(sprite56);
+    caseReturn();
+}
+
+script script27 {
+-1:
+    alpha(0);
+    layer(24);
+    resolutionMode(2);
+    pos(-80.0f, 0.0f, 0.0f);
+0:
+    scriptNew(script25);
+    scriptNew(script26);
+    stop();
+    case(1);
++30: // 30
+    delete();
+}
+
+

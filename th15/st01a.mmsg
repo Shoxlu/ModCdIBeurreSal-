@@ -1,0 +1,369 @@
+#pragma mapfile "map\\any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+        2: {script: "script2", flags: 256},
+        3: {script: "script3", flags: 256},
+        4: {script: "script4", flags: 256},
+        5: {script: "script5", flags: 256},
+        6: {script: "script6", flags: 256},
+    },
+}
+
+
+script script0 {
+    bossShow(0);
++34: // 34
+    skippable(0);
+    speakerBoss(0);
+    bubbleType(0);
+    bubblePos(356.0, 280.0);
+    textAdd("何これ");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerNone();
+    eclResume();
+    textClear();
++90: // 132
+    skippable(0);
+    speakerBoss(0);
+    intro(0);
+    textAdd("邪魔しなくても");
+    textAdd("撃つぞ！");
++4: // 136
+    playerShow(0);
+    textPause(600);
++4: // 140
+    skippable(1);
+    bossFace(3, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("『こちら清蘭");
+    textAdd("　好戦的な地上人と接触した』");
++8: // 148
+    textPause(600);
++22: // 170
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("『これから浄化活動に入る』");
++4: // 174
+    textPause(600);
++4: // 178
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("独り言？");
+    textAdd("気持ち悪");
++4: // 182
+    textPause(600);
++4: // 186
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 190
+    textPause(600);
++4: // 194
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 198
+    textPause(600);
++4: // 202
+    bossFace(0, 0);
+    bubbleType(2);
+    bubblePos(356.0, 280.0);
+    textAdd("Attends,");
+    textAdd("Elle fouette des chats ?!");
++4: // 206
+    textPause(600);
++4: // 210
+    playerFace(4);
+    speakerPlayer();
+    bubbleType(0);
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 214
+    textPause(600);
++4: // 218
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 222
+    textPause(600);
++4: // 226
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 230
+    textPause(600);
++4: // 234
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 238
+    textPause(600);
++4: // 242
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 246
+    textPause(600);
++4: // 250
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    bubbleType(1);
+    musicBoss();
+    textAdd("もうすぐ地上は");
+    textAdd("浄化されるのだ！");
++4: // 254
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 284
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(7);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(3);
+    textAdd("ぐうう");
+    textAdd("だから現地部隊は嫌だったのにー");
++4: // 38
+    textPause(600);
+    bubbleType(0);
++4: // 42
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("あんた、もしかして");
+    textAdd("月の兎じゃないの？");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("地上を浄化するって……");
+    textAdd("もの凄く嫌な予感がする");
++4: // 54
+    textPause(600);
++4: // 58
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("あんたらの拠点を教えなさい！");
+    textAdd("さもないと……");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("勘弁してください－");
+    textAdd("教えたら殺されるわー！");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    playerFace(4);
+    textAdd("山の湖に前線基地があるなんて");
+    textAdd("教えたら殺されるわー！");
++4: // 78
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 79
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 109
+    end();
+}
+
+
+script script2 {
+    skippable(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(300);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(300);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 72
+    end();
+}
+
+
+script script3 {
+    skippable(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("Si tu arrives a passer ca, tu pourras continuer.");
++4: // 38
+    textPause(600);
+    skippable(1);
+    bossFace(0, 0);
+    bubblePos(356.0, 280.0);
+    bubbleType(1);
+    textAdd("Voyons voir ce que tu dis de ca !");
++4: // 42
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 72
+    end();
+}
+
+
+script script4 {
+    skippable(0);
+    bossShow(0);
+    bossFace(0, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+    bossFace(0, 0);
+    bubbleType(1);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 72
+    end();
+}
+
+
+script script5 {
+    skippable(0);
+    bossShow(0);
+    bossFace(0, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(0);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("Salut ! Bienvenue dans ce nouveau mod !");
++30: // 64
+    textPause(150);
+    textAdd("J'espere que tu ne vas pas");
+    textAdd("passer mes dialogues...");
++30: // 94
+    skippable(1);
+    textPause(150);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 124
+    textPause(150);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 154
+    textPause(150);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 184
+    textPause(150);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 214
+    textPause(150);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 244
+    end();
+}
+
+
+script script6 {
+    skippable(0);
+    bossShow(0);
+    bossFace(0, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 280.0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 72
+    end();
+}

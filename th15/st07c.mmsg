@@ -1,0 +1,677 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+        2: {script: "script2", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    eclResume();
++180: // 180
+    skippable(0);
+    bossShow(2);
++30: // 210
+    skippable(1);
+    bubbleType(0);
+    bubblePos(370.0, 260.0);
++4: // 214
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("この答えに辿り着くまで");
+    textAdd("思ったより時間が掛ったわね");
++4: // 218
+    textPause(600);
++4: // 222
+    bossFace(5, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("人間を使うという奇策を打ったのだから");
+    textAdd("すぐに気付くと思ったのですが……");
++4: // 226
+    textPause(600);
+    skippable(0);
+    textClear();
+    playerShow(0);
++4: // 230
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 260
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("また会ったわねー！");
++4: // 264
+    textPause(600);
++4: // 268
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("今度こそ決着を付けるとき！");
++4: // 272
+    textPause(600);
++4: // 276
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("……月の民は夢の世界に逃げ込んだ");
++4: // 280
+    textPause(600);
++4: // 284
+    bossFace(5, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("月の都に居られなくなった月の民は");
+    textAdd("そうするだろうと私は読んでいた");
++4: // 288
+    textPause(600);
++4: // 292
+    bossFace(1, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("勿論、私は先手を打った");
++4: // 296
+    textPause(600);
++4: // 300
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("夢の世界に刺客を");
+    textAdd("送り込んでいたのです");
++4: // 304
+    textPause(600);
++4: // 308
+    bossFace(1, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("さあ出ておいで！");
+    textAdd("地獄の女神、へカーティアよ");
++4: // 312
+    textPause(600);
+    playerHide();
+    bossHide(2);
++4: // 316
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++100: // 416
+    skippable(1);
+    playerShow(0);
+    bossShow(0);
+    playerFace(7);
++4: // 420
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    intro(0);
+    textAdd("んもう");
+    textAdd("待ちくたびれたわよん");
++4: // 424
+    textPause(600);
++4: // 428
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ようやく、嫦娥の奴に復讐出来るのね？");
+    textAdd("腕が鳴るわー");
++4: // 432
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 436
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("いや、敵は月の民ではなくて");
+    textAdd("目の前の人間です");
++4: // 440
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 444
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("人間？");
+    textAdd("ええ人間なの？　生身の？");
++4: // 448
+    textPause(600);
++4: // 452
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ふーん……");
+    textAdd("どれどれ");
++4: // 456
+    textPause(600);
++4: // 460
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("むむ、敵が二人？");
++4: // 464
+    textPause(600);
++4: // 468
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("二人に見えるかしら？");
+    textAdd("ふふふ");
++4: // 472
+    textPause(600);
++4: // 476
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("まあ良いでしょう");
+    textAdd("この人間が純狐を手こずらせてるの？");
++4: // 480
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 484
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("手こずるなんてもんじゃ無い");
++4: // 488
+    textPause(600);
++4: // 492
+    bossFace(2, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("この人間のおかげで");
+    textAdd("我々の敗北が半分だけ決定した");
++4: // 496
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
+    playerFace(0);
++4: // 500
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ええええ？");
+    textAdd("それほどまで……");
++4: // 504
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 508
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("月の民は狡猾だわ");
+    textAdd("こんな人間を送り込んでくるなんて");
++4: // 512
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 516
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ふーん、面白い");
+    textAdd("純狐がそこまで言うんなら本物ね");
++4: // 520
+    textPause(600);
++4: // 524
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何かヤバイ雰囲気……");
++4: // 528
+    textPause(600);
++4: // 532
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("ひとまず退散して味方を");
+    textAdd("呼んでこようかしら");
++4: // 536
+    textPause(600);
++4: // 540
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("そーんなに怖がらなくてもいいわよ？");
++4: // 544
+    textPause(600);
++4: // 548
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("何も本気で戦ったりはしないわよぉ");
++4: // 552
+    textPause(600);
++4: // 556
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("どうやら純狐も敗北を覚悟している");
+    textAdd("みたいだし……");
++4: // 560
+    textPause(600);
++4: // 564
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("もう勝ち負けは重要じゃ無いみたい");
++4: // 568
+    textPause(600);
++4: // 572
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("だから私達も正々堂々一人ずつ戦うわ");
+    textAdd("これは余興みたいなもんよ");
++4: // 576
+    textPause(600);
++4: // 580
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そうですか");
+    textAdd("安心しました");
++4: // 584
+    textPause(600);
++4: // 588
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("では改めて……");
+    textAdd(
+        "さっさと勝負しろ！　この変なＴシャツヤロー！",
+    );
++4: // 592
+    textPause(600);
++4: // 596
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    musicBoss();
+    textAdd("よーし、可愛いねぇ");
+    textAdd("ちょっと遊んでやるわ");
++4: // 600
+    textPause(600);
++4: // 604
+    bossFace(4, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("本来なら、人間など相手に");
+    textAdd("しないんだけど");
++4: // 608
+    textPause(600);
++4: // 612
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("『貴方は私に暴言を吐いた』");
+    textAdd("それだけの理由で貴方を地獄へ堕とす");
++4: // 616
+    textPause(600);
++4: // 620
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ただそれだけの理由だ！");
+    textAdd("死んでも悔しがれ！");
++4: // 624
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 654
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    bubbleType(3);
++30: // 34
+    skippable(1);
+    bubblePos(110.0, 280.0);
+    textAdd("約束破ったわねー！");
+    textAdd("二人がかりで来るなんて！");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    bubbleType(0);
+    textAdd("あらあらごめんなさいね");
+    textAdd("もう勝負あったわ、私の負けよ");
++4: // 46
+    textPause(600);
++4: // 50
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("純狐が言うだけあって");
+    textAdd("素晴らしい人間だわ");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("こんな素晴らしい人間がいる");
+    textAdd("幻想郷に攻め入るなんて");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("月の民達は許しがたいわね");
++4: // 70
+    textPause(600);
++4: // 74
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("今はその許しがたい月の民を");
+    textAdd("解放して欲しいの");
++4: // 78
+    textPause(600);
++4: // 82
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ねえ、純狐？");
+    textAdd("良いかしら？");
++4: // 86
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 90
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("……良いわ");
+    textAdd("月の民を都へ戻しても");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(2, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("この人間に出会えたおかげで");
+    textAdd("戦意喪失したから");
++4: // 102
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 106
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("オーケーオーケー");
+    textAdd("じゃあ、月の民は解放しよう");
++4: // 110
+    textPause(600);
++4: // 114
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("これであいつ等は幻想郷からも");
+    textAdd("手を引くでしょう");
++4: // 118
+    textPause(600);
++4: // 122
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("ほんとに？");
++4: // 126
+    textPause(600);
++4: // 130
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("一回、そっちの奴に騙されたから");
+    textAdd("信用できないんだけど");
++4: // 134
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 138
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("騙してなんかないわ");
++4: // 142
+    textPause(600);
++4: // 146
+    bossFace(6, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("まさか月の民が幻想郷全体を人質に");
+    textAdd("とるなんて思って無かったから");
++4: // 150
+    textPause(600);
++4: // 154
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("結果として間接的に幻想郷への");
+    textAdd("攻撃になってしまっただけで");
++4: // 158
+    textPause(600);
++4: // 162
+    bossFace(2, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("我々の敵は月の民だけなんです");
++4: // 166
+    textPause(600);
++4: // 170
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("なら……良いけど");
++4: // 174
+    textPause(600);
++4: // 178
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("あ、そういえば幻想郷に月の民が");
+    textAdd("住んでいますよ");
++4: // 182
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 186
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("知ってるわ");
++4: // 190
+    textPause(600);
++4: // 194
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("それがどうかしたの？");
++4: // 198
+    textPause(600);
++4: // 202
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("その人に抗議してみたら");
+    textAdd("如何でしょう？");
++4: // 206
+    textPause(600);
++4: // 210
+    playerFace(2);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("月の民代表として");
++4: // 214
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 218
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("それもアリかもね");
++4: // 222
+    textPause(600);
++4: // 226
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("勿論、対話で、ですよ？");
+    textAdd("暴力はいけませんよ！");
++4: // 230
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 234
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("うーん、相手が暴力を使って来たら");
+    textAdd("どうするの？");
++4: // 238
+    textPause(600);
++4: // 242
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("その時は戦ってください");
+    textAdd("さっきみたいに！");
++4: // 246
+    textPause(600);
++4: // 250
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("あははは");
+    textAdd("おもしろーい");
++4: // 254
+    textPause(600);
+    bossHide(0);
+    bossShow(2);
++4: // 258
+    bossFace(2, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("ふふふ、今はもう復讐心は無いわ");
++4: // 262
+    textPause(600);
++4: // 266
+    bossFace(0, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("次の復讐劇まで");
+    textAdd("長い時間が掛りそうね");
++4: // 270
+    textPause(600);
++4: // 274
+    bossFace(2, 2);
+    speakerBoss(2);
+    bubblePos(370.0, 260.0);
+    textAdd("貴方のお陰でね");
++4: // 278
+    textPause(600);
+    bossHide(2);
+    bossShow(0);
++4: // 282
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("ほんじゃまあ");
+    textAdd("我々も戻りましょうか");
++4: // 286
+    textPause(600);
++4: // 290
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("戻るって、何処に？");
++4: // 294
+    textPause(600);
++4: // 298
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(350.0, 250.0);
+    textAdd("地球にです");
+    textAdd("我々は月の民ではないですから");
++4: // 302
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++40: // 342
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 372
+    end();
+}
+
+
+script script2 {
++90: // 90
+    skippable(0);
+    speakerBoss(0);
+    eclResume();
+    textClear();
++60: // 150
+    skippable(0);
++30: // 180
+    skippable(0);
+    bossShow(1);
++4: // 184
+    bossFace(0, 1);
+    speakerBoss(1);
+    bubblePos(356.0, 260.0);
+    textAdd("また来てしまったのですね……");
++120: // 304
+    skippable(0);
++4: // 308
+    bossFace(6, 1);
+    speakerBoss(1);
+    bubblePos(356.0, 260.0);
+    textAdd("だから言ったでしょう？");
++120: // 428
+    skippable(0);
++4: // 432
+    bossFace(0, 1);
+    speakerBoss(1);
+    bubblePos(356.0, 260.0);
+    textAdd("あの時、夢という事にしておけば");
+    textAdd("こんな狂夢を見る事は無かったのに……");
++200: // 632
+    skippable(0);
+    bossHide(1);
+    textboxHide();
+    eclResume();
+    skippable(0);
++30: // 662
+    end();
+}

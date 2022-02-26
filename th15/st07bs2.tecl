@@ -1,0 +1,282 @@
+
+void BossItemPhase(var A, var B, var C);
+
+void EffChargePoint2(var A, var B, var C, var D, var E);
+
+void BossB()
+{
+    setBoss(1);
+    $GI0 = $ID;
+    setInvuln(120);
+    flagSet(15);
+    $CAPTURE = 1;
+    movePos(0.0f, 128.0f);
+    @EffChargePoint2(1.5707964f, -1.0471976f, 8, 2, 6);
+    @EffChargePoint2(1.5707964f, 1.0471976f, 10, 7, 3);
+    wait(101);
+    anmSelect(5);
+    anmSetMain(0, 0);
+    flagClear(3);
+    flagSet(64);
+    lifeSet(17001);
++2: //2
+    dialogWait();
+    movePosTime(120, 9, 80.0f, 112.0f);
++2: //4
+    dialogWait();
+    setChapter(43);
++1: //5
+    setHurtbox(40.0f, 40.0f);
+    setHitbox(48.0f, 48.0f);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    anmSelect(1);
+    anmSetSprite(1, 107);
+    anmSetSprite(2, 116);
+    anmSelect(5);
+    fog(160.0f, 16728128);
+    @BossB1();
+    goto BossB_824 @ 5;
+BossB_804:
+    wait(1000);
+BossB_824:
+    if 1 goto BossB_804 @ 5;
+    delete();
+}
+
+void BossB1()
+{
+    timerReset();
+    flagSet(16);
+    movePosTime(120, 1, 192.0f, -64.0f);
+    moveLimitReset();
+    wait(120);
+    flagSet(35);
+    goto BossB1_204 @ 0;
+BossB1_184:
+    wait(1000);
+BossB1_204:
+    if 1 goto BossB1_184 @ 0;
+    return;
+}
+
+void BossB10()
+{
+    lifeSet(7000);
+    bombShield(0, 0);
+    movePos(192.0f, -64.0f);
+    anmSelect(5);
+    anmSetMain(0, 0);
+    anmSetSprite(1, -1);
+    anmSetSprite(2, -1);
+    timerReset();
+    setInvuln(185);
+    movePosTime(120, 9, 64.0f, 128.0f);
+    wait(185);
+    setNext(0, 0, -1, "BossDeadB");
+    goto BossB10_372 @ 0;
+BossB10_352:
+    wait(1000);
+BossB10_372:
+    if 1 goto BossB10_352 @ 0;
+    return;
+}
+
+void BossB4()
+{
+    movePos(192.0f, -64.0f);
+    bombShield(0, 0);
+    anmSelect(5);
+    anmSetMain(0, 0);
+    anmSetSprite(1, -1);
+    anmSetSprite(2, -1);
+    timerReset();
+    setInvuln(185);
+    flagClear(16);
+    flagClear(35);
+    movePosTime(180, 1, 0.0f, 128.0f);
+    moveLimitReset();
+    wait(185);
+    flagSet(35);
+    goto BossB4_384 @ 0;
+BossB4_364:
+    wait(1000);
+BossB4_384:
+    if 1 goto BossB4_364 @ 0;
+    return;
+}
+
+void BossB5()
+{
+    movePos(-192.0f, -64.0f);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    anmSetSprite(1, -1);
+    anmSetSprite(2, -1);
+    timerReset();
+    setInvuln(185);
+    flagClear(16);
+    flagClear(35);
+    movePosTime(170, 9, 0.0f, 128.0f);
+    moveLimitReset();
+    wait(185);
+    flagSet(35);
+    goto BossB5_360 @ 0;
+BossB5_340:
+    wait(1000);
+BossB5_360:
+    if 1 goto BossB5_340 @ 0;
+    return;
+}
+
+void BossCardB10()
+{
+    setNext(0, 0, -1, "BossDeadB");
+    bombShield(1, 0);
+    flagClear(16);
+    flagClear(35);
+    ins_568(1);
+    wait(120);
+    @BossCardB10_at();
+    playSound(27);
+    etClear(640.0f);
+    @BossCardB10_at2();
+    playSound(27);
+    etClear(640.0f);
+    @BossCardB10_at3();
+    goto BossCardB10_416 @ 0;
+BossCardB10_396:
+    wait(1000);
+BossCardB10_416:
+    if 1 goto BossCardB10_396 @ 0;
+    return;
+}
+
+void BossCardB10_at()
+{
+    var A, B;
+    $A = 10000;
+    goto BossCardB10_at_844 @ 0;
+BossCardB10_at_100:
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 5, 6);
+    etCount(0, 90, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 2.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 2097152, 120, -999999, 1.0f, -999999.0f);
+    etDist(0, 24.0f);
+    etAngle(0, %RANDRAD, 0.0f);
+    etOn(0);
+    $B = 90;
+    goto BossCardB10_at_800 @ 0;
+BossCardB10_at_568:
+    unless (($LIFE <= 4500) || ($TIME >= (90 * 60))) goto BossCardB10_at_780 @ 0;
+    goto BossCardB10_at_888 @ 0;
+BossCardB10_at_780:
+    wait(1);
+BossCardB10_at_800:
+    if $B-- goto BossCardB10_at_568 @ 0;
+BossCardB10_at_844:
+    if $A-- goto BossCardB10_at_100 @ 0;
+BossCardB10_at_888:
+    return;
+}
+
+void BossCardB10_at2()
+{
+    var A, B;
+    $A = 10000;
+    goto BossCardB10_at2_844 @ 0;
+BossCardB10_at2_100:
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 5, 6);
+    etCount(0, 90, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 2.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 2097152, 120, -999999, 1.3f, -999999.0f);
+    etDist(0, 24.0f);
+    etAngle(0, %RANDRAD, 0.0f);
+    etOn(0);
+    $B = 90;
+    goto BossCardB10_at2_800 @ 0;
+BossCardB10_at2_568:
+    unless (($LIFE <= 2000) || ($TIME >= (90 * 60))) goto BossCardB10_at2_780 @ 0;
+    goto BossCardB10_at2_888 @ 0;
+BossCardB10_at2_780:
+    wait(1);
+BossCardB10_at2_800:
+    if $B-- goto BossCardB10_at2_568 @ 0;
+BossCardB10_at2_844:
+    if $A-- goto BossCardB10_at2_100 @ 0;
+BossCardB10_at2_888:
+    return;
+}
+
+void BossCardB10_at3()
+{
+    var A, B;
+    $A = 10000;
+    goto BossCardB10_at3_632 @ 0;
+BossCardB10_at3_100:
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 5, 6);
+    etCount(0, 90, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 2.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 2097152, 120, -999999, 1.5f, -999999.0f);
+    etDist(0, 24.0f);
+    etAngle(0, %RANDRAD, 0.0f);
+    etOn(0);
+    $B = 60;
+    goto BossCardB10_at3_588 @ 0;
+BossCardB10_at3_568:
+    wait(1);
+BossCardB10_at3_588:
+    if $B-- goto BossCardB10_at3_568 @ 0;
+BossCardB10_at3_632:
+    if $A-- goto BossCardB10_at3_100 @ 0;
+    return;
+}
+
+void BossDeadB()
+{
+    enmCall($GI1, "BossDead2");
+    flagSet(156);
+    playSound(5);
+    moveVel(%RANDRAD, 0.4f);
+    unless ($TIMEOUT == 0) goto BossDeadB_296 @ 0;
+    enmCreate("Ecl_EtBreak2", 0.0f, 0.0f, 9999, 0, 0);
+    goto BossDeadB_352 @ 0;
+BossDeadB_296:
+    enmCreate("Ecl_EtBreak2_ni", 0.0f, 0.0f, 9999, 0, 0);
+BossDeadB_352:
+    enmKillAll();
++60: //60
+    etClearAll();
+    spellEnd();
+    @BossItemPhase(40, 15, 64.0f);
+    setScreenShake(30, 12, 0);
+    anmPlay(1, 32);
+    anmPlay(1, 64);
+    playSound(5);
+    flagSet(32);
+    unless ($SPELL_ID < 0) goto BossDeadB_716 @ 60;
+    gameSpeed(0.25f);
+    wait(30);
+    gameSpeed(1.0f);
+BossDeadB_716:
+    setBoss(-1);
+    delete();
+    delete();
+}
