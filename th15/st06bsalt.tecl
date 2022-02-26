@@ -23,6 +23,7 @@ void BossAlt()
     lifeSet(23000);
     anmSetSprite(0, 0);
     dialogWait();
+	playSound(63);
     setChapter(43);
 +1: //1
     setHurtbox(56.0f, 56.0f);

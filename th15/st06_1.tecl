@@ -1,4 +1,3 @@
-anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm";}
 ecli { "st06bs.ecl";}
 
 void MainBossSpell();

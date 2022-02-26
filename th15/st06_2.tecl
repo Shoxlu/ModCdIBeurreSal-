@@ -1,4 +1,3 @@
-anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm";}
 ecli { "st06bsalt.ecl";}
 
 void MainBossSpell();
@@ -19,7 +18,6 @@ void LogoEnemy()
 void MainBossalt()
 {
     dialogWait();
-	dialogRead(-1);
 	enmCreateA("BossAlt", 144.0f, -16.0f, 40, 1000, 1);
 	dialogWait();
 +1: //1
