@@ -4036,7 +4036,7 @@ script script197 {
     drawPoly(1.0f, 32);
 	//scale(16.0f, 16.0f);
     color(255, 0, 0);
-    scaleTime(30, 0, 480.0f, 480.0f);
+    scaleTime(60, 0, 960.0f, 0.0f);
 +30:
     alphaTime(80, 0, 0);
     //alpha2Time(40, 0, 0);

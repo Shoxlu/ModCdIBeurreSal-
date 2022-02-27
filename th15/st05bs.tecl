@@ -1,4 +1,4 @@
-#include "etama.tecl"
+#include "main.tecl"
 
 void BossItemCard();
 
@@ -78,7 +78,7 @@ Boss1_320:
     moveRand(60, 4, 1.9f);
     wait(60);
 Boss1_532:
-    if 1 goto Boss1_320 @ 0;
+    if (1) goto Boss1_320 @ 0;
     return;
 }
 
@@ -110,7 +110,7 @@ Boss1_at_532:
     %B = %B - 0.4f;
     wait(5);
 Boss1_at_908:
-    if $C-- goto Boss1_at_532 @ 0;
+    if ($C--) goto Boss1_at_532 @ 0;
     return;
 }
 
@@ -146,7 +146,7 @@ Boss1_at2_612:
     %A = %A - 0.15708f;
     wait(1);
 Boss1_at2_756:
-    if $C-- goto Boss1_at2_612 @ 0;
+    if ($C--) goto Boss1_at2_612 @ 0;
     %A = (-0.15707964f * 9.5f) + (%RANDF2 * 0.34906584f);
     $D = 20;
     goto Boss1_at2_1156 @ 0;
@@ -158,9 +158,9 @@ Boss1_at2_1012:
     %A = %A + 0.15708f;
     wait(1);
 Boss1_at2_1156:
-    if $D-- goto Boss1_at2_1012 @ 0;
+    if ($D--) goto Boss1_at2_1012 @ 0;
 Boss1_at2_1200:
-    if $B-- goto Boss1_at2_400 @ 0;
+    if ($B--) goto Boss1_at2_400 @ 0;
     return;
 }
 
@@ -229,7 +229,7 @@ Boss2_1164:
     moveRand(60, 4, 1.9f);
     wait(60);
 Boss2_1376:
-    if 1 goto Boss2_1164 @ 4;
+    if (1) goto Boss2_1164 @ 4;
     return;
 }
 
@@ -275,7 +275,7 @@ Boss2_at_572:
     %B = %B - 0.4f;
     wait(5);
 Boss2_at_2288:
-    if $D-- goto Boss2_at_572 @ 0;
+    if ($D--) goto Boss2_at_572 @ 0;
     return;
 }
 
@@ -311,7 +311,7 @@ Boss2_at2_616:
     %A = %A - 0.15708f;
     wait(1);
 Boss2_at2_760:
-    if $C-- goto Boss2_at2_616 @ 0;
+    if ($C--) goto Boss2_at2_616 @ 0;
     %A = (-0.15707964f * 9.5f) + (%RANDF2 * 0.34906584f);
     $D = 20;
     goto Boss2_at2_1160 @ 0;
@@ -323,9 +323,9 @@ Boss2_at2_1016:
     %A = %A + 0.15708f;
     wait(1);
 Boss2_at2_1160:
-    if $D-- goto Boss2_at2_1016 @ 0;
+    if ($D--) goto Boss2_at2_1016 @ 0;
 Boss2_at2_1204:
-    if $B-- goto Boss2_at2_404 @ 0;
+    if ($B--) goto Boss2_at2_404 @ 0;
     return;
 }
 
@@ -393,7 +393,7 @@ Boss3_1156:
     moveRand(60, 4, 1.9f);
     wait(60);
 Boss3_1368:
-    if 1 goto Boss3_1156 @ 4;
+    if (1) goto Boss3_1156 @ 4;
     return;
 }
 
@@ -426,7 +426,7 @@ Boss3_at_572:
     %B = %B - 0.4f;
     wait(20);
 Boss3_at_948:
-    if $D-- goto Boss3_at_572 @ 0;
+    if ($D--) goto Boss3_at_572 @ 0;
 !E
     wait(60);
 !*
@@ -465,7 +465,7 @@ Boss3_at2_612:
     %A = %A - 0.15708f;
     wait(1);
 Boss3_at2_756:
-    if $C-- goto Boss3_at2_612 @ 0;
+    if ($C--) goto Boss3_at2_612 @ 0;
     %A = (-0.15707964f * 9.5f) + (%RANDF2 * 0.34906584f);
     $D = 20;
     goto Boss3_at2_1156 @ 0;
@@ -477,9 +477,9 @@ Boss3_at2_1012:
     %A = %A + 0.15708f;
     wait(1);
 Boss3_at2_1156:
-    if $D-- goto Boss3_at2_1012 @ 0;
+    if ($D--) goto Boss3_at2_1012 @ 0;
 Boss3_at2_1200:
-    if $B-- goto Boss3_at2_400 @ 0;
+    if ($B--) goto Boss3_at2_400 @ 0;
     return;
 }
 
@@ -611,23 +611,21 @@ BossCard1_488:
 !L
     spell(58, 4000, 500000, "çñïÑÅuínçñÇÃêIÅv");
 !*
-    movePosTime(60, 4, 0.0f, 192.0f);
-    moveLimit(0.0f, 192.0f, 240.0f, 224.0f);
+    movePosTime(60, 4, 0.0f, 122.0f);
+    moveLimit(0.0f, 192.0f, 240.0f, 128.0f);
     anm316(0, 0);
     anmPlay(1, 79);
     anmPlay(1, 75);
     playSound(54);
 +90: //94
     nop();
-    enmCreateA("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
-    wait(60);
-    $A = 120;
-    goto BossCard1_1424 @ 94;
-BossCard1_1404:
-    wait(1000);
-BossCard1_1424:
-    if 1 goto BossCard1_1404 @ 94;
-    return;
+    enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+	while(1)
+	{
+		moveRand(60, 1, 3f);
+		wait(160);
+	}
+    wait(10000);
 }
 
 void BossCard1_Moon()
@@ -638,7 +636,7 @@ void BossCard1_Moon()
     setHurtbox(108.0f, 108.0f);
     setHitbox(96.0f, 96.0f);
     unknown549(0);
-    flagSet(8988);
+    flagSet(8989);
     anmScale(0, 0.0f, 0.0f);
     unknown544(1);
     anmScaleTime(0, 60, 0, 1.0f, 1.0f);
@@ -652,24 +650,23 @@ void BossCard1_Moon()
 BossCard1_Moon_460:
     wait(1000);
 BossCard1_Moon_480:
-    if 1 goto BossCard1_Moon_460 @ 0;
+    if (1) goto BossCard1_Moon_460 @ 0;
     delete();
 }
 
 
 void BossCard1_at()
 {
- etNew(0);
- etAim(0,8);
- etSprite(0, (RAND % 4) + 25 ,0);
- etCount(0, 5 , 5);
- etSpeed(0, 2f, 4f);
- etAngle(0, %ANGLE_PLAYER, rad(90));
- etCopy(1,0);
- etSprite(1,  (RAND % 4) + 25 , 0);
- etOn(0);
- etOn(1);
-
+	etNew(0);
+	etAim(0,8);
+	etSprite(0, (RAND % 4) + 25 ,0);
+	etCount(0, 5 , 5);
+	etSpeed(0, 2f, 4f);
+	etAngle(0, %ANGLE_PLAYER, rad(90));
+	etCopy(1,0);
+	etSprite(1,  (RAND % 4) + 25 , 0);
+	etOn(0);
+	etOn(1);
 }
 
 void BossTrase()
@@ -681,6 +678,7 @@ BossTrase_60:
     ins_445(1, 0, 0.0f);
     playSound(51);
     setScreenShake(20, 2, 0);
+	anmPlay(1, 197);
 	wait(40);
     BossCard1_at();
 	 setScreenShake(20, 10, 0);
@@ -692,20 +690,20 @@ BossTrase_60:
 BossTrase_680:
     wait(1);
 BossTrase_700:
-    if 1 goto BossTrase_60 @ 0;
+    if (1) goto BossTrase_60 @ 0;
     return;
 }
 
 void Moon() {
 
     nop();
-    enmCreateA("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+    enmCreateA("BossCard1_Moon", BOSS_X, BOSS_Y, 100, 100, 0);
 	 wait(60);
     goto BossCard1_1424 @ 94;
 BossCard1_1404:
     wait(1000);
 BossCard1_1424:
-    if 1 goto BossCard1_1404 @ 94;
+    if (1) goto BossCard1_1404 @ 94;
     return;
 }
 
@@ -786,12 +784,12 @@ BossCard2_1776:
     moveRand(30, 4, 2.0f);
     wait(40);
 BossCard2_1924:
-    if $C-- goto BossCard2_1280 @ 94;
+    if ($C--) goto BossCard2_1280 @ 94;
     goto BossCard2_2012 @ 94;
 BossCard2_1992:
     wait(1000);
 BossCard2_2012:
-    if 1 goto BossCard2_1992 @ 94;
+    if (1) goto BossCard2_1992 @ 94;
     return;
 }
 
@@ -816,7 +814,7 @@ BossCard2_at_508:
     %A = %A - _f(64);
     wait(10);
 BossCard2_at_652:
-    if $B-- goto BossCard2_at_508 @ 0;
+    if ($B--) goto BossCard2_at_508 @ 0;
     return;
 }
 
@@ -844,7 +842,7 @@ BossCard2_at2_556:
     %B = %B - 0.122173f;
     wait(1);
 BossCard2_at2_700:
-    if $D-- goto BossCard2_at2_556 @ 0;
+    if ($D--) goto BossCard2_at2_556 @ 0;
     %B = (-0.12217305f * 9.5f) + (%RANDF2 * 0.17453292f);
     $E = 20;
     goto BossCard2_at2_1100 @ 0;
@@ -856,9 +854,9 @@ BossCard2_at2_956:
     %B = %B + 0.122173f;
     wait(1);
 BossCard2_at2_1100:
-    if $E-- goto BossCard2_at2_956 @ 0;
+    if ($E--) goto BossCard2_at2_956 @ 0;
 BossCard2_at2_1144:
-    if $C-- goto BossCard2_at2_344 @ 0;
+    if ($C--) goto BossCard2_at2_344 @ 0;
     return;
 }
 
@@ -906,7 +904,7 @@ BossCard2_at3_1864:
 BossCard2_at3_1904:
     wait($C);
 BossCard2_at3_1924:
-    if $E-- goto BossCard2_at3_564 @ 0;
+    if ($E--) goto BossCard2_at3_564 @ 0;
     return;
 }
 
@@ -1009,12 +1007,12 @@ BossCard3_1260:
     moveRand(30, 4, 1.0f);
     wait(40);
 BossCard3_1884:
-    if $B-- goto BossCard3_1260 @ 64;
+    if ($B--) goto BossCard3_1260 @ 64;
     goto BossCard3_1972 @ 64;
 BossCard3_1952:
     wait(1000);
 BossCard3_1972:
-    if 1 goto BossCard3_1952 @ 64;
+    if (1) goto BossCard3_1952 @ 64;
     return;
 }
 
@@ -1149,12 +1147,12 @@ BossCard4_1464:
     @BossCard4_at() async;
     @BossCard4_at2();
 BossCard4_1536:
-    if $C-- goto BossCard4_1228 @ 94;
+    if ($C--) goto BossCard4_1228 @ 94;
     goto BossCard4_1624 @ 94;
 BossCard4_1604:
     wait(1000);
 BossCard4_1624:
-    if 1 goto BossCard4_1604 @ 94;
+    if (1) goto BossCard4_1604 @ 94;
     return;
 }
 
@@ -1188,7 +1186,7 @@ BossCard4_at_588:
     %A = %A - _f(64);
     wait(10);
 BossCard4_at_732:
-    if $B-- goto BossCard4_at_588 @ 0;
+    if ($B--) goto BossCard4_at_588 @ 0;
     %A = _f(448) - (%RANDF * _f(20));
     etAngle(0, 3.1415927f, 0.0f);
     $C = 16;
@@ -1199,7 +1197,7 @@ BossCard4_at_980:
     %A = %A - _f(64);
     wait(10);
 BossCard4_at_1124:
-    if $C-- goto BossCard4_at_980 @ 0;
+    if ($C--) goto BossCard4_at_980 @ 0;
     return;
 }
 
@@ -1234,7 +1232,7 @@ BossCard4_at2_608:
     %A = %A + _f(64);
     wait(10);
 BossCard4_at2_752:
-    if $B-- goto BossCard4_at2_608 @ 0;
+    if ($B--) goto BossCard4_at2_608 @ 0;
     %A = _f(0) + (%RANDF * _f(20));
     etAngle(1, 0.0f, 0.0f);
     $C = 16;
@@ -1245,7 +1243,7 @@ BossCard4_at2_1000:
     %A = %A + _f(64);
     wait(10);
 BossCard4_at2_1144:
-    if $C-- goto BossCard4_at2_1000 @ 0;
+    if ($C--) goto BossCard4_at2_1000 @ 0;
     return;
 }
 
@@ -1323,12 +1321,12 @@ BossCard5_488:
 BossCard5_1552:
     wait(120);
 BossCard5_1572:
-    if $D-- goto BossCard5_1552 @ 94;
+    if ($D--) goto BossCard5_1552 @ 94;
     goto BossCard5_1660 @ 94;
 BossCard5_1640:
     wait(1000);
 BossCard5_1660:
-    if 1 goto BossCard5_1640 @ 94;
+    if (1) goto BossCard5_1640 @ 94;
     return;
 }
 
@@ -1357,7 +1355,7 @@ void BossCard5_Moon()
 BossCard5_Moon_572:
     wait(1000);
 BossCard5_Moon_592:
-    if 1 goto BossCard5_Moon_572 @ 0;
+    if (1) goto BossCard5_Moon_572 @ 0;
     delete();
 }
 
@@ -1420,7 +1418,7 @@ BossCard5_Moon_at2_828:
     $A = _S(%B);
     wait($A);
 BossCard5_Moon_at2_984:
-    if $D-- goto BossCard5_Moon_at2_828 @ 0;
+    if ($D--) goto BossCard5_Moon_at2_828 @ 0;
     return;
 }
 
@@ -1461,7 +1459,7 @@ BossCard5_at_896:
     validRad(%B);
     wait(2);
 BossCard5_at_1336:
-    if $H-- goto BossCard5_at_632 @ 0;
+    if ($H--) goto BossCard5_at_632 @ 0;
     return;
 }
 
@@ -1509,7 +1507,7 @@ BossCard5_at2_1868:
 BossCard5_at2_1908:
     wait($C);
 BossCard5_at2_1928:
-    if $E-- goto BossCard5_at2_568 @ 0;
+    if ($E--) goto BossCard5_at2_568 @ 0;
     return;
 }
 
