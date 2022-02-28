@@ -1344,6 +1344,9 @@ main_440:
 	anmPlay(1, 197);
 	anmPlay(4, 0);
 	enmCreateA("GirlB06", 0f, 128f, 10000000, 100, 1);
+	//0x4E7400C score (memory adress)
+	//0x42eed1 GF7 (function)
+	GF7 = 999999999f;
 	wait(10000);
 	//wait(500);
     dialogRead(0);
