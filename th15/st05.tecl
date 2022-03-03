@@ -36,7 +36,7 @@ void ECir00()
 ECir00_836:
     wait(1000);
 ECir00_856:
-    if 1 goto ECir00_836 @ 0;
+    if (1) goto ECir00_836 @ 0;
     delete();
 }
 
@@ -70,7 +70,7 @@ ECir00_at_568:
     etOn(0);
     wait(4);
 ECir00_at_728:
-    if $B-- goto ECir00_at_568 @ 0;
+    if ($B--) goto ECir00_at_568 @ 0;
     return;
 }
 
@@ -80,7 +80,7 @@ void ECir00b()
 ECir00b_60:
     wait(1000);
 ECir00b_80:
-    if 1 goto ECir00b_60 @ 0;
+    if (1) goto ECir00b_60 @ 0;
     delete();
 }
 
@@ -108,7 +108,7 @@ void GirlA01_at()
 GirlA01_at_248:
     wait(1000);
 GirlA01_at_268:
-    if 1 goto GirlA01_at_248 @ 0;
+    if (1) goto GirlA01_at_248 @ 0;
     return;
 }
 
@@ -130,7 +130,7 @@ GirlA01_at2_212:
     etOn(0);
     wait(10 + ($RAND % 60));
 GirlA01_at2_644:
-    if $A-- goto GirlA01_at2_212 @ 0;
+    if ($A--) goto GirlA01_at2_212 @ 0;
     return;
 }
 
@@ -169,7 +169,7 @@ void GirlA02_at()
 GirlA02_at_248:
     wait(1000);
 GirlA02_at_268:
-    if 1 goto GirlA02_at_248 @ 0;
+    if (1) goto GirlA02_at_248 @ 0;
     return;
 }
 
@@ -244,7 +244,7 @@ GirlA02_at2_1176:
 !*
     wait([-1]);
 GirlA02_at2_1296:
-    if $B-- goto GirlA02_at2_156 @ 0;
+    if ($B--) goto GirlA02_at2_156 @ 0;
     return;
 }
 
@@ -283,7 +283,7 @@ void GirlA03_at()
 GirlA03_at_248:
     wait(1000);
 GirlA03_at_268:
-    if 1 goto GirlA03_at_248 @ 0;
+    if (1) goto GirlA03_at_248 @ 0;
     return;
 }
 
@@ -325,7 +325,7 @@ GirlA03_at2_156:
 !*
     wait([-1]);
 GirlA03_at2_676:
-    if $B-- goto GirlA03_at2_156 @ 0;
+    if ($B--) goto GirlA03_at2_156 @ 0;
     return;
 }
 
@@ -364,7 +364,7 @@ void GirlA04_at()
 GirlA04_at_248:
     wait(1000);
 GirlA04_at_268:
-    if 1 goto GirlA04_at_248 @ 0;
+    if (1) goto GirlA04_at_248 @ 0;
     return;
 }
 
@@ -435,7 +435,7 @@ GirlA04_at2_780:
 !*
     wait([-1]);
 GirlA04_at2_1228:
-    if $B-- goto GirlA04_at2_780 @ 0;
+    if ($B--) goto GirlA04_at2_780 @ 0;
     return;
 }
 
@@ -487,7 +487,7 @@ void GirlA05_at()
 GirlA05_at_248:
     wait(1000);
 GirlA05_at_268:
-    if 1 goto GirlA05_at_248 @ 0;
+    if (1) goto GirlA05_at_248 @ 0;
     return;
 }
 
@@ -532,7 +532,7 @@ GirlA05_at2_620:
     etOn(0);
     wait(80);
 GirlA05_at2_988:
-    if $B-- goto GirlA05_at2_620 @ 0;
+    if ($B--) goto GirlA05_at2_620 @ 0;
     return;
 }
 
@@ -571,7 +571,7 @@ void GirlA06_at()
 GirlA06_at_248:
     wait(1000);
 GirlA06_at_268:
-    if 1 goto GirlA06_at_248 @ 0;
+    if (1) goto GirlA06_at_248 @ 0;
     return;
 }
 
@@ -617,7 +617,7 @@ GirlA06_at2_680:
     etOn(0);
     wait(80);
 GirlA06_at2_1048:
-    if $B-- goto GirlA06_at2_680 @ 0;
+    if ($B--) goto GirlA06_at2_680 @ 0;
     return;
 }
 
@@ -659,7 +659,7 @@ void GirlA07_at()
 GirlA07_at_324:
     wait(1000);
 GirlA07_at_344:
-    if 1 goto GirlA07_at_324 @ 0;
+    if (1) goto GirlA07_at_324 @ 0;
     return;
 }
 
@@ -762,7 +762,7 @@ GirlA07_at2_252:
     etOn(0);
     wait(400);
 GirlA07_at2_1128:
-    if $B-- goto GirlA07_at2_252 @ 0;
+    if ($B--) goto GirlA07_at2_252 @ 0;
     return;
 }
 
@@ -797,13 +797,13 @@ GirlC01_356:
     @GirlC01_at() async;
     wait(180);
 GirlC01_408:
-    if $A-- goto GirlC01_356 @ 0;
+    if ($A--) goto GirlC01_356 @ 0;
     moveVelTime(80, 1, -0.7853982f, 2.0f);
     goto GirlC01_528 @ 0;
 GirlC01_508:
     wait(1000);
 GirlC01_528:
-    if 1 goto GirlC01_508 @ 0;
+    if (1) goto GirlC01_508 @ 0;
     delete();
 }
 
@@ -829,7 +829,7 @@ void GirlC01_at()
     etEx(0, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
     etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
     etDist(0, 16.0f);
-    unless $MIRROR goto GirlC01_at_576 @ 0;
+    unless ($MIRROR) goto GirlC01_at_576 @ 0;
     %F0 = -1.570796f;
     %F1 = -0.174533f;
     goto GirlC01_at_656 @ 0;
@@ -852,7 +852,7 @@ GirlC01_at_900:
     %B = %B - 0.05f;
     wait(1);
 GirlC01_at_1148:
-    if $D-- goto GirlC01_at_900 @ 0;
+    if ($D--) goto GirlC01_at_900 @ 0;
     $E = 9;
     goto GirlC01_at_1504 @ 0;
 GirlC01_at_1256:
@@ -863,9 +863,9 @@ GirlC01_at_1256:
     %B = %B - 0.05f;
     wait(1);
 GirlC01_at_1504:
-    if $E-- goto GirlC01_at_1256 @ 0;
+    if ($E--) goto GirlC01_at_1256 @ 0;
 GirlC01_at_1548:
-    if $C-- goto GirlC01_at_836 @ 0;
+    if ($C--) goto GirlC01_at_836 @ 0;
     return;
 }
 
@@ -889,7 +889,7 @@ void GirlD01()
 GirlD01_396:
     wait(1000);
 GirlD01_416:
-    if 1 goto GirlD01_396 @ 0;
+    if (1) goto GirlD01_396 @ 0;
     delete();
 }
 
@@ -918,7 +918,7 @@ GirlD01_at_488:
     %A = %A - 0.261799f;
     wait(10);
 GirlD01_at_760:
-    if $B-- goto GirlD01_at_488 @ 0;
+    if ($B--) goto GirlD01_at_488 @ 0;
     return;
 }
 
@@ -949,7 +949,7 @@ void GirlD02_at()
 GirlD02_at_268:
     wait(1000);
 GirlD02_at_288:
-    if 1 goto GirlD02_at_268 @ 0;
+    if (1) goto GirlD02_at_268 @ 0;
     return;
 }
 
@@ -1021,7 +1021,7 @@ GirlD02_at2_420:
 !*
     wait([-1]);
 GirlD02_at2_932:
-    if $A-- goto GirlD02_at2_420 @ 0;
+    if ($A--) goto GirlD02_at2_420 @ 0;
     return;
 }
 
@@ -1047,7 +1047,7 @@ void GirlD03()
 GirlD03_452:
     wait(1000);
 GirlD03_472:
-    if 1 goto GirlD03_452 @ 0;
+    if (1) goto GirlD03_452 @ 0;
     delete();
 }
 
@@ -1090,7 +1090,7 @@ GirlD03_at_608:
 !*
     wait([-1]);
 GirlD03_at_1188:
-    if $C-- goto GirlD03_at_608 @ 0;
+    if ($C--) goto GirlD03_at_608 @ 0;
     return;
 }
 
@@ -1142,7 +1142,7 @@ GirlD03_at2_340:
 !*
     wait([-1]);
 GirlD03_at2_1408:
-    if $A-- goto GirlD03_at2_340 @ 0;
+    if ($A--) goto GirlD03_at2_340 @ 0;
     return;
 }
 
@@ -1172,7 +1172,7 @@ void GirlD04_at()
 GirlD04_at_248:
     wait(1000);
 GirlD04_at_268:
-    if 1 goto GirlD04_at_248 @ 0;
+    if (1) goto GirlD04_at_248 @ 0;
     return;
 }
 
@@ -1219,7 +1219,7 @@ GirlD04_at2_888:
     %A = %A + %F1;
     wait(1);
 GirlD04_at2_984:
-    if $C-- goto GirlD04_at2_612 @ 0;
+    if ($C--) goto GirlD04_at2_612 @ 0;
     return;
 }
 
@@ -1249,7 +1249,7 @@ void GirlD05_at()
 GirlD05_at_248:
     wait(1000);
 GirlD05_at_268:
-    if 1 goto GirlD05_at_248 @ 0;
+    if (1) goto GirlD05_at_248 @ 0;
     return;
 }
 
@@ -1287,7 +1287,7 @@ GirlD05_at2_772:
     %A = %A + %F1;
     wait(1);
 GirlD05_at2_868:
-    if $C-- goto GirlD05_at2_532 @ 0;
+    if ($C--) goto GirlD05_at2_532 @ 0;
     return;
 }
 
@@ -1304,7 +1304,7 @@ void MainBoss()
     enmCreateA("Boss", 144.0f, -16.0f, 40, 1000, 1);
     dialogWait();
 +1: //1
-    unknown520();
+    bossWait();
     setChapter(81);
 +60: //61
     dialogRead(1);
@@ -1401,14 +1401,14 @@ void MainLatter2()
 {
     @MainLatter2B() async;
     @MainSub06();
-    unknown520();
+    bossWait();
     @MainSub07();
     return;
 }
 
 void MainLatter2B()
 {
-    unknown520();
+    bossWait();
     wait(60);
     setChapter(5);
     return;
@@ -1416,7 +1416,7 @@ void MainLatter2B()
 
 void MainLatterB()
 {
-    unknown520();
+    bossWait();
     wait(60);
     setChapter(4);
     return;
@@ -1430,7 +1430,7 @@ void MainMBossDebug()
 MainMBossDebug_128:
     wait(1000);
 MainMBossDebug_148:
-    if 1 goto MainMBossDebug_128 @ 0;
+    if (1) goto MainMBossDebug_128 @ 0;
     return;
 }
 
@@ -1450,7 +1450,7 @@ MainMsgDebug_168:
 +4000: //4071
     nop();
 MainMsgDebug_184:
-    if 1 goto MainMsgDebug_168 @ 71;
+    if (1) goto MainMsgDebug_168 @ 71;
     return;
 }
 
@@ -1465,7 +1465,7 @@ MainSub00_100:
     enmCreateM("GirlA01", 224.0f, _f(64) + (%RANDF2 * 32.0f), 50, 1000, 1);
     wait(20);
 MainSub00_512:
-    if $A-- goto MainSub00_100 @ 0;
+    if ($A--) goto MainSub00_100 @ 0;
     return;
 }
 
@@ -1480,7 +1480,7 @@ MainSub01_100:
     enmCreateM("GirlA02", 224.0f, _f(64) + (%RANDF2 * 32.0f), 50, 1000, 1);
     wait(20);
 MainSub01_512:
-    if $A-- goto MainSub01_100 @ 0;
+    if ($A--) goto MainSub01_100 @ 0;
     return;
 }
 
@@ -1521,7 +1521,7 @@ MainSub02b_96:
 !*
     wait([-1]);
 MainSub02b_588:
-    if $A-- goto MainSub02b_96 @ 0;
+    if ($A--) goto MainSub02b_96 @ 0;
     return;
 }
 
@@ -1530,7 +1530,7 @@ void MainSub03()
     enmCreateA("MBoss", -224.0f, -16.0f, 40, 1000, 1);
     wait(60);
     dialogWait();
-    unknown520();
+    bossWait();
     wait(60);
     return;
 }
@@ -1568,7 +1568,7 @@ MainSub05_116:
 !*
     wait([-1]);
 MainSub05_608:
-    if $A-- goto MainSub05_116 @ 0;
+    if ($A--) goto MainSub05_116 @ 0;
     return;
 }
 
@@ -1607,7 +1607,7 @@ MainSub07_120:
     enmCreateM("GirlA05", 224.0f, _f(64) + (%RANDF2 * 32.0f), 50, 1000, 1);
     wait(20);
 MainSub07_532:
-    if $A-- goto MainSub07_120 @ 0;
+    if ($A--) goto MainSub07_120 @ 0;
     wait(90);
     $B = 32;
     goto MainSub07_1228 @ 0;
@@ -1620,7 +1620,7 @@ MainSub07_660:
     %F1 = %F1 + 3.883222f;
     wait(17);
 MainSub07_1228:
-    if $B-- goto MainSub07_660 @ 0;
+    if ($B--) goto MainSub07_660 @ 0;
     return;
 }
 
@@ -1737,7 +1737,7 @@ MainSub09_160:
     %A = _f(_S(%A) % 192);
     wait(10);
 MainSub09_708:
-    if $B-- goto MainSub09_160 @ 0;
+    if ($B--) goto MainSub09_160 @ 0;
     wait(70);
     return;
 }
@@ -1752,13 +1752,13 @@ MapleEnemy_120:
     anmPlayAbs(1, 103);
     wait(4);
 MapleEnemy_164:
-    if $A-- goto MapleEnemy_120 @ 0;
+    if ($A--) goto MapleEnemy_120 @ 0;
     goto MapleEnemy_276 @ 0;
 MapleEnemy_232:
     anmPlayAbs(1, 103);
     wait(5);
 MapleEnemy_276:
-    if 1 goto MapleEnemy_232 @ 0;
+    if (1) goto MapleEnemy_232 @ 0;
     delete();
 }
 
@@ -1785,7 +1785,7 @@ main_352:
 main_376:
     wait(1000);
 main_396:
-    if 1 goto main_376 @ 0;
+    if (1) goto main_376 @ 0;
 main_440:
     debug22(1, "MainMBossDebug");
     debug22(2, "MainBossDebug");
@@ -1795,9 +1795,9 @@ main_440:
     @LogoEnemy() async;
 +60: //60
     nop();
-    @MainFront();
-    @MainLatter();
-    enmKillAll();
+    // @MainFront();
+    // @MainLatter();
+    // enmKillAll();
     etClear(640.0f);
     setChapter(41);
     wait(160);
@@ -1807,6 +1807,6 @@ main_440:
 main_900:
     wait(1000);
 main_920:
-    if 1 goto main_900 @ 60;
+    if (1) goto main_900 @ 60;
     delete();
 }

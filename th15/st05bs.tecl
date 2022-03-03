@@ -44,7 +44,8 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss5");
-    Boss1();
+	lifeSet(2800);
+    BossCard1();
     delete();
 }
 
@@ -612,7 +613,7 @@ BossCard1_488:
     spell(58, 4000, 500000, "çñïÑÅuínçñÇÃêIÅv");
 !*
     movePosTime(60, 4, 0.0f, 122.0f);
-    moveLimit(0.0f, 192.0f, 240.0f, 128.0f);
+    moveLimit(0.0f, 128.0f, 240.0f, 128.0f);
     anm316(0, 0);
     anmPlay(1, 79);
     anmPlay(1, 75);
@@ -620,6 +621,13 @@ BossCard1_488:
 +90: //94
     nop();
     enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+!L
+	wait(110);
+	moveRand(60, 1, 3f);
+	wait(50);
+	enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+!*
+	wait(160);
 	while(1)
 	{
 		moveRand(60, 1, 3f);
@@ -630,7 +638,8 @@ BossCard1_488:
 
 void BossCard1_Moon()
 {
-   ins_569(-1);
+	float speed = 2.5f:3f:3.5f:3f;
+    ins_569(-1);
     anmSelect(3);
     anmSetSprite(0, 6);
     setHurtbox(108.0f, 108.0f);
@@ -643,7 +652,7 @@ void BossCard1_Moon()
     setInvuln(10000);
     playSound(52);
     moveVel(%ANGLE_PLAYER, 0.0f);
-    ins_445(60, 0, 3.0f);
+    ins_445(60, 0, speed);
     @BossTrase() async;
     %F0 = 64.0f;
     goto BossCard1_Moon_480 @ 0;
@@ -657,15 +666,23 @@ BossCard1_Moon_480:
 
 void BossCard1_at()
 {
+	int A = 6:8:9:10;
 	etNew(0);
 	etAim(0,8);
 	etSprite(0, (RAND % 4) + 25 ,0);
-	etCount(0, 5 , 5);
+	etCount(0, A, 5);
 	etSpeed(0, 2f, 4f);
-	etAngle(0, %ANGLE_PLAYER, rad(90));
+	etAngle(0, ABS_ANGLE, rad(180));
 	etCopy(1,0);
 	etSprite(1,  (RAND % 4) + 25 , 0);
+	etNew(2);
+	etAim(2, 2);
+	etSprite(2, 23, 4);
+	etCount(2, 40, 1);
+	etSpeed(2, 2f, 2f);
+	etAngle(2, 0f, 0f);
 	etOn(0);
+	etOn(2);
 	etOn(1);
 }
 
@@ -680,18 +697,21 @@ BossTrase_60:
     setScreenShake(20, 2, 0);
 	anmPlay(1, 197);
 	wait(40);
+	playSound(6);
     BossCard1_at();
-	 setScreenShake(20, 10, 0);
+	setScreenShake(20, 10, 0);
 	movePos(-300f, -100f);
 	wait(30);
 	Moon();
     ins_445(120, 0, 8.0f);
     wait(30);
+	goto end @ 0;
 BossTrase_680:
     wait(1);
 BossTrase_700:
     if (1) goto BossTrase_60 @ 0;
     return;
+end:
 }
 
 void Moon() {
