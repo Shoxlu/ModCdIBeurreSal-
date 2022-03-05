@@ -618,6 +618,7 @@ BossCard1_488:
     anmPlay(1, 79);
     anmPlay(1, 75);
     playSound(54);
+	flagSet(2);
 +90: //94
     nop();
     enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
@@ -666,7 +667,8 @@ BossCard1_Moon_480:
 
 void BossCard1_at()
 {
-	int A = 6:8:9:10;
+	int A = 6:8:9:9;
+	int B = 30:40:40:30;
 	etNew(0);
 	etAim(0,8);
 	etSprite(0, (RAND % 4) + 25 ,0);
@@ -678,9 +680,9 @@ void BossCard1_at()
 	etNew(2);
 	etAim(2, 2);
 	etSprite(2, 23, 4);
-	etCount(2, 40, 1);
+	etCount(2, B, 1);
 	etSpeed(2, 2f, 2f);
-	etAngle(2, 0f, 0f);
+	etAngle(2, 0f, 0f:0f:0f:rad(90));
 	etOn(0);
 	etOn(2);
 	etOn(1);
