@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss1");
-    @Boss1();
+    @BossCard1();
     delete();
 }
 
@@ -107,7 +107,7 @@ Boss1_320:
 !*
     wait([-1]);
 Boss1_888:
-    if 1 goto Boss1_320 @ 0;
+    if (1) goto Boss1_320 @ 0;
     return;
 }
 
@@ -161,7 +161,7 @@ Boss1_at_640:
 !*
     wait([-1]);
 Boss1_at_1172:
-    if $J-- goto Boss1_at_640 @ 0;
+    if ($J--) goto Boss1_at_640 @ 0;
     return;
 }
 
@@ -192,7 +192,7 @@ Boss1_at2_400:
     etOn(1);
     wait(160);
 Boss1_at2_468:
-    if $C-- goto Boss1_at2_400 @ 0;
+    if ($C--) goto Boss1_at2_400 @ 0;
     return;
 }
 
@@ -200,6 +200,7 @@ void Boss2()
 {
     setInvuln(120);
     lifeSet(13400);
+	anmSetSprite(5, -1);
     unless ($TIMEOUT == 0) goto Boss2_200 @ 0;
     etCancel(640.0f);
     goto Boss2_220 @ 0;
@@ -256,7 +257,7 @@ Boss2_1188:
     moveRand(60, 4, 1.0f);
     wait(60);
 Boss2_1436:
-    if 1 goto Boss2_1188 @ 4;
+    if (1) goto Boss2_1188 @ 4;
     return;
 }
 
@@ -309,7 +310,7 @@ Boss2_at_604:
 !*
     wait([-1]);
 Boss2_at_1136:
-    if $I-- goto Boss2_at_604 @ 0;
+    if ($I--) goto Boss2_at_604 @ 0;
     return;
 }
 
@@ -340,7 +341,7 @@ Boss2_at2_400:
     etOn(1);
     wait(160);
 Boss2_at2_468:
-    if $C-- goto Boss2_at2_400 @ 0;
+    if ($C--) goto Boss2_at2_400 @ 0;
     return;
 }
 
@@ -407,7 +408,7 @@ Boss3_1220:
     moveRand(60, 4, 1.0f);
     wait(60);
 Boss3_1468:
-    if 1 goto Boss3_1220 @ 4;
+    if (1) goto Boss3_1220 @ 4;
     return;
 }
 
@@ -460,7 +461,7 @@ Boss3_at_608:
 !*
     wait([-1]);
 Boss3_at_1140:
-    if $I-- goto Boss3_at_608 @ 0;
+    if ($I--) goto Boss3_at_608 @ 0;
     return;
 }
 
@@ -500,7 +501,7 @@ Boss3_at2_400:
 !*
     wait([-1]);
 Boss3_at2_548:
-    if $C-- goto Boss3_at2_400 @ 0;
+    if ($C--) goto Boss3_at2_400 @ 0;
     return;
 }
 
@@ -554,186 +555,91 @@ BossCard1_468:
     nop();
     anmPlay(1, 86);
     playSound(6);
-    $A = 1000;
-    goto BossCard1_1324 @ 94;
-BossCard1_1188:
-    anm316(0, 0);
-    @BossCard1_at(_f(1)) async;
-    wait(120);
-    moveRand(60, 4, 1.0f);
-    wait(80);
-BossCard1_1324:
-    if $A-- goto BossCard1_1188 @ 94;
-    goto BossCard1_1412 @ 94;
-BossCard1_1392:
-    wait(1000);
-BossCard1_1412:
-    if 1 goto BossCard1_1392 @ 94;
-    return;
+    anmSelect(4);
+	enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+	wait(10000);
+}
+void MasterSpark()
+{
+
+	int waitTime = 1;
+	int loop = 270;
+	int loopAnm = 0;
+	flagSet(3);
+	GF1 = ANGLE_PLAYER;
+	anmSelect(4);
+    anmSetSprite(0, 1);
+    anmSetSprite(1, 2);
+    anmSetSprite(2, 3);
+    anmSetSprite(3, 4);
+    anmSetSprite(4, 5);
+    anmSetSprite(5, 7);
+    anmSetSprite(6, 0);//vraie bomb
+    times(6)//technique Ninja bybass interrupt
+        {
+			anmMove(loopAnm, -10000f, -19999f);
+            loopAnm += 1; 
+        }
+        loopAnm = 0;
+	anmRotate(6, GF1);
+    MasterSparkHitbox() async;
+    wait(60);
+    setScreenShake(loop*waitTime, 2, 2);
+    times(loop)//rotation
+    {
+        anmRotate(6, GF1);
+        wait(waitTime);
+        GF1 = GF1 + rad(1)/(_f(loop)/35f);
+    }
+    times(6)//disparition masterSpark
+        {
+			anmSwitch(loopAnm, 1);
+            loopAnm += 1; 
+        }
+    wait(6000);
 }
 
-void BossCard1_at(var A)
+void MasterSparkHitbox()
 {
-    var B, C, D, E, F, G;
-    etNew(0);
-    etAim(0, 3);
-!E
-    2;
-!N
-    2;
-!H
-    4;
-!LO
-    4;
-!*
-    etSprite(0, 1, [-1]);
-!E
-    4;
-!N
-    4;
-!H
-    8;
-!LO
-    10;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, 1.5707964f, 0.034906585f);
-!E
-    2.5f;
-!N
-    3.0f;
-!H
-    3.0f;
-!LO
-    3.0f;
-!*
-    etSpeed(0, [-1.0f], 1.0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 2097152, 90, -999999, 2.0f, -999999.0f);
-    $B = 1;
-    %C = _f(0);
-    %D = _f(0);
-    %E = _f(0);
-    etAngle(0, %ANGLE_PLAYER, 0.034906585f);
-    etOffset(0, 0.0f, -8.0f);
-    etCopy(1, 0);
-!E
-    2;
-!N
-    2;
-!H
-    4;
-!LO
-    4;
-!*
-    etSprite(1, 2, [-1]);
-!E
-    1;
-!N
-    1;
-!H
-    1;
-!LO
-    1;
-!*
-    etCount(1, [-1], 1);
-    $F = 0;
-    diffI($G, 45, 90, 90, 90);
-    goto BossCard1_at_2164 @ 0;
-BossCard1_at_1076:
-    etAngle(0, %C, 1.0f);
-    etDist(0, %E);
-    %C = %C + %D;
-    %D = %D + 0.776644f;
-    %E = %E + 0.7f;
-    etOn(0);
-!E
-    2;
-!N
-    1;
-!H
-    1;
-!LO
-    1;
-!*
-    wait([-1]);
-    etAngle(1, %C, 1.0f);
-    etDist(1, %E / _f(2));
-    etExSet2(1, 1, 0, 16, 60, 1, 4, 0, 1.5707964f, 1.0f + (_f($F) * 0.5f), -999999.0f, -999999.0f);
-    %C = %C + %D;
-    %D = %D + 0.776644f;
-    %E = %E + 0.7f;
-    etOn(1);
-!E
-    2;
-!N
-    1;
-!H
-    1;
-!LO
-    1;
-!*
-    wait([-1]);
-    $F = 1 - $F;
-BossCard1_at_2164:
-    if $G-- goto BossCard1_at_1076 @ 0;
-    return;
+	float range;
+	range = 110f;
+	wait(60);
+	times(20)
+	{
+	enmCreate("MasterSparkHitboxBig", cos(GF1)*range, sin(GF1)*range, _S(range), 100, 1);
+	range = range + (448f-BOSS_X)/20f;
+	}
+	// flagSet(512+4096+4+8);
+	// anmSelect(2);
+	// anmSetMain(0, 0);
+	// setHitbox(420f, 240f);
+	// while(1)
+	// {
+		// hitboxRotate(GF1-rad(90));
+		// movePos(cos(GF1) * 450f, sin(GF1)*450f);
+		// wait(1);
+	// }
 }
 
-void BossCard1_at2()
+void MasterSparkHitboxBig()
 {
-    var A, B, C, D, E, F;
-    %C = 0.523599f;
-    $D = 1000;
-    goto BossCard1_at2_1292 @ 0;
-BossCard1_at2_140:
-    etNew($A);
-    etAim($A, 1);
-    etSprite($A, 18, 3);
-    etCount($A, 1, 1);
-    etAngle($A, 1.5707964f + (%RANDF2 * 0.17453292f), %C);
-!E
-    1.5f;
-!N
-    1.5f;
-!H
-    1.5f;
-!LO
-    2.1f;
-!*
-    etSpeed($A, [-1.0f], 1.0f);
-    etEx($A, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx($A, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx($A, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
-    etEx($A, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx2($A, 0, 16, 60, 1, 0, 0, %B, -999999.0f, -999999.0f, -999999.0f);
-    etEx($A, 0, 512, 20, 1, -999999.0f, -999999.0f);
-    $E = 1;
-    diffI($F, 6, 20, 8, 12);
-    goto BossCard1_at2_1152 @ 0;
-BossCard1_at2_848:
-    etCount($A, $E, 1);
-    unless ($E < 16) goto BossCard1_at2_1032 @ 0;
-    $E = $E + 1;
-BossCard1_at2_1032:
-    etOn($A);
-!E
-    6;
-!N
-    6;
-!H
-    6;
-!LO
-    4;
-!*
-    wait([-1]);
-BossCard1_at2_1152:
-    if $F-- goto BossCard1_at2_848 @ 0;
-    wait(130);
-    %C = %C - 0.034907f;
-BossCard1_at2_1292:
-    if $D-- goto BossCard1_at2_140 @ 0;
-    return;
+	flagSet(3);
+	float A = 0f;
+	setHitbox(A, A);
+	flagClear(2);
+	times(30)
+	{
+		A = A + (170f/30f);
+		setHitbox(A, A);
+		wait(1);
+	}
+	setHitbox(170f, 170f);
+	while(1)
+	{
+		movePos(cos(GF1) * _f(LIFE)+BOSS_X, sin(GF1)* _f(LIFE)+BOSS_Y);
+		wait(1);
+	}
+	wait(100000);
 }
 
 void BossCard2()
@@ -792,12 +698,12 @@ BossCard2_1108:
     moveRand(30, 4, 1.0f);
     wait(40);
 BossCard2_1312:
-    if $B-- goto BossCard2_1108 @ 94;
+    if ($B--) goto BossCard2_1108 @ 94;
     goto BossCard2_1400 @ 94;
 BossCard2_1380:
     wait(1000);
 BossCard2_1400:
-    if 1 goto BossCard2_1380 @ 94;
+    if (1) goto BossCard2_1380 @ 94;
     return;
 }
 
@@ -857,7 +763,7 @@ BossCard2_at_708:
 !*
     wait([-1]);
 BossCard2_at_1124:
-    if $C-- goto BossCard2_at_708 @ 0;
+    if ($C--) goto BossCard2_at_708 @ 0;
     wait(90);
     etNew(1);
     etAim(1, 0);
@@ -937,7 +843,7 @@ BossCard2_at2_504:
 !*
     wait([-1]);
 BossCard2_at2_652:
-    if $E-- goto BossCard2_at2_504 @ 0;
+    if ($E--) goto BossCard2_at2_504 @ 0;
     return;
 }
 
@@ -1014,12 +920,12 @@ BossCard3_1152:
     moveRand(30, 4, 1.0f);
     wait(40);
 BossCard3_1500:
-    if $B-- goto BossCard3_1152 @ 64;
+    if ($B--) goto BossCard3_1152 @ 64;
     goto BossCard3_1588 @ 124;
 BossCard3_1568:
     wait(1000);
 BossCard3_1588:
-    if 1 goto BossCard3_1568 @ 124;
+    if (1) goto BossCard3_1568 @ 124;
     return;
 }
 
@@ -1129,7 +1035,7 @@ BossCard3_at_1184:
     etOn(0);
     %A = %A + 0.698132f;
 BossCard3_at_2428:
-    if $D-- goto BossCard3_at_1184 @ 0;
+    if ($D--) goto BossCard3_at_1184 @ 0;
     return;
 }
 
@@ -1179,7 +1085,7 @@ BossCard3_at2_504:
 !*
     wait([-1]);
 BossCard3_at2_652:
-    if $E-- goto BossCard3_at2_504 @ 0;
+    if ($E--) goto BossCard3_at2_504 @ 0;
     return;
 }
 

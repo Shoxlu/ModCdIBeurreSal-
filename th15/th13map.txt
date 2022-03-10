@@ -89,7 +89,7 @@
 320 anmMove
 321 enmMapleEnemy
 322 enm322
-323 enm323
+323 deathAnm
 324 enm324
 325 anmColor
 326 anmColorTime
@@ -208,6 +208,7 @@
 560 unknown560
 561 die
 562 unknown562
+564 hitboxRotate
 
 600 etNew
 601 etOn
