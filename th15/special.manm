@@ -80,7 +80,7 @@ offset212:
     case(1);
     scaleTime(10, 4, 2.0f, 0.0f);
     alphaTime(10, 0, 0);
-+300: // 90
++10: // 90
     delete();
 }
 

@@ -564,38 +564,21 @@ void MasterSpark()
 
 	int waitTime = 1;
 	int loop = 270;
-	int loopAnm = 0;
 	flagSet(3);
 	GF1 = ANGLE_PLAYER;
 	anmSelect(4);
-    anmSetSprite(0, 1);
-    anmSetSprite(1, 2);
-    anmSetSprite(2, 3);
-    anmSetSprite(3, 4);
-    anmSetSprite(4, 5);
-    anmSetSprite(5, 7);
-    anmSetSprite(6, 0);//vraie bomb
-    times(6)//technique Ninja bybass interrupt
-        {
-			anmMove(loopAnm, -10000f, -19999f);
-            loopAnm += 1; 
-        }
-        loopAnm = 0;
-	anmRotate(6, GF1);
+    anmSetSprite(0, 0);//sprite MasterSpark
+	anmRotate(0, GF1);
     MasterSparkHitbox() async;
     wait(60);
     setScreenShake(loop*waitTime, 2, 2);
-    times(loop)//rotation
+    times(loop)//rotation MasterSpark
     {
-        anmRotate(6, GF1);
+        anmRotate(0, GF1);
         wait(waitTime);
         GF1 = GF1 + rad(1)/(_f(loop)/35f);
     }
-    times(6)//disparition masterSpark
-        {
-			anmSwitch(loopAnm, 1);
-            loopAnm += 1; 
-        }
+    anmSwitch(0, 1);//disparition MasterSpark
     wait(6000);
 }
 
