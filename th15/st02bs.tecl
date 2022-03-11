@@ -578,6 +578,7 @@ void MasterSpark()
         wait(waitTime);
         GF1 = GF1 + rad(1)/(_f(loop)/35f);
     }
+	GI0 = 1;
     anmSwitch(0, 1);//disparition MasterSpark
     wait(6000);
 }
@@ -607,6 +608,7 @@ void MasterSparkHitbox()
 void MasterSparkHitboxBig()
 {
 	flagSet(3);
+	GI0 = 0;
 	float A = 0f;
 	setHitbox(A, A);
 	flagClear(2);
@@ -617,12 +619,16 @@ void MasterSparkHitboxBig()
 		wait(1);
 	}
 	setHitbox(170f, 170f);
-	while(1)
+	while(GI0 == 0)
 	{
 		movePos(cos(GF1) * _f(LIFE)+BOSS_X, sin(GF1)* _f(LIFE)+BOSS_Y);
 		wait(1);
 	}
-	wait(100000);
+	wait(10);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	flagSet(3);
+	wait(110000);
 }
 
 void BossCard2()
