@@ -624,11 +624,13 @@ void MasterSparkHitboxBig()
 		movePos(cos(GF1) * _f(LIFE)+BOSS_X, sin(GF1)* _f(LIFE)+BOSS_Y);
 		wait(1);
 	}
-	wait(10);
-	anmSelect(2);
-	anmSetMain(0, 0);
+	times(10)
+	{
+		A = A - (170f/10f);
+		setHitbox(A, A);
+		wait(1);
+	}
 	flagSet(3);
-	wait(110000);
 }
 
 void BossCard2()
