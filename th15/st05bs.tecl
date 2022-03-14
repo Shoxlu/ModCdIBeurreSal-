@@ -605,12 +605,10 @@ BossCard1_488:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 4000, "Boss2");
-!EN
-    spell(58, 4000, 500000, "獄符「ヘルエクリプス」");
-!H
-    spell(58, 4000, 500000, "獄符「地獄の蝕」");
+!ENH
+    spell(58, 4000, 500000, "Douleur : Brulure Lunaire");
 !L
-    spell(58, 4000, 500000, "獄符「地獄の蝕」");
+    spell(58, 4000, 500000, "Desespoir : Duplicite de la Fille Lunatique");
 !*
     movePosTime(60, 4, 0.0f, 122.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 128.0f);
