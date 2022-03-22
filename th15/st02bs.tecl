@@ -557,6 +557,7 @@ BossCard1_468:
     anmPlay(1, 86);
     playSound(6);
     anmSelect(4);
+	BossCard1_at() async;
 	while(1)
 	{
 		F0 = 0f;
@@ -571,8 +572,27 @@ BossCard1_468:
 		F0 = rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		wait(400);
+!L
+		movePosTime(90, 4, 0f, 128f);
+		wait(90);
+		F0 = rad(30)+rad(180);
+		I0 = 1;
+		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+		I0 = -1;
+		F0 = rad(-30)+rad(180);
+		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+		wait(400);
+		movePosTime(90, 4, 0f, 224f);
+		wait(90);
+!*
 	}
 }
+
+void BossCard1_at()
+{
+	
+}
+
 void MasterSpark()
 {
 
