@@ -840,9 +840,9 @@ script script15 {
     colorTime(30, 0, 255, 255, 255);
     posTime(30, 0, 56.0f, -16.0f, 0.0f);
 +30: // 30
-    posTime(90, 0, 24.0f, 0.0f, 0.0f);
+    posTime(90, 0, 24.0f, 20.0f, 0.0f);
 +90: // 120
-    posTime(30, 0, -420.0f, 160.0f, 0.0f);
+    posTime(30, 0, -420.0f, 180.0f, 0.0f);
     colorTime(30, 0, 0, 0, 0);
 +30: // 150
     delete();

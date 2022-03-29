@@ -1,8 +1,7 @@
 {
     "58": "Douleur ”Brûlure Lunaire”",
-    "60": "Douleur ”Brûlure Lunaire”",
-    "62": "Douleur ”Brûlure Lunaire”",
-    "64": "Désespoir ”Duplicité de la Fille Lunatique”",
+    "60": "Désespoir ”Duplicité de la Fille Lunatique”",
+    "62": "Feux de l'Enfer : « Frôlement infernal »",
     "66": "Feux de l'Enfer : « Frôlement infernal »",
     "69": "Feux de l'Enfer : « Secrets infernaux du frôlement »",
     "70": "Enfer : « Abysses rayées »",

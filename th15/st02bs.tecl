@@ -557,7 +557,6 @@ BossCard1_468:
     anmPlay(1, 86);
     playSound(6);
     anmSelect(4);
-	BossCard1_at() async;
 	while(1)
 	{
 		F0 = 0f;
@@ -565,12 +564,14 @@ BossCard1_468:
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		F0 = rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+		BossCard1_at() async;
 		wait(400);
 		F0 = 0f;
 		I0 = -1;
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		F0 = rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+		BossCard1_at() async;
 		wait(400);
 !L
 		movePosTime(90, 4, 0f, 128f);
@@ -581,6 +582,7 @@ BossCard1_468:
 		I0 = -1;
 		F0 = rad(-30)+rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+		BossCard1_at() async;
 		wait(400);
 		movePosTime(90, 4, 0f, 224f);
 		wait(90);
@@ -590,7 +592,24 @@ BossCard1_468:
 
 void BossCard1_at()
 {
-	
+	float A = RANDRAD;
+	etNew(1);
+	etAim(1, 3);
+	etSprite(1, 23, 1 + RAND % 6);
+	etCount(1, 4, 1);
+	etAngle(1, A, 0f);
+	etSpeed(1, 1f, 1f);
+	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(1, 1, 0, EX_ACCEL, 60, NEG, -1f/60f, NEGF);
+	etExSet(1, 2, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
+	etExSet(1, 3, 0, EX_ACCEL, 120, 0, 2f/120f, NEGF);
+	times(10){
+		etOn(1);
+		wait(10);
+		A = A + rad(10);
+		etAngle(1, A, 0f);
+		etSprite(1, 23, 1 + RAND % 6);
+	}
 }
 
 void MasterSpark()

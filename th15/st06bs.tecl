@@ -44,7 +44,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss5();
+    @Boss7();
     delete();
 }
 
@@ -1459,6 +1459,7 @@ BossCard7_468:
 +90: //94
     nop();
     $A = 120;
+	@Bowap() async;
     @BossCard7_at(5, 2) async;
     goto BossCard7_1344 @ 94;
 BossCard7_1324:
@@ -1498,6 +1499,27 @@ BossCard7_2548:
 BossCard7_2568:
     if (1) goto BossCard7_2548 @ 94;
     return;
+}
+
+void Bowap()
+{
+	float A = rad(-10);
+	float B = rad(0);
+	etNew(9);
+	etAim(9, 3);
+	etAngle(9, A, 0f);
+	etCount(9, 8, 1);
+	etSpeed(9, 2f, 2f);
+	etSprite(9, 8, 8);
+//	etExSet(0, 0, 0, EX_BOUNCE, 1, 13, NEGF, NEGF);
+	while(1)
+	{
+		etOn(9);
+		A += B;
+		B -= rad(0.2);
+		etAngle(9, A, 0f);
+		wait(3);
+	}
 }
 
 void BossCard7_at(var A, var B)
