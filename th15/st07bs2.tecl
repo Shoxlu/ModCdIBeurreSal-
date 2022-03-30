@@ -39,7 +39,7 @@ void BossB()
 BossB_804:
     wait(1000);
 BossB_824:
-    if 1 goto BossB_804 @ 5;
+    if (1) goto BossB_804 @ 5;
     delete();
 }
 
@@ -55,7 +55,7 @@ void BossB1()
 BossB1_184:
     wait(1000);
 BossB1_204:
-    if 1 goto BossB1_184 @ 0;
+    if (1) goto BossB1_184 @ 0;
     return;
 }
 
@@ -77,7 +77,7 @@ void BossB10()
 BossB10_352:
     wait(1000);
 BossB10_372:
-    if 1 goto BossB10_352 @ 0;
+    if (1) goto BossB10_352 @ 0;
     return;
 }
 
@@ -101,7 +101,7 @@ void BossB4()
 BossB4_364:
     wait(1000);
 BossB4_384:
-    if 1 goto BossB4_364 @ 0;
+    if (1) goto BossB4_364 @ 0;
     return;
 }
 
@@ -124,7 +124,7 @@ void BossB5()
 BossB5_340:
     wait(1000);
 BossB5_360:
-    if 1 goto BossB5_340 @ 0;
+    if (1) goto BossB5_340 @ 0;
     return;
 }
 
@@ -147,7 +147,7 @@ void BossCardB10()
 BossCardB10_396:
     wait(1000);
 BossCardB10_416:
-    if 1 goto BossCardB10_396 @ 0;
+    if (1) goto BossCardB10_396 @ 0;
     return;
 }
 
@@ -178,9 +178,9 @@ BossCardB10_at_568:
 BossCardB10_at_780:
     wait(1);
 BossCardB10_at_800:
-    if $B-- goto BossCardB10_at_568 @ 0;
+    if ($B--) goto BossCardB10_at_568 @ 0;
 BossCardB10_at_844:
-    if $A-- goto BossCardB10_at_100 @ 0;
+    if ($A--) goto BossCardB10_at_100 @ 0;
 BossCardB10_at_888:
     return;
 }
@@ -212,9 +212,9 @@ BossCardB10_at2_568:
 BossCardB10_at2_780:
     wait(1);
 BossCardB10_at2_800:
-    if $B-- goto BossCardB10_at2_568 @ 0;
+    if ($B--) goto BossCardB10_at2_568 @ 0;
 BossCardB10_at2_844:
-    if $A-- goto BossCardB10_at2_100 @ 0;
+    if ($A--) goto BossCardB10_at2_100 @ 0;
 BossCardB10_at2_888:
     return;
 }
@@ -243,9 +243,9 @@ BossCardB10_at3_100:
 BossCardB10_at3_568:
     wait(1);
 BossCardB10_at3_588:
-    if $B-- goto BossCardB10_at3_568 @ 0;
+    if ($B--) goto BossCardB10_at3_568 @ 0;
 BossCardB10_at3_632:
-    if $A-- goto BossCardB10_at3_100 @ 0;
+    if ($A--) goto BossCardB10_at3_100 @ 0;
     return;
 }
 

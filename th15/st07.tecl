@@ -1485,11 +1485,11 @@ main_440:
     // ins_571();
     // setChapter(5);
     // ins_902();
-    // dialogRead(2);
-    // wait(2);
-    // dialogWait();
-    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    // wait(2000);
+    dialogRead(2);
+    wait(2);
+    dialogWait();
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    wait(2000);
     // bossWait();
     // wait(160);
     // setChapter(6);
@@ -1500,7 +1500,7 @@ main_440:
     // ins_571();
     // setChapter(41);
     // wait(160);
-    //dialogRead(0);
+    dialogRead(0);
     @MainBoss();
     goto main_1252 @ 60;
 main_1232:
