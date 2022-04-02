@@ -464,7 +464,7 @@ Boss3_pos_104:
 
 void Boss4()
 {
-    lifeSet(20700);
+    lifeSet(12700);
     unless ($TIMEOUT == 0) goto Boss4_180 @ 0;
     etCancel(640.0f);
     goto Boss4_200 @ 0;

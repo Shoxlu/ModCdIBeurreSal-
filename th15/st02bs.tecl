@@ -63,11 +63,12 @@ void Boss1()
     anmPlay(1, 86);
     playSound(6);
     Boss1_at();
-	// while(1)
-	// {
-		// moveRand(90, 0, 2f);
-		// wait(180);
-	// }
+	wait(100);
+	while(1)
+	{
+		moveRand(90, 0, 2f);
+		wait(250);
+	}
 	wait(10000);
     return;
 }
@@ -111,7 +112,7 @@ void Spawn()
 		mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
 		etAngle(0, %A, rad(0));
 		etOn(0);
-		wait(6);
+		wait(10);
 	}
 	wait(1000000);
 }
@@ -492,8 +493,10 @@ BossCard1_468:
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		F0 = rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
-		BossCard1_at(1f) async;
 		BossCard1_at(-1f) async;
+!HL
+		BossCard1_at(1f) async;
+!*
 		wait(400);
 		F0 = 0f;
 		I0 = -1;
@@ -501,7 +504,9 @@ BossCard1_468:
 		F0 = rad(180);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		BossCard1_at(1f) async;
+!HL
 		BossCard1_at(-1f) async;
+!*
 		wait(400);
 !HL
 		movePosTime(90, 4, 0f, 128f);
@@ -541,12 +546,12 @@ void BossCard1_at(float C)
 	times(4:6:7:11){
 		etOn(1);
 		wait(10:10:9:8);
-		A = A + (rad(10):rad(10):rad(15):rad(13)) * C;
+		A = A + (rad(13):rad(13):rad(15):rad(13)) * C;
 		etAngle(1, A, 0f);
 		etSprite(1, 23, B);
 		etOn(1);
 		wait(10:10:9:8);
-		A = A + (rad(10):rad(10):rad(15):rad(13)) * C;
+		A = A + (rad(13):rad(13):rad(15):rad(13)) * C;
 		etAngle(1, A, 0f);
 		etSprite(1, 23, B - 1);
 	}
@@ -633,7 +638,7 @@ void MasterSparkWallShot()
 	int Interrupt = 1;
 	int InterruptFinal = 30:29:27:25;
 	int B = 30:30:27:27;
-	float C = 14f:12f:12f:11f;
+	float C = 16f:14f:12f:11f;
 	flagSet(3);
 	etNew(0);
 	etAim(0, 3);
@@ -679,6 +684,7 @@ Interrupt:
 void MasterSparkHitboxBig()
 {
 	flagSet(3);
+	flagSet(512);
 	GI0 = 0;
 	GI1 = 1;
 	float A = 0f;

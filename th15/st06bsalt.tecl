@@ -45,7 +45,7 @@ Boss_996:
     @BossCardAlt2();
 Boss_1200:
     debug22(3, "Boss7");
-	lifeSet(200);
+	lifeSet(12800);
     @BossAlt1();
     delete();
 }
@@ -1598,7 +1598,7 @@ BossCard5_448:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    setNext(0, 0, 3600, "BossAlt6");
+    setNext(0, 0, 3600, "BossAlt2");
 !EN
     spell(78, 3600, 500000, "ÅuèÉêàÇ»ÇÈã∂ãCÅv");
 !H
