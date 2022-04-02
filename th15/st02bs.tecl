@@ -51,6 +51,7 @@ Boss_1200:
 void Boss1()
 {
     timerReset();
+	lifeSet(12800);
     setNext(0, 2200, 2400, "BossCard1");
     lifeMarker(0, 2200.0f, -24448);
     stars(2);
@@ -62,22 +63,67 @@ void Boss1()
     anmPlay(1, 86);
     playSound(6);
     Boss1_at();
+	// while(1)
+	// {
+		// moveRand(90, 0, 2f);
+		// wait(180);
+	// }
+	wait(10000);
     return;
 }
 
 void Boss1_at()
 {
-	float A = 0f;
-	times(4:6:8:10)
+	F0 = rad(90);
+	int B = 2:3:4:5;
+	I0 = 1;
+	times(B)
 	{
-		enmCreate("Spawn", cos(%A)*50f, sin(%A)*50f, 100000, 10, 1);
+		enmCreateA("Spawn", cos(F0)*70f, sin(F0)*70f, 70, 10, 1);
+		F0 = F0 + rad(360)/_f(B);
+	}
+	F0 = rad(270);
+	I0 = -1;
+	times(B)
+	{
+		enmCreateA("Spawn", cos(F0)*100f, sin(F0)*100f, 100, 10, 1);
+		F0 = F0 + rad(360)/_f(B);
 	}
 }
 void Spawn()
 {
+	var A;
+	flagSet(15);
 	anmSelect(2);
-	anmSetMain(0, 0);
-	wait(1000);
+	anmSetSprite(0, 50);
+	bossTrace1() async;
+	etNew(0);
+	etAim(0, 1);
+	etCount(0, 1, 1);
+	etSprite(0, 23, 1 + RAND % 6);
+	mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
+	etAngle(0, %A, rad(0));
+	etSpeed(0, 1f, 1f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	wait(30);
+	while(1)
+	{
+		mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
+		etAngle(0, %A, rad(0));
+		etOn(0);
+		wait(6);
+	}
+	wait(1000000);
+}
+void bossTrace1()
+{
+	while(1)
+	{
+		//movePosRel(BOSS_X, BOSS_Y);
+		movePos(BOSS_X + cos(F0)*_f(LIFE),  BOSS_Y + sin(F0)*_f(LIFE));
+		F0 = F0 + rad(1)*_f(I0);
+		wait(1);
+	}
 }
 void Boss2()
 {
