@@ -152,8 +152,18 @@ script script1 {
     speakerBoss(0);
     bubblePos(386.0, 270.0);
 +30: // 34
-    skippable(1);
+	bossFace(8, 0);
+    speakerBoss(0);
     bubblePos(386.0, 270.0);
+    textAdd("勘弁してください－");
+    textAdd("教えたら殺されるわー！");
++4: // 46
+    textPause(600);
++4: // 50
+	playerFace(6);
+    speakerPlayer();
+    skippable(1);
+    bubblePos(112.0, 270.0);
     bubbleType(3);
     textAdd("ぐうう");
     textAdd("だから現地部隊は嫌だったのにー");
@@ -161,11 +171,11 @@ script script1 {
     textPause(600);
     bubbleType(0);
 +4: // 42
-    playerFace(7);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    textAdd("あんた、もしかして");
-    textAdd("月の兎じゃないの？");
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 270.0);
+    textAdd("勘弁してください－");
+    textAdd("教えたら殺されるわー！");
 +4: // 46
     textPause(600);
 +4: // 50
@@ -177,19 +187,19 @@ script script1 {
 +4: // 54
     textPause(600);
 +4: // 58
-    playerFace(3);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    textAdd("あんたらの拠点を教えなさい！");
-    textAdd("さもないと……");
-+4: // 62
-    textPause(600);
-+4: // 66
     bossFace(8, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("地上を浄化するって……");
+    textAdd("もの凄く嫌な予感がする");
 +4: // 70
     textPause(600);
 +4: // 74
@@ -199,7 +209,15 @@ script script1 {
     playerFace(4);
     textAdd("山の湖に前線基地があるなんて");
     textAdd("教えたら殺されるわー！");
-+4: // 78
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("地上を浄化するって……");
+    textAdd("もの凄く嫌な予感がする");
++4:
     textPause(600);
     playerHide();
     bossHide(0);
