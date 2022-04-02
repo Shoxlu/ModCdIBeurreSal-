@@ -78,40 +78,69 @@
             ]
         }
     },
+// S: Argh… Quelle force tu as.
+// R: C’est plutôt toi qui n’en a aucune. Mais je dois bien admettre que pour une débutante, tu ne t’es pas trop mal débrouillée
+// S: Faire des spell-cards, au fond, ça n’est pas si difficile si on sait correctement programmer les danmakus c’est vraiment un jeu d’enfant.
+// R: Programmer les danmakus ? C’est quel genre de charabia ça ?
+// S: Oh non j’ai recommencé…
+// R: Recommencé quoi ?
+// S: J’ai encore brisé le 4ème mur…
+// R: Gensokyo a accueilli plein de gens dérangés, mais toi, tu tiens vraiment une palme d’or... 	
     "1": {
         "34_0": {
             "lines": [
-                "Gnn...",
-                "Voilà pourquoi je ne voulais pas être affectée ici."
+                "Argh… Quelle force tu as."
             ]
         },
         "42_0": {
             "lines": [
-                "Toi, ne serais-tu pas un lapin lunaire, par hasard ?"
+                "C'est plutôt toi qui n'en a aucune."
             ]
         },
         "50_0": {
             "lines": [
-                "Purifier la surface de la Terre, donc...",
-                "J'ai un très mauvais pressentiment."
+                "Mais je dois bien admettre, que pour une débutante,",
+				"tu ne t'es pas trop mal débrouillée"
             ]
         },
         "58_0": {
             "lines": [
-                "Dis-moi où est votre base !",
-                "Si tu ne le fais pas..."
+                "Faire des spell-cards, au fond,",
+				"ça n’est pas si difficile."
+				
             ]
         },
         "66_0": {
             "lines": [
-                "Sois indulgente s'il te plaît !",
-                "Si je te le dis je vais me faire tuer !"
+                "Si on sait correctement programmer les danmakus,",
+				"c'est vraiment un jeu d'enfant."
             ]
         },
         "74_0": {
             "lines": [
-                "Si je te dis que notre base avancée ",
-                "se trouve au lac de la montagne, je vais me faire tuer !"
+                "Programmer les danmakus ?",
+				"C'est quel genre de charabia ça ?"
+            ]
+        },
+        "82_0": {
+            "lines": [
+				"Oh non j'ai recommencé…"
+            ]
+        },
+        "90_0": {
+            "lines": [
+                "J'ai encore brisé le 4ème mur…"
+            ]
+        },
+        "98_0": {
+            "lines": [
+                "Gensokyo a accueilli plein de gens dérangés,",
+				"mais toi..."
+            ]
+        },
+        "106_0": {
+            "lines": [
+				"Tu tiens vraiment une palme d’or... "
             ]
         }
     },
