@@ -1306,6 +1306,10 @@ main_440:
     @LogoEnemy() async;
 +60: //60
     nop();
+	dialogRead(5);
+	dialogWait();
+	dialogRead(6);
+	dialogWait();
     // @MainFront();
     // enmKillAll();
     // etClear(640.0f);

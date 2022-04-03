@@ -265,7 +265,7 @@ offset36:
 }
 
 
-entry entry1 {
+entry entry1 { //boss face 0
     version: 8,
     name: "face/enemy1/face01no.png",
     format: 1,
@@ -285,7 +285,7 @@ entry entry1 {
 }
 
 
-entry entry2 {
+entry entry2 { //boss face 1
     version: 8,
     name: "face/enemy1/face01n2.png",
     format: 1,
@@ -305,7 +305,7 @@ entry entry2 {
 }
 
 
-entry entry3 {
+entry entry3 { //boss face 2 "désespérée"
     version: 8,
     name: "face/dummy.png",
     format: 7,
@@ -325,7 +325,7 @@ entry entry3 {
 }
 
 
-entry entry4 {
+entry entry4 {  //boss face 3
     version: 8,
     name: "face/enemy1/face01an.png",
     format: 1,
@@ -345,7 +345,7 @@ entry entry4 {
 }
 
 
-entry entry5 {
+entry entry5 { //boss face 4 "gênée"
     version: 8,
     name: "face/dummy.png",
     format: 7,
@@ -365,7 +365,7 @@ entry entry5 {
 }
 
 
-entry entry6 {
+entry entry6 {//boss face 5
     version: 8,
     name: "face/dummy.png",
     format: 7,
@@ -385,7 +385,7 @@ entry entry6 {
 }
 
 
-entry entry7 {
+entry entry7 { //boss face 6
     version: 8,
     name: "face/dummy.png",
     format: 7,
@@ -405,7 +405,7 @@ entry entry7 {
 }
 
 
-entry entry8 {
+entry entry8 { //boss face 7
     version: 8,
     name: "face/enemy1/face01sp.png",
     format: 1,
@@ -425,7 +425,7 @@ entry entry8 {
 }
 
 
-entry entry9 {////METTRE LE SPRITE DE LOSE !!!
+entry entry9 {
     version: 8,
     name: "face/enemy1/face01lo.png",
     format: 1,

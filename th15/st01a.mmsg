@@ -20,6 +20,7 @@ script script0 {
     speakerBoss(0);
     bubbleType(0);
     bubblePos(386.0, 270.0);
+	bossFace(1, 0);
     textAdd("何これ");
 +4: // 38
     textPause(600);
@@ -31,6 +32,7 @@ script script0 {
     eclResume();
 +90: // 132
     skippable(0);
+	bossFace(0, 0);
     speakerBoss(0);
     intro(0);
     textAdd("邪魔しなくても");
@@ -40,7 +42,7 @@ script script0 {
     textPause(600);
 +4: // 140
     skippable(1);
-    bossFace(3, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     textAdd("『こちら清蘭");
@@ -69,7 +71,7 @@ script script0 {
 +4: // 190
     textPause(600);
 +4: // 194
-    bossFace(0, 0);
+    bossFace(2, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     textAdd("残念だったな");
@@ -77,7 +79,7 @@ script script0 {
 +4: // 198
     textPause(600);
 +4: // 202
-    bossFace(0, 0);
+    bossFace(4, 0);
     bubbleType(2);
     bubblePos(386.0, 270.0);
     textAdd("Attends,");
@@ -85,7 +87,7 @@ script script0 {
 +4: // 206
     textPause(600);
 +4: // 210
-    playerFace(4);
+    playerFace(3);
     speakerPlayer();
     bubbleType(0);
     bubblePos(112.0, 280.0);
@@ -94,6 +96,7 @@ script script0 {
 +4: // 214
     textPause(600);
 +4: // 218
+	playerFace(6);
     bubblePos(112.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
@@ -108,7 +111,7 @@ script script0 {
 +4: // 230
     textPause(600);
 +4: // 234
-    bossFace(0, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     textAdd("残念だったな");
@@ -116,7 +119,7 @@ script script0 {
 +4: // 238
     textPause(600);
 +4: // 242
-    bossFace(0, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     textAdd("残念だったな");
@@ -124,7 +127,7 @@ script script0 {
 +4: // 246
     textPause(600);
 +4: // 250
-    bossFace(1, 0);
+    bossFace(3, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
     bubbleType(1);
@@ -165,7 +168,6 @@ script script1 {
     speakerPlayer();
     skippable(1);
     bubblePos(112.0, 270.0);
-    bubbleType(3);
     textAdd("ぐうう");
     textAdd("だから現地部隊は嫌だったのにー");
 +4: // 38
@@ -176,7 +178,6 @@ script script1 {
     speakerPlayer();
     skippable(1);
     bubblePos(112.0, 270.0);
-    bubbleType(3);
     textAdd("ぐうう");
     textAdd("だから現地部隊は嫌だったのにー");
 +4: // 38
@@ -349,28 +350,34 @@ script script5 {
     bubblePos(386.0, 270.0);
 +30: // 34
     skippable(0);
+	bossFace(1, 0);
     bubblePos(386.0, 270.0);
     bubbleType(0);
     textAdd("Salut ! Bienvenue dans ce nouveau mod !");
 +30: // 64
-    textPause(150);
+	textPause(60);
+	bossFace(2, 0);
     textAdd("J'espere que tu ne vas pas");
     textAdd("passer mes dialogues...");
 +30: // 94
-    skippable(1);
-    textPause(150);
+	textPause(60);
+    skippable(0);
+	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 124
-    textPause(150);
+	textPause(60);
+	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 154
-    textPause(150);
+	textPause(60);
+	bossFace(4, 0);
     textAdd("Cela pourrait s'averer utile...");
-+30: // 184
-    textPause(150);
++30:
+	textPause(60);
+	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 214
-    textPause(150);
+    textPause(60);
     playerHide();
     bossHide(0);
     textboxHide();
@@ -385,7 +392,7 @@ script script6 {
     bossShow(0);
     bossFace(0, 0);
 +4: // 4
-    bossFace(0, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(386.0, 270.0);
 +30: // 34
