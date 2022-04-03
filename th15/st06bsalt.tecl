@@ -53,7 +53,7 @@ Boss_1200:
 void BossAlt1()
 {
     timerReset();
-    setNext(0, 6000, 2400, "BossCardAlt1");
+    setNext(0, 3000, 2400, "BossCardAlt1");
     lifeMarker(0, 4000.0f, -24448);
     stars(6);
     moveLimit(0.0f, 128.0f, 280.0f, 8.0f);
@@ -171,9 +171,9 @@ Boss2_552:
     playSound(6);
 Boss2_1168:
 	BossAlt2_at(0, 1f, 0f, 8, 32, 1) async;
-    BossAlt2_at(1, -1f, rad(180), 8, 32, 1) async; 
+    BossAlt2_at(1, -1f, rad(90), 8, 32, 1) async; 
 	BossAlt2_at(5, 1f, 0f, 8, 33, 4) async;
-    BossAlt2_at(6, -1f, rad(180), 8, 33, 4) async;
+    BossAlt2_at(6, -1f, rad(90), 8, 33, 4) async;
 !L
     BossAlt2_2() async;
 !*	
@@ -197,7 +197,7 @@ void BossAlt2_at(int etID,float B, float A, int color, int sprite, int color2)
     etExSet(etID, 1, 0, EX_SETSPRITE, sprite, color2, NEGF, NEGF);
     while(1){
     etOn(etID);
-    A = A +(rad(10f)*B);
+    A = A +(rad(12.5f)*B);
     etAngle(etID, A, 0f);
     wait(10);
     }

@@ -19,14 +19,14 @@ script script0 {
     skippable(0);
     speakerBoss(0);
     bubbleType(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 	bossFace(1, 0);
     textAdd("何これ");
 +4: // 38
     textPause(600);
 	textClear();
 +4: // 42
-	bubblePos(386.0, 270.0);
+	bubblePos(386.0, 280.0);
     skippable(0);
     speakerNone();
     eclResume();
@@ -44,7 +44,7 @@ script script0 {
     skippable(1);
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("『こちら清蘭");
     textAdd("　好戦的な地上人と接触した』");
 +8: // 148
@@ -52,7 +52,7 @@ script script0 {
 +22: // 170
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("『これから浄化活動に入る』");
 +4: // 174
     textPause(600);
@@ -73,7 +73,7 @@ script script0 {
 +4: // 194
     bossFace(2, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 198
@@ -81,7 +81,7 @@ script script0 {
 +4: // 202
     bossFace(4, 0);
     bubbleType(2);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("Attends,");
     textAdd("Elle fouette des chats ?!");
 +4: // 206
@@ -105,7 +105,7 @@ script script0 {
 +4: // 226
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 230
@@ -113,7 +113,7 @@ script script0 {
 +4: // 234
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 238
@@ -121,7 +121,7 @@ script script0 {
 +4: // 242
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 246
@@ -129,7 +129,7 @@ script script0 {
 +4: // 250
     bossFace(3, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(1);
     musicBoss();
     textAdd("もうすぐ地上は");

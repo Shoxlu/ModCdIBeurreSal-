@@ -1,87 +1,145 @@
-#pragma mapfile "map/any.msgm"
-
+#pragma mapfile "map\\any.msgm"
 meta {
     table: {
         0: {script: "script0", flags: 256},
         1: {script: "script1", flags: 256},
-		3: {script: "script2", flags: 256},
-        4: {script: "script3", flags: 256},
-        5: {script: "script4", flags: 256},
+        2: {script: "script2", flags: 256},
+        3: {script: "script3", flags: 256},
+        4: {script: "script4", flags: 256},
+        5: {script: "script5", flags: 256},
+        6: {script: "script6", flags: 256},
     },
 }
 
 
 script script0 {
+    bossShow(0);
++34: // 34
     skippable(0);
-    playerShow(0);
-+4: // 4
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-+30: // 34
-    skippable(1);
+    speakerBoss(0);
     bubbleType(0);
-    bubblePos(110.0, 280.0);
-    textAdd("ついにこの時が来たのね");
+    bubblePos(386.0, 280.0);
+	bossFace(1, 0);
+    textAdd("何これ");
 +4: // 38
     textPause(600);
+	textClear();
 +4: // 42
+	bubblePos(386.0, 280.0);
     skippable(0);
-    speakerBoss(0);
-    bubblePos(224.0, 144.0);
+    speakerNone();
     eclResume();
-    textClear();
-+60: // 102
++90: // 132
     skippable(0);
-    textAdd("あらあら");
-+30: // 132
-    skippable(1);
-+4: // 136
-    textPause(600);
-    bossShow(0);
-+4: // 140
-    bossFace(0, 0);
+	bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
     intro(0);
-+4: // 144
-    bossFace(7, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("お久しぶりー！");
-    textAdd("元気してたー？");
-+4: // 148
+    textAdd("邪魔しなくても");
+    textAdd("撃つぞ！");
++4: // 136
+    playerShow(0);
     textPause(600);
-+4: // 152
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("随分と派手に攻撃されたけどね");
-+4: // 156
-    textPause(600);
-+4: // 160
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("まあこれも仕事なの");
-    textAdd("判るでしょ？");
-+4: // 164
-    textPause(600);
-    musicBoss();
-+4: // 168
++4: // 140
+    skippable(1);
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
+    bubblePos(386.0, 280.0);
+    textAdd("『こちら清蘭");
+    textAdd("　好戦的な地上人と接触した』");
++8: // 148
+    textPause(600);
++22: // 170
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
+    textAdd("『これから浄化活動に入る』");
++4: // 174
+    textPause(600);
++4: // 178
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 280.0);
+    textAdd("独り言？");
+    textAdd("気持ち悪");
++4: // 182
+    textPause(600);
++4: // 186
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 190
+    textPause(600);
++4: // 194
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 198
+    textPause(600);
++4: // 202
+    bossFace(4, 0);
+    bubbleType(2);
+    bubblePos(386.0, 280.0);
+    textAdd("Attends,");
+    textAdd("Elle fouette des chats ?!");
++4: // 206
+    textPause(600);
++4: // 210
+    playerFace(3);
+    speakerPlayer();
+    bubbleType(0);
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 214
+    textPause(600);
++4: // 218
+	playerFace(6);
+    bubblePos(112.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 222
+    textPause(600);
++4: // 226
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 230
+    textPause(600);
++4: // 234
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 238
+    textPause(600);
++4: // 242
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
+    textAdd("残念だったな");
+    textAdd("穢れ多き地上人よ");
++4: // 246
+    textPause(600);
++4: // 250
+    bossFace(3, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
     bubbleType(1);
-    textAdd("だからここで大人しく");
-    textAdd("やられて、ね？");
-+4: // 172
+    musicBoss();
+    textAdd("もうすぐ地上は");
+    textAdd("浄化されるのだ！");
++4: // 254
     textPause(600);
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 202
++30: // 284
     end();
 }
 
@@ -156,93 +214,161 @@ script script1 {
 }
 
 script script2 {
-	skippable(0);
+    skippable(0);
     bossShow(0);
     bossFace(8, 0);
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
 +30: // 34
     skippable(1);
-    bubblePos(356.0, 280.0);
-    bubbleType(0); //bulle normale
-    bubbleType(1); //bulle énervée
-    bubbleType(2); //bulle thinking
-	bubbleType(3); //bulle vague ("tremblements");
-    bubbleType(4); //bulle agrandie 
-    bubbleType(5); //bulle énervée agrandie
-    bubbleType(6); //bulle think agrandie
-    bubbleType(7); //bulle vague agrandie
+    bubblePos(386.0, 280.0);
+    bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38
-    textPause(600);
-	playerHide();
+    textPause(300);
+    bubblePos(386.0, 280.0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(300);
+    playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 206
++30: // 72
     end();
 }
 
 
 script script3 {
-	skippable(0);
+    skippable(0);
     bossShow(0);
     bossFace(8, 0);
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(1);
-    bubblePos(356.0, 280.0);
-    bubbleType(0); //bulle normale
-    bubbleType(1); //bulle énervée
-    bubbleType(2); //bulle thinking
-	bubbleType(3); //bulle vague ("tremblements");
-    bubbleType(4); //bulle agrandie 
-    bubbleType(5); //bulle énervée agrandie
-    bubbleType(6); //bulle think agrandie
-    bubbleType(7); //bulle vague agrandie
-    textAdd("Ceci est un test");
+    bubblePos(386.0, 280.0);
+    bubbleType(0);
+    textAdd("Si tu arrives a passer ca, tu pourras continuer.");
 +4: // 38
     textPause(600);
-	playerHide();
+    skippable(1);
+    bossFace(0, 0);
+    bubblePos(386.0, 280.0);
+    bubbleType(1);
+    textAdd("Voyons voir ce que tu dis de ca !");
++4: // 42
+    textPause(600);
+    playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 206
++30: // 72
     end();
 }
 
 
 script script4 {
-	skippable(0);
+    skippable(0);
     bossShow(0);
-    bossFace(8, 0);
+    bossFace(0, 0);
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
-    skippable(1);
-    bubblePos(356.0, 280.0);
-    bubbleType(0); //bulle normale
-    bubbleType(1); //bulle énervée
-    bubbleType(2); //bulle thinking
-	bubbleType(3); //bulle vague ("tremblements");
-    bubbleType(4); //bulle agrandie 
-    bubbleType(5); //bulle énervée agrandie
-    bubbleType(6); //bulle think agrandie
-    bubbleType(7); //bulle vague agrandie
+    skippable(0);
+    bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38
     textPause(600);
-	playerHide();
+    bossFace(0, 0);
+    bubbleType(1);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(600);
+    playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 206
++30: // 72
+    end();
+}
+
+
+script script5 {
+    skippable(0);
+    bossShow(0);
+    bossFace(0, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
++30: // 34
+    skippable(0);
+	bossFace(1, 0);
+    bubblePos(386.0, 280.0);
+    bubbleType(0);
+    textAdd("Salut ! Bienvenue dans ce nouveau mod !");
++30: // 64
+	textPause(60);
+	bossFace(2, 0);
+    textAdd("J'espere que tu ne vas pas");
+    textAdd("passer mes dialogues...");
++30: // 94
+	textPause(60);
+    skippable(0);
+	bossFace(1, 0);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 124
+	textPause(60);
+	bossFace(1, 0);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 154
+	textPause(60);
+	bossFace(4, 0);
+    textAdd("Cela pourrait s'averer utile...");
++30:
+	textPause(60);
+	bossFace(1, 0);
+    textAdd("Cela pourrait s'averer utile...");
++30: // 214
+    textPause(60);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 244
+    end();
+}
+
+
+script script6 {
+    skippable(0);
+    bossShow(0);
+    bossFace(0, 0);
++4: // 4
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(386.0, 280.0);
+    bubbleType(0);
+    textAdd("Ceci est un test");
++4: // 38
+    textPause(600);
+    textAdd("Ceci est un test");
++4: // 42
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 72
     end();
 }

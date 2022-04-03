@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(2800);
-    BossCard1();
+    BossCard4();
     delete();
 }
 
@@ -570,7 +570,7 @@ Boss5_524:
     return;
 }
 
-void BossCard1()
+void BossCard4()
 {
     var A, B, C;
     unless ($TIMEOUT == 0) goto BossCard1_180 @ 0;
@@ -604,7 +604,7 @@ BossCard1_488:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    setNext(0, 0, 4000, "Boss2");
+	setNext(0, 1, 4000, "Boss5");
 !ENH
     spell(58, 4000, 500000, "Douleur : Brulure Lunaire");
 !L
@@ -619,12 +619,12 @@ BossCard1_488:
 	flagSet(2);
 +90: //94
     nop();
-    enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+    enmCreate("BossCard4_Moon", 0.0f, 0.0f, 100, 100, 0);
 !L
 	wait(110);
 	moveRand(60, 1, 3f);
 	wait(50);
-	enmCreate("BossCard1_Moon", 0.0f, 0.0f, 100, 100, 0);
+	enmCreate("BossCard4_Moon", 0.0f, 0.0f, 100, 100, 0);
 !*
 	wait(160);
 	while(1)
@@ -635,7 +635,7 @@ BossCard1_488:
     wait(10000);
 }
 
-void BossCard1_Moon()
+void BossCard4_Moon()
 {
 	float speed = 2.5f:3f:3.5f:3f;
     ins_569(-1);
@@ -663,7 +663,7 @@ BossCard1_Moon_480:
 }
 
 
-void BossCard1_at()
+void BossCard4_at()
 {
 	int A = 6:8:9:9;
 	int B = 30:40:40:30;
@@ -698,7 +698,7 @@ BossTrase_60:
 	anmPlay(1, 197);
 	wait(40);
 	playSound(6);
-    BossCard1_at();
+    BossCard4_at();
 	setScreenShake(20, 10, 0);
 	movePos(-300f, -100f);
 	wait(30);
@@ -717,7 +717,7 @@ end:
 void Moon() {
 
     nop();
-    enmCreateA("BossCard1_Moon", BOSS_X, BOSS_Y, 100, 100, 0);
+    enmCreateA("BossCard4_Moon", BOSS_X, BOSS_Y, 100, 100, 0);
 	 wait(60);
     goto BossCard1_1424 @ 94;
 BossCard1_1404:
@@ -1108,7 +1108,7 @@ void BossCard3_at2()
     return;
 }
 
-void BossCard4()
+void BossCard1()
 {
     var A, B, C;
     unless ($TIMEOUT == 0) goto BossCard4_160 @ 0;
@@ -1141,7 +1141,7 @@ BossCard4_448:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    setNext(0, 1, 3000, "Boss5");
+    setNext(0, 1, 3000, "Boss2");
     lifeMarker(0, 1.0f, -24448);
     spell(70, 3000, 500000, "地獄「ストライプドアビス」");
     movePosTime(60, 4, 0.0f, 128.0f);
@@ -1164,8 +1164,8 @@ BossCard4_1228:
     unless ($B >= 2) goto BossCard4_1464 @ 94;
     $A = 3;
 BossCard4_1464:
-    @BossCard4_at() async;
-    @BossCard4_at2();
+    @BossCard1_at() async;
+    @BossCard1_at2();
 BossCard4_1536:
     if ($C--) goto BossCard4_1228 @ 94;
     goto BossCard4_1624 @ 94;
@@ -1176,7 +1176,7 @@ BossCard4_1624:
     return;
 }
 
-void BossCard4_at()
+void BossCard1_at()
 {
     var A, B, C;
     etNew(0);
@@ -1221,7 +1221,7 @@ BossCard4_at_1124:
     return;
 }
 
-void BossCard4_at2()
+void BossCard1_at2()
 {
     var A, B, C;
     wait(10);
@@ -1267,12 +1267,12 @@ BossCard4_at2_1144:
     return;
 }
 
-void BossCard4_en()
+void BossCard1_en()
 {
     flagSet(291);
     %F0 = 0.5f;
     funcSet(3);
-    @BossCard4_at();
+    @BossCard1_at();
     delete();
 }
 
