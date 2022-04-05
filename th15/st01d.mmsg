@@ -31,17 +31,17 @@ script script0 {
     eclResume();
 +90: // 132
     skippable(0);
-	bossFace(0, 0);
-    speakerBoss(0);
-    intro(0);
+	playerShow(0);
+	playerFace(7);
+	speakerPlayer();
+    bubblePos(132.0, 250.0);
     textAdd("邪魔しなくても");
     textAdd("撃つぞ！");
 +4: // 136
-    playerShow(0);
     textPause(600);
 +4: // 140
     skippable(1);
-    bossFace(1, 0);
+    bossFace(4, 0);
     speakerBoss(0);
     bubblePos(386.0, 280.0);
     textAdd("『こちら清蘭");
@@ -49,91 +49,60 @@ script script0 {
 +8: // 148
     textPause(600);
 +22: // 170
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(386.0, 280.0);
+	playerFace(3);
+    speakerPlayer();
+    bubblePos(132.0, 250.0);
     textAdd("『これから浄化活動に入る』");
 +4: // 174
     textPause(600);
 +4: // 178
-    playerFace(4);
+    playerFace(5);
     speakerPlayer();
-    bubblePos(112.0, 280.0);
+    bubblePos(132.0, 250.0);
     textAdd("独り言？");
     textAdd("気持ち悪");
 +4: // 182
     textPause(600);
 +4: // 186
-    bubblePos(112.0, 280.0);
+	bossFace(1, 0);
+    speakerBoss(0);
+     bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 190
     textPause(600);
 +4: // 194
-    bossFace(2, 0);
+    bossFace(3, 0);
     speakerBoss(0);
     bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
+	intro(0);
 +4: // 198
     textPause(600);
 +4: // 202
-    bossFace(4, 0);
-    bubbleType(2);
-    bubblePos(386.0, 280.0);
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(132.0, 250.0);
     textAdd("Attends,");
     textAdd("Elle fouette des chats ?!");
 +4: // 206
     textPause(600);
 +4: // 210
-    playerFace(3);
-    speakerPlayer();
-    bubbleType(0);
-    bubblePos(112.0, 280.0);
+    bossFace(4, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 214
     textPause(600);
 +4: // 218
-	playerFace(6);
-    bubblePos(112.0, 280.0);
-    textAdd("残念だったな");
-    textAdd("穢れ多き地上人よ");
-+4: // 222
-    textPause(600);
-+4: // 226
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(386.0, 280.0);
+	playerFace(3);
+    speakerPlayer();
+    bubblePos(132.0, 250.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");
 +4: // 230
-    textPause(600);
-+4: // 234
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(386.0, 280.0);
-    textAdd("残念だったな");
-    textAdd("穢れ多き地上人よ");
-+4: // 238
-    textPause(600);
-+4: // 242
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(386.0, 280.0);
-    textAdd("残念だったな");
-    textAdd("穢れ多き地上人よ");
-+4: // 246
-    textPause(600);
-+4: // 250
-    bossFace(3, 0);
-    speakerBoss(0);
-    bubblePos(386.0, 280.0);
-    bubbleType(1);
-    musicBoss();
-    textAdd("もうすぐ地上は");
-    textAdd("浄化されるのだ！");
-+4: // 254
     textPause(600);
     playerHide();
     bossHide(0);
@@ -153,19 +122,17 @@ script script1 {
 +4: // 4
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(356.0, 280.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(1);
-    bubblePos(356.0, 280.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("え？");
     textAdd("何で私がやられてるの？");
 +4: // 38
     textPause(600);
 +4: // 42
-    playerFace(2);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(386.0, 280.0);
     textAdd("残念ながら私は");
     textAdd("地上の兎になったのよ");
 +4: // 46
@@ -173,31 +140,29 @@ script script1 {
 +4: // 50
     playerFace(5);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(132.0, 250.0);
     textAdd("つまり貴方は私の敵……");
     textAdd("いや、貴方じゃ無くてその上に居る");
 +4: // 54
     textPause(600);
 +4: // 58
-    bossFace(8, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
+    bubblePos(132.0, 250.0);
     textAdd("『メーデーメーデー！");
     textAdd("　緊急事態発生！』");
 +4: // 62
     textPause(600);
 +4: // 66
-    playerFace(1);
+    playerFace(5);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(132.0, 250.0);
     textAdd("そうそう、テレパシーでみんなに");
     textAdd("報告すると良いわ");
 +4: // 70
     textPause(600);
 +4: // 74
-    playerFace(1);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(386.0, 280.0);
     textAdd("自分勝手な月の兎にね");
 +4: // 78
     textPause(600);

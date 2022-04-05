@@ -646,13 +646,15 @@ entry entry4 {
     format: 1,
     width: 512,
     height: 256,
+    xOffset: 362,
+    yOffset: 111,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 867768,
+    THTXSize: 249100,
     THTXFormat: 1,
-    THTXWidth: 627,
-    THTXHeight: 346,
+    THTXWidth: 265,
+    THTXHeight: 235,
     THTXZero: 0,
     sprites: {
         sprite46: { x: 0, y: 0, w: 265, h: 235 }
