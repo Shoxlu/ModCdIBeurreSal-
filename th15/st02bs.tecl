@@ -67,7 +67,7 @@ void Boss1()
 	while(1)
 	{
 		moveRand(90, 0, 2f);
-		wait(250);
+		wait(350);
 	}
 	wait(10000);
     return;
@@ -561,12 +561,14 @@ void MasterSpark()
 {
 
 	int waitTime = 1;
+	float A = 0;
 	int loop = 270:270:300:320;
 	flagSet(3);
-	GF1 = ANGLE_PLAYER;
+	A = ANGLE_PLAYER;
+	GF1 = A;
 	anmSelect(4);
     anmSetSprite(0, 0);//sprite MasterSpark
-	anmRotate(0, GF1+F0);
+	anmRotate(0, A+F0);
 	BossTrace() async;
     MasterSparkHitbox() async;
     wait(60);
@@ -574,9 +576,10 @@ void MasterSpark()
 	playSound(49);
     times(loop)//rotation MasterSpark
     {
-        anmRotate(0, GF1+F0);
+        anmRotate(0, A+F0);
         wait(waitTime);
-        GF1 = GF1 + (rad(1)/(_f(loop)/35f))*_f(I0);
+		A = A + (rad(1)/(_f(loop)/35f))*_f(I0);
+        GF1 = A;
     }
 	GI0 = 1;
     anmSwitch(0, 1);//disparition MasterSpark
@@ -586,12 +589,14 @@ void MasterSpark1()
 {
 
 	int waitTime = 1;
+	float A = 0;
 	int loop = 200;
 	flagSet(3);
-	GF1 = 0f;
+	A = 0f;
+	GF1 = A;
 	anmSelect(4);
     anmSetSprite(0, 0);//sprite MasterSpark
-	anmRotate(0, GF1+F0);
+	anmRotate(0, A+F0);
 	BossTrace() async;
     MasterSparkHitbox() async;
     wait(60);
@@ -599,9 +604,10 @@ void MasterSpark1()
 	playSound(49);
     times(loop)//rotation MasterSpark
     {
-        anmRotate(0, GF1+F0);
+        anmRotate(0, A+F0);
         wait(waitTime);
-        GF1 = GF1 + (rad(1)/(_f(loop)/35f))*_f(I0);
+		A = A + (rad(1)/(_f(loop)/35f))*_f(I0);
+        GF1 = A;
     }
 	GI0 = 1;
     anmSwitch(0, 1);//disparition MasterSpark
