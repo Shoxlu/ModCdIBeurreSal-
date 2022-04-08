@@ -154,11 +154,11 @@ script script1 {
 +4: // 4
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
 	bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
 +4: // 46
@@ -186,7 +186,7 @@ script script1 {
 +4: // 42
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
 +4: // 46
@@ -194,7 +194,7 @@ script script1 {
 +4: // 50
 	bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
 +4: // 46
@@ -210,7 +210,7 @@ script script1 {
 +4: // 58
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
 +4: // 62
@@ -219,7 +219,7 @@ script script1 {
     playerFace(6);
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     textAdd("勘弁してください－");
     textAdd("教えたら殺されるわー！");
 +4: // 70
@@ -262,12 +262,12 @@ script script2 {
     speakerBoss(0);
 +30: // 34
     skippable(1);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38
     textPause(300);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 42
@@ -288,17 +288,17 @@ script script3 {
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(1);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Si tu arrives a passer ca, tu pourras continuer.");
 +4: // 38
     textPause(600);
     skippable(1);
     bossFace(0, 0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(1);
     textAdd("Voyons voir ce que tu dis de ca !");
 +4: // 42
@@ -319,7 +319,7 @@ script script4 {
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(0);
     bubbleType(0);
@@ -347,11 +347,11 @@ script script5 {
 +4: // 4
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(0);
 	bossFace(1, 0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Salut ! Bienvenue dans ce nouveau mod !");
 +30: // 64
@@ -394,10 +394,10 @@ script script6 {
 +4: // 4
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(1);
-    bubblePos(386.0, 270.0);
+    bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38

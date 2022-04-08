@@ -307,20 +307,20 @@ entry entry2 { //boss face 1
 
 entry entry3 { //boss face 2 "désespérée"
     version: 8,
-    name: "face/dummy.png",
-    format: 7,
-    width: 4,
-    height: 4,
+    name: "face/enemy1/face01dp.png",
+    format: 1,
+    width: 575,
+    height: 975,
     memoryPriority: 0,
-    lowResScale: 0,
+    lowResScale: 1,
     hasData: 1,
-    THTXSize: 16,
-    THTXFormat: 7,
-    THTXWidth: 4,
-    THTXHeight: 4,
+    THTXSize: 2242500,
+    THTXFormat: 1,
+    THTXWidth: 575,
+    THTXHeight: 975,
     THTXZero: 0,
     sprites: {
-        sprite25: { x: 0, y: 0, w: 4, h: 4 }
+        sprite25: { x: 0, y: 0, w: 575, h: 974 }
     }
 }
 
@@ -347,20 +347,20 @@ entry entry4 {  //boss face 3
 
 entry entry5 { //boss face 4 "gênée"
     version: 8,
-    name: "face/dummy.png",
-    format: 7,
-    width: 4,
-    height: 4,
+    name: "face/enemy1/face01sw.png",
+    format: 1,
+    width: 575,
+    height: 975,
     memoryPriority: 0,
-    lowResScale: 0,
+    lowResScale: 1,
     hasData: 1,
-    THTXSize: 16,
-    THTXFormat: 7,
-    THTXWidth: 4,
-    THTXHeight: 4,
+    THTXSize: 2242500,
+    THTXFormat: 1,
+    THTXWidth: 575,
+    THTXHeight: 975,
     THTXZero: 0,
     sprites: {
-        sprite27: { x: 0, y: 0, w: 4, h: 4 }
+        sprite27: { x: 0, y: 0, w: 575, h: 974 }
     }
 }
 
