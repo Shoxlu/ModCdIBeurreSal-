@@ -280,29 +280,29 @@ script script5 {
     bubbleType(0);
     textAdd("Salut ! Bienvenue dans ce nouveau mod !");
 +30: // 64
-	textPause(60);
+	textPause(30);
 	bossFace(2, 0);
     textAdd("J'espere que tu ne vas pas");
     textAdd("passer mes dialogues...");
 +30: // 94
-	textPause(60);
+	textPause(30);
     skippable(0);
 	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 124
-	textPause(60);
+	textPause(30);
 	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 154
-	textPause(60);
+	textPause(30);
 	bossFace(4, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30:
-	textPause(60);
+	textPause(30);
 	bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 214
-    textPause(60);
+    textPause(30);
     playerHide();
     bossHide(0);
     textboxHide();
@@ -321,15 +321,15 @@ script script6 {
     speakerBoss(0);
     bubblePos(386.0, 280.0);
 +30: // 34
-    skippable(1);
+    skippable(0);
     bubblePos(386.0, 280.0);
     bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38
-    textPause(600);
+    textPause(30);
     textAdd("Ceci est un test");
 +4: // 42
-    textPause(600);
+    textPause(30);
     playerHide();
     bossHide(0);
     textboxHide();
