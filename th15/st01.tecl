@@ -14,6 +14,94 @@ void LogoEnemy()
     return;
 }
 
+void Fairy1red()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 5);
+	Fairy1(0f);
+}
+void Fairy1blue()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	Fairy1(30f);
+}
+void Fairy1redM()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 5);
+	Fairy1M(0f);
+}
+void Fairy1blueM()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	Fairy1M(35f);
+}
+
+void Fairy1(float A)
+{
+	moveBezier(400, 0f, -600f-A, 300f, 200f-A, -100f, 800f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+
+void Fairy1M(float A)
+{
+	moveBezier(400, 0f, -600f-A, -300f, 200f-A, 100f, 800f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+
+void Fairy2(float A)
+{
+	moveBezier(400, 0f, 300f-A, 300f, 200f-A, -100f, -400f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+
+void Fairy2M(float A)
+{
+	moveBezier(400, 0f, 300f-A, -300f, 200f-A, 100f, -400f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+void Fairy2red()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 5);
+	Fairy2(0f);
+}
+void Fairy2blue()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	Fairy2(30f);
+}
+void Fairy2redM()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 5);
+	Fairy2M(0f);
+}
+void Fairy2blueM()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	Fairy2M(30f);
+}
 void MainBoss()
 {
     dialogWait();
@@ -92,52 +180,26 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
-    var A, B, C, D, E;
-    %A = _f(-192);
-    $B = 8;
-    goto MainSub00_432 @ 0;
-MainSub00_140:
-    enmCreate("GirlRedA01", %A - _f(32), -16.0f, 100, 1000, 1);
-    enmCreate("GirlBlueA01e", %A, -28.0f, 100, 1000, 1);
-    enmCreate("GirlRedA01", %A + _f(32), -40.0f, 100, 1000, 1);
-    wait(30);
-MainSub00_432:
-    if ($B--) goto MainSub00_140 @ 0;
-    %A = _f(192);
-    $C = 8;
-    goto MainSub00_872 @ 0;
-MainSub00_580:
-    enmCreateM("GirlRedA01", %A - _f(32), -40.0f, 100, 1000, 1);
-    enmCreateM("GirlBlueA01e", %A, -28.0f, 100, 1000, 1);
-    enmCreateM("GirlRedA01", %A + _f(32), -16.0f, 100, 1000, 1);
-    wait(30);
-MainSub00_872:
-    if ($C--) goto MainSub00_580 @ 0;
-    wait(100);
-    $D = 7;
-    goto MainSub00_1708 @ 0;
-MainSub00_1000:
-    %A = _f(-192);
-    enmCreate("GirlBlueA02", %A - _f(32), -16.0f, 100, 1000, 1);
-    enmCreate("GirlRedA02e", %A, -28.0f, 100, 1000, 1);
-    enmCreate("GirlBlueA02", %A + _f(32), -40.0f, 100, 1000, 1);
-    wait(30);
-    %A = _f(192);
-    enmCreateM("GirlBlueA02", %A - _f(32), -40.0f, 100, 1000, 1);
-!NHL
-    enmCreateM("GirlRedA02e", %A, -28.0f, 100, 1000, 1);
-!E
-    enmCreateM("GirlRedA02", %A, -28.0f, 100, 1000, 1);
-!*
-    enmCreateM("GirlBlueA02", %A + _f(32), -16.0f, 100, 1000, 1);
-    wait(30);
-MainSub00_1708:
-    if ($D--) goto MainSub00_1000 @ 0;
-    $E = 8;
-    goto MainSub00_1816 @ 0;
-MainSub00_1816:
-    if ($E--) goto MainSub00_1816 @ 0;
-    return;
+	times(20)
+	{
+		enmCreate("Fairy2red", -230f, 135f, 50, 100, 1);
+		enmCreate("Fairy2blue", -230f, 90f, 50, 100, 2);
+		wait(23);
+	}
+	times(20)
+	{
+		enmCreate("Fairy2redM", 230f, 135f, 50, 100, 1);
+		enmCreate("Fairy2blueM", 230f, 90f, 50, 100, 2);
+		wait(23);
+	}
+	times(25)
+	{
+		enmCreate("Fairy1red", -230f, 235f, 50, 100, 1);
+		enmCreate("Fairy1blue", -230f, 205f, 50, 100, 2);
+		enmCreate("Fairy1redM", 230f, 235f, 50, 100, 1);
+		enmCreate("Fairy1blueM", 230f, 205f, 50, 100, 2);
+		wait(23);
+	}
 }
 
 void MapleEnemy()
@@ -161,7 +223,7 @@ MapleEnemy_276:
 }
 
 
-void main()
+void main1()
 {
     flagSet(32);
     wait(1);
@@ -214,29 +276,39 @@ void main()
     delete();
 }
 
-void main1()
+void main()
 {
 	flagSet(3);
-	enmCreate("testLance", 0f, 120f, 1000, 1000, 1);
+	enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
 	wait(1000000);
 }
 
+
 void testLance()
 {
+	float x;
 	anmSelect(2);
 	anmSetMain(0, 0);
 	etNew(0);
 	etAim(0, 0);
 	
-	etSprite(0, 29, 1); //29 -> sprite de bullet défini selon la liste
+	etSprite(0, 8, 2); //29 -> sprite de bullet défini selon la liste
 	//1 -> couleur, ici rouge
 	
-	etCount(0, 10, 5); //10 -> nombre de bullet des "lignes"
+	etCount(0, 1, 1); //10 -> nombre de bullet des "lignes"
 	//5 -> nombre de bullet des "colonnes"
 	
-	etSpeed(0, 2f, 4f); //0 -> id du pattern;
+	etSpeed(0, 0f, 0f); //0 -> id du pattern;
 	//2f -> vitesse minimale bullet des "colonnes"
-	//4f -> vitesse maximale des bullet des "colonnes"
-	 
+	//4f -> vitesse maximale des bullet des "colonnes" ((((x - 0.4f)*(x - 0.4f) / 0.36f) - 0.444444f) / 0.555556f)
+	x = 0.4f;
+	times(384)
+	{
+		movePos(ABS_X + 1f, ABS_Y - x*x);
+		x += 0.002f;
+		etAngle(0, ABS_ANGLE, 0f);
+		wait(1);
+		etOn(0);
+	}
 	wait(100000);
 }
