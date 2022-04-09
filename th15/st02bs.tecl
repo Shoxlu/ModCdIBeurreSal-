@@ -78,10 +78,16 @@ void Boss1_at()
 	F0 = rad(90);
 	int B = 2:3:4:5;
 	I0 = 1;
+	I1 = 1;
 	times(B)
 	{
 		enmCreateA("Spawn", cos(F0)*70f, sin(F0)*70f, 70, 10, 1);
 		F0 = F0 + rad(360)/_f(B);
+		I1 += 1;
+		if(I1 == 7)
+		{
+			I1 = 1;
+		}
 	}
 	F0 = rad(270);
 	I0 = -1;
@@ -89,6 +95,11 @@ void Boss1_at()
 	{
 		enmCreateA("Spawn", cos(F0)*100f, sin(F0)*100f, 100, 10, 1);
 		F0 = F0 + rad(360)/_f(B);
+		I1 += 1;
+		if(I1 == 7)
+		{
+			I1 = 1;
+		}
 	}
 }
 void Spawn()
@@ -101,7 +112,7 @@ void Spawn()
 	etNew(0);
 	etAim(0, 1);
 	etCount(0, 1, 1);
-	etSprite(0, 23, 1 + RAND % 6);
+	etSprite(0, 23, I1);
 	mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
 	etAngle(0, %A, rad(0));
 	etSpeed(0, 1f, 1f);
@@ -112,7 +123,7 @@ void Spawn()
 		mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
 		etAngle(0, %A, rad(0));
 		etOn(0);
-		wait(10);
+		wait(10:10:8:6);
 	}
 	wait(1000000);
 }
