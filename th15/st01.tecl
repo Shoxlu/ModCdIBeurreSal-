@@ -1,6 +1,6 @@
 anim { "enemy.anm"; "st01enm.anm"; "idk.anm";}
 ecli { "default.ecl"; "st01bs.ecl"; "st01mbs.ecl"; "st01mbs2.ecl"; }
-
+#include "main.tecl"
 void MainBossSpell();
 
 void MainMBossSpell();
@@ -43,8 +43,11 @@ void Fairy1blueM()
 	Fairy1M(35f);
 }
 
+
 void Fairy1(float A)
 {
+	ins_569(1);
+	@Fairy_1_2at() async;
 	moveBezier(400, 0f, -600f-A, 300f, 200f-A, -100f, 800f-A);
 	wait(400);
 	flagClear(4);
@@ -53,27 +56,14 @@ void Fairy1(float A)
 
 void Fairy1M(float A)
 {
+	ins_569(1);
+	@Fairy_1_2at() async;
 	moveBezier(400, 0f, -600f-A, -300f, 200f-A, 100f, 800f-A);
 	wait(400);
 	flagClear(4);
 	wait(1000);
 }
 
-void Fairy2(float A)
-{
-	moveBezier(400, 0f, 300f-A, 300f, 200f-A, -100f, -400f-A);
-	wait(400);
-	flagClear(4);
-	wait(1000);
-}
-
-void Fairy2M(float A)
-{
-	moveBezier(400, 0f, 300f-A, -300f, 200f-A, 100f, -400f-A);
-	wait(400);
-	flagClear(4);
-	wait(1000);
-}
 void Fairy2red()
 {
 	flagSet(4);
@@ -88,6 +78,7 @@ void Fairy2blue()
 	anmSetMain(0, 0);
 	Fairy2(30f);
 }
+
 void Fairy2redM()
 {
 	flagSet(4);
@@ -95,6 +86,7 @@ void Fairy2redM()
 	anmSetMain(0, 5);
 	Fairy2M(0f);
 }
+
 void Fairy2blueM()
 {
 	flagSet(4);
@@ -102,6 +94,94 @@ void Fairy2blueM()
 	anmSetMain(0, 0);
 	Fairy2M(30f);
 }
+
+void Fairy2(float A)
+{
+	ins_569(1);
+	@Fairy_1_2at() async;
+	moveBezier(400, 0f, 300f-A, 300f, 200f-A, -100f, -400f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+
+void Fairy2M(float A)
+{
+	ins_569(1);
+	@Fairy_1_2at() async;
+	moveBezier(400, 0f, 300f-A, -300f, 200f-A, 100f, -400f-A);
+	wait(400);
+	flagClear(4);
+	wait(1000);
+}
+
+void Fairy_1_2at()
+{
+	etNew(0);
+	etAim(0, 0);
+	etSprite(0, 4, 4);
+	etAngle(0, 0f, 0f);
+	etCount(0, 1, 1);
+	etSpeed(0, 1.3f, 1.3f);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	wait(100 + _S(RANDF2 * 50f));
+	if(RAND % 3 == 1)
+	{
+		while(1)
+		{
+		
+			etOn(0);
+			wait(160 + _S(RANDF2 * 50f));
+		}
+	}
+}
+
+void BFairy1()
+{
+	float x, y;
+	int time = 150;
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, 40);
+	ins_569(1);
+	floatTime(0, x, time, 0, ABS_X, -90f*F0);
+	floatTime(1, y, time, 4, ABS_Y, 160f);
+	movePosTime(time, 6, -90f*F0, 160f);
+	times(time)//
+	{
+		movePos(x, y);
+		wait(1);
+	}
+	wait(1000);
+}
+
+void Fairy3()
+{
+	float x, y;
+	int time = 150;
+	float angle = rad(90);
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, I0);
+	ins_569(1);
+	floatTime(0, angle, time, 19, rad(90), F0);
+	// floatTime(1, y, time, 4, ABS_Y, 160f);
+	// movePosTime(time, 6, -50f*F0, 160f);
+	etNew(0);
+	etAim(0, 0);
+	etSprite(0, 8, 2);
+	etCount(0, 1, 1);
+	etSpeed(0, 0f, 0f);
+	times(time)//
+	{
+		moveVel(angle, F1);
+		wait(1);
+	}
+	wait(1000);
+}
+
+
+
 void MainBoss()
 {
     dialogWait();
@@ -135,9 +215,12 @@ void MainBossDebug2()
 
 void MainFront()
 {
-    @MainSub00();
-    wait(320);
-    setChapter(1);
+    // @MainSub00();
+    // wait(320);
+    // setChapter(1);
+	// wait(120);
+	@MainSub01();
+	
     return;
 }
 
@@ -180,27 +263,56 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
-	times(20)
+	times(20)//
 	{
-		enmCreate("Fairy2red", -230f, 135f, 50, 100, 1);
-		enmCreate("Fairy2blue", -230f, 90f, 50, 100, 2);
+		enmCreate("Fairy2red", -230f, 135f, 70, 100, 1);
+		enmCreate("Fairy2blue", -230f, 90f, 70, 100, 2);
 		wait(23);
 	}
-	times(20)
+	times(20)//
 	{
-		enmCreate("Fairy2redM", 230f, 135f, 50, 100, 1);
-		enmCreate("Fairy2blueM", 230f, 90f, 50, 100, 2);
+		enmCreate("Fairy2redM", 230f, 135f, 70, 100, 1);
+		enmCreate("Fairy2blueM", 230f, 90f, 70, 100, 2);
 		wait(23);
 	}
-	times(25)
+	times(25)//
 	{
 		enmCreate("Fairy1red", -230f, 235f, 50, 100, 1);
-		enmCreate("Fairy1blue", -230f, 205f, 50, 100, 2);
+		enmCreate("Fairy1blue", -230f, 205f, 70, 100, 2);
 		enmCreate("Fairy1redM", 230f, 235f, 50, 100, 1);
-		enmCreate("Fairy1blueM", 230f, 205f, 50, 100, 2);
+		enmCreate("Fairy1blueM", 230f, 205f, 70, 100, 2);
 		wait(23);
 	}
 }
+
+void MainSub01()
+{
+	F0 = 1f;
+	enmCreate("BFairy1", -200f, -50f, 1500, 1000, 1);
+	F0 = -1f;
+	enmCreate("BFairy1", 200f, -50f, 1500, 1000, 1);
+	times(10)
+	{
+		F0 = rad(0);
+		I0 = 5;
+		F1 = 2.8f;
+		enmCreate("Fairy3", 20f, 0f, 50, 100, 1);
+		F1 = 2.5f;
+		I0 = 0;
+		enmCreate("Fairy3", 60f, 0f, 50, 100, 1);
+		F0 = rad(180);
+		F1 = 2.8f;
+		I0 = 0;
+		enmCreate("Fairy3", -20f, 0f, 50, 100, 1);
+		I0 = 5;
+		F1 = 2.5f;
+		enmCreate("Fairy3", -60f, 0f, 50, 100, 1);
+		wait(20);
+	}
+	wait(1000);
+}
+
+
 
 void MapleEnemy()
 {
@@ -236,9 +348,9 @@ void main()
     @LogoEnemy() async;
 +60: //60
     nop();
-	dialogRead(5);
-	wait(300);
-	enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
+	// dialogRead(5);
+	// wait(300);
+	//enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
     @MainFront();
     enmKillAll();
     etClear(640.0f);
