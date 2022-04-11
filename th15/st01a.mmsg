@@ -401,10 +401,10 @@ script script6 {
     bubbleType(0);
     textAdd("Ceci est un test");
 +4: // 38
-    textPause(30);
+    textPause(80);
     textAdd("Ceci est un test");
 +4: // 42
-    textPause(30);
+    textPause(80);
     playerHide();
     bossHide(0);
     textboxHide();

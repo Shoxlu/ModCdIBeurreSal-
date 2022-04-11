@@ -47,7 +47,7 @@ Boss_1200:
     delete();
 }
 
-void Boss1() //fini
+void Boss1()
 {
     var A, B, C;
     diffI($A, 90, 90, 40, 40);
