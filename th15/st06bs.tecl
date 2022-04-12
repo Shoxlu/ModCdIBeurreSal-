@@ -1502,7 +1502,6 @@ void Bowap()
 	etCount(9, 8, 1);
 	etSpeed(9, 2f, 2f);
 	etSprite(9, 8, 8);
-//	etExSet(0, 0, 0, EX_BOUNCE, 1, 13, NEGF, NEGF);
 	while(1)
 	{
 		etOn(9);

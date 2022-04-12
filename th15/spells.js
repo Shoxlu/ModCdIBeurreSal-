@@ -1,5 +1,5 @@
 {
-	"10": "Signe du gras : \"Éclat Beurré\""
+	"10": "Signe du gras : \"Éclat Beurré\"",
     "58": "Douleur \"Brûlure Lunaire\"",
     "60": "Désespoir \"Duplicité de la Fille Lunatique\"",
     "62": "Feux de l'Enfer : « Frôlement infernal »",
