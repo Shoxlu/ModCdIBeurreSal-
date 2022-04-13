@@ -48,8 +48,8 @@ void Fairy1(float A)
 {
 	ins_569(1);
 	@Fairy_1_2at() async;
-	moveBezier(400, 0f, -600f-A, 300f, 200f-A, -100f, 800f-A);
-	wait(400);
+	moveBezier(300, 0f, -600f-A, 300f, 200f-A, -100f, 800f-A);
+	wait(300);
 	flagClear(4);
 	wait(1000);
 }
@@ -58,8 +58,8 @@ void Fairy1M(float A)
 {
 	ins_569(1);
 	@Fairy_1_2at() async;
-	moveBezier(400, 0f, -600f-A, -300f, 200f-A, 100f, 800f-A);
-	wait(400);
+	moveBezier(300, 0f, -600f-A, -300f, 200f-A, 100f, 800f-A);
+	wait(300);
 	flagClear(4);
 	wait(1000);
 }
@@ -99,8 +99,8 @@ void Fairy2(float A)
 {
 	ins_569(1);
 	@Fairy_1_2at() async;
-	moveBezier(400, 0f, 300f-A, 300f, 200f-A, -100f, -400f-A);
-	wait(400);
+	moveBezier(300, 0f, 300f-A, 300f, 200f-A, -100f, -400f-A);
+	wait(300);
 	flagClear(4);
 	wait(1000);
 }
@@ -109,8 +109,8 @@ void Fairy2M(float A)
 {
 	ins_569(1);
 	@Fairy_1_2at() async;
-	moveBezier(400, 0f, 300f-A, -300f, 200f-A, 100f, -400f-A);
-	wait(400);
+	moveBezier(300, 0f, 300f-A, -300f, 200f-A, 100f, -400f-A);
+	wait(300);
 	flagClear(4);
 	wait(1000);
 }
@@ -125,7 +125,7 @@ void Fairy_1_2at()
 	etSpeed(0, 1.3f, 1.3f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	wait(100 + _S(RANDF2 * 50f));
-	if(RAND % 3 == 1)
+	if(RAND % 2 == 1)
 	{
 		while(1)
 		{
@@ -141,12 +141,15 @@ void BFairy1()
 	float x, y;
 	int time = 150;
 	flagSet(4);
+	dropExtra(1, 6);
+	dropExtra(2, 7);
 	anmSelect(2);
 	anmSetMain(0, 40);
-	ins_569(1);
+	ins_569(3);
 	floatTime(0, x, time, 0, ABS_X, -90f*F0);
 	floatTime(1, y, time, 4, ABS_Y, 160f);
 	movePosTime(time, 6, -90f*F0, 160f);
+	BFairy1at() async;
 	times(time)//
 	{
 		movePos(x, y);
@@ -154,6 +157,17 @@ void BFairy1()
 	}
 	wait(1000);
 }
+
+void BFairy1at()
+{
+	etNew(1);
+	etAim(1, 0);
+	etSprite(1, 17, 0);
+	etCount(1, 6, 1);
+	etOn(1);
+	
+}
+
 
 void Fairy3()
 {
@@ -167,19 +181,38 @@ void Fairy3()
 	floatTime(0, angle, time, 19, rad(90), F0);
 	// floatTime(1, y, time, 4, ABS_Y, 160f);
 	// movePosTime(time, 6, -50f*F0, 160f);
-	etNew(0);
-	etAim(0, 0);
-	etSprite(0, 8, 2);
-	etCount(0, 1, 1);
-	etSpeed(0, 0f, 0f);
+	Fairy3at() async;
 	times(time)//
 	{
 		moveVel(angle, F1);
 		wait(1);
 	}
+	flagClear(4);
 	wait(1000);
 }
 
+void Fairy3at()
+{
+	float x, y, a;
+	x = PLAYER_X;
+	y = PLAYER_Y;
+	etNew(0);
+	etAim(0, 3);
+	etSprite(0, 8, 6);
+	etCount(0, 3, 1);
+	etSpeed(0, 0.1f, 0.1f);
+	etAngle(0, ANGLE_PLAYER, 0f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_VELTIME, 60, NEG, 2f, NEGF);
+	while(1)
+	{
+		mathAngle(a, ABS_X, ABS_Y, x, y); 
+		etAngle(0, a, 0f);
+		etOn(0);
+		wait(60);
+	}
+}
 
 
 void MainBoss()
@@ -219,8 +252,9 @@ void MainFront()
     // wait(320);
     // setChapter(1);
 	// wait(120);
-	@MainSub01();
-	
+	@MainSub01()async;
+	@MainSub02();
+	wait(740);
     return;
 }
 
@@ -263,19 +297,19 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
-	times(20)//
+	times(15)//
 	{
 		enmCreate("Fairy2red", -230f, 135f, 70, 100, 1);
 		enmCreate("Fairy2blue", -230f, 90f, 70, 100, 2);
 		wait(23);
 	}
-	times(20)//
+	times(15)//
 	{
 		enmCreate("Fairy2redM", 230f, 135f, 70, 100, 1);
 		enmCreate("Fairy2blueM", 230f, 90f, 70, 100, 2);
 		wait(23);
 	}
-	times(25)//
+	times(19)//
 	{
 		enmCreate("Fairy1red", -230f, 235f, 50, 100, 1);
 		enmCreate("Fairy1blue", -230f, 205f, 70, 100, 2);
@@ -287,32 +321,36 @@ void MainSub00()
 
 void MainSub01()
 {
-	F0 = 1f;
-	enmCreate("BFairy1", -200f, -50f, 1500, 1000, 1);
-	F0 = -1f;
-	enmCreate("BFairy1", 200f, -50f, 1500, 1000, 1);
 	times(10)
 	{
 		F0 = rad(0);
-		I0 = 5;
-		F1 = 2.8f;
-		enmCreate("Fairy3", 20f, 0f, 50, 100, 1);
-		F1 = 2.5f;
 		I0 = 0;
+		F1 = 2.8f;
+		enmCreate("Fairy3", 20f, 0f, 50, 100, 2);
+		F1 = 2.5f;
+		I0 = 5;
 		enmCreate("Fairy3", 60f, 0f, 50, 100, 1);
 		F0 = rad(180);
 		F1 = 2.8f;
 		I0 = 0;
-		enmCreate("Fairy3", -20f, 0f, 50, 100, 1);
+		enmCreate("Fairy3", -20f, 0f, 50, 100, 2);
 		I0 = 5;
 		F1 = 2.5f;
 		enmCreate("Fairy3", -60f, 0f, 50, 100, 1);
 		wait(20);
 	}
+	
 	wait(1000);
 }
 
-
+void MainSub02()
+{
+	wait(60);
+	F0 = 1f;
+	enmCreate("BFairy1", -200f, -50f, 1500, 1000, 1);
+	F0 = -1f;
+	enmCreate("BFairy1", 200f, -50f, 1500, 1000, 1);
+}
 
 void MapleEnemy()
 {
@@ -335,7 +373,7 @@ MapleEnemy_276:
 }
 
 
-void main()
+void main1()
 {
     flagSet(32);
     wait(1);
@@ -356,8 +394,8 @@ void main()
     etClear(640.0f);
     setChapter(2);
     wait(2);
-	dialogRead(6);
-	dialogWait();
+	// dialogRead(6);
+	// dialogWait();
     enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
     wait(160);
     @MainLatter();
@@ -389,38 +427,74 @@ void main()
     delete();
 }
 
-void main1()
+void main()
 {
-	flagSet(3);
-	enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-	wait(1000000);
+    flagSet(32);
+    wait(60);
+    enmCreate("abysse", 0f, 128f, 1000, 100, 0);
+    wait(1000);
+}
+void abysse() {
+    anmSelect(2);
+    anmSetMain(0, 5);
+	etNew(9);
+	etAim(9, 3);
+	etAngle(9, rad(90), 0f);
+	etCount(9, 8, 1);
+	etSpeed(9, 2f, 2f);
+	etSprite(9, 8, 8);
+	etEx(9, 0, EX_BOUNCE, 1, 15, NEGF, NEGF);
+	etOn(9);
+    wait(10000);
 }
 
+void Bowap()
+{
+	float A = rad(-10);
+	float B = rad(0);
+	etNew(9);
+	etAim(9, 3);
+	etAngle(9, A, 0f);
+	etCount(9, 8, 1);
+	etSpeed(9, 2f, 2f);
+	etSprite(9, 8, 8);
+	while(1)
+	{
+		etOn(9);
+		A += rad(1);
+		// B -= rad(0.2);
+		etAngle(9, cos(A), 0f);
+		wait(3);
+	}
+}
 
 void testLance()
 {
 	float x, y;
 	anmSelect(2);
 	anmSetMain(0, 0);
+	setBoss(0);
 	etNew(0);
 	etAim(0, 0);
-	
 	etSprite(0, 8, 2); //29 -> sprite de bullet défini selon la liste
 	//1 -> couleur, ici rouge
-	
 	etCount(0, 1, 1); //10 -> nombre de bullet des "lignes"
 	//5 -> nombre de bullet des "colonnes"
-	
 	etSpeed(0, 0f, 0f); //0 -> id du pattern;
+	spellEnd();
+    funcSet(0);
+	$CAPTURE = 1;
+	wait(200);
+	spell(2, 5400, 500000, "Une jeune fille au QI d'or");
 	//2f -> vitesse minimale bullet des "colonnes"
 	//4f -> vitesse maximale des bullet des "colonnes" ((((x - 0.4f)*(x - 0.4f) / 0.36f) - 0.444444f) / 0.555556f)
-	floatTime(0, y, 384, 1, 224f, 0f);
-	times(384)
-	{
-		movePos(ABS_X + 1f, y);
-		etAngle(0, ABS_ANGLE, 0f);
-		wait(1);
-		etOn(0);
-	}
+	// floatTime(0, y, 384, 1, 224f, 0f);
+	// times(384)
+	// {
+		// movePos(ABS_X + 1f, y);
+		// etAngle(0, ABS_ANGLE, 0f);
+		// wait(1);
+		// etOn(0);
+	// }
 	wait(100000);
 }
