@@ -1008,7 +1008,7 @@ void Trap8()
 void YingYangTrap1()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !NHL
@@ -1022,7 +1022,7 @@ void YingYangTrap1()
 void YingYangTrap2()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !NHL
@@ -1036,7 +1036,7 @@ void YingYangTrap2()
 void YingYangTrap3()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !NHL
@@ -1050,7 +1050,7 @@ void YingYangTrap3()
 void YingYangTrap4()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !HL
@@ -1064,7 +1064,7 @@ void YingYangTrap4()
 void YingYangTrap5()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !HL
@@ -1078,7 +1078,7 @@ void YingYangTrap5()
 void YingYangTrap6()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 !HL
@@ -1092,7 +1092,7 @@ void YingYangTrap6()
 void YingYangTrap1b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
@@ -1103,7 +1103,7 @@ void YingYangTrap1b()
 void YingYangTrap2b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
@@ -1114,7 +1114,7 @@ void YingYangTrap2b()
 void YingYangTrap3b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
@@ -1125,7 +1125,7 @@ void YingYangTrap3b()
 void YingYangTrap4b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
@@ -1136,7 +1136,7 @@ void YingYangTrap4b()
 void YingYangTrap5b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
@@ -1147,7 +1147,7 @@ void YingYangTrap5b()
 void YingYangTrap6b()
 {
 	anmSelect(2);
-	anmSetSprite(0, 53);
+	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
 	@YingYangTrap_at() async;
