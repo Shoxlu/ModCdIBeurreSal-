@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @BossDead();
+    @Boss1();
     delete();
 }
 
@@ -63,14 +63,14 @@ void Boss1()
     anmPlay(1, 86);
     playSound(6);
 // !ENH
-	@Boss1_at(0, rad(180), 1) async;
-	@Boss1_at(1, rad(0), 3) async;
-	@Boss1_at(2, rad(90), 2) async;
-// !L 
-	// @Boss1_at(0, rad(195), 1) async;
-	// @Boss1_at(1, rad(25), 3) async;
-	// @Boss1_at(2, rad(100), 2) async;
-// !*
+	@Boss1_at(0, rad(180), 1, 1f, 0) async;
+	@Boss1_at(2, rad(90), 2, 1f, 0) async;
+	@Boss1_at(3, rad(180), 3, -1f, 20) async;
+	@Boss1_at(5, rad(90), 4, -1f, 20) async;
+!L 
+	@Boss1_at(1, rad(270), 6, 1f, 40) async;
+	@Boss1_at(4, rad(0), 7, -1f, 40) async;
+!*
 	wait(120);
 	while(1)
 	{
@@ -80,7 +80,7 @@ void Boss1()
 	wait(100000);
 }
 
-void Boss1_at(int etID, float A, int color)
+void Boss1_at(int etID, float A, int color, float I, int Waittime)
 {
 	etNew(etID);
 	etAim(etID, 1);
@@ -89,16 +89,17 @@ void Boss1_at(int etID, float A, int color)
 	etSpeed(etID, 3f, 3f);
 	etAngle(etID, rad(0), 0f);
 	float Angle = A;
+	wait(Waittime);
 	while(1)
 	{
-		etAngle(etID, Angle, rad(45):rad(45):0f:0f);
+		etAngle(etID, Angle, rad(45):rad(45):rad(55):rad(45));
 		etOn(etID);
 !ENH
-		Angle = Angle + rad(20);
+		Angle = Angle + rad(20)*I;
 !L
-		Angle = Angle + rad(19.3);
+		Angle = Angle + rad(19.3)*I;
 !*
-		wait(5:4:2:1);
+		wait(5:4:3:4);
 	}
 }
 

@@ -125,7 +125,7 @@ void Fairy_1_2at()
 	etCount(0, 1, 1:1:1:2);
 	etSpeed(0, 1.3f:1.4f:1.8:2.1f,  1.3f:1.4f:1.8:1.7f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	wait(100 + _S(RANDF2 * 50f));
+	wait(75);
 !EN
 	if(RAND % 2 == 1)
 	{
@@ -169,21 +169,23 @@ void BFairy1at()
 	etNew(1);
 	etAim(1, 3);
 	etSprite(1, 23, 4);
-	etCount(1, 7, 1);
+	etCount(1, 5:6:7:7, 1);
 	etAngle(1, A, 0f);
-	etSpeed(1, 2f, 2f);
+	etSpeed(1, 2f:2f:2f:3f, 2f);
 	wait(150);
-	while(1)
+	times(5)
 	{
 		etOn(1);
 		etAngle(1, A + rad(10), 0f);
 		etOn(1);
 		etAngle(1, A - rad(10), 0f);
 		etOn(1);
-		wait(30);
+		wait(60:50:30:30);
 		A = RANDRAD;
 		etAngle(1, A, 0f);
 	}
+	moveVel(rad(90), 1.5f);
+	wait(10000);
 }
 
 
@@ -222,7 +224,7 @@ void Fairy3at()
 	etAngle(0, ANGLE_PLAYER, 0f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
-	etEx(0, 0, EX_VELTIME, 60, NEG, 1.5f, NEGF);
+	etEx(0, 0, EX_VELTIME, 60, NEG, 1f:1f:1.5f:1.5f, NEGF);
 	wait(30);
 	while(1)
 	{
@@ -233,44 +235,90 @@ void Fairy3at()
 	}
 }
 
+void YingYang1()
+{
+	anmSelect(2);
+	anmSetSprite(0, 62);
+	flagSet(2);
+	moveVel(rad(90) + RANDRAD / 32f, 2f);
+	dropExtra(1, 2);
+	dropExtra(2, 2);
+	YingYang1_at();
+	wait(1000);
+}
+
+void YingYang1_at()
+{
+	etNew(0);
+	if(RAND % 2)
+	{
+		etSprite(0, 6, 4);
+	}else{
+		etSprite(0, 6, 6);
+	}
+	etSpeed(0, 1.5:2f:2.5f:3f, 1.5f);
+	etAngle(0, 0f, 0f);
+	etCount(0, 1:1:1:1, 1:1:3:5);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	times(2:2:4:5)
+	{
+		etOn(0);
+		wait(60:50:40:30);
+	}
+}
+
 void Vaguetest()
 {
 	float x, y, a, c, d;
 	int time = 350;
 	anmSelect(2);
 	anmSetMain(0, 0);
+	flagSet(32);
 	@Vaguetest_at() async;
 	c = ABS_X;
 	d = ABS_Y;
-	floatTime(0, x, time, 0, ABS_X, 150f);
-	floatTime(1, y, time, 31, ABS_Y, 170f+_f(I0 * 10));
-	movePosTime(time, 0, 150f, 170f+_f(I0 * 10));
-	times(349)//
+	floatTime(0, x, time, 0, ABS_X, 150f+_f(I0 * 5));
+	floatTime(1, y, time, 30, ABS_Y, 170f+_f(I0 * 10));
+	movePosTime(time, 0, 150f+_f(I0 * 5), 170f+_f(I0 * 10));
+	times(time)//
 	{
-		movePos(x, y);
-		wait(1);
 		c = y;
+		wait(1);
+		mathAngle(F1, x-1f, c, x, y);
+		movePos(x, y);
 	}
-	movePos(x, y);
-	mathAngle(a, ABS_X-1f, c, ABS_X, ABS_Y);
+	// movePos(x, y);
+	// mathAngle(a, ABS_X-1f, c, ABS_X, ABS_Y);
 	//moveVel(a, 3f);
 	wait(1000);
 }
 
 void Vaguetest_at()
 {
+	float a = rad(290);
+	int B = 0;
 	etNew(0);
 	etAim(0, 1);
-	etSprite(0, 34, 6);
+	etSprite(0, 27, 0);
 	etCount(0, 1, 1);
 	etSpeed(0, 0f, 0f);
+	etAngle(0, ABS_ANGLE, 0f);
+	etEx(0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_VELTIME, 120, NEG, 2f, F1);
+	//etEx(0, 0, EX_ACCEL, 140, 
+	floatTime(2, a, 350, 1, a, rad(430));
 	while(1)
 	{
-		times(4)
-		{
-			etOn(0);
-				wait(1);
-		}
+			etAngle(0, F1, 0f);
+			etExSet(0, 1, 0, EX_VELTIME, 120, NEG, 2f, F1);
+			//etExSet(0, 0, 0, EX_VELTIME, 90, NEG, 1.5f, a);
+			B += 1;
+			if(B == 5)
+			{
+				etOn(0);
+				B = 0;
+			}
+			wait(1);
 	}
 }
 
@@ -307,15 +355,15 @@ void MainBossDebug2()
 
 void MainFront()
 {
-    // @MainSub00();
-    // wait(320);
-    // setChapter(1);
-	// wait(120);
-	// @MainSub01()async;
-	// @MainSub02();
-	// wait(640);
+    @MainSub00();
+    wait(320);
+    setChapter(1);
+	wait(120);
+	@MainSub01()async;
+	@MainSub02();
+	wait(440);
 	setChapter(2);
-	@MainSub03();
+	// @MainSub03test();
     return;
 }
 
@@ -406,19 +454,25 @@ void MainSub01()
 
 void MainSub02()
 {
-	wait(60);
+	wait(180);
 	F0 = 1f;
 	enmCreate("BFairy1", -200f, -50f, 1000, 1000, 1);
+	wait(120);
 	F0 = -1f;
 	enmCreate("BFairy1", 200f, -50f, 1000, 1000, 1);
+	times(30)
+	{
+		enmCreate("YingYang1", RANDF2 * 192f, -40f, 100, 100, 1);
+		wait(30);
+	}
 }
 
-void MainSub03()
+void MainSub03test()
 {
 	float A, B;
-	A = -192f;
+	A = -282f;
 	I0 = 0;
-	times(10)
+	times(12)
 	{
 		enmCreate("Vaguetest", A, 448f, 100, 100, 1);
 		I0 += 1;
@@ -427,6 +481,13 @@ void MainSub03()
 	}
 	wait(10000);
 }
+
+void MainSub03()
+{
+	
+	
+}
+
 
 void MapleEnemy()
 {
@@ -465,21 +526,21 @@ void main()
 	// dialogRead(5);
 	// wait(300);
 	//enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    @MainFront();
+    // @MainFront();
     enmKillAll();
     etClear(640.0f);
     setChapter(2);
     wait(2);
 	dialogRead(6);
-	dialogWait();
-    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    wait(160);
-    @MainLatter();
-    etClear(640.0f);
-	enmKillAll();
-    wait(300);
-    setChapter(41);
-    dialogRead(0);
+	// dialogWait();
+    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    // wait(160);
+    // @MainLatter();
+    // etClear(640.0f);
+	// enmKillAll();
+    // wait(300);
+    // setChapter(41);
+    // dialogRead(0);
     @MainBoss();
 	while(1)
 	{	

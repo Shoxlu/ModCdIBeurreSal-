@@ -4032,14 +4032,14 @@ script script196 {
 script script197 {
     sprite(-1);
     layer(13);
-    //blendMode(1);
+    blendMode(1);
     drawPoly(1.0f, 32);
-	//scale(16.0f, 16.0f);
+	scale(16.0f, 16.0f);
     color(255, 0, 0);
     scaleTime(60, 0, 960.0f, 0.0f);
 +30:
     alphaTime(80, 0, 0);
-    //alpha2Time(40, 0, 0);
+    alpha2Time(40, 0, 0);
 +80:
     delete();
 }
