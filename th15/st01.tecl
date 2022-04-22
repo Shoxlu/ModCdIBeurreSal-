@@ -532,9 +532,9 @@ void main()
     setChapter(2);
     wait(2);
 	dialogRead(6);
-	// dialogWait();
-    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    // wait(160);
+	dialogWait();
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    wait(1060);
     // @MainLatter();
     // etClear(640.0f);
 	// enmKillAll();
