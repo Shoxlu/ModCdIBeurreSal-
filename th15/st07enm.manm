@@ -1,0 +1,1698 @@
+entry entry0 {
+    version: 8,
+    name: "stgenm/stage07/enm7.png",
+    format: 1,
+    width: 512,
+    height: 1024,
+    memoryPriority: 10,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 2097152,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 1024,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 64, h: 96 },
+        sprite1: { x: 64, y: 0, w: 64, h: 96 },
+        sprite2: { x: 128, y: 0, w: 64, h: 96 },
+        sprite3: { x: 192, y: 0, w: 64, h: 96 },
+        sprite4: { x: 256, y: 0, w: 64, h: 96 },
+        sprite5: { x: 320, y: 0, w: 64, h: 96 },
+        sprite6: { x: 384, y: 0, w: 64, h: 96 },
+        sprite7: { x: 448, y: 0, w: 64, h: 96 },
+        sprite8: { x: 0, y: 96, w: 64, h: 96 },
+        sprite9: { x: 64, y: 96, w: 64, h: 96 },
+        sprite10: { x: 128, y: 96, w: 64, h: 96 },
+        sprite11: { x: 192, y: 96, w: 64, h: 96 },
+        sprite12: { x: 256, y: 96, w: 64, h: 96 },
+        sprite13: { x: 0, y: 192, w: 64, h: 96 },
+        sprite14: { x: 64, y: 192, w: 64, h: 96 },
+        sprite15: { x: 128, y: 192, w: 64, h: 96 },
+        sprite16: { x: 192, y: 192, w: 64, h: 96 },
+        sprite17: { x: 256, y: 192, w: 64, h: 96 },
+        sprite18: { x: 320, y: 96, w: 64, h: 96 },
+        sprite19: { x: 384, y: 96, w: 64, h: 96 },
+        sprite20: { x: 448, y: 96, w: 64, h: 96 },
+        sprite21: { x: 320, y: 192, w: 64, h: 96 },
+        sprite22: { x: 384, y: 192, w: 64, h: 96 },
+        sprite23: { x: 448, y: 192, w: 64, h: 96 },
+        sprite24: { x: 320, y: 384, w: 64, h: 96 },
+        sprite25: { x: 384, y: 384, w: 64, h: 96 },
+        sprite26: { x: 448, y: 384, w: 64, h: 96 },
+        sprite27: { x: 0, y: 288, w: 64, h: 96 },
+        sprite28: { x: 64, y: 288, w: 64, h: 96 },
+        sprite29: { x: 128, y: 288, w: 64, h: 96 },
+        sprite30: { x: 192, y: 288, w: 64, h: 96 },
+        sprite31: { x: 256, y: 288, w: 64, h: 96 },
+        sprite32: { x: 320, y: 288, w: 64, h: 96 },
+        sprite33: { x: 384, y: 288, w: 64, h: 96 },
+        sprite34: { x: 0, y: 384, w: 64, h: 96 },
+        sprite35: { x: 64, y: 384, w: 64, h: 96 },
+        sprite36: { x: 128, y: 384, w: 64, h: 96 },
+        sprite37: { x: 192, y: 384, w: 64, h: 96 },
+        sprite38: { x: 256, y: 384, w: 64, h: 96 },
+        sprite39: { x: 0, y: 480, w: 64, h: 96 },
+        sprite40: { x: 64, y: 480, w: 64, h: 96 },
+        sprite41: { x: 128, y: 480, w: 64, h: 96 },
+        sprite42: { x: 192, y: 480, w: 64, h: 96 },
+        sprite43: { x: 256, y: 480, w: 64, h: 96 },
+        sprite44: { x: 0, y: 576, w: 64, h: 96 },
+        sprite45: { x: 64, y: 576, w: 64, h: 96 },
+        sprite46: { x: 128, y: 576, w: 64, h: 96 },
+        sprite47: { x: 192, y: 576, w: 64, h: 96 },
+        sprite48: { x: 256, y: 576, w: 64, h: 96 },
+        sprite49: { x: 320, y: 576, w: 64, h: 96 },
+        sprite50: { x: 384, y: 576, w: 64, h: 96 },
+        sprite51: { x: 0, y: 672, w: 64, h: 96 },
+        sprite52: { x: 64, y: 672, w: 64, h: 96 },
+        sprite53: { x: 128, y: 672, w: 64, h: 96 },
+        sprite54: { x: 192, y: 672, w: 64, h: 96 },
+        sprite55: { x: 256, y: 672, w: 64, h: 96 },
+        sprite56: { x: 0, y: 768, w: 64, h: 96 },
+        sprite57: { x: 64, y: 768, w: 64, h: 96 },
+        sprite58: { x: 128, y: 768, w: 64, h: 96 },
+        sprite59: { x: 192, y: 768, w: 64, h: 96 },
+        sprite60: { x: 256, y: 768, w: 64, h: 96 }
+    }
+}
+
+script script0 {
+    layer(8);
+offset12:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite0);
++8: // 8
+    sprite(sprite1);
++8: // 16
+    sprite(sprite2);
++8: // 24
+    sprite(sprite3);
++8: // 32
+    sprite(sprite4);
++8: // 40
+    sprite(sprite5);
++8: // 48
+    sprite(sprite4);
++8: // 56
+    sprite(sprite3);
++8: // 64
+    sprite(sprite2);
++8: // 72
+    sprite(sprite1);
++6: // 78
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite0);
++8: // 86
+    sprite(sprite1);
++8: // 94
+    sprite(sprite2);
++8: // 102
+    sprite(sprite3);
++8: // 110
+    sprite(sprite4);
++8: // 118
+    sprite(sprite6);
++8: // 126
+    sprite(sprite4);
++8: // 134
+    sprite(sprite3);
++8: // 142
+    sprite(sprite2);
++8: // 150
+    sprite(sprite1);
++8: // 158
+    jmp(offset12, 0);
+}
+
+script script1 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite13);
++6: // 6
+    sprite(sprite14);
++6: // 12
+offset64:
+    sprite(sprite15);
++6: // 18
+    sprite(sprite16);
++6: // 24
+    sprite(sprite17);
++6: // 30
+    sprite(sprite16);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script2 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite8);
++6: // 6
+    sprite(sprite9);
++6: // 12
+offset64:
+    sprite(sprite10);
++6: // 18
+    sprite(sprite11);
++6: // 24
+    sprite(sprite12);
++6: // 30
+    sprite(sprite11);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script3 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite14);
++6: // 6
+    sprite(sprite13);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite0);
++8: // 20
+    sprite(sprite1);
++8: // 28
+    sprite(sprite2);
++8: // 36
+    sprite(sprite3);
++8: // 44
+    sprite(sprite4);
++8: // 52
+    sprite(sprite5);
++8: // 60
+    sprite(sprite4);
++8: // 68
+    sprite(sprite3);
++8: // 76
+    sprite(sprite2);
++8: // 84
+    sprite(sprite1);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite0);
++8: // 98
+    sprite(sprite1);
++8: // 106
+    sprite(sprite2);
++8: // 114
+    sprite(sprite3);
++8: // 122
+    sprite(sprite4);
++8: // 130
+    sprite(sprite6);
++8: // 138
+    sprite(sprite4);
++8: // 146
+    sprite(sprite3);
++8: // 154
+    sprite(sprite2);
++8: // 162
+    sprite(sprite1);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script4 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite9);
++6: // 6
+    sprite(sprite8);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite0);
++8: // 20
+    sprite(sprite1);
++8: // 28
+    sprite(sprite2);
++8: // 36
+    sprite(sprite3);
++8: // 44
+    sprite(sprite4);
++8: // 52
+    sprite(sprite5);
++8: // 60
+    sprite(sprite4);
++8: // 68
+    sprite(sprite3);
++8: // 76
+    sprite(sprite2);
++8: // 84
+    sprite(sprite1);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite0);
++8: // 98
+    sprite(sprite1);
++8: // 106
+    sprite(sprite2);
++8: // 114
+    sprite(sprite3);
++8: // 122
+    sprite(sprite4);
++8: // 130
+    sprite(sprite6);
++8: // 138
+    sprite(sprite4);
++8: // 146
+    sprite(sprite3);
++8: // 154
+    sprite(sprite2);
++8: // 162
+    sprite(sprite1);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script5 {
+    layer(8);
+    sprite(sprite18);
++9: // 9
+    sprite(sprite19);
++9: // 18
+    sprite(sprite20);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite27);
++8: // 35
+    sprite(sprite28);
++8: // 43
+    sprite(sprite29);
++8: // 51
+    sprite(sprite30);
++8: // 59
+    sprite(sprite31);
++8: // 67
+    sprite(sprite32);
++8: // 75
+    sprite(sprite31);
++8: // 83
+    sprite(sprite30);
++8: // 91
+    sprite(sprite29);
++8: // 99
+    sprite(sprite28);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite27);
++8: // 113
+    sprite(sprite28);
++8: // 121
+    sprite(sprite29);
++8: // 129
+    sprite(sprite30);
++8: // 137
+    sprite(sprite31);
++8: // 145
+    sprite(sprite33);
++8: // 153
+    sprite(sprite31);
++8: // 161
+    sprite(sprite30);
++8: // 169
+    sprite(sprite29);
++8: // 177
+    sprite(sprite28);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+script script6 {
+    layer(8);
+    sprite(sprite21);
++9: // 9
+    sprite(sprite22);
++9: // 18
+    sprite(sprite23);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite44);
++8: // 35
+    sprite(sprite45);
++8: // 43
+    sprite(sprite46);
++8: // 51
+    sprite(sprite47);
++8: // 59
+    sprite(sprite48);
++8: // 67
+    sprite(sprite49);
++8: // 75
+    sprite(sprite48);
++8: // 83
+    sprite(sprite47);
++8: // 91
+    sprite(sprite46);
++8: // 99
+    sprite(sprite45);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite44);
++8: // 113
+    sprite(sprite45);
++8: // 121
+    sprite(sprite46);
++8: // 129
+    sprite(sprite47);
++8: // 137
+    sprite(sprite48);
++8: // 145
+    sprite(sprite50);
++8: // 153
+    sprite(sprite48);
++8: // 161
+    sprite(sprite47);
++8: // 169
+    sprite(sprite46);
++8: // 177
+    sprite(sprite45);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+script script7 {
+    layer(8);
+offset12:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite27);
++8: // 8
+    sprite(sprite28);
++8: // 16
+    sprite(sprite29);
++8: // 24
+    sprite(sprite30);
++8: // 32
+    sprite(sprite31);
++8: // 40
+    sprite(sprite32);
++8: // 48
+    sprite(sprite31);
++8: // 56
+    sprite(sprite30);
++8: // 64
+    sprite(sprite29);
++8: // 72
+    sprite(sprite28);
++6: // 78
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite27);
++8: // 86
+    sprite(sprite28);
++8: // 94
+    sprite(sprite29);
++8: // 102
+    sprite(sprite30);
++8: // 110
+    sprite(sprite31);
++8: // 118
+    sprite(sprite33);
++8: // 126
+    sprite(sprite31);
++8: // 134
+    sprite(sprite30);
++8: // 142
+    sprite(sprite29);
++8: // 150
+    sprite(sprite28);
++8: // 158
+    jmp(offset12, 0);
+}
+
+script script8 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite39);
++6: // 6
+    sprite(sprite40);
++6: // 12
+offset64:
+    sprite(sprite41);
++6: // 18
+    sprite(sprite42);
++6: // 24
+    sprite(sprite43);
++6: // 30
+    sprite(sprite42);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script9 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite34);
++6: // 6
+    sprite(sprite35);
++6: // 12
+offset64:
+    sprite(sprite36);
++6: // 18
+    sprite(sprite37);
++6: // 24
+    sprite(sprite38);
++6: // 30
+    sprite(sprite37);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script10 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite40);
++6: // 6
+    sprite(sprite39);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite27);
++8: // 20
+    sprite(sprite28);
++8: // 28
+    sprite(sprite29);
++8: // 36
+    sprite(sprite30);
++8: // 44
+    sprite(sprite31);
++8: // 52
+    sprite(sprite32);
++8: // 60
+    sprite(sprite31);
++8: // 68
+    sprite(sprite30);
++8: // 76
+    sprite(sprite29);
++8: // 84
+    sprite(sprite28);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite27);
++8: // 98
+    sprite(sprite28);
++8: // 106
+    sprite(sprite29);
++8: // 114
+    sprite(sprite30);
++8: // 122
+    sprite(sprite31);
++8: // 130
+    sprite(sprite33);
++8: // 138
+    sprite(sprite31);
++8: // 146
+    sprite(sprite30);
++8: // 154
+    sprite(sprite29);
++8: // 162
+    sprite(sprite28);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script11 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite35);
++6: // 6
+    sprite(sprite34);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite27);
++8: // 20
+    sprite(sprite28);
++8: // 28
+    sprite(sprite29);
++8: // 36
+    sprite(sprite30);
++8: // 44
+    sprite(sprite31);
++8: // 52
+    sprite(sprite32);
++8: // 60
+    sprite(sprite31);
++8: // 68
+    sprite(sprite30);
++8: // 76
+    sprite(sprite29);
++8: // 84
+    sprite(sprite28);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite27);
++8: // 98
+    sprite(sprite28);
++8: // 106
+    sprite(sprite29);
++8: // 114
+    sprite(sprite30);
++8: // 122
+    sprite(sprite31);
++8: // 130
+    sprite(sprite33);
++8: // 138
+    sprite(sprite31);
++8: // 146
+    sprite(sprite30);
++8: // 154
+    sprite(sprite29);
++8: // 162
+    sprite(sprite28);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script12 {
+    layer(8);
+    sprite(sprite20);
++9: // 9
+    sprite(sprite19);
++9: // 18
+    sprite(sprite18);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite0);
++8: // 35
+    sprite(sprite1);
++8: // 43
+    sprite(sprite2);
++8: // 51
+    sprite(sprite3);
++8: // 59
+    sprite(sprite4);
++8: // 67
+    sprite(sprite5);
++8: // 75
+    sprite(sprite4);
++8: // 83
+    sprite(sprite3);
++8: // 91
+    sprite(sprite2);
++8: // 99
+    sprite(sprite1);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite0);
++8: // 113
+    sprite(sprite1);
++8: // 121
+    sprite(sprite2);
++8: // 129
+    sprite(sprite3);
++8: // 137
+    sprite(sprite4);
++8: // 145
+    sprite(sprite6);
++8: // 153
+    sprite(sprite4);
++8: // 161
+    sprite(sprite3);
++8: // 169
+    sprite(sprite2);
++8: // 177
+    sprite(sprite1);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+script script13 {
+    layer(8);
+    sprite(sprite24);
++9: // 9
+    sprite(sprite25);
++9: // 18
+    sprite(sprite26);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite44);
++8: // 35
+    sprite(sprite45);
++8: // 43
+    sprite(sprite46);
++8: // 51
+    sprite(sprite47);
++8: // 59
+    sprite(sprite48);
++8: // 67
+    sprite(sprite49);
++8: // 75
+    sprite(sprite48);
++8: // 83
+    sprite(sprite47);
++8: // 91
+    sprite(sprite46);
++8: // 99
+    sprite(sprite45);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite44);
++8: // 113
+    sprite(sprite45);
++8: // 121
+    sprite(sprite46);
++8: // 129
+    sprite(sprite47);
++8: // 137
+    sprite(sprite48);
++8: // 145
+    sprite(sprite50);
++8: // 153
+    sprite(sprite48);
++8: // 161
+    sprite(sprite47);
++8: // 169
+    sprite(sprite46);
++8: // 177
+    sprite(sprite45);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+script script14 {
+    layer(8);
+offset12:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite44);
++8: // 8
+    sprite(sprite45);
++8: // 16
+    sprite(sprite46);
++8: // 24
+    sprite(sprite47);
++8: // 32
+    sprite(sprite48);
++8: // 40
+    sprite(sprite49);
++8: // 48
+    sprite(sprite48);
++8: // 56
+    sprite(sprite47);
++8: // 64
+    sprite(sprite46);
++8: // 72
+    sprite(sprite45);
++6: // 78
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite44);
++8: // 86
+    sprite(sprite45);
++8: // 94
+    sprite(sprite46);
++8: // 102
+    sprite(sprite47);
++8: // 110
+    sprite(sprite48);
++8: // 118
+    sprite(sprite50);
++8: // 126
+    sprite(sprite48);
++8: // 134
+    sprite(sprite47);
++8: // 142
+    sprite(sprite46);
++8: // 150
+    sprite(sprite45);
++8: // 158
+    jmp(offset12, 0);
+}
+
+script script15 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite56);
++6: // 6
+    sprite(sprite57);
++6: // 12
+offset64:
+    sprite(sprite58);
++6: // 18
+    sprite(sprite59);
++6: // 24
+    sprite(sprite60);
++6: // 30
+    sprite(sprite59);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script16 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite51);
++6: // 6
+    sprite(sprite52);
++6: // 12
+offset64:
+    sprite(sprite53);
++6: // 18
+    sprite(sprite54);
++6: // 24
+    sprite(sprite55);
++6: // 30
+    sprite(sprite54);
+    jmp(offset64, 6);
+    stop();
+}
+
+script script17 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite57);
++6: // 6
+    sprite(sprite56);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite44);
++8: // 20
+    sprite(sprite45);
++8: // 28
+    sprite(sprite46);
++8: // 36
+    sprite(sprite47);
++8: // 44
+    sprite(sprite48);
++8: // 52
+    sprite(sprite49);
++8: // 60
+    sprite(sprite48);
++8: // 68
+    sprite(sprite47);
++8: // 76
+    sprite(sprite46);
++8: // 84
+    sprite(sprite45);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite44);
++8: // 98
+    sprite(sprite45);
++8: // 106
+    sprite(sprite46);
++8: // 114
+    sprite(sprite47);
++8: // 122
+    sprite(sprite48);
++8: // 130
+    sprite(sprite50);
++8: // 138
+    sprite(sprite48);
++8: // 146
+    sprite(sprite47);
++8: // 154
+    sprite(sprite46);
++8: // 162
+    sprite(sprite45);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script18 {
+    posTime(1, 9, 0.0f, 0.0f, 0.0f);
+    layer(8);
+    sprite(sprite52);
++6: // 6
+    sprite(sprite51);
++6: // 12
+    nop();
+offset72:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite44);
++8: // 20
+    sprite(sprite45);
++8: // 28
+    sprite(sprite46);
++8: // 36
+    sprite(sprite47);
++8: // 44
+    sprite(sprite48);
++8: // 52
+    sprite(sprite49);
++8: // 60
+    sprite(sprite48);
++8: // 68
+    sprite(sprite47);
++8: // 76
+    sprite(sprite46);
++8: // 84
+    sprite(sprite45);
++6: // 90
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite44);
++8: // 98
+    sprite(sprite45);
++8: // 106
+    sprite(sprite46);
++8: // 114
+    sprite(sprite47);
++8: // 122
+    sprite(sprite48);
++8: // 130
+    sprite(sprite50);
++8: // 138
+    sprite(sprite48);
++8: // 146
+    sprite(sprite47);
++8: // 154
+    sprite(sprite46);
++8: // 162
+    sprite(sprite45);
++8: // 170
+    jmp(offset72, 12);
+}
+
+script script19 {
+    layer(8);
+    sprite(sprite23);
++9: // 9
+    sprite(sprite22);
++9: // 18
+    sprite(sprite21);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite0);
++8: // 35
+    sprite(sprite1);
++8: // 43
+    sprite(sprite2);
++8: // 51
+    sprite(sprite3);
++8: // 59
+    sprite(sprite4);
++8: // 67
+    sprite(sprite5);
++8: // 75
+    sprite(sprite4);
++8: // 83
+    sprite(sprite3);
++8: // 91
+    sprite(sprite2);
++8: // 99
+    sprite(sprite1);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite0);
++8: // 113
+    sprite(sprite1);
++8: // 121
+    sprite(sprite2);
++8: // 129
+    sprite(sprite3);
++8: // 137
+    sprite(sprite4);
++8: // 145
+    sprite(sprite6);
++8: // 153
+    sprite(sprite4);
++8: // 161
+    sprite(sprite3);
++8: // 169
+    sprite(sprite2);
++8: // 177
+    sprite(sprite1);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+script script20 {
+    layer(8);
+    sprite(sprite26);
++9: // 9
+    sprite(sprite25);
++9: // 18
+    sprite(sprite24);
++9: // 27
+    nop();
+offset56:
+    posTime(72, 9, 0.0f, -3.0f, 0.0f);
+    sprite(sprite27);
++8: // 35
+    sprite(sprite28);
++8: // 43
+    sprite(sprite29);
++8: // 51
+    sprite(sprite30);
++8: // 59
+    sprite(sprite31);
++8: // 67
+    sprite(sprite32);
++8: // 75
+    sprite(sprite31);
++8: // 83
+    sprite(sprite30);
++8: // 91
+    sprite(sprite29);
++8: // 99
+    sprite(sprite28);
++6: // 105
+    posTime(72, 9, 0.0f, 0.0f, 0.0f);
+    sprite(sprite27);
++8: // 113
+    sprite(sprite28);
++8: // 121
+    sprite(sprite29);
++8: // 129
+    sprite(sprite30);
++8: // 137
+    sprite(sprite31);
++8: // 145
+    sprite(sprite33);
++8: // 153
+    sprite(sprite31);
++8: // 161
+    sprite(sprite30);
++8: // 169
+    sprite(sprite29);
++8: // 177
+    sprite(sprite28);
++8: // 185
+    jmp(offset56, 27);
+    stop();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "stgenm/stage05/enm5b.png",
+    format: 1,
+    width: 128,
+    height: 128,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 65536,
+    THTXFormat: 1,
+    THTXWidth: 128,
+    THTXHeight: 128,
+    THTXZero: 0,
+    sprites: {
+        sprite61: { x: 0, y: 0, w: 128, h: 128 }
+    }
+}
+
+script script21 {
+    layer(14);
+    sprite(sprite61);
+    stop();
+}
+
+script script22 {
+    sprite(-1);
+    layer(14);
+    drawPoly(1.0f, 3);
+    scale(1.0f, 1.0f);
+    color(0, 0, 255);
+    color2(64, 64, 255);
+    alpha(0);
+    alpha2(0);
+    alphaTime(120, 0, 64);
+    alpha2Time(120, 0, 255);
+    scale(512.0f, 512.0f);
+    scaleTime(120, 0, 0.0f, 0.0f);
+    rotate(%RANDRAD, 0.0f, %RANDRAD);
+    angleVel(0.05235988f, 0.0f, 0.05235988f);
++120: // 120
+    delete();
+}
+
+script script23 {
+    sprite(-1);
+    layer(14);
+    drawPoly(1.0f, 3);
+    scale(1.0f, 1.0f);
+    color(255, 0, 0);
+    color2(255, 64, 64);
+    alpha(0);
+    alpha2(0);
+    alphaTime(120, 0, 64);
+    alpha2Time(120, 0, 255);
+    scale(256.0f, 256.0f);
+    scaleTime(120, 0, 0.0f, 0.0f);
+    rotate(%RANDRAD, 0.0f, %RANDRAD);
+    angleVel(0.05235988f, 0.0f, 0.05235988f);
++120: // 120
+    delete();
+}
+
+script script24 {
+    sprite(-1);
+    layer(14);
+    drawPoly(1.0f, 3);
+    scale(1.0f, 1.0f);
+    color(0, 255, 0);
+    color2(64, 255, 64);
+    alpha(0);
+    alpha2(0);
+    alphaTime(120, 0, 64);
+    alpha2Time(120, 0, 255);
+    scale(512.0f, 512.0f);
+    scaleTime(120, 0, 0.0f, 0.0f);
+    rotate(%RANDRAD, 0.0f, %RANDRAD);
+    angleVel(0.05235988f, 0.0f, 0.05235988f);
++120: // 120
+    delete();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "face/enemy7/face07no.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 122,
+    yOffset: 126,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 143424,
+    THTXFormat: 1,
+    THTXWidth: 216,
+    THTXHeight: 166,
+    THTXZero: 0,
+    sprites: {
+        sprite62: { x: 0, y: 0, w: 216, h: 166 }
+    }
+}
+
+
+entry entry3 {
+    version: 8,
+    name: "face/enemy7/face07n2.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 122,
+    yOffset: 126,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 143424,
+    THTXFormat: 1,
+    THTXWidth: 216,
+    THTXHeight: 166,
+    THTXZero: 0,
+    sprites: {
+        sprite63: { x: 0, y: 0, w: 216, h: 166 }
+    }
+}
+
+
+entry entry4 {
+    version: 8,
+    name: "face/enemy7/face07hp.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 122,
+    yOffset: 126,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 143424,
+    THTXFormat: 1,
+    THTXWidth: 216,
+    THTXHeight: 166,
+    THTXZero: 0,
+    sprites: {
+        sprite64: { x: 0, y: 0, w: 216, h: 166 }
+    }
+}
+
+
+entry entry5 {
+    version: 8,
+    name: "face/dummy.png",
+    format: 7,
+    width: 4,
+    height: 4,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 16,
+    THTXFormat: 7,
+    THTXWidth: 4,
+    THTXHeight: 4,
+    THTXZero: 0,
+    sprites: {
+        sprite65: { x: 0, y: 0, w: 4, h: 4 }
+    }
+}
+
+
+entry entry6 {
+    version: 8,
+    name: "face/enemy7/face07sw.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 122,
+    yOffset: 126,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 143424,
+    THTXFormat: 1,
+    THTXWidth: 216,
+    THTXHeight: 166,
+    THTXZero: 0,
+    sprites: {
+        sprite66: { x: 0, y: 0, w: 216, h: 166 }
+    }
+}
+
+
+entry entry7 {
+    version: 8,
+    name: "face/dummy.png",
+    format: 7,
+    width: 4,
+    height: 4,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 16,
+    THTXFormat: 7,
+    THTXWidth: 4,
+    THTXHeight: 4,
+    THTXZero: 0,
+    sprites: {
+        sprite67: { x: 0, y: 0, w: 4, h: 4 }
+    }
+}
+
+
+entry entry8 {
+    version: 8,
+    name: "face/enemy7/face07pr.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    xOffset: 122,
+    yOffset: 126,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 143424,
+    THTXFormat: 1,
+    THTXWidth: 216,
+    THTXHeight: 166,
+    THTXZero: 0,
+    sprites: {
+        sprite68: { x: 0, y: 0, w: 216, h: 166 }
+    }
+}
+
+
+entry entry9 {
+    version: 8,
+    name: "face/dummy.png",
+    format: 7,
+    width: 4,
+    height: 4,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 16,
+    THTXFormat: 7,
+    THTXWidth: 4,
+    THTXHeight: 4,
+    THTXZero: 0,
+    sprites: {
+        sprite69: { x: 0, y: 0, w: 4, h: 4 }
+    }
+}
+
+
+entry entry10 {
+    version: 8,
+    name: "face/enemy7/face07lo.png",
+    format: 1,
+    width: 1024,
+    height: 1024,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 1939200,
+    THTXFormat: 1,
+    THTXWidth: 606,
+    THTXHeight: 800,
+    THTXZero: 0,
+    sprites: {
+        sprite70: { x: 0, y: 0, w: 606, h: 800 }
+    }
+}
+
+
+entry entry11 {
+    version: 8,
+    name: "face/enemy7/face07bs.png",
+    format: 1,
+    width: 1024,
+    height: 1024,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 1939200,
+    THTXFormat: 1,
+    THTXWidth: 606,
+    THTXHeight: 800,
+    THTXZero: 0,
+    sprites: {
+        sprite71: { x: 0, y: 0, w: 606, h: 800 },
+        sprite72: { x: 0, y: 0, w: 1, h: 1 }
+    }
+}
+
+script script25 {
+    layer(25);
+    sprite(sprite71);
+    anchor(1, 1);
+    ins_431(1);
+    alpha(0);
+    alphaTime(15, 0, 255);
+    pos(96.0f, 176.0f, 0.0f);
+    layer(25);
+    resolutionMode(2);
+    resampleMode(1);
+    case(3);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 64.0f, 176.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 96);
++15: // 15
+    stop();
+    case(2);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 5, 0.0f, 160.0f, 0.0f);
+    colorTime(15, 0, 255, 255, 255);
++15: // 30
+    stop();
+    case(7);
+    posTime(2, 0, -8.0f, 152.0f, 0.0f);
++2: // 32
+    posTime(2, 0, -4.0f, 164.0f, 0.0f);
++2: // 34
+    posTime(2, 0, 8.0f, 156.0f, 0.0f);
++2: // 36
+    posTime(2, 0, 4.0f, 168.0f, 0.0f);
++2: // 38
+    posTime(2, 0, 0.0f, 152.0f, 0.0f);
++2: // 40
+    posTime(2, 0, -8.0f, 164.0f, 0.0f);
++2: // 42
+    posTime(2, 0, -4.0f, 156.0f, 0.0f);
++2: // 44
+    posTime(2, 0, 8.0f, 168.0f, 0.0f);
++2: // 46
+    posTime(2, 0, -4.0f, 156.0f, 0.0f);
++2: // 48
+    posTime(2, 0, 0.0f, 164.0f, 0.0f);
++15: // 63
+    stop();
+    case(8);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 64.0f, 176.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 240);
++15: // 78
+    stop();
+    case(1);
+    posTime(30, 6, 96.0f, 176.0f, 0.0f);
+    alphaTime(30, 0, 0);
++30: // 108
+    delete();
+    case(17);
+    case(18);
+    case(19);
+    case(20);
+    case(21);
+    case(22);
+    case(23);
+    case(24);
+    sprite(sprite71);
+    caseReturn();
+    case(25);
+    sprite(sprite70);
+    caseReturn();
+}
+
+script script26 {
+    sprite(sprite62);
+    anchor(1, 1);
+    ins_431(1);
+    alpha(0);
+    alphaTime(15, 0, 255);
+    pos(218.0f, 302.0f, 0.0f);
+    layer(25);
+    resolutionMode(2);
+    resampleMode(1);
+    case(3);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 186.0f, 302.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 96);
++15: // 15
+    stop();
+    case(2);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 5, 122.0f, 286.0f, 0.0f);
+    colorTime(15, 0, 255, 255, 255);
++15: // 30
+    stop();
+    case(7);
+    posTime(2, 0, 114.0f, 278.0f, 0.0f);
++2: // 32
+    posTime(2, 0, 118.0f, 290.0f, 0.0f);
++2: // 34
+    posTime(2, 0, 130.0f, 282.0f, 0.0f);
++2: // 36
+    posTime(2, 0, 126.0f, 294.0f, 0.0f);
++2: // 38
+    posTime(2, 0, 122.0f, 278.0f, 0.0f);
++2: // 40
+    posTime(2, 0, 114.0f, 290.0f, 0.0f);
++2: // 42
+    posTime(2, 0, 118.0f, 282.0f, 0.0f);
++2: // 44
+    posTime(2, 0, 130.0f, 294.0f, 0.0f);
++2: // 46
+    posTime(2, 0, 118.0f, 282.0f, 0.0f);
++2: // 48
+    posTime(2, 0, 122.0f, 290.0f, 0.0f);
++15: // 63
+    stop();
+    case(8);
+    layer(26);
+    resolutionMode(2);
+    posTime(15, 2, 186.0f, 302.0f, 0.0f);
+    colorTime(15, 0, 96, 96, 240);
++15: // 78
+    stop();
+    case(1);
+    posTime(30, 6, 218.0f, 302.0f, 0.0f);
+    alphaTime(30, 0, 0);
++30: // 108
+    delete();
+    case(17);
+    sprite(sprite62);
+    caseReturn();
+    case(18);
+    sprite(sprite63);
+    caseReturn();
+    case(19);
+    sprite(sprite64);
+    caseReturn();
+    case(20);
+    sprite(sprite65);
+    caseReturn();
+    case(21);
+    sprite(sprite66);
+    caseReturn();
+    case(22);
+    sprite(sprite67);
+    caseReturn();
+    case(23);
+    sprite(sprite68);
+    caseReturn();
+    case(24);
+    sprite(sprite69);
+    caseReturn();
+    case(25);
+    sprite(sprite72);
+    caseReturn();
+}
+
+script script27 {
+-1:
+    alpha(0);
+    layer(24);
+    resolutionMode(2);
+    pos(448.0f, 0.0f, 0.0f);
+0:
+    scriptNewFront(script26);
+    scriptNewFront(script25);
+    stop();
+    case(1);
++30: // 30
+    delete();
+}
+
+
+entry entry12 {
+    version: 8,
+    name: "stgenm/stage07/cdbg07a00.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 688128,
+    THTXFormat: 1,
+    THTXWidth: 384,
+    THTXHeight: 448,
+    THTXZero: 0,
+    sprites: {
+        sprite73: { x: 0, y: 0, w: 384, h: 448 }
+    }
+}
+
+script script28 {
+    alpha(0);
+    layer(4);
+    scriptNew(script30);
+    scriptNew(script31);
+    scriptNew(script29);
+    stop();
+}
+
+script script29 {
+-1:
+    layer(4);
+    sprite(sprite73);
+    anchor(0, 1);
+    pos(0.0f, 0.0f, 0.0f);
+    alpha(0);
+    alphaTime(60, 0, 255);
+    blendMode(2);
+0:
+    stop();
+}
+
+
+entry entry13 {
+    version: 8,
+    name: "stgenm/stage07/cdbg07b00.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 1048576,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite74: { x: 0, y: 0, w: 512, h: 512 }
+    }
+}
+
+script script30 {
+-1:
+    layer(4);
+    type(1);
+    sprite(sprite74);
+    scale(1.0f, 1.0f);
+    pos(0.0f, 192.0f, 0.0f);
+    alpha(0);
+    alphaTime(60, 0, 255);
+0:
+    stop();
+}
+
+script script31 {
+-1:
+    layer(4);
+    type(1);
+    sprite(sprite74);
+    scale(1.5f, 1.5f);
+    pos(0.0f, 192.0f, 0.0f);
+    alpha(0);
+    alphaTime(60, 0, 192);
+    angleVel(0.0f, 0.0f, 0.0052359877f);
+    blendMode(1);
+0:
+    stop();
+}
+
+
+entry entry14 {
+    version: 8,
+    name: "face/enemy7/ename01.png",
+    format: 5,
+    width: 512,
+    height: 128,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 98304,
+    THTXFormat: 5,
+    THTXWidth: 384,
+    THTXHeight: 128,
+    THTXZero: 0,
+    sprites: {
+        sprite75: { x: 0, y: 0, w: 384, h: 128 }
+    }
+}
+
+script script32 {
+    resolutionMode(2);
+    pos(640.0f, 740.0f, 0.0f);
+    alpha(0);
+    scriptNew(script34);
+    scriptNew(script33);
++300: // 300
+    nop();
+    case(1);
++20: // 320
+    delete();
+}
+
+script script33 {
+    ins_431(1);
+    randMode(1);
+    anchor(0, 0);
+    layer(26);
+    resolutionMode(2);
+    sprite(sprite75);
+    scale(1.0f, 0.0f);
+    type(0);
+    scaleTime(20, 4, 1.0f, 1.0f);
+    pos(0.0f, 0.0f, 0.0f);
+    alpha(0);
+    alphaTime(30, 0, 255);
++200: // 200
+    nop();
+    type(1);
+    resampleMode(0);
+    posTime(120, 3, -24.0f, 0.0f, 0.0f);
++100: // 300
+    nop();
+    case(1);
+    alphaTime(20, 0, 0);
++20: // 320
+    delete();
+}
+
+
+entry entry15 {
+    version: 8,
+    name: "face/enemy1/enamebk.png",
+    format: 5,
+    width: 128,
+    height: 128,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 32768,
+    THTXFormat: 5,
+    THTXWidth: 128,
+    THTXHeight: 128,
+    THTXZero: 0,
+    sprites: {
+        sprite76: { x: 0, y: 0, w: 128, h: 128 }
+    }
+}
+
+script script34 {
+-1:
+    ins_431(1);
+    randMode(1);
+    layer(26);
+    resolutionMode(2);
+    type(1);
+    sprite(sprite76);
+    pos(-32.0f, -32.0f, 0.0f);
+    posTime(320, 0, 32.0f, 32.0f, 0.0f);
+    scale(0.0f, 0.0f);
+    scaleTime(20, 4, 1.0f, 1.0f);
+    angleVel(0.0f, 0.0f, 0.01308997f);
+    alpha(0);
+    alphaTime(120, 0, 255);
+300:
+    nop();
+    case(1);
+    alphaTime(20, 0, 0);
++20: // 320
+    delete();
+}
+
+
+entry entry16 {
+    version: 8,
+    name: "face/enemy7/face07ct.png",
+    format: 1,
+    width: 512,
+    height: 1024,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 677120,
+    THTXFormat: 1,
+    THTXWidth: 320,
+    THTXHeight: 529,
+    THTXZero: 0,
+    sprites: {
+        sprite77: { x: 0, y: 0, w: 320, h: 529 }
+    }
+}
+
+script script35 {
+    sprite(sprite77);
+    layer(6);
+    anchor(0, 1);
+    type(2);
+    pos(380.0f, -192.0f, 0.0f);
+    color(0, 0, 0);
+    colorTime(30, 0, 255, 255, 255);
+    posTime(30, 0, 56.0f, -32.0f, 0.0f);
++30: // 30
+    posTime(90, 0, 24.0f, -16.0f, 0.0f);
++90: // 120
+    posTime(30, 0, -420.0f, 160.0f, 0.0f);
+    colorTime(30, 0, 0, 0, 0);
++30: // 150
+    delete();
+}
+
+
