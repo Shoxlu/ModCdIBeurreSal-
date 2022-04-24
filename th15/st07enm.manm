@@ -1278,13 +1278,13 @@ entry entry11 {
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 1939200,
+    THTXSize: 1713600,
     THTXFormat: 1,
-    THTXWidth: 606,
-    THTXHeight: 800,
+    THTXWidth: 510,
+    THTXHeight: 840,
     THTXZero: 0,
     sprites: {
-        sprite71: { x: 0, y: 0, w: 606, h: 800 },
+        sprite71: { x: 0, y: 0, w: 510, h: 840 },
         sprite72: { x: 0, y: 0, w: 1, h: 1 }
     }
 }
@@ -1296,21 +1296,21 @@ script script25 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(96.0f, 176.0f, 0.0f);
+    pos(96.0f, 256.0f, 0.0f);
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, 176.0f, 0.0f);
+    posTime(15, 2, 64.0f, 256.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 0.0f, 160.0f, 0.0f);
+    posTime(15, 5, 0.0f, 240.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
