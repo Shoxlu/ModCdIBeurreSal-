@@ -1667,13 +1667,13 @@ entry entry16 {
     memoryPriority: 0,
     lowResScale: 0,
     hasData: 1,
-    THTXSize: 677120,
+    THTXSize: 652680,
     THTXFormat: 1,
-    THTXWidth: 320,
-    THTXHeight: 529,
+    THTXWidth: 315,
+    THTXHeight: 518,
     THTXZero: 0,
     sprites: {
-        sprite77: { x: 0, y: 0, w: 320, h: 529 }
+        sprite77: { x: 0, y: 0, w: 315, h: 518 }
     }
 }
 
