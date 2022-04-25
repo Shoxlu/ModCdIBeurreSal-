@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
-    @Boss4();
+    @BossCard2();
     delete();
 }
 
@@ -1015,7 +1015,7 @@ BossCard2_468:
 BossCard2_1172:
     anmSelect(3);
     anmSelectedPlay(0);
-    @BossCard2_at(%B);
+    @BossCard2_at();
 !E
     100;
 !N
@@ -1041,192 +1041,30 @@ BossCard2_1612:
     return;
 }
 
-void BossCard2_at(var A)
+void BossCard2_at()
 {
-    var B, C, D, E, F, G, H;
-    %B = %FINAL_X + (%RANDF2 * _f(24));
-    %C = %PLAYER_Y2 + (%RANDF2 * _f(24));
-    unless (%C < _f(128)) goto BossCard2_at_404 @ 0;
-    %C = _f(128);
-    goto BossCard2_at_524 @ 0;
-BossCard2_at_404:
-    unless (%C >= _f(384)) goto BossCard2_at_524 @ 0;
-    %C = _f(384);
-BossCard2_at_524:
-    unless (%B >= _f(128)) goto BossCard2_at_668 @ 0;
-    %B = _f(128);
-    goto BossCard2_at_788 @ 0;
-BossCard2_at_668:
-    unless (%B < _f(-128)) goto BossCard2_at_788 @ 0;
-    %B = _f(-128);
-BossCard2_at_788:
-    etNew(0);
-    etAim(0, 5);
-    etSprite(0, 8, 12);
-!E
-    4;
-!N
-    4;
-!H
-    8;
-!LO
-    6;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(0, [-1.0f], 1.0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-!E
-    1.0f;
-!N
-    1.0f;
-!H
-    1.8f;
-!LO
-    2.0f;
-!*
-    etEx(0, 0, 2097152, 60, -999999, [-1.0f], -999999.0f);
-    etSpeed(0, 0.3f, 0.0f);
-    etOffsetAbs(0, %B, %C);
-    etNew(1);
-    etAim(1, 3);
-    etSprite(1, 8, 11);
-!E
-    2;
-!N
-    4;
-!H
-    5;
-!LO
-    5;
-!*
-    etCount(1, [-1], 1);
-    etAngle(1, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(1, [-1.0f], 1.0f);
-    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(1, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-!E
-    1.0f;
-!N
-    1.0f;
-!H
-    1.5f;
-!LO
-    2.0f;
-!*
-    etEx(1, 0, 2097152, 60, -999999, [-1.0f], -999999.0f);
-    etSpeed(1, 0.3f, 0.0f);
-    etOffsetAbs(1, %B, %C);
-    %D = %ANGLE_PLAYER - 1.5707964f;
-    %E = %ANGLE_PLAYER + 1.5707964f;
-    %F = _f(128);
-    $G = 0;
-    diffI($H, 50, 50, 100, 200);
-    goto BossCard2_at_3368 @ 0;
-BossCard2_at_2336:
-    etAngle(0, %E, 1.0f);
-    etOffsetRad(0, %D, %F);
-    unless ((($G % 2) == 0) || ($DIFF >= 1)) goto BossCard2_at_2600 @ 0;
-    etOn(0);
-BossCard2_at_2600:
-    etAngle(1, %E, 1.0f);
-!HL
-    etAngle(1, %D, 1.0f);
-!*
-    etOffsetRad(1, %D, %F);
-    unless ((($G % 2) == 0) || ($DIFF >= 1)) goto BossCard2_at_2892 @ 0;
-    etOn(1);
-BossCard2_at_2892:
-    %D = %D - %A;
-    %E = %E + %A;
-    $G = $G + 1;
-!E
-    2;
-!N
-    2;
-!H
-    1 + ($G % 2);
-!LO
-    1;
-!*
-    wait([-1]);
-    $G = $G + 1;
-BossCard2_at_3368:
-    if ($H--) goto BossCard2_at_2336 @ 0;
-    return;
+	etNew(0);
+	etAim(0,8);
+	etCount(0, 10,10);
+	etAngle(0, ANGLE_PLAYER, rad(180));
+	etSpeed(0, 1f, 1f);
+	etOffsetAbs(0, 192f , 0f);
+	etSprite(0, 34 , 5 +  RAND % 4 );
+	
+	while(1)
+		{
+		times(5) 
+			{
+			etOn(0);
+			flagSet(1);
+			etSprite(0, 34 , 5 +  RAND % 4 );
+			wait(20);
+			}
+			flagClear(1);
+			wait(100);
+		}
+	
 }
-
-void BossCard2_at2()
-{
-    var A, B, C, D, E;
-!E
-    300;
-!N
-    100;
-!H
-    300;
-!LO
-    150;
-!*
-    wait([-1]);
-    etNew($A);
-    etAim($A, 3);
-    etSprite($A, 13, 6);
-    etCount($A, 16, 5);
-    etAngle($A, 0.0f, 0.034906585f);
-!E
-    1.0f;
-!N
-    1.0f;
-!H
-    1.0f;
-!LO
-    1.0f;
-!*
-    etSpeed($A, [-1.0f], 0.8f);
-    etEx($A, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($A, 64.0f);
-    $E = 600;
-    goto BossCard2_at2_652 @ 0;
-BossCard2_at2_504:
-    etAngle($A, %RANDRAD, 0.0f);
-    etOn($A);
-!E
-    160;
-!N
-    90;
-!H
-    160;
-!LO
-    80;
-!*
-    wait([-1]);
-BossCard2_at2_652:
-    if ($E--) goto BossCard2_at2_504 @ 0;
-    return;
-}
-
 void BossCard3()
 {
     var A, B;
