@@ -31,11 +31,11 @@
 		},
 	"NewCodeSnakesColor": {
 		"addr": "0x4BDF0F",
-		"code": "C706 000070FF\
+		"code": "C706 0000FFFF\
 83FA 08\
 0F8D A8B6F4FF\
 8ACA\
-0C FF\
+0C 5F\
 90\
 C0E1 05\
 2AC1\
