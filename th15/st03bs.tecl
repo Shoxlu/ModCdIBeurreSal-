@@ -1,4 +1,4 @@
-
+#include "main.tecl"
 void BossItemCard();
 
 void BossItemPhase(var A, var B, var C);
@@ -43,6 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
+	lifeSet(2100);
     @BossCard2();
     delete();
 }
@@ -1006,64 +1007,102 @@ BossCard2_468:
     moveLimit(0.0f, 128.0f, 240.0f, 64.0f);
     anm316(0, 0);
     anmPlay(1, 73);
+	funcSet(4);
 +120: //124
     nop();
-    %A = %ANGLE_PLAYER;
-    diffF(%B, 0.19634955f, 0.19634955f, 0.19634955f, 0.1308997f);
-    $C = 1000;
-    goto BossCard2_1524 @ 124;
-BossCard2_1172:
     anmSelect(3);
     anmSelectedPlay(0);
+	@ProtectPl() async;
     @BossCard2_at();
-!E
-    100;
-!N
-    100;
-!H
-    0;
-!LO
-    0;
-!*
-    wait([-1]);
-    anm316(0, 0);
-    wait(60);
-    moveRand(30, 4, 1.0f);
-    wait(40);
-    %B = %B * _f(-1);
-BossCard2_1524:
-    if ($C--) goto BossCard2_1172 @ 124;
-    goto BossCard2_1612 @ 124;
-BossCard2_1592:
-    wait(1000);
-BossCard2_1612:
-    if (1) goto BossCard2_1592 @ 124;
-    return;
 }
+
+// void BossCard2_at()
+// {
+	// float sp1 = 4f, sp2 = 3f;
+	// float A = 1f;
+	// etNew(0);
+	// etAim(0,8);
+	// etCount(0, 10,10);
+	// etAngle(0, ANGLE_PLAYER, rad(180));
+	// etSpeed(0, sp1, sp2);
+	// etOffsetAbs(0, 192f , 0f);
+	// etSprite(0, 34 , 5 +  RAND % 4 );
+	
+	// while(1)
+	// {
+		// times(2)
+		// {
+			// times(5) 
+			// {
+				// etOffsetAbs(0, 192f * A , RANDF * 100f);	
+				// etOn(0);
+				// flagSet(1);
+				// etSprite(0, 34 , 5 +  RAND % 4 );
+				// etSpeed(0, sp1, sp2);
+				// sp1 -= 0.45f;
+				// sp2 -= 0.45f;
+				// wait(10);
+			// }
+			// flagClear(1);
+			// wait(200);
+			// sp1 = 5f;
+			// sp2 = 4f;
+			// A = A * -1f;
+		// }
+	// }
+// }
 
 void BossCard2_at()
 {
+	F1 = 2f:3f:4f:5f;
+	float sp2 = 4f;
+	float A = 1f;
 	etNew(0);
-	etAim(0,8);
-	etCount(0, 10,10);
-	etAngle(0, ANGLE_PLAYER, rad(180));
-	etSpeed(0, 1f, 1f);
+	etAim(0,1);
+	etCount(0, 1,1);
+	etSpeed(0, F1, sp2);
 	etOffsetAbs(0, 192f , 0f);
 	etSprite(0, 34 , 5 +  RAND % 4 );
-	
+	etEx(0, 0, EX_OFFSCREEN, 99999, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_ACCEL, 90, 0, 0f, 3f/90f);
 	while(1)
-		{
-		times(5) 
-			{
-			etOn(0);
-			flagSet(1);
-			etSprite(0, 34 , 5 +  RAND % 4 );
-			wait(20);
-			}
-			flagClear(1);
-			wait(100);
-		}
-	
+	{
+		float B =  230f * RANDF2;
+		etOffsetAbs(0, B, 0f);	
+		float angl = rad(100) + RANDRAD / 16f;
+		etAngle(0, angl, 0f);
+		etOn(0);
+		F0 = angl;
+		enmCreateA("bulletFollower", B, 8f, 1000, 100, 0);
+		etSprite(0, 34 , 5 +  RAND % 4 );
+		wait(1);
+	}
+}
+
+void bulletFollower()
+{
+	flagSet(1);
+	flagSet(2);
+	// anmSelect(2);
+	// anmSetMain(0, 5);
+	@Move1() async;
+	while(DIST_PLAYER > 6f)
+	{
+		wait(1);
+	}
+	etClear(4f);
+}
+void Move1()
+{
+	float A = 3f/90f;
+	moveVel(F0, F1);
+	// times(90)
+	// {
+		// moveVel(F0, 5f+A);
+		// A += 3f/90f;
+		// wait(1);
+	// }
+	wait(10000);
 }
 void BossCard3()
 {
@@ -1387,12 +1426,17 @@ void typhoonfunc()
 
 void ProtectPl()
 {
-	setBoss(1);
+	setBoss(2);
+	int life;
 	flagSet(34);
 	while(1)
 	{
 		movePos(PLAYER_X, PLAYER_Y);
-		etClear(18f);
+		if(GI0 > GI1)
+		{
+			life -= 20;
+			lifeSet(life);
+		}
 		wait(1);
 	}
 }

@@ -6125,7 +6125,7 @@ entry entry6 {
         sprite104: { x: 0, y: 64, w: 256, h: 32 },
         sprite105: { x: 0, y: 96, w: 256, h: 32 },
         sprite106: { x: 0, y: 128, w: 256, h: 32 },
-        sprite107: { x: 0, y: 160, w: 256, h: 32 },
+        sprite107: { x: 0, y: 1, w: 1, h: 1 },
         sprite108: { x: 0, y: 192, w: 256, h: 32 },
         sprite109: { x: 0, y: 224, w: 256, h: 32 },
         sprite110: { x: 0, y: 256, w: 256, h: 32 },
@@ -6134,8 +6134,8 @@ entry entry6 {
         sprite113: { x: 0, y: 352, w: 256, h: 32 },
         sprite114: { x: 0, y: 384, w: 256, h: 32 },
         sprite115: { x: 0, y: 416, w: 256, h: 32 },
-        sprite116: { x: 0, y: 448, w: 256, h: 32 },
-        sprite117: { x: 0, y: 480, w: 256, h: 32 }
+		sprite116: { x: 0, y: 160, w: 105, h: 32 },
+        sprite117: { x: 120, y: 160, w: 105, h: 32 }
     }
 }
 

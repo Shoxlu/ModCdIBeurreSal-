@@ -28,6 +28,17 @@ void MainBossalt()
     dialogWait();
 }
 
+void enameGR()
+{
+	flagSet(128);
+	anmSelect(5);
+	anmSetSprite(0, 171);
+	wait(1000);
+	bossWait();
+	dialogWait();
+}
+
+
 void MainBossDebug()
 {
 +10: //10

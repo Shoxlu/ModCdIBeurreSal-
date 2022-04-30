@@ -29,6 +29,16 @@ void MainBoss()
     dialogWait();
 }
 
+void enameSatanae()
+{
+	flagSet(128);
+	anmSelect(5);
+	anmSetSprite(0, 172);
+	wait(1000);
+	bossWait();
+	dialogWait();
+}
+
 void MainBossDebug()
 {
 +10: //10

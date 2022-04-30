@@ -1,4 +1,4 @@
-anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm";}
+anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm"; "front.anm";}
 ecli { "default.ecl"; "st06_1.ecl"; "st06_2.ecl";}
 
 void mainalt();
