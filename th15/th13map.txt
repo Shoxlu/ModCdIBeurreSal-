@@ -144,6 +144,14 @@
 437 moveAddRelTime
 438 moveCurveAdd
 439 moveCurveAddRel
+440 moveAngle
+441 moveAngleTime
+442 moveAngleRel
+443 moveAngleRelTime
+444 moveSpeed
+445 moveSpeedTime
+446 moveSpeedRel
+447 moveSpeedRelTime
 
 500 setHurtbox
 501 setHitbox
@@ -186,7 +194,7 @@
 538 spell2
 539 spell3
 540 stars
-541 unknown541
+541 noHitboxDur
 542 spellTimeout
 543 unknown543
 544 unknown544
