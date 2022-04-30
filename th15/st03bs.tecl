@@ -1018,7 +1018,7 @@ BossCard2_468:
 	GI0 = 1000;
 	GI2 = GI0;
 	GF0 = MISS_COUNT;
-	enmCreateA("ProtectPl", PLAYER_X, PLAYER_Y, 100, 100, 1);
+	enmCreateA("ProtectPl", 0f, 0f, 100, 100, 1);
 	@BossCard2_at();
 	wait(100000);
 }
@@ -1093,6 +1093,7 @@ void bulletFollower()
 	flagSet(2048);
 	// anmSelect(2);
 	// anmSetMain(0, 5);
+	setDeath("Clear");
 	@Move1() async;
 	while(DIST_PLAYER > 5f)
 	{
@@ -1108,6 +1109,12 @@ void bulletFollower()
 		}
 	}
 }
+
+void Clear()
+{
+	etClear(4f);
+}
+
 void Move1()
 {
 	float A = 3f/90f;
@@ -1442,22 +1449,34 @@ void typhoonfunc()
 
 void ProtectPl()
 {
+	setBoss(0);
 	flagSet(14);
 	setHurtbox(0f, 0f);
-	setBoss(0);
 	setDeath("revive");
 	flagExtDmg(1);
 	lifeSet(GI0);
 	move2() async;
+	int A = BOMB_COUNT;
+	int B = BOMB_COUNT;
 	GI3 = 1;
-	lifeSet(GI0);
-	flagSet(32);
-	
-	flagClear(32);
-	lifeSet(GI0);
 	while(1)
 	{
-		
+		if(A < BOMB_COUNT && SHOTTYPE == 0)
+		{
+			flagSet(1);
+			wait(300);
+			A = BOMB_COUNT;
+		}
+		if(B < MISS_COUNT)
+		{
+			BI3 = 0;
+			GI3 = 0;
+			GI0 = 1000;
+			GI2 = 1000;
+			lifeSet(GI0);
+			B = MISS_COUNT;
+		}
+		flagClear(1);
 		if((GI2 <= 0 || BI3 >= GI0 - 50 || LIFE <= 50) && GI1 == 1)
 		{
 			@KillPlayer();
@@ -1471,12 +1490,15 @@ void ProtectPl()
 			//setBoss(-1);
 			//lifeSet(0);
 		}
+		etClear(4f);
 		wait(1);
 	}
 	
 }
 void move2()
 {
+	movePos(0f, 0f);
+	wait(1);
 	while(1)
 	{
 		movePos(PLAYER_X, PLAYER_Y);
