@@ -1442,17 +1442,19 @@ void typhoonfunc()
 
 void ProtectPl()
 {
+	flagSet(14);
+	setHurtbox(0f, 0f);
 	setBoss(0);
-	flagSet(32);
 	setDeath("revive");
 	flagExtDmg(1);
 	lifeSet(GI0);
 	move2() async;
 	GI3 = 1;
-	wait(1);
+	lifeSet(GI0);
+	flagSet(32);
+	
 	flagClear(32);
-	flagSet(14);
-	setHurtbox(0f, 0f);
+	lifeSet(GI0);
 	while(1)
 	{
 		
