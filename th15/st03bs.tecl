@@ -1011,6 +1011,7 @@ BossCard2_468:
     anmPlay(1, 73);
 	GI1 = 1;
 	setBoss(1);
+	enmCreateA("typhonSprite", 0f, 30f, 100, 100, 1);
 +120: //124
     nop();
     anmSelect(3);
@@ -1022,7 +1023,14 @@ BossCard2_468:
 	@BossCard2_at();
 	wait(100000);
 }
-
+void typhonSprite()
+{
+	flagSet(3);
+	anmSelect(3);
+	anmSetSprite(0, 22);
+	deathAnm(3, 21);
+	wait(100000);
+}
 // void BossCard2_at()
 // {
 	// float sp1 = 4f, sp2 = 3f;
@@ -1099,15 +1107,23 @@ void bulletFollower()
 	{
 		wait(1);
 	}
-	etClear(4f);
-	if(GI3 == 1)
+	if(SHOTTYPE == 0)
 	{
+		etClear(4f);
+	}else{
+		etClear(6f);
+	}
+	// if(GI3 == 1)
+	// {
 		GI2 = GI2 - 50;
 		if(GI2 >= 50)
 		{
 			BI3 = BI3 + 50;
+			playSound(2);
+		}else{
+			BI3 = BI3 + 49;
 		}
-	}
+	// }
 }
 
 void Clear()
@@ -1477,7 +1493,7 @@ void ProtectPl()
 			B = MISS_COUNT;
 		}
 		flagClear(1);
-		if((GI2 <= 0 || BI3 >= GI0 - 50 || LIFE <= 50) && GI1 == 1)
+		if((GI2 <= 0 || BI3 >= GI0 - 5 || LIFE < 50) && GI1 == 1)
 		{
 			@KillPlayer();
 			
@@ -1487,6 +1503,7 @@ void ProtectPl()
 			setDeath("");
 			setBoss(1);
 			setHurtbox(10000f, 10000f);
+			lifeSet(0);
 			//setBoss(-1);
 			//lifeSet(0);
 		}
@@ -1511,11 +1528,11 @@ void KillPlayer()
 	etOn(1);
 	GI3 = 0;
 	GI0 = 1000;
-	GI2 = 1000;
 	BI3 = 0;
 	lifeSet(GI0);
 	flagSet(32);
 	wait(360);
+	GI2 = 1000;
 	flagClear(32);
 	lifeSet(GI0);
 	GI3 = 1;
