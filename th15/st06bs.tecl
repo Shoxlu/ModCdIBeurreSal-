@@ -1118,7 +1118,7 @@ BossCard5_448:
     $CAPTURE = 1;
 	lifeMarker(0, 0.0f, -24448);
     setNext(0, 0, 3600, "Boss6");
-	spell(94, 3600, 500000, "Autorite Profane ÅhGrand Ordre du Beurre DouxÅh");
+	spell(94, 3600, 500000, "Autorite Profane Å·Grand Ordre du Beurre DouxÅ‚");
     movePosTime(60, 4, 0.0f, 198.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 224.0f);
     anmPlay(1, 79);

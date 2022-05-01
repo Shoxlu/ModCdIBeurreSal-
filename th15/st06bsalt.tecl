@@ -709,7 +709,7 @@ BossCard1_448:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 4300, "BossAlt6");
-    spell(94, 4300, 500000, "Autorité Divine ”Grand Ordre du Beurre Salé”");
+    spell(94, 4300, 500000, "Autorité Divine «Grand Ordre du Beurre Salé»");
 	anmPlayAbs(4, 27);
     movePosTime(60, 4, 0.0f, 198.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 224.0f);
