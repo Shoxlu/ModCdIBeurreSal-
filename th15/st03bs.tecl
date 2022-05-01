@@ -1019,7 +1019,7 @@ BossCard2_468:
 	GI0 = 1000;
 	GI2 = GI0;
 	GF0 = MISS_COUNT;
-	enmCreateA("ProtectPl", 0f, 0f, 100, 100, 1);
+	enmCreateA("ProtectPl", PLAYER_X, PLAYER_Y-1f, 100, 100, 1);
 	@BossCard2_at();
 	wait(100000);
 }
@@ -1076,13 +1076,14 @@ void BossCard2_at()
 	etAim(0,1);
 	etCount(0, 1,1);
 	etSpeed(0, F1, sp2);
-	etOffsetAbs(0, 192f , 0f);
+	
 	etSprite(0, 34 , 5 +  RAND % 4 );
 	etEx(0, 0, EX_OFFSCREEN, 99999, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_INVULN, 99999, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_ACCEL, 90, 0, 0f, 3f/90f);
 	while(1)
 	{
-		float B =  230f * RANDF2;
+		float B =  192f * RANDF2;
 		etOffsetAbs(0, B, 0f);	
 		float angl = rad(100) + RANDRAD / 16f;
 		etAngle(0, angl, 0f);
@@ -1098,23 +1099,15 @@ void bulletFollower()
 {
 	flagSet(1);
 	flagSet(2);
-	flagSet(2048);
-	// anmSelect(2);
-	// anmSetMain(0, 5);
 	setDeath("Clear");
 	@Move1() async;
-	while(DIST_PLAYER > 5f)
+	while((DIST_PLAYER > 5f && SHOTTYPE == 0) || (DIST_PLAYER > 7f && SHOTTYPE != 0))
 	{
 		wait(1);
 	}
-	if(SHOTTYPE == 0)
+	etClear(4f);
+	if(GI3 == BOMB_COUNT && GF4 == _f(MISS_COUNT))
 	{
-		etClear(4f);
-	}else{
-		etClear(6f);
-	}
-	// if(GI3 == 1)
-	// {
 		GI2 = GI2 - 50;
 		if(GI2 >= 50)
 		{
@@ -1123,7 +1116,7 @@ void bulletFollower()
 		}else{
 			BI3 = BI3 + 49;
 		}
-	// }
+	}
 }
 
 void Clear()
@@ -1465,38 +1458,51 @@ void typhoonfunc()
 
 void ProtectPl()
 {
-	setBoss(0);
 	flagSet(14);
 	setHurtbox(0f, 0f);
 	setDeath("revive");
 	flagExtDmg(1);
 	lifeSet(GI0);
 	move2() async;
-	int A = BOMB_COUNT;
-	int B = BOMB_COUNT;
-	GI3 = 1;
+	GI3 = BOMB_COUNT;
+	GF4 = MISS_COUNT;
+	setBoss(0);
 	while(1)
 	{
-		if(A < BOMB_COUNT && SHOTTYPE == 0)
+		if(GI3 < BOMB_COUNT)
 		{
 			flagSet(1);
-			wait(300);
-			A = BOMB_COUNT;
+			if(SHOTTYPE == 0)
+			{
+				wait(300);
+			}else if(SHOTTYPE == 3)
+			{
+				wait(100);
+			}else if(SHOTTYPE == 1)
+			{
+				wait(400);
+			}else if(SHOTTYPE == 2)
+			{
+				wait(360);
+			}
+			GI3 = BOMB_COUNT;
+			flagClear(1);
 		}
-		if(B < MISS_COUNT)
+		if(GF4 < _f(MISS_COUNT))
 		{
-			BI3 = 0;
-			GI3 = 0;
 			GI0 = 1000;
-			GI2 = 1000;
+			BI3 = 0;
 			lifeSet(GI0);
-			B = MISS_COUNT;
+			flagSet(32);
+			wait(360);
+			GI2 = 1000;
+			flagClear(32);
+			lifeSet(GI0);
+			GF4 = MISS_COUNT;
 		}
-		flagClear(1);
-		if((GI2 <= 0 || BI3 >= GI0 - 5 || LIFE < 50) && GI1 == 1)
+		if(LIFE < 50 && GI1 == 1)
 		{
 			@KillPlayer();
-			
 		}
 		if(GI1 == 0)
 		{
@@ -1518,24 +1524,32 @@ void move2()
 	wait(1);
 	while(1)
 	{
-		movePos(PLAYER_X, PLAYER_Y);
+		movePos(PLAYER_X, PLAYER_Y+5f);
 		wait(1);
 	}
 }
 void KillPlayer()
 {
 	etNew(1);
-	etOn(1);
-	GI3 = 0;
+	etSpeed(1, 0f, 0f);
+	etEx(1, 0, EX_WAIT, 1, NEG, NEGF, NEGF);
+	etEx(1, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	lifeSet(GI0);
 	GI0 = 1000;
 	BI3 = 0;
 	lifeSet(GI0);
 	flagSet(32);
+	while(_f(MISS_COUNT) ==  GF4)
+	{
+		etOffsetAbs(1, PLAYER_X, PLAYER_Y);
+		etOn(1);
+		wait(1);
+	}
 	wait(360);
+	GF4 = MISS_COUNT;
 	GI2 = 1000;
 	flagClear(32);
 	lifeSet(GI0);
-	GI3 = 1;
 }
 void revive()
 {
