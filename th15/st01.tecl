@@ -533,8 +533,16 @@ void main()
     wait(2);
 	dialogRead(6);
 	dialogWait();
-    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    wait(1060);
+ //   enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    wait(200);
+	etNew(0);
+	etAim(0, 1);
+	etCount(0, DS3, 1);
+	etAngle(0, rad(90), rad(30));
+	etSpeed(0, 1f, 1f);
+	etSprite(0, 4, 4);
+	etOn(0);
+	wait(1060);
     // @MainLatter();
     // etClear(640.0f);
 	// enmKillAll();

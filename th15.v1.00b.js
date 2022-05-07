@@ -1,9 +1,8 @@
 {
 	"binhacks": {
 	"Global_var_chapter_retry_counter": {
-		"addr": "0x42ef0a",
-		"expected": "A1 F8734E00",
-		"code": "A1 B8754E00",
+		"addr": "0x42EC06",
+		"code": "A1 B8754E00 8BE5 5D C2 0400",
 		},
 	"Escaping_BossShow":{
 		"addr": "0x438780",
