@@ -542,13 +542,13 @@ void main()
 	etSpeed(0, 1f, 1f);
 	etSprite(0, 4, 4);
 	etOn(0);
-	wait(1060);
+	// wait(1060);
     // @MainLatter();
     // etClear(640.0f);
 	// enmKillAll();
     // wait(300);
-    // setChapter(41);
-    // dialogRead(0);
+    setChapter(41);
+    dialogRead(0);
     @MainBoss();
 	while(1)
 	{	
