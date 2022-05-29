@@ -618,6 +618,8 @@ BossCard1_488:
     playSound(54);
 	flagSet(2);
 +90: //94
+	playSound(73);
+	wait(1000);
     nop();
     enmCreate("BossCard4_Moon", 0.0f, 0.0f, 100, 100, 0);
 !L
