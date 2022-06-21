@@ -1,44 +1,53 @@
 {
     "0": {
-        "102_0": {
+        "90_0": {
             "lines": [
-                "C'est inévitable !",
-                "J'attaque !"
+                "Hé toi ! Halte là!"
             ]
         },
-        "144_0": {
+        "124_0": {
             "lines": [
-                "« Ici Seiran.",
-                "Je suis entrée en contact avec une Terrienne hostile. »"
+                "*Hips* Oh tiens Madame l’Agent, ", 
+				"belle soirée hein ?"
             ]
         },
-        "152_0": {
+        "132_0": {
             "lines": [
-                "« Je vais procéder à la purification. »"
+                "Mais on est en pleine journée…"
             ]
         },
-        "160_0": {
+        "140_0": {
             "lines": [
-                "Qu'est-ce qui t'arrive ?",
-                "À qui tu parles ?"
+                "Je ne suis pas Agent, je voulais juste tester ",
+                "ces \"danmakus\" que tout le monde semble utiliser."
             ]
         },
-        "168_0": {
+        "148_0": {
             "lines": [
-                "Je n'ai point besoin de répondre."
+                "T-t’es pas un p-poulet ? Hic"
             ]
         },
-        "176_0": {
+        "156_0": {
             "lines": [
-                "Parce que dans un instant, ",
-                "je vais t'exterminer !"
+                "Non, je suis Shoxla, une déesse itinérante.",
+                "J’ai besoin de quelqu’un sur qui me servir de mes danmakus."
             ]
         },
-        "34_0": {
+        "164_0": {
             "lines": [
-                "Tiens, des nouveaux venus se promènent dans le coin."
+                "Si t’es pas u-une flic alors…"
             ]
-        }
+        },
+        "172_0": {
+            "lines": [
+                "Alors quoi ?"
+            ]
+        },
+        "180_0": {
+            "lines": [
+                "JE PEUX T’ÉLIMINER SANS CRAINTE !"
+            ]
+        },
     },
     "1": {
         "42_0": {
@@ -99,7 +108,7 @@
 	"4": {
         "34_0": {
             "lines": [
-                "Wow, tu as l'air expérimenté."
+                "Wow, tu as l'air expérimentée."
             ]
         },
         "38_0": {
