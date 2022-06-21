@@ -31,15 +31,15 @@ script script0 {
 +30: // 98
     skippable(1);
     playerShow(0);
-    playerFace(0);
+    playerFace(2);//happy
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("");
 +4: // 102
     textPause(600);
 +4: // 106
-    bossFace(3, 0);
-    speakerBoss(0);
+    bossFace(4, 0);//sw
+    speakerBoss(0); 
     bubblePos(386.0, 280.0);
     bubbleType(2);
     textAdd("『こちら清蘭");
@@ -47,7 +47,7 @@ script script0 {
 +4: // 110
     textPause(600);
 +4: // 114
-    bossFace(0, 0);
+    bossFace(1, 0);//n2
     speakerBoss(0);
 	bubbleType(0);
     bubblePos(386.0, 280.0);
@@ -63,7 +63,7 @@ script script0 {
 +4: // 126
     textPause(600);
 +4: // 130
-    bossFace(0, 0);
+    bossFace(2, 0);//dp
     speakerBoss(0);
     bubblePos(386.0, 280.0);
     intro(0);
@@ -71,7 +71,7 @@ script script0 {
 +4: // 134
     textPause(600);
 +4: // 138
-    playerFace(6);
+    playerFace(5);//dp
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("何だお前");
@@ -79,7 +79,7 @@ script script0 {
 +4: // 142
     textPause(600);
 +4: // 146
-    bossFace(1, 0);
+    bossFace(0, 0);//no
     speakerBoss(0);
     bubblePos(386.0, 280.0);
     bubbleType(0);
@@ -88,7 +88,7 @@ script script0 {
 +4: // 150
     textPause(600);
 +4: // 154
-    playerFace(6);
+    playerFace(3);//ang
     speakerPlayer();
 	bubbleType(1);
     bubblePos(110.0, 280.0);
@@ -128,35 +128,35 @@ script script1 {
 +4: // 38
     textPause(600);
 +4: // 42
-    bossFace(8, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("ジャンケンで負けた私が");
-    textAdd("運が無かったんだけど");
-+4: // 46
-    textPause(600);
-+4: // 50
-    playerFace(7);
+    playerFace(5);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("地上人って言い方、もしかして");
     textAdd("お前、月の兎じゃないか？");
++4: // 46
+    textPause(600);
++4: // 50
+	bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("ジャンケンで負けた私が");
+    textAdd("運が無かったんだけど");
 +4: // 54
     textPause(600);
 +4: // 58
-    bossFace(8, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("そうよ");
-    textAdd("地上を浄化する命を受けて来たの");
-+4: // 62
-    textPause(600);
-+4: // 66
     playerFace(5);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("ははあ、それであの永琳が");
     textAdd("私達に仕事を依頼してきたのか");
++4: // 62
+    textPause(600);
++4: // 66
+	bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("そうよ");
+    textAdd("地上を浄化する命を受けて来たの");
 +4: // 70
     textPause(600);
     playerHide();

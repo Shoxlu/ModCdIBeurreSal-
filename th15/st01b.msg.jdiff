@@ -50,34 +50,31 @@
         },
     },
     "1": {
-        "42_0": {
+		"34_0": {
             "lines": [
-                "Je n'ai vraiment pas eu de chance",
-                "lorsque j'ai perdu ce jeu de pierre-papier-ciseaux."
+				"Ouille, ouille, ouille…"
             ]
         },
-        "34_0": {
+        "42_0": {
             "lines": [
-                "Woah,",
-                "les terriens sont vraiment forts..."
+                "Pffff… Trop facile! Hic"
             ]
         },
         "50_0": {
             "lines": [
-                "Si tu dis « Terriens », ça veut dire que...",
-                "T'es un lapin lunaire, n'est-ce pas ?"
+                "Tu es vraiment redoutable je m’avoue vaincue…"
             ]
         },
         "58_0": {
             "lines": [
-                "C'est exact.",
-                "J'ai reçu l'ordre de purifier la Terre."
+                "J-j’ai dit que j’allais t-t’éliminer mais...",
+                "j’aurais de la peine de massacrer une faiblarde, comme t-toi..."
             ]
         },
         "66_0": {
             "lines": [
-                "Ah, je vois, c'est pour ça qu'Eirin",
-                "nous a demandé de faire ça."
+                "Snif…",
+				"On remettra ça..."
             ]
         }
     },
