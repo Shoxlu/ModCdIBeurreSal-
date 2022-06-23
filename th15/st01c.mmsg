@@ -15,7 +15,6 @@ meta {
 
 script script0 {
     skippable(0);
-    playerShow(0);
 +4: // 4
     textPause(600);
 +4: // 8
@@ -34,7 +33,7 @@ script script0 {
     textPause(600);
 +4: // 106
     playerFace(6);
-    playerShow(1);
+    playerShow(0);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("んー？");
@@ -43,76 +42,88 @@ script script0 {
     textPause(600);
 +4: // 114
     bossShow(0);
-    bossFace(0, 0);
+    bossFace(4, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
     intro(0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
 +4: // 118
     textPause(600);
 +4: // 122
-    playerFace(6);
-    playerShow(1);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
     textAdd("んー？");
     textAdd("その耳……兎なの？");
 +4: // 126
     textPause(600);
 +4: // 130
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("『これから浄化活動に入る』");
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
 +4: // 134
     textPause(600);
 +4: // 138
-    playerFace(6);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("んー？");
-    textAdd("その耳……兎なの？");
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("『これから浄化活動に入る』");
 +4: // 142
     textPause(600);
 +4: // 146
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("|116,9,イーグルラヴィ");
-    textAdd("我々は月の兎の調査部隊");
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
 +4: // 150
     textPause(600);
 +4: // 154
-    playerFace(6);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("んー？");
-    textAdd("その耳……兎なの？");
-+4: // 158
-    textPause(600);
-+4: // 162
-    bossFace(0, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
     textAdd("|116,9,イーグルラヴィ");
     textAdd("我々は月の兎の調査部隊");
-+4: // 166
++4: // 158
     textPause(600);
-    musicBoss();
-+4: // 170
-    playerFace(6);
-    playerShow(1);
++4: // 162
+    playerFace(1);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("んー？");
     textAdd("その耳……兎なの？");
++4: // 166
+    textPause(600);
++4: // 170
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("|116,9,イーグルラヴィ");
+    textAdd("我々は月の兎の調査部隊");
 +4: // 174
     textPause(600);
 +4: // 178
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 182
+    textPause(600);
+    musicBoss();
++4: // 186
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("|116,9,イーグルラヴィ");
+    textAdd("我々は月の兎の調査部隊");
++4: // 190
+    textPause(600);
++4: // 194
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 208
++30: // 224
     end();
 }
 
@@ -128,14 +139,14 @@ script script1 {
     speakerBoss(0);
     bubblePos(356.0, 280.0);
 +30: // 34
-    skippable(1);
-    bubblePos(356.0, 280.0);
-    bubbleType(0);
-    textAdd("やだー");
-    textAdd("何で援軍が誰も来ないのよー");
-+4: // 38
+    playerFace(2);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そういえばこの辺で探査……");
+    textAdd("機械の蜘蛛っぽいの見ませんでした？");
++8: // 38
     textPause(600);
-+4: // 42
++8: // 42
     bossFace(8, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
@@ -144,7 +155,7 @@ script script1 {
 +4: // 46
     textPause(600);
 +4: // 50
-    playerFace(0);
+    playerFace(6);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("そういえばこの辺で探査……");
@@ -160,30 +171,38 @@ script script1 {
 +4: // 62
     textPause(600);
 +4: // 66
-    bossFace(8, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("ってそんな事私が言ったなんて");
-    textAdd("みんなには内緒だよ！");
-+4: // 70
-    textPause(600);
-+4: // 74
     playerFace(5);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("はあはあ、じゃあ内緒ついでに");
     textAdd("基地の場所も教えて頂けないかと……");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 280.0);
+    textAdd("ってそんな事私が言ったなんて");
+    textAdd("みんなには内緒だよ！");
 +4: // 78
+    textPause(600);
++4: // 82
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("はあはあ、じゃあ内緒ついでに");
+    textAdd("基地の場所も教えて頂けないかと……");
++4: // 86
     textPause(600);
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+1: // 79
++1: // 87
     stageEnd();
     musicEnd();
     skippable(0);
-+30: // 109
++30: // 117
     end();
 }
 

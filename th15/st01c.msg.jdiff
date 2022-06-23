@@ -2,96 +2,112 @@
     "0": {
         "68_0": {
             "lines": [
-                "Il me semblait bien qu'elle était là,",
-                "cette sorte de sonde."
+                "Ah enfin !"
             ]
         },
         "106_0": {
             "lines": [
-                "Pas de place à l'hésitation,",
-                "à l'attaque !"
+                "Hm ? Qui va là ?"
             ]
         },
         "114_0": {
             "lines": [
-                "« Ici Seiran.",
-                "Je suis entrée en contact avec une terrienne hostile. »"
+                "Oh ! Euh… toutes mes excuses, ", 
+				"je ne voulais pas te surprendre."
             ]
         },
         "122_0": {
             "lines": [
-                "« Je vais procéder à la purification. »"
+                "C’est juste que ça fait deux fois que",
+				"je me fais rétamée, et je suis un peu lassée."
             ]
         },
         "130_0": {
             "lines": [
-                "Hmm ?",
-                "Ces oreilles... Tu es un lapin ?"
+                "Pourtant tu n’as pas l’air d’être «rétamée» comme ",
+				"tu le prétends tu n’as même pas de larme horizontale.",
             ]
         },
         "138_0": {
             "lines": [
-                "Nous sommes l'unité de recherche des lapins lunaires, l'Eagle Ravi."
+                "C’est parce que j’ai refusé d’utiliser un continue ",
+				"du coup j’ai préférer reload ma savefile voilà tout !"
             ]
         },
         "146_0": {
             "lines": [
-                "Détruisons les gêneurs !"
+                "C’est quoi un comptine-nude ?"
             ]
         },
         "154_0": {
             "lines": [
-                "Détruisons les gêneurs !"
+                "Mais non, un «continue» ! ",
+				"C’est euh… compliqué à expliquer hahaha…"
             ]
         },
         "162_0": {
             "lines": [
-                "Détruisons les gêneurs !"
+                "Mouais… en tout cas je sais ce qui ",
+				"sera moins compliqué à expliquer"
             ]
         },
         "170_0": {
             "lines": [
-                "Détruisons les gêneurs !"
+                "-?"
+            ]
+        },
+        "178_0": {
+            "lines": [
+                "LA RACLÉE QUE TU VAS TE PRENDRE !"
+            ]
+        },
+        "186_0": {
+            "lines": [
+                "Qu’est-ce-que- ? "
             ]
         }
     },
     "1": {
         "34_0": {
             "lines": [
-                "Oh non...",
-                "Pourquoi les renforts ne viennent pas ?"
-            ]
-        },
-        "42_0": {
-            "lines": [
-                "C'est à cause de ça qu'on dit que les lapins",
-                "sont des déchets qui ne savent pas suivre les ordres."
-            ]
-        },
-        "58_0": {
-            "lines": [
-                "Tu dois parler de la sonde terrestre...",
-                "Elle rentre à la base en ce moment."
-            ]
-        },
-        "66_0": {
-            "lines": [
-                "Co... Comment ai-je pu dire une telle chose ?",
-                "C'est un secret pour tout le monde !"
-            ]
-        },
-        "74_0": {
-            "lines": [
-                "Ah... En parlant de secrets,",
-                "je me demandais si tu pouvais aussi m'indiquer l'emplacement de la base..."
+                "Hmph. Un jeu d’enfant !"
             ]
         },
         "50_0": {
             "lines": [
-                "Au fait, aurais-tu vu une sonde",
-                "ressemblant à une araignée mécanique, dans le coin ?"
+                "Aïe… mais pourquoi ?"
+            ]
+        },
+        "58_0": {
+            "lines": [
+                "Parce que accessoirement je suis Satan. ",
+                "Tu sais, le mal, le mal bla-bla-bla"
+            ]
+        },
+        "66_0": {
+            "lines": [
+                "De la méchanceté gratuite donc… Je devrais m’y faire...",
+                "J’ai l’impression que c’est monnaie courante ici…"
+            ]
+        },
+        "74_0": {
+            "lines": [
+                "Pas vraiment, c’est jute qu’a cause ",
+                "de la guerre sainte tout le monde est un peu à cran."
+            ]
+        },
+        "82_0": {
+            "lines": [
+                "Dans ce cas je tire ma révérence pour le moment.",
+                "On se revoit dans le stage extra !"
+            ]
+        },
+        "90_0": {
+            "lines": [
+                "LoLK"
             ]
         }
+		
     },
 	"2": {
         "34_0": {

@@ -1100,6 +1100,7 @@ void bulletFollower()
 	flagSet(1);
 	flagSet(2);
 	setDeath("Clear");
+	deathAnm(0, -1);
 	@Move1() async;
 	while((DIST_PLAYER > 5f && SHOTTYPE == 0) || (DIST_PLAYER > 7f && SHOTTYPE != 0))
 	{
