@@ -1023,7 +1023,7 @@ void BossCard3_at()
 			lasers(laserId) async;			
 			laserId=laserId+1;
 		}
-				wait(30:20:10:8);
+				wait(30:20:10:40);
 	}
 	
 	
