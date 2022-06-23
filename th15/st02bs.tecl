@@ -1023,6 +1023,7 @@ void BossCard3_at()
 			lasers(laserId) async;			
 			laserId=laserId+1;
 		}
+				wait(30:20:10:8);
 	}
 	
 	
@@ -1045,7 +1046,6 @@ void lasers(int laserId)
 			anmPlayPos( 1, EFF_CHARGE_WHITE, laserSpawn, 448f, 0f);
 			wait(15);
 		laserStOn(0,laserId);
-		wait(30:20:10:8);
 	
 }
 void BossCard3_at2() {
