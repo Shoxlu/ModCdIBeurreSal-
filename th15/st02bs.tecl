@@ -972,7 +972,7 @@ BossCard3_468:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    setNext(0, 0, 2400, "Boss2");
+    setNext(0, 0, 2400, "BossDead");
 !EN
     spell(10, 2400, 500000, "兎符「ストロベリーダンゴ」");
 !HL
@@ -1015,9 +1015,9 @@ void BossCard3_at()
 	etAngle(2, rad(270), 0f);
 	laserTiming(2, 1, 60, 10, 30, 0);
 	laserNew(2, 0f, sqrt(237568f), 60f, 40f);
-	
+	wait(10);	
 	while(1){
-		wait(10);
+
 		float laserSpawn=192f*RANDF2;
 		float laserAngle=rad(270) + (RANDF2 * rad(7.5));
 		etOffsetAbs(0,laserSpawn,448f);
@@ -1035,17 +1035,7 @@ void BossCard3_at()
 		anmPlayPos( 1, EFF_CHARGE_WHITE, laserSpawn, 448f, 0f);
 		wait(15);
 		laserStOn(0,laserId);
-		etOn(4);
-		!E
-		wait(30);
-		!N
-		wait(20);
-		!H
-		wait(15);
-		!L
-		wait(10);
-		!*
-		etOn(5);
+		wait(30:20:10:8);
 	}
 	
 	
@@ -1069,6 +1059,13 @@ void BossCard3_at2() {
 	etSprite(5,6,6);
 	etExSet(4, 0, 0, EX_ANGLE_ACCEL, 15, NEG, 0f, rad(10));
 	etExSet(5, 0, 0, EX_ANGLE_ACCEL, 15, NEG, 0f, rad(-10));
+	while(1)
+	{
+		wait(55);
+		etOn(4);
+		wait(30:20:15:10);
+		etOn(5);
+	}
 }
 
 void BossDead()
