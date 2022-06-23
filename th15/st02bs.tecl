@@ -1018,29 +1018,36 @@ void BossCard3_at()
 	wait(10);	
 	while(1){
 
-		float laserSpawn=192f*RANDF2;
-		float laserAngle=rad(270) + (RANDF2 * rad(7.5));
-		etOffsetAbs(0,laserSpawn,448f);
-		etOffsetAbs(1,laserSpawn,448f);
-		etOffsetAbs(2,laserSpawn,448f);
-		etOffsetAbs(3,laserSpawn,448f);
-		etAngle(0, laserAngle, 0f);
-		etAngle(1, laserAngle, 0f);
-		etAngle(2, laserAngle, 0f);
-		laserId=laserId+1;
-		laserStOn(1,laserId);
-		wait(40);
-		laserStOn(2,laserId);
-		etOn(3);
-		anmPlayPos( 1, EFF_CHARGE_WHITE, laserSpawn, 448f, 0f);
-		wait(15);
-		laserStOn(0,laserId);
-		wait(30:20:10:8);
+		times(1:1:1:2)
+		{
+			lasers(laserId) async;			
+			laserId=laserId+1;
+		}
 	}
 	
 	
 }
-
+void lasers(int laserId)
+{
+	float laserSpawn=192f*RANDF2;
+			float laserAngle=rad(270) + (RANDF2 * rad(7.5));
+			etOffsetAbs(0,laserSpawn,448f);
+			etOffsetAbs(1,laserSpawn,448f);
+			etOffsetAbs(2,laserSpawn,448f);
+			etOffsetAbs(3,laserSpawn,448f);
+			etAngle(0, laserAngle, 0f);
+			etAngle(1, laserAngle, 0f);
+			etAngle(2, laserAngle, 0f);
+				laserStOn(1,laserId);
+			wait(40);
+			laserStOn(2,laserId);
+			etOn(3);
+			anmPlayPos( 1, EFF_CHARGE_WHITE, laserSpawn, 448f, 0f);
+			wait(15);
+		laserStOn(0,laserId);
+		wait(30:20:10:8);
+	
+}
 void BossCard3_at2() {
 	etNew(3);
 	etSprite(3 , 16 , 0);
