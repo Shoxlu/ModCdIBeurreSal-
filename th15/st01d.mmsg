@@ -99,6 +99,7 @@ script script0 {
 +4: // 218
 	playerFace(3);
     speakerPlayer();
+	musicBoss();
     bubblePos(132.0, 250.0);
     textAdd("残念だったな");
     textAdd("穢れ多き地上人よ");

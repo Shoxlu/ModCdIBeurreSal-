@@ -610,6 +610,7 @@ BossCard1_488:
 !L
     spell(58, 4000, 500000, "Desespoir : Duplicite de la Fille Lunatique");
 !*
+	playSound(73);
     movePosTime(60, 4, 0.0f, 122.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 128.0f);
     anm316(0, 0);
@@ -619,8 +620,6 @@ BossCard1_488:
 	flagSet(2);
 +90: //94
 	playSound(73);
-	wait(1000);
-    nop();
     enmCreate("BossCard4_Moon", 0.0f, 0.0f, 100, 100, 0);
 !L
 	wait(110);

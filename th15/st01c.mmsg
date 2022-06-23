@@ -1,4 +1,4 @@
-#pragma mapfile "map\\any.msgm"
+#pragma mapfile "map/any.msgm"
 
 meta {
     table: {
@@ -17,82 +17,102 @@ script script0 {
     skippable(0);
     playerShow(0);
 +4: // 4
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-+30: // 34
-    skippable(1);
-    bubbleType(0);
-    bubblePos(110.0, 280.0);
-    textAdd("確かこの辺にあったのよ");
-    textAdd("探査機みたいなのが");
-+4: // 38
     textPause(600);
-+4: // 42
++4: // 8
     skippable(0);
     speakerBoss(0);
     bubblePos(224.0, 144.0);
     eclResume();
     textClear();
-+60: // 102
++60: // 68
     skippable(0);
     textAdd("ためらいなく");
     textAdd("撃つぞ！");
-+30: // 132
++30: // 98
     skippable(1);
-+4: // 136
++4: // 102
     textPause(600);
++4: // 106
+    playerFace(6);
+    playerShow(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 110
+    textPause(600);
++4: // 114
     bossShow(0);
-+4: // 140
     bossFace(0, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
     intro(0);
-+4: // 144
-    bossFace(3, 0);
-    speakerBoss(0);
-    bubblePos(356.0, 280.0);
-    textAdd("『こちら清蘭");
-    textAdd("　好戦的な地上人と接触した』");
-+4: // 148
++4: // 118
     textPause(600);
-+4: // 152
++4: // 122
+    playerFace(6);
+    playerShow(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 126
+    textPause(600);
++4: // 130
     bossFace(0, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
     textAdd("『これから浄化活動に入る』");
-+4: // 156
++4: // 134
     textPause(600);
-+4: // 160
++4: // 138
     playerFace(6);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("んー？");
     textAdd("その耳……兎なの？");
-+4: // 164
++4: // 142
     textPause(600);
-+4: // 168
++4: // 146
     bossFace(0, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
     textAdd("|116,9,イーグルラヴィ");
     textAdd("我々は月の兎の調査部隊");
-+4: // 172
++4: // 150
     textPause(600);
-    musicBoss();
-+4: // 176
-    bossFace(1, 0);
++4: // 154
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 158
+    textPause(600);
++4: // 162
+    bossFace(0, 0);
     speakerBoss(0);
     bubblePos(356.0, 280.0);
-    bubbleType(1);
-    textAdd("邪魔する者は消滅せよ！");
-+4: // 180
+    textAdd("|116,9,イーグルラヴィ");
+    textAdd("我々は月の兎の調査部隊");
++4: // 166
     textPause(600);
+    musicBoss();
++4: // 170
+    playerFace(6);
+    playerShow(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー？");
+    textAdd("その耳……兎なの？");
++4: // 174
+    textPause(600);
++4: // 178
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 210
++30: // 208
     end();
 }
 
@@ -166,6 +186,7 @@ script script1 {
 +30: // 109
     end();
 }
+
 
 script script2 {
     skippable(0);
@@ -264,31 +285,31 @@ script script5 {
     bubblePos(386.0, 270.0);
 +30: // 34
     skippable(0);
-	bossFace(1, 0);
+    bossFace(1, 0);
     bubblePos(386.0, 270.0);
     bubbleType(0);
     textAdd("Salut ! Bienvenue dans ce nouveau mod !");
 +30: // 64
-	textPause(60);
-	bossFace(2, 0);
+    textPause(60);
+    bossFace(2, 0);
     textAdd("J'espere que tu ne vas pas");
     textAdd("passer mes dialogues...");
 +30: // 94
-	textPause(60);
+    textPause(60);
     skippable(0);
-	bossFace(1, 0);
+    bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 124
-	textPause(60);
-	bossFace(1, 0);
+    textPause(60);
+    bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 154
-	textPause(60);
-	bossFace(4, 0);
+    textPause(60);
+    bossFace(4, 0);
     textAdd("Cela pourrait s'averer utile...");
-+30:
-	textPause(60);
-	bossFace(1, 0);
++30: // 184
+    textPause(60);
+    bossFace(1, 0);
     textAdd("Cela pourrait s'averer utile...");
 +30: // 214
     textPause(60);
