@@ -23,6 +23,10 @@ E9 [codecave:Changing_loaded_slot_in_memory_for_Sanae] \
 E9 [codecave:NewCodeSnakesColor] \
 <int3:17> \
 "
+    },
+	"Escaping_MusicBoss_msg": {
+      "addr": 0x438F93,
+      "code": "E9 [codecave:ChangeBossMusic]"
     }
   },
   "codecaves": {
@@ -52,6 +56,22 @@ C0E1 05 \
 2AC1 \
 8846 01 \
 E9 [0x4095C6] \
+"
+    },
+    "ChangeBossMusic": {
+	  "access": "re",
+      "code": "\
+A1 <0x4E9BD8> \
+813D <0x4E9BD8> 48444E00\
+0F85 [0x438F98] \
+803D <0x4E7404> 00 \
+74 0E \
+803D <0x4E7404> 02 \
+74 05 \
+E9 [0x438F98] \
+C705 <0x520328> 5F39302E \
+E9 [0x438F98] \
+90 \
 "
     }
   }
