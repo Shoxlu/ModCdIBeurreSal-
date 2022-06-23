@@ -1061,9 +1061,9 @@ void BossCard3_at2() {
 	etExSet(5, 0, 0, EX_ANGLE_ACCEL, 15, NEG, 0f, rad(-10));
 	while(1)
 	{
-		wait(55);
+		wait(55:40:30:20);
 		etOn(4);
-		wait(30:20:15:10);
+		wait(20);
 		etOn(5);
 	}
 }
