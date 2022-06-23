@@ -103,6 +103,8 @@
 334 anm334
 335 anmScale2
 336 anmLayer
+337 anmPlayPos
+370 enmDelete
 
 400 movePos
 401 movePosTime
@@ -217,6 +219,7 @@
 561 die
 562 unknown562
 564 hitboxRotate
+572 lifeNow
 
 600 etNew
 601 etOn

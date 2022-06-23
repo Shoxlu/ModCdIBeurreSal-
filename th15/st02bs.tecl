@@ -941,7 +941,7 @@ BossCard2_at2_652:
 void BossCard3()
 {
     var A;
-    unless ($TIMEOUT == 0) goto BossCard1_160 @ 0;
+    unless ($TIMEOUT == 0) goto BossCard3_160 @ 0;
     etCancel(640.0f);
     goto BossCard3_180 @ 0;
 BossCard3_160:
@@ -956,9 +956,9 @@ BossCard3_180:
     timerReset();
     killAllAsync();
     enmKillAll();
-    unless ($TIMEOUT == 0) goto BossCard1_448 @ 4;
+    unless ($TIMEOUT == 0) goto BossCard3_448 @ 4;
     etCancel(640.0f);
-    goto BossCard1_468 @ 4;
+    goto BossCard3_468 @ 4;
 BossCard3_448:
     etClear(640.0f);
 BossCard3_468:
