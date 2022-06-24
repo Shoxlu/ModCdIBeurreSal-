@@ -1039,9 +1039,9 @@ void lasers()
 	etNew(3);
 	etSprite(3 , 16 , 0);
 	etAim(3, 1);
-	etCount(3,6,2);
+	etCount(3, 6:8:9:6, 2);
 	etSpeed(3,1f, 1f);
-	etAngle(3, rad(270), rad(30));
+	etAngle(3, rad(270), rad(30):rad(20):rad(15):rad(30));
 	etEx(3, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	wait(10);
 	float laserSpawn = 192f*RANDF2;
@@ -1063,7 +1063,7 @@ void lasers()
 		wait(15);	
 		laserStOn(0,GI0);
 		GI0 += 1;
-		wait(30:20:10:8);
+		wait(20:10:8:8);
 		
 }
 
