@@ -525,7 +525,7 @@ void main()
     nop();
 	dialogRead(5);
 	wait(300);
-	enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
+	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
     @MainFront();
     enmKillAll();
     etClear(640.0f);
