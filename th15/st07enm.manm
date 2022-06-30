@@ -1,6 +1,6 @@
 entry entry0 {
     version: 8,
-    name: "stgenm/stage07/enm7.png",
+    name: "stgenm/stage07/enm7.png", //boss Extra (Remyvel)
     format: 1,
     width: 512,
     height: 1024,

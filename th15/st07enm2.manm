@@ -1,6 +1,6 @@
 entry entry0 {
     version: 8,
-    name: "stgenm/stage01/enm1.png",
+    name: "stgenm/stage01/enm1.png", //midboss extra
     format: 5,
     width: 512,
     height: 512,
