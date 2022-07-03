@@ -44,7 +44,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss1");
 	lifeSet(2200);
-    @BossCard3();
+    @Boss1();
     delete();
 }
 
@@ -52,8 +52,8 @@ void Boss1()
 {
     timerReset();
 	lifeSet(12800);
-    setNext(0, 2200, 2400, "BossCard1");
-    lifeMarker(0, 2200.0f, -24448);
+    setNext(0, 2700, 2400, "BossCard1");
+    lifeMarker(0, 2700.0f, -24448);
     stars(2);
     anmSelect(3);
     anmSetMain(0, 0);
@@ -66,7 +66,7 @@ void Boss1()
 	wait(100);
 	while(1)
 	{
-		moveRand(90, 0, 2f);
+		moveRand(40, 0, 1.5f);
 		wait(350);
 	}
 	wait(10000);
@@ -76,9 +76,10 @@ void Boss1()
 void Boss1_at()
 {
 	F0 = rad(90);
-	int B = 2:3:4:5;
+	int B = 3:4:5:5;
 	I0 = 1;
 	I1 = 1;
+	I2 = 2;
 	times(B)
 	{
 		enmCreateA("Spawn", cos(F0)*70f, sin(F0)*70f, 70, 10, 1);
@@ -91,6 +92,7 @@ void Boss1_at()
 	}
 	F0 = rad(270);
 	I0 = -1;
+	I2 = 15;
 	times(B)
 	{
 		enmCreateA("Spawn", cos(F0)*100f, sin(F0)*100f, 100, 10, 1);
@@ -115,18 +117,40 @@ void Spawn()
 	etSprite(0, 23, I1);
 	mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
 	etAngle(0, %A, rad(0));
-	etSpeed(0, 1f, 1f);
+	etSpeed(0, 2f, 2f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_OFFSCREEN, 99999, NEG, NEGF, NEGF);
+	etNew(1);
+	etAim(1, 3);
+	etCount(1, 6:8:10:12, 1:1:1:1);
+	etSprite(1, 16, I2);
+	etAngle(1, rad(90), 0f);
+	etSpeed(1, 4f, 4f);
+	etEx(1, 0, EX_WAIT, 5, NEG, NEGF, NEGF);
+	etEx(1, 0, EX_VELTIME, 5, NEG, 2f, NEGF);
 	wait(30);
+	@little_stars() async;
 	while(1)
 	{
 		mathAngle(%A,  ABS_X, ABS_Y, BOSS_X, BOSS_Y);
 		etAngle(0, %A, rad(0));
 		etOn(0);
-		wait(10:10:8:6);
+		
+		wait(10:10:8:8);
 	}
 	wait(1000000);
 }
+
+void little_stars()
+{
+	while(1)
+	{
+		etOn(1);
+		wait(80:80:75:65);
+	}
+}
+
+
 void bossTrace1()
 {
 	while(1)
@@ -576,7 +600,7 @@ void MasterSpark()
 	int loop = 270:270:300:320;
 	flagSet(3);
 	deathAnm(0, -1);
-	A = ANGLE_PLAYER;
+	A = ANGLE_PLAYER+rad(40);
 	GF1 = A;
 	anmSelect(4);
     anmSetSprite(0, 0);//sprite MasterSpark
