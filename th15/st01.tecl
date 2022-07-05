@@ -357,12 +357,12 @@ void MainFront()
 {
     @MainSub00();
     wait(320);
-    setChapter(1);
+    setChapter(2);
 	wait(120);
 	@MainSub01()async;
 	@MainSub02();
 	wait(440);
-	setChapter(2);
+	setChapter(3);
 	// @MainSub03test();
     return;
 }
@@ -523,16 +523,18 @@ void main()
     @LogoEnemy() async;
 +60: //60
     nop();
-	dialogRead(5);
-	wait(300);
+	// dialogRead(5);
+	// wait(300);
+	// setChapter(1);
+    // wait(2);
 	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    @MainFront();
-    enmKillAll();
-    etClear(640.0f);
-    setChapter(2);
-    wait(2);
-	dialogRead(6);
-	dialogWait();
+    // @MainFront();
+    // enmKillAll();
+    // etClear(640.0f);
+    // setChapter(4);
+    // wait(2);
+	// dialogRead(6);
+	// dialogWait();
 	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
     wait(200);
 	etNew(0);
@@ -547,7 +549,7 @@ void main()
     // etClear(640.0f);
 	// enmKillAll();
     wait(300);
-    wait(300);
+    wait(30000);
     setChapter(41);
     dialogRead(0);
     @MainBoss();

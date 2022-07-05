@@ -1365,14 +1365,17 @@ BossCard1_412:
 +90: //94
     nop();
     wait(60);
+	float Angle = 0f;
 	while(1)
 	{
 		wait(30);
 		times(3)
 		{
-			BossCard1_at(ANGLE_PLAYER, 10) async;
-			BossCard1_at_1(ANGLE_PLAYER) async;
-			BossCard1_at_1_2(ANGLE_PLAYER, 3) async;	
+			Angle = ANGLE_PLAYER;
+			BossCard1_at(Angle, 10) async;
+			wait(2);
+			BossCard1_at_1(Angle) async;
+			BossCard1_at_1_2(Angle, 3) async;	
 			wait(120);
 		}
 		movePosTime(30, 4, 0.0f, 192.0f);
@@ -1388,24 +1391,9 @@ BossCard1_412:
 void BossCard1_at2()
 {
 	float angle = rad(225);
-	int Id = 10;
-	anmPlay(1, 73);
-	playSound(SE_CHARGE4);
-	wait(20);
-	etNew(0);
-	etAim(0, 1);
-	etCount(0, 1, 1);
-	etAngle(0, 0f, 0f);
-	etSprite(0, 38, 2);
-	etSpeed(0, 6f, 6f); 
-	etExSet2(0, 0, 0, EX_LASERPREPSHOOT, 0, 8, 2, 1, NEGF, 6f, 0f, 300f);
-	etExSet2(0, 1, 0, EX_SHOOT, 30, 38, 3, 0, 0.0f, 16.0f, 8f, 100f);
-	etCopy(6, 0);
-	etCopy(7, 0);
-	etOffsetRad(6, angle + rad(90), 10f);
-	etOffsetRad(7, angle - rad(90), 10f);
-	anmPlay(1, 88);
-	playSound(SE_EXPLODE2);
+	int Id = 3;
+	BossCard1_at_2() async;
+	wait(90);
 	times(3)
 		{
 			BossCard1_at(angle, 0) async;
@@ -1415,28 +1403,77 @@ void BossCard1_at2()
 			Id = Id + 1;
 		}
 }
+
+void BossCard1_at_2()
+{
+	float Angle = rad(140);
+	etNew(11);
+	etAim(11, 1);
+	etCount(11, 2, 2);
+	etSprite(11, 12, 6);
+	etSpeed(11, 3f, 4f);
+	etAngle(11, rad(90), Angle);
+	times(2)
+	{
+		times(17)
+		{
+			etDist(11, 0f);
+			etSprite(11, 12, 6);
+			etOn(11);
+			etDist(11, -8f);
+			etSprite(11, 8, 8);
+			etOn(11);
+			Angle -= rad(16.4705882);
+			etAngle(11, rad(90), Angle);
+			wait(3);
+		}
+		times(18)
+		{
+			etDist(11, 0f);
+			etSprite(11, 12, 6);
+			etOn(11);
+			etDist(11, -8f);
+			etSprite(11, 8, 8);
+			etOn(11);
+			Angle += rad(15.5555556);
+			etAngle(11, rad(90), Angle);
+			wait(3);
+		}
+	}
+	
+	
+}
+
 void BossCard1_at(float angle, int time)
 {
 	etNew(0);
 	etAim(0, 1);
 	etCount(0, 1, 1);
 	etAngle(0, angle, 0f);
-	etSprite(0, 38, 2);
-	etSpeed(0, 6f, 6f); 
-	etExSet2(0, 0, 0, EX_LASERPREPSHOOT, 0, 8, 2, 1, NEGF, 6f, 0f, 300f);
-	etExSet2(0, 1, 0, EX_SHOOT, 30, 38, 3, 0, 0.0f, 16.0f, 8f, 100f);
+	etSprite(0, 8, 8);
+	etSpeed(0, 6f, 6f);
+	laserNew(0, 0f, 340f, 0f, 50f);
 	etCopy(6, 0);
 	etCopy(7, 0);
+	etOffsetRad(0, angle, 10f);
+	etOffsetRad(6, angle + rad(90), 15f);
+	etOffsetRad(7, angle - rad(90), 15f);
+	laserNew(6, 0f, 300f, 0f, 30f);
+	laserNew(7, 0f, 300f, 0f, 30f);
+	@CreatePattern(9, 1, 8, 15, 30, 1, angle + rad(180), rad(160) / 30f, 5f, 5f);
+	laserOn(0);
+	laserOn(6);
+	laserOn(7);
 	etOffsetRad(6, angle + rad(90), 10f);
 	etOffsetRad(7, angle - rad(90), 10f);
-	@CreatePattern(9, 1, 10, 1, 20, 1, angle + rad(180), rad(110) / 20f, 5f, 5f);
-	etOn(0);
-	etOn(6);
-	etOn(7);
+	laserNew(6, 0f, 320f, 0f, 20f);
+	laserNew(7, 0f, 320f, 0f, 20f);
+	laserOn(6);
+	laserOn(7);
 	times(time)
 	{
 		etOn(9);
-		wait(2);
+		wait(3);
 	}
 } 
 
@@ -1456,7 +1493,42 @@ void BossCard1_at_1(float angle)
 	etSpeed(2, 6f, 6f);
 	etCopy(8, 2);
 	etSprite(8, 33, 2);
-	//etExSet(8, 0, 0, EX_SIZE, 1, NEG, 1.0, 0.85f);
+	// etExSet(8, 0, 0, EX_SIZE, 1, NEG, 1.0, 0.75f);
+	etExSet(2, 0, 0, EX_SIZE, 1, NEG, 1.0, 0.75f);
+	etOffsetRad(2, angle, 15f);
+	etOffsetRad(8, angle, 15f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle + rad(120), 30f);
+	etOffsetRad(8, angle + rad(120), 30f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle - rad(120), 30f);
+	etOffsetRad(8, angle - rad(120), 30f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle + rad(70), 10f);
+	etOffsetRad(8, angle + rad(70), 10f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle - rad(70), 10f);
+	etOffsetRad(8, angle - rad(70), 10f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle + rad(130), 30f);
+	etOffsetRad(8, angle + rad(130), 30f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle - rad(130), 30f);
+	etOffsetRad(8, angle - rad(130), 30f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle - rad(130), 50f);
+	etOffsetRad(8, angle - rad(130), 50f);
+	etOn(2);
+	etOn(8);
+	etOffsetRad(2, angle + rad(130), 50f);
+	etOffsetRad(8, angle + rad(130), 50f);
 	etOn(2);
 	etOn(8);
 	wait(10);
@@ -1467,12 +1539,12 @@ void BossCard1_at_1_2(float angle, int etID)
 {
 	etNew(etID);
 	etAim(etID, 1);
-	etSprite(etID, 10, 3);
+	etSprite(etID, 10, 6);
 	etCount(etID, 10, 2);
 	etSpeed(etID, 6f, 6f);
 	etAngle(etID, angle, rad(3));
 	etExSet(etID, 0, 0, EX_BOUNCE, 1, 15, 4f, NEGF);
-	etExSet(etID, 3, 0, EX_SETSPRITE, 10, 12, NEGF, NEGF);
+	etExSet(etID, 3, 0, EX_SETSPRITE, 10, 8, NEGF, NEGF);
     //etExSet(3, 2, 0, EX_VEL, NEG, NEG, %RANDRAD / 2f,  2f + RANDF * 3f );
     etExSet2(etID, 1, 0, EX_ANGLE, 0, 1, 5, NEG, rad(90), NEGF, NEGF, NEGF);
     etExSet2(etID, 2, 0, EX_ANGLE, 0, 1, 7, NEG, NEGF, 0.5f, NEGF, NEGF);
