@@ -26,6 +26,9 @@ void MBoss()
     lifeSet(10000);
     lifeMarker(0, 10000.0f, -8355585);
     setNext(1, 0, 1500, "MBossDead");
+!HL
+	setNext(1, 2500, 1500, "MBossDead");
+!*
     setTimeout(1, "MBossEscape");
     fog(128.0f, 9408511);
     movePos(-192.0f, -64.0f);
