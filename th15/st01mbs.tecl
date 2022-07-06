@@ -27,7 +27,9 @@ void MBoss()
     lifeMarker(0, 10000.0f, -8355585);
     setNext(1, 0, 1500, "MBossDead");
 !HL
-	setNext(1, 2500, 1500, "MBossDead");
+	setNext(1, 1800, 1500, "MBossCard1");
+	
+	lifeMarker(0, 1800.0f, -8355585);
 !*
     setTimeout(1, "MBossEscape");
     fog(128.0f, 9408511);
