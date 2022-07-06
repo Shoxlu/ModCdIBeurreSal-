@@ -1006,8 +1006,6 @@ case1:
 end:
     layer(4);
     scale(0.25f, 0.25f);
-	// blendMode(0);
-	// color(0, 0, 0);
 	F2 = F1;
 loop:
     pos(F0, F1, 0.0f);
