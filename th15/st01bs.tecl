@@ -802,6 +802,8 @@ BossCard1_448:
     etClear(640.0f);
 BossCard1_468:
     spellEnd();
+	dialogRead(4);
+	dialogWait();
     funcSet(0);
     reset();
 	flagSet(2);
