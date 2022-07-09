@@ -54,6 +54,7 @@ void Boss1()
     timerReset();
     setNext(0, 2700, 2280, "BossCard1");
     lifeMarker(0, 2700.0f, -24448);
+	moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
     stars(1);
     anmSelect(3);
     anmSetMain(0, 0);

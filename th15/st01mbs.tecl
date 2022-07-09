@@ -53,6 +53,7 @@ MBoss_984:
 void MBoss1()
 {
     @EffChargePoint3(1.5707964f, 0.5235988f, 8, 3, 3, 7);
+	moveLimit(0.0f, 128.0f, 280.0f, 96.0f);
     // !ENH
 	@MBoss1_at(0, rad(180), 1) async;
 	@MBoss1_at(1, rad(0), 3) async;
@@ -75,23 +76,24 @@ void MBoss1_at(int etID, float A, int color)
 {
 	etNew(etID);
 	etAim(etID, 1);
-	etCount(etID, 2, 1);
+	etCount(etID, 2:2:1:2, 1);
 	etSprite(etID, 22, color);
 	etSpeed(etID, 3f, 3f);
 	etAngle(etID, rad(0), 0f);
 	float Angle = A;
 	while(1)
 	{
-		etAngle(etID, Angle, rad(45):rad(45):0f:0f);
+		etAngle(etID, Angle, rad(45):rad(45):0f:rad(45));
 		etOn(etID);
 !ENH
 		Angle = Angle + rad(20);
 !L
 		Angle = Angle + rad(19.3);
 !*
-		wait(5:4:2:1);
+		wait(5:4:2:2);
 	}
 }
+
 void MBossCard1()
 {
     @BossItemCard();
@@ -147,11 +149,11 @@ void MBossCard1_at()
 	etAim(0, 3);
 	etCount(0, 8, 1);
 	etSprite(0, 20, 3);
-	etSpeed(0, 3f, 3f);
+	etSpeed(0, 3f:3f:3f:4f, 3f);
 	etAngle(0, A, 0f);
-	etDist(0, 7f);
+	etDist(0, 16f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	etEx(0, 0, EX_WAIT, 20, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_WAIT, 20:20:20:15, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_SETSPRITE, 20, 2, NEGF, NEGF);
 	while(1)
 	{
@@ -160,10 +162,7 @@ void MBossCard1_at()
 			times(90)
 			{
 				etOn(0);
-				// A += power(1.023, exp);
-				// AInc = 0f;
-		
-				A += power(AInc, exp);
+				A += power(AInc, exp)*1f:1f:1f:0.5f;
 				// AInc = A;
 				AInc += rad(4)*B;
 				etAngle(0, A, rad(0));
