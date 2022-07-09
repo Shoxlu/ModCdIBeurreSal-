@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @LastWordCard();
+    @Boss1();
     delete();
 }
 
