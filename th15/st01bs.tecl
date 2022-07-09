@@ -364,7 +364,8 @@ void BossCard1_atreversed()
 void do_again(int A)
 {
 	A = I3;
-	flagSet(32);
+	flagSet(1);
+	flagSet(2);
 	wait(60:55:50:55);
 	if(GI0 == 0)
 	{
