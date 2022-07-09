@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @BossCard1();
+    @LastWordCard();
     delete();
 }
 
@@ -854,12 +854,12 @@ void DeathGirlReimuSub02()
 	enmCreate("YingYangTrap5", 0f, 0f, 100, 100, 2);
 	enmCreate("YingYangTrap6", 0f, 0f, 100, 100, 2);
 !L
-	enmCreate("YingYangTrap1b", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap2b", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap3b", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap4b", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap5b", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap6b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap1b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap2b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap3b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap4b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap5b", 0f, 0f, 100, 100, 2);
+	// enmCreate("YingYangTrap6b", 0f, 0f, 100, 100, 2);
 !*
 	wait(100);
 	GF2 = 0f;
@@ -905,7 +905,7 @@ void Trap1()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(11, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(11, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etAngle(11, rad(45), 0f);
 	etExSet(11, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(11, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
@@ -923,7 +923,7 @@ void Trap2()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(12, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(12, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(12, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(12, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(12, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -941,7 +941,7 @@ void Trap3()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(13, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(13, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(13, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(13, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(13, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -959,7 +959,7 @@ void Trap4()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(14, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(14, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(14, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(14, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(14, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -977,7 +977,7 @@ void Trap5()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(15, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(15, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(15, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(15, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(15, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -995,7 +995,7 @@ void Trap6()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(9, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(9, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(9, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(9, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(9, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -1013,7 +1013,7 @@ void Trap7()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(8, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(8, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(8, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(8, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(8, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -1031,7 +1031,7 @@ void Trap8()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(7, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
+	@CreatePattern(7, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
 	etExSet(7, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
 	etExSet(7, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
 	etExSet(7, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
@@ -1202,14 +1202,15 @@ void YingYangTrap_at()
 	%A= rad(133);
 	$B= 1;
 	etNew(2);
-	etSprite(2, ET_ARROWHEAD, 2);
+	etSprite(2, ET_ARROWHEAD, 4);
 	etAim(2, 1);
 	etAngle(2,%A, 0f);
 	etCount(2, 1, $B);
 	etSpeed(2, 3f, 3f);
 !L 
-	etSpeed(2, 0.75f, 0.75f); 
+	etSpeed(2, 2f, 2f); 
 !*
+	etExSet(2, 0, 0, EX_ANIM, 0, 0, NEGF, NEGF);
 	while(1){
 		mathAngle(%A, ABS_X, ABS_Y, 0f, 224f); //calcule l'angle pour tirer en direction du boss
 		etAngle(2,%A, 0f);//aplique ce nouvel angle 
@@ -1236,7 +1237,7 @@ void YingYangTrap_at2()
 !*
 	diffWait(0, 100, 100, 260);
 	@CreatePattern(3, 0, 16, 3, $B, [-1], 0f, rad(20), 1f, 2f);
-	etExSet(3, 0, 0, EX_ANIM, 1, 0, NEGF, NEGF);
+	etExSet(3, 0, 0, EX_ANIM, 2, 0, NEGF, NEGF);
 	while(1)
 	{
 		$A = 1 + RAND % 13;
@@ -1258,7 +1259,7 @@ void YingYangTrap_at3()
 	while(1)
 	{
 		$A = 1 + RAND % 6;
-		etSprite(4, 24, $A);
+		etSprite(4, 24, 3);
 		mathAngle(%A, 0f, 224f, ABS_X, ABS_Y); //calcule l'angle pour tirer en direction du boss
 		etAngle(4, %A, rad(30));
 		if(GI1 == 1)
