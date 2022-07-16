@@ -148,7 +148,7 @@ Boss2_564:
     anmPlay(1, 75);
     playSound(54);
 	movePosTime(90, 0, 0.0f, 128.0f);
-    wait(90);
+    wait(120);
     anmPlay(1, 86);
     playSound(6);
 	@Boss2_at(0, rad(180), 1, 1) async;
