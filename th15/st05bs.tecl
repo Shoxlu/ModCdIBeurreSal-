@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(2800);
-    BossCard4();
+    BossCard3();
     delete();
 }
 
@@ -976,7 +976,7 @@ BossCard3_468:
     anm316(0, 0);
 +60: //64
     nop();
-    %F0 = 0.98f;
+    %F0 = 100f;
     funcSet(4);
     %A = %ANGLE_PLAYER;
     $B = 1000;
@@ -1052,21 +1052,13 @@ void BossCard3_at()
 !*
     etCount(0, [-1], 1);
     etAngle(0, 1.5707964f, 0.034906585f);
-    etSpeed(0, 1.5f, 1.0f);
+    etSpeed(0, 2f, 0f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
     etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 32768, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 600, -999999, -999999.0f, -999999.0f);
-!E
-    2.0f;
-!N
-    2.0f;
-!H
-    2.0f;
-!LO
-    2.0f;
-!*
-    etEx(0, 0, 2097152, 120, -999999, [-1.0f], -999999.0f);
+    etEx(0, 0, EX_REACT, 1, -999999, -999999.0f, -999999.0f);
+	etExSet(0, 4, 0, EX_SETSPRITE, 10, 3, NEGF, NEGF);
+	etExSet(0, 5, 0, EX_REACT, 0, -999999, -999999.0f, -999999.0f);
+	//etExSet(0, 8, 0, EX_SETSPRITE, 10, 3, NEGF, NEGF);
     etAngle(0, %RANDRAD, 0.0f);
     etOn(0);
     return;

@@ -214,7 +214,7 @@ MBossDead_528:
     setScreenShake(30, 12, 0);
     anmPlay(0, 28);
     playSound(5);
-    setChapter(2);
+    setChapter(5);
 	wait(60);
 	movePosTime(60, 1, 270f, -120f);
 	wait(60);

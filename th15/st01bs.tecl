@@ -151,14 +151,14 @@ Boss2_564:
     wait(120);
     anmPlay(1, 86);
     playSound(6);
-	@Boss2_at(0, rad(180), 1, 1) async;
-	@Boss2_at(1, rad(0), 3, 1) async;
-	@Boss2_at(2, rad(90), 2, 1) async;
-	@Boss2_at(3, rad(270), 4, 1) async;
-	@Boss2_at(4, rad(180), 1, -1) async;
-	@Boss2_at(5, rad(0), 3, -1) async;
-	@Boss2_at(6, rad(90), 2, -1) async;
-	@Boss2_at(7, rad(270), 4, -1);
+	@Boss2_at(1, rad(0), 3, -1) async;
+	@Boss2_at(2, rad(0), 3, 1) async;
+	@Boss2_at(3, rad(90), 2, -1) async;
+	@Boss2_at(4, rad(90), 2, 1) async;
+	@Boss2_at(5, rad(180), 1, 1) async;
+	@Boss2_at(6, rad(180), 1, -1) async;
+	@Boss2_at(7, rad(270), 4, 1) async;
+	@Boss2_at(8, rad(270), 4, -1);
 }
 
 void Boss2_at(int etID, float A, int color, int B)

@@ -27,7 +27,16 @@ E9 [codecave:NewCodeSnakesColor] \
 	"Escaping_MusicBoss_msg": {
       "addr": 0x438F93,
       "code": "E9 [codecave:ChangeBossMusic]"
-    }
+    },
+	"FuncSet4_better": {
+      "addr": 0x004319AD,
+      "code": "C7 05 C0 F0 4D 00 05 00 00 00 F3 0F 10 0D C0 F0 4D 00 F3 0F 10 81 9C 0C 00 00 F3 0F 10 C1 F3 0F 11 81 9C 0C 00 00\
+<nop:30>"
+    },
+	"FuncSet4_F0_fix": {
+      "addr": 0x004318FA,
+      "code": "F3:0F10AB 9C020000"
+	}
   },
   "codecaves": {
     "Changing_loaded_slot_in_memory_for_Sanae": {
