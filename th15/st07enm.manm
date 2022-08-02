@@ -1662,18 +1662,13 @@ entry entry16 {
     version: 8,
     name: "face/enemy7/face07ct.png",
     format: 1,
-    width: 512,
-    height: 1024,
+    width: 431,
+    height: 518,
     memoryPriority: 0,
     lowResScale: 0,
     hasData: 1,
-    THTXSize: 652680,
-    THTXFormat: 1,
-    THTXWidth: 315,
-    THTXHeight: 518,
-    THTXZero: 0,
     sprites: {
-        sprite77: { x: 0, y: 0, w: 315, h: 518 }
+        sprite77: { x: 0, y: 0, w: 431, h: 518 }
     }
 }
 
