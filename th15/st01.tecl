@@ -328,6 +328,132 @@ void Fairy4_at2()
 	}
 }
 
+void BigFairy()
+{
+	flagSet(4);
+	anmSelect(2);
+	anmSetMain(0, ENM_GIRL_L);
+	anmSetSprite(1, ENM_AURA_L_DARKRED);
+	dropExtra(1, 4);
+	dropExtra(2, 3);
+	BigFairy_at() async;
+	float A = rad(-10);
+	if(F0 < rad(90))
+	{
+		A = rad(10);
+	}
+	moveVel(F0+A, 1.5f);
+	wait(1000);
+}
+
+void BigFairy_at()
+{
+	etNew(0);
+	etAim(0, 3);
+	etSprite(0, 6, 6);
+	etCount(0, 8:12:14:16, 2:2:3:3);
+	etSpeed(0, 1f, 1.25f);
+	etCopy(1, 0);
+	etSprite(1, 6, 8);
+	etAim(1, 5);
+	etCount(1, 4:6:7:8, 2:2:3:3);
+	etSpeed(1, 1.5f, 1.75f);
+	etCopy(2, 0);
+	etSprite(2, 6, 4);
+	etCount(2, 2:3:3:8, 2:2:3:3);
+	etSpeed(2, 2f, 2.25f);
+	etExSet(0, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF); 
+	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF); 
+	etExSet(2, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF); 
+	wait(60);
+	while(1)
+	{
+		etOn(0);
+		etOn(1);
+		etOn(2);
+		etOn(3);
+		wait(120);
+	}
+}
+
+void littleFairy()
+{
+	anmSelect(2);
+	anmSetMain(0, 0);
+	dropExtra(1, 1);
+	dropExtra(2, 1);
+	littleFairy_at() async;
+	float A = rad(-90);
+	if(F0 < rad(90))
+	{
+		A = rad(90);
+	}
+	moveVel(F0+A+RANDF2*rad(30), 4f);
+	wait(1000);
+}
+
+
+void littleFairy1()
+{
+	anmSelect(2);
+	anmSetMain(0, 5);
+	float A = rad(-90);
+	dropExtra(1, 1);
+	dropExtra(2, 1);
+	littleFairy_at() async;
+	if(F0 < rad(90))
+	{
+		A = rad(90);
+	}
+	moveVel(F0+A+RANDF2*rad(30), 4f);
+	wait(1000);
+}
+
+void littleFairy_at()
+{
+	etNew(0);
+	etAim(0, 0);
+	etCount(0, 1, 1:1:2:2);
+	etAngle(0, 0f, 0f);
+	etSprite(0, 4, 7);
+	etSpeed(0, 1f:2f:2f:2f, 1f:2f:3f:4f);
+	etExSet(0, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF); 
+	wait(60);
+	while(1)
+	{
+		etOn(0);
+		wait(100:110:110:100);
+	}
+}
+
+void MiddleFairy()
+{
+	anmSelect(2);
+	anmSetMain(0, ENM_GIRL_M_RED);
+	anmSetSprite(1, ENM_AURA_S_DARKPURPLE);
+	dropExtra(1, 1);
+	dropExtra(2, 5);
+	float A = rad(90);
+	if(ABS_X < 0f)
+	{
+		times(180)
+		{
+			moveVel(A, 2f);
+			A -= rad(90)/180f;
+			wait(1);
+		}
+	}else{
+		times(180)
+		{
+			moveVel(A, 2f);
+			A += rad(90)/180f;
+			wait(1);
+		}
+	}
+}
+
+
+
 
 void Vaguetest()
 {
@@ -384,6 +510,7 @@ void Vaguetest_at()
 	}
 }
 
+
 void MainBoss()
 {
     dialogWait();
@@ -435,7 +562,9 @@ void MainLatter()
 	wait(120);
 	setChapter(6);
 	wait(60);
-	// @MainSub04();
+	@MainSub04();
+	setChapter(7);
+	wait(60);
     return;
 }
 
@@ -565,8 +694,60 @@ void MainSub03()
 
 void MainSub04()
 {
+	F0 = rad(135);
+	enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
+	times(10)
+	{
+		enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 11);
+		enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 11);
+	}
+	wait(100);
+	F0 = rad(45);
+	enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
+	times(10)
+	{
+		enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 11);
+		enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 11);
+	}
+	wait(100);
+	
+	@MainSub04_alt();
 	
 	
+	F0 = rad(45);
+	enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
+	times(20)
+	{
+		enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 5);
+		enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 5);
+	}
+	wait(100);
+	F0 = rad(135);
+	enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
+	times(20)
+	{
+		enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 5);
+		enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 5);
+	}
+	wait(200);
+	
+	// enmCreate("LastFairy", 0f, -40f, 2000, 1000, 0);
+}
+
+
+void MainSub04_alt()
+{
+	enmCreate("MiddleFairy", -40f, -40f, 600, 50, 0);
+	enmCreate("MiddleFairy", 40f, -40f, 600, 50, 0);
+	wait(200);
 }
 
 
@@ -623,21 +804,21 @@ void main()
     @LogoEnemy() async;
 +60: //60
     nop();
-	// dialogRead(5);
-	// wait(300);
-	// setChapter(1);
-    // wait(2);
+	dialogRead(5);
+	wait(300);
+	setChapter(1);
+    wait(2);
 	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    // @MainFront();
-    // enmKillAll();
-    // etClear(640.0f);
-    // setChapter(4);
-    // wait(2);
-	// dialogRead(6);
-	// dialogWait();
+    @MainFront();
+    enmKillAll();
+    etClear(640.0f);
+    setChapter(4);
+    wait(2);
+	dialogRead(6);
+	dialogWait();
 
-	// enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    // wait(3000);
+	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    wait(3000);
 	
 	// etNew(0);
 	// etAim(0, 1);
