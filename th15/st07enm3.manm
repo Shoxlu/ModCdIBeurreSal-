@@ -567,88 +567,60 @@ offset220:
 
 entry entry2 {
     version: 8,
-    name: "face/enemy6/face06no.png",
+    name: "face/enemy8/face08no.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite18: { x: 0, y: 0, w: 282, h: 282 }
+        sprite18: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
 
 entry entry3 {
     version: 8,
-    name: "face/enemy6/face06n2.png",
+    name: "face/enemy8/face08n2.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
-    memoryPriority: 0,
+    width: 490,
+    height: 820,
+	memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite19: { x: 0, y: 0, w: 282, h: 282 }
+        sprite19: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
 
 entry entry4 {
     version: 8,
-    name: "face/enemy6/face06hp.png",
+    name: "face/enemy8/face08hp.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite20: { x: 0, y: 0, w: 282, h: 282 }
+        sprite20: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
 
 entry entry5 {
     version: 8,
-    name: "face/enemy6/face06an.png",
+    name: "face/enemy8/face08an.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite21: { x: 0, y: 0, w: 282, h: 282 }
+        sprite21: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
@@ -675,44 +647,30 @@ entry entry6 {
 
 entry entry7 {
     version: 8,
-    name: "face/enemy6/face06dp.png",
+    name: "face/enemy8/face08dp.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite23: { x: 0, y: 0, w: 282, h: 282 }
+        sprite23: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
 
 entry entry8 {
     version: 8,
-    name: "face/enemy6/face06pr.png",
+    name: "face/enemy8/face08pr.png",
     format: 1,
-    width: 512,
-    height: 512,
-    xOffset: 371,
-    yOffset: 309,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 318096,
-    THTXFormat: 1,
-    THTXWidth: 282,
-    THTXHeight: 282,
-    THTXZero: 0,
     sprites: {
-        sprite24: { x: 0, y: 0, w: 282, h: 282 }
+        sprite24: { x: 0, y: 0, w: 490, h: 820 }
     }
 }
 
@@ -759,20 +717,15 @@ entry entry10 {
 
 entry entry11 {
     version: 8,
-    name: "face/enemy6/face06bs.png",
+    name: "face/enemy8/face08bs.png",
     format: 1,
-    width: 1024,
-    height: 2048,
+    width: 490,
+    height: 820,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 4160000,
-    THTXFormat: 1,
-    THTXWidth: 1000,
-    THTXHeight: 1040,
-    THTXZero: 0,
     sprites: {
-        sprite27: { x: 0, y: 0, w: 1000, h: 1040 },
+        sprite27: { x: 0, y: 0, w: 490, h: 820 },
         sprite28: { x: 0, y: 0, w: 1, h: 1 }
     }
 }
@@ -784,55 +737,55 @@ script script17 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(96.0f, -64.0f, 0.0f);
+    pos(467.0f, 265.0f, 0.0f);
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, -64.0f, 0.0f);
+    posTime(15, 2, 435.0f, 265.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 0.0f, -80.0f, 0.0f);
+    posTime(15, 5, 371.0f, 249.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
     case(7);
-    posTime(2, 0, -8.0f, -88.0f, 0.0f);
+    posTime(2, 0, 363.0f, 241.0f, 0.0f);
 +2: // 32
-    posTime(2, 0, -4.0f, -76.0f, 0.0f);
+    posTime(2, 0, 367.0f, 253.0f, 0.0f);
 +2: // 34
-    posTime(2, 0, 8.0f, -84.0f, 0.0f);
+    posTime(2, 0, 379.0f, 245.0f, 0.0f);
 +2: // 36
-    posTime(2, 0, 4.0f, -72.0f, 0.0f);
+    posTime(2, 0, 375.0f, 257.0f, 0.0f);
 +2: // 38
-    posTime(2, 0, 0.0f, -88.0f, 0.0f);
+    posTime(2, 0, 371.0f, 241.0f, 0.0f);
 +2: // 40
-    posTime(2, 0, -8.0f, -76.0f, 0.0f);
+    posTime(2, 0, 363.0f, 253.0f, 0.0f);
 +2: // 42
-    posTime(2, 0, -4.0f, -84.0f, 0.0f);
+    posTime(2, 0, 367.0f, 245.0f, 0.0f);
 +2: // 44
-    posTime(2, 0, 8.0f, -72.0f, 0.0f);
+    posTime(2, 0, 379.0f, 257.0f, 0.0f);
 +2: // 46
-    posTime(2, 0, -4.0f, -84.0f, 0.0f);
+    posTime(2, 0, 367.0f, 245.0f, 0.0f);
 +2: // 48
-    posTime(2, 0, 0.0f, -76.0f, 0.0f);
+    posTime(2, 0, 371.0f, 253.0f, 0.0f);
 +15: // 63
     stop();
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, -64.0f, 0.0f);
+    posTime(15, 2, 435.0f, 265.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 96.0f, -64.0f, 0.0f);
+    posTime(30, 6, 467.0f, 265.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
@@ -857,55 +810,55 @@ script script18 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(467.0f, 245.0f, 0.0f);
+    pos(467.0f, 265.0f, 0.0f);
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 435.0f, 245.0f, 0.0f);
+    posTime(15, 2, 435.0f, 265.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 371.0f, 229.0f, 0.0f);
+    posTime(15, 5, 371.0f, 249.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
     case(7);
-    posTime(2, 0, 363.0f, 221.0f, 0.0f);
+    posTime(2, 0, 363.0f, 241.0f, 0.0f);
 +2: // 32
-    posTime(2, 0, 367.0f, 233.0f, 0.0f);
+    posTime(2, 0, 367.0f, 253.0f, 0.0f);
 +2: // 34
-    posTime(2, 0, 379.0f, 225.0f, 0.0f);
+    posTime(2, 0, 379.0f, 245.0f, 0.0f);
 +2: // 36
-    posTime(2, 0, 375.0f, 237.0f, 0.0f);
+    posTime(2, 0, 375.0f, 257.0f, 0.0f);
 +2: // 38
-    posTime(2, 0, 371.0f, 221.0f, 0.0f);
+    posTime(2, 0, 371.0f, 241.0f, 0.0f);
 +2: // 40
-    posTime(2, 0, 363.0f, 233.0f, 0.0f);
+    posTime(2, 0, 363.0f, 253.0f, 0.0f);
 +2: // 42
-    posTime(2, 0, 367.0f, 225.0f, 0.0f);
+    posTime(2, 0, 367.0f, 245.0f, 0.0f);
 +2: // 44
-    posTime(2, 0, 379.0f, 237.0f, 0.0f);
+    posTime(2, 0, 379.0f, 257.0f, 0.0f);
 +2: // 46
-    posTime(2, 0, 367.0f, 225.0f, 0.0f);
+    posTime(2, 0, 367.0f, 245.0f, 0.0f);
 +2: // 48
-    posTime(2, 0, 371.0f, 233.0f, 0.0f);
+    posTime(2, 0, 371.0f, 253.0f, 0.0f);
 +15: // 63
     stop();
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 435.0f, 245.0f, 0.0f);
+    posTime(15, 2, 435.0f, 265.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 467.0f, 245.0f, 0.0f);
+    posTime(30, 6, 467.0f, 265.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
@@ -958,18 +911,13 @@ entry entry12 {
     version: 8,
     name: "face/enemy6/face06ct.png",
     format: 1,
-    width: 512,
-    height: 512,
+    width: 430,
+    height: 716,
     memoryPriority: 0,
     lowResScale: 0,
     hasData: 1,
-    THTXSize: 817152,
-    THTXFormat: 1,
-    THTXWidth: 399,
-    THTXHeight: 512,
-    THTXZero: 0,
     sprites: {
-        sprite29: { x: 0, y: 0, w: 399, h: 512 }
+        sprite29: { x: 0, y: 0, w: 430, h: 716 }
     }
 }
 
