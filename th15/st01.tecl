@@ -123,9 +123,10 @@ void Fairy_1_2at()
 	etSprite(0, 4, 4);
 	etAngle(0, 0f, 0f);
 	etCount(0, 1, 1:1:1:2);
-	etSpeed(0, 1.3f:1.4f:1.8:2.1f,  1.3f:1.4f:1.8:1.7f);
+	etSpeed(0, 1.4f:1.7f:2f:2.3f,  1.4f:1.7f:2f:1.7f);
 	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	wait(75);
+	while(1){
 !EN
 	if(RAND % 2 == 1)
 	{
@@ -134,11 +135,13 @@ void Fairy_1_2at()
 		{
 		
 			etOn(0);
-			wait(A + _S(RANDF2 * (50f:40f:25f:15f)));
+			wait(A + _S(RANDF2 * (40f:30f:25f:15f)));
 		}
 !EN
 	}
 !*
+	wait(120);
+	}
 }
 
 void BFairy1()
@@ -260,10 +263,10 @@ void YingYang1_at()
 	etAngle(0, 0f, 0f);
 	etCount(0, 1:1:1:1, 1:1:3:5);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	times(2:2:4:5)
+	times(2:3:4:5)
 	{
 		etOn(0);
-		wait(60:50:40:30);
+		wait(50:40:30:30);
 	}
 }
 
@@ -295,7 +298,7 @@ void Fairy4at()
 	etAngle(0, ANGLE_PLAYER, 0f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
-	etEx(0, 0, EX_VELTIME, 60, NEG, 2f:2f:2f:1.5f, NEGF);
+	etEx(0, 0, EX_VELTIME, 60, NEG, 2f:2f:2f:2.5f, NEGF);
 	Fairy4_at2() async;
 	wait(20);
 	while(1)
@@ -303,7 +306,7 @@ void Fairy4at()
 		mathAngle(a, ABS_X, ABS_Y, x, y); 
 		etAngle(0, a, 0f);
 		etOn(0);
-		wait(40:30:20:10);
+		wait(35:25:20:10);
 	}
 }
 
@@ -819,7 +822,7 @@ void main()
 	dialogWait();
 
 	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    wait(3000);
+    wait(1500:1500:3000:3000);
 	
 	// etNew(0);
 	// etAim(0, 1);
