@@ -804,6 +804,7 @@ void main()
     @LogoEnemy() async;
 +60: //60
     nop();
+	wait(100000);
 	dialogRead(5);
 	wait(300);
 	setChapter(1);
