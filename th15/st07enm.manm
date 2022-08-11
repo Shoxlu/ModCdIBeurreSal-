@@ -1083,20 +1083,13 @@ entry entry2 {
     version: 8,
     name: "face/enemy7/face07no.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 122,
-    yOffset: 126,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 143424,
-    THTXFormat: 1,
-    THTXWidth: 216,
-    THTXHeight: 166,
-    THTXZero: 0,
     sprites: {
-        sprite62: { x: 0, y: 0, w: 216, h: 166 }
+        sprite62: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1105,20 +1098,13 @@ entry entry3 {
     version: 8,
     name: "face/enemy7/face07n2.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 122,
-    yOffset: 126,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 143424,
-    THTXFormat: 1,
-    THTXWidth: 216,
-    THTXHeight: 166,
-    THTXZero: 0,
     sprites: {
-        sprite63: { x: 0, y: 0, w: 216, h: 166 }
+        sprite63: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1127,20 +1113,13 @@ entry entry4 {
     version: 8,
     name: "face/enemy7/face07hp.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 122,
-    yOffset: 126,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 143424,
-    THTXFormat: 1,
-    THTXWidth: 216,
-    THTXHeight: 166,
-    THTXZero: 0,
     sprites: {
-        sprite64: { x: 0, y: 0, w: 216, h: 166 }
+        sprite64: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1169,20 +1148,13 @@ entry entry6 {
     version: 8,
     name: "face/enemy7/face07sw.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 122,
-    yOffset: 126,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 143424,
-    THTXFormat: 1,
-    THTXWidth: 216,
-    THTXHeight: 166,
-    THTXZero: 0,
     sprites: {
-        sprite66: { x: 0, y: 0, w: 216, h: 166 }
+        sprite66: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1211,20 +1183,13 @@ entry entry8 {
     version: 8,
     name: "face/enemy7/face07pr.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 122,
-    yOffset: 126,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 143424,
-    THTXFormat: 1,
-    THTXWidth: 216,
-    THTXHeight: 166,
-    THTXZero: 0,
     sprites: {
-        sprite68: { x: 0, y: 0, w: 216, h: 166 }
+        sprite68: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1253,18 +1218,13 @@ entry entry10 {
     version: 8,
     name: "face/enemy7/face07lo.png",
     format: 1,
-    width: 1024,
-    height: 1024,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 1939200,
-    THTXFormat: 1,
-    THTXWidth: 606,
-    THTXHeight: 800,
-    THTXZero: 0,
     sprites: {
-        sprite70: { x: 0, y: 0, w: 606, h: 800 }
+        sprite70: { x: 0, y: 0, w: 510, h: 840 }
     }
 }
 
@@ -1273,16 +1233,11 @@ entry entry11 {
     version: 8,
     name: "face/enemy7/face07bs.png",
     format: 1,
-    width: 1024,
-    height: 1024,
+    width: 510,
+    height: 840,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 1713600,
-    THTXFormat: 1,
-    THTXWidth: 510,
-    THTXHeight: 840,
-    THTXZero: 0,
     sprites: {
         sprite71: { x: 0, y: 0, w: 510, h: 840 },
         sprite72: { x: 0, y: 0, w: 1, h: 1 }
@@ -1369,55 +1324,55 @@ script script26 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(218.0f, 302.0f, 0.0f);
+    pos(96.0f, 256.0f, 0.0f);
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 186.0f, 302.0f, 0.0f);
+    posTime(15, 2, 64.0f, 256.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 122.0f, 286.0f, 0.0f);
+    posTime(15, 5, 0.0f, 240.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
     case(7);
-    posTime(2, 0, 114.0f, 278.0f, 0.0f);
+    posTime(2, 0, -8.0f, 152.0f, 0.0f);
 +2: // 32
-    posTime(2, 0, 118.0f, 290.0f, 0.0f);
+    posTime(2, 0, -4.0f, 164.0f, 0.0f);
 +2: // 34
-    posTime(2, 0, 130.0f, 282.0f, 0.0f);
+    posTime(2, 0, 8.0f, 156.0f, 0.0f);
 +2: // 36
-    posTime(2, 0, 126.0f, 294.0f, 0.0f);
+    posTime(2, 0, 4.0f, 168.0f, 0.0f);
 +2: // 38
-    posTime(2, 0, 122.0f, 278.0f, 0.0f);
+    posTime(2, 0, 0.0f, 152.0f, 0.0f);
 +2: // 40
-    posTime(2, 0, 114.0f, 290.0f, 0.0f);
+    posTime(2, 0, -8.0f, 164.0f, 0.0f);
 +2: // 42
-    posTime(2, 0, 118.0f, 282.0f, 0.0f);
+    posTime(2, 0, -4.0f, 156.0f, 0.0f);
 +2: // 44
-    posTime(2, 0, 130.0f, 294.0f, 0.0f);
+    posTime(2, 0, 8.0f, 168.0f, 0.0f);
 +2: // 46
-    posTime(2, 0, 118.0f, 282.0f, 0.0f);
+    posTime(2, 0, -4.0f, 156.0f, 0.0f);
 +2: // 48
-    posTime(2, 0, 122.0f, 290.0f, 0.0f);
+    posTime(2, 0, 0.0f, 164.0f, 0.0f);
 +15: // 63
     stop();
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 186.0f, 302.0f, 0.0f);
+    posTime(15, 2, 64.0f, 176.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 218.0f, 302.0f, 0.0f);
+    posTime(30, 6, 96.0f, 176.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
