@@ -707,26 +707,26 @@ void MainSub03()
 
 void MainSub04()
 {
-	// F0 = rad(135);
-	// enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
-	// times(10)
-	// {
-		// enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
-		// wait(5+RAND % 11);
-		// enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
-		// wait(5+RAND % 11);
-	// }
-	// wait(100);
-	// F0 = rad(45);
-	// enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
-	// times(10)
-	// {
-		// enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
-		// wait(5+RAND % 11);
-		// enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
-		// wait(5+RAND % 11);
-	// }
-	// wait(100);
+	F0 = rad(135);
+	enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
+	times(10)
+	{
+		enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 11);
+		enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 11);
+	}
+	wait(100);
+	F0 = rad(45);
+	enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
+	times(10)
+	{
+		enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
+		wait(5+RAND % 11);
+		enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
+		wait(5+RAND % 11);
+	}
+	wait(100);
 	
 	@MainSub04_alt();
 	
@@ -818,12 +818,12 @@ void main()
 +60: //60
     nop();
 	// wait(100000);
-	// dialogRead(5);
-	// wait(300);
+	dialogRead(5);
+	wait(300);
 	setChapter(1);
     wait(2);
 	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    // @MainFront();
+    @MainFront();
     enmKillAll();
     etClear(640.0f);
     setChapter(4);
@@ -831,7 +831,7 @@ void main()
 	dialogRead(6);
 	dialogWait();
 
-	// enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	bossWait();
 	// etNew(0);
 	// etAim(0, 1);
