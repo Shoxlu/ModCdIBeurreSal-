@@ -283,7 +283,7 @@ void Fairy4at()
 	etNew(0);
 	etAim(0, 3);
 	etSprite(0, 8, 4);
-	etCount(0, 5:5:6:8, 2);
+	etCount(0, 5:5:6:8, 3);
 	etSpeed(0, 1f, 0.1f);
 	etAngle(0, ANGLE_PLAYER, 0f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
@@ -342,13 +342,13 @@ void BigFairy()
 void BigFairy_at()
 {
 	etNew(0);
-	etAim(0, 3);
+	etAim(0, 2);
 	etSprite(0, 6, 6);
 	etCount(0, 8:12:14:16, 2:2:3:3);
 	etSpeed(0, 1f, 1.25f);
 	etCopy(1, 0);
 	etSprite(1, 6, 8);
-	etAim(1, 5);
+	etAim(1, 4);
 	etCount(1, 4:6:7:8, 2:2:3:3);
 	etSpeed(1, 1.5f, 1.75f);
 	etCopy(2, 0);
@@ -426,6 +426,7 @@ void MiddleFairy()
 	anmSetSprite(1, ENM_AURA_S_DARKPURPLE);
 	dropExtra(1, 1);
 	dropExtra(2, 5);
+	@MiddleFairy_at() async;
 	float A = rad(90);
 	if(ABS_X < 0f)
 	{
@@ -445,6 +446,24 @@ void MiddleFairy()
 	}
 }
 
+
+
+void MiddleFairy_at()
+{
+	etNew(0);
+	etAim(0, 7);
+	etSprite(0, 33, 2 + RAND % 2);
+	etCount(0, 5:8:10:12, 1:2:2:3);
+	etAngle(0, 0f, rad(20));
+	etSpeed(0, 2f, 3f);
+	wait(30);
+	while(1)
+	{
+		etOn(0);
+		wait(100);
+	}
+	
+}
 
 
 
@@ -593,6 +612,7 @@ MainMsgDebug_184:
     return;
 }
 
+
 void MainSub00()
 {
 	times(15)//
@@ -677,7 +697,7 @@ void MainSub03()
 	float A = 1f;
 	times(20)
 	{
-		enmCreateF("Fairy4", 200f*A, 128f+RANDF2*28f,200, 100, 0);
+		enmCreateF("Fairy4", 200f*A, 128f+RANDF2*28f,300, 100, 0);
 		wait(90);
 		A *= -1f;
 		F0 += rad(180);
@@ -687,26 +707,26 @@ void MainSub03()
 
 void MainSub04()
 {
-	F0 = rad(135);
-	enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
-	times(10)
-	{
-		enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
-		wait(5+RAND % 11);
-		enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
-		wait(5+RAND % 11);
-	}
-	wait(100);
-	F0 = rad(45);
-	enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
-	times(10)
-	{
-		enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
-		wait(5+RAND % 11);
-		enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
-		wait(5+RAND % 11);
-	}
-	wait(100);
+	// F0 = rad(135);
+	// enmCreate("BigFairy", 200f, -40f, 600, 100, 0);
+	// times(10)
+	// {
+		// enmCreate("littleFairy", -192f + RANDF*55f, -30f, 45, 10, 0);
+		// wait(5+RAND % 11);
+		// enmCreate("littleFairy1", -200f, 0f + RANDF*55f, 45, 10, 0);
+		// wait(5+RAND % 11);
+	// }
+	// wait(100);
+	// F0 = rad(45);
+	// enmCreate("BigFairy", -200f, -40f, 600, 100, 0);
+	// times(10)
+	// {
+		// enmCreate("littleFairy", 192f - RANDF*55f, -30f, 45, 10, 0);
+		// wait(5+RAND % 11);
+		// enmCreate("littleFairy1", 200f, 0f + RANDF*55f, 45, 10, 0);
+		// wait(5+RAND % 11);
+	// }
+	// wait(100);
 	
 	@MainSub04_alt();
 	
@@ -798,12 +818,12 @@ void main()
 +60: //60
     nop();
 	// wait(100000);
-	dialogRead(5);
-	wait(300);
+	// dialogRead(5);
+	// wait(300);
 	setChapter(1);
     wait(2);
 	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    @MainFront();
+    // @MainFront();
     enmKillAll();
     etClear(640.0f);
     setChapter(4);
@@ -811,9 +831,8 @@ void main()
 	dialogRead(6);
 	dialogWait();
 
-	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-    wait(1500:1500:3000:3000);
-	
+	// enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	bossWait();
 	// etNew(0);
 	// etAim(0, 1);
 	// etCount(0, DS3, 1);
