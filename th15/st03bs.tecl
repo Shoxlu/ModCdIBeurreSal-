@@ -1012,6 +1012,7 @@ BossCard2_468:
 	GI1 = 1;
 	setBoss(1);
 	enmCreateA("typhonSprite", 0f, 30f, 100, 100, 1);
+	enmCreateA("train", 0f, 224f, 100, 100, 1);
 +120: //124
     nop();
     anmSelect(3);
@@ -1028,6 +1029,14 @@ void typhonSprite()
 	flagSet(3);
 	anmSelect(3);
 	anmSetSprite(0, 22);
+	deathAnm(3, 21);
+	wait(100000);
+}
+void train()
+{
+	flagSet(3);
+	anmSelect(3);
+	anmSetSprite(0, 23);
 	deathAnm(3, 21);
 	wait(100000);
 }

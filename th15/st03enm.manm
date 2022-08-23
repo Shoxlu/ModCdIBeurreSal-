@@ -988,6 +988,20 @@ entry entre16{
     }
 }
 
+entry entre17{
+	version: 8,
+    name: "front/train_day.png",
+    format: 1,
+    width: 640,
+    height: 240,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    sprites: {
+        sprite50: { x: 0, y: 0, w: 640, h: 240 }
+    }
+}
+
 script script21{
 	sprite(49);
 	layer(7);
@@ -999,6 +1013,15 @@ script script21{
 }
 script script22{
 	sprite(49);
+	layer(7);
+	anchor(0, 0);
+	alpha(0);
+	alphaTime(90, 5, 255);
++90:
+	stop();
+}
+script script23{
+	sprite(50);
 	layer(7);
 	anchor(0, 0);
 	alpha(0);
