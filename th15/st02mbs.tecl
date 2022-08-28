@@ -19,15 +19,15 @@ void MBoss()
     flagSet(76);
     setHurtbox(48.0f, 48.0f);
     setHitbox(40.0f, 40.0f);
-    lifeSet(11000);
-    lifeMarker(0, 11000.0f, -8355585);
+    lifeSet(14000);
+    // lifeMarker(0, 11000.0f, -8355585);
     setNext(1, 0, 2620, "MBossDead");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
 	movePos(0f, -100f);
 	
 
-	// @SuperCoolAppearance();
+	@SuperCoolAppearance();
     movePosTime(100, 4, 0.0f, 128.0f);
 	anmSelect(1);
     anmSetSprite(1, 107);
@@ -188,13 +188,13 @@ void Familiar()
 	anmSetMain(0, 50);
 	etNew(0);
 	etAim(0, 9);
-	etCount(0, 5, 20);
+	etCount(0, 5, 40);
 	etSprite(0, 16, 3);
 	etAngle(0, 0f, rad(10));
 	while(1)
 	{
 		etOn(0);
-		wait(100);
+		wait(400:360:340:320);
 	}
 	wait(10000);
 }
