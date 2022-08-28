@@ -1011,9 +1011,9 @@ BossCard3_468:
 +90: //94
 	BossCard3_at() async;
 	BossCard3_at2();
-	wait(10000000);
     return;
 }
+
 void BossCard3_at()
 {
 	int laserId=0;
@@ -1030,8 +1030,6 @@ void BossCard3_at()
 		wait(15);	
 		wait(30:20:10:8);
 	}
-	
-	
 }
 
 void lasers()
@@ -1067,6 +1065,7 @@ void lasers()
 	etSpeed(3,1f, 1f);
 	etAngle(3, rad(270), rad(30):rad(20):rad(15):rad(30));
 	etEx(3, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	
 	wait(10);
 	float laserSpawn = 192f*RANDF2;
 		float laserAngle = rad(270) + (RANDF2 * rad(7.5));
@@ -1112,7 +1111,20 @@ void BossCard3_at2() {
 		etOn(5);
 	}
 }
-
+void warning()
+{
+	flagSet(3);
+	anmSelect(2);
+	anmSetSprite(0, 50);
+	@CreatePattern(0, 1, 1, 1, 1, 1, 0f, 0f, 0f, 0f);
+	movePosTime(100, 22, F0, 448f);
+	times(205)
+	{
+		etOn(0);
+		wait(1);
+	}
+	// wait(205);
+}
 void BossDead()
 {
     flagSet(156);
