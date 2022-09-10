@@ -1477,6 +1477,7 @@ void ProtectPl()
 	GI3 = BOMB_COUNT;
 	GF4 = MISS_COUNT;
 	setBoss(0);
+	ins_1003();
 	while(1)
 	{
 		if(GI3 < BOMB_COUNT)

@@ -109,7 +109,6 @@ void Spawn()
 	var A;
 	flagSet(15);
 	anmSelect(2);
-	anmSetSprite(0, 50);
 	bossTrace1() async;
 	etNew(0);
 	etAim(0, 1);

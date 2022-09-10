@@ -806,8 +806,13 @@ void Test1()
 
 void main()
 {
+	ins_1001(0);
+	ins_1002(0);
+	ins_1003(0);
+	// ins_300("main", 0f, 0f, 0, 0, 0);
     flagSet(32);
     wait(1);
+	
     setChapter(0);
     debug22(1, "MainMBossDebug");
     debug22(2, "MainBossDebug");
