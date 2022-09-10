@@ -19,7 +19,7 @@ void MBoss()
     flagSet(76);
     setHurtbox(48.0f, 48.0f);
     setHitbox(40.0f, 40.0f);
-    lifeSet(14000);
+    lifeSet(20000);
     // lifeMarker(0, 11000.0f, -8355585);
     setNext(1, 0, 2620, "MBossDead");
     setTimeout(1, "MBossEscape");
@@ -27,7 +27,7 @@ void MBoss()
 	movePos(0f, -100f);
 	
 
-	@SuperCoolAppearance();
+	// @SuperCoolAppearance();
     movePosTime(100, 4, 0.0f, 128.0f);
 	anmSelect(1);
     anmSetSprite(1, 107);
@@ -223,7 +223,7 @@ MBossCard1_264:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 1500, "MBossDead");
-    movePosTime(60, 4, 0.0f, 144.0f);
+    movePosTime(60, 4, 0.0f, 60.0f);
     moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
     wait(60);
     anmPlay(1, 73);
@@ -231,7 +231,8 @@ MBossCard1_264:
     nop();
 	
 	//écris ton code là
-	
+	@MBossCard1_at() async;
+	@MBossCard1_at2();
 	
 	
 	
@@ -240,7 +241,46 @@ MBossCard1_264:
 		+1:
 	}
 }
-
+void MBossCard1_at()
+{
+	etNew(0);
+	etSprite(0, 21, 5);
+	etAim(0, 5);
+	etCount(0, 8, 1);
+	etSpeed(0, 3f, 3f);
+	etAngle(0, RANDRAD, 0f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_WRAP, 1, 12, 4f, NEGF);
+	while(1)
+	{
+	+8:
+		etAngle(0, RANDRAD, 0f);
+		etSprite(0, 21, 1);
+	etOn(0);	
+	+8:
+		etAngle(0, RANDRAD, 0f);
+		etSprite(0, 21, 5);
+	etOn(0);
+	}
+}
+void MBossCard1_at2()
+	{
+	etNew(1);
+	etSprite(1, 17, 0);
+	etAim(1, 5);
+	etCount(1, 30, 1);
+	etSpeed(1, 10f, 10f);
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etAngle(1, RANDRAD, 0f);
+	etEx(1, 0, EX_VELTIME, 15, NEG, 2f, NEGF);
+	while(1)
+	{
+	+60:
+		etAngle(1, RANDRAD, 0f);
+		etOn(1);
+	}
+}
 
 
 

@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss1();
+    @Boss4();
     delete();
 }
 
@@ -492,8 +492,8 @@ Boss4_568:
     $CAPTURE = 1;
     anmSelect(3);
     anmSetMain(0, 0);
-    setNext(0, 3700, 3300, "BossCard4");
-    lifeMarker(0, 3700.0f, -24448);
+    setNext(0, 3000, 3300, "BossCard4");
+    lifeMarker(0, 3000.0f, -24448);
     movePosTime(60, 4, 0.0f, 128.0f);
     anmPlay(1, 75);
     playSound(54);
@@ -1030,57 +1030,51 @@ BossCard4_448:
     anmPlay(1, 73);
 +90: //94
     nop();
-    %F0 = 0.5f;
-    %F1 = -0.5f;
-    diffI($A, 30, 42, 66, 88);
-    diffI($I0, 56, 80, 80, 88);
-    $B = -1;
-    $C = 1000;
-    goto BossCard4_1572 @ 94;
-BossCard4_1236:
-    $B = $B + 1;
-    anmSelect(3);
-    anmSelectedPlay(0);
-    @BossCard4_at($A);
-    unless ($A < $I0) goto BossCard4_1552 @ 94;
-    $A = $A + 6;
-BossCard4_1552:
-    wait(26);
-BossCard4_1572:
-    if ($C--) goto BossCard4_1236 @ 94;
-    goto BossCard4_1660 @ 94;
-BossCard4_1640:
-    wait(1000);
-BossCard4_1660:
-    if (1) goto BossCard4_1640 @ 94;
-    return;
+	
+	@BossCard4_at() async;
+	@BossCard4_at2();
+
 }
 
-void BossCard4_at(var A)
+void BossCard4_at()
 {
-    var B, C, D, E;
     etNew(0);
-    etAim(0, 3);
-    etSprite(0, 5, 6);
-    etCount(0, $A, 1);
-    etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 1.5f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    %C = %RANDRAD;
-    %D = 6.2831855f / _f($A);
-    $B = -1;
-    diffI($E, 5, 5, 7, 7);
-    goto BossCard4_at_752 @ 0;
-BossCard4_at_496:
-    $B = $B + 1;
-    etAngle(0, %C, 0.0f);
-    %C = %C + (%D / _f(2));
-    etOn(0);
-    wait(13);
-BossCard4_at_752:
-    if ($E--) goto BossCard4_at_496 @ 0;
-    return;
+	etSprite(0, 21, 5);
+	etAim(0, 5);
+	etCount(0, 8, 1);
+	etSpeed(0, 3f, 3f);
+	etAngle(0, RANDRAD, 0f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_WRAP, 1, 12, 4f, NEGF);
+	while(1)
+	{
+	wait(14:12:10:8);
+		etAngle(0, RANDRAD, 0f);
+		etSprite(0, 21, 1);
+	etOn(0);	
+	wait(14:12:10:8);
+		etAngle(0, RANDRAD, 0f);
+		etSprite(0, 21, 5);
+	etOn(0);
+	}
+}
+void BossCard4_at2()
+{
+	etNew(1);
+	etSprite(1, 17, 0);
+	etAim(1, 5);
+	etCount(1, 30, 1);
+	etSpeed(1, 10f, 10f);
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etAngle(1, RANDRAD, 0f);
+	etEx(1, 0, EX_VELTIME, 15, NEG, 2f, NEGF);
+	while(1)
+	{
+	+60:
+		etAngle(1, RANDRAD, 0f);
+		etOn(1);
+	}
 }
 
 void BossCard5()
