@@ -27,7 +27,7 @@ void MBoss()
 	movePos(0f, -100f);
 	
 
-	// @SuperCoolAppearance();
+	@SuperCoolAppearance();
     movePosTime(100, 4, 0.0f, 128.0f);
 	anmSelect(1);
     anmSetSprite(1, 107);
@@ -40,7 +40,7 @@ void MBoss()
     lifeSet(1300);
     @MBossCard1();
 MBoss_1008:
-    @MBossCard1();
+    @MBoss1();
     goto MBoss_1080 @ 0;
 MBoss_1060:
     wait(1000);
