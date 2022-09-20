@@ -44,7 +44,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss3");
 	lifeSet(2100);
-    @Boss3();
+    @Boss1();
     delete();
 }
 
@@ -361,7 +361,7 @@ Boss3_524:
     @Boss3_at()async;
 	while(1)
 	{
-		wait(180);
+		wait(120);
 		moveRand(60, 4, 1.0f);
 	}
 }
@@ -369,15 +369,19 @@ Boss3_524:
 void Boss3_at()
 {
     etNew(0);
-	etSprite(0, 12, 13);
+	etSprite(0, 8:8:12:12, 13);
 	etAim(0, 10);
-	etCount(0, 4, 20);
+	etCount(0, 4:6:6:8, 8:16:16:24);
 	etSpeed(0, 2f, 4f);
-	etAngle(0, 0f, rad(5));
+	etAngle(0, 0f, rad(4));
 	etOn(0);
 	while(1)
 	{
 		wait(60);
+		etSprite(0, 8:8:12:12, 6);
+		etOn(0);
+		wait(60);
+		etSprite(0, 8:8:12:12, 13);
 		etOn(0);
 	}
 }
