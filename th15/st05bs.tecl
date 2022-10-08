@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(2800);
-    BossCard3();
+    BossCard4();
     delete();
 }
 
@@ -629,10 +629,9 @@ BossCard1_488:
 	wait(160);
 	while(1)
 	{
-		moveRand(60, 1, 3f);
-		wait(160);
+		movePosTime(180, 0, PLAYER_X + RANDF2*20f, ABS_Y + RANDF2*20f);
+		wait(240);
 	}
-    wait(10000);
 }
 
 void BossCard4_Moon()

@@ -1,6 +1,7 @@
 anim { "enemy.anm"; "st01enm.anm"; "idk.anm";}
 ecli { "default.ecl"; "st01bs.ecl"; "st01mbs.ecl"; "st01mbs2.ecl"; }
 #include "main.tecl"
+#ins "1007 m" 
 void MainBossSpell();
 
 void MainMBossSpell();
@@ -803,16 +804,24 @@ void Test1()
 	}
 }
 
-
 void main()
 {
-	ins_1001(0);
-	ins_1002(0);
-	ins_1003(0);
+	// ins_1001(0);
+	// ins_1002(0);
+	flagSet(32);
+	// ins_1007("90.w");
+	// wait(1);
+	// dialogRead(-1);
+	// wait(200);
+	// ins_1007("01.w");
+	// wait(1);
+	// dialogRead(-1);
+	// wait(200);
+	// ins_1007("12.w");
+	// wait(1);
+	// dialogRead(-1);
 	// ins_300("main", 0f, 0f, 0, 0, 0);
-    flagSet(32);
-    wait(1);
-	
+    wait(1);	
     setChapter(0);
     debug22(1, "MainMBossDebug");
     debug22(2, "MainBossDebug");

@@ -44,7 +44,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss1");
 	lifeSet(2200);
-    @Boss1();
+    @BossCard2();
     delete();
 }
 
@@ -212,20 +212,22 @@ Boss2_544:
     playSound(6);
     @Boss2_at()async;
 	while(1)
-	{wait(120);
+	{
 	moveRand(60, 4, 1.0f);
+		wait(120);
 	}
 	
 }
 
 void Boss2_at()
 {
+	etNew(0);
 	etAim(0, 8);
 	etSprite(0, 37, 3);
 	etCount(0, 4:4:5:5, 1:2:2:3);
 	etAngle(0, rad(-90), rad(90));
 	etSpeed(0, 0.5f, 2f);
-	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_BOUNCE, 2, 13, NEGF, NEGF);
 	while(1)
 	{
@@ -656,29 +658,161 @@ BossCard2_468:
     anmPlay(1, 73);
 +90: //94
     nop();
-	@BossCard2_at();
+	@BossCard2_ennemies();
+	@BossCard2_at_react() async;
+	+200:
+	while(1)
+	{
+		moveRand(60, 4, 2f);
+		+200:
+	}
 	
+}
+
+void BossCard2_at_react()
+{
+	while(1)
+	{
+		if (GI1 == 1)
+		{
+			@BossCard2_at2() async;
+			GI1 = 0;
+		}
+		+1:
+	}
+}
+
+void BossCard2_at2()
+{
+	float A = RANDRAD;
+	etNew(0);
+	etAim(0, 3);
+	etCount(0, 15, 1);
+	etAngle(0, A, 0f);
+	etSprite(0, 23, 2);
+	etSpeed(0, 2.5f, 2.5f);
+	times(5:7:9:10)
+	{
+		etOn(0);
+		A += rad(360) / 15f/2f;
+		etAngle(0, A, 0f);
+		wait(20);
+	}
+}
+
+void BossCard2_ennemies()
+{
+	F0 = rad(45);
+	times(4)
+	{
+		enmCreateA("BossCard2_Enm", BOSS_X,BOSS_Y, 100, 10, 0);
+		F0 += rad(90);
+	}
+}
+
+void BossCard2_Enm()
+{
+	float A, d = 0f;
+	flagSet(3);
+	anmSelect(2);
+	anmSetMain(0, 5);
+	times(35)
+	{
+		movePos(BOSS_X + cos(F0)*d, BOSS_Y + sin(F0)*d);
+		d += 2f;
+		F0 += rad(-4);
+		+1:
+	}
+	GI2 = 1;
+	bossTrace2() async;
+	
+	while(1)
+	{
+		@BossCard2_at();
+		GI1 = 1;
+		+70:
+		@BossCard2_at();
+		GI1 = 1;
+		+70:
+		@BossCard2_at3();
+		GI1 = 1;
+		GI2 = 1;
+		+100:
+		
+	}
+}
+
+void BossCard2_at3()
+{
+	GI2 = 0;
+	float Ang;
+	@BossCard2_enm_speedup_circle() async;
+	etNew(1);
+	etAim(1, 1);
+	etCount(1, 1, 1);
+	
+	etSpeed(1, 1.5f, 1.5f);
+	etSprite(1, 16, 3);
+	times(180/2:2:1:1)
+	{
+		mathAngle(Ang, BOSS_X, BOSS_Y, ABS_X, ABS_Y);
+		etAngle(1, Ang, 0f);
+		etOn(1);
+		wait(2:2:1:1);
+	}
+}
+
+void BossCard2_enm_speedup_circle()
+{
+	float d = 70f;
+	times(90)
+	{
+		movePos(BOSS_X + cos(F0)*d,  BOSS_Y + sin(F0)*d);
+		F0 = F0 + rad(-12.3);
+		d = d - 140f/90f;
+		wait(1);
+	}
+	times(90)
+	{
+		movePos(BOSS_X + cos(F0)*d,  BOSS_Y + sin(F0)*d);
+		F0 = F0 + rad(-12.3);
+		d = d + 140f/90f;
+		wait(1);
+	}
+}
+
+void bossTrace2()
+{
+	while(1)
+	{
+		//movePosRel(BOSS_X, BOSS_Y);
+		if(GI2 == 1)
+		{
+			movePos(BOSS_X + cos(F0)*70f,  BOSS_Y + sin(F0)*70f);
+			F0 = F0 + rad(-4);
+		}
+		wait(1);
+	}
 }
 
 void BossCard2_at()
 {
-    etAim(0, 8);
-	etSprite(0, 37, 3);
-	etCount(0, 4:4:5:5, 1:2:2:3);
-	etAngle(0, rad(-90), rad(90));
-	etSpeed(0, 0.5f, 2f);
-	etEx(0, 0, EX_BOUNCE, 2, 13, NEGF, NEGF);
-	etOn(0);
-	while(1)
+	etNew(0);
+	etAim(0, 2);
+	etSprite(0, 23, 7);
+	etCount(0, 16, 1);
+	etAngle(0, 0f, 0f);
+	etSpeed(0, 3f:4f:5f:6f, 3f:4f:5f:6f);
+	times(2)
 	{
-	wait(15);
-	etSprite(0, 37, 1);
-	etOn(0);
-	wait(15);
-	etSprite(0, 37, 3);
-	etOn(0);
+		etOn(0);
+		wait(30);
+		etSprite(0, 23, 1);
+		etOn(0);
+		wait(30);
+		etSprite(0, 23, 7);
 	}
-	
+	etOn(0);
 }
 
 void BossCard3()
