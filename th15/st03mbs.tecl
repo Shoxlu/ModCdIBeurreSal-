@@ -1,0 +1,394 @@
+#include "main.tecl"
+void BossItemCard();
+
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    setBoss(0);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    enmKillAll();
+    timerReset();
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    anmSelect(1);
+    anmSetSprite(1, 107);
+    anmSetSprite(2, 120);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    flagSet(76);
+    setHurtbox(48.0f, 48.0f);
+    setHitbox(40.0f, 40.0f);
+    lifeSet(13600);
+    lifeMarker(0, 13600.0f, -8355585);
+    lifeMarker(1, 1600.0f, -8355585);
+    setNext(1, 1600, 2000, "MBossCard1");
+    setTimeout(1, "MBossEscape");
+    fog(140.0f, 16748431);
+    movePos(-192.0f, -64.0f);
+    movePosTime(100, 4, 0.0f, 128.0f);
+    wait(40);
+    moveLimit(0.0f, 128.0f, 280.0f, 256.0f);
+    unless ($SPELL_ID >= 0) goto MBoss_1036 @ 0;
+    unless (($SPELL_ID >= 0) && ($SPELL_ID <= 1)) goto MBoss_1036 @ 0;
+    wait(50);
+    lifeSet(1600);
+    @MBossCard1();
+MBoss_1036:
+    @MBoss1();
+    goto MBoss_1108 @ 0;
+MBoss_1088:
+    wait(1000);
+MBoss_1108:
+    if (1) goto MBoss_1088 @ 0;
+    delete();
+}
+
+void MBoss1()
+{
+    @EffChargePoint3(1.5707964f, 0.5235988f, 8, 9, 9, 9);
+    wait(60);
+	@MBoss1_at()async;
+	wait(60);
+	@MBoss1_at2()async;
+	while(1)
+	{
+	moveRand(60, 4, 1.0f);
+	wait(120);
+	}
+}
+
+void MBoss1_at()
+{
+    etNew(0);
+	etSprite(0, 12, 4);
+	etAim(0, 5);
+	etCount(0, 16:20:26:26, 1);
+	etSpeed(0, 2f, 1f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	while(1)
+	{
+		etAngle(0, RANDRAD, 0f);
+		etOn(0);
+		wait(10);
+	}
+}
+
+void MBoss1_at2()
+{
+    etNew(1);
+	etAim(1, 3);
+	etCount(1, 20, 1);
+	etSpeed(1, 3f, 2f);
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	while(1)
+	{
+		etSprite(1, 33, 4);
+		etAngle(1, RANDRAD, 0f);
+		etOn(1);
+		playSound(38);
+		wait(30);
+		etSprite(1, 33, 1);
+		etAngle(1, RANDRAD, 0f);
+		etOn(2:2:2:1);
+		playSound(0:0:0:38);
+		wait(30);
+	}
+}
+
+void MBossCard1()
+{
+    unless ($TIMEOUT == 0) goto MBossCard1_160 @ 0;
+    etCancel(640.0f);
+    goto MBossCard1_180 @ 0;
+MBossCard1_160:
+    etClear(640.0f);
+MBossCard1_180:
++2: //2
+    setChapter(31);
++2: //4
+    ins_569(1);
+    @BossItemCard();
+    timerReset();
+    killAllAsync();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto MBossCard1_428 @ 4;
+    etCancel(640.0f);
+    goto MBossCard1_448 @ 4;
+MBossCard1_428:
+    etClear(640.0f);
+MBossCard1_448:
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    setNext(0, 0, 1320, "MBossDead");
+!EN
+    spell(22, 1320, 500000, "夢符「緋色の悪夢」");
+!HL
+    spell(22, 1320, 500000, "夢符「緋色の圧迫悪夢」");
+!*
+    movePosTime(60, 4, 0.0f, 144.0f);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    wait(60);
+    anmPlay(1, 73);
++90: //94
+    nop();
+    anmPlay(1, 88);
+    goto MBossCard1_1252 @ 94;
+MBossCard1_1052:
+    @MBossCard1_at(-1.5707964f, 3.1415927f);
+    moveRand(60, 4, 1.0f);
+    wait(120);
+    @MBossCard1_at(1.5707964f, -3.1415927f);
+    moveRand(60, 4, 1.0f);
+    wait(120);
+MBossCard1_1252:
+    if (1) goto MBossCard1_1052 @ 94;
+    return;
+}
+
+void MBossCard1_at(var A, var B)
+{
+    var C, D, E;
+    %C = %PLAYER_X2;
+    %D = %PLAYER_Y2;
+    unless (%D < _f(128)) goto MBossCard1_at_260 @ 0;
+    %D = _f(128);
+    goto MBossCard1_at_380 @ 0;
+MBossCard1_at_260:
+    unless (%D >= _f(384)) goto MBossCard1_at_380 @ 0;
+    %D = _f(384);
+MBossCard1_at_380:
+    unless (%C >= _f(128)) goto MBossCard1_at_524 @ 0;
+    %C = _f(128);
+    goto MBossCard1_at_644 @ 0;
+MBossCard1_at_524:
+    unless (%C < _f(-128)) goto MBossCard1_at_644 @ 0;
+    %C = _f(-128);
+MBossCard1_at_644:
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 8, 1);
+!E
+    4;
+!N
+    8;
+!H
+    10;
+!LO
+    12;
+!*
+    etCount(0, [-1], 1);
+!E
+    0.785398f;
+!N
+    0.0f;
+!H
+    0.0f;
+!LO
+    0.0f;
+!*
+    etAngle(0, [-1.0f], 0.034906585f);
+!E
+    9.0f;
+!N
+    8.0f;
+!H
+    8.0f;
+!LO
+    8.0f;
+!*
+    etSpeed(0, [-1.0f], 1.0f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etSpeed(0, 1.0f, 0.0f);
+!EN
+    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
+!HL
+    etOffsetAbs(0, %C, %D);
+!*
+    etAngle(0, %ANGLE_PLAYER, 1.0f);
+    %A = %ANGLE_PLAYER + %A;
+    diffI($E, 16, 16, 32, 32);
+    goto MBossCard1_at_1592 @ 0;
+MBossCard1_at_1332:
+    etOffsetRad(0, %A, -128.0f);
+    %A = %A + (%B / _f(16));
+    etOn(0);
+!E
+    2;
+!N
+    2;
+!H
+    1;
+!LO
+    1;
+!*
+    wait([-1]);
+MBossCard1_at_1592:
+    if ($E--) goto MBossCard1_at_1332 @ 0;
+    return;
+}
+
+void MBossCard1_at2()
+{
+    var A, B, C;
+!E
+    300;
+!N
+    300;
+!H
+    300;
+!LO
+    150;
+!*
+    wait([-1]);
+    etNew(1);
+    etAim(1, 3);
+    etSprite(1, 20, 4);
+    etCount(1, 1, 6);
+    etAngle(1, 0.0f, 0.034906585f);
+!E
+    9.0f;
+!N
+    8.0f;
+!H
+    8.0f;
+!LO
+    8.0f;
+!*
+    etSpeed(1, [-1.0f], 1.0f);
+    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+!E
+    1.0f;
+!N
+    1.5f;
+!H
+    1.5f;
+!LO
+    1.5f;
+!*
+    etEx2(1, 0, 16, 60, 1, 0, 0, 1.5707964f, [-1.0f], -999999.0f, -999999.0f);
+    etCopy(2, 1);
+!E
+    1.0f;
+!N
+    1.5f;
+!H
+    1.5f;
+!LO
+    1.5f;
+!*
+    etExSet2(2, 1, 0, 16, 60, 1, 0, 0, -1.5707964f, [-1.0f], -999999.0f, -999999.0f);
+    $C = 600;
+    goto MBossCard1_at2_1748 @ 0;
+MBossCard1_at2_788:
+    etAngle(1, 0.3926991f + (%RANDRAD / 32.0f), 0.05235988f);
+    etOn(1);
+!HL
+    etAngle(1, 0.19634955f + (%RANDRAD / 32.0f), 0.05235988f);
+    etOn(1);
+!L
+    etAngle(1, 0.7853982f + (%RANDRAD / 32.0f), 0.05235988f);
+    etOn(1);
+!*
+    wait(160);
+    etAngle(2, 2.7488935f + (%RANDRAD / 32.0f), -0.05235988f);
+    etOn(2);
+!HL
+    etAngle(2, 2.9452431f + (%RANDRAD / 32.0f), -0.05235988f);
+    etOn(2);
+!L
+    etAngle(2, 2.3561945f + (%RANDRAD / 32.0f), -0.05235988f);
+    etOn(2);
+!E
+    160;
+!N
+    160;
+!H
+    160;
+!LO
+    80;
+!*
+    wait([-1]);
+MBossCard1_at2_1748:
+    if ($C--) goto MBossCard1_at2_788 @ 0;
+    return;
+}
+
+void MBossDead()
+{
+    spellEnd();
+    enmKillAll();
+    unless ($DIFF <= 1) goto MBossDead_384 @ 0;
+    unless ($TIMEOUT == 0) goto MBossDead_304 @ 0;
+    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_360 @ 0;
+MBossDead_304:
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_360:
+    goto MBossDead_528 @ 0;
+MBossDead_384:
+    unless ($TIMEOUT == 0) goto MBossDead_508 @ 0;
+    etCancel(640.0f);
+    goto MBossDead_528 @ 0;
+MBossDead_508:
+    etClear(640.0f);
+MBossDead_528:
+    anmPlay(1, 65);
+    moveLimitReset();
+    lifeSet(100000);
+    unless ($TIMEOUT == 0) goto MBossDead_792 @ 0;
+    dropClear();
+    dropMain(7);
+    dropExtra(1, 20);
+    dropExtra(2, 20);
+    dropArea(48.0f, 48.0f);
+    dropItems();
+MBossDead_792:
+    flagSet(3);
+    setScreenShake(30, 12, 0);
+    anmPlay(0, 28);
+    playSound(5);
+    ins_570();
+    wait(60);
+    setChapter(4);
+    wait(60);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, 192.0f, -32.0f);
+    wait(60);
+    delete();
+    delete();
+}
+
+void MBossEscape()
+{
+    setNext(0, -1, 0, "");
+    setNext(1, -1, 0, "");
+    spellEnd();
+    moveLimitReset();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto MBossEscape_280 @ 0;
+    etCancel(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    etClear(640.0f);
+MBossEscape_300:
+    lifeSet(100000);
+    setChapter(4);
+    flagSet(16);
+    movePosTime(60, 4, 0.0f, -32.0f);
+    wait(10);
+    setBoss(-1);
+    wait(50);
+    delete();
+    delete();
+}
