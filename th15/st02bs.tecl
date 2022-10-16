@@ -44,7 +44,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss1");
 	lifeSet(2200);
-    @BossCard2();
+    @Boss3();
     delete();
 }
 
@@ -160,6 +160,7 @@ void bossTrace1()
 		wait(1);
 	}
 }
+
 void Boss2()
 {
     setInvuln(120);
@@ -291,43 +292,76 @@ Boss3_544:
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-	@Boss3_at()async;
+	@Boss3_at() async;
 	while(1)
 	{
-	wait(120);
-	moveRand(60, 4, 1.0f);
+		wait(120);
+		moveRand(60, 4, 1.0f);
 	}
 }
 
 void Boss3_at()
 {
-   etNew(0);
-   etSprite(0, 37, 13);
-   etAim(0, 5);
-   etCount(0, 30:40:50:60, 1);
-   etSpeed(0, 2f, 3f);
-   etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-   while(1)
+	etNew(0);
+	etSprite(0, 37, 13);
+	etAim(0, 5);
+	etCount(0, 20:30:40:50, 1);
+	etSpeed(0, 2f, 3f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etNew(1);
+	etCopy(1, 0);
+	etSpeed(1, 3f, 4f);
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	// etEx(1, 0, EX_SIZE, 1, 0, 1f, 2f);
+	while(1)
 	{
 		wait(40);
-		etSprite(0, 37, 13);
-		etSpeed(0, 2f, 3f);
+		@Boss3_starry_rain();
+		wait(60);
+		etSprite(0, 37, 2);
 		etOn(0);
 		wait(10);
-		etSprite(0, 0, 1);
-		etSpeed(0, 3f, 4f);
-		etOn(0);
+		etSprite(1, 23, 7);
+		etOn(1);
 		wait(40);
+		@Boss3_starry_rain();
+		wait(60);
 		etSprite(0, 37, 15);
-		etSpeed(0, 2f, 3f);
 		etOn(0);
 		wait(10);
-		etSprite(0, 0, 0);
-		etSpeed(0, 3f, 4f);
-		etOn(0);
+		etSprite(1, 23, 1);
+		etOn(1);
 	}
 }
 
+void Boss3_starry_rain()
+{
+	float X = -160f;
+	times(10)
+	{
+		enmCreate("Boss3_starry_rain_at", X, 0f, 100, 10, 1);
+		X += 320f/(4f:6f:8f:8f);
+	}
+}
+
+void Boss3_starry_rain_at()
+{
+	flagSet(32);
+	etNew(2);
+	etAim(2, 1);
+	etSprite(2, 16, 15);
+	etCount(2, 1, 1);
+	etSpeed(2, 2f-RANDF*-1f, 2f);
+	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(2, 0, EX_INVULN, 100000, NEG, NEGF, NEGF);
+	times(13)
+	{
+		etAngle(2, rad(270)+rad(30)*RANDF2, 0f);
+		etEx(2, 0, EX_ACCEL, 60, NEG, 1.5f/60f, rad(90)+rad(30)*RANDF2);
+		etOn(2);
+		wait(RAND % 4);
+	}
+}
 
 void BossCard1()
 {
@@ -729,11 +763,13 @@ void BossCard2_Enm()
 	while(1)
 	{
 		@BossCard2_at();
+		wait(60:60:0:0);
 		GI1 = 1;
-		+70:
+		wait(100:100:70:70);
 		@BossCard2_at();
+		wait(60:60:0:0);
 		GI1 = 1;
-		+70:
+		wait(100:100:70:70);
 		@BossCard2_at3();
 		GI1 = 1;
 		GI2 = 1;
@@ -751,7 +787,7 @@ void BossCard2_at3()
 	etAim(1, 1);
 	etCount(1, 1, 1);
 	
-	etSpeed(1, 1.5f, 1.5f);
+	etSpeed(1, 1.5f:1.5f:1.5f:2.5f, 1.5f);
 	etSprite(1, 16, 3);
 	times(180/2:2:1:1)
 	{
