@@ -315,7 +315,7 @@ void Boss3_at()
 	// etEx(1, 0, EX_SIZE, 1, 0, 1f, 2f);
 	while(1)
 	{
-		wait(40);
+		wait(40);		
 		@Boss3_starry_rain();
 		wait(60);
 		etSprite(0, 37, 2);
@@ -336,11 +336,11 @@ void Boss3_at()
 
 void Boss3_starry_rain()
 {
-	float X = -160f;
-	times(10)
+	float X = -190f;
+	times(7:9:11:11)
 	{
 		enmCreate("Boss3_starry_rain_at", X, 0f, 100, 10, 1);
-		X += 320f/(4f:6f:8f:8f);
+		X += 380f/(6f:8f:10f:10f);
 	}
 }
 
@@ -351,13 +351,13 @@ void Boss3_starry_rain_at()
 	etAim(2, 1);
 	etSprite(2, 16, 15);
 	etCount(2, 1, 1);
-	etSpeed(2, 2f-RANDF*-1f, 2f);
 	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etEx(2, 0, EX_INVULN, 100000, NEG, NEGF, NEGF);
-	times(13)
+	times(15)
 	{
+		etSpeed(2, 1.9f:1.9f:1.9f:1.75f-RANDF*-1f, 2f);
 		etAngle(2, rad(270)+rad(30)*RANDF2, 0f);
-		etEx(2, 0, EX_ACCEL, 60, NEG, 1.5f/60f, rad(90)+rad(30)*RANDF2);
+		etEx(2, 0, EX_ACCEL, 60, NEG, 1f/60f, rad(90)+rad(20)*RANDF2);
 		etOn(2);
 		wait(RAND % 4);
 	}
@@ -749,7 +749,7 @@ void BossCard2_Enm()
 	float A, d = 0f;
 	flagSet(3);
 	anmSelect(2);
-	anmSetMain(0, 5);
+	anmSetMain(0, 50);
 	times(35)
 	{
 		movePos(BOSS_X + cos(F0)*d, BOSS_Y + sin(F0)*d);
