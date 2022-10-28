@@ -1029,3 +1029,46 @@ script script23{
 +90:
 	stop();
 }
+
+
+entry entre18{
+	version: 8,
+    name: "stgenm/stage03/flower.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    sprites: {
+        sprite51: { x: 0, y: 0, w: 130, h: 130 }
+    }
+}
+
+script script24{
+	sprite(51);
+	layer(7);
+	F0 = 0f;
+	F1 = %RANDF*rad(3);
+	type(1);
+loop:
+	rotate(F0, F0, F0);
++1:
+	F0 += F1;
+	jmp(loop, 0);
+	stop();
+}
+
+script script25{
+	sprite(51);
+	layer(7);
+	type(1);
+	F0 = 0f;
+	F1 = %RANDF*rad(3);
+loop:
+	rotate(F0, F0, F0);
++1:
+	F0 -= F1;
+	jmp(loop, 0);
+	stop();
+}
