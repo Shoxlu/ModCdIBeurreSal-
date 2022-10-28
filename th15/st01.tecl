@@ -576,6 +576,7 @@ void MainLatter()
 	setChapter(6);
 	wait(60);
 	@MainSub04();
+	wait(60);
 	setChapter(7);
 	wait(60);
     return;
