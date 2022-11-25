@@ -1,0 +1,129 @@
+entry entry0 {
+    version: 8,
+    name: "background/stage02/stg6bg.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 1048576,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 512, h: 448 }
+    }
+}
+
+script script0 {
+    layer(3);
+    sprite(sprite0);
+    type(1);
+    color(40, 40, 40);
+    scale(0.7f, 0.7f);
+    scaleTime(4500, 4, 1.0f, 1.0f);
+    pos(0.0f, 24.0f, 0.0f);
+    posTime(4500, 0, 0.0f, 224.0f, 0.0f);
++400: // 400
+    colorTime(240, 0, 255, 255, 255);
++6000: // 6400
+    scrollX(0.0f);
++10000: // 16400
+offset184:
+    jmp(offset184, 6400);
+    delete();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "background/stage02/stg6bg5.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite1: { x: 0, y: 0, w: 1024, h: 512 }
+    }
+}
+
+script script1 {
+    blendMode(1);
+    sprite(sprite1);
+    type(8);
+    scrollX(-0.00033333333f);
+    scrollY(-0.00033333333f);
++10000: // 10000
+offset60:
+    jmp(offset60, 0);
+    delete();
+}
+
+script script2 {
+    blendMode(1);
+    sprite(sprite1);
+    type(8);
+    scrollX(0.00041666668f);
+    scrollY(0.00041666668f);
++10000: // 10000
+offset60:
+    jmp(offset60, 0);
+    delete();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "background/stage02/stg6bg8.png",
+    format: 5,
+    width: 512,
+    height: 512,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 524288,
+    THTXFormat: 5,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite2: { x: 0, y: 0, w: 512, h: 512 }
+    }
+}
+
+script script3 {
+    blendMode(1);
+    layer(3);
+    sprite(sprite2);
+    type(1);
+    iset($I0, 128);
+    iset($I1, 1);
+    scale(380.0f, 190.0f);
+    texCircle($I0);
+    colorMode(1);
+    scrollX(0.003f);
+    pos(29.0f, -173.0f, 0.0f);
+    posTime(4500, 0, 29.0f, 27.0f, 0.0f);
+    angleVel(0.0f, 0.0f, -0.008726646f);
+    color(0, 0, 255);
+    color2(255, 255, 255);
+    alpha2(1);
+    alpha(1);
++3000: // 3000
+    alpha2Time(256, 0, 144);
++10000: // 13000
+offset284:
+    jmp(offset284, 3000);
+    delete();
+}
+
+
