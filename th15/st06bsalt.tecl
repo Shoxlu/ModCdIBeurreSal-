@@ -1,5 +1,5 @@
 #include "main.tecl"
-
+//God Reimu
 void BossItemCard();
 
 void BossItemPhase(var A, var B, var C);
@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @BossAlt1();
+    @BossAlt3();
     delete();
 }
 
@@ -288,116 +288,66 @@ Boss3_544:
     playSound(6);
     anmSelect(4);
     anmSetSprite(3, 6);
-    @BossAlt3_pos() async;
-    wait(60);
-    %F0 = 0.017453f;
-    $I0 = 5;
-    goto Boss3_1772 @ 4;
-Boss3_1344:
-!E
-    50;
-!N
-    72;
-!H
-    80;
-!LO
-    90;
-!*
-    @BossAlt3_at($I0, [-1]);
-    unless ($I0 < 10) goto Boss3_1628 @ 4;
-    $I0 = $I0 + 1;
-Boss3_1628:
-    %F0 = %F0 * _f(-1);
-    wait(120);
-    moveRand(60, 4, 1.9f);
-    wait(60);
-Boss3_1772:
-    if (1) goto Boss3_1344 @ 4;
-    return;
+	while(1)
+	{
+		BossAlt3_at(1f, rad(90), 8) async;
+		BossAlt3_at2();
+	}
 }
 
-void BossAlt3_at(var A, var B)
+void BossAlt3_at(float B, float A, int color)
 {
-    var C, D, E, F;
+	float angle = rad(360)/28f+rad(65);
     etNew(0);
-    etAim(0, 3);
-    etSprite(0, 4, 6);
-    etCount(0, $B, 1);
-    etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 2.0f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    %D = %RANDRAD;
-    %E = 6.2831855f / _f($B);
-    $C = -1;
-    $F = $A;
-    goto Boss3_at_900 @ 0;
-Boss3_at_500:
-    $C = $C + 1;
-    etAngle(0, %D, 0.0f);
-    unless ($C < 3) goto Boss3_at_748 @ 0;
-    %D = %RANDRAD;
-    goto Boss3_at_860 @ 0;
-Boss3_at_748:
-    %D = %D + (%E / _f(2));
-Boss3_at_860:
-    etOn(0);
-    wait(10);
-Boss3_at_900:
-    if ($F--) goto Boss3_at_500 @ 0;
-    return;
+    etAim(0, 1);
+    etCount(0, 28, 1);
+	etAngle(0, A, angle);
+    etSprite(0, 11, color);
+!HL
+    etSpeed(0, 2f, 2f);
+!ENHL
+    etSpeed(0, 3f, 3f);
+!*
+    etExSet(0, 0, 0, EX_WAIT, 20, NEG, NEGF, NEGF);
+	int C = 1;
+	while(1)
+	{
+		times(10)
+		{
+			etExSet(0, 1, 0, EX_SETSPRITE, 32, 1, NEGF, NEGF);
+			etOn(0);
+			etExSet(0, 1, 0, EX_SETSPRITE, 33, 4, NEGF, NEGF);
+			etOn(0);
+			angle += rad(1.2)*_f(C);
+			etAngle(0, A, angle);
+			wait(25:22:22:22);
+		}
+		C *= -1;
+	}
 }
 
 void BossAlt3_at2()
 {
-    var A, B, C, D, E, F;
-    etNew(0);
-    etAim(0, 3);
-    etSprite(0, 4, 6);
-    etCount(0, 2, 1);
-    etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 5.0f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    %A = 0.02f;
-    %B = 0.0f;
-    %D = 5.0f;
-    $E = 5;
-    goto Boss3_at2_1224 @ 0;
-Boss3_at2_464:
-    %A = 0.02f;
-    %B = %ANGLE_PLAYER + 1.5707964f;
-    %C = %B;
-    etSpeed(0, %D, 0.0f);
-    %D = %D - 0.5f;
-    $F = 30;
-    goto Boss3_at2_1160 @ 0;
-Boss3_at2_788:
-    etExSet(0, 2, 0, 8, 60, -999999, %A, 0.0f);
-    etAngle(0, %B, 0.0f);
-    etOn(0);
-    etAngle(0, %C, 0.0f);
-    etOn(0);
-    %A = %A - 0.002069f;
-    %B = %B + 0.054165f;
-    %C = %C - 0.054165f;
-Boss3_at2_1160:
-    if ($F--) goto Boss3_at2_788 @ 0;
-    wait(10);
-Boss3_at2_1224:
-    if ($E--) goto Boss3_at2_464 @ 0;
-    return;
-}
+	float angle = rad(90);
+	etNew(1);
+	etAim(1, 3:3:3:2);
+	etSprite(1, 20, 1);
+	int count = 7:10:15:22;
+	etCount(1, count, 1);
+	etAngle(1, rad(90):rad(90):rad(90):0f, 0f);
+	wait(30);
+	while(1)
+	{
+		etOn(1);
+!EN
+		angle += rad(360)/_f(count);
+!H
+		angle += rad(20);
+!*
+		etAngle(1, angle, 0f);
 
-void BossAlt3_pos()
-{
-    goto Boss3_pos_104 @ 0;
-Boss3_pos_60:
-    enm322(3, 0);
-    wait(1);
-Boss3_pos_104:
-    if (1) goto Boss3_pos_60 @ 0;
-    return;
+		wait(33:29:27:24);
+	}
 }
 
 void BossAlt4()
