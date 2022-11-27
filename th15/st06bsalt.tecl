@@ -318,9 +318,9 @@ void BossAlt3_at(float B, float A, int color)
 			etOn(0);
 			etExSet(0, 1, 0, EX_SETSPRITE, 33, 4, NEGF, NEGF);
 			etOn(0);
-			angle += rad(1.2)*_f(C);
+			angle += rad(1.4)*_f(C);
 			etAngle(0, A, angle);
-			wait(25:22:22:22);
+			wait(25:23:23:23);
 		}
 		C *= -1;
 	}
@@ -340,7 +340,7 @@ void BossAlt3_at2()
 	{
 		etOn(1);
 !EN
-		angle += rad(360)/_f(count);
+		angle += rad(360)/_f(count)/2f;
 !H
 		angle += rad(20);
 !*
