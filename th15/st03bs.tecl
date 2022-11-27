@@ -927,34 +927,73 @@ BossCard4_408:
     $MISS_COUNT = 0;
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
-    setNext(0, 0, 3000, "BossDead");
+    setNext(0, 0, 3600, "BossDead");
     spell(38, 3000, 500000, "åéïÑÅuçÆêFÇÃã∂ñ≤Åv");
+	spellTimeout();
+	flagSet(3);
 	moveLimitReset();
     movePosTime(60, 4, 0.0f, 224.0f);
     anmSelect(3);
     anm316(0, 0);
+	anmAlpha(0, 128);
 +60: //60
     nop();
 	BossCard4_at();
-	wait(300);
-	BossCard4_at2();
 }
 
 void BossCard4_at()
 {
+	@Circle();
+	wait(240);
+	@Yukar()async;
+	wait(240);
+	@CircleRepeat();
+	wait(300);
+	killAllAsync();
+	wait(300);
+	@Bowap()async;
+	wait(300);
+	@CircleRepeat2()async;
+	wait(400);
+	playSound(28);
+	wait(90);
+	@Yukar();
+}
+
+void Circle()
+{
     etNew(0);
     etAim(0, 3);
     etAngle(0, RANDRAD, 0f);
-    etCount(0, 60, 1);
+    etCount(0, 100, 1);
     etSpeed(0, 2f, 2f);
     etSprite(0, 15, 0);
-	etEx(0, 0, EX_HITBOX, NEG, NEG, 0.0f, NEGF);
-	etEx(0, 0, EX_BOUNCE, 1, 15, NEGF, NEGF);
-	etEx(0, 0, EX_SETSPRITE, 8, 15, NEGF, NEGF);
+	etDist(0, 150f);
+	etEx(0, 0, EX_BOUNCE, 1, 15, 1f, NEGF);
+	etEx(0, 0, EX_SETSPRITE, 15, 15, NEGF, NEGF);
     etOn(0);
 } 
 
-void BossCard4_at2()
+void CircleRepeat()
+{
+    etNew(3);
+    etAim(3, 3);
+    etCount(3, 20, 1);
+    etSpeed(3, 2f, 2f);
+    etSprite(3, 15, 0);
+	etDist(3, 150f);
+	etEx(3, 0, EX_BOUNCE, 1, 15, 0.8f, NEGF);
+	etEx(3, 0, EX_SETSPRITE, 15, 15, NEGF, NEGF);
+	times(15)
+    {
+		etAngle(3, RANDRAD, 0f);
+		etOn(3);
+		playSound(4);
+		wait(60);
+    }
+} 
+
+void Bowap()
 {
 	float A = rad(-10);
     float B = rad(0);
@@ -963,20 +1002,58 @@ void BossCard4_at2()
     etAngle(1, A, 0f);
     etCount(1, 4, 1);
     etSpeed(1, 2f, 2f);
-    etSprite(1, 15, 0);
-	etEx(1, 0, EX_HITBOX, NEG, NEG, 0.0f, NEGF);
-	etEx(1, 0, EX_BOUNCE, 1, 15, NEGF, NEGF);
-	etEx(1, 0, EX_SETSPRITE, 8, 15, NEGF, NEGF);
+    etSprite(1, 11, 0);
+	etDist(1, 150f);
+	etEx(1, 0, EX_BOUNCE, 1, 15, 1f, NEGF);
+	etEx(1, 0, EX_SETSPRITE, 11, 15, NEGF, NEGF);
     while(1)
     {
         etOn(1);
         A += B;
         B += rad(0.2);
         etAngle(1, A, 0f);
-        wait(7);
+        wait(10);
     }
 }
+void Yukar()
+{
+	float A = rad(0);
+    etNew(2);
+	etAim(2, 3);
+	etSprite(2, 12, 0);
+	etCount(2, 5, 1);
+	etSpeed(2, 2f, 2f);
+	etDist(2, 150f);
+	etEx(2, 0, EX_BOUNCE, 1, 15, 1.2f, NEGF);
+	etEx(2, 0, EX_SETSPRITE, 12, 15, NEGF, NEGF);
+	while(1)
+	{
+	etAngle(2, A, 0f);
+	A += rad(83);
+		etAngle(2, A, 0f);
+	etOn(2);
+	wait(15);
+	}
+}
 
+void CircleRepeat2()
+{
+    etNew(4);
+    etAim(4, 3);
+    etCount(4, 10, 1);
+    etSpeed(4, 2f, 2f);
+    etSprite(4, 15, 0);
+	etDist(4, 150f);
+	etEx(4, 0, EX_BOUNCE, 1, 15, 0.8f, NEGF);
+	etEx(4, 0, EX_SETSPRITE, 15, 15, NEGF, NEGF);
+	while(1)
+    {
+		etAngle(4, RANDRAD, 0f);
+		etOn(4);
+		playSound(4);
+		wait(75);
+    }
+}
 void typhoonfunc()
 {
 	enmCreate("ProtectPl", PLAYER_X, PLAYER_Y, 10000, 10, 1);
