@@ -834,20 +834,21 @@ void MainBossDebug2()
 void MainFront()
 {
     @MainSub00();
-    wait(320);
-    @MainSub01();
-    wait(180);
-    etClear(640.0f);
-    enmKillAll();
-    setChapter(1);
-    @MainSub02();
-    wait(78);
-    etClear(640.0f);
-    ins_571();
-    setChapter(2);
-    wait(120);
-    @MainSub03();
-    wait(260);
+	// wait(10000);
+    // wait(320);
+    // @MainSub01();
+    // wait(180);
+    // etClear(640.0f);
+    // enmKillAll();
+    // setChapter(1);
+    // @MainSub02();
+    // wait(78);
+    // etClear(640.0f);
+    // ins_571();
+    // setChapter(2);
+    // wait(120);
+    // @MainSub03();
+    // wait(260);
     return;
 }
 
@@ -924,28 +925,7 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
-    var A, B, C;
-    %A = _f(192);
-    $B = 10;
-    goto MainSub00_288 @ 0;
-MainSub00_140:
-    enmCreateM("GirlRedA01e", %A, -16.0f, 100, 1000, 1);
-    wait(10);
-    enmCreateM("GirlBlueA01e", %A, -28.0f, 100, 1000, 1);
-    wait(10);
-MainSub00_288:
-    if ($B--) goto MainSub00_140 @ 0;
-    %A = _f(-192);
-    $C = 10;
-    goto MainSub00_584 @ 0;
-MainSub00_436:
-    enmCreate("GirlRedA01e", %A, -16.0f, 100, 1000, 1);
-    wait(10);
-    enmCreate("GirlBlueA01e", %A, -28.0f, 100, 1000, 1);
-    wait(10);
-MainSub00_584:
-    if ($C--) goto MainSub00_436 @ 0;
-    return;
+ 
 }
 
 void MainSub01()
@@ -1373,12 +1353,13 @@ main_492:
     @LogoEnemy() async;
 +60: //60
     nop();
-    // @MainFront();
-    // etClear(640.0f);
-    // setChapter(3);
-    // wait(2);
-    //enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	//wait(100000);
+	// wait(100000);
+    @MainFront();
+    etClear(640.0f);
+    setChapter(3);
+    wait(2);
+    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	// wait(100000);
     // wait(160);
     // @MainLatter();
     // wait(300);
