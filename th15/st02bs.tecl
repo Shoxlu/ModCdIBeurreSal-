@@ -51,7 +51,7 @@ Boss_1200:
 void Boss1()
 {
     timerReset();
-	lifeSet(12800);
+	lifeSet(14800);
     setNext(0, 2700, 2400, "BossCard1");
     lifeMarker(0, 2700.0f, -24448);
     stars(2);
@@ -164,7 +164,7 @@ void bossTrace1()
 void Boss2()
 {
     setInvuln(120);
-    lifeSet(13400);
+    lifeSet(14400);
 	anmSetSprite(5, -1);
     unless ($TIMEOUT == 0) goto Boss2_200 @ 0;
     etCancel(640.0f);
@@ -246,7 +246,7 @@ void Boss2_at()
 void Boss3()
 {
     setInvuln(120);
-    lifeSet(13500);
+    lifeSet(14500);
     unless ($TIMEOUT == 0) goto Boss3_200 @ 0;
     etCancel(640.0f);
     goto Boss3_220 @ 0;
@@ -305,11 +305,12 @@ void Boss3_at()
 	etNew(0);
 	etSprite(0, 37, 13);
 	etAim(0, 5);
-	etCount(0, 20:30:40:50, 1);
+	etCount(0, 20:30:40:50, 2);
 	etSpeed(0, 2f, 3f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etNew(1);
 	etCopy(1, 0);
+	etCount(1, 20:30:40:50, 1);
 	etSpeed(1, 3f, 4f);
 	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	// etEx(1, 0, EX_SIZE, 1, 0, 1f, 2f);
@@ -317,7 +318,7 @@ void Boss3_at()
 	{
 		wait(40);		
 		@Boss3_starry_rain();
-		wait(60);
+		wait(40);
 		etSprite(0, 37, 2);
 		etOn(0);
 		wait(10);
@@ -325,7 +326,7 @@ void Boss3_at()
 		etOn(1);
 		wait(40);
 		@Boss3_starry_rain();
-		wait(60);
+		wait(40);
 		etSprite(0, 37, 15);
 		etOn(0);
 		wait(10);
@@ -435,23 +436,24 @@ BossCard1_468:
 !HL
 		BossCard1_at(-1f) async;
 !*
+		float angle = rad(50):rad(50):rad(30):rad(30);
 		wait(400);
-!HL
 		movePosTime(90, 4, 0f, 128f);
 		wait(90);
-		F0 = rad(30)+rad(270);
+		F0 = angle+rad(270);
 		I0 = 1;
 		enmCreate("MasterSpark1", 0f, 0f, 10, 1000, 1);
 		I0 = -1;
-		F0 = rad(-30)+rad(270);
+		F0 = -angle+rad(270);
 		enmCreate("MasterSpark1", 0f, 0f, 10, 1000, 1);
 		wait(60);
 		movePosTime(30, 4, 0f, 224f);
 		wait(30);
 		BossCard1_at(1f) async;
+!HL
 		BossCard1_at(-1f) async;
-		wait(400);
 !*
+		wait(400);
 	}
 }
 
