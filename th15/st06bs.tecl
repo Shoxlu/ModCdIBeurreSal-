@@ -24,7 +24,7 @@ void Boss()
 	dialogWait();
     setChapter(43);
 +1: //1
-	enmCreateA("enameSatanae", -4f, 0f, 100, 100, 0);
+	enmCreateA("enameSatanae", -4f, -5f, 100, 100, 0);
     setHurtbox(56.0f, 56.0f);
     setHitbox(50.0f, 50.0f);
     moveLimit(0.0f, 128.0f, 280.0f, 48.0f);
