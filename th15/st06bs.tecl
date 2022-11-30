@@ -189,7 +189,7 @@ void Boss2_at()
 		A +=rad(0.5);
 		wait(1);
 		}
-		A +=rad(4);
+		A +=rad(10):rad(8):rad(6):rad(4);
 		etAngle(0, A, 0f);
 	}
 }
@@ -212,7 +212,7 @@ void Boss2_at2()
 		A +=rad(-0.5);
 		wait(1);
 		}
-		A +=rad(-6);
+		A +=rad(-12):rad(-10):rad(-8):rad(-6);
 		etAngle(1, A, 0f);
 	}
 }
