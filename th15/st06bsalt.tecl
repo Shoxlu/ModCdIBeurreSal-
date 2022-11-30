@@ -308,7 +308,8 @@ void BossAlt3_at(float B, float A, int color)
 !ENHL
     etSpeed(0, 3f, 3f);
 !*
-    etExSet(0, 0, 0, EX_WAIT, 20, NEG, NEGF, NEGF);
+    etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+    etExSet(0, 1, 0, EX_WAIT, 20, NEG, NEGF, NEGF);
 	int C = 1;
 	while(1)
 	{
@@ -335,6 +336,7 @@ void BossAlt3_at2()
 	int count = 7:10:15:22;
 	etCount(1, count, 1);
 	etAngle(1, rad(90):rad(90):rad(90):0f, 0f);
+	etExSet(1, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	wait(30);
 	while(1)
 	{
