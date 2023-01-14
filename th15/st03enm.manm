@@ -1047,7 +1047,7 @@ entry entre18{
 
 script script24{
 	sprite(51);
-	layer(27);
+	layer(7);
 	type(1);
 	F0 = 0f;
 	F1 = %RANDF*rad(3);
@@ -1062,7 +1062,7 @@ loop:
 
 script script25{
 	sprite(51);
-	layer(27);
+	layer(7);
 	type(1);
 	F0 = 0f;
 	F1 = %RANDF*rad(3);
