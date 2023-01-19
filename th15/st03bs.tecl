@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
-    @BossCard3();
+    @BossCard1();
     delete();
 }
 
@@ -366,142 +366,25 @@ BossCard1_468:
     playSound(54);
 +120: //124
     nop();
-    $A = 120;
-    $D = 1000;
-    goto BossCard1_1816 @ 124;
-BossCard1_1224:
-    anmPlay(1, 86);
-    playSound(6);
-    anm316(0, 0);
-    %B = %PLAYER_X2;
-    %C = %PLAYER_Y2;
-    @BossCard1_at() async;
-!HL
-    wait(70);
-!L
-    wait(10);
-!HL
-    @BossCard1_at2(%B, %C) async;
-    wait(70);
-!L
-    wait(10);
-!HL
-    @BossCard1_at2(%B, %C) async;
-!*
-    wait($A);
-    unless ($A > 60) goto BossCard1_1768 @ 124;
-    $A = $A - 5;
-BossCard1_1768:
-    moveRand(60, 4, 1.0f);
-    wait(80);
-BossCard1_1816:
-    if ($D--) goto BossCard1_1224 @ 124;
-    goto BossCard1_1904 @ 124;
-BossCard1_1884:
-    wait(1000);
-BossCard1_1904:
-    if (1) goto BossCard1_1884 @ 124;
-    return;
+	moveRand(60, 4, 1.0f);
+    @BossCard1_at();
+	wait(10000);
 }
 
 void BossCard1_at()
 {
-    var A, B, C, D;
     etNew(0);
-    etAim(0, 5);
-    etSprite(0, 8, 5);
-!E
-    2;
-!N
-    4;
-!H
-    4;
-!LO
-    4;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(0, [-1.0f], 1.0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 2097152, 60, -999999, 2.0f, -999999.0f);
-    etSpeed(0, 0.3f, 0.0f);
-    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
-    etNew(1);
-    etAim(1, 3);
-    etSprite(1, 16, 3);
-    etCount(1, 2, 1);
-    etAngle(1, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(1, [-1.0f], 1.0f);
-    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(1, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 2097152, 60, -999999, 2.0f, -999999.0f);
-    etSpeed(1, 0.3f, 0.0f);
-    etOffsetAbs(1, %PLAYER_X2, %PLAYER_Y2);
-    %A = %ANGLE_PLAYER - 1.5707964f;
-    %B = %ANGLE_PLAYER + 1.5707964f;
-    %C = _f(128);
-    diffI($D, 9, 16, 16, 34);
-    goto BossCard1_at_2164 @ 0;
-BossCard1_at_1304:
-    etAngle(0, %A, 1.0f);
-    etOffsetRad(0, %A, %C);
-    etOn(0);
-    etAngle(1, %A, 1.0f);
-    etOffsetRad(1, %A, %C);
-    etOn(1);
-!ENH
-    %A = %A - 0.19635f;
-!L
-    %A = %A - 0.098175f;
-!*
-    etAngle(0, %B, 1.0f);
-    etOffsetRad(0, %B, %C);
-    etOn(0);
-    etAngle(1, %B, 1.0f);
-    etOffsetRad(1, %B, %C);
-    etOn(1);
-!ENH
-    %B = %B + 0.19635f;
-!L
-    %B = %B + 0.098175f;
-!ENH
-    %C = %C + _f(8);
-!L
-    %C = %C + _f(5);
-!E
-    2;
-!N
-    2;
-!H
-    2;
-!LO
-    1;
-!*
-    wait([-1]);
-BossCard1_at_2164:
-    if ($D--) goto BossCard1_at_1304 @ 0;
-    return;
+    etAim(0, 3);
+    etSprite(0, 6, 0);
+	etSpeed(0, 3f, 3f);
+	etCount(0, 20, 1);
+	while(1)
+	{
+	etExSet(0, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VEL, NEG, NEG, ANGLE_PLAYER, NEGF);
+	etOn(0);
+	wait(120);
+	}
 }
 
 void BossCard1_at2(var A, var B)
@@ -832,48 +715,74 @@ BossCard3_468:
     spell(34, 3000, 500000, "ñ≤ïÑÅuñ≤â‰ñ≤íÜÅv");
 !*
     movePosTime(60, 4, 0.0f, 0.0f);
-    moveLimit(0.0f, 200f, 0.0f, 64.0f);
+    moveLimit(0.0f, 200f, 64.0f, 64.0f);
     anmSelect(3);
     anm316(0, 0);
 +60: //64
     nop();
+	@BossCard3_at()async;
 	while(1)
 	{
-	enmCreateA("BossCard3_flowers", RANDF2*192f, -40f, 100, 100, 1);
-	wait(30);
-	enmCreateA("BossCard3_flowers2", RANDF2*192f, -40f, 100, 100, 1);
-	wait(30);
+	enmCreateA("BossCard3_flowers", RANDF2*192f, -80f, 100, 100, 1);
+	wait(75:75:50:45);
+	enmCreateA("BossCard3_flowers2", RANDF2*192f, -80f, 100, 100, 1);
+	wait(75:75:50:45);
 	}
 }
 
 void BossCard3_flowers()
 {
 	flagSet(1);
-	flagSet(16);
+	flagSet(4);
 	anmSelect(3);
 	anmSetSprite(0, 24);
+	setHitbox(65f, 65f);
 	deathAnm(0, -1);
 	moveVel(rad(90), 0.25f+RANDF*2f);
+	//playSound(21);
 	wait(10000);
 }
 void BossCard3_flowers2()
 {
 	flagSet(1);
-	flagSet(16);
+	flagSet(4);
 	anmSelect(3);
 	anmSetSprite(0, 25);
+	setHitbox(65f, 65f);
 	deathAnm(0,-1);
 	moveVel(rad(90), 0.25f+RANDF*2f);
+	//playSound(21);
 	wait(10000);
 }
 void BossCard3_at()
 {
-
+	etNew(0);
+	etAim(0, 10);
+	etCount(0, 6, 12);
+	etSpeed(0, 1f, 2f);
+	etSprite(0, 6, 13);
+	etEx(0, 0, EX_BOUNCE, 1, 12, NEGF, NEGF);
+	etEx(0, 0, EX_SETSPRITE, 6, 8, NEGF, NEGF);
+	while(1)
+	{
+	etAngle(0, RANDRAD, rad(10));
+	etOn(0);
+	moveRand(60, 4, 1.0f);
+	wait(240:240:210:180);
+	}
 } 
 
 void BossCard3_at2()
 {
-
+	etNew(0);
+	etCount(0, 16, 8);
+	etSpeed(0, 3.0f, 5.5f);
+	etSprite(0, 12, 13);
+	etAim(0, 2);
+	etEx(0, 0, EX_ANGLE_ACCEL, 50, NEG, 0.0f, 6f);
+	etAngle(0, %ANGLE_PLAYER, 0.0f);
+	wait(32);
+	etOn(0);
 }
 
 void BossCard4()
