@@ -1,4 +1,5 @@
 #include "main.tecl"
+
 void BossItemCard();
 
 void BossItemPhase(var A, var B, var C);
