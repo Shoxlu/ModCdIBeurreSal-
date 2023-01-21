@@ -69,7 +69,6 @@ void Boss1()
 		moveRand(40, 0, 1.5f);
 		wait(350);
 	}
-	wait(10000);
     return;
 }
 
@@ -137,7 +136,6 @@ void Spawn()
 		
 		wait(10:10:8:8);
 	}
-	wait(1000000);
 }
 
 void little_stars()
@@ -959,25 +957,25 @@ void lasers()
 	
 	wait(10);
 	float laserSpawn = 192f*RANDF2;
-		float laserAngle = rad(270) + (RANDF2 * rad(7.5));
-		etOffsetAbs(0,laserSpawn, 448f);
-		etOffsetAbs(1,laserSpawn, 448f);
-		etOffsetAbs(2,laserSpawn, 448f);
-		etOffsetAbs(3,laserSpawn, 448f);
-		etAngle(0, laserAngle, 0f);
-		etAngle(1, laserAngle, 0f);
-		etAngle(2, laserAngle, 0f);
-		laserStOn(1, GI0);
-		GI0 = GI0 + 1;
-		//anmPlayPos(1, 73, laserSpawn, 448f-BOSS_Y, 0f);
-		wait(40);
-		laserStOn(2, GI0);
-		GI0 = GI0 + 1;
-		etOn(3);
-		wait(15);	
-		laserStOn(0,GI0);
-		GI0 += 1;
-		wait(20:10:8:8);
+	float laserAngle = rad(270) + (RANDF2 * rad(7.5));
+	etOffsetAbs(0,laserSpawn, 448f);
+	etOffsetAbs(1,laserSpawn, 448f);
+	etOffsetAbs(2,laserSpawn, 448f);
+	etOffsetAbs(3,laserSpawn, 448f);
+	etAngle(0, laserAngle, 0f);
+	etAngle(1, laserAngle, 0f);
+	etAngle(2, laserAngle, 0f);
+	laserStOn(1, GI0);
+	GI0 = GI0 + 1;
+	//anmPlayPos(1, 73, laserSpawn, 448f-BOSS_Y, 0f);
+	wait(40);
+	laserStOn(2, GI0);
+	GI0 = GI0 + 1;
+	etOn(3);
+	wait(15);	
+	laserStOn(0,GI0);
+	GI0 += 1;
+	wait(20:10:8:8);
 		
 }
 
@@ -1039,7 +1037,6 @@ BossDead_316:
     playSound(5);
     setBoss(-1);
     delete();
-    delete();
 }
 
 void BossEscape()
@@ -1059,6 +1056,5 @@ BossEscape_228:
     flagSet(16);
     movePosTime(60, 4, -224.0f, -16.0f);
     wait(60);
-    delete();
     delete();
 }
