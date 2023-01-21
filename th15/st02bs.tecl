@@ -866,7 +866,7 @@ BossCard3_180:
     setChapter(62);
 +2: //4
     ins_569(1);
-    stars(2);
+    stars(0);
     @BossItemCard();
     timerReset();
     killAllAsync();
