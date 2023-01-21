@@ -1052,11 +1052,12 @@ void BossCard3_at()
     etCount(0, [-1], 1);
     etAngle(0, 1.5707964f, 0.034906585f);
     etSpeed(0, 2f, 0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, EX_REACT, 1, -999999, -999999.0f, -999999.0f);
-	etExSet(0, 4, 0, EX_SETSPRITE, 10, 3, NEGF, NEGF);
-	etExSet(0, 5, 0, EX_REACT, 0, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, EX_OFFSCREEN, 99999, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_INVULN, 99999, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_ACCEL, 90, 0, 0f, 3f/90f);
+	etEx(0, 0, EX_REACT, 1, -999999, -999999.0f, -999999.0f);
+	etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	etExSet(0, 6, 0, EX_REACT, 0, -999999, -999999.0f, -999999.0f);
 	//etExSet(0, 8, 0, EX_SETSPRITE, 10, 3, NEGF, NEGF);
     etAngle(0, %RANDRAD, 0.0f);
     etOn(0);

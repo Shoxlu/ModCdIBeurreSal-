@@ -1358,7 +1358,8 @@ main_492:
     etClear(640.0f);
     setChapter(3);
     wait(2);
-    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	bossWait();
 	// wait(100000);
     // wait(160);
     // @MainLatter();
