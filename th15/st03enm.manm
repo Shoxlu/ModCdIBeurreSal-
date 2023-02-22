@@ -1046,6 +1046,7 @@ entry entre18{
 }
 
 script script24{
+	scriptNew(script27);
 	sprite(51);
 	layer(7);
 	type(1);
@@ -1061,6 +1062,7 @@ loop:
 }
 
 script script25{
+	scriptNew(script27);
 	sprite(51);
 	layer(7);
 	type(1);
@@ -1072,4 +1074,21 @@ loop:
 	F0 -= F1;
 	jmp(loop, 0);
 	stop();
+}
+
+script script26 {
+    color(155, 240, 255);
+    sprite(sprite51);
+    stop();
+}
+script script27{
+    sprite(51);
+    blendMode(1);
+    layer(6);
+    color(255, 120, 220);
+    //color(0, 255, 0);
+    scaleTime(60, 27, 1.5f, 1.5f);
+    alphaTime(60, 1, 0);
++100:
+    delete();
 }
