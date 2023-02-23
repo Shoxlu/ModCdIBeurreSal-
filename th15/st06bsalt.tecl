@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @Boss1();
+    @BossAlt1();
     delete();
 }
 

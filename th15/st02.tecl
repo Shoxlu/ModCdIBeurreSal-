@@ -41,6 +41,7 @@ void GirlA03()
 	@GirlA03_at2();
 	wait(1800);
 }
+
 void GirlA04()
 {
     ins_569(1);
@@ -51,6 +52,55 @@ void GirlA04()
 	wait(20);
 	moveVelTime(90, 0, rad(360), 2f);
 	@GirlA04_at2();
+	wait(1800);
+}
+void GirlA01_fear()
+{
+    ins_569(1);
+	flagSet(12);
+	anmSelect(2);
+	anmSetMain(0, 0);
+    moveVel(rad(0), 3f);
+	wait(20);
+	moveVelTime(45, 0,  RANDF2*rad(45), 4f);
+	@GirlA_at() async;
+	wait(1800);
+}
+void GirlA02_fear()
+{
+	ins_569(1);
+	anmSelect(2);
+	flagSet(12);
+	anmSetMain(0, 5);
+    moveVel(rad(180), 3f);
+	wait(20);
+	moveVelTime(45, 0,  rad(180)+RANDF2*rad(45), 4f);
+	@GirlA_at() async;
+	wait(1800);
+}
+void GirlA03_fear()
+{
+    ins_569(1);
+	flagSet(12);
+	anmSelect(2);
+	anmSetMain(0, 0);
+    moveVel(rad(0), 2f);
+	wait(20);
+	moveVelTime(45, 0,  RANDF2*rad(45), 2f);
+	@GirlA03_at2() async;
+	wait(1800);
+}
+
+void GirlA04_fear()
+{
+    ins_569(1);
+	anmSelect(2);
+	flagSet(12);
+	anmSetMain(0, 5);
+    moveVel(rad(180), 2f);
+	wait(20);
+	moveVelTime(45, 0, rad(180)+RANDF2*rad(45), 2f);
+	@GirlA04_at2() async;
 	wait(1800);
 }
 void GirlA_at(){
@@ -68,6 +118,7 @@ void GirlA_at(){
 		wait(200:200:70:60);
 	}
 }
+
 void GirlA03_at2(){
 	etNew(0);
 	etAim(0, 1);
@@ -84,6 +135,7 @@ void GirlA03_at2(){
 		wait(40:30:20:10);
 	}
 }
+
 void GirlA04_at2(){
 	etNew(0);
 	etAim(0, 1);
@@ -782,6 +834,15 @@ void MainSub00()
 	{
 		enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
 		enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
+		+30:
+	}
+	wait(60);
+	times(16)
+	{
+		enmCreate("GirlA01_fear", -212f, 88f, 200, 500, 1);
+		enmCreate("GirlA02_fear", 212f, 88f, 200, 500, 1);
+		enmCreate("GirlA03_fear", -212f, 128f, 200, 500, 2);
+		enmCreate("GirlA04_fear", 212f, 128f, 200, 500, 2);
 		+30:
 	}
 	wait(200);
