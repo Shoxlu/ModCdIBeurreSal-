@@ -29,10 +29,10 @@ void MBoss()
     wait(40);
     moveLimit(0.0f, 128.0f, 280.0f, 256.0f);
     dialogWait();
-    setNext(1, 2200, 1500, "MBossCard1");
+    setNext(1, 2200, 1500, "MBossCard2");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
-    @MBoss1();
+    @MBoss2();
     goto MBoss_784 @ 0;
 MBoss_764:
     wait(1000);
@@ -289,76 +289,89 @@ MBossCard2_448:
 +90: //94
     nop();
     anmPlay(1, 88);
-    @MBossCard2_at2() async;
-    goto MBossCard2_1688 @ 102;
-MBossCard2_1040:
-    %F0 = %ANGLE_PLAYER;
-    @MBossCard2_at(0, 10, _f(0)) async;
-+2: //96
-    @MBossCard2_at(1, 11, _f(16)) async;
-    @MBossCard2_at(2, 8, _f(-16)) async;
-+2: //98
-    @MBossCard2_at(3, 13, _f(32)) async;
-    @MBossCard2_at(4, 6, _f(-32)) async;
-+2: //100
-    @MBossCard2_at(5, 14, _f(48)) async;
-    @MBossCard2_at(6, 4, _f(-48)) async;
-+2: //102
-    @MBossCard2_at(7, 2, _f(64)) async;
-    @MBossCard2_at(8, 3, _f(-64)) async;
-    wait(60);
-    moveRand(60, 4, 1.0f);
-    wait(60);
-MBossCard2_1688:
-    if (1) goto MBossCard2_1040 @ 94;
-    return;
+	MBossCard2_at();
 }
 
-void MBossCard2_at(var A, var B, var C)
+void MBossCard2_at()
 {
-    var D;
-    etNew($A);
-    etAim($A, 3);
-    etSprite($A, 12, $B);
-    etCount($A, 1, 1);
-    etAngle($A, 0.0f, 0.034906585f);
-    etSpeed($A, 1.0f, 1.0f);
-    etEx($A, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx($A, 0, 2097152, 60, -999999, 8.0f, -999999.0f);
-    etAngle($A, %F0, 1.0f);
-    etOffsetRad($A, %F0 - 1.5707964f, %C);
-    $D = 10;
-    goto MBossCard2_at_496 @ 0;
-MBossCard2_at_456:
-    etOn($A);
-    wait(6);
-MBossCard2_at_496:
-    if ($D--) goto MBossCard2_at_456 @ 0;
-    return;
+	float A, C, B = 0f, D = 1f, E = 1f;
+	int color = 0;
+	etNew(0);
+	etAim(0, 1);
+	etCount(0, 10, 2);
+	etAngle(0, rad(90),rad(10));
+	etSpeed(0, 3f, 2f);
+	etSprite(0, 6, 2);
+	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	MBossCard2_at1() async;
+	MBossCard2_at2() async;
+	while(1)
+	{
+		// etSprite(0, 6, 2);
+		// etAngle(0, A*rad(-90)-rad(90), 0f);
+		// etOn(0);
+		A = cos(B);
+		C = sin(B);
+		if(C < 0f)
+		{
+			D = -1f;
+		}else{
+			D= 1f;
+		}
+		if(A < 0f)
+		{
+			E = -1f;
+		}else{
+			E= 1f;
+		}
+		etSprite(0, 6, 2);		
+		etCount(0, _S(C*D*10f), 2);
+		etAngle(0, rad(-90),A*rad(-90)+rad(90));
+		etOn(0);
+		etSprite(0, 6, 4);
+		etCount(0, _S(A*E*10f), 2);
+		etAngle(0, rad(-90),C*rad(-90)+rad(90));
+		etOn(0);
+		B += 0.05;
+		wait(5);
+	}
 }
-
+void MBossCard2_at1()
+{
+	float A=0f, C, B = 0f, D = 1f, E = 1f;
+	int color = 0;
+	etNew(1);
+	etAim(1, 1);
+	etCount(1, 3, 2);
+	etAngle(1, rad(0),rad(10));
+	etSpeed(1, 3f, 3f);
+	etSprite(1, 12, 2);
+	while(1)
+	{
+		etAngle(1, rad(0)+A*1.5f,rad(10));
+		etOn(1);
+		etAngle(1, rad(180)+A*1.5f,rad(10));
+		etOn(1);
+		B += 0.025;
+		A = sin(B);
+		wait(3);
+	}
+}
 void MBossCard2_at2()
 {
-    var A, B, C;
-    $A = 9;
-    $B = 60;
-    $C = 10000;
-    goto MBossCard2_at2_632 @ 0;
-MBossCard2_at2_180:
-    etNew($A);
-    etAim($A, 11);
-    etSprite($A, 18, 1);
-    etCount($A, 32, 1);
-    etAngle($A, %ANGLE_PLAYER, %ANGLE_PLAYER + 1.5707964f);
-    etSpeed($A, 4.0f, -0.1f);
-    etEx($A, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etOn($A);
-    wait($B);
-    unless ($B > 30) goto MBossCard2_at2_632 @ 0;
-    $B = $B - 2;
-MBossCard2_at2_632:
-    if ($C--) goto MBossCard2_at2_180 @ 0;
-    return;
+	float A=0f, C, B = 0f, D = 1f, E = 1f;
+	int color = 0;
+	etNew(2);
+	etAim(2, 2);
+	etCount(2, 20, 1);
+	etAngle(2, rad(0),rad(0));
+	etSpeed(2, 4f, 4f);
+	etSprite(2, 33, 0);
+	while(1)
+	{
+		etOn(2);
+		wait(120);
+	}
 }
 
 void MBossCard3()
