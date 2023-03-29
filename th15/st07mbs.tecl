@@ -29,7 +29,7 @@ void MBoss()
     wait(40);
     moveLimit(0.0f, 128.0f, 280.0f, 256.0f);
     dialogWait();
-    setNext(1, 2200, 1500, "MBossCard2");
+    setNext(1, 2200, 1500, "MBossCard3");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
     @MBoss2();
@@ -409,135 +409,119 @@ MBossCard3_448:
     $CAPTURE = 1;
     setNext(0, 0, 3000, "MBossDead");
     setTimeout(0, "MBossEscape");
-    spellEx(108, 3000, 500000, "這夢「クリーピングバレット」");
+    spellEx(108, 3000, 500000, "Memoires de la haine et de la destruction.");
     movePosTime(60, 4, 0.0f, 144.0f);
     moveLimit(0.0f, 128.0f, 120.0f, 64.0f);
     wait(60);
     anmPlay(1, 73);
 +90: //94
     nop();
-    anmPlay(1, 88);
-    @MBossCard3_at() async;
-    goto MBossCard3_1168 @ 94;
-MBossCard3_1120:
-    wait(240);
-    moveRand(60, 4, 1.0f);
-MBossCard3_1168:
-    if (1) goto MBossCard3_1120 @ 94;
-    return;
+    MBossCard3_at_Open();
+	wait(100000);
+}
+void MBossCard3_at_Open()
+{
+	etNew(0);
+	etAim(0, 3);
+	etCount(0, 15, 1);
+	etSpeed(0, 4f, 4f);
+	etSprite(0, 33, 0);
+	etAngle(0, rad(-90), 0f);
+	
+	etNew(1);
+	etAim(1, 3);
+	etCount(1, 20, 3);
+	etSpeed(1, 2f, 4f);
+	etSprite(1, 33, 6);
+	etAngle(1, rad(90), rad(10));
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	
+	
+	float angle = rad(-90);
+	float A = 20;
+	float B = 1f;
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_SIZE, 30, 0, 1.0f, 0.75f);
+	while(1)
+	{
+		MBossCard3_at() async;
+		GI3 = 1;
+		times(250)
+		{
+			etOn(0);
+			wait(1);
+		}
+		GI3 = 0;
+		times(150)
+		{
+			etOn(0);
+			wait(1);
+		}
+		A = 15;
+		times(180)
+		{
+			etCount(0, _S(A), 1);
+			etAngle(0, angle, 0f);
+			etOn(0);
+			wait(1);
+			A = A - 15f/200f;
+			angle += rad(1)*B;
+		}
+		times(180)
+		{
+			etCount(0, _S(A), 1);
+			etAngle(0, angle, 0f);
+			etOn(0);
+			wait(1);
+			A = A + 15f/200f;
+			angle -= rad(1)*B;
+		}
+		B *= -1f;
+		etCount(0, 15, 1);
+		wait(10);
+		etOn(1);
+	}
 }
 
 void MBossCard3_at()
 {
-    var A, B;
-    etNew(0);
-    etAim(0, 3);
-    etSprite(0, 8, 1);
-    etCount(0, 3, 1);
-    etAngle(0, 0.0f, 0.034906585f);
-    etSpeed(0, 8.0f, 1.0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etOffsetAbs(0, 0.0f, 320.0f);
-    %A = -1.570796f;
-    %A = %ANGLE_PLAYER + %A;
-    $B = 600000;
-    goto MBossCard3_at_644 @ 0;
-MBossCard3_at_444:
-    etAngle(0, %RANDRAD, 1.0f);
-    etSpeed(0, 0.5f, 0.0f);
-    etOffsetRad(0, %A, -128.0f);
-    %A = %A + 0.034907f;
-    etOn(0);
-    wait(2);
-MBossCard3_at_644:
-    if ($B--) goto MBossCard3_at_444 @ 0;
-    return;
+	etNew(2);
+	etAim(2, 3);
+	etDist(2, 40f);
+	etCount(2, 10, 1);
+	etSpeed(2, 2f, 2f);
+	etSprite(2, 22, 0);
+	etAngle(2, RANDRAD, rad(0));
+	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(2, 0, EX_ACCEL, 30, NEG, 0f, rad(1));
+	etEx(2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(2, 4, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	wait(40);
+	while(1)
+	{
+		if(GI3 == 1)
+		{
+			etExSet(2, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
+			etExSub(2, 3, "MBossCard3_Explosion");
+		}else{
+			etExSet(2, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
+			etExSub(2, 3, "");
+		}
+		etOffsetAbs(2, PLAYER_X, PLAYER_Y);
+		etOn(2);
+		wait(40);
+	}
 }
 
-void MBossCard3_at2()
+void MBossCard3_Explosion()
 {
-    var A, B, C;
-!E
-    300;
-!N
-    300;
-!H
-    300;
-!LO
-    150;
-!*
-    wait([-1]);
-    etNew(1);
-    etAim(1, 3);
-    etSprite(1, 20, 4);
-    etCount(1, 1, 6);
-    etAngle(1, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(1, [-1.0f], 1.0f);
-    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-!E
-    1.0f;
-!N
-    1.5f;
-!H
-    1.5f;
-!LO
-    1.5f;
-!*
-    etEx2(1, 0, 16, 60, 1, 0, 0, 1.5707964f, [-1.0f], -999999.0f, -999999.0f);
-    etCopy(2, 1);
-!E
-    1.0f;
-!N
-    1.5f;
-!H
-    1.5f;
-!LO
-    1.5f;
-!*
-    etExSet2(2, 1, 0, 16, 60, 1, 0, 0, -1.5707964f, [-1.0f], -999999.0f, -999999.0f);
-    $C = 600;
-    goto MBossCard3_at2_1748 @ 0;
-MBossCard3_at2_788:
-    etAngle(1, 0.3926991f + (%RANDRAD / 32.0f), 0.05235988f);
-    etOn(1);
-!HL
-    etAngle(1, 0.19634955f + (%RANDRAD / 32.0f), 0.05235988f);
-    etOn(1);
-!L
-    etAngle(1, 0.7853982f + (%RANDRAD / 32.0f), 0.05235988f);
-    etOn(1);
-!*
-    wait(160);
-    etAngle(2, 2.7488935f + (%RANDRAD / 32.0f), -0.05235988f);
-    etOn(2);
-!HL
-    etAngle(2, 2.9452431f + (%RANDRAD / 32.0f), -0.05235988f);
-    etOn(2);
-!L
-    etAngle(2, 2.3561945f + (%RANDRAD / 32.0f), -0.05235988f);
-    etOn(2);
-!E
-    160;
-!N
-    160;
-!H
-    160;
-!LO
-    80;
-!*
-    wait([-1]);
-MBossCard3_at2_1748:
-    if ($C--) goto MBossCard3_at2_788 @ 0;
-    return;
+	etNew(3);
+	etAim(3, 1);
+	etAngle(3, ANGLE_PLAYER, 0f);
+	etSpeed(3, 10f, 10f);
+	laserNew(3, 0f, 400f, 0f, 10f);
+	laserTiming(3, 60, 10, 20, 10, 0);
+	laserStOn(3, 0);
 }
 
 void MBossDead()
