@@ -44,8 +44,8 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss5");
-	lifeSet(2800);
-    BossCard4();
+	lifeSet(13000);
+    @Boss1();
     delete();
 }
 
@@ -62,57 +62,28 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-    goto Boss1_532 @ 0;
-Boss1_320:
     @Boss1_at();
-    @Boss1_at2() async;
-!E
-    120;
-!N
-    120;
-!H
-    100;
-!LO
-    100;
-!*
-    wait([-1]);
-    moveRand(60, 4, 1.9f);
-    wait(60);
-Boss1_532:
-    if (1) goto Boss1_320 @ 0;
-    return;
 }
 
 void Boss1_at()
 {
-    var A, B, C;
     etNew(0);
-    etAim(0, 1);
-    etSprite(0, 19, 3);
-    etCount(0, 2, 1);
-    etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 3.0f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 120, 0, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
-    etDist(0, 24.0f);
-    %A = 13.962634f;
-    %B = 4.0f;
-    diffI($C, 5, 6, 6, 6);
-    goto Boss1_at_908 @ 0;
-Boss1_at_532:
-    etExSet2(0, 4, 0, 134217728, 1, 38, 6, 67072, 1.5707964f, 16.0f, 16.0f, 640.0f);
-    etExSet2(0, 5, 0, 16384, 30, 30, 30, 30, 16.0f, 0.0f, 0.0f, 0.0f);
-    etAngle(0, -1.5707964f, %A);
-    etSpeed(0, %B, 0.0f);
-    etOn(0);
-    %A = %A - 0.174533f;
-    %B = %B - 0.4f;
-    wait(5);
-Boss1_at_908:
-    if ($C--) goto Boss1_at_532 @ 0;
-    return;
+    etAim(0, 6);
+    etCount(0, 6:10:12:16, 1);
+    etAngle(0, rad(270), rad(50));
+    etSpeed(0, 2f, 1f);
+	etEx(0, 0, EX_SIZE, 1, NEG, 1f, 0.5f);
+	etEx(0, 0, EX_OFFSCREEN, 1080, 0, NEGF, NEGF);
+	etEx(0, 0, EX_VELTIME, 370, NEG, 7f, rad(90));
+	while(1)
+	{
+	etSprite(0, 33, 4:4:2:1);
+	etOn(0);
+	wait(5);
+	etSprite(0, 33, 5:5:2:2);
+	etOn(0);
+	wait(5);
+	}
 }
 
 void Boss1_at2()

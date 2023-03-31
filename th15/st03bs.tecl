@@ -79,6 +79,7 @@ void Boss1_at()
 	etSprite(0, 9, C);
     etCount(0, 6:8:10:12, 1);
     etSpeed(0, 2f, 2f);
+	//etEx(0, 0, EX_VELTIME, 90, NEG, 5f, rad(90)); //gravité
     
     while(1)
     {
@@ -163,9 +164,8 @@ void Boss2_at()
 	etSpeed(0, 1.8f, 2.5f);
 	while(1)
 	{
-	etAngle(0, A, 0f);
 	A += rad(83);
-		etAngle(0, A, 0f);
+	etAngle(0, A, 0f);
 	etOn(0);
 	wait(15:10:5:5);
 	}
