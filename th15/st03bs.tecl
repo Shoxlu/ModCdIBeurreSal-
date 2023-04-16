@@ -366,24 +366,50 @@ BossCard1_468:
     playSound(54);
 +120: //124
     nop();
-	moveRand(60, 4, 1.0f);
+	//moveRand(60, 4, 1.0f);
     @BossCard1_at();
 	wait(10000);
 }
 
 void BossCard1_at()
 {
+	float bulletx = 0f;
+	float bullety = 0f;
+	float angle = 0f;
     etNew(0);
     etAim(0, 3);
-    etSprite(0, 6, 0);
 	etSpeed(0, 3f, 3f);
-	etCount(0, 20, 1);
+	etAngle(0, 0f, 0f);
 	while(1)
 	{
-	etExSet(0, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
-	etExSet(0, 1, 0, EX_VEL, NEG, NEG, ANGLE_PLAYER, NEGF);
+	etCount(0, 10:20:30:30, 1);
+	bulletx = RANDF2*170f;
+	bullety = RANDF2*70f;
+	etOffset(0, bulletx, bullety);
+	etSprite(0, 6, 2);
+	mathAngle(angle, bulletx, bullety, PLAYER_X, PLAYER_Y);
+	etExSet(0, 0, 0, EX_WAIT, 6, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VEL, NEG, NEG, NEGF, 0.0f);
+	etExSet(0, 2, 0, EX_WAIT, 60, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_VEL, NEG, NEG, angle, 3.5f);
 	etOn(0);
-	wait(120);
+	etOffset(0, bulletx, bullety);
+	etSprite(0, 6, 7);
+	etExSet(0, 0, 0, EX_WAIT, 6, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VEL, NEG, NEG, NEGF, 0.0f);
+	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_VEL, NEG, NEG, NEGF, 2.5f);
+	etOn(0);
+	!L
+	etCount(0, 5, 1);
+	etSprite(0, 6, 10);
+	etExSet(0, 0, 0, EX_WAIT, 6, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VEL, NEG, NEG, NEGF, 0.0f);
+	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_VEL, NEG, NEG, NEGF, 1.5f);
+	etOn(0);
+	!*
+	wait(25:20:20:20);
 	}
 }
 
