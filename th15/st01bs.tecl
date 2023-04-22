@@ -227,10 +227,10 @@ BossCard1_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 5400, "Boss2");
-!ENH
+!EN
     spell(2, 5400, 500000, "Une jeune fille au QI d'or");
-!L
-    spell(5, 5400, 500000, "Une jeune deesse au QI d'or");
+!HL
+    spell(2, 5400, 500000, "Une jeune deesse au QI d'or");
 !*
     movePosTime(60, 4, -90.0f, 128.0f);
     moveLimitReset();
@@ -813,7 +813,7 @@ BossCard1_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
 	setNext(0, 0, 5400, "BossDead");
-    spell(2, 5400, 500000, "Programme -Trou de Ver Virtuel-");
+    spell(6, 5400, 500000, "Programme -Trou de Ver Virtuel-");
 	//wait(1000);
 	//@LastWordFunction() async;
     anm316(0, 0);

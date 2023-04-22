@@ -1,6 +1,8 @@
 {
+	"0": "",
 	"2": "« Une jeune fille au QI d'or »",
-	"5": "« Une jeune déesse au QI d'or »",
+	"4": "« Une jeune déesse au QI d'or »",
+	"6": "Programme -Trou de Ver Virtuel-",
 	"10": "Signe du gras « Butter Spark »",
 	"23": "Illumination « Balles légendaires »",
 	"26": "Signe primitif : « Être mono-neuronal »",
