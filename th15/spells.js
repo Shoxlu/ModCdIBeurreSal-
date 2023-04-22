@@ -13,7 +13,7 @@
 	"34": "Signe du chaos : « Floraison imprévue »",
     "36": "Signe du chaos : « Floraison imprévue et fatale »",
     "37": "Signe du chaos : « Fleurs d'annihilation »",
-    "38": "Signe de la lune : « Rêve lunatique outremer »",
+    "38": "« A vaincre sans péril, on triomphe sans gloire »",
 	"58": "Douleur «Brûlure Lunaire»",
     "60": "Désespoir «Duplicité de la Fille Lunatique»",
 	"62": "Signe mental : « Obsession »",
