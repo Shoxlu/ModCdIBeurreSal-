@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss1");
 	lifeSet(2200);
-    @Boss1();
+    @BossCard1();
     delete();
 }
 
@@ -426,10 +426,10 @@ BossCard1_468:
 		BossCard1_at(1f) async;
 !*
 		wait(400);
-		F0 = 0f;
+		F0 = rad(-90);
 		I0 = -1;
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
-		F0 = rad(180);
+		F0 = rad(90);
 		enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
 		BossCard1_at(1f) async;
 !HL
@@ -491,7 +491,7 @@ void MasterSpark()
 
 	int waitTime = 1;
 	float A = 0;
-	int loop = 270:270:300:320;
+	int loop = 300:300:320:350;
 	flagSet(3);
 	deathAnm(0, -1);
 	A = ANGLE_PLAYER+rad(40);
@@ -508,7 +508,7 @@ void MasterSpark()
     {
         anmRotate(0, A+F0);
         wait(waitTime);
-		A = A + (rad(1)/(_f(loop)/35f))*_f(I0);
+		A = A + (rad(1)/(_f(loop)/40f))*_f(I0);
         GF1 = A;
     }
 	GI0 = 1;
