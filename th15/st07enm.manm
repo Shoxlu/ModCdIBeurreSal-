@@ -1294,12 +1294,12 @@ script script25 {
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, 176.0f, 0.0f);
+    posTime(15, 2, 64.0f, 256.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 96.0f, 176.0f, 0.0f);
+    posTime(30, 6, 96.0f, 256.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
@@ -1367,12 +1367,12 @@ script script26 {
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, 176.0f, 0.0f);
+    posTime(15, 2, 64.0f, 256.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 96.0f, 176.0f, 0.0f);
+    posTime(30, 6, 96.0f, 256.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
