@@ -531,11 +531,28 @@ entry entry10 {
     THTXHeight: 735,
     THTXZero: 0,
     sprites: {
-        sprite61: { x: 0, y: 0, w: 687, h: 660 },
-        sprite62: { x: 0, y: 0, w: 0, h: 0 }
+        sprite61: { x: 0, y: 0, w: 687, h: 660 }
     }
 }
 
+entry entry11 {
+    version: 8,
+    name: "face/enemy2/face02lo.png",
+    format: 1,
+    width: 1024,
+    height: 1024,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 2019780,
+    THTXFormat: 1,
+    THTXWidth: 687,
+    THTXHeight: 735,
+    THTXZero: 0,
+    sprites: {
+        sprite62: { x: 0, y: 0, w: 687, h: 660 }
+    }
+}
 script script8 {
 	flipX();
     sprite(sprite61);
@@ -695,7 +712,7 @@ script script9 {
     sprite(sprite59);
     caseReturn();
     case(25);
-    sprite(sprite62);
+    sprite(sprite60);
     caseReturn();
 }
 
