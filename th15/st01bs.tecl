@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @Boss1();
+    @LastWordCard();
     delete();
 }
 
@@ -835,27 +835,39 @@ void DeathGirlReimuSub02()
 	flagSet(1);
 	wait(340);
 	@CreatePattern(10, 1, 11, 14, 1, 1, 0f, 0f, 1f, 1f);
-	enmCreate("Trap1", 0f, -150f, 100, 100, 1); 
-	enmCreate("Trap2", 150f, 0f, 100, 100, 1); 
-	enmCreate("Trap3", 0f, 150f, 100, 100, 1); 
-	enmCreate("Trap4", -150f, 0f, 100, 100, 1); 
-	enmCreate("Trap5", -106f, -106f, 100, 100, 1); 
-	enmCreate("Trap6", 106f, 106f, 100, 100, 1); 
-	enmCreate("Trap7", 106f, -106f, 100, 100, 1); 
-	enmCreate("Trap8", -106f, 106f, 100, 100, 1); 
+	F0 = rad(45);
+	enmCreate("Trap", 0f, -150f, 100, 100, 1); 
+	F0 = rad(135);
+	enmCreate("Trap", 150f, 0f, 100, 100, 1); 
+	F0 = rad(225);
+	enmCreate("Trap", 0f, 150f, 100, 100, 1); 
+	F0 = rad(315);
+	enmCreate("Trap", -150f, 0f, 100, 100, 1); 
+	F0 = rad(0);
+	enmCreate("Trap", -106f, -106f, 100, 100, 1);
+	F0 = rad(180);	
+	enmCreate("Trap", 106f, 106f, 100, 100, 1); 
+	F0 = rad(90);
+	enmCreate("Trap", 106f, -106f, 100, 100, 1); 
+	F0 = rad(270);
+	enmCreate("Trap", -106f, 106f, 100, 100, 1); 
 	wait(200);
 	etClear(60f);
-	GF0 = 0.0125f;
+	F1 = 0.0125f;
 !L 
-	GF0 = 0.00375f;
+	F1 = 0.00375f;
 !*
 	wait(180);
-	enmCreate("YingYangTrap1", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap2", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap3", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap4", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap5", 0f, 0f, 100, 100, 2);
-	enmCreate("YingYangTrap6", 0f, 0f, 100, 100, 2);
+	float angle = 0f;
+	int count = 0;
+	times(6){
+		F0 = angle;
+		I0 = count%2;
+		enmCreate("YingYangTrap", 0f, 0f, 100, 100, 2);
+		angle+= rad(60);
+		count += 1;
+		
+	}
 !L
 	// enmCreate("YingYangTrap1b", 0f, 0f, 100, 100, 2);
 	// enmCreate("YingYangTrap2b", 0f, 0f, 100, 100, 2);
@@ -904,302 +916,46 @@ void SetupTrap()
 }
 
 
-void Trap1()
+void Trap()
 {
 	flagSet(1);
 	flagSet(2);
-	@CreatePattern(11, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etAngle(11, rad(45), 0f);
-	etExSet(11, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(11, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(11, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
+	@CreatePattern(0, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
+	etAngle(0, F0, 0f);
+	etExSet(0, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
+	etExSet(0, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
+	etExSet(0, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
 	while(1)
 	{
 		if(GI0 == 1)
 		{
-		etOn(11);
-		}
-		wait(10);
-	}
-}
-void Trap2()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(12, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(12, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(12, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(12, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(12, rad(135), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(12);
-		}
-		wait(10);
-	}
-}
-void Trap3()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(13, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(13, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(13, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(13, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(13, rad(225), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(13);
-		}
-		wait(10);
-	}
-}
-void Trap4()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(14, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(14, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(14, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(14, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(14, rad(315), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(14);
-		}
-		wait(10);
-	}
-}
-void Trap5()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(15, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(15, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(15, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(15, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(15, rad(0), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(15);
-		}
-		wait(10);
-	}
-}
-void Trap6()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(9, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(9, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(9, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(9, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(9, rad(180), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(9);
-		}
-		wait(10);
-	}
-}
-void Trap7()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(8, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(8, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(8, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(8, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(8, rad(90), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(8);
-		}
-		wait(10);
-	}
-}
-void Trap8()
-{
-	flagSet(1);
-	flagSet(2);
-	@CreatePattern(7, 1, 11, 3, 1, 1, 0f, 0f, 1f, 1f);
-	etExSet(7, 0, 0, EX_HITBOX, NEG, NEG, 1.5f, NEGF);
-	etExSet(7, 1, 0, EX_WAIT, 212, NEG, NEGF, NEGF);
-	etExSet(7, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
-	etAngle(7, rad(270), 0f);
-	while(1)
-	{
-		if(GI0 == 1)
-		{
-		etOn(7);
+		etOn(0);
 		}
 		wait(10);
 	}
 }
 
-void YingYangTrap1()
+void YingYangTrap()
 {
 	anmSelect(2);
 	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
+!N
+	if(I0)
+	{
 !NHL
-	@YingYangTrap_at() async;
+		
+		@YingYangTrap_at() async;
+!*
+	}
 !*
 	@YingYangTrap_at2() async;
 	@YingYangTrap_at3() async;
-	moveCircle(0f, GF0, 192f, 0f);
+	moveCircle(F0, F1, 192f, 0f);
 	wait(10000);
 }
-void YingYangTrap2()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-!NHL
-	@YingYangTrap_at() async;
-!*
-	@YingYangTrap_at2() async;
-	@YingYangTrap_at3() async;
-	moveCircle(rad(120), GF0, 192f, 0f);
-	wait(10000);
-}	
-void YingYangTrap3()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-!NHL
-	@YingYangTrap_at() async;
-!*
-	@YingYangTrap_at2() async;
-	@YingYangTrap_at3() async;
-	moveCircle(rad(240), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap4()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-!HL
-	@YingYangTrap_at() async;
-!*
-	@YingYangTrap_at2() async;
-	@YingYangTrap_at3() async;
-	moveCircle(rad(60), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap5()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-!HL
-	@YingYangTrap_at() async;
-!*
-	@YingYangTrap_at2() async;
-	@YingYangTrap_at3() async;
-	moveCircle(rad(180), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap6()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-!HL
-	@YingYangTrap_at() async;
-!*
-	@YingYangTrap_at2() async;
-	@YingYangTrap_at3() async;
-	moveCircle(rad(300), GF0, 192f, 0f);
-	wait(96509);
-}			
-void YingYangTrap1b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(10), GF0, 192f, 0f);
-	wait(10000);
-}
-void YingYangTrap2b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(130), GF0, 192f, 0f);
-	wait(10000);
-}	
-void YingYangTrap3b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(250), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap4b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(70), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap5b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(190), GF0, 192f, 0f);
-	wait(96509);
-}	
-void YingYangTrap6b()
-{
-	anmSelect(2);
-	anmSetSprite(0, 65);
-	flagSet(1);
-	flagSet(16);
-	@YingYangTrap_at() async;
-	//@YingYangTrap_at2() async;
-	moveCircle(rad(310), GF0, 192f, 0f);
-	wait(96509);
-}			
-void YingYangTrap_at()
+	void YingYangTrap_at()
 {
 	var A, B;
 	%A= rad(133);
@@ -1227,29 +983,19 @@ void YingYangTrap_at()
 
 void YingYangTrap_at2()
 {
-	var A, B;
-	diffI($B, 1, 1, 1, 1);
-!E 
-	2;
-!N 	
-	1;
-!H 
-	1;
-!L
-	1;
-!*
-	diffWait(0, 100, 100, 260);
-	@CreatePattern(3, 0, 16, 3, $B, [-1], 0f, rad(20), 1f, 2f);
+	int A;
+	wait(0:100:100:260);
+	@CreatePattern(3, 0, 16, 3, 1, 1, 0f, rad(20), 1f, 2f);
 	etExSet(3, 0, 0, EX_ANIM, 2, 0, NEGF, NEGF);
 	while(1)
 	{
-		$A = 1 + RAND % 13;
-		etSprite(3, 16, $A);
+		A = 1 + RAND % 13;
+		etSprite(3, 16, A);
 		if(GI1 == 1)
 		{
 			etOn(3);
 		}
-		diffWait(117, 107, 97, 77);
+		wait(117:107:97:77);
 	}
 }
 	

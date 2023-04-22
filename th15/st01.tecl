@@ -833,20 +833,20 @@ void main()
 +60: //60
     nop();
 	// wait(100000);
-	dialogRead(5);
-	wait(300);
+	//dialogRead(5);
+	//wait(300);
 	setChapter(1);
     wait(2);
 	// enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
-    @MainFront();
+    //@MainFront();
     enmKillAll();
     etClear(640.0f);
     setChapter(4);
     wait(2);
-	dialogRead(6);
+	//dialogRead(6);
 	dialogWait();
 
-	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	//enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	bossWait();
 	// etNew(0);
 	// etAim(0, 1);
@@ -855,13 +855,13 @@ void main()
 	// etSpeed(0, 1f, 1f);
 	// etSprite(0, 4, 4);
 	// etOn(0);
-    @MainLatter();
+    //@MainLatter();
     etClear(640.0f);
 	enmKillAll();
 	bossWait();
 	wait(100);
     setChapter(41);
-    dialogRead(0);
+    //dialogRead(0);
     @MainBoss();
 	while(1)
 	{	
