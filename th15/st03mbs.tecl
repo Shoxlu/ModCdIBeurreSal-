@@ -142,47 +142,41 @@ MBossCard1_448:
 +90: //94
     nop();
 	@MBossCard1_at2()async;
-	@MBossCard1_at3()async;
-	wait(60);
-	@MBossCard1_at()async;
-	while(1)
-	{
-	wait(60);
-	playSound(30);
-	wait(90);
-	@MBossCard1_at4()async;
-	@MBossCard1_at5()async;
-	@MBossCard1_at6()async;
-	playSound(6);
-	}
+	@MBossCard1_at3();
+	//@MBossCard1_at();
 }
 
 void MBossCard1_at()
 {
 	etNew(0);
-	etAim(0, 3);
-	etSprite(0, 21, 5);
-	etCount(0, 5:7:8:10, 1);
-	etSpeed(0, 2f, 2f);
+	etAim(0, 5);
+	etSprite(0, 33, 5);
+	etCount(0, 10:20:25:30, 1);
+	etSpeed(0, 2.5f, 2.5f);
+	etAngle(0, rad(90), 0f);
 	while(1)
     {
-		etAngle(0, RANDRAD, 0f);
         etOn(0);
-		wait(15);
+		wait(60);
     }
 }
 
 void MBossCard1_at2()
 {
+	float A = 0f;
 	etNew(1);
 	etAim(1, 3);
 	etSprite(1, 21, 1);
-	etCount(1,5:7:8:10, 1);
+	etCount(1,10:14:16:20, 1);
 	etSpeed(1, 2f, 2f);
 	etOffsetAbs(1, 100f, 80f);
+	etEx(1, 0, EX_OFFSCREEN, 1000, NEG, NEGF, NEGF);
 	while(1)
     {
-		etAngle(1, RANDRAD, 0f);
+		A += rad(11.578);
+		etAngle(1, A, 0f);
+		etExSet(1, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
+		etExSet(1, 1, 0, EX_ANGLE_ACCEL, 240, NEG, 0f, rad(0.25));
         etOn(1);
 		wait(12);
     }
@@ -190,15 +184,20 @@ void MBossCard1_at2()
 
 void MBossCard1_at3()
 {
+	float A = 0f;
 	etNew(2);
 	etAim(2, 3);
 	etSprite(2, 21, 3);
-	etCount(2, 5:7:8:10, 1);
+	etCount(2, 10:14:16:20, 1);
 	etSpeed(2, 2f, 2f);
 	etOffsetAbs(2, -100f, 80f);
+	etEx(2, 0, EX_OFFSCREEN, 1000, NEG, NEGF, NEGF);
 	while(1)
     {
-		etAngle(2, RANDRAD, 0f);
+		A += rad(11.578);
+		etAngle(2, A, 0f);
+		etExSet(2, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
+		etExSet(2, 1, 0, EX_ANGLE_ACCEL, 240, NEG, 0f, -rad(0.25));
         etOn(2);
 		wait(12);
     }
