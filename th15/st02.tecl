@@ -196,7 +196,7 @@ void GirlA_at2(float sign){
 	wait(30);
 	times(10)
 	{
-		etAngle(0, ABS_ANGLE+rad(45)*sign+RANDF2*rad(10), 0f);
+		etAngle(0, ABS_ANGLE+rad(60)*sign+RANDF2*rad(20), 0f);
 		etOn(0);
 		wait(40:30:20:20);
 	}
@@ -869,26 +869,26 @@ void MainSub00()
 {
 	// enmCreate("OpenerGirl", 0f, -100f, 100, 500, 1);
 	//wait(600);
-	times(16)
-	{
-		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
-		+30:
-	}
-	times(16)
-	{
-		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
-		enmCreate("GirlA03", -212f, 128f, 200, 500, 2);
-		enmCreate("GirlA04", 212f, 128f, 200, 500, 2);
-		+30:
-	}
-	times(16)
-	{
-		enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
-		enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
-		+30:
-	}
+	// times(16)
+	// {
+		// enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
+		// enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
+		// +30:
+	// }
+	// times(16)
+	// {
+		// enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
+		// enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
+		// enmCreate("GirlA03", -212f, 128f, 200, 500, 2);
+		// enmCreate("GirlA04", 212f, 128f, 200, 500, 2);
+		// +30:
+	// }
+	// times(16)
+	// {
+		// enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
+		// enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
+		// +30:
+	// }
 	wait(60);
 	times(16)
 	{
