@@ -1837,9 +1837,9 @@ main_440:
     // setChapter(3);
     // wait(2);
     enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	bossWait();
+	wait(1000000);
 	// wait(10000);
-	wait(160);
+    // wait(160);
     // @MainLatter();
     // wait(300);
     // wait(200);
