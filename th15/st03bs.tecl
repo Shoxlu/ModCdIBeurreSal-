@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
-    @Boss1();
+    @BossCard3();
     delete();
 }
 
@@ -686,20 +686,21 @@ void BossCard3_at()
 {
 	etNew(0);
 	etAim(0, 10);
-	etCount(0, 6, 12);
-	etSpeed(0, 1f, 2f);
+	//etCount(0, 6, 12:12:12:24);
+	etCount(0, 6:6:12:12, 12:12:12:18);
+	etSpeed(0, 1f, 2f:2f:2f:3f);
 	etSprite(0, 6, 13);
 	etEx(0, 0, EX_BOUNCE, 1, 12, NEGF, NEGF);
 	etEx(0, 0, EX_SETSPRITE, 6, 8, NEGF, NEGF);
 	while(1)
 	{
-	etAngle(0, RANDRAD, rad(10));
-	etOn(0);
-	moveRand(60, 4, 1.0f);
-	wait(240:240:210:180);
+		etAngle(0, RANDRAD, rad(10));
+		etOn(0);
+		moveRand(60, 4, 1.0f);
+		wait(240:240:210:210);
 	}
 } 
-
+//unused ?
 void BossCard3_at2()
 {
 	etNew(0);
