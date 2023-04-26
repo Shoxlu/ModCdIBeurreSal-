@@ -5,6 +5,70 @@ void MainBossSpell();
 
 void MainMBossSpell();
 
+void Attackgirl() //Test
+{
+	ins_569(1);
+	flagSet(12);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	wait(60);
+	@Attack_at();
+}
+
+void Attack_at()
+{
+	etNew(0);
+	etAim(0, 2);
+	etCount(0, 1, 1);
+	etSprite(0, 12, 2);
+	etSpeed(0, 3f, 3f);
+	while(1)
+	{
+		etAngle(0, RANDF2*rad(20), 0f);
+		etOn(0);
+		wait(5);
+	}
+}
+
+void SniperGirl() //Test
+{
+	ins_569(1);
+	flagSet(12);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	wait(60);
+	movePosTime(30, 0, 0f, 100f);
+	@Sniper_at();
+}
+
+void Sniper_at()
+{
+	etNew(0);
+	etAim(0, 2);
+	etCount(0, 1, 8);
+	etSprite(0, 13, 12);
+	etSpeed(0, 1f, 8f);
+	while(1)
+	{
+		etAngle(0, 0f, 0f);
+		etOn(0);
+		wait(60);
+	}
+}
+
+void OpenerGirl()
+{
+	ins_569(1);
+	flagSet(16);
+	anmSelect(2);
+	anmSetMain(0, 167);
+	movePosTime(30, 0, 0f, 100f);
+	wait(480);
+	flagClear(16);
+	//@Open_at();
+	wait(10000);
+}
+
 void GirlA01()
 {
     ins_569(1);
@@ -816,6 +880,8 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
+	enmCreate("OpenerGirl", 0f, -100f, 100, 500, 1);
+	wait(600);
 	times(16)
 	{
 		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
