@@ -79,6 +79,7 @@ void Boss1_at()
 	etSprite(0, 10, 1);
 	etSpeed(0, 10f, 10f);
 	etEx(0, 0, EX_VELTIME, 20, NEG, 2f, NEGF);
+	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	while(1)
 	{
 		times(35)
@@ -106,6 +107,7 @@ void Boss1_at2()
 	etCount(1, 5:10:15:20, 2);
 	etSprite(1, 2, 6);
 	etSpeed(1, 1f, 1.5f);
+	etEx(1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etAngle(1, RANDRAD, RANDRAD);

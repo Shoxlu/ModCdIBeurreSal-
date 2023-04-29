@@ -1284,7 +1284,7 @@ main_492:
 +60: //60
     nop();
 	// wait(100000);
-    //@MainFront();
+    @MainFront();
     etClear(640.0f);
     setChapter(3);
     wait(2);
