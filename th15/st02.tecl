@@ -77,6 +77,9 @@ void GirlA01()
 	flagSet(12);
 	anmSelect(2);
 	anmSetMain(0, 0);
+	dropMain(1);
+    dropExtra(1, 2);
+    dropExtra(2, 1);
     moveVel(rad(0), 3f);
 	wait(20);
 	moveVelTime(90, 0, rad(-180), 4f);
@@ -89,6 +92,9 @@ void GirlA02()
 	flagSet(12);
 	anmSelect(2);
 	anmSetMain(0, 0);
+	dropMain(1);
+    dropExtra(1, 2);
+    dropExtra(2, 1);
     moveVel(rad(180), 3f);
 	wait(20);
 	moveVelTime(90, 0, rad(360), 4f);
@@ -100,6 +106,9 @@ void GirlA03()
     ins_569(1);
 	flagSet(12);
 	anmSelect(2);
+	dropMain(1);
+    dropExtra(1, 1);
+    dropExtra(2, 2);
 	anmSetMain(0, 5);
     moveVel(rad(0), 2f);
 	wait(20);
@@ -114,6 +123,9 @@ void GirlA04()
 	anmSelect(2);
 	flagSet(12);
 	anmSetMain(0, 5);
+	dropMain(1);
+    dropExtra(1, 1);
+    dropExtra(2, 2);
     moveVel(rad(180), 2f);
 	wait(20);
 	moveVelTime(90, 0, rad(360), 2f);
@@ -126,6 +138,9 @@ void GirlA01_fear()
 	flagSet(12);
 	anmSelect(2);
 	anmSetMain(0, 0);
+	dropMain(1);
+    dropExtra(1, 2);
+    dropExtra(2, 1);
     moveVel(rad(0), 3f);
 	wait(20);
 	moveVelTime(45, 0,  RANDF2*rad(45), 4f);
@@ -138,6 +153,9 @@ void GirlA02_fear()
 	anmSelect(2);
 	flagSet(12);
 	anmSetMain(0, 5);
+	dropMain(1);
+    dropExtra(1, 2);
+    dropExtra(2, 1);
     moveVel(rad(180), 3f);
 	wait(20);
 	moveVelTime(45, 0,  rad(180)+RANDF2*rad(45), 4f);
@@ -150,6 +168,9 @@ void GirlA03_fear()
 	flagSet(12);
 	anmSelect(2);
 	anmSetMain(0, 0);
+	dropMain(1);
+    dropExtra(1, 1);
+    dropExtra(2, 2);
     moveVel(rad(0), 2f);
 	wait(20);
 	moveVelTime(45, 0,  RANDF2*rad(45), 2f);
@@ -163,6 +184,9 @@ void GirlA04_fear()
 	anmSelect(2);
 	flagSet(12);
 	anmSetMain(0, 5);
+	dropMain(1);
+    dropExtra(1, 1);
+    dropExtra(2, 2);
     moveVel(rad(180), 2f);
 	wait(20);
 	moveVelTime(45, 0, rad(180)+RANDF2*rad(45), 2f);
@@ -198,92 +222,71 @@ void GirlA_at2(float sign){
 	{
 		etAngle(0, ABS_ANGLE+rad(60)*sign+RANDF2*rad(20), 0f);
 		etOn(0);
-		wait(40:30:20:20);
+		wait(50:40:30:30);
 	}
 }
 
 
 void GirlB01()
 {
-    anmSelect(2);
+    
 	flagSet(12);
+	anmSelect(2);
     anmSetMain(0, 25);
     anmSetSprite(1, 93);
+	dropMain(2);
+    dropExtra(1, 4);
+	@GirlB_at() async;
 	moveVel(rad(0), 3f);
 	wait(10);
 	moveVelTime(60, 1, rad(70), 3f);
 	wait(60);
 	moveVelTime(60, 0, rad(0), 3f);
-	@GirlB_at();
+	
 	wait(1000);
 }
 
 void GirlB02()
 {
-    anmSelect(2);
 	flagSet(12);
+	anmSelect(2);
     anmSetMain(0, 25);
     anmSetSprite(1, 93);
+	dropMain(2);
+    dropExtra(1, 4);
+	@GirlB_at() async;	
 	moveVel(rad(180), 3f);
 	wait(10);
 	moveVelTime(60, 1, rad(110), 3f);
 	wait(60);
 	moveVelTime(60, 0, rad(180), 3f);
-	@GirlB_at();
 	wait(1000);
 }
 
 void GirlB_at()
 {
-
+	float angle = 0f;
+	int count = 6:8:10:15;
+	float inc = rad(360)/_f(count);
+	etNew(0);
+	etAim(0, 1);
+	etSpeed(0, 2f, 2.5f:3f:3f);
+	etCount(0, 1, 1:2:3:3);
+	etSprite(0, 12, 15);//to determine
+	wait(30);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	while(1){
+		angle = ANGLE_PLAYER;
+		times(count){
+			etAngle(0, angle, 0f:0f:rad(5):rad(5));
+			etOn(0);
+			angle += inc;
+			wait(2:2:1:1);
+		}
+		wait(60:60:40:30);
+	}
 }
 
-void GirlBlueA01()
-{
-    anmSelect(2);
-    anmSetMain(0, 0);
-    dropMain(2);
-    @GirlA01();
-    delete();
-}
-
-void GirlBlueA01e()
-{
-    anmSelect(2);
-    anmSetMain(0, 0);
-    dropMain(2);
-    @GirlA01_at() async;
-    @GirlA01();
-    delete();
-}
-
-void GirlBlueA02()
-{
-    anmSelect(2);
-    anmSetMain(0, 0);
-    dropMain(2);
-    @GirlA02();
-    delete();
-}
-
-void GirlBlueA02e()
-{
-    anmSelect(2);
-    anmSetMain(0, 0);
-    dropMain(2);
-    @GirlA02_at() async;
-    @GirlA02();
-    delete();
-}
-
-void GirlBlueA03()
-{
-    anmSelect(2);
-    anmSetMain(0, 0);
-    dropMain(2);
-    @GirlA03();
-    delete();
-}
 
 void GirlC01()
 {
@@ -692,54 +695,6 @@ GirlD02_at2_1096:
     if ($D--) goto GirlD02_at2_360 @ 0;
     return;
 }
-
-void GirlRedA01()
-{
-    anmSelect(2);
-    anmSetMain(0, 5);
-    dropMain(1);
-    @GirlA01();
-    delete();
-}
-
-void GirlRedA01e()
-{
-    anmSelect(2);
-    anmSetMain(0, 5);
-    dropMain(1);
-    @GirlA01_at() async;
-    @GirlA01();
-    delete();
-}
-
-void GirlRedA02()
-{
-    anmSelect(2);
-    anmSetMain(0, 5);
-    dropMain(1);
-    @GirlA02();
-    delete();
-}
-
-void GirlRedA02e()
-{
-    anmSelect(2);
-    anmSetMain(0, 5);
-    dropMain(1);
-    @GirlA02_at() async;
-    @GirlA02();
-    delete();
-}
-
-void GirlRedA03()
-{
-    anmSelect(2);
-    anmSetMain(0, 5);
-    dropMain(1);
-    @GirlA03();
-    delete();
-}
-
 void GirlTest()
 {
     goto GirlTest_80 @ 0;
@@ -868,28 +823,22 @@ MainMsgDebug_184:
 void MainSub00()
 {
 	// enmCreate("OpenerGirl", 0f, -100f, 100, 500, 1);
-	//wait(600);
-	// times(16)
-	// {
-		// enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		// enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
-		// +30:
-	// }
-	// times(16)
-	// {
-		// enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		// enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
-		// enmCreate("GirlA03", -212f, 128f, 200, 500, 2);
-		// enmCreate("GirlA04", 212f, 128f, 200, 500, 2);
-		// +30:
-	// }
-	// times(16)
-	// {
-		// enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
-		// enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
-		// +30:
-	// }
-	wait(60);
+	// wait(600);
+	times(16)
+	{
+		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
+		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
+		+30:
+	}
+	times(16)
+	{
+		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
+		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
+		enmCreate("GirlA03", -212f, 128f, 200, 500, 2);
+		enmCreate("GirlA04", 212f, 128f, 200, 500, 2);
+		+30:
+	}
+	wait(30);
 	times(16)
 	{
 		enmCreate("GirlA01_fear", -212f, 88f, 200, 500, 1);
@@ -898,6 +847,14 @@ void MainSub00()
 		enmCreate("GirlA04_fear", 212f, 128f, 200, 500, 2);
 		+30:
 	}
+	wait(60);
+	times(16)
+	{
+		enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
+		enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
+		+30:
+	}
+	
 	wait(200);
 }
 
@@ -1327,11 +1284,11 @@ main_492:
 +60: //60
     nop();
 	// wait(100000);
-    @MainFront();
+    //@MainFront();
     etClear(640.0f);
     setChapter(3);
     wait(2);
-    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	bossWait();
 	// wait(100000);
     // wait(160);

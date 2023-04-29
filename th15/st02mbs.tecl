@@ -149,8 +149,8 @@ void MBoss1_at()
 	etSprite(0, 23, 1);
 	etCopy(1, 0);
 	etSprite(1, 23, 7);
-	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
-	etEx(1, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etEx(1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etOffsetAbs(0, RANDF2*192f, 0f);
@@ -159,7 +159,7 @@ void MBoss1_at()
 		etAngle(1, rad(90)+ RANDF2*rad(10), 0f);
 		etOn(0);
 		
-		wait(6:5:4:3);
+		wait(7:6:5:4);
 		etOn(1);
 		wait(5);
 	}
@@ -167,17 +167,8 @@ void MBoss1_at()
 
 void MBoss1_at2()
 {
-	
 	enmCreate("Familiar", 100f, 0f, 100, 1, 0);
 	enmCreate("Familiar", -100f, 0f, 100, 1, 0);
-	while(1)
-	{
-		+1:
-	}
-	
-	
-	
-	
 }
 
 void Familiar()
@@ -188,9 +179,10 @@ void Familiar()
 	anmSetMain(0, 50);
 	etNew(0);
 	etAim(0, 9);
-	etCount(0, 5, 40);
+	etCount(0, 5, 25:30:35:40);
 	etSprite(0, 16, 3);
 	etAngle(0, 0f, rad(10));
+	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etOn(0);
