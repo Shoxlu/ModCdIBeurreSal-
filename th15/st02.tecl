@@ -83,7 +83,9 @@ void GirlA01()
     moveVel(rad(0), 3f);
 	wait(20);
 	moveVelTime(90, 0, rad(-180), 4f);
+	flagClear(12);
 	@GirlA_at();
+
 	wait(1800);
 }
 void GirlA02()
@@ -98,6 +100,7 @@ void GirlA02()
     moveVel(rad(180), 3f);
 	wait(20);
 	moveVelTime(90, 0, rad(360), 4f);
+	flagClear(12);
 	@GirlA_at();
 	wait(1800);
 }
@@ -129,6 +132,7 @@ void GirlA04()
     moveVel(rad(180), 2f);
 	wait(20);
 	moveVelTime(90, 0, rad(360), 2f);
+	flagClear(12);
 	@GirlA_at2(1f);
 	wait(1800);
 }
@@ -144,6 +148,7 @@ void GirlA01_fear()
     moveVel(rad(0), 3f);
 	wait(20);
 	moveVelTime(45, 0,  RANDF2*rad(45), 4f);
+	flagClear(12);
 	@GirlA_at() async;
 	wait(1800);
 }
@@ -159,6 +164,7 @@ void GirlA02_fear()
     moveVel(rad(180), 3f);
 	wait(20);
 	moveVelTime(45, 0,  rad(180)+RANDF2*rad(45), 4f);
+	flagClear(12);
 	@GirlA_at() async;
 	wait(1800);
 }
@@ -174,6 +180,7 @@ void GirlA03_fear()
     moveVel(rad(0), 2f);
 	wait(20);
 	moveVelTime(45, 0,  RANDF2*rad(45), 2f);
+	flagClear(12);
 	@GirlA_at2(1f) async;
 	wait(1800);
 }
@@ -190,6 +197,7 @@ void GirlA04_fear()
     moveVel(rad(180), 2f);
 	wait(20);
 	moveVelTime(45, 0, rad(180)+RANDF2*rad(45), 2f);
+	flagClear(12);
 	@GirlA_at2(-1f) async;
 	wait(1800);
 }
@@ -242,7 +250,7 @@ void GirlB01()
 	moveVelTime(60, 1, rad(70), 3f);
 	wait(60);
 	moveVelTime(60, 0, rad(0), 3f);
-	
+	flagClear(12);
 	wait(1000);
 }
 
@@ -260,6 +268,7 @@ void GirlB02()
 	moveVelTime(60, 1, rad(110), 3f);
 	wait(60);
 	moveVelTime(60, 0, rad(180), 3f);
+	flagClear(12);
 	wait(1000);
 }
 
