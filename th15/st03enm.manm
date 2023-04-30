@@ -325,20 +325,13 @@ entry entry1 {
     version: 8,
     name: "face/enemy3/face03no.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 170,
-    yOffset: 25,
+    width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 156816,
-    THTXFormat: 1,
-    THTXWidth: 198,
-    THTXHeight: 198,
-    THTXZero: 0,
     sprites: {
-        sprite33: { x: 0, y: 0, w: 198, h: 198 }
+        sprite33: { x: 0, y: 0, w: 900, h: 1000 }
     }
 }
 
@@ -347,20 +340,13 @@ entry entry2 {
     version: 8,
     name: "face/enemy3/face03n2.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 170,
-    yOffset: 25,
+    width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 156816,
-    THTXFormat: 1,
-    THTXWidth: 198,
-    THTXHeight: 198,
-    THTXZero: 0,
     sprites: {
-        sprite34: { x: 0, y: 0, w: 198, h: 198 }
+        sprite34: { x: 0, y: 0, w: 900, h: 1000 }
     }
 }
 
@@ -429,20 +415,13 @@ entry entry6 {
     version: 8,
     name: "face/enemy3/face03dp.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 170,
-    yOffset: 25,
+    width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 156816,
-    THTXFormat: 1,
-    THTXWidth: 198,
-    THTXHeight: 198,
-    THTXZero: 0,
     sprites: {
-        sprite38: { x: 0, y: 0, w: 198, h: 198 }
+        sprite38: { x: 0, y: 0, w: 900, h: 1000 }
     }
 }
 
@@ -451,20 +430,13 @@ entry entry7 {
     version: 8,
     name: "face/enemy3/face03pr.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 170,
-    yOffset: 25,
+    width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 156816,
-    THTXFormat: 1,
-    THTXWidth: 198,
-    THTXHeight: 198,
-    THTXZero: 0,
     sprites: {
-        sprite39: { x: 0, y: 0, w: 198, h: 198 }
+        sprite39: { x: 0, y: 0, w: 900, h: 1000 }
     }
 }
 
@@ -473,20 +445,13 @@ entry entry8 {
     version: 8,
     name: "face/enemy3/face03sp.png",
     format: 1,
-    width: 256,
-    height: 256,
-    xOffset: 170,
-    yOffset: 25,
+	width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 156816,
-    THTXFormat: 1,
-    THTXWidth: 198,
-    THTXHeight: 198,
-    THTXZero: 0,
     sprites: {
-        sprite40: { x: 0, y: 0, w: 198, h: 198 }
+        sprite40: { x: 0, y: 0, w: 900, h: 1000 }
     }
 }
 
@@ -515,18 +480,13 @@ entry entry10 {
     version: 8,
     name: "face/enemy3/face03bs.png",
     format: 1,
-    width: 512,
-    height: 1024,
+    width: 900,
+    height: 1000,
     memoryPriority: 0,
     lowResScale: 1,
     hasData: 1,
-    THTXSize: 1400000,
-    THTXFormat: 1,
-    THTXWidth: 500,
-    THTXHeight: 700,
-    THTXZero: 0,
     sprites: {
-        sprite42: { x: 0, y: 0, w: 500, h: 700 },
+        sprite42: { x: 0, y: 0, w: 900, h: 1000 },
         sprite43: { x: 0, y: 0, w: 1, h: 1 }
     }
 }
@@ -538,21 +498,21 @@ script script8 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(96.0f, 276.0f, 0.0f);
+    pos(46.0f, 26.0f, 0.0f); //-50 en x et -250 en y
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, 276.0f, 0.0f);
+    posTime(15, 2, 14.0f, 26.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 0.0f, 260.0f, 0.0f);
+    posTime(15, 5, -50.0f, 10.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
@@ -581,12 +541,12 @@ script script8 {
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 64.0f, 276.0f, 0.0f);
+    posTime(15, 2, 14.0f, 26.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 96.0f, 276.0f, 0.0f);
+    posTime(30, 6, 46.0f, 26.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
@@ -611,21 +571,21 @@ script script9 {
     ins_431(1);
     alpha(0);
     alphaTime(15, 0, 255);
-    pos(266.0f, 301.0f, 0.0f);
+    pos(46.0f, 26.0f, 0.0f);
     layer(25);
     resolutionMode(2);
     resampleMode(1);
     case(3);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 234.0f, 301.0f, 0.0f);
+	posTime(15, 2, 14.0f, 26.0f, 0.0f);
     colorTime(15, 0, 96, 96, 96);
 +15: // 15
     stop();
     case(2);
     layer(26);
     resolutionMode(2);
-    posTime(15, 5, 170.0f, 285.0f, 0.0f);
+    posTime(15, 5, -50.0f, 10.0f, 0.0f);
     colorTime(15, 0, 255, 255, 255);
 +15: // 30
     stop();
@@ -654,12 +614,12 @@ script script9 {
     case(8);
     layer(26);
     resolutionMode(2);
-    posTime(15, 2, 234.0f, 301.0f, 0.0f);
+    posTime(15, 2, 14.0f, 26.0f, 0.0f);
     colorTime(15, 0, 96, 96, 240);
 +15: // 78
     stop();
     case(1);
-    posTime(30, 6, 266.0f, 301.0f, 0.0f);
+    posTime(30, 6, 46.0f, 26.0f, 0.0f);
     alphaTime(30, 0, 0);
 +30: // 108
     delete();
@@ -936,18 +896,13 @@ entry entry15 {
     version: 8,
     name: "face/enemy3/face03ct.png",
     format: 1,
-    width: 512,
-    height: 512,
+    width: 380,
+    height: 448,
     memoryPriority: 0,
     lowResScale: 0,
     hasData: 1,
-    THTXSize: 566272,
-    THTXFormat: 1,
-    THTXWidth: 316,
-    THTXHeight: 448,
-    THTXZero: 0,
     sprites: {
-        sprite48: { x: 0, y: 0, w: 316, h: 448 }
+        sprite48: { x: 0, y: 0, w: 380, h: 448 }
     }
 }
 

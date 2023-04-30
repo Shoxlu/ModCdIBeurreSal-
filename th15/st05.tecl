@@ -1,4 +1,4 @@
-anim { "enemy.anm"; "st05enm.anm"; }
+anim { "enemy.anm"; "st05enm.anm"; "special.anm"; }
 ecli { "default.ecl"; "st05mbs.ecl"; "st05bs.ecl"; }
 
 void MainBossSpell();

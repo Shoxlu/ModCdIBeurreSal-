@@ -62,15 +62,130 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-    @Boss1_at()async;
+    //@Boss1_at99()async;
 	while(1)
 	{
-	wait(180);
+	F0 = 0f;
+	I0 = 1;
+	enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
+	wait(240);
 	moveRand(60, 4, 1.0f);
+	wait(60);
 	}
 }
 
-void Boss1_at()
+void MasterSpark()
+{
+
+	int waitTime = 1;
+	float A = 0;
+	int loop = 300:300:320:350;
+	flagSet(3);
+	deathAnm(0, -1);
+	A = ANGLE_PLAYER;
+	GF1 = A;
+	anmSelect(4);
+    anmSetSprite(0, 0);//sprite MasterSpark
+	anmRotate(0, A+F0);
+	BossTrace() async;
+    MasterSparkHitbox() async;
+    wait(60);
+    setScreenShake(loop*waitTime, 1, 1);
+	playSound(49);
+    times(loop)//rotation MasterSpark
+    {
+        anmRotate(0, A+F0);
+        wait(waitTime);
+		A = A + (rad(1)/(_f(loop)/40f))*_f(I0);
+        GF1 = A;
+    }
+	GI0 = 1;
+    anmSwitch(0, 1);//disparition MasterSpark
+    wait(6000);
+}
+void MasterSpark1()
+{
+	deathAnm(0, -1);
+	int waitTime = 1;
+	float A = 0;
+	int loop = 200;
+	flagSet(3);
+	A = 0f;
+	GF1 = A;
+	anmSelect(4);
+    anmSetSprite(0, 0);//sprite MasterSpark
+	anmRotate(0, A+F0);
+	BossTrace() async;
+    MasterSparkHitbox() async;
+    wait(60);
+    setScreenShake(loop*waitTime, 1, 1);
+	playSound(49);
+	GI0 = 1;
+    anmSwitch(0, 1);//disparition MasterSpark
+    wait(6000);
+}
+void BossTrace()
+{
+	while(1)
+	{
+		movePos(BOSS_X, BOSS_Y);
+		wait(1);
+	}
+}
+void MasterSparkHitbox()
+{
+	float range, A, B;
+	A = 0f;
+	range = 110f;
+	wait(60);
+	times(20)
+	{
+		enmCreate("MasterSparkHitboxBig", cos(GF1+F0)*range, sin(GF1+F0)*range, _S(range), 100, 1);
+		range = range + 448f/20f;
+	}
+	F1 = rad(-20);
+	times(1)
+	{
+		enmCreate("MasterSparkWallShot", BOSS_X, BOSS_Y, 100, 100, 1);
+		F1 = F1 + rad(40)/20f;
+	}
+}
+void MasterSparkHitboxBig()
+{
+	flagSet(3);
+	flagSet(512);
+	deathAnm(0, -1);
+	GI0 = 0;
+	GI1 = 1;
+	float A = 0f;
+	int Interrupt = 30;
+	setHitbox(A, A);
+	flagClear(2);
+	times(30)
+	{
+		A = A + (170f/30f);
+		movePos(cos(GF1+F0) * _f(LIFE)+BOSS_X, sin(GF1+F0)* _f(LIFE)+BOSS_Y);
+		setHitbox(A, A);
+		wait(1);
+	}
+	setHitbox(170f, 170f);
+	while(GI0 == 0)
+	{
+		movePos(cos(GF1+F0) * _f(LIFE)+BOSS_X, sin(GF1+F0)* _f(LIFE)+BOSS_Y);
+		wait(1);
+	}
+	times(10)
+	{
+		A = A - (170f/10f);
+		setHitbox(A, A);
+		wait(1);
+	}
+	flagSet(3);
+}
+
+
+
+void Boss1_at99()
 {
     float A = 0;
 	float B = 0;
