@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(13000);
-    @BossCard2();
+    @Boss1();
     delete();
 }
 
@@ -409,7 +409,6 @@ BossCard1_488:
     $CAPTURE = 1;
 	setNext(0, 1, 4000, "Boss5");
     spell(70, 4000, 500000, "Puissance max : Å· Moon Breaker Å‚");
-	playSound(73);
     movePosTime(60, 4, 0.0f, 122.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 128.0f);
     anm316(0, 0);
