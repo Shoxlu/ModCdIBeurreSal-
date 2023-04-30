@@ -100,7 +100,7 @@ void Boss1_at()
 void Boss2()
 {
     setInvuln(120);
-    lifeSet(19100);
+    lifeSet(18200);
     unless ($TIMEOUT == 0) goto Boss2_200 @ 0;
     etCancel(640.0f);
     goto Boss2_220 @ 0;
@@ -134,8 +134,8 @@ Boss2_544:
     $CAPTURE = 1;
     anmSelect(3);
     anmSetMain(0, 0);
-    setNext(0, 2100, 2520, "BossCard2");
-    lifeMarker(0, 2100.0f, -24448);
+    setNext(0, 2600, 2520, "BossCard2");
+    lifeMarker(0, 2600.0f, -24448);
     stars(2);
     anmSelect(3);
     anmSetMain(0, 0);
@@ -402,15 +402,6 @@ void BossCard1_at()
 	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
 	etExSet(0, 3, 0, EX_VEL, NEG, NEG, NEGF, 2.5f);
 	etOn(0);
-	!HL
-	etCount(0, 5, 1);
-	etSprite(0, 6, 10);
-	etExSet(0, 0, 0, EX_WAIT, 6, NEG, NEGF, NEGF);
-	etExSet(0, 1, 0, EX_VEL, NEG, NEG, NEGF, 0.0f);
-	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
-	etExSet(0, 3, 0, EX_VEL, NEG, NEG, NEGF, 1.5f);
-	etOn(0);
-	!*
 	wait(25:20:20:20);
 	}
 }
@@ -479,6 +470,7 @@ BossCard2_468:
 	GI1 = 1;
 	setBoss(1);
     nop();
+	wait(60);
 	@BossCard2_at()async;
 	wait(120);
 	@BossCard2_at2()async;
