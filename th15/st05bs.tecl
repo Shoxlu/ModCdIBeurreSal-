@@ -63,6 +63,8 @@ void Boss1()
     anmPlay(1, 86);
     playSound(6);
     //@Boss1_at99()async;
+	anm316(0, 0);
+	wait(1000);
 	while(1)
 	{
 	F0 = 0f;
