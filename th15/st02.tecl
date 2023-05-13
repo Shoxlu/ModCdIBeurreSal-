@@ -6,7 +6,7 @@ void MainBossSpell();
 void MainMBossSpell();
 
 //Test
-void Attackgirl() 
+void Attackgirl()
 {
 	ins_569(1);
 	flagSet(12);
@@ -32,7 +32,7 @@ void Attack_at()
 }
 
 //Test
-void SniperGirl() 
+void SniperGirl()
 {
 	ins_569(1);
 	flagSet(12);
@@ -237,7 +237,7 @@ void GirlA_at2(float sign){
 
 void GirlB01()
 {
-    
+
 	flagSet(12);
 	anmSelect(2);
     anmSetMain(0, 25);
@@ -262,7 +262,7 @@ void GirlB02()
     anmSetSprite(1, 93);
 	dropMain(2);
     dropExtra(1, 4);
-	@GirlB_at() async;	
+	@GirlB_at() async;
 	moveVel(rad(180), 3f);
 	wait(10);
 	moveVelTime(60, 1, rad(110), 3f);
@@ -863,7 +863,7 @@ void MainSub00()
 		enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
 		+30:
 	}
-	
+
 	wait(200);
 }
 
