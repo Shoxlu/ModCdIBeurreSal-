@@ -1,0 +1,214 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+        2: {script: "script2", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(112.0, 270.0);
+    textAdd("ここがさっきの月の兎の");
+    textAdd("基地なのかな");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("お待ちしておりましたー");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
+    intro(0);
++4: // 140
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("清蘭から話を聞いたわ");
+    textAdd("面白い奴と交戦したって……");
++4: // 144
+    textPause(600);
++4: // 148
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("あれ？");
+    textAdd("あんた見た事がある気が");
++4: // 152
+    textPause(600);
++4: // 156
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("私はあんたなんか知らないわ");
++4: // 160
+    textPause(600);
++4: // 164
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("昔、月の都に来た事あるでしょ？");
++4: // 168
+    textPause(600);
++4: // 172
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("ま、まあね");
++4: // 176
+    textPause(600);
++4: // 180
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    musicBoss();
+    textAdd("そりゃ面白いや");
+    textAdd("手加減無しで遊べそうね！");
++4: // 184
+    textPause(600);
++4: // 188
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("|56,16,ミス");
+    textAdd("一回の被弾でも許されない");
+    textAdd("|5,10,ルナティック");
+    textAdd("月の流儀に度肝を抜くが良い！");
++4: // 192
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 222
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(7);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
++30: // 34
+    skippable(1);
+    bubblePos(112.0, 270.0);
+    textAdd("まだ始まったばかりなのに");
+    textAdd("ちょっとは手加減して欲しいもんだわ");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("ああ、地上にもずいぶんと");
+    textAdd("強い奴がいたもんね");
++4: // 46
+    textPause(600);
++4: // 50
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("食べ物も色々あるし");
+    textAdd("私も地上に生まれたかったわぁ");
++4: // 54
+    textPause(600);
++4: // 58
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("えーっと");
+    textAdd("今ってどういう状況なのかしら");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("我々は幻想郷を浄化しに");
+    textAdd("来たんだけど");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("|54,12,したっぱ");
+    textAdd("我々、月の兎にとっては");
+    textAdd("どうでもいい話");
++4: // 78
+    textPause(600);
++4: // 82
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("はあ");
++4: // 86
+    textPause(600);
++4: // 90
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("行ってみて自分で");
+    textAdd("判断するといいわ");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("|37,10,ルナティックキングダム");
+    textAdd("いざ　月　の　都　へ！");
++4: // 102
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 103
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 133
+    end();
+}
+
+
+script script2 {
+	skippable(0);
+	bubblePos(224.0, 140.0);
+    textAdd("まだ始まったばかりなのに");
+	textPause(120);
++30: // 222
+	playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
+	eclResume();
+    textClear();
+    end();
+}

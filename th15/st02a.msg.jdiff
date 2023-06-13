@@ -1,0 +1,116 @@
+{
+    "0": {
+        "34_0": {
+            "lines": [
+                "Est-ce donc ici la base du lapin lunaire",
+                "de tout à l'heure ?"
+            ]
+        },
+        "102_0": {
+            "lines": [
+                "Je t'attendais."
+            ]
+        },
+        "140_0": {
+            "lines": [
+                "J'ai parlé avec Seiran.",
+                "Elle m'a dit s'être battue avec une personne amusante."
+            ]
+        },
+        "148_0": {
+            "lines": [
+                "Attends.",
+                "J'ai l'impression de t'avoir déjà vue..."
+            ]
+        },
+        "156_0": {
+            "lines": [
+                "Moi, je ne te connais pas en tout cas."
+            ]
+        },
+        "164_0": {
+            "lines": [
+                "Tu es déjà venue à la capitale Lunaire ",
+                "il y a longtemps, n'est-ce pas ?"
+            ]
+        },
+        "172_0": {
+            "lines": [
+                "On peut dire ça comme ça."
+            ]
+        },
+        "180_0": {
+            "lines": [
+                "Ça devient intéressant ! Je pense que je vais",
+                "pouvoir m'amuser avec toi sans retenir mes coups."
+            ]
+        },
+        "188_0": {
+            "lines": [
+                "Sois surprise par le style de la Lune",
+                "qui ne pardonne aucune erreur."
+            ]
+        }
+    },
+    "1": {
+        "34_0": {
+            "lines": [
+                "Je viens tout juste de commencer ;",
+                "j'aurais aimé que tu retiennes un peu tes coups !"
+            ]
+        },
+        "42_0": {
+            "lines": [
+                "Ah, il y a aussi des gens assez forts",
+                "sur Terre."
+            ]
+        },
+        "50_0": {
+            "lines": [
+                "Et puis il y a aussi plein de plats différents...",
+                "Ah... comme j'aurais aimé naître sur Terre !"
+            ]
+        },
+        "58_0": {
+            "lines": [
+                "Hem...",
+                "Quelle est la situation actuelle, sinon ?"
+            ]
+        },
+        "66_0": {
+            "lines": [
+                "Nous sommes venus pour purifier",
+                "la terre des Illusions, mais bon..."
+            ]
+        },
+        "74_0": {
+            "lines": [
+                "Nous, en tant que lapins lunaires subordonnés,",
+                "c'est une question qui nous intéresse peu."
+            ]
+        },
+        "90_0": {
+            "lines": [
+                "Fais-toi ta propre opinion",
+                "en essayant de t'y rendre par toi-même."
+            ]
+        },
+        "98_0": {
+            "lines": [
+                "Bien, en route pour la capitale Lunaire !"
+            ]
+        },
+        "82_0": {
+            "lines": [
+                "Ah."
+            ]
+        }
+    },
+	"2": {
+        "0_0": {
+            "lines": [
+                "Que la révolte commence !"
+            ]
+        }
+    }
+}

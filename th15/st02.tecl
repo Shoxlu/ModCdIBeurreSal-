@@ -835,32 +835,32 @@ void MainSub00()
 	// wait(600);
 	times(16)
 	{
-		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
+		enmCreate("GirlA01", -212f, 88f, 100, 500, 1);
+		enmCreate("GirlA02", 212f, 88f, 100, 500, 1);
 		+30:
 	}
 	times(16)
 	{
-		enmCreate("GirlA01", -212f, 88f, 200, 500, 1);
-		enmCreate("GirlA02", 212f, 88f, 200, 500, 1);
-		enmCreate("GirlA03", -212f, 128f, 200, 500, 2);
-		enmCreate("GirlA04", 212f, 128f, 200, 500, 2);
+		enmCreate("GirlA01", -212f, 88f, 100, 500, 1);
+		enmCreate("GirlA02", 212f, 88f, 100, 500, 1);
+		enmCreate("GirlA03", -212f, 128f, 100, 500, 2);
+		enmCreate("GirlA04", 212f, 128f, 100, 500, 2);
 		+30:
 	}
 	wait(30);
 	times(16)
 	{
-		enmCreate("GirlA01_fear", -212f, 88f, 200, 500, 1);
-		enmCreate("GirlA02_fear", 212f, 88f, 200, 500, 1);
-		enmCreate("GirlA03_fear", -212f, 128f, 200, 500, 2);
-		enmCreate("GirlA04_fear", 212f, 128f, 200, 500, 2);
+		enmCreate("GirlA01_fear", -212f, 88f, 100, 500, 1);
+		enmCreate("GirlA02_fear", 212f, 88f, 100, 500, 1);
+		enmCreate("GirlA03_fear", -212f, 128f, 100, 500, 2);
+		enmCreate("GirlA04_fear", 212f, 128f, 100, 500, 2);
 		+30:
 	}
 	wait(60);
 	times(16)
 	{
-		enmCreate("GirlB01", -212f, 128f, 200, 500, 1);
-		enmCreate("GirlB02", 212f, 128f, 200, 500, 1);
+		enmCreate("GirlB01", -212f, 128f, 100, 500, 1);
+		enmCreate("GirlB02", 212f, 128f, 100, 500, 1);
 		+30:
 	}
 
@@ -1299,9 +1299,7 @@ main_492:
     wait(2);
     enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	bossWait();
-	// wait(100000);
-    // wait(160);
-    // @MainLatter();
+    @MainLatter();
     // wait(300);
     // wait(60);
     // enmKillAll();

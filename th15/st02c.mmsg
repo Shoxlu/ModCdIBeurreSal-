@@ -1,0 +1,239 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+        2: {script: "script2", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("こんなに家の近くに基地が");
+    textAdd("あったなんて盲点でした");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("お待ちしておりましたー");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
++4: // 140
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    intro(0);
++4: // 144
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("清蘭から話を聞いたわ");
+    textAdd("面白い奴と交戦したって……");
++4: // 148
+    textPause(600);
++4: // 152
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("ここの湖はうちの管理区域なの");
++4: // 156
+    textPause(600);
++4: // 160
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("勝手なことしないでくれる？");
++4: // 164
+    textPause(600);
++4: // 168
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("貴方、私達が何者なのか");
+    textAdd("判っているの？");
++4: // 172
+    textPause(600);
+    musicBoss();
++4: // 176
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("|116,9,イーグルラヴィ");
+    textAdd("私達は月の兎の調査部隊");
++4: // 180
+    textPause(600);
++4: // 184
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("穢れた地上の指図など");
+    textAdd("受けないわ");
++4: // 188
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 218
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(340.0, 280.0);
+    bubbleType(0);
+    textAdd("へーやるじゃん");
+    textAdd("強いわね");
++4: // 38
+    textPause(600);
++4: // 42
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("月の兎……");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("永遠亭のお仲間ね");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("私達は現役の兎兵士であり");
+    textAdd("残念ながら彼女らは敵なのよ");
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("うーん……");
+    textAdd("するってぇと");
++4: // 70
+    textPause(600);
++4: // 74
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("私にとって貴方達は");
+    textAdd("敵なのね？");
++4: // 78
+    textPause(600);
++4: // 82
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("敵では無い");
+    textAdd("味方ですら無い");
++4: // 86
+    textPause(600);
++4: // 90
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("地上人は浄化の過程において");
+    textAdd("非常に良い働きをしてくれた");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("……らしいよ");
+    textAdd("|56,16,うさぎ");
+    textAdd("うちら下っ端にはよく判らないけど");
++4: // 102
+    textPause(600);
++4: // 106
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("よく判らない……ね");
++4: // 110
+    textPause(600);
++4: // 114
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("さあどうする？");
++4: // 118
+    textPause(600);
++4: // 122
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("貴方が望むなら");
+    textAdd("この先に進んでも良いわよ");
++4: // 126
+    textPause(600);
++4: // 130
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(340.0, 280.0);
+    textAdd("|40,16,ここ");
+    textAdd("私は地上が気に入ったので");
+    textAdd("残るけどね");
++4: // 134
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 135
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 165
+    end();
+}
+
+script script2 {
+	skippable(0);
+	bubblePos(224.0, 140.0);
+    textAdd("まだ始まったばかりなのに");
+	textPause(120);
++30: // 222
+	playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
+	eclResume();
+    textClear();
+    end();
+}

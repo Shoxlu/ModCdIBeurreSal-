@@ -1,0 +1,114 @@
+{
+    "0": {
+        "34_0": {
+            "lines": [
+                "Pour une raison quelconque, les attaques des fées",
+                "sont plus violentes que d'habitude."
+            ]
+        },
+        "42_0": {
+            "lines": [
+                "Il vaut vraiment mieux que je",
+                "fasse ce qu'Eirin a dit."
+            ]
+        },
+        "110_0": {
+            "lines": [
+                "Je t'attendais."
+            ]
+        },
+        "152_0": {
+            "lines": [
+                "Seiran m'a parlé de toi.",
+                "Elle m'a dit s'être battue avec quelqu'un d'amusant."
+            ]
+        },
+        "160_0": {
+            "lines": [
+                "T'es un lapin lunaire aussi ?"
+            ]
+        },
+        "168_0": {
+            "lines": [
+                "Eirin m'a dit que quelqu'un a donné l'ordre",
+                "d'attaque depuis la Lune."
+            ]
+        },
+        "176_0": {
+            "lines": [
+                "J'imagine bien.",
+                "Mais nous ne sommes pas venues exactement pour vous attaquer."
+            ]
+        },
+        "184_0": {
+            "lines": [
+                "Nous sommes plutôt ici pour vous « purifier »."
+            ]
+        },
+        "192_0": {
+            "lines": [
+                "Bon, peu importe.",
+                "Je devrais finir mon travail et prendre une pause."
+            ]
+        },
+        "200_0": {
+            "lines": [
+                "Les Terriens, à qui sont pardonnées leurs erreurs,",
+                "ne peuvent pas comprendre notre dur labeur."
+            ]
+        }
+    },
+    "1": {
+        "34_0": {
+            "lines": [
+                "Oh, tu es forte."
+            ]
+        },
+        "42_0": {
+            "lines": [
+                "Ouais, c'était intense et soudain.",
+                "Je ne me réjouis pas de voir la suite."
+            ]
+        },
+        "50_0": {
+            "lines": [
+                "Qu'est-ce que tu comptes faire maintenant ?"
+            ]
+        },
+        "58_0": {
+            "lines": [
+                "Hein ?",
+                "Qu'est-ce que tu veux dire par là ?"
+            ]
+        },
+        "66_0": {
+            "lines": [
+                "Et bien, la Terre va bientôt être purifiée..."
+            ]
+        },
+        "74_0": {
+            "lines": [
+                "Je pense que je ferais mieux d'arrêter cet assaut lunaire..."
+            ]
+        },
+        "82_0": {
+            "lines": [
+                "Vu que tu es si forte, tu pourrais aussi bien ",
+                "aller directement là-bas."
+            ]
+        },
+        "90_0": {
+            "lines": [
+                "À la Terre Pure démentielle...",
+                "La capitale Lunaire."
+            ]
+        }
+    },
+	"2": {
+        "0_0": {
+            "lines": [
+                "Fées ! A l'attaque !"
+            ]
+        }
+    }
+}
