@@ -9,10 +9,11 @@ void MainMBossSpell();
 void Attackgirl()
 {
 	ins_569(1);
-	flagSet(12);
-	anmSelect(2);
-	anmSetMain(0, 0);
-	wait(60);
+	dropExtra(2, 1);
+	//flagSet(12);
+	//anmSelect(2);
+	//anmSetMain(0, 0);
+	wait(10);
 	@Attack_at();
 }
 
@@ -22,12 +23,13 @@ void Attack_at()
 	etAim(0, 2);
 	etCount(0, 1, 1);
 	etSprite(0, 12, 2);
-	etSpeed(0, 3f, 3f);
+	etSpeed(0, 4f, 4f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
-		etAngle(0, RANDF2*rad(20), 0f);
+		etAngle(0, RANDF2*rad(30), 0f);
 		etOn(0);
-		wait(5);
+		wait(17:13:10:7);
 	}
 }
 
@@ -50,6 +52,7 @@ void Sniper_at()
 	etCount(0, 1, 8);
 	etSprite(0, 13, 12);
 	etSpeed(0, 1f, 8f);
+	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etAngle(0, 0f, 0f);
@@ -760,16 +763,8 @@ void MainFront()
 
 void MainLatter()
 {
-    @MainLatterB() async;
-    @MainSub04();
-    bossWait();
-    @MainSub05();
-    wait(180);
-    ins_571();
-    etClear(640.0f);
-    setChapter(5);
-    wait(60);
-    @MainSub06();
+    @MainSub01();
+	wait(1000);
     return;
 }
 
@@ -869,62 +864,59 @@ void MainSub00()
 
 void MainSub01()
 {
-    enmCreate("GirlC01", 128.0f, -24.0f, 700, 1000, 1);
-    enmCreate("GirlC01", -128.0f, -24.0f, 700, 1000, 1);
-    wait(120);
-    enmCreate("GirlC01", 192.0f, -24.0f, 700, 1000, 1);
-    enmCreate("GirlC01", -64.0f, -24.0f, 700, 1000, 1);
-    wait(120);
-    enmCreate("GirlC01", 64.0f, -24.0f, 700, 1000, 1);
-    enmCreate("GirlC01", -192.0f, -24.0f, 700, 1000, 1);
-    wait(120);
-    enmCreate("GirlC01", 32.0f, -24.0f, 700, 1000, 1);
-    enmCreate("GirlC01", -32.0f, -24.0f, 700, 1000, 1);
-    wait(60);
+	MainSub01a() async;
+	MainSub01b() async;
+	wait(60);
+	MainSub01c();
     return;
 }
+void MainSub01b(){
+	times(7){
+		F0 = rad(0);
+		enmCreateA("Attackgirl01", -218f, 128f+RANDF2*10f, 50, 100, 1);
+		wait(10);
+	}
+}
+void MainSub01a(){
+	times(7){
+		F0 = rad(180);
+		enmCreateA("Attackgirl01", 218f, 128f+RANDF2*10f, 50, 100, 1);
+		wait(10);
+	}
+}
 
-void MainSub01b()
-{
-    return;
+void MainSub01c(){
+	times(20){
+		F0 = rad(180);
+		enmCreateA("Attackgirl02", 0f+RANDF*10f, -10f, 50, 100, 1);
+		wait(10);
+		F0 = rad(0);
+		enmCreateA("Attackgirl02", 0f-RANDF*10f, -10f, 50, 100, 1);
+		wait(10);
+	}
+}
+
+void Attackgirl01(){
+	flagSet(4);
+	moveVel(F0, 3f);
+	moveVelTime(60, 1, F0, 4f);
+	anmSelect(2);
+	anmSetMain(0, (RAND%2)*5);
+	Attackgirl();
+}
+
+void Attackgirl02(){
+	flagSet(8);
+	moveVel(rad(90), 4f);
+	moveVelTime(60, 1, F0, 7f);
+	anmSelect(2);
+	anmSetMain(0, (RAND%2)*5);
+	Attackgirl();
 }
 
 void MainSub02()
-{
-    var A, B, C, D, E;
-    %A = _f(0);
-    wait(2);
-    $B = 3;
-    goto MainSub02_544 @ 0;
-MainSub02_160:
-    %A = _f(0);
-    $C = 9;
-    goto MainSub02_500 @ 0;
-MainSub02_264:
-    %A = %A + _f(16);
-    enmCreate("Phantom01B", %A, -24.0f, 100, 1000, 1);
-    enmCreateM("Phantom01B", -%A, -24.0f, 100, 1000, 1);
-    wait(30);
-MainSub02_500:
-    if ($C--) goto MainSub02_264 @ 0;
-MainSub02_544:
-    if ($B--) goto MainSub02_160 @ 0;
-    $D = 3;
-    goto MainSub02_1036 @ 0;
-MainSub02_652:
-    %A = _f(0);
-    $E = 9;
-    goto MainSub02_992 @ 0;
-MainSub02_756:
-    %A = %A + _f(16);
-    enmCreate("Phantom01R", %A, -24.0f, 100, 1000, 1);
-    enmCreateM("Phantom01R", -%A, -24.0f, 100, 1000, 1);
-    wait(30);
-MainSub02_992:
-    if ($E--) goto MainSub02_756 @ 0;
-MainSub02_1036:
-    if ($D--) goto MainSub02_652 @ 0;
-    return;
+{	
+
 }
 
 void MainSub03()
@@ -1293,12 +1285,12 @@ main_492:
 +60: //60
     nop();
 	// wait(100000);
-    @MainFront();
-    etClear(640.0f);
-    setChapter(3);
-    wait(2);
-    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	bossWait();
+    // @MainFront();
+    // etClear(640.0f);
+    // setChapter(3);
+    // wait(2);
+    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	// bossWait();
     @MainLatter();
     // wait(300);
     // wait(60);
