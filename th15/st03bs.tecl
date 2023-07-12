@@ -80,20 +80,22 @@ void Boss1_at()
     etCount(0, 6:8:10:12, 1);
     etSpeed(0, 2.5f, 2.5f);
 	//etEx(0, 0, EX_VELTIME, 30, NEG, 2f, NEGF); //gravité
-    
+    etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
     while(1)
     {
-        etOn(0);
-        A += cos(B);
+		etOn(0);
+		A += cos(B);
 		B += 0.03f;
 		C += 2;
-		if (C > 14)
-		{
-			C = 2;
-		}
-        etAngle(0, A, 0f);
-		etSprite(0, 9, C);
-        wait(2);
+		etAngle(0, A, 0f);
+		etSprite(0, 9, 1);
+		wait(2);
+		etOn(0);
+		A += sin(B);
+		B -= 0.01f;
+		etAngle(0, A, 0f);
+		etSprite(0, 9, 3);
+		wait(2);
     }
 }
 
