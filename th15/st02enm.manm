@@ -54,33 +54,33 @@ offset12:
 +7: // 14
     sprite(sprite2);
 +7: // 21
-    sprite(sprite1);
+    sprite(sprite3);
 +7: // 28
     sprite(sprite0);
 +7: // 35
-    sprite(sprite1);
+    sprite(sprite4);
 +7: // 42
-    sprite(sprite2);
+    sprite(sprite0);
 +7: // 49
     sprite(sprite1);
 +7: // 56
     posTime(49, 9, 0.0f, 2.0f, 0.0f);
-    sprite(sprite0);
-+7: // 63
-    sprite(sprite1);
-+7: // 70
     sprite(sprite2);
++7: // 63
+    sprite(sprite3);
++7: // 70
+    sprite(sprite0);
 +7: // 77
-    sprite(sprite1);
+    sprite(sprite4);
 +7: // 84
     sprite(sprite0);
 +7: // 91
-    sprite(sprite4);
-+7: // 98
-    sprite(sprite3);
-+7: // 105
     sprite(sprite1);
-+7: // 112
++7: // 98
+	sprite(sprite2);
++7: // 98
+	sprite(sprite3);
++7: // 98	
     jmp(offset12, 0);
 }
 
@@ -125,42 +125,42 @@ script script3 {
     sprite(sprite13);
 +8: // 16
     nop();
-offset44:
+offset12:
     posTime(49, 9, 0.0f, -2.0f, 0.0f);
     sprite(sprite0);
-+7: // 23
++7: // 7
     sprite(sprite1);
-+7: // 30
++7: // 14
     sprite(sprite2);
-+7: // 37
-    sprite(sprite1);
-+7: // 44
-    sprite(sprite0);
-+7: // 51
-    sprite(sprite1);
-+7: // 58
-    sprite(sprite2);
-+7: // 65
-    sprite(sprite1);
-+7: // 72
-    posTime(49, 9, 0.0f, 2.0f, 0.0f);
-    sprite(sprite0);
-+7: // 79
-    sprite(sprite1);
-+7: // 86
-    sprite(sprite2);
-+7: // 93
-    sprite(sprite1);
-+7: // 100
-    sprite(sprite0);
-+7: // 107
-    sprite(sprite4);
-+7: // 114
++7: // 21
     sprite(sprite3);
-+7: // 121
++7: // 28
+    sprite(sprite0);
++7: // 35
+    sprite(sprite4);
++7: // 42
+    sprite(sprite0);
++7: // 49
     sprite(sprite1);
-+7: // 128
-    jmp(offset44, 16);
++7: // 56
+    posTime(49, 9, 0.0f, 2.0f, 0.0f);
+    sprite(sprite2);
++7: // 63
+    sprite(sprite3);
++7: // 70
+    sprite(sprite0);
++7: // 77
+    sprite(sprite4);
++7: // 84
+    sprite(sprite0);
++7: // 91
+    sprite(sprite1);
++7: // 98
+	sprite(sprite2);
++7: // 98
+	sprite(sprite3);
++7: // 98	
+    jmp(offset12, 16);
 }
 
 script script4 {
@@ -170,42 +170,42 @@ script script4 {
     sprite(sprite8);
 +8: // 16
     nop();
-offset44:
+offset12:
     posTime(49, 9, 0.0f, -2.0f, 0.0f);
     sprite(sprite0);
-+7: // 23
++7: // 7
     sprite(sprite1);
-+7: // 30
++7: // 14
     sprite(sprite2);
-+7: // 37
-    sprite(sprite1);
-+7: // 44
-    sprite(sprite0);
-+7: // 51
-    sprite(sprite1);
-+7: // 58
-    sprite(sprite2);
-+7: // 65
-    sprite(sprite1);
-+7: // 72
-    posTime(49, 9, 0.0f, 2.0f, 0.0f);
-    sprite(sprite0);
-+7: // 79
-    sprite(sprite1);
-+7: // 86
-    sprite(sprite2);
-+7: // 93
-    sprite(sprite1);
-+7: // 100
-    sprite(sprite0);
-+7: // 107
-    sprite(sprite4);
-+7: // 114
++7: // 21
     sprite(sprite3);
-+7: // 121
++7: // 28
+    sprite(sprite0);
++7: // 35
+    sprite(sprite4);
++7: // 42
+    sprite(sprite0);
++7: // 49
     sprite(sprite1);
-+7: // 128
-    jmp(offset44, 16);
++7: // 56
+    posTime(49, 9, 0.0f, 2.0f, 0.0f);
+    sprite(sprite2);
++7: // 63
+    sprite(sprite3);
++7: // 70
+    sprite(sprite0);
++7: // 77
+    sprite(sprite4);
++7: // 84
+    sprite(sprite0);
++7: // 91
+    sprite(sprite1);
++7: // 98
+	sprite(sprite2);
++7: // 98
+	sprite(sprite3);
++7: // 98	
+    jmp(offset12, 16);
 }
 
 script script5 {
