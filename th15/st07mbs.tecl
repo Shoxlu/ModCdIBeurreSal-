@@ -29,7 +29,7 @@ void MBoss()
     wait(40);
     moveLimit(0.0f, 128.0f, 280.0f, 256.0f);
     dialogWait();
-    setNext(1, 2200, 1500, "MBossCard3");
+    setNext(1, 2200, 1500, "MBossCard1");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
     @MBoss2();

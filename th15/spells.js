@@ -28,4 +28,5 @@
 	"74": "« Point de non retour »",
     "76": "« La prêtresse du crépuscule »",
     "78": "Signe du Beurre Doux \" je sais pas\" ",
+	"108": "« Mémoires de la haine et de la destruction »"
 }

@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(13000);
-    @Boss1();
+    @Boss2();
     delete();
 }
 
@@ -62,132 +62,38 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-    //@Boss1_at99()async;
-	anm316(0, 0);
-	wait(1000);
+    //@Boss1_at90()async;
+	@Boss1_at()async;
 	while(1)
 	{
-	F0 = 0f;
-	I0 = 1;
-	enmCreate("MasterSpark", 0f, 0f, 10, 1000, 1);
-	wait(240);
+	wait(120);
 	moveRand(60, 4, 1.0f);
-	wait(60);
 	}
 }
 
-void MasterSpark()
+void Boss1_at()
 {
-
-	int waitTime = 1;
-	float A = 0;
-	int loop = 300:300:320:350;
-	flagSet(3);
-	deathAnm(0, -1);
-	A = ANGLE_PLAYER;
-	GF1 = A;
-	anmSelect(4);
-    anmSetSprite(0, 0);//sprite MasterSpark
-	anmRotate(0, A+F0);
-	BossTrace() async;
-    MasterSparkHitbox() async;
-    wait(60);
-    setScreenShake(loop*waitTime, 1, 1);
-	playSound(49);
-    times(loop)//rotation MasterSpark
-    {
-        anmRotate(0, A+F0);
-        wait(waitTime);
-		A = A + (rad(1)/(_f(loop)/40f))*_f(I0);
-        GF1 = A;
-    }
-	GI0 = 1;
-    anmSwitch(0, 1);//disparition MasterSpark
-    wait(6000);
-}
-void MasterSpark1()
-{
-	deathAnm(0, -1);
-	int waitTime = 1;
-	float A = 0;
-	int loop = 200;
-	flagSet(3);
-	A = 0f;
-	GF1 = A;
-	anmSelect(4);
-    anmSetSprite(0, 0);//sprite MasterSpark
-	anmRotate(0, A+F0);
-	BossTrace() async;
-    MasterSparkHitbox() async;
-    wait(60);
-    setScreenShake(loop*waitTime, 1, 1);
-	playSound(49);
-	GI0 = 1;
-    anmSwitch(0, 1);//disparition MasterSpark
-    wait(6000);
-}
-void BossTrace()
-{
+    float A = rad(90);
+	float B = rad(90);
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 6, 2);
+	//etEx(0, 0, EX_SIZE, 1, NEG, 1f, 0.5f);
+	etCount(0, 3, 1);
+	etSpeed(0, 4f, 4f);
 	while(1)
 	{
-		movePos(BOSS_X, BOSS_Y);
-		wait(1);
+	etAngle(0, A, 0.0f);
+	etOn(0);
+	etAngle(0, B, 0.0f);
+	etOn(0);
+	wait(2);
+	A += rad(5.5);
+	B += rad(-5.5);
 	}
 }
-void MasterSparkHitbox()
-{
-	float range, A, B;
-	A = 0f;
-	range = 110f;
-	wait(60);
-	times(20)
-	{
-		enmCreate("MasterSparkHitboxBig", cos(GF1+F0)*range, sin(GF1+F0)*range, _S(range), 100, 1);
-		range = range + 448f/20f;
-	}
-	F1 = rad(-20);
-	times(1)
-	{
-		enmCreate("MasterSparkWallShot", BOSS_X, BOSS_Y, 100, 100, 1);
-		F1 = F1 + rad(40)/20f;
-	}
-}
-void MasterSparkHitboxBig()
-{
-	flagSet(3);
-	flagSet(512);
-	deathAnm(0, -1);
-	GI0 = 0;
-	GI1 = 1;
-	float A = 0f;
-	int Interrupt = 30;
-	setHitbox(A, A);
-	flagClear(2);
-	times(30)
-	{
-		A = A + (170f/30f);
-		movePos(cos(GF1+F0) * _f(LIFE)+BOSS_X, sin(GF1+F0)* _f(LIFE)+BOSS_Y);
-		setHitbox(A, A);
-		wait(1);
-	}
-	setHitbox(170f, 170f);
-	while(GI0 == 0)
-	{
-		movePos(cos(GF1+F0) * _f(LIFE)+BOSS_X, sin(GF1+F0)* _f(LIFE)+BOSS_Y);
-		wait(1);
-	}
-	times(10)
-	{
-		A = A - (170f/10f);
-		setHitbox(A, A);
-		wait(1);
-	}
-	flagSet(3);
-}
 
-
-
-void Boss1_at99()
+void Boss1_at90()
 {
     float A = 0;
 	float B = 0;
@@ -256,30 +162,46 @@ Boss2_532:
     moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
     anmPlay(1, 86);
     playSound(6);
-    @Boss2_at()async;
 	while(1)
 	{
-	wait(180);
+	@Boss2_at();
 	moveRand(60, 4, 1.0f);
+	wait(60);
 	}
 }
 
 void Boss2_at()
 {
-    float A = 0;
+    float A = 5f;
 	float B = 0;
+	float C = 0;
     etNew(0);
     etAim(0, 3);
-    etSprite(0, 13, 14);
-    etCount(0, 6, 1);
-	while(1)
+    etSprite(0, 33, 2);
+    etCount(0, 2, 1);
+	etExSet(0, 0, 0, EX_VELTIME, 20, NEG, 0f, NEGF);
+	etExSet(0, 1, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
+	etExSet(0, 2, 0, EX_VELTIME, 15, NEG, 3f, NEGF);
+	times(10)
 	{
-	A += 0.1;
-	B += 0.09;
-	etSpeed(0, 2f+1.5f*cos(A), 2f+1.5f*cos(A));
-	etAngle(0, sin(B), 0.0f);
+	times(8)
+	{
+	A += -0.2f;
+	B += rad(11.25);
+	etSpeed(0, A, A);
+	etAngle(0, B+C, 0.0f);
 	etOn(0);
-	wait(2);
+	}
+	times(8)
+	{
+	A += 0.2f;
+	B += rad(11.25);
+	etSpeed(0, A, A);
+	etAngle(0, B+C, 0.0f);
+	etOn(0);
+	}
+	wait(45);
+	C += rad(36);
 	}
 }
 
