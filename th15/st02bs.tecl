@@ -63,7 +63,7 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-    Boss1_at();
+    //Boss1_at();
 	wait(100);
 	while(1)
 	{
@@ -84,11 +84,7 @@ void Boss1_at()
 	{
 		enmCreateA("Spawn", cos(F0)*70f, sin(F0)*70f, 70, 10, 1);
 		F0 = F0 + rad(360)/_f(B);
-		I1 += 1;
-		if(I1 == 7)
-		{
-			I1 = 1;
-		}
+		I1 = I1 % 6 + 1; //range is 1 to 6: 0->1 1->2, 2->3, 3->4,4->5, 5->6, 6%6+1= 1
 	}
 	F0 = rad(270);
 	I0 = -1;
@@ -97,11 +93,7 @@ void Boss1_at()
 	{
 		enmCreateA("Spawn", cos(F0)*100f, sin(F0)*100f, 100, 10, 1);
 		F0 = F0 + rad(360)/_f(B);
-		I1 += 1;
-		if(I1 == 7)
-		{
-			I1 = 1;
-		}
+		I1 = I1 % 6 + 1;
 	}
 }
 void Spawn()
@@ -125,6 +117,7 @@ void Spawn()
 	etSprite(1, 16, I2);
 	etAngle(1, rad(90), 0f);
 	etSpeed(1, 4f, 4f);
+	etEx(1, 1, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etEx(1, 0, EX_WAIT, 5, NEG, NEGF, NEGF);
 	etEx(1, 0, EX_VELTIME, 5, NEG, 2f, NEGF);
 	wait(30);
@@ -500,8 +493,12 @@ void MasterSpark()
     anmSetSprite(0, 0);//sprite MasterSpark
 	anmRotate(0, A+F0);
 	BossTrace() async;
-    MasterSparkHitbox() async;
+	playSound(30);
+    anmPlay(1, EFF_CHARGE_RED+10);
     wait(60);
+	playSound(6);
+	anmPlay(1, EFF_EXPLODE_RED+10);
+	MasterSparkHitbox() async;
     setScreenShake(loop*waitTime, 1, 1);
 	playSound(49);
     times(loop)//rotation MasterSpark
@@ -528,8 +525,12 @@ void MasterSpark1()
     anmSetSprite(0, 0);//sprite MasterSpark
 	anmRotate(0, A+F0);
 	BossTrace() async;
-    MasterSparkHitbox() async;
+	playSound(30);
+	anmPlay(1, EFF_CHARGE_RED+10);
     wait(60);
+	playSound(6);
+	anmPlay(1, EFF_EXPLODE_RED+10);
+	MasterSparkHitbox() async;
     setScreenShake(loop*waitTime, 1, 1);
 	playSound(49);
     times(loop)//rotation MasterSpark
@@ -556,7 +557,6 @@ void MasterSparkHitbox()
 	float range, A, B;
 	A = 0f;
 	range = 110f;
-	wait(60);
 	times(20)
 	{
 		enmCreate("MasterSparkHitboxBig", cos(GF1+F0)*range, sin(GF1+F0)*range, _S(range), 100, 1);
@@ -726,6 +726,7 @@ void BossCard2_at2()
 	etAngle(0, A, 0f);
 	etSprite(0, 23, 2);
 	etSpeed(0, 2.5f, 2.5f);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	times(5:7:9:10)
 	{
 		etOn(0);
@@ -790,6 +791,7 @@ void BossCard2_at3()
 	
 	etSpeed(1, 1.5f:1.5f:1.5f:2.5f, 1.5f);
 	etSprite(1, 16, 3);
+	etEx(1, 1, EX_ANIM, 0, NEG, NEGF, NEGF);
 	times(180/2:2:1:1)
 	{
 		mathAngle(Ang, BOSS_X, BOSS_Y, ABS_X, ABS_Y);
@@ -840,6 +842,7 @@ void BossCard2_at()
 	etCount(0, 16, 1);
 	etAngle(0, 0f, 0f);
 	etSpeed(0, 3f:4f:5f:6f, 3f:4f:5f:6f);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	times(2)
 	{
 		etOn(0);
@@ -888,9 +891,9 @@ BossCard3_468:
     $CAPTURE = 1;
     setNext(0, 0, 2400, "BossDead");
 !EN
-    spell(10, 2400, 500000, "兎符「ストロベリーダンゴ」");
+    spell(18, 2400, 500000, "兎符「ストロベリーダンゴ」");
 !HL
-    spell(10, 2400, 500000, "兎符「ベリーベリーダンゴ」");
+    spell(18, 2400, 500000, "兎符「ベリーベリーダンゴ」");
 !*
     movePosTime(60, 4, 0.0f, 128.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 64.0f);
@@ -983,12 +986,12 @@ void lasers()
 void BossCard3_at2() {
 	etNew(4);
     etAim(4, 2);
-    etSprite(4, 6, 1);
+    etSprite(4, 23, 0);
     etCount(4, 20, 1);
 	etSpeed(4, 2f, 2f);
 	etNew(5);
 	etCopy(5,4);
-	etSprite(5,6,6);
+	etSprite(5,24,1);
 	etEx(4, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etEx(5, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etExSet(4, 1, 0, EX_ANGLE_ACCEL, 15, NEG, 0f, rad(10));

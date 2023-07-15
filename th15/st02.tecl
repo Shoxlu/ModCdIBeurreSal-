@@ -52,25 +52,25 @@ void Sniper_at()
 {
 	etNew(0);
 	etAim(0, 2);
-	etCount(0, 1:1:6:6, 6:8:8:10);
-	etSprite(0, 13, 12);
+	etCount(0, 1:1:6:6, 6:8:8:8);
+	etSprite(0, 13, 4);
 	etSpeed(0, 1f, 6f:8f:8f:8f);
 	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	etEx(0, 1, EX_DIST, NEG, NEG, NEGF, NEGF);
 	playSound(30);
-	anmPlay(1, EFF_CHARGE_YELLOW+10);
+	anmPlay(1, EFF_CHARGE_PURPLE+10);
 	wait(60);
 !HL
 	SniperHL_at() async;
 !*
 	while(1)
 	{
-		anmPlay(1, EFF_EXPLODE_YELLOW+10);
+		anmPlay(1, EFF_EXPLODE_PURPLE+10);
 		playSound(6);
 		etOn(0);
 		playSound(30);
 		wait(60);
-		anmPlay(1, EFF_CHARGE_YELLOW+10);
+		anmPlay(1, EFF_CHARGE_PURPLE+10);
 		wait(60);
 	}
 }
@@ -78,8 +78,8 @@ void Sniper_at()
 void SniperHL_at(){
 	etNew(1);
 	etAim(1, 0);
-	etCount(1, 0:0:2:4, 0:0:8:10);
-	etSprite(1, 13, 12);
+	etCount(1, 0:0:2:4, 0:0:8:8);
+	etSprite(1, 13, 4);
 	etSpeed(1, 1f, 6f:8f:8f:8f);
 	etEx(1, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	etEx(1, 1, EX_DIST, NEG, NEG, NEGF, NEGF);
@@ -539,6 +539,8 @@ void MainLatter()
 {
     @MainSub01();
     @MainSub02();
+	setChapter(3);
+	@MainSub03();
 	wait(1000);
     return;
 }
@@ -695,13 +697,25 @@ void MainSub02()
 	F0 = rad(0);
 	enmCreate("SniperGirl_01", 160f, -40f, 1400, 1000, 1);
 	wait(200);
-	MainSub02a();
-	wait(1000);
+	MainSub02a() async;
+	wait(200);
+	F0 = rad(270);
+	enmCreate("SniperGirl_01", 0f, -40f, 1400, 1000, 1);
+	MainSub02a() async;
+	wait(200);
+	F0 = rad(180);
+	enmCreate("SniperGirl_01", -160f, -40f, 1000, 1000, 1);
+	F0 = rad(0);
+	enmCreate("SniperGirl_01", 160f, -40f, 1000, 1000, 1);
+	wait(500);
+	while(ENM_CNT > 2){
+		+1:
+	}
 }
 void MainSub02a(){
-	times(40){
-		enmCreate("AssistGirl01", RANDF2*150f, -15f, 200, 10, 1);
-		wait(10);
+	times(30){
+		enmCreate("AssistGirl01", RANDF2*150f, -15f, 100, 10, 1);
+		wait(30);
 	}
 
 }
@@ -714,9 +728,9 @@ void AssistGirl01(){
 }
 
 void AssistGirl(){
-	moveVel(rad(90)+RANDF2*rad(10), 0.2f);
+	moveVel(rad(90)+RANDF2*rad(10), 1f);
 	flagSet(8);
-	wait(80);
+	wait(30);
 	AssistGirl_at() async;
 	flagClear(8);
 	while(1){+1:}
@@ -725,28 +739,107 @@ void AssistGirl(){
 void AssistGirl_at(){
 	etNew(0);
 	etAim(0, 8);
-	etCount(0, 1:2:2:3, 1:1:1:2);
+	etCount(0, 1:2:2:2, 1);
 	etAngle(0, rad(90), rad(20));
-	etSpeed(0, 2f, 3f);
+	etSpeed(0, 2f, 3f:3f:3f:1f);
 	etSprite(0, 6, 5);
 	times(10){
 		etOn(0);
-		wait(100);
+		wait(60);
 	}
 }
 
 void SniperGirl_01(){
 	anmSelect(2);
 	anmSetMain(0, 167);
-	anmSetSprite(1, ENM_AURA_L_YELLOW);
+	anmSetSprite(1, ENM_AURA_L_PURPLE);
 	flagSet(8);
 	moveVel(rad(90), 4f);
 	wait(30);
 	moveVel(rad(90), 0f);
 	SniperGirl();
 }
-void SniperGirl_02(){
 
+void MainSub03(){
+	times(5){
+		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 400, 1000, 1);
+		wait(100);
+	}
+	wait(100);
+	times(7){
+		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 400, 1000, 1);
+		wait(50);
+	}
+}
+
+void TerroristGirl01(){
+	anmSelect(2);
+	anmSetMain(0, 167);
+	anmSetSprite(1, ENM_AURA_L_RED);
+	dropExtra(2, 2);
+	flagSet(8);
+	TerroristGirl() async;
+	wait(60);
+	flagClear(8);
+	waitInfinite();
+}
+void waitInfinite(){
+	while(1){+1:}
+}
+void TerroristGirl(){
+	float A = rad(0);
+	F1 = 200f + RANDF*120f;
+	I0 = ID;
+	I1 = 1;
+	times(4:6:8:8){
+		F0 = A;
+		enmCreate("Bombs", 0f, 0f, 200, 0, 0);
+		A += rad(360)/(4f:6f:8f:8f);
+	}
+	moveVel(rad(90), 3f);
+	setDeath("Explode");
+	//runs down the screen and explode when at a certain height
+	//if it's killed before, explode anyway
+}
+
+void explosionAnm(){
+	if(I1 == 1){
+		I1 = 0;
+		anmPlay(1, EFF_EXPLODE_RED+10);
+	}
+	playSound(6);
+	wait(60);
+	I1 = 1;
+	waitInfinite();
+}
+void Explode(){
+	etClear(21f);
+}
+
+void Bombs(){
+	moveVelRel(rad(90), 3f);
+	anmSelect(2);
+	anmSetSprite(0, 53);
+	moveCircle(F0, 0.05f, 20f, 0f);
+	setDeath("BombsExplode");
+	while(REL_Y < F1){
+	+1:
+	}
+	setDeath("");
+	BombsExplode();
+	die();
+}
+
+
+void BombsExplode(){
+	etNew(0);
+	etOn(0);
+	//boules de feu oranges: grand cercle rapide, angle aléatoire
+	//boules de feu violettes: petit cercle angle aléatoire lent
+	//petites étoiles aléatoires
+	//animation d'explosion (EFF_EXPLODE_RED)
+	//bruit d'explosion
+	enmCall(I0, "explosionAnm");
 }
 
 
@@ -802,8 +895,8 @@ main_492:
     // etClear(640.0f);
     // setChapter(3);
     // wait(2);
-    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	bossWait();
+    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	// bossWait();
     @MainLatter();
     // wait(300);
     // wait(60);
