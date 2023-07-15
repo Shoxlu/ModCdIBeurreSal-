@@ -1800,8 +1800,8 @@ main_440:
     // enmKillAll();
     etClear(640.0f);
     setChapter(41);
-    wait(160);
-    dialogRead(0);
+   // wait(160);
+    //dialogRead(0);
     @MainBoss();
     goto main_920 @ 60;
 main_900:
