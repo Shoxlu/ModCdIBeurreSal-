@@ -407,7 +407,6 @@ BossCard1_200:
     setChapter(62);
 +2: //4
     ins_569(1);
-    stars(3);
     @BossItemCard();
     timerReset();
     killAllAsync();
@@ -887,7 +886,7 @@ BossCard4_448:
     $CAPTURE = 1;
     setNext(0, 1, 3000, "Boss2");
     lifeMarker(0, 1.0f, -24448);
-    spell(70, 3000, 500000, "地獄「ストライプドアビス」");
+    spell(58, 3000, 500000, "地獄「ストライプドアビス」");
     movePosTime(60, 4, 0.0f, 128.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 64.0f);
     anm316(0, 0);
