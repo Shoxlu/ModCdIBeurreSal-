@@ -13,7 +13,7 @@ entry entry0 {
     THTXHeight: 256,
     THTXZero: 0,
     sprites: {
-        sprite0: { x: 0, y: 0, w: 384, h: 164 },
+        sprite0: { x: 0, y: 0, w: 484, h: 64 },
         sprite1: { x: 0, y: 64, w: 256, h: 48 },
         sprite2: { x: 0, y: 112, w: 256, h: 144 },
         sprite3: { x: 256, y: 112, w: 256, h: 32 }
