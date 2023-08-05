@@ -861,7 +861,7 @@ void main()
 	bossWait();
 	wait(100);
     setChapter(41);
-    //dialogRead(0);
+    dialogRead(0);
     @MainBoss();
 	while(1)
 	{	
