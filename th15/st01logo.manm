@@ -1,0 +1,159 @@
+entry entry0 {
+    version: 8,
+    name: "front/logo/st01logo.png",
+    format: 5,
+    width: 512,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 5,
+    THTXWidth: 512,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 384, h: 164 },
+        sprite1: { x: 0, y: 64, w: 256, h: 48 },
+        sprite2: { x: 0, y: 112, w: 256, h: 144 },
+        sprite3: { x: 256, y: 112, w: 256, h: 32 }
+    }
+}
+
+script script0 {
+    layer(23);
+    resolutionMode(2);
+    pos(0.0f, 256.0f, 0.0f);
+    scriptNew(script4);
+    scriptNew(script3);
+    scriptNew(script5);
+    scriptNew(script6);
++480: // 480
+    delete();
+}
+
+script script1 {
+    sprite(sprite4);
+    layer(23);
+    resolutionMode(2);
+    resampleMode(1);
+    randMode(1);
+    anchor(1, 2);
+    type(0);
+    pos(384.0f, 896.0f, 0.0f);
++60: // 60
+    posTime(60, 4, -384.0f, 896.0f, 0.0f);
++260: // 320
+    alphaTime(20, 0, 0);
+    posTime(20, 1, -384.0f, 896.0f, 0.0f);
++20: // 340
+    delete();
+}
+
+script script2 {
+    sprite(sprite5);
+    layer(28);
+    resolutionMode(2);
+    resampleMode(1);
+    randMode(1);
+    anchor(1, 2);
+    type(0);
+    alpha(0);
+    pos(832.0f, 928.0f, 0.0f);
++60: // 60
+    posTime(60, 4, 64.0f, 928.0f, 0.0f);
+    alphaTime(60, 0, 255);
++260: // 320
+    alphaTime(20, 0, 0);
+    posTime(20, 1, 64.0f, 928.0f, 0.0f);
++20: // 340
+    delete();
+}
+
+script script3 {
+    layer(23);
+    resolutionMode(2);
+    sprite(sprite0);
+    randMode(1);
+    pos(0.0f, 0.0f, 0.0f);
+    alpha(0);
++60: // 60
+    alphaTime(50, 0, 255);
++260: // 320
+    alphaTime(60, 0, 0);
++60: // 380
+    delete();
+}
+
+script script4 {
+    layer(23);
+    resolutionMode(2);
+    type(1);
+    sprite(sprite2);
+    randMode(1);
+    color(0, 0, 0);
+    colorTime(230, 4, 255, 255, 255);
+    pos(0.0f, 32.0f, 0.0f);
+    posTime(230, 4, 100.0f, 32.0f, 0.0f);
+    alpha(0);
+    alphaTime(60, 0, 255);
++320: // 320
+    alphaTime(60, 0, 0);
++60: // 380
+    delete();
+}
+
+script script5 {
+    layer(23);
+    resolutionMode(2);
+    sprite(sprite1);
+    randMode(1);
+    pos(96.0f, 50.0f, 0.0f);
+    alpha(0);
++180: // 180
+    alphaTime(50, 0, 255);
++140: // 320
+    alphaTime(60, 0, 0);
++60: // 380
+    delete();
+}
+
+script script6 {
+    layer(23);
+    resolutionMode(2);
+    resampleMode(1);
+    sprite(sprite3);
+    randMode(1);
+    pos(0.0f, -48.0f, 0.0f);
+    alpha(0);
++20: // 20
+    alphaTime(60, 0, 255);
++300: // 320
+    alphaTime(60, 0, 0);
++60: // 380
+    delete();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "front/logo/st01logo.png",
+    format: 5,
+    width: 1024,
+    height: 64,
+    yOffset: 448,
+    memoryPriority: 0,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 98304,
+    THTXFormat: 5,
+    THTXWidth: 768,
+    THTXHeight: 64,
+    THTXZero: 0,
+    sprites: {
+        sprite4: { x: 0, y: 0, w: 768, h: 32 },
+        sprite5: { x: 0, y: 32, w: 768, h: 32 }
+    }
+}
+
+
