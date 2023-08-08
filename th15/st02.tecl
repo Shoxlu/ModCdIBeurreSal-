@@ -54,7 +54,7 @@ void Sniper_at()
 	etAim(0, 2);
 	etCount(0, 1:1:6:6, 6:8:8:8);
 	etSprite(0, 13, 4);
-	etSpeed(0, 1f, 6f:8f:8f:8f);
+	etSpeed(0, 3f, 6f:8f:8f:8f);
 	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	etEx(0, 1, EX_DIST, NEG, NEG, NEGF, NEGF);
 	playSound(30);
@@ -80,10 +80,10 @@ void SniperHL_at(){
 	etAim(1, 0);
 	etCount(1, 0:0:2:4, 0:0:8:8);
 	etSprite(1, 13, 4);
-	etSpeed(1, 1f, 6f:8f:8f:8f);
+	etSpeed(1, 3f, 6f:8f:8f:8f);
 	etEx(1, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	etEx(1, 1, EX_DIST, NEG, NEG, NEGF, NEGF);
-	etAngle(1, 0f, rad(20));
+	etAngle(1, 0f, rad(40));
 	while(1)
 	{
 		etOn(1);
@@ -537,11 +537,13 @@ void MainFront()
 
 void MainLatter()
 {
-    @MainSub01();
-    @MainSub02();
-	setChapter(3);
+    // @MainSub01();
+    // @MainSub02();
+	// setChapter(3);
 	@MainSub03();
-	wait(1000);
+	wait(100);
+	@MainSub04();
+	//wait(1000);
     return;
 }
 
@@ -741,11 +743,11 @@ void AssistGirl_at(){
 	etAim(0, 8);
 	etCount(0, 1:2:2:2, 1);
 	etAngle(0, rad(90), rad(20));
-	etSpeed(0, 2f, 3f:3f:3f:1f);
+	etSpeed(0, 2f, 2.5f:2.5f:2.5f:1f);
 	etSprite(0, 6, 5);
 	times(10){
 		etOn(0);
-		wait(60);
+		wait(70:70:60:60);
 	}
 }
 
@@ -754,20 +756,22 @@ void SniperGirl_01(){
 	anmSetMain(0, 167);
 	anmSetSprite(1, ENM_AURA_L_PURPLE);
 	flagSet(8);
-	moveVel(rad(90), 4f);
-	wait(30);
-	moveVel(rad(90), 0f);
+	movePosTime(30, 0, ABS_X, 128f);
 	SniperGirl();
 }
 
 void MainSub03(){
 	times(5){
-		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 400, 1000, 1);
+		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 300, 1000, 1);
 		wait(100);
 	}
-	wait(100);
+	wait(50);
 	times(7){
-		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 400, 1000, 1);
+		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 300, 1000, 1);
+		wait(70);
+	}
+	times(4){
+		enmCreate("TerroristGirl01", RANDF2*160f, -30f, 300, 1000, 1);
 		wait(50);
 	}
 }
@@ -777,7 +781,9 @@ void TerroristGirl01(){
 	anmSetMain(0, 167);
 	anmSetSprite(1, ENM_AURA_L_RED);
 	dropExtra(2, 2);
+	dropExtra(1, 2);
 	flagSet(8);
+	moveVel(rad(90), 3f);
 	TerroristGirl() async;
 	wait(60);
 	flagClear(8);
@@ -788,16 +794,15 @@ void waitInfinite(){
 }
 void TerroristGirl(){
 	float A = rad(0);
-	F1 = 200f + RANDF*120f;
+	F1 = 240f;
 	I0 = ID;
 	I1 = 1;
 	times(4:6:8:8){
 		F0 = A;
-		enmCreate("Bombs", 0f, 0f, 200, 0, 0);
+		enmCreate("Bombs", 0f, 0f, 100, 0, 1);
 		A += rad(360)/(4f:6f:8f:8f);
 	}
-	moveVel(rad(90), 3f);
-	setDeath("Explode");
+	//setDeath("Explode");
 	//runs down the screen and explode when at a certain height
 	//if it's killed before, explode anyway
 }
@@ -807,7 +812,7 @@ void explosionAnm(){
 		I1 = 0;
 		anmPlay(1, EFF_EXPLODE_RED+10);
 	}
-	playSound(6);
+	
 	wait(60);
 	I1 = 1;
 	waitInfinite();
@@ -817,6 +822,7 @@ void Explode(){
 }
 
 void Bombs(){
+	dropExtra(2, 1);
 	moveVelRel(rad(90), 3f);
 	anmSelect(2);
 	anmSetSprite(0, 53);
@@ -833,15 +839,190 @@ void Bombs(){
 
 void BombsExplode(){
 	etNew(0);
-	etOn(0);
+	etAim(0, 3);
+	etSprite(0, 28, 0);
+	etSpeed(0, 4f, 4f);
+	etAngle(0, RANDRAD, 0f);
+	etCount(0, 6, 1);
 	//boules de feu oranges: grand cercle rapide, angle aléatoire
+	etOn(0);
+	etSprite(0, 26, 0);
+	etSpeed(0, 2f, 2f);
+	etAngle(0, RANDRAD, 0f);
+	etCount(0, 9, 1);
 	//boules de feu violettes: petit cercle angle aléatoire lent
-	//petites étoiles aléatoires
+	etOn(0);
+	//petites étoiles aléatoires (lunatic ?)
 	//animation d'explosion (EFF_EXPLODE_RED)
 	//bruit d'explosion
+	playSound(6);
 	enmCall(I0, "explosionAnm");
 }
 
+
+void MainSub04(){
+	//des attacks girls arrivent et laisse le temps aux autres fées de se setup (elles viennent du milieu droit et milieu gauche (pour pas se faire tuer instant), elles sont peu nombreuses
+	GI0 = 0;
+	times(7){
+		F0 = rad(180);
+		enmCreateA("Attackgirl02", 128f+RANDF*20f, -10f, 50, 100, 1);
+		wait(10);
+		F0 = rad(0);
+		enmCreateA("Attackgirl02", -128f-RANDF*20f, -10f, 50, 100, 1);
+		wait(10);
+	}
+	//une grosse fée qui tire des lasers rouges et violets, elle est invincible jusqu'à la fin de la phase (elle a très peu de vie et lâche une vie)
+	enmCreateA("UltimateGirl", 0f, -50f, 10, 1000, 5);
+	wait(100);
+	//des fées assistantes tombent à rythme "lent"
+	MainSub04b() async;
+	wait(600);
+	//deux fées sniper arrivent vers le "milieu" de la phase
+	F0 = rad(180);
+	enmCreateA("SniperGirl_01", -170f, -30f, 200, 100, 0);
+	F0 = rad(0);
+	enmCreateA("SniperGirl_01", 170f, -30f, 200, 100, 0);
+	wait(400);
+	GI0 = 1;
+}
+
+void MainSub04a(){
+	times(2){
+		MainSub04b();
+		wait(200);
+	}
+}
+void MainSub04b(){
+	times(13){
+		enmCreateF("AssistGirl01", RANDF2*150f, -15f, 100, 10, 1);
+		wait(80);
+	}
+
+}
+void UltimateGirl(){
+	anmSelect(2);
+	anmSetMain(0, 167);
+	dropExtra(2, 20);
+	dropExtra(1, 10);
+	anmSetSprite(1, ENM_AURA_L_DARKRED);
+	flagSet(24);
+	movePosTime(120, 0, 0f, 128f);	
+	//n lasers rouges, n lasers violets, tournent et alternent (à la non-directional lasers)
+	wait(120);
+		//autour d'elle des fées kamikaze qui explose si on les touche
+	UltimateGirl_SpawnKamikaze();
+	UltimateGirl_at() async;
+	while(GI0 != 1){
+	+1:
+	}
+	flagClear(24);
+	wait(10000);
+}
+
+void UltimateGirl_at(){
+	etNew(0);
+	etSprite(0, 8, 2);
+	etSpeed(0, 10f, 10f);
+	etAim(0, 1);
+	laserNew(0,0f, 340f,0f, 30f);
+	laserTiming(0, 50, 20, 140, 40, 0);
+	etNew(1);
+	etSprite(1, 8, 4);
+	etSpeed(1, 10f, 10f);
+	etAim(1, 1);
+	laserNew(1,0f, 340f,0f, 30f);
+	laserTiming(1, 50, 20, 140, 40, 0);
+	int A = 4:6:6:8;
+	while(1){
+		UltimateGirl_lasers(A, 0, 1f);
+		UltimateGirl_lasers(A, 1, -1f);
+	}
+	wait(1000);
+}
+void UltimateGirl_lasers(int A, int etID, float isNeg){
+	int B = 1;
+	float startAngle = (rad(45)*isNeg):0f:0f:rad(22.5);
+	times(A){
+		laserStOn(etID, B);
+		laserStAngle(B, startAngle+rad(360)/_f(A) * _f(B));
+		laserOffset(B, ABS_X+cos(startAngle+rad(360)/_f(A) * _f(B))*50f, ABS_Y+sin(startAngle+rad(360)/_f(A) * _f(B))*50f);
+		B += 1;
+	}
+	float Angle = 0f;
+	float laserAngle = 0f;
+	wait(110);
+	playSound(18);
+	times(100){
+		B = 1;
+		times(A){
+			laserAngle = startAngle+Angle+rad(360)/_f(A) * _f(B);
+			laserStAngle(B, laserAngle);
+			laserOffset(B, ABS_X+cos(laserAngle)*50f, ABS_Y+sin(laserAngle)*50f);
+			B += 1;
+		}
+		Angle += rad(0.2)*isNeg;
+		wait(1);
+	}
+	wait(60);
+}
+
+void UltimateGirl_SpawnKamikaze(){
+	F0 = 0f;
+	times(4:6:6:6){
+		enmCreate("TerroristGirl03", 0f, 0f, 500, 100, 1);
+		F0 += rad(360)/(4f:6f:6f:6f);
+	}
+}
+
+
+void TerroristGirl03(){
+	anmSelect(2);
+	anmSetMain(0, 167);
+	anmSetSprite(1, ENM_AURA_L_RED);
+	dropExtra(2, 3);
+	dropExtra(1, 3);
+	flagSet(8);
+	float A = F0;
+	F2 = A;
+	moveCircle(A, 0.05f, 0f, 1.5f);
+	wait(60);
+	moveCircle(A + 3f, 0.02f, 90f, 0f);
+	TerroristGirl_alt() async;
+	waitInfinite();
+}
+
+void TerroristGirl_alt(){
+	float A = rad(0);
+	F1 = 448f;
+	I0 = ID;
+	I1 = 1;
+	times(3:4:5:5){
+		F0 = A;
+		enmCreateA("Bombs1", 0f, 128f, 100, 0, 1);
+		A += rad(360)/(3f:4f:6f:6f);
+	}
+	//setDeath("Explode");
+	//runs down the screen and explode when at a certain height
+	//if it's killed before, explode anyway
+}
+
+void Bombs1(){
+	flagSet(12);
+	dropExtra(2, 1);
+	anmSelect(2);
+	anmSetSprite(0, 53);
+	moveCircleRel(F2+3f, 0.02f, 90f, 0f);
+	moveCircle(F0, 0.05f, 0f, 2f);
+	wait(10);
+	moveCircle(F0 + 0.5f,0.05f, 20f, 0f);
+	setDeath("BombsExplode");
+	while(REL_Y < F1){
+	+1:
+	}
+	setDeath("");
+	BombsExplode();
+	die();
+}
 
 void MapleEnemy()
 {
@@ -898,13 +1079,11 @@ main_492:
     // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	// bossWait();
     @MainLatter();
-    // wait(300);
-    // wait(60);
-    // enmKillAll();
-    // etClear(640.0f);
-    // setChapter(41);
-    // wait(160);
-    // dialogRead(0);
+    wait(300);
+    enmKillAll();
+    etClear(640.0f);
+    setChapter(41);
+    dialogRead(0);
     @MainBoss();
     goto main_1140 @ 60;
 main_1120:

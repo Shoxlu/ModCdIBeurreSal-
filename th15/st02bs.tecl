@@ -63,7 +63,7 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-    //Boss1_at();
+    Boss1_at();
 	wait(100);
 	while(1)
 	{
