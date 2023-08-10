@@ -1,8 +1,8 @@
 {
-	"0": "",
+	"0": "« Exponentialité alternative »",
 	"2": "« Une jeune fille au QI d'or »",
 	"4": "« Une jeune déesse au QI d'or »",
-	"6": "Programme -Trou de Ver Virtuel-",
+	"6": "Programme « Trou de Ver Virtuel »",
 	"10": "Signe du gras : « Butter Spark »",
     "12": "Signe du gras : « Sweet Butter Spark »",
     "14": "Rébellion : « Orbes du passé »",

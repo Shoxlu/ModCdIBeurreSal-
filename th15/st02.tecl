@@ -1078,12 +1078,12 @@ main_492:
     // wait(2);
     // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	// bossWait();
-    @MainLatter();
-    wait(300);
-    enmKillAll();
-    etClear(640.0f);
-    setChapter(41);
-    dialogRead(0);
+    // @MainLatter();
+    // wait(300);
+    // enmKillAll();
+    // etClear(640.0f);
+    // setChapter(41);
+    // dialogRead(0);
     @MainBoss();
     goto main_1140 @ 60;
 main_1120:

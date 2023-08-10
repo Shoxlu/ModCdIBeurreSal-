@@ -81,6 +81,7 @@ void MBoss1_at(int etID, float A, int color)
 	etSpeed(etID, 3f, 3f);
 	etAngle(etID, rad(0), 0f);
 	float Angle = A;
+	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etAngle(etID, Angle, rad(45):rad(45):0f:rad(45));
@@ -96,6 +97,10 @@ void MBoss1_at(int etID, float A, int color)
 
 void MBossCard1()
 {
++2: //2
+    setChapter(31);
++2: //4
+    ins_569(1);
     @BossItemCard();
     timerReset();
     killAllAsync();
@@ -104,6 +109,7 @@ void MBossCard1()
     etCancel(640.0f);
     goto MBossCard1_264 @ 0;
 MBossCard1_244:
+
     etClear(640.0f);
 MBossCard1_264:
     spellEnd();
@@ -208,6 +214,7 @@ MBossDead_528:
     30;
 !*
     @BossItemPhase([-1], 10, 48.0f);
+
     ins_570();
     flagSet(3);
 	fogTime(60, 0, -11534256, 600.0f, 1800.0f);
@@ -219,7 +226,6 @@ MBossDead_528:
 	movePosTime(60, 1, 270f, -120f);
 	wait(60);
     setBoss(-1);
-    delete();
     delete();
 }
 
