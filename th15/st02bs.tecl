@@ -802,10 +802,12 @@ void BossCard2_at2()
 void BossCard2_ennemies()
 {
 	F0 = rad(45);
+	I0 = 48;
 	times(4)
 	{
 		enmCreateA("BossCard2_Enm", BOSS_X,BOSS_Y, 100, 10, 0);
 		F0 += rad(90);
+		I0 += 1;
 	}
 }
 
@@ -814,7 +816,7 @@ void BossCard2_Enm()
 	float A, d = 0f;
 	flagSet(3);
 	anmSelect(2);
-	anmSetMain(0, 50);
+	anmSetMain(0, I0);
 	times(35)
 	{
 		movePos(BOSS_X + cos(F0)*d, BOSS_Y + sin(F0)*d);
