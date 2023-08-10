@@ -1,0 +1,210 @@
+{
+    "0": {
+        "0_0": {
+            "lines": [
+                "<ts$Eirin  $Reisen  >Pavillon de l'Éternité."
+            ]
+        },
+        "1_0": {
+            "lines": [
+                "La résidence d'anciens sélénites, se trouvant dans la forêt de bambous de l'Égarement."
+            ]
+        },
+        "2_0": {
+            "lines": [
+                "<r$Eirin  >« Je n'avais pas l'intention de te mentir."
+            ]
+        },
+        "3_0": {
+            "lines": [
+                "<l$> Je n'ai pas dit que cela était pour le bien de la capitale Lunaire,"
+            ]
+        },
+        "4_0": {
+            "lines": [
+                "<l$> afin d'obtenir le soutien du peuple. »"
+            ]
+        },
+        "5_0": {
+            "lines": [
+                "<r$Eirin  >« Et beaucoup de sélénites n'étaient pas au courant de ce qui se passait non plus. »"
+            ]
+        },
+        "6_0": {
+            "lines": [
+                "<r$Reisen  >« En effet."
+            ]
+        },
+        "7_0": {
+            "lines": [
+                "<l$> Mademoiselle Sagume m'en a parlé. »"
+            ]
+        },
+        "8_0": {
+            "lines": [
+                "<r$Eirin  >« C'est une bonne chose que tu aies pu arriver jusqu'à elle en sécurité."
+            ]
+        },
+        "9_0": {
+            "lines": [
+                "<l$> Heureusement qu'elle est aussi maligne. »"
+            ]
+        },
+        "10_0": {
+            "lines": [
+                "<r$Reisen  >« En fait, elle m'a attaquée. Et sans retenir ses coups... »"
+            ]
+        },
+        "11_0": {
+            "lines": [
+                "<r$Reisen  >« Aussi, je voulais en apprendre plus sur un point... »"
+            ]
+        },
+        "12_0": {
+            "lines": [
+                "<r$Eirin  >« Oui, je sais ce que tu souhaites demander."
+            ]
+        },
+        "13_0": {
+            "lines": [
+                "<l$> C'est à propos de Junko, n'est ce pas ? »"
+            ]
+        },
+        "14_0": {
+            "lines": [
+                "<r$Eirin  >« Elle hait quelqu'un vivant sur la Lune."
+            ]
+        },
+        "15_0": {
+            "lines": [
+                "<l$> La raison de ceci est plutôt confuse..."
+            ]
+        },
+        "16_0": {
+            "lines": [
+                "<l$> Elle hait la femme d'un homme. »"
+            ]
+        },
+        "17_0": {
+            "lines": [
+                "<r$Reisen  >« Hein ? La femme d'un homme ? Ou les deux ? »"
+            ]
+        },
+        "18_0": {
+            "lines": [
+                "<r$Eirin  >« Il y a de cela très longtemps, cet homme tua son fils."
+            ]
+        },
+        "19_0": {
+            "lines": [
+                "<l$> Et elle se vengea en le tuant. »"
+            ]
+        },
+        "20_0": {
+            "lines": [
+                "<r$Reisen  >« Il a tué son fils ? Pourquoi ? »"
+            ]
+        },
+        "21_0": {
+            "lines": [
+                "<r$Eirin  >« La femme malveillante de cet homme possédait un don inné..."
+            ]
+        },
+        "22_0": {
+            "lines": [
+                "<l$> Et cette femme n'est nulle autre que Chang'e. »"
+            ]
+        },
+        "23_0": {
+            "lines": [
+                "<r$Reisen  >« Hein ? Dame Chang'e ? Celle qui gouverne tous les lapins lunaires... »"
+            ]
+        },
+        "24_0": {
+            "lines": [
+                "<r$Eirin  >« Junko hait profondément Chang'e."
+            ]
+        },
+        "25_0": {
+            "lines": [
+                "<l$> Par conséquent, elle déteste aussi les sélénites, auxquels appartient Chang'e »"
+            ]
+        },
+        "26_0": {
+            "lines": [
+                "<r$Eirin  >« Et lorsqu'elle a tenté d'envahir la capitale Lunaire,",
+                "<l$> nous l'avons piégée dans une joute intellectuelle."
+            ]
+        },
+        "27_0": {
+            "lines": [
+                "<l$> Et ses attaques se sont répétées en boucle."
+            ]
+        },
+        "28_0": {
+            "lines": [
+                "<l$> Bien sur, peu de sélénites savent cela. »"
+            ]
+        },
+        "29_0": {
+            "lines": [
+                "<r$Reisen  >« Wow, c'est impressionnant."
+            ]
+        },
+        "30_0": {
+            "lines": [
+                "<l$> J'ai encore du mal à comprendre les relations humaines,"
+            ]
+        },
+        "31_0": {
+            "lines": [
+                "<l$> et ainsi, c'est à ce moment que la capitale Lunaire s'est faite attaquer par derrière. »"
+            ]
+        },
+        "32_0": {
+            "lines": [
+                "<r$Eirin  >« Ne parle pas de ceci aux autres lapins lunaires. »"
+            ]
+        },
+        "33_0": {
+            "lines": [
+                "<r$Reisen  >« Oui, si Dame Chang'e avait vent de cela, nous serions en grand danger. »"
+            ]
+        },
+        "34_0": {
+            "lines": [
+                "<r$Eirin  >« En vérité, les lapins peuvent être utilisés pour renverser Chang'e. »"
+            ]
+        },
+        "35_0": {
+            "lines": [
+                "Cette fois, Eirin ne cacha rien à Reisen."
+            ]
+        },
+        "36_0": {
+            "lines": [
+                "Après cette conversation, bien qu'étant un lapin lunaire ordinaire, elle se sentit plus proche de son professeur."
+            ]
+        },
+        "37_0": {
+            "lines": [
+                "De plus, elle réalisa qu'elle ne pourrait plus interagir avec les sélénites comme avant."
+            ]
+        },
+        "38_0": {
+            "lines": [
+                "Fin n°7 : Le vrai ennemi de la capitale Lunaire"
+            ]
+        },
+        "39_0": {
+            "lines": [
+                "Vous avez terminé le jeu ! Félicitations !"
+            ]
+        },
+        "40_0": {
+            "lines": [
+                "Mode Pointdevice ou Legacy terminé sans erreurs."
+            ]
+        }
+    }
+}

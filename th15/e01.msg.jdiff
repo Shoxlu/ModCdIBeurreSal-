@@ -1,0 +1,208 @@
+{
+    "0": {
+        "0_0": {
+            "lines": [
+                "<ts$Eirin  $Reimu  $Tewi  >Pavillon de l'Éternité"
+            ]
+        },
+        "1_0": {
+            "lines": [
+                "Un domaine en plein cœur de la forêt de bambous de l'Égarement."
+            ]
+        },
+        "2_0": {
+            "lines": [
+                "Aussi connu sous le nom de l<i$'Hôpital sombre>, ici, vivent d'anciens habitants de la capitale Lunaire."
+            ]
+        },
+        "3_0": {
+            "lines": [
+                "<r$Eirin  >« Je n'avais aucune intention de vous tromper. »"
+            ]
+        },
+        "4_0": {
+            "lines": [
+                "<r$Reimu  >« Alors pourquoi ai-je dû sauver la capitale Lunaire ? »"
+            ]
+        },
+        "5_0": {
+            "lines": [
+                "<r$Eirin  >« Eh bien... Si tu sauvais la capitale Lunaire, tu sauvais la terre des Illusions, non ? »"
+            ]
+        },
+        "6_0": {
+            "lines": [
+                "<r$Reimu  >« Ils auraient pu résoudre leur problème tout seul, non ? »"
+            ]
+        },
+        "8_0": {
+            "lines": [
+                "<r$Eirin  >« En d'autres termes, seul un humain pouvait résoudre ce problème. »"
+            ]
+        },
+        "9_0": {
+            "lines": [
+                "<r$Reimu  >« Mais vous n'auriez pas pu me le dire dès le début ...? »"
+            ]
+        },
+        "10_0": {
+            "lines": [
+                "<r$Eirin  >« Je suis désolée... J'ai pensé que si je vous avais dit que tout ce que vous alliez faire",
+                "<l$> serait pour le bien de la capitale Lunaire, vous auriez refusé. »"
+            ]
+        },
+        "11_0": {
+            "lines": [
+                "<r$Reimu  >« Ah... »"
+            ]
+        },
+        "12_0": {
+            "lines": [
+                "<r$Eirin  >« Bien sûr, si je vous l'avais dit tout de suite, votre bon cœur n'aurait su refuser. »"
+            ]
+        },
+        "13_0": {
+            "lines": [
+                "Reimu, non satisfaite de cette conclusion, quitta le pavillon de l'Éternité."
+            ]
+        },
+        "14_0": {
+            "lines": [
+                "Sur le chemin du retour, elle fut interrompue par un lapin de la Terre."
+            ]
+        },
+        "15_0": {
+            "lines": [
+                "<r$Tewi  >« Dis, dis... À quoi ils ressemblaient, ceux qui ont attaqué la Capitale Lunaire ? »"
+            ]
+        },
+        "16_0": {
+            "lines": [
+                "<r$Reimu  >« Tu es trop familière. »"
+            ]
+        },
+        "17_0": {
+            "lines": [
+                "<r$Tewi  >« Ils étaient comment ? »"
+            ]
+        },
+        "18_0": {
+            "lines": [
+                "<r$Reimu  >« Hmmm... C'était une effrontée nommée Junko. »"
+            ]
+        },
+        "19_0": {
+            "lines": [
+                "<r$Tewi  >« Je vois... C'est une Sélénite ou une youkai ? »"
+            ]
+        },
+        "20_0": {
+            "lines": [
+                "<r$Reimu  >« Pourquoi me poses-tu la question ? »"
+            ]
+        },
+        "21_0": {
+            "lines": [
+                "<r$Tewi  >« Juste pour savoir. Tu vois, je veux connaître les points faibles des Sélénites. »"
+            ]
+        },
+        "22_0": {
+            "lines": [
+                "<r$Reimu  >« Ah ? Je ne sais pas ce que tu prépares, mais... »"
+            ]
+        },
+        "23_0": {
+            "lines": [
+                "<r$Reimu  >« ... elle n'est ni une Sélénite, ni une youkai."
+            ]
+        },
+        "24_0": {
+            "lines": [
+                "<l$> De plus, elle a une âme bien plus pure. Pour faire simple, comme un esprit divin. »"
+            ]
+        },
+        "25_0": {
+            "lines": [
+                "<r$Tewi  >« Vraiment ? Alors c'était quelqu'un comme ça. »"
+            ]
+        },
+        "26_0": {
+            "lines": [
+                "<r$Reimu  >« \"Vraiment ?\" Mais que veux-tu dire ? »"
+            ]
+        },
+        "27_0": {
+            "lines": [
+                "<r$Tewi  >« Cela signifie que nous, la famille Inaba, avons nous aussi notre chance. »"
+            ]
+        },
+        "28_0": {
+            "lines": [
+                "<r$Reimu  >« Vous entreriez en guerre avec les Sélénites ? Je vous le déconseille. »"
+            ]
+        },
+        "29_0": {
+            "lines": [
+                "<r$Reimu  >« N'est-ce pas évident qu'ils vous écraseront sans même lever le petit doigt ? »"
+            ]
+        },
+        "30_0": {
+            "lines": [
+                "<r$Tewi  >« Qui a dit que nous leur déclarerons la guerre ?"
+            ]
+        },
+        "31_0": {
+            "lines": [
+                "<l$> Nous voulons juste faire des affaires. Avec les gens de la capitale Lunaire. »"
+            ]
+        },
+        "32_0": {
+            "lines": [
+                "Reimu ne comprenait pas ce que complotait le lapin blanc,",
+                "mais une part d'elle-même sourit."
+            ]
+        },
+        "33_0": {
+            "lines": [
+                "Même si les lapins allaient être battus par les Sélénites,"
+            ]
+        },
+        "34_0": {
+            "lines": [
+                "ou prendraient le contrôle lucrativement parlant,"
+            ]
+        },
+        "35_0": {
+            "lines": [
+                "cette affaire semblait l'intéresser dans tous les cas."
+            ]
+        },
+        "36_0": {
+            "lines": [
+                "Toutefois, elle pensa du plus profond de son cœur"
+            ]
+        },
+        "37_0": {
+            "lines": [
+                "qu'elle ne voulait plus jamais avoir affaire aux Sélénites."
+            ]
+        },
+        "38_0": {
+            "lines": [
+                "Fin n°1 : Sauveuse de la capitale Lunaire"
+            ]
+        },
+        "39_0": {
+            "lines": [
+                "Jeu terminé ! Félicitations !",
+                "Mode Pointdevice ou Legacy terminé sans morts."
+            ]
+        },
+        "7_0": {
+            "lines": [
+                "<r$Eirin  >« Cette fois, nous avons affronté quelqu'un que les Sélénites n'auraient pas pu approcher,",
+                "<l$> tandis que les youkais, étant complètement impurs, ne pouvaient pas voir. »"
+            ]
+        }
+    }
+}
