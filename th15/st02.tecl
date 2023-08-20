@@ -537,9 +537,9 @@ void MainFront()
 
 void MainLatter()
 {
-    // @MainSub01();
-    // @MainSub02();
-	// setChapter(3);
+    @MainSub01();
+    @MainSub02();
+	setChapter(3);
 	@MainSub03();
 	wait(100);
 	@MainSub04();
@@ -1072,18 +1072,18 @@ main_492:
 +60: //60
     nop();
 	// wait(100000);
-    // @MainFront();
-    // etClear(640.0f);
-    // setChapter(3);
-    // wait(2);
-    // enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	// bossWait();
-    // @MainLatter();
-    // wait(300);
-    // enmKillAll();
-    // etClear(640.0f);
-    // setChapter(41);
-    // dialogRead(0);
+    @MainFront();
+    etClear(640.0f);
+    setChapter(3);
+    wait(2);
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+	bossWait();
+    @MainLatter();
+    wait(300);
+    enmKillAll();
+    etClear(640.0f);
+    setChapter(41);
+    dialogRead(0);
     @MainBoss();
     goto main_1140 @ 60;
 main_1120:
