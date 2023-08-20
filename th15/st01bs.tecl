@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @LastWordCard();
+    @Boss1();
     delete();
 }
 
@@ -1075,7 +1075,6 @@ BossDead_316:
     playSound(5);
     setBoss(-1);
     delete();
-    delete();
 }
 
 void BossEscape()
@@ -1095,6 +1094,5 @@ BossEscape_228:
     flagSet(16);
     movePosTime(60, 4, -224.0f, -16.0f);
     wait(60);
-    delete();
     delete();
 }
