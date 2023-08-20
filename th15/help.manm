@@ -1,0 +1,389 @@
+entry entry0 {
+    version: 8,
+    name: "help/helpmenu.png",
+    format: 5,
+    width: 600,
+    height: 487,
+    memoryPriority: 10,
+    lowResScale: 1,
+    hasData: 1,
+    THTXSize: 1168800,
+    THTXFormat: 5,
+    THTXWidth: 600,
+    THTXHeight: 487,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 600, h: 52 },
+        sprite1: { x: 0, y: 52, w: 600, h: 48 },
+        sprite2: { x: 0, y: 100, w: 600, h: 48 },
+        sprite3: { x: 0, y: 150, w: 600, h: 48 },
+        sprite4: { x: 0, y: 200, w: 600, h: 46 },
+        sprite5: { x: 0, y: 244, w: 600, h: 46 },
+        sprite6: { x: 0, y: 292, w: 600, h: 48 },
+        sprite7: { x: 0, y: 342, w: 600, h: 46 },
+        sprite8: { x: 0, y: 388, w: 600, h: 48 }
+    }
+}
+
+script script0 {
+    sprite(sprite0);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 192.0f, 0.0f);
+    posTime(20, 4, 128.0f, 192.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 448.0f, 0.0f);
+    alphaTime(20, 4, 0);
++20: // 80
+    delete();
+}
+
+script script1 {
+    sprite(sprite1);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 248.0f, 0.0f);
+    posTime(20, 4, 128.0f, 248.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 504.0f, 0.0f);
++2: // 62
+    alphaTime(20, 4, 0);
++20: // 82
+    delete();
+}
+
+script script2 {
+    sprite(sprite2);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 304.0f, 0.0f);
+    posTime(20, 4, 128.0f, 304.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 560.0f, 0.0f);
++4: // 64
+    alphaTime(20, 4, 0);
++20: // 84
+    delete();
+}
+
+script script3 {
+    sprite(sprite3);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 360.0f, 0.0f);
+    posTime(20, 4, 128.0f, 360.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 616.0f, 0.0f);
++6: // 66
+    alphaTime(20, 4, 0);
++20: // 86
+    delete();
+}
+
+script script4 {
+    sprite(sprite4);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 416.0f, 0.0f);
+    posTime(20, 4, 128.0f, 416.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 672.0f, 0.0f);
++8: // 68
+    alphaTime(20, 4, 0);
++20: // 88
+    delete();
+}
+
+script script5 {
+    sprite(sprite5);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 472.0f, 0.0f);
+    posTime(20, 4, 128.0f, 472.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 728.0f, 0.0f);
++10: // 70
+    alphaTime(20, 4, 0);
++20: // 90
+    delete();
+}
+
+script script6 {
+    sprite(sprite6);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 528.0f, 0.0f);
+    posTime(20, 4, 128.0f, 528.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 784.0f, 0.0f);
++12: // 72
+    alphaTime(20, 4, 0);
++20: // 92
+    delete();
+}
+
+script script7 {
+    sprite(sprite7);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 584.0f, 0.0f);
+    posTime(20, 4, 128.0f, 584.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 840.0f, 0.0f);
++14: // 74
+    alphaTime(20, 4, 0);
++20: // 94
+    delete();
+}
+
+script script8 {
+    sprite(sprite8);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    pos(384.0f, 640.0f, 0.0f);
+    posTime(20, 4, 128.0f, 640.0f, 0.0f);
+    alpha(0);
+    alphaTime(20, 4, 255);
+    anchor(1, 1);
++20: // 20
+    stop();
+    case(2);
+offset172:
+    colorTime(10, 1, 192, 192, 192);
++10: // 30
+    colorTime(10, 4, 128, 128, 128);
++10: // 40
+    colorTime(10, 1, 192, 192, 192);
++10: // 50
+    colorTime(10, 4, 255, 255, 255);
++10: // 60
+    jmp(offset172, 20);
+    case(3);
+    colorTime(5, 4, 64, 64, 64);
+    stop();
+    case(1);
+    posTime(20, 4, 128.0f, 896.0f, 0.0f);
++16: // 76
+    alphaTime(20, 4, 0);
++20: // 96
+    delete();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "@",
+    format: 5,
+    width: 768,
+    height: 1024,
+    memoryPriority: 10,
+    lowResScale: 1,
+    hasData: 0,
+    sprites: {
+        sprite9: { x: 0, y: 0, w: 768, h: 896 }
+    }
+}
+
+script script9 {
+    sprite(sprite9);
+    ins_431(1);
+    randMode(1);
+    layer(37);
+    resolutionMode(2);
+    anchor(0, 1);
+    alpha(0);
+    alphaTime(20, 0, 255);
+    pos(432.0f, 48.0f, 0.0f);
+    posTime(20, 4, 432.0f, 48.0f, 0.0f);
+    stop();
+    case(7);
+    alpha(255);
+    alphaTime(20, 0, 0);
+    posTime(20, 4, 432.0f, -256.0f, 0.0f);
++20: // 20
+    delete();
+    case(8);
+    alpha(255);
+    alphaTime(20, 0, 0);
+    posTime(20, 4, 432.0f, 256.0f, 0.0f);
++20: // 40
+    delete();
+    case(1);
+    alpha(255);
+    alphaTime(20, 0, 0);
+    posTime(20, 4, 432.0f, 256.0f, 0.0f);
++20: // 60
+    delete();
+}
+
+
