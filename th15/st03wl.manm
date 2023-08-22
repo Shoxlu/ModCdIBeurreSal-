@@ -1,0 +1,285 @@
+entry entry0 {
+    version: 8,
+    name: "background/stage03/st06c.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 1048576,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 1024, h: 1024 }
+    }
+}
+
+script script0 {
+    type(6);
+    sprite(sprite0);
+    blendMode(1);
+    alpha(64);
+    ins_439(1, 300.0f, 150.0f);
++3600: // 3600
+    alphaTime(2096, 0, 96);
++2096: // 5696
+    case(7);
+    case(8);
+    alpha(96);
+    alphaTime(2, 0, 96);
+    stop();
+    case(9);
+    case(10);
+    case(11);
+    blendMode(2);
+    alpha(64);
+    alphaTime(2, 0, 64);
+    stop();
+}
+
+script script1 {
+    type(6);
+    sprite(sprite0);
+    blendMode(1);
+    alpha(40);
+    color(192, 120, 255);
+    scrollX(0.001f);
+    ins_439(1, 300.0f, 150.0f);
+    stop();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "background/stage03/st06b.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite1: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script2 {
+    layer(3);
+    type(1);
+    sprite(sprite1);
+    pos(0.0f, 128.0f, 0.0f);
+    alpha(16);
+    scale(0.2f, 0.2f);
+    alpha(0);
+    pos(0.0f, 0.0f, 0.0f);
++3600: // 3600
+    alphaTime(2096, 0, 64);
+    posTime(2096, 0, 0.0f, 128.0f, 0.0f);
++2096: // 5696
+    case(7);
+    case(8);
+    case(9);
+    alpha(96);
+    alphaTime(2, 0, 96);
+    pos(0.0f, 128.0f, 0.0f);
+    posTime(2, 0, 0.0f, 128.0f, 0.0f);
+    stop();
+    case(10);
+    scale(0.2f, 0.2f);
+    scaleTime(320, 0, 1.0f, 1.0f);
+    alpha(96);
+    alphaTime(320, 0, 128);
+    pos(0.0f, 128.0f, 0.0f);
+    posTime(2, 0, 0.0f, 128.0f, 0.0f);
+    case(11);
+    scale(0.2f, 0.2f);
+    scaleTime(320, 0, 2.0f, 2.0f);
+    alpha(96);
+    alphaTime(30, 0, 255);
+    pos(0.0f, 128.0f, 0.0f);
+    posTime(2, 0, 0.0f, 128.0f, 0.0f);
+    stop();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "background/stage03/st06d.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite2: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script3 {
+    layer(3);
+    type(1);
+    sprite(sprite2);
+    pos(0.0f, 0.0f, 0.0f);
+    blendMode(1);
+    alpha(32);
++3600: // 3600
+    alphaTime(2096, 0, 96);
+    posTime(2096, 0, 0.0f, 128.0f, 0.0f);
++2096: // 5696
+    case(7);
+    case(8);
+    case(9);
+    case(10);
+    alpha(96);
+    alphaTime(2, 0, 96);
+    pos(0.0f, 128.0f, 0.0f);
+    posTime(2, 0, 0.0f, 128.0f, 0.0f);
+    stop();
+}
+
+
+entry entry3 {
+    version: 8,
+    name: "background/stage03/st06e.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite3: { x: 1, y: 0, w: 254, h: 256 }
+    }
+}
+
+script script4 {
+    layer(3);
+    type(1);
+    sprite(sprite3);
+    iset($I0, 128);
+    iset($I1, 1);
+    scale(380.0f, 190.0f);
+    texCircle($I0);
+    pos(0.0f, 128.0f, 0.0f);
+    color(192, 255, 0);
+    alpha(192);
+    blendMode(2);
+    stop();
+}
+
+
+entry entry4 {
+    version: 8,
+    name: "background/stage03/st06f.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite4: { x: 1, y: 0, w: 254, h: 256 }
+    }
+}
+
+script script5 {
+    layer(3);
+    type(1);
+    sprite(sprite4);
+    iset($I0, 128);
+    iset($I1, 1);
+    scale(380.0f, 190.0f);
+    texCircle($I0);
+    pos(0.0f, 128.0f, 0.0f);
+    blendMode(1);
+    scrollX(0.002f);
+    alpha(0);
+    stop();
+    case(8);
+    alphaTime(320, 0, 64);
+    stop();
+    case(9);
+    alphaTime(60, 0, 96);
+    scrollX(-0.003f);
+    blendMode(1);
+    stop();
+    case(10);
+    alphaTime(60, 0, 128);
+    scrollX(-0.006f);
+    blendMode(1);
+    stop();
+    case(11);
+    alphaTime(60, 0, 64);
+    scrollX(-0.01f);
+    blendMode(1);
+    stop();
+}
+
+
+entry entry5 {
+    version: 8,
+    name: "background/stage03/st06a.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 1048576,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite5: { x: 0, y: 256, w: 512, h: 512 }
+    }
+}
+
+script script6 {
+    layer(3);
+    type(1);
+    sprite(sprite5);
+    alpha(0);
+    pos(0.0f, 244.0f, 0.0f);
+    scrollY(-0.00005f);
+    blendMode(1);
+    alpha(0);
++4900: // 4900
+    alphaTime(1000, 0, 24);
++1000: // 5900
+    case(7);
+    case(8);
+    case(9);
+    case(10);
+    alpha(24);
+    alphaTime(2, 0, 24);
+    pos(0.0f, 244.0f, 0.0f);
+    posTime(2, 0, 0.0f, 244.0f, 0.0f);
+    stop();
+}
+
+
