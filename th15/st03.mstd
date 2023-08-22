@@ -5,7 +5,7 @@ meta {
     anm_path: "st03wl.anm",
     objects: {
         object0: {
-            layer: 1,
+            layer: 2,
             pos: [64.0, 224.0, 0.0],
             size: [2176.0, 1472.0, 128.0],
             quads: [
@@ -64,7 +64,7 @@ meta {
 
 script main {
     up(0.0, 0.0, 1.0);
-    fov(0.44879895);
+    fov(rad(24));
     sprite(1, 2, 0);
     sprite(2, 3, 0);
     sprite(3, 6, 1);
@@ -72,8 +72,8 @@ script main {
     sprite(5, 5, 10);
     pos(0.0, 0.0, 0.0);
     facing(0.0, 200.0, 0.0);
-    fog(0x100020, 200.0, 400.0);
-    rockingMode(3);
+    fog(0x5c228c, 200.0, 400.0);
+	rockingMode(3);
     posTime(350, 0, 0.0, 512.0, 0.0);
 +350: // 350
     pos(0.0, 0.0, 0.0);
