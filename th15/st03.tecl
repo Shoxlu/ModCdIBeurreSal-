@@ -1,6 +1,6 @@
 anim { "enemy.anm"; "st03enm.anm"; }
 ecli { "default.ecl"; "st03bs.ecl"; "st03mbs.ecl"; }
-
+#include "main.tecl"
 void MainBossSpell();
 
 void MainMBossSpell();
@@ -10,7 +10,7 @@ void ECir00()
     var A;
     anmSelect(2);
     anmSetSprite(0, 53);
-    %A = _f(1);
+    %A = 1f;
     setHurtbox(24.0f, 24.0f);
     setHitbox(16.0f, 16.0f);
     dropMain(1);
@@ -22,7 +22,7 @@ void ECir00()
     anmAlphaTime(0, 60, 0, 255);
     anmColor(0, 102, 60, 32);
     anmLayer(0, 6);
-    movePosRel(%RANDF2 * _f(16), %RANDF2 * _f(16));
+    movePosRel(%RANDF2 * 16f, %RANDF2 * 16f);
     movePosRelTime(60, 1, 0.0f, 0.0f);
     wait(60);
     flagClear(15);
@@ -32,12 +32,10 @@ void ECir00()
     wait(60);
     mathAngle(%F2, %FINAL_X, %FINAL_Y, %F0, %F1);
     moveVel(%F2, 0.0f);
-    ins_445(120, 0, 3.0f);
-    goto ECir00_856 @ 0;
-ECir00_836:
-    wait(1000);
-ECir00_856:
-    if (1) goto ECir00_836 @ 0;
+    moveSpeedTime(120, 0, 3.0f);
+    while(1){
+		wait(1000);
+	}
     delete();
 }
 
@@ -47,58 +45,21 @@ void ECir00_at()
     wait(10);
     etNew(0);
     etAim(0, 3);
-    etSprite(0, 4, 6);
-!E
-    4;
-!N
-    4;
-!H
-    4;
-!LO
-    4;
-!*
-    etCount(0, [-1], 1);
+    etSprite(0, 4, 2);
+    etCount(0, 4, 1);
     etAngle(0, 0.0f, 0.0f);
-!E
-    1.5f;
-!N
-    2.5f;
-!H
-    3.5f;
-!LO
-    4.5f;
-!*
-    etSpeed(0, [-1.0f], 0.2f);
+    etSpeed(0, 1.5f:2.5f:3.5f:4.5f, 0.2f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
     etSound(0, 21, -1);
-    %A = 1.570796f;
-    diffI($B, 1, 2, 4, 20);
-    goto ECir00_at_1060 @ 0;
-ECir00_at_544:
-!E
-    %ANGLE_PLAYER + (%RANDF2 * 0.017453292f);
-!N
-    %ANGLE_PLAYER + (%RANDF2 * 0.17453292f);
-!H
-    %ANGLE_PLAYER + (%RANDF2 * 0.17453292f);
-!LO
-    %ANGLE_PLAYER + (%RANDF2 * 0.17453292f);
-!*
-    etAngle(0, [-1.0f], 0.17453292f);
-    etOn(0);
-!E
-    70;
-!N
-    70;
-!H
-    30;
-!LO
-    10;
-!*
-    wait([-1]);
-ECir00_at_1060:
-    if ($B--) goto ECir00_at_544 @ 0;
-    return;
+    diffI($B, 1, 2, 4, 3);
+    times($B){
+		times(3){
+			etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.017453292f), 0.17453292f);
+			etOn(0);
+			wait(3);
+		}
+		diffWait(90, 90, 90, 50);
+	}
 }
 
 void ECir00b()
@@ -138,13 +99,10 @@ void ECir01()
     wait(60);
     mathAngle(%F2, %FINAL_X, %FINAL_Y, %F0, %F1);
     moveVel(%F2, 0.0f);
-    ins_445(120, 0, 3.0f);
-    goto ECir01_856 @ 0;
-ECir01_836:
-    wait(1000);
-ECir01_856:
-    if (1) goto ECir01_836 @ 0;
-    delete();
+    moveSpeedTime(120, 0, 3.0f);
+    while(1){
+		wait(1000);
+	}
 }
 
 void ECir01_at()
@@ -156,37 +114,15 @@ void ECir01_at()
     etSprite(0, 4, 6);
     etCount(0, 1, 1);
     etAngle(0, 0.0f, 0.0f);
-!E
-    1.2f;
-!N
-    1.2f;
-!H
-    1.2f;
-!LO
-    2.0f;
-!*
-    etSpeed(0, [-1.0f], 0.2f);
+    etSpeed(0, 1.2f:1.2f:1.2f:2.0f, 0.2f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
     etSound(0, 21, -1);
-    %A = 1.570796f;
     diffI($B, $RAND % 2, 2, 2, 4);
-    goto ECir01_at_668 @ 0;
-ECir01_at_520:
-    etAngle(0, %ANGLE_PLAYER, 0.17453292f);
-    etOn(0);
-!E
-    70;
-!N
-    70;
-!H
-    70;
-!LO
-    50;
-!*
-    wait([-1]);
-ECir01_at_668:
-    if ($B--) goto ECir01_at_520 @ 0;
-    return;
+    times($B){
+		etAngle(0, %ANGLE_PLAYER, 0.17453292f);
+		etOn(0);
+		wait(70:70:70:50);
+	}
 }
 
 void ECir01b()
@@ -356,44 +292,32 @@ void GirlA01F()
     moveVelTime(60, 0, %F2, 2.0f);
     setDeath("GirlA01_at");
     wait(120);
-    goto GirlA01F_292 @ 0;
-GirlA01F_272:
+    while(1){
     wait(1000);
-GirlA01F_292:
-    if (1) goto GirlA01F_272 @ 0;
-    return;
+	}
 }
 
 void GirlA01_at()
 {
     etNew(0);
     etSprite(0, 8, 2);
-    etAngle(0, 3.1415927f - %F2, 3.1415927f - %F2);
+    etAngle(0, rad(180) - F2, rad(180) - F2);
     etSpeed(0, 0.4f, 0.4f);
     laserNew(0, 0.0f, 128.0f, 0.0f, 16.0f);
     etSound(0, 18, -1);
-    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
-!E
-    0.05f;
-!N
-    0.1f;
-!H
-    0.1f;
-!LO
-    0.1f;
-!*
-    etEx(0, 0, 4, 120, -999999, [-1.0f], -999999.0f);
+    etEx(0, 0, EX_WAIT, 60, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 4, 120, -999999, 0.05f:0.1:0.1:0.1, -999999.0f);
 !HL
-    etAngle(0, (3.1415927f - %F2) - 0.17453292f, 0.0f);
+    etAngle(0, (rad(180) - F2) - 0.17453292f, 0.0f);
 !*
     laserOn(0);
 !HL
-    etAngle(0, (3.1415927f - %F2) + 0.17453292f, 0.0f);
+    etAngle(0, (rad(180) - F2) + 0.17453292f, 0.0f);
     laserOn(0);
 !L
-    etAngle(0, (3.1415927f - %F2) - 0.5235988f, 0.0f);
+    etAngle(0, (rad(180) - F2) - 0.5235988f, 0.0f);
     laserOn(0);
-    etAngle(0, (3.1415927f - %F2) + 0.5235988f, 0.0f);
+    etAngle(0, (rad(180) - F2) + 0.5235988f, 0.0f);
     laserOn(0);
 !*
     return;
@@ -642,14 +566,11 @@ void GirlB01_at()
     etOffset(0, -8.0f, 0.0f);
     etOffset(1, 8.0f, 0.0f);
     $A = 8;
-    goto GirlB01_at_552 @ 0;
-GirlB01_at_492:
-    etOn(0);
-    etOn(1);
-    wait(20);
-GirlB01_at_552:
-    if ($A--) goto GirlB01_at_492 @ 0;
-    return;
+    times(8){	
+		etOn(0);
+		etOn(1);
+		wait(20);
+	}
 }
 
 void GirlB02()
@@ -738,38 +659,24 @@ void GirlC01_at()
     etNew(0);
     etAim(0, 3);
     etSprite(0, 8, 6);
-!E
-    1;
-!N
-    5;
-!H
-    3;
-!LO
-    5;
-!*
-    etCount(0, [-1], 1);
+    etCount(0, 1:5:3:5, 1);
     etAngle(0, 0.0f, 0.17453292f);
     etSpeed(0, 1.6f, 1.0f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
     etEx(0, 0, 4, 230, -999999, 0.013f, 1.5707964f);
     $B = 3;
-    goto GirlC01_at_780 @ 0;
-GirlC01_at_444:
-    diffF(%A, 1.0f, 1.0f, 2.0f, 3.0f);
-    etAngle(0, %ANGLE_PLAYER, 0.0f);
-    $C = 6;
-    goto GirlC01_at_716 @ 0;
-GirlC01_at_572:
-    etSpeed(0, %A, 0.0f);
-    %A = %A + 0.3f;
-    etOn(0);
-    wait(8);
-GirlC01_at_716:
-    if ($C--) goto GirlC01_at_572 @ 0;
-    wait(60);
-GirlC01_at_780:
-    if ($B--) goto GirlC01_at_444 @ 0;
-    return;
+    times($B){	
+		diffF(%A, 1.0f, 1.0f, 2.0f, 3.0f);	
+		etAngle(0, %ANGLE_PLAYER, 0.0f);
+		$C = 6;
+		times($C){
+			etSpeed(0, %A, 0.0f);
+			%A = %A + 0.3f;
+			etOn(0);
+			wait(8);
+		}
+		wait(60);
+	}
 }
 
 void GirlC02()
@@ -842,74 +749,68 @@ void GirlD01()
 {
     ins_569(6);
     anmSelect(2);
-    anmSetMain(0, 167);
+    anmSetMain(0, 40);
     anmSetSprite(1, 93);
     dropMain(1);
     dropExtra(1, 5);
     dropExtra(2, 6);
     setHurtbox(32.0f, 32.0f);
     setHitbox(24.0f, 24.0f);
-    moveVel(1.5707964f, 2.5f);
-    moveVelTime(70, 1, 1.5707964f, 0.0f);
+    moveVel(rad(90), 2.5f);
+    moveVelTime(70, 1, rad(90), 0.0f);
+	wait(90);
     @GirlD01_at() async;
     wait(80);
     ins_445(120, 1, 0.2f);
     wait(400);
     ins_445(120, 1, 3.0f);
-    goto GirlD01_468 @ 0;
-GirlD01_448:
-    wait(1000);
-GirlD01_468:
-    if (1) goto GirlD01_448 @ 0;
-    delete();
+	while(1){	
+		wait(1000);
+	}
 }
 
 void GirlD01_at()
 {
-    var A;
-    wait(60);
-    etNew(0);
-    etAim(0, 9);
-    etSprite(0, 7, 2);
-!E
-    5;
-!N
-    10;
-!H
-    10;
-!LO
-    10;
-!*
-    etCount(0, [-1], 17);
-    etAngle(0, 0.0f, 0.02617994f);
-!E
-    2.6f;
-!N
-    2.6f;
-!H
-    3.2f;
-!LO
-    3.5f;
-!*
-    etSpeed(0, [-1.0f], 1.8f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    diffI($A, 2, 4, 6, 6);
-    goto GirlD01_at_596 @ 0;
-GirlD01_at_476:
-    etOn(0);
-!E
-    125;
-!N
-    125;
-!H
-    90;
-!LO
-    90;
-!*
-    wait([-1]);
-GirlD01_at_596:
-    if ($A--) goto GirlD01_at_476 @ 0;
-    return;
+	etNew(0);
+	etAim(0, 3);
+	etCount(0, 16:18:20:22, 1);
+	etSpeed(0, 2f, 2f);
+	etAngle(0, RANDRAD, 0f);
+	etSprite(0, 20, 1);
+	etExSet(0, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VELTIME, 5, 3, 0f, NEGF);
+	etExSet(0, 2, 0, EX_WAIT, 40, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_VELTIME, 120, 3, 3f:3f:4f:4f, NEGF);
+	int cnt = 8:10:12:14;
+	float x = 0f, y = 0f;
+	int factor = 0;
+	times(cnt){
+		x = cos(rad(360)/_f(cnt)*_f(factor))*40f;
+		y = sin(rad(360)/_f(cnt)*_f(factor))*40f;
+		etOffset(0, x, y);
+		enmCreate("GirlDat_aimed_rice", x, y, 10, 10, 0);
+		etOn(0);
+		factor+=1;
+		wait(20);
+	}
+}
+
+void GirlDat_aimed_rice(){
+	flagSet(32);
+	etNew(0);
+	etAim(0, 0);
+	etCount(0, 1, 1);
+	etSprite(0, 8, 6);
+	etAngle(0, ANGLE_PLAYER, 0f);
+	etSpeed(0, 5f, 5f);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	wait(45);
+	times(3:5:7:7){
+		etOffsetRad(0, RANDRAD, 10f+RANDF*10f);
+		etAngle(0, rad(0.5)*RANDF2, 0f);
+		etOn(0);
+		wait(2);
+	}
 }
 
 void GirlD01_at2()
@@ -1272,71 +1173,58 @@ void MainSub01b()
     %A = _f(-180);
     %F0 = _f(-64);
     %F1 = _f(320);
-    $B = 10;
-    goto MainSub01b_364 @ 0;
-MainSub01b_220:
-    enmCreate("ECir01", %A, 64.0f, 70, 1000, 1);
-    %A = %A + _f(40);
-    wait(10);
-MainSub01b_364:
-    if ($B--) goto MainSub01b_220 @ 0;
+    $B = 5;
+    times($B){
+		enmCreate("ECir01", %A, 64.0f, 70, 1000, 1);
+		%A = %A + _f(80);
+		wait(20);
+	}
     %F0 = _f(64);
     %F1 = _f(320);
     %A = _f(180);
-    $C = 10;
-    goto MainSub01b_736 @ 0;
-MainSub01b_592:
-    enmCreate("ECir01", %A, 140.0f, 70, 1000, 1);
-    %A = %A - _f(40);
-    wait(10);
-MainSub01b_736:
-    if ($C--) goto MainSub01b_592 @ 0;
+    $C = 5;
+    times($C){
+		enmCreate("ECir01", %A, 140.0f, 70, 1000, 1);
+		%A = %A - _f(80);
+		wait(20);
+	}
     %A = _f(-180);
     %F0 = _f(-64);
     %F1 = _f(320);
-    $D = 10;
-    goto MainSub01b_1108 @ 0;
-MainSub01b_964:
-    enmCreate("ECir01", %A, 128.0f, 70, 1000, 1);
-    %A = %A + _f(40);
-    wait(10);
-MainSub01b_1108:
-    if ($D--) goto MainSub01b_964 @ 0;
+    $D = 5;
+    times($D){
+		enmCreate("ECir01", %A, 128.0f, 70, 1000, 1);
+		%A = %A + _f(80);
+		wait(20);
+	}
     %F0 = _f(64);
     %F1 = _f(320);
     %A = _f(180);
-    $E = 10;
-    goto MainSub01b_1480 @ 0;
-MainSub01b_1336:
-    enmCreate("ECir01", %A, 96.0f, 70, 1000, 1);
-    %A = %A - _f(40);
-    wait(10);
-MainSub01b_1480:
-    if ($E--) goto MainSub01b_1336 @ 0;
+    $E = 5;
+    times($E){			
+		enmCreate("ECir01", %A, 96.0f, 70, 1000, 1);
+		%A = %A - _f(80);
+		wait(20);
+	}
     wait(60);
     %A = _f(-180);
     %F0 = _f(-64);
     %F1 = _f(320);
-    $F = 10;
-    goto MainSub01b_1872 @ 0;
-MainSub01b_1728:
-    enmCreate("ECir01", %A, 64.0f, 70, 1000, 1);
-    %A = %A + _f(40);
-    wait(10);
-MainSub01b_1872:
-    if ($F--) goto MainSub01b_1728 @ 0;
+    $F = 5;
+    times($F){
+		enmCreate("ECir01", %A, 64.0f, 70, 1000, 1);
+		%A = %A + _f(80);
+		wait(20);
+	}
     %F0 = _f(64);
     %F1 = _f(320);
     %A = _f(180);
-    $G = 10;
-    goto MainSub01b_2244 @ 0;
-MainSub01b_2100:
-    enmCreate("ECir01", %A, 140.0f, 70, 1000, 1);
-    %A = %A - _f(40);
-    wait(10);
-MainSub01b_2244:
-    if ($G--) goto MainSub01b_2100 @ 0;
-    return;
+    $G = 5;
+    times($G){
+		enmCreate("ECir01", %A, 140.0f, 70, 1000, 1);
+		%A = %A - _f(80);
+		wait(20);
+	}
 }
 
 void MainSub02()

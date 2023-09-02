@@ -1,0 +1,150 @@
+entry entry0 {
+    version: 8,
+    name: "background/stage03/stg7bg.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 256, h: 512 }
+    }
+}
+
+script script0 {
+    type(8);
+    sprite(sprite0);
+    stop();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "background/stage03/stg7bg2.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite1: { x: 1, y: 0, w: 254, h: 512 }
+    }
+}
+
+script script1 {
+    type(8);
+    sprite(sprite1);
+    stop();
+}
+
+script script2 {
+    type(8);
+    rotate(0.0f, 3.1415927f, 0.0f);
+    sprite(sprite1);
+    stop();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "background/stage03/stg7bg3.png",
+    format: 5,
+    width: 32,
+    height: 256,
+    memoryPriority: 11,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 16384,
+    THTXFormat: 5,
+    THTXWidth: 32,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite2: { x: 0, y: 0, w: 32, h: 512 }
+    }
+}
+
+script script3 {
+    type(8);
+    color(96, 96, 96);
+    rotate(1.5707964f, 0.0f, 0.0f);
+    sprite(sprite2);
+    stop();
+}
+
+script script4 {
+    type(8);
+    color(255, 255, 255);
+    rotate(1.5707964f, 0.0f, 1.5707964f);
+    sprite(sprite2);
+    stop();
+}
+
+script script5 {
+    type(8);
+    color(32, 32, 32);
+    rotate(1.5707964f, 0.0f, 1.5707964f);
+    sprite(sprite2);
+    stop();
++3368: // 3368
+    colorTime(120, 0, 0, 0, 0);
+    stop();
+}
+
+script script6 {
+    type(8);
+    color(0, 0, 0);
+    rotate(1.5707964f, 0.0f, 0.7853982f);
+    sprite(sprite2);
+    stop();
++3368: // 3368
+    colorTime(120, 0, 0, 0, 0);
+    stop();
+}
+
+script script7 {
+    type(8);
+    color(128, 128, 128);
+    rotate(1.5707964f, 0.0f, -0.7853982f);
+    sprite(sprite2);
+    stop();
++3368: // 3368
+    colorTime(120, 0, 0, 0, 0);
+    stop();
+}
+
+script script8 {
+    type(8);
+    color(192, 192, 192);
+    rotate(1.5707964f, 0.0f, 0.7853982f);
+    sprite(sprite2);
+    stop();
++3368: // 3368
+    colorTime(120, 0, 0, 0, 0);
+    stop();
+}
+
+script script9 {
+    type(8);
+    color(96, 96, 96);
+    rotate(1.5707964f, 0.0f, -0.7853982f);
+    sprite(sprite2);
+    stop();
++3368: // 3368
+    colorTime(120, 0, 0, 0, 0);
+    stop();
+}
+
+
