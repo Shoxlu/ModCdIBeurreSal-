@@ -53,7 +53,7 @@ void ECir00_at()
     etSound(0, 21, -1);
     diffI($B, 1, 2, 4, 3);
     times($B){
-		times(3){
+		times(2){
 			etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.017453292f), 0.17453292f);
 			etOn(0);
 			wait(3);
@@ -781,7 +781,7 @@ void GirlD01_at()
 	etExSet(0, 1, 0, EX_VELTIME, 5, 3, 0f, NEGF);
 	etExSet(0, 2, 0, EX_WAIT, 40, NEG, NEGF, NEGF);
 	etExSet(0, 3, 0, EX_VELTIME, 120, 3, 3f:3f:4f:4f, NEGF);
-	int cnt = 8:10:12:14;
+	int cnt = 6:8:10:12;
 	float x = 0f, y = 0f;
 	int factor = 0;
 	times(cnt){
@@ -1115,7 +1115,7 @@ void MainSub00()
 MainSub00_220:
     enmCreate("ECir00", %A, 64.0f, 100, 1000, 1);
     %A = %A - _f(40);
-    wait(10);
+    wait(15);
 MainSub00_364:
     if ($B--) goto MainSub00_220 @ 0;
     %F0 = _f(64);
@@ -1126,7 +1126,7 @@ MainSub00_364:
 MainSub00_592:
     enmCreate("ECir00", %A, 140.0f, 100, 1000, 1);
     %A = %A + _f(40);
-    wait(10);
+    wait(15);
 MainSub00_736:
     if ($C--) goto MainSub00_592 @ 0;
     %F0 = _f(0);
@@ -1137,7 +1137,7 @@ MainSub00_736:
 MainSub00_964:
     enmCreate("ECir00", %A, 180.0f, 100, 1000, 1);
     %A = %A - _f(40);
-    wait(10);
+    wait(15);
 MainSub00_1108:
     if ($D--) goto MainSub00_964 @ 0;
     %F0 = _f(0);
@@ -1148,7 +1148,7 @@ MainSub00_1108:
 MainSub00_1336:
     enmCreate("ECir00", %A, 120.0f, 100, 1000, 1);
     %A = %A + _f(40);
-    wait(10);
+    wait(15);
 MainSub00_1480:
     if ($E--) goto MainSub00_1336 @ 0;
     return;

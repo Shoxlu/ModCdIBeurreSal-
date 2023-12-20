@@ -536,7 +536,6 @@ void MainBoss()
     dialogRead(1);
     dialogWait();
     return;
-    return;
 }
 
 void MainBossDebug()
@@ -551,7 +550,7 @@ void MainBossDebug2()
 {
 +10: //10
     dialogRead(-1);
-    @MainBoss();
+	MainBoss();
     return;
 }
 
