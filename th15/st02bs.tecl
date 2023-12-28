@@ -206,12 +206,12 @@ Boss2_544:
 	@Boss2_at3()async;
 	while(1)
 	{
-	@Boss2_at();
-	moveRand(60, 4, 1.0f);
-	wait(90);
-	@Boss2_at2();
-	moveRand(60, 4, 1.0f);
-	wait(90);
+		@Boss2_at();
+		moveRand(60, 4, 1.0f);
+		wait(90);
+		@Boss2_at2();
+		moveRand(60, 4, 1.0f);
+		wait(90);
 	}
 }
 
@@ -228,12 +228,12 @@ void Boss2_at01()
 	etEx(0, 0, EX_BOUNCE, 2, 13, NEGF, NEGF);
 	while(1)
 	{
-	wait(15);
-	etSprite(0, 37, 1);
-	etOn(0);
-	wait(15);
-	etSprite(0, 37, 3);
-	etOn(0);
+		wait(15);
+		etSprite(0, 37, 1);
+		etOn(0);
+		wait(15);
+		etSprite(0, 37, 3);
+		etOn(0);
 	}
     
 }
@@ -392,11 +392,13 @@ void Boss3_at()
 
 void Boss3_starry_rain()
 {
-	float X = -190f;
-	times(7:9:11:11)
+	int n = 6:8:9:9;
+	float X = -192f+386f/_f(n*2);
+	
+	times(n)
 	{
-		enmCreate("Boss3_starry_rain_at", X, 0f, 100, 10, 1);
-		X += 380f/(6f:8f:10f:10f);
+		enmCreateA("Boss3_starry_rain_at", 0f+X, 128f, 100, 10, 1);
+		X += 386f/_f(n);
 	}
 }
 
@@ -411,7 +413,7 @@ void Boss3_starry_rain_at()
 	etEx(2, 0, EX_INVULN, 100000, NEG, NEGF, NEGF);
 	times(15)
 	{
-		etSpeed(2, 1.9f:1.9f:1.9f:1.75f-RANDF*-1f, 2f);
+		etSpeed(2, 2.2f:2.1f:2.0f:2f+RANDF, 2f);
 		etAngle(2, rad(270)+rad(30)*RANDF2, 0f);
 		etEx(2, 0, EX_ACCEL, 60, NEG, 1f/60f, rad(90)+rad(20)*RANDF2);
 		etOn(2);
@@ -821,8 +823,8 @@ void BossCard2_Enm()
 	{
 		movePos(BOSS_X + cos(F0)*d, BOSS_Y + sin(F0)*d);
 		d += 2f;
-		F0 += rad(-4);
-		+1:
+		F0 -= rad(4);
++1:
 	}
 	GI2 = 1;
 	bossTrace2() async;
@@ -854,10 +856,10 @@ void BossCard2_at3()
 	etAim(1, 1);
 	etCount(1, 1, 1);
 	
-	etSpeed(1, 1.5f:1.5f:1.5f:2.5f, 1.5f);
+	etSpeed(1, 1.5f:1.5f:2f:2.5f, 1.5f);
 	etSprite(1, 16, 3);
 	etEx(1, 1, EX_ANIM, 0, NEG, NEGF, NEGF);
-	times(180/2:2:1:1)
+	times(180/(2:2:1:1))
 	{
 		mathAngle(Ang, BOSS_X, BOSS_Y, ABS_X, ABS_Y);
 		etAngle(1, Ang, 0f);

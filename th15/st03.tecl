@@ -784,9 +784,10 @@ void GirlD01_at()
 	int cnt = 6:8:10:12;
 	float x = 0f, y = 0f;
 	int factor = 0;
+	float base_angle = rad(360)/_f(cnt);
 	times(cnt){
-		x = cos(rad(360)/_f(cnt)*_f(factor))*40f;
-		y = sin(rad(360)/_f(cnt)*_f(factor))*40f;
+		x = cos(base_angle*_f(factor))*40f;
+		y = sin(base_angle*_f(factor))*40f;
 		etOffset(0, x, y);
 		enmCreate("GirlDat_aimed_rice", x, y, 10, 10, 0);
 		etOn(0);

@@ -91,7 +91,7 @@ void Boss1_at(int etID, float A, int color, float I, int Waittime)
 	etAngle(etID, rad(0), 0f);
 	float Angle = A;
 	wait(Waittime);
-	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(etID, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
 		etAngle(etID, Angle, rad(45):rad(45):rad(55):rad(45));

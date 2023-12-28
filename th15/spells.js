@@ -6,7 +6,7 @@
 	"10": "Signe du gras : « Butter Spark »",
     "12": "Signe du gras : « Sweet Butter Spark »",
     "14": "Rébellion : « Orbes du passé »",
-    "18": "Magie normande « Mont Saint-Michel's Crisis »",
+    "18": "Magie normande « Crise du Mont Saint-Michel »",
     "21": "Magie normande : « Shoot the Bretagne »",
 	"23": "Illumination « Balles légendaires »",
 	"26": "Signe primitif : « Être mono-neuronal »",

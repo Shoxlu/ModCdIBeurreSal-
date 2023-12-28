@@ -159,7 +159,7 @@ void MBoss1_at()
 		etAngle(1, rad(90)+ RANDF2*rad(10), 0f);
 		etOn(0);
 		
-		wait(7:6:5:4);
+		wait(8:7:6:5);
 		etOn(1);
 		wait(5);
 	}
