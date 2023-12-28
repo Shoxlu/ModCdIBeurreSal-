@@ -749,6 +749,7 @@ entry entry11 {
     THTXZero: 0,
     sprites: {
         sprite39: { x: 0, y: 0, w: 512, h:512}
+        sprite40: { x: 0, y: 0, w: 512, h:512}
     }
 }
 
