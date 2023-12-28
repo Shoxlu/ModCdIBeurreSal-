@@ -71,9 +71,9 @@ void Boss1_at()
 	GF0 = 0f;
 	GF1 = 0f;
     etNew(0);
-    etAim(0, 3);
+    etAim(0, 1);
     etSprite(0, 26, 0);
-	etCount(0, 1, 1);
+	etCount(0, 1:1:2:3, 1);
 	etSpeed(0, 1.75f, 1.75f);
 	etEx(0, 0, EX_SIZE, 1, 0, 1f, 2f);
 	etExSet(0, 1, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
@@ -82,7 +82,7 @@ void Boss1_at()
 	etExSet(0, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
 	etExSub(0, 3, "ExplosionJaune");
 	etExSet(0, 4, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
-	etAngle(0, rad(90), 0f);
+	etAngle(0, rad(90), 0f:0f:rad(90):rad(80));
 	etOn(0);
 	wait(30);
 	while(1)
@@ -90,12 +90,12 @@ void Boss1_at()
 	GF0 = RANDRAD;
 	GF1 = 1f;
 	wait(60);
-	etAngle(0, rad(90) + RANDF2*rad(60), 0f);
+	etAngle(0, rad(90) + RANDF*rad(60), rad(80));
 	etOn(0);
 	GF0 = RANDRAD;
 	GF1 = -1f;
 	wait(60);
-	etAngle(0, rad(90) + RANDF2*rad(60), 0f);
+	etAngle(0, rad(90) + RANDF*rad(-60), rad(80));
 	etOn(0);
 	}
 }
@@ -106,7 +106,7 @@ void ExplosionRouge()
 	etNew(1);
 	etAim(1, 3);
 	etSprite(1, 25, 0);
-	etCount(1, 30, 2);
+	etCount(1, 15:20:10:10, 2);
 	etEx(1, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
 	etEx(1, 0, EX_VELTIME, 240, NEG, 3.5f, rad(90));
 	etEx(1, 0, EX_OFFSCREEN, 600, 0, NEGF, NEGF);
@@ -122,7 +122,7 @@ void ExplosionJaune()
 	etNew(2);
 	etAim(2, 3);
 	etSprite(2, 28, 0);
-	etCount(2, 30, 2);
+	etCount(2, 10:20:10:10, 2);
 	etEx(2, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
 	etEx(2, 0, EX_VELTIME, 240, NEG, 3.5f, rad(90));
 	etEx(2, 0, EX_OFFSCREEN, 600, 0, NEGF, NEGF);
