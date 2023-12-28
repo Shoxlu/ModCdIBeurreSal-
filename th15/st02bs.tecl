@@ -472,6 +472,7 @@ BossCard1_468:
     anmPlay(1, 86);
     playSound(6);
     anmSelect(4);
+
 	while(1)
 	{
 		F0 = 0f;
