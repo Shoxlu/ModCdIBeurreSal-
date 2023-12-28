@@ -748,8 +748,7 @@ entry entry11 {
     THTXHeight: 512,
     THTXZero: 0,
     sprites: {
-        sprite39: { x: 128, y: 224, w: 384, h: 448 },
-        sprite40: { x: 64, y: 128, w: 384, h: 448 }
+        sprite39: { x: 0, y: 0, w: 512, h:512}
     }
 }
 
@@ -757,7 +756,7 @@ script script11 {
     alpha(0);
     layer(4);
     scriptNew(script14);
-    scriptNew(script15);
+    //scriptNew(script15);
     scriptNew(script12);
     stop();
 }
@@ -769,9 +768,9 @@ script script12 {
     pos(0.0f, 224.0f, 0.0f);
     alpha(0);
     alphaTime(60, 0, 255);
-    scrollX(-0.00045454546f);
-    scrollY(0.00083333335f);
-    blendMode(2);
+    //scrollX(-0.00045454546f);
+    //scrollY(0.00083333335f);
+    //blendMode(2);
 0:
     stop();
 }
@@ -813,14 +812,16 @@ entry entry12 {
 
 script script14 {
 -1:
-    layer(4);
+    layer(5);
     type(1);
     sprite(sprite41);
-    scale(1.15625f, 1.15625f);
+	alpha(155);
+    //scale(1.15625f, 1.15625f);
     pos(0.0f, 224.0f, 0.0f);
     alpha(0);
     alphaTime(60, 0, 255);
-    angleVel(0.0f, 0.0f, 0.0034906585f);
+    scrollY(0.2f/60f);
+	blendMode(1);
 0:
     stop();
 }
