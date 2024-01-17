@@ -893,130 +893,129 @@ BossCard4_448:
     anmPlay(1, 73);
 +90: //94
     nop();
-    funcSet(3);
-    %F0 = 0.5f;
-    %F1 = -0.5f;
-    $A = 2;
-    $B = -1;
-    $C = 1000;
-    goto BossCard4_1536 @ 94;
-BossCard4_1228:
-    $B = $B + 1;
-    anmSelect(3);
-    anmSelectedPlay(0);
-    unless ($B >= 2) goto BossCard4_1464 @ 94;
-    $A = 3;
-BossCard4_1464:
-    @BossCard1_at() async;
-    @BossCard1_at2();
-BossCard4_1536:
-    if ($C--) goto BossCard4_1228 @ 94;
-    goto BossCard4_1624 @ 94;
-BossCard4_1604:
-    wait(1000);
-BossCard4_1624:
-    if (1) goto BossCard4_1604 @ 94;
-    return;
+	while(1)
+	{
+	float hauteur = 0;
+	times(4)
+	{
+	@toile_gauche(hauteur+RANDF*40f)async;
+	@toile_droite(hauteur+RANDF*40f)async;
+	hauteur += 40f;
+	wait(10);
+	}
+	wait(300);
+	times(4)
+	{
+	@leurre();
+	wait(120);
+	}
+	wait(120);
+	}
 }
 
-void BossCard1_at()
+void leurre()
 {
-    var A, B, C;
-    etNew(0);
-    etSprite(0, 38, 2);
-    etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 6.0f, 6.0f);
-!E
-    300;
-!N
-    600;
-!H
-    650;
-!LO
-    700;
-!*
-    laserNew(0, 0.0f, [-1.0f], 0.0f, 16.0f);
-    etSound(0, 18, -1);
-    laserTiming(0, 0, 0, 0, 0, 2);
-    etEx(0, 0, 32768, 0, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 250, 0, -999999.0f, -999999.0f);
-    %A = _f(448) - (%RANDF * _f(20));
-    $B = 16;
-    goto BossCard4_at_732 @ 0;
-BossCard4_at_588:
-    etOffsetAbs(0, -192.0f, %A);
-    laserOn(0);
-    %A = %A - _f(64);
-    wait(10);
-BossCard4_at_732:
-    if ($B--) goto BossCard4_at_588 @ 0;
-    %A = _f(448) - (%RANDF * _f(20));
-    etAngle(0, 3.1415927f, 0.0f);
-    $C = 16;
-    goto BossCard4_at_1124 @ 0;
-BossCard4_at_980:
-    etOffsetAbs(0, 192.0f, %A);
-    laserOn(0);
-    %A = %A - _f(64);
-    wait(10);
-BossCard4_at_1124:
-    if ($C--) goto BossCard4_at_980 @ 0;
-    return;
+	float angle = RANDF2*rad(5);
+	float signe = 1f;
+	etNew(0);
+    etAim(0, 3);
+    etCount(0, 6, 1);
+	etSprite(0, 9, 0);
+    etAngle(0, angle, 0f);
+    etSpeed(0, 4f, 4f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etOn(0);
+	playSound(38);
+	wait(5);
+	times(6)
+	{
+	signe = -1f*signe;
+	@fil(angle, signe)async;
+	angle += rad(60);
+	}
 }
 
-void BossCard1_at2()
+void fil(float angle2, float sens)
 {
-    var A, B, C;
-    wait(10);
-    etNew(1);
-    etSprite(1, 38, 2);
-    etAngle(1, 3.1415927f, 3.1415927f);
-    etSpeed(1, 6.0f, 6.0f);
-!E
-    300;
-!N
-    600;
-!H
-    650;
-!LO
-    700;
-!*
-    laserNew(1, 0.0f, [-1.0f], 0.0f, 16.0f);
-    etSound(0, 18, -1);
-    laserTiming(1, 0, 0, 0, 0, 2);
-    etEx(1, 0, 32768, 1, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 256, 250, 0, -999999.0f, -999999.0f);
-    %A = _f(0) + (%RANDF * _f(20));
-    $B = 16;
-    goto BossCard4_at2_752 @ 0;
-BossCard4_at2_608:
-    etOffsetAbs(1, 192.0f, %A);
-    laserOn(1);
-    %A = %A + _f(64);
-    wait(10);
-BossCard4_at2_752:
-    if ($B--) goto BossCard4_at2_608 @ 0;
-    %A = _f(0) + (%RANDF * _f(20));
-    etAngle(1, 0.0f, 0.0f);
-    $C = 16;
-    goto BossCard4_at2_1144 @ 0;
-BossCard4_at2_1000:
-    etOffsetAbs(1, -192.0f, %A);
-    laserOn(1);
-    %A = %A + _f(64);
-    wait(10);
-BossCard4_at2_1144:
-    if ($C--) goto BossCard4_at2_1000 @ 0;
-    return;
+	float distance = 0f;
+	float deroul = 0f;
+	etNew(1);
+	etAim(1, 3);
+	etSprite(1, 8, 2);
+	etSpeed(1, 0f, 0f);
+	times(100)
+	{
+	wait(1);
+	etAngle(1, angle2, 0f);
+	deroul += rad(10)*sens;
+	distance += 4f;
+	etOffset(1, distance*cos(angle2), distance*sin(angle2));
+	etExSet(1, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(1, 1, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(1, 2, 0, EX_VEL, NEG, NEG, deroul, 1.2f);
+	etOn(1);
+	}
 }
 
-void BossCard1_en()
+void toile_gauche(float ordonnee)
 {
-    flagSet(291);
-    %F0 = 0.5f;
-    funcSet(3);
-    @BossCard1_at();
-    delete();
+	float angle = RANDF*rad(30);
+	float signe = 1f;
+	etNew(2);
+    etAim(2, 3);
+    etCount(2, 1, 1);
+	etSprite(2, 9, 0);
+    etAngle(2, angle, 0f);
+    etSpeed(2, 4f, 4f);
+	etOffsetAbs(2, -192f, ordonnee);
+	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etOn(2);
+	playSound(38);
+	wait(5);
+	signe = -1f*signe;
+	@fil_toile(angle, signe, ordonnee, -192f);
+}
+
+void toile_droite(float ordonnee)
+{
+	float angle = rad(150)+RANDF*rad(30);
+	float signe = 1f;
+	etNew(2);
+    etAim(2, 3);
+    etCount(2, 1, 1);
+	etSprite(2, 9, 0);
+    etAngle(2, angle, 0f);
+    etSpeed(2, 4f, 4f);
+	etOffsetAbs(2, -192f, ordonnee);
+	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etOn(2);
+	playSound(38);
+	wait(5);
+	signe = -1f*signe;
+	@fil_toile(angle, signe, ordonnee, 192f);
+}
+
+
+void fil_toile(float angle2, float sens, float position, float abscisse)
+{
+	float distance = 0f;
+	float deroul = 0f;
+	etNew(3);
+	etAim(3, 3);
+	etSprite(3, 8, 10);
+	etSpeed(3, 0f, 0f);
+	times(150)
+	{
+	wait(1);
+	etAngle(3, angle2, 0f);
+	deroul += rad(10)*sens;
+	distance += 4f;
+	etOffsetAbs(3, abscisse+distance*cos(angle2), position+distance*sin(angle2));
+	etExSet(3, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(3, 1, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(3, 2, 0, EX_VEL, NEG, NEG, deroul, 1.2f);
+	etOn(3);
+	}
 }
 
 void BossCard5()
