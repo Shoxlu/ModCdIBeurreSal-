@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(16000);
-    @Boss3();
+    @BossCard4();
     delete();
 }
 
@@ -422,6 +422,7 @@ Boss4_544:
     lifeMarker(0, 0.0f, -24448);
     wait(160);
     @BossCard4();
+	wait(10000);
     return;
 }
 
@@ -541,13 +542,7 @@ void BossCard4_Moon()
     playSound(52);
     moveVel(%ANGLE_PLAYER, 0.0f);
     ins_445(60, 0, speed);
-    @BossTrase() async;
-    %F0 = 64.0f;
-    goto BossCard1_Moon_480 @ 0;
-BossCard1_Moon_460:
-    wait(1000);
-BossCard1_Moon_480:
-    if (1) goto BossCard1_Moon_460 @ 0;
+    @BossTrase();
     delete();
 }
 
@@ -577,43 +572,27 @@ void BossCard4_at()
 
 void BossTrase()
 {
-   goto BossTrase_700 @ 0;
-BossTrase_60:
-    unless ((((%FINAL_X < _f(-192)) || (%FINAL_X > _f(192))) || (%FINAL_Y > _f(448))) || (%FINAL_Y < _f(0))) goto BossTrase_680 @ 0;
-    moveVel(%ANGLE_PLAYER, 0.0f);
-    ins_445(1, 0, 0.0f);
-    playSound(51);
-    setScreenShake(20, 2, 0);
-	anmPlay(1, 197);
+	while(!( (FINAL_X < -192.0) || (FINAL_X > 192.0) || (FINAL_Y > 448.0) || (FINAL_Y < 0.0))){
+		wait(1);
+	}
+
+	moveVel(%ANGLE_PLAYER, 0.0f);
+	ins_445(1, 0, 0.0f);
+	playSound(51);
+	setScreenShake(20, 2, 0);
+	anmPlay(1, 97);
 	wait(40);
 	playSound(6);
-    BossCard4_at();
+	BossCard4_at();
 	setScreenShake(20, 10, 0);
 	movePos(-300f, -100f);
 	wait(30);
 	Moon();
-    ins_445(120, 0, 8.0f);
-    wait(30);
-	goto end @ 0;
-BossTrase_680:
-    wait(1);
-BossTrase_700:
-    if (1) goto BossTrase_60 @ 0;
     return;
-end:
 }
 
 void Moon() {
-
-    nop();
     enmCreateA("BossCard4_Moon", BOSS_X, BOSS_Y, 100, 100, 0);
-	 wait(60);
-    goto BossCard1_1424 @ 94;
-BossCard1_1404:
-    wait(1000);
-BossCard1_1424:
-    if (1) goto BossCard1_1404 @ 94;
-    return;
 }
 
 
