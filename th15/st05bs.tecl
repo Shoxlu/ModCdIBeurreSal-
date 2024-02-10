@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(16000);
-    @BossCard4();
+    @Boss3();
     delete();
 }
 
