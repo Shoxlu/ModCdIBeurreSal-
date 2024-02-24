@@ -45,7 +45,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss5");
 	lifeSet(16000);
-    @Boss4();
+    @Boss1();
     delete();
 }
 
@@ -354,12 +354,12 @@ void Gravite()
 	etEx(0, 0, EX_VELTIME, 370, NEG, 7f, rad(90));
 	while(1)
 	{
-	etSprite(0, 25:25:27:27, 0);
-	etOn(0);
-	wait(5);
-	etSprite(0, 26:26:28:28, 0);
-	etOn(0);
-	wait(5);
+		etSprite(0, 25:25:27:27, 0);
+		etOn(0);
+		wait(5);
+		etSprite(0, 26:26:28:28, 0);
+		etOn(0);
+		wait(5);
 	}
 }
 

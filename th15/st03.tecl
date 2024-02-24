@@ -1729,8 +1729,7 @@ main_440:
 	bossWait();
     wait(160);
     @MainLatter();
-    wait(300);
-    wait(200);
+    wait(500);
     enmKillAll();
     etClear(640.0f);
     setChapter(41);

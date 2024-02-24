@@ -204,8 +204,8 @@ offset24:
     jmp(offset24, 0);
     stop();
 }
-
-
+script script6 {}
+script script7 {}
 entry entry1 {
     version: 8,
     name: "face/enemy3/face03no.png",
@@ -823,7 +823,7 @@ entry entre16{
     }
 }
 
-entry entre17{
+entry entre21{
 	version: 8,
     name: "front/train_day.png",
     format: 1,
@@ -837,7 +837,7 @@ entry entre17{
     }
 }
 
-script script21{
+script script22{
 	sprite(49);
 	layer(7);
 	alpha(255);
@@ -846,7 +846,7 @@ script script21{
 +90:
 	stop();
 }
-script script22{
+script script23{
 	sprite(49);
 	layer(7);
 	anchor(0, 0);
@@ -855,7 +855,7 @@ script script22{
 +90:
 	stop();
 }
-script script23{
+script script24{
 	sprite(50);
 	layer(7);
 	anchor(0, 0);
@@ -880,8 +880,8 @@ entry entre18{
     }
 }
 
-script script24{
-	scriptNew(script27);
+script script25{
+	scriptNew(script28);
 	sprite(51);
 	layer(7);
 	type(1);
@@ -896,8 +896,8 @@ loop:
 	stop();
 }
 
-script script25{
-	scriptNew(script27);
+script script26{
+	scriptNew(script28);
 	sprite(51);
 	layer(7);
 	type(1);
@@ -911,12 +911,12 @@ loop:
 	stop();
 }
 
-script script26 {
+script script27 {
     color(155, 240, 255);
     sprite(sprite51);
     stop();
 }
-script script27{
+script script28{
     sprite(51);
     blendMode(1);
     layer(6);

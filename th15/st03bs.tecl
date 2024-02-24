@@ -738,7 +738,7 @@ void BossCard3_flowers()
 	flagSet(1);
 	flagSet(4);
 	anmSelect(3);
-	anmSetSprite(0, 24);
+	anmSetSprite(0, 25);
 	setHitbox(65f, 65f);
 	deathAnm(0, -1);
 	moveVel(rad(90), 0.25f+RANDF*2f);
@@ -750,7 +750,7 @@ void BossCard3_flowers2()
 	flagSet(1);
 	flagSet(4);
 	anmSelect(3);
-	anmSetSprite(0, 25);
+	anmSetSprite(0, 26);
 	setHitbox(65f, 65f);
 	deathAnm(0,-1);
 	moveVel(rad(90), 0.25f+RANDF*2f);
