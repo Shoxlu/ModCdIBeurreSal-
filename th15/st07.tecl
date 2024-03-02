@@ -1497,11 +1497,11 @@ main_440:
     // @MainLatter();
     // wait(120);
     // etClear(640.0f);
-    ins_571();
+    //ins_571();
     setChapter(41);
     wait(160);
-    dialogRead(0);
-    @MainBoss();
+    //dialogRead(0);
+    //@MainBoss();
     goto main_1252 @ 60;
 main_1232:
     wait(1000);

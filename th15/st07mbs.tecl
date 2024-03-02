@@ -32,7 +32,7 @@ void MBoss()
     setNext(1, 2200, 1500, "MBossCard1");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
-    @MBoss2();
+    @MBoss3();
     goto MBoss_784 @ 0;
 MBoss_764:
     wait(1000);
@@ -532,31 +532,29 @@ void MBossDead()
     spellEnd();
     enmKillAll();
     fog(0.0f, 16748431);
-    unless ($DIFF <= 1) goto MBossDead_476 @ 0;
-    unless ($TIMEOUT == 0) goto MBossDead_396 @ 0;
-    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
-    goto MBossDead_452 @ 0;
-MBossDead_396:
-    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
-MBossDead_452:
-    goto MBossDead_620 @ 0;
-MBossDead_476:
-    unless ($TIMEOUT == 0) goto MBossDead_600 @ 0;
-    etCancel(640.0f);
-    goto MBossDead_620 @ 0;
-MBossDead_600:
-    etClear(640.0f);
-MBossDead_620:
+
+    if ($DIFF <= 1){ //goto MBossDead_476 @ 0;
+		if ($TIMEOUT == 0){ //goto MBossDead_396 @ 0;
+			enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+		}else{
+			enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+		}
+	}
+    if ($TIMEOUT == 0){ //goto MBossDead_600 @ 0;
+		etCancel(640.0f);
+	}else{
+		etClear(640.0f);
+	}
+
     anmPlay(1, 65);
     moveLimitReset();
     lifeSet(1000);
     dropClear();
-    unless ($CAPTURE != 0) goto MBossDead_820 @ 0;
-    dropMain(5);
-    goto MBossDead_840 @ 0;
-MBossDead_820:
-    dropMain(7);
-MBossDead_840:
+    if ($CAPTURE != 0){ //goto MBossDead_820 @ 0;
+		dropMain(5);
+	}else{
+		dropMain(7);
+	}
     dropExtra(1, 50);
     dropExtra(2, 50);
     dropArea(64.0f, 64.0f);
@@ -567,8 +565,6 @@ MBossDead_840:
     anmPlay(0, 28);
     playSound(5);
     ins_570();
-    wait(180);
-    delete();
     delete();
 }
 
