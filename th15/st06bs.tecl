@@ -291,10 +291,9 @@ void Boss3_at()
 	float A = rad(0);
 	etNew(0);
     etAim(0, 3);
-    etCount(0, 5, 5);
+    etCount(0, 5, 1);
     etSprite(0, 4, 6);
-	etOffset(0, 100.0f, 0.0f);
-    etSpeed(0, 1f, 3f);	
+    etSpeed(0, 3f, 3f);	
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_VELTIME, NEG, 30, 0.8f, NEGF);
 	while(1)
