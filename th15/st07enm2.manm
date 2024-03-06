@@ -682,7 +682,7 @@ script script12 {
 	// %F0 = 20f * %I1;
 	%F0 = 10f + (%I3 * (192f/10f));
 loop:
-	scriptNew(script19);
+	scriptNew(script16);
 	%F1 = RANDF * -1000f;
 	$I3 = $I3 + 1;
 	%F0 = 10f + (%I3 * (192f/10f));
@@ -884,7 +884,7 @@ entry entry17 {
     }
 }
 
-script script19 {
+script script16 {
 0:
     copyVars();
 	ije(RAND % 2, 1, case1, 0);
@@ -909,7 +909,7 @@ case1_:
 	sprite(sprite35);
 end_:
 +7:
-	scriptNew(script20);
+	scriptNew(script17);
 	F1 = F1 + 110f/4f;
 	fjg(F1, 580f, reset, 10);
 	jmp(loop, 0);
@@ -920,7 +920,7 @@ reset:
     stop();
 }
 
-script script20{
+script script17{
 	copyVars();
 	blendMode(1);
     layer(4);
@@ -936,5 +936,41 @@ end:
 	alpha(255);
 	alphaTime(90, 0, 0);
 	colorTime(90, 0, 0, 0, 255);
+	stop();
+}
+
+
+entry entry18 {
+    version: 8,
+    name: "stgenm/stage07/stars.png",
+    format: 1,
+    width: 512,
+    height: 512,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXFormat: 1,
+    THTXWidth: 512,
+    THTXHeight: 512,
+    THTXZero: 0,
+    sprites: {
+        sprite45: { x: 0, y: 0, w: 512, h: 512 },
+        sprite46: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script18{
+	sprite(sprite46);
+
+	layer(7);
+	type(1);
+	ins_418();
+	F0 = 0f;
+loop:
+		ins_418();
+		pos(F0, 0f, 0f);
+		wait(1);
+		F0+=0.2f;
+	jmp(loop, 0);
 	stop();
 }
