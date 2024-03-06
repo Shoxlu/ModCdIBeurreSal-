@@ -1697,6 +1697,7 @@ Phantom02b_520:
 
 void main()
 {
+	@MainBoss();
     flagSet(32);
     wait(1);
     setChapter(0);
