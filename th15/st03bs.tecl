@@ -44,7 +44,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss3");
 
-    @BossCard3();
+    @Boss1();
     delete();
 }
 
