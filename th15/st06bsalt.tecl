@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @BossCardAlt3();
+    @BossAlt1();
     delete();
 }
 
@@ -1215,76 +1215,71 @@ BossCard3_448:
     anmSelect(4);
     anm316(0, 0);
 	wait(60);
-	@chiyuri()async;
-	wait(60);
-	@yumem()async;
-	wait(120);
-	@ellen();
+	@ring()async;
+	@sakouya();
 }
 
-void yumem()
+void sakouya()
 {
+	int T = 30*12+10;
+	int V = 0;
+	!E
+	V = 20;
+	!N
+	V = 18;
+	!H 
+	V = 15;
+	!L
+	V = 15;
+	!*
     etNew(0);
-    etAim(0, 2);
-    etSprite(0, 8, 14);
-    etCount(0, 30, 1);
-    etSpeed(0, 2.6f:3f:3.2f:3.4f, 3.4f);
+    etAim(0, 3);
+    etSprite(0, 21, 4);
+    etCount(0, 3, 1:1:2:3);
+    etSpeed(0, 2.4f, 1.8f);
 	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(0, 2, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
+	etExSub(0, 2, "couto");
 	while(1)
 	{
-	times(20)
+	T = 20+10*V;
+	times(10)
 	{
-		etOffsetAbs(0, RANDF2*150f, 50f+RANDF*100f);
-		etAngle(0, RANDF2*rad(2), 0f);
-		etOn(0);
-		wait(3);
+	etAngle(0, RANDRAD, 0f);
+	etExSet(0, 1, 0, EX_WAIT, T, NEG, NEGF, NEGF);
+	etOn(0);
+	T = T-V;
+	wait(V);
 	}
-	wait(200);
 	}
 }
 
-void chiyuri()
+void couto()
 {
 	float A = 0f;
     etNew(1);
-    etAim(1, 3);
-    etSprite(1, 34, 8);
-    etCount(1, 5, 1);
-    etSpeed(1, 2f:2.2f:2.4f:2.5f, 2f);
-	A = rad(90);
-	etExSet(1, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF); 
-	while(1)
-	{
-	etAngle(1, RANDRAD, 0f);
-	times(3)
-	{
-	etOffset(1, cos(A)*80f, sin(A)*80f);
+    etAim(1, 1);
+    etSprite(1, 21, 6);
+    etCount(1, 1, 1);
+    etSpeed(1, 1.5f, 1.5f);
+	etAngle(1, rad(90)+RANDF2*rad(5), 0f);
 	etOn(1);
-	A += rad(120);
-	}
-	wait(15);
-	}
 }
 
-void ellen()
+void ring()
 {
-	float A = 0f;
-	float V = 3.5f;
     etNew(2);
+	etSound(2, -1, -1);
     etAim(2, 3);
-    etSprite(2, 6, 2);
-    etCount(2, 1, 1);
+    etSprite(2, 12, 15);
+    etCount(2, 20, 1);
+	etSpeed(2, 3f, 3f);
 	etExSet(2, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF); 
-	times(16)
+	while(1)
 	{
-	etSpeed(2, V, V);
-	etAngle(2, rad(90)+A, 0f);
+	wait(50);
+	etAngle(2, RANDRAD, 0f);
 	etOn(2);
-	etAngle(2, rad(90)-A, 0f);
-	etOn(2);
-	A += rad(12);
-	V += -0.18f;
-	wait(1);
 	}
 }
 

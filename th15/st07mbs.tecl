@@ -169,55 +169,47 @@ MBossCard2_448:
     setNext(0, 0, 4200, "MBoss2");
     spellEx(106, 4200, 500000, "Corruption ÅhEssaim de Crawlers ParasitesÅh");
     movePosTime(60, 4, 0.0f, 128.0f);
-    moveLimit(0.0f, 128.0f, 240.0f, 64.0f);
+    moveLimit(0.0f, 128.0f, 240.0f, 44.0f);
     anmPlay(1, 73);
 +90: //94
     nop();
-	/*while(1)
-	{	
-		MBossCard1_at(0, 1, rad(-90), 448f) async;
-		MBossCard1_at(1, 2, rad(90), 0f) async;
-		MBossCard1_2at(2, 3, 0f, -192f) async ;
-		MBossCard1_2at(3, 4, rad(180), 192f) async;
-		wait(400);
-	}*/
-	enmCreate("MBossCard1_specialsprite",-100f, 0f, 100, 100, 0);
-	wait(10000);
-	return;
-}
-
-void MBossCard1_specialsprite(){
-	flagSet(3);
-	anmSelect(4);
-	anmSetSprite(0, 18);
-	wait(10000);
+	@WormHole()async;
+	while(1)
+	{
+		wait(120);
+		moveRand(60, 4, 2f);
+	}
 }
 
 
-void MBossCard1_at (int etId, int color , float angle  , float y) {
-	int A = 0;
-		etNew(etId);
-	etAim(etId, 1);
-	etAngle(etId, angle , 0f);
-	etSprite(etId, 20 , color);
-	etCount(etId, 1 , 1);
-	etSpeed(etId, 3f , 3f);
-	etExSet(etId , 0 , 0 , EX_INVULN , 60 , NEG , NEGF , NEGF);
-	etExSet(etId, 1, 0, EX_WAIT, 10, NEG, NEGF, NEGF);
-	etExSet(etId, 2, 0, EX_BOUNCE, 1, 15, 3f, NEGF);//bounce 1 fois 
-	etExSet(etId, 3, 0, EX_WAIT, 40 + A, NEG, NEGF, NEGF);//attend
-	etExSet2(etId, 4, 0, EX_ANGLE, 90, 1, 1, NEG, 0f, 3f, NEGF, NEGF);//debut du changement d'angle vers le joueur
-//	etExSet(etId, 5, 0, EX_BOUNCE, 1, 15, 0.5f, NEGF);
-	etExSet(etId, 5, 0, EX_SPECIAL , NEG, NEG, NEGF, NEGF);//la frame d'apres ca declenche ca
-	etExSub(etId , 5 , "cercle");//qui declenche ca a la position de la bullet
-//	etExSet(etId,  7 , 0, EX_DELETE , 0 , NEG , NEGF , NEGF);
-	times(5){
-		etOffsetAbs(etId, RANDF2 * 192f , y);
-		etOn(etId);
-		A = A + 10;
-		etExSet(etId, 3, 0, EX_WAIT, 40 - A, NEG, NEGF, NEGF);
-		wait(10);
-	}		
+void WormHole()
+{
+	float A = 0f;
+	float B = 0f;
+	float C = 0f;
+	etNew(0);
+	etAim(0, 3);
+	etSprite(0, 8, 2);
+	etCount(0, 1, 1);
+	etSpeed(0, 3f, 3f);
+	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_BOUNCE, 1, 15, NEGF, NEGF);
+	etExSet(0, 2, 0, EX_MOVE, 1, 0, 0f, 200f);
+	etExSet(0, 3, 0, EX_SETSPRITE, 20, 4, NEGF, NEGF);
+	while(1)
+	{
+		A = B;
+		times(6)
+		{
+			etAngle(0, A, 0f);
+			etExSet(0, 4, 0, EX_VEL, NEG, NEG, A, NEGF);
+			etOn(0);
+			A += rad(60);
+		}
+        B += C;
+		C += rad(1);
+		wait(4);
+	}
 }
 
 void MBossCard1_2at (int etId, int color , float angle , float x) {

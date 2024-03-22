@@ -865,6 +865,72 @@ GirlD01_at2_1096:
     return;
 }
 
+void GirlD03()
+{
+    ins_569(6);
+    anmSelect(2);
+    anmSetMain(0, 40);
+    anmSetSprite(1, 93);
+    dropMain(1);
+    dropExtra(1, 5);
+    dropExtra(2, 6);
+    setHurtbox(32.0f, 32.0f);
+    setHitbox(24.0f, 24.0f);
+    moveVel(rad(90), 2.5f);
+    moveVelTime(70, 1, rad(90), 0.0f);
+	wait(90);
+    @GirlD03_at() async;
+	@GirlD03_at2() async;
+    wait(80);
+    ins_445(120, 1, 0.2f);
+    wait(400);
+    ins_445(120, 1, 3.0f);
+	while(1){	
+		wait(1000);
+	}
+}
+
+void GirlD03_at()
+{
+	etNew(0);
+	etAim(0, 2);
+	etCount(0, 6:8:10:12, 1);
+	etSpeed(0, 4f, 4f);
+	etAngle(0, rad(90), 0f);
+	etSprite(0, 6, 1);
+	etExSet(0, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VELTIME, 15, 3, 0f, NEGF);
+	etExSet(0, 2, 0, EX_WAIT, 5, NEG, NEGF, NEGF);
+	etExSet2(0, 3, 0, EX_ANGLE, 1, 1, 1, NEG, 0f, 3f, NEGF, NEGF);
+	int cnt = 6:8:10:12;
+	float x = 0f, y = 0f;
+	int factor = 0;
+	float base_angle = rad(360)/_f(cnt);
+	times(cnt){
+		etOn(0);
+		wait(30);
+	}
+}
+
+void GirlD03_at2()
+{
+	etNew(1);
+	etAim(1, 10);
+	etCount(1, 8, 12);
+	etSpeed(1, 1f, 2f:2.4f:2.8f:3f);
+	etAngle(1, ANGLE_PLAYER, rad(4));
+	etSprite(1, 9, 6);
+	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	int cnt = 3:4:5:6;
+	float x = 0f, y = 0f;
+	int factor = 0;
+	float base_angle = rad(360)/_f(cnt);
+	times(cnt){
+		etOn(1);
+		wait(60);
+	}
+}
+
 void GirlD02()
 {
     ins_569(6);
@@ -1426,81 +1492,13 @@ MainSub03b_1860:
 void MainSub04()
 {
     var A, B, C, D, E, F, G;
-    wait(70);
-    %A = _f(-192);
-    %F0 = 1.570796f;
-    $B = 20;
-    goto MainSub04_420 @ 0;
-MainSub04_200:
-    %F0 = %F0 - 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A + _f(17);
-    wait(10);
-MainSub04_420:
-    if ($B--) goto MainSub04_200 @ 0;
-    wait(60);
-    %A = _f(-192);
-    %F0 = 1.570796f;
-    $C = 20;
-    goto MainSub04_848 @ 0;
-MainSub04_628:
-    %F0 = %F0 - 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A + _f(17);
-    wait(10);
-MainSub04_848:
-    if ($C--) goto MainSub04_628 @ 0;
-    wait(60);
-    %A = _f(-192);
-    %F0 = 1.570796f;
-    $D = 20;
-    goto MainSub04_1276 @ 0;
-MainSub04_1056:
-    %F0 = %F0 - 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A + _f(17);
-    wait(10);
-MainSub04_1276:
-    if ($D--) goto MainSub04_1056 @ 0;
-    wait(130);
-    enmCreateF("GirlD01", 32.0f, -24.0f, 1200, 1000, 1);
-    enmCreateF("GirlD01", -32.0f, -24.0f, 1200, 1000, 1);
+    wait(30);
+    enmCreateF("GirlD03", 96.0f, -24.0f, 1200, 1000, 1);
+    enmCreateF("GirlD03", -96.0f, -24.0f, 1200, 1000, 1);
     wait(260);
     %A = _f(192);
     %F0 = 1.570796f;
     $E = 20;
-    goto MainSub04_1820 @ 0;
-MainSub04_1600:
-    %F0 = %F0 + 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A - _f(17);
-    wait(10);
-MainSub04_1820:
-    if ($E--) goto MainSub04_1600 @ 0;
-    wait(60);
-    %A = _f(192);
-    %F0 = 1.570796f;
-    $F = 20;
-    goto MainSub04_2248 @ 0;
-MainSub04_2028:
-    %F0 = %F0 + 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A - _f(17);
-    wait(10);
-MainSub04_2248:
-    if ($F--) goto MainSub04_2028 @ 0;
-    wait(60);
-    %A = _f(192);
-    %F0 = 1.570796f;
-    $G = 20;
-    goto MainSub04_2676 @ 0;
-MainSub04_2456:
-    %F0 = %F0 + 0.017453f;
-    enmCreate("ECir02", %A, -32.0f, 100, 1000, 1);
-    %A = %A - _f(17);
-    wait(10);
-MainSub04_2676:
-    if ($G--) goto MainSub04_2456 @ 0;
     return;
 }
 
@@ -1529,8 +1527,8 @@ MainSub05_600:
     if ($D--) goto MainSub05_456 @ 0;
 MainSub05_644:
     if ($A--) goto MainSub05_100 @ 0;
-    enmCreate("GirlD01", 32.0f, -24.0f, 1200, 1000, 1);
-    enmCreate("GirlD01", -32.0f, -24.0f, 1200, 1000, 1);
+    enmCreate("GirlD03", 96.0f, -24.0f, 1200, 1000, 1);
+    enmCreate("GirlD03", -96.0f, -24.0f, 1200, 1000, 1);
     return;
 }
 
@@ -1726,7 +1724,7 @@ main_440:
     setChapter(3);
     wait(12);
     enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
-	bossWait();
+	//bossWait();
     wait(160);
     @MainLatter();
     wait(500);

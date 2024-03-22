@@ -189,6 +189,7 @@ void Aiguille2()
 
 void Couture1()
 {
+	flagSet(1);
 	etNew(2);
     etAim(2, 6);
 	etSprite(2, 0, 9);
@@ -203,6 +204,7 @@ void Couture1()
 
 void Couture2()
 {
+	flagSet(1);
 	etNew(3);
     etAim(3, 6);
 	etSprite(3, 0, 3);
