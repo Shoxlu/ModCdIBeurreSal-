@@ -53,7 +53,7 @@ void ECir00_at()
     etSound(0, 21, -1);
     diffI($B, 1, 2, 4, 3);
     times($B){
-		times(2){
+		times(3){
 			etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.017453292f), 0.17453292f);
 			etOn(0);
 			wait(3);
@@ -305,22 +305,34 @@ void GirlA01_at()
     etSpeed(0, 0.4f, 0.4f);
     laserNew(0, 0.0f, 128.0f, 0.0f, 16.0f);
     etSound(0, 18, -1);
-    etEx(0, 0, EX_WAIT, 60, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 4, 120, -999999, 0.05f:0.1:0.1:0.1, -999999.0f);
+    etExSet(0, 0, 0, EX_WAIT, 60, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 0, 4, 120, -999999, 0.05f:0.1:0.1:0.1, -999999.0f);
 !HL
     etAngle(0, (rad(180) - F2) - 0.17453292f, 0.0f);
 !*
     laserOn(0);
 !HL
-    etAngle(0, (rad(180) - F2) + 0.17453292f, 0.0f);
+	laserNew(0, 0.0f, 64.0f, 0.0f, 16.0f);
+    etExSet(0, 0, 0, EX_WAIT, 90, -999999, -999999.0f, -999999.0f);
     laserOn(0);
 !L
-    etAngle(0, (rad(180) - F2) - 0.5235988f, 0.0f);
-    laserOn(0);
-    etAngle(0, (rad(180) - F2) + 0.5235988f, 0.0f);
-    laserOn(0);
+    laserNew(0, 0.0f, 128.0f, 0.0f, 16.0f);
+!HL
+	laserOn(0);
 !*
     return;
+}
+
+void DeathCircle()
+{
+	etNew(1);
+	etAim(1, 3);
+	etSprite(1, 10, 8);
+	etAngle(1, RANDRAD, 0f);
+	etSpeed(1, 2f, 2f);
+	etCount(1, 12, 1);
+	etSound(1, -1, -1);
+	etOn(1);
 }
 
 void GirlA02()
