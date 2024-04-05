@@ -378,7 +378,7 @@ void GirlA02_at()
     etNew(0);
     etAim(0, 3);
     etSprite(0, 4, 2);
-    etCount(0, 1, 1);
+    etCount(0, 1, 2:2:3:3);
     etAngle(0, 0.0f, 0.0f);
 !E
     2.5f;
@@ -394,8 +394,8 @@ void GirlA02_at()
     etSound(0, 21, -1);
     %A = 1.570796f;
     diffI($B, 1, 1, 3, 5);
-    goto GirlA02_at_1060 @ 0;
-GirlA02_at_544:
+   times(2)
+   {
 !E
     %ANGLE_PLAYER + (%RANDF2 * 0.017453292f);
 !N
@@ -405,21 +405,19 @@ GirlA02_at_544:
 !LO
     %ANGLE_PLAYER + (%RANDF2 * 0.17453292f);
 !*
-    etAngle(0, [-1.0f], 0.17453292f);
+    etAngle(0, [-1.0f], 0f);
     etOn(0);
 !E
-    70;
+    140;
 !N
-    70;
+    140;
 !H
-    70;
+    140;
 !LO
-    50;
+    100;
 !*
     wait([-1]);
-GirlA02_at_1060:
-    if ($B--) goto GirlA02_at_544 @ 0;
-    return;
+}
 }
 
 void GirlA03()
@@ -1514,33 +1512,34 @@ void MainSub04()
     return;
 }
 
+void DeathGirl()
+{
+	etNew(0);
+	etAim(0, 2);
+	etCount(0, 6:8:10:12, 1);
+	etSpeed(0, 4f, 4f);
+	etAngle(0, rad(90), 0f);
+	etSprite(0, 6, 1);
+	etExSet(0, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VELTIME, 15, 3, 0f, NEGF);
+	etExSet(0, 2, 0, EX_WAIT, 5, NEG, NEGF, NEGF);
+	etExSet2(0, 3, 0, EX_ANGLE, 1, 1, 1, NEG, 0f, 3f, NEGF, NEGF);
+	int cnt = 6:8:10:12;
+	float x = 0f, y = 0f;
+	int factor = 0;
+	float base_angle = rad(360)/_f(cnt);
+	times(cnt){
+		etOn(0);
+		wait(30);
+	}
+}
+
 void MainSub05()
 {
     var A, B, C, D;
     $A = 5;
     goto MainSub05_644 @ 0;
-MainSub05_100:
-    %B = _f(-120);
-    $C = 10;
-    goto MainSub05_348 @ 0;
-MainSub05_204:
-    enmCreateM("GirlA03", %B, -24.0f, 70, 1000, 1);
-    %B = %B + _f(24);
-    wait(10);
-MainSub05_348:
-    if ($C--) goto MainSub05_204 @ 0;
-    $D = 10;
-    goto MainSub05_600 @ 0;
-MainSub05_456:
-    enmCreateM("GirlA03", %B, -24.0f, 70, 1000, 1);
-    %B = %B - _f(24);
-    wait(10);
-MainSub05_600:
-    if ($D--) goto MainSub05_456 @ 0;
-MainSub05_644:
-    if ($A--) goto MainSub05_100 @ 0;
-    enmCreate("GirlD03", 96.0f, -24.0f, 1200, 1000, 1);
-    enmCreate("GirlD03", -96.0f, -24.0f, 1200, 1000, 1);
+	enmCreateF("DeathGirl", 96.0f, -24.0f, 1200, 1000, 1);
     return;
 }
 
