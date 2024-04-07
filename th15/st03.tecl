@@ -1570,22 +1570,21 @@ void DeathGirl_at2()
 	etCount(1, 4, 5);
 	etSpeed(1, 2f, SQRT2);
 	etSprite(1, 9, 6);
-	times(150)
+	//700 frames
+	times(70:88:117:140)
 	{
 		A += B;
 		etAngle(1, A, rad(18));
 		etOn(1);
 		wait(10:8:6:5);
-		B += -rad(1);
+		B -= rad(1);
 	}
 }
 
 void MainSub05()
 {
-    var A, B, C, D;
-    $A = 5;
-	enmCreateF("DeathGirl", 0f, -24.0f, 1500, 2000, 3);
-	wait(720);
+	enmCreateF("DeathGirl", 0f, -24.0f, 1000, 2000, 3);
+	wait(780);
     return;
 }
 
@@ -1776,7 +1775,7 @@ main_440:
     @LogoEnemy() async;
 +60: //60
     nop();
-    @MainFront();
+	@MainFront();
     etClear(640.0f);
     setChapter(3);
     wait(12);
@@ -1784,7 +1783,7 @@ main_440:
 	//bossWait();
     wait(160);
     @MainLatter();
-    wait(500);
+    wait(200);
     enmKillAll();
     etClear(640.0f);
     setChapter(41);
