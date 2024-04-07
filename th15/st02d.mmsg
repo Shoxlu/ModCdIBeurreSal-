@@ -15,11 +15,11 @@ script script0 {
 +4: // 4
     playerFace(6);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
 +30: // 34
     skippable(1);
     bubbleType(0);
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
     textAdd("Quel bazar.");
     textAdd("Ils sont trop bruyants ces heretiques.");
 +4: // 38
@@ -39,30 +39,30 @@ script script0 {
 +4: // 136
     textPause(600);
     bossShow(0);
-+4: // 140
++4: // 150
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     intro(0);
 +4: // 144
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     textAdd("月の兎同士で争うだなんて");
 +4: // 148
     textPause(600);
 +4: // 152
     playerFace(1);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
     textAdd("Ma presence est bien plus importante");
     textAdd("que celle d'une traitresse");
 +4: // 156
     textPause(600);
-+4: // 160
++4: // 150
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     textAdd("Je ne");
     textAdd("bouffe pas du sel");
 +4: // 164
@@ -70,7 +70,7 @@ script script0 {
 +4: // 168
     bossFace(5, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     textAdd("glou");
     textAdd("tes larmes");
 +4: // 172
@@ -78,15 +78,15 @@ script script0 {
 +4: // 176
     playerFace(3);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
     textAdd("non mais oh");
     textAdd("connasse");
-+4: // 180
++4: // 150
     textPause(600);
 +4: // 184
     playerFace(1);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
     textAdd("je vais te hagar");
     textAdd("通路使わせてよ");
 +4: // 188
@@ -95,7 +95,7 @@ script script0 {
 +4: // 192
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     textAdd("tu ne le sais pas encore");
     textAdd("mais tu es deja mort");
 +4: // 196
@@ -103,7 +103,7 @@ script script0 {
 +4: // 200
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
+    bubblePos( 360.0 , 270.0 );
     textAdd("裏切り者は排除しろと");
     textAdd("就業規則に書いてあるしね");
 +4: // 204
@@ -126,71 +126,70 @@ script script1 {
 +4: // 4
     playerFace(2);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
 +30: // 34
     skippable(1);
-    bubblePos(110.0, 280.0);
+    bubblePos(140.0, 240.0);
     bubbleType(0);
-    textAdd("une bonne chose de faite");
-    textAdd("変化があってまあまあ楽しめるわよ");
+    textAdd("");
 +4: // 38
     textPause(600);
 +4: // 42
     playerFace(2);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
-    textAdd("pardon mes compagnons");
+    bubblePos( 360.0 , 270.0 );
+    textAdd("");
 +4: // 46
     textPause(600);
 +4: // 50
     playerFace(2);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("je peux les convertir stv");
+    bubblePos(140.0, 240.0);
+    textAdd("");
 +4: // 54
     textPause(600);
 +4: // 58
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
-    textAdd("on veut vous raisonner");
-	textAdd("pas retourner notre veste");
+    bubblePos( 360.0 , 270.0 );
+    textAdd("");
+	textAdd("");
 +4: // 62
     textPause(600);
 +4: // 66
     playerFace(7);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("ca peut avoir un style");
+    bubblePos(140.0, 240.0);
+    textAdd("");
 +4: // 70
     textPause(600);
 +4: // 74
     bossFace(8, 0);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
-    textAdd("...");
+    bubblePos( 360.0 , 270.0 );
+    textAdd("");
 +4: // 78
     textPause(600);
 +4: // 82
     playerFace(4);
     speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("Je crois que");
+    bubblePos(140.0, 240.0);
+    textAdd("");
 +4: // 86
     textPause(600);
 +4: // 90
     playerFace(5);
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
-    textAdd("je vais aller visiter");
-    textAdd("votre sanctuaire");
+    bubblePos( 360.0 , 270.0 );
+    textAdd("");
+    textAdd("");
 +4: // 94
     textPause(600);
 	playerHide();
 +4: // 98
     speakerBoss(0);
-    bubblePos(340.0, 280.0);
-    textAdd("Y'en a pas une pour rattraper l'autre.");
+    bubblePos( 360.0 , 270.0 );
+    textAdd("");
 +4: // 102
     textPause(600);
     bossHide(0);
@@ -206,7 +205,7 @@ script script1 {
 
 script script2 {
 	skippable(0);
-	bubblePos(224.0, 140.0);
+	bubblePos(224.0, 150.0);
     textAdd("まだ始まったばかりなのに");
 	textPause(120);
 +30: // 222

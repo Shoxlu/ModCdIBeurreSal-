@@ -55,35 +55,37 @@
             "lines": [
                 "Je ne me retiendrai pas non plus contre toi."
             ]
+		}
     },
     "1": {
         "34_0": {
             "lines": [
-                "Voilà une bonne chose de faite."
+                "Voilà une bonne chose de faite.",
+            ]
+        },
+        "42_0": {
+            "lines": [
+                "Je suis désolée, mes compagnons.",
+				"J'ai fait de mon mieux..."
             ]
         },
         "50_0": {
             "lines": [
-                "Je suis désolée, mes compagnons, j'ai fait de mon mieux..."
-            ]
-        },
-        "58_0": {
-            "lines": [
                 "Je peux les convertir, ça leur réussira mieux."
             ]
         },
-        "74_0": {
+        "58_0": {
             "lines": [
                 "Sûrement pas !",
 				"On voulait raisonner Satanae, pas retourner notre veste."
             ]
         },
-        "42_0": {
+        "66_0": {
             "lines": [
                 "Ça peut avoir un certain style.",
             ]
         },
-        "66_0": {
+        "74_0": {
             "lines": [
                 "...",
             ]
