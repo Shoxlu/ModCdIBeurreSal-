@@ -1520,8 +1520,8 @@ void DeathGirl()
     anmSetMain(0, 40);
     anmSetSprite(1, 93);
     dropMain(1);
-    dropExtra(1, 10);
-    dropExtra(2, 10);
+    dropExtra(1, 20);
+    dropExtra(2, 20);
     setHurtbox(32.0f, 32.0f);
     setHitbox(24.0f, 24.0f);
     moveVel(1.5707964f, 3.0f);
