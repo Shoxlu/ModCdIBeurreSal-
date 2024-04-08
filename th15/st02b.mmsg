@@ -12,7 +12,7 @@ script script0 {
     skippable(0);
     playerShow(0);
 +4: // 4
-    playerFace(0);
+    playerFace(7);
     speakerPlayer();
     bubblePos(110.0, 280.0);
 +30: // 34
@@ -82,7 +82,7 @@ script script0 {
 +4: // 180
     textPause(600);
 +4: // 184
-    bossFace(5, 0);
+    bossFace(6, 0);
     speakerBoss(0);
     bubblePos(340.0, 280.0);
     textAdd("|8,16,・・");
