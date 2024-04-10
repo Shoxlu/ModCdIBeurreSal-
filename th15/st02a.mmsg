@@ -131,6 +131,7 @@ script script0 {
 	+4: // 130
 	textPause(600);
 	+4: // 134
+	musicBoss();
 	bossFace( 3 , 0); // an
 	speakerBoss(0);
 	bubbleType( 0 );
