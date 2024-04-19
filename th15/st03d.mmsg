@@ -1,0 +1,267 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("|84,8,かいあん");
+    textAdd("ここは第四槐安通路かな");
+    textAdd("……久しぶりだから忘れかけてるけど");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("おっとそこまでよ");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
++4: // 140
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    intro(0);
+    textAdd("貴方はここを通すな");
+    textAdd("って言われててねぇ");
++4: // 144
+    textPause(600);
++4: // 148
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("貴方に何の怨みも無いけど");
+    textAdd("私も仕事だからね");
++4: // 152
+    textPause(600);
++4: // 156
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("|36,8,バク");
+    textAdd("ば、獏だって？");
+    textAdd("そんな馬鹿な……");
++4: // 160
+    textPause(600);
++4: // 164
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("|92,24,ここ");
+    textAdd("なんだって夢の中で");
+    textAdd("一番危険な妖怪が私の前に");
++4: // 168
+    textPause(600);
++4: // 172
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("今回の件は私も少しかんでいるんでね");
+    textAdd("この程度の仕事は義理で引き受けた形さ");
++4: // 176
+    textPause(600);
++4: // 180
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("さあ、良い子だからぐっすり眠って");
+    textAdd("全てを忘れちゃいましょう");
++4: // 184
+    textPause(600);
++4: // 188
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("兎しか使わないはずの連絡通路に");
+    textAdd("わざわざ敵を配置するだなんて");
++4: // 192
+    textPause(600);
++4: // 196
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("私か誰かを誘い込んでいるのが");
+    textAdd("見え見えじゃないか……");
++4: // 200
+    textPause(600);
+    musicBoss();
++4: // 204
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("知っての通り、地上と月の都の");
+    textAdd("連絡通路は精神世界である");
++4: // 208
+    textPause(600);
++4: // 212
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("|52,8,ドリームワールド");
+    textAdd("ここは夢の世界");
+    textAdd("夢を喰い、夢を創る私に敵うと思うなよ！");
++4: // 216
+    textPause(600);
++4: // 220
+    bossFace(1, 0);
+    speakerBoss(0);
+	bubbleType(1);
+    bubblePos(356.0, 260.0);
+    textAdd("|52,8,ドリームワールド");
+    textAdd("ここは夢の世界");
+    textAdd("夢を喰い、夢を創る私に敵うと思うなよ！");
++4: // 216
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 246
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    playerFace(0);
+    speakerBoss(0);
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 260.0);
+    bubbleType(0);
+    textAdd("この先待ち受けているのが悪夢だとしても");
+    textAdd("それでも私は行くしかない");
++4: // 38
+    textPause(600);
++4: // 42
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("それが仕事だからねぇ");
+    textAdd("守らなきゃいけないのですよ");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そうですか……");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("私の方は一応形だけでも");
+    textAdd("仕事したのでもう十分です");
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("それにしても");
+    textAdd("兎にしては珍しいですねぇ");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("ちゃんと仕事をするなんて……");
+    textAdd("なんか使命感があるというか");
++4: // 78
+    textPause(600);
++4: // 82
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("まあ……私にもまだ狂いが");
+    textAdd("残っているのかもね");
++4: // 86
+    textPause(600);
++4: // 90
+    speakerBoss(0);
+    textAdd("|8,16,えど");
+    textAdd("穢土は月の狂気を穏やかに");
+    textAdd("させてくれる筈なのにねぇ");
++4: // 94
+    textPause(600);
++4: // 98
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("いやそういう月の狂気ではないわ");
+    textAdd("貴方から感じたのは");
++4: // 102
+    textPause(600);
++4: // 106
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("どちらかというと");
+    textAdd("地上くさいというか……");
++4: // 110
+    textPause(600);
++4: // 114
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("誰かが用意した夢を抱いて");
+    textAdd("個性をひねり出す人間のような");
++4: // 118
+    textPause(600);
++4: // 122
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("要は染まったのね");
+    textAdd("穢れた大地に");
++4: // 126
+    textPause(600);
++4: // 130
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("穢れた貴方には今の月の都は");
+    textAdd("|6,13,ルナティック");
+    textAdd("狂気の沙汰にしか見えないでしょう");
++4: // 142
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 143
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 173
+    end();
+}

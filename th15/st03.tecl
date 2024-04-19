@@ -1752,7 +1752,7 @@ Phantom02b_520:
 void main()
 {
     flagSet(32);
-	dialogRead(0);
+	dialogRead(1);
 	wait(100000);
     wait(1);
     setChapter(0);

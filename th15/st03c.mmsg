@@ -1,0 +1,249 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("|52,8,そら");
+    textAdd("ああ、宙を飛んでいるわ");
+    textAdd("今まさに飛んでいるわ");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("あらあら");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
++4: // 140
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    intro(0);
+    textAdd("随分と悪夢にうなされているみたいね");
+    textAdd("私が食べてあげよう……って");
++4: // 144
+    textPause(600);
++4: // 148
+    playerFace(3);
+    speakerPlayer();
+    bubbleType(1);
+    bubblePos(110.0, 280.0);
+    textAdd("生身じゃないの！？");
+    textAdd("肉体付き悪夢！？");
++4: // 152
+    textPause(600);
++4: // 156
+    playerFace(6);
+    speakerPlayer();
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("私は念願の宙を飛んでいるんです");
+    textAdd("これが悪夢なら何が吉夢になるんです？");
++4: // 160
+    textPause(600);
++4: // 164
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("|53,11,スペースデブリ");
+    textAdd("生身で悪夢の欠片に被弾すると");
+    textAdd("大変な事になるわ");
++4: // 168
+    textPause(600);
++4: // 172
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("今すぐ肉体だけでも");
+    textAdd("|3,6,うつつ");
+    textAdd("現に戻さないと");
++4: // 176
+    textPause(600);
++4: // 180
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("えーっと、よく判らないんですが");
+    textAdd("兎に月の都に行けるって言われたんで");
++4: // 184
+    textPause(60);
++4: // 188
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("月の都……");
+    textAdd("ははぁんそういう事ね");
++4: // 192
+    textPause(600);
++4: // 196
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    playerFace(0);
+    textAdd("良いでしょう");
+    textAdd("その狂夢、私が処理しましょう");
++4: // 200
+    textPause(600);
+    musicBoss();
++4: // 204
+    bossFace(1, 0);
+    bubbleType(1);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("今は眠りなさい");
+    textAdd("|52,8,かいあん");
+    textAdd("貴方の槐安は今作られる");
++4: // 208
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 238
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(0);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 260.0);
+    bubbleType(0);
+    textAdd("貴方の悪夢は私が");
+    textAdd("美味しく頂きました");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("ですがこのまま月の都に");
+    textAdd("向かうというのなら");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("今までの何倍もの悪夢となって");
+    textAdd("貴方の精神を蝕むでしょう");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("月の狂夢（ルナティックドリーム）");
+    textAdd("と呼ばれる悪夢です");
++4: // 62
+    textPause(600);
++4: // 66
+	playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("今ならまだ『目が覚めたら夢だった』");
+    textAdd("って事にできますが……");
++4: // 70
+    textPause(600);
++4: // 74
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("それでも進みますか？");
++4: // 78
+    textPause(600);
++4: // 82
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("私はその問いかけを知っている");
+    textAdd("その答えを知っている");
++4: // 86
+    textPause(600);
++4: // 90
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("イイエを選んでも永遠に");
+    textAdd("質問を繰り返す奴でしょう？");
++4: // 94
+    textPause(600);
++4: // 98
+    playerFace(2);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("答えはイエス！");
+    textAdd("このまま月の都に突入よ！");
++4: // 102
+    textPause(600);
++4: // 106
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("そうですか……");
+    textAdd("それでは貴方に吉夢が訪れん事を");
++4: // 110
+    textPause(600);
++4: // 114
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("アポロ１７号が降り立ってから");
+    textAdd("４０年以上成し得ていない有人探査");
++4: // 118
+    textPause(600);
++4: // 122
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そのチャンスが目の前にあるというのに");
+    textAdd("ここで夢オチにさせられてたまるもんですか！");
++4: // 126
+    textPause(600);
++4:
+	speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("Sans commentaire...");
++4: // 134
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 127
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 157
+    end();
+}
