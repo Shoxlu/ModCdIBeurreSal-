@@ -23,17 +23,17 @@
         "Le thème de Shox.",
         "",
         "Déesse de la technologie ou je ne me souviens plus très bien, un",
-        "thème rempli d'instruments électronique était obligatoire."
+        "thème rempli d'instruments électroniques était obligatoire."
     ],
     "4": [
         "@",
         "　",
         "Le thème du second niveau.",
         "",
-        "Nous somme en guerre. Y'a des tirs de partout et pas une seconde",
+        "Nous sommes en guerre. Y'a des tirs de partout et pas une seconde",
         "de repos. Je voulais faire un thème plus traditionnel,",
-        "on a là des instruments assez simple avec des",
-        "moments mystérieux qui font leurs charmes."
+        "on a là des instruments assez simples avec des",
+        "moments mystérieux qui font leur charme."
     ],
     "5": [
         "@",
@@ -60,6 +60,6 @@
         "Le thème de Day.",
         "",
         "Thème très étrange, qui convient à un boss très étrange aussi.",
-        "On à un peu de tension avec des instants de relâche inattendus..."
+        "On a un peu de tension avec des instants de relâche inattendus..."
     ]
 }
