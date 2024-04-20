@@ -1,0 +1,221 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("さっきまで湖に居た筈だが……");
+    textAdd("何だここは");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("あらあら");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
++4: // 140
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    intro(0);
+    textAdd("幻想郷の魔法使いね");
+    textAdd("今日はどんな夢を……");
++4: // 144
+    textPause(600);
++4: // 148
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("って生身！？");
+    textAdd("もしかして生身！？");
++4: // 152
+    textPause(600);
++4: // 156
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("まだ生身だが");
++4: // 160
+    textPause(600);
++4: // 164
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("生身でこんな夢の世界へ");
+    textAdd("飛び込んでくるなんて");
++4: // 168
+    textPause(600);
++4: // 172
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何かの罠に嵌められたのかな");
++4: // 176
+    textPause(600);
++4: // 180
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("罠だって？");
+    textAdd("やっぱり罠だったのか");
++4: // 184
+    textPause(600);
++4: // 188
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("すぐ目の前にあんな大きな月が");
+    textAdd("見えているというのに");
++4: // 192
+    textPause(600);
++4: // 196
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("月が見えている？");
+    textAdd("ははぁんそういう事ね");
++4: // 200
+    textPause(600);
+    musicBoss();
++4: // 204
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    playerFace(0);
+    textAdd("良いでしょう");
+    textAdd("その狂夢、私が処理しましょう");
++4: // 208
+    textPause(600);
++4: // 212
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("今は眠りなさい");
+    textAdd("|52,8,かいあん");
+    textAdd("貴方の槐安は今作られる");
++4: // 216
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 246
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(356.0, 260.0);
++30: // 34
+    skippable(1);
+    bubblePos(110.0, 280.0);
+    bubbleType(0);
+    textAdd("あらあら、眠らないのです？");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("それではいつまで経っても");
+    textAdd("夢の中ですよ");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("んー、夢の中なのか");
+    textAdd("ここは");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("そうですよ");
+    textAdd("貴方は今、夢の中に生身で居るのです");
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("月の都に行くって話は");
+    textAdd("一体どうなっちまったんだ……");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("確かに貴方の夢は月の都に");
+    textAdd("向かってるようです");
++4: // 78
+    textPause(600);
++4: // 82
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そのままなら");
+    textAdd("もうすぐ到着するでしょう");
++4: // 86
+	playerHide();
+    textPause(600);
++4: // 90
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("そうか");
+    textAdd("それなら良いんだ");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("ですがその悪夢を覚まさないというのは");
+    textAdd("お薦めできませんが……");
++4: // 142
+    textPause(50);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 143
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 173
+    end();
+}

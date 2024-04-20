@@ -1,0 +1,230 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(112.0, 270.0);
+    textAdd("月があんなに近くに……");
++4: // 38
+    textPause(600);
++4: // 42
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 102
+    skippable(0);
+    textAdd("誰かと思いきや");
++30: // 132
+    skippable(1);
++4: // 136
+    textPause(600);
+    bossShow(0);
+    intro(0);
++4: // 140
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    playerFace(6);
+    textAdd("幻想郷の巫女じゃないの");
++4: // 144
+    textPause(600);
++4: // 148
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("強い悪夢を見ているのねぇ");
+    textAdd("……って");
++4: // 152
+    textPause(600);
++4: // 156
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("生身！？");
+    textAdd("もしかして生身！？");
++4: // 160
+    textPause(600);
++4: // 164
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("えーっと");
+    textAdd("生身かな？");
++4: // 168
+    textPause(600);
++4: // 172
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("生身でこんな夢の世界へ");
+    textAdd("飛び込んでくるなんて");
++4: // 176
+    textPause(600);
++4: // 180
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("何かの罠に嵌められたのかな");
++4: // 184
+    textPause(600);
++4: // 188
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("わ、罠だって？");
+    textAdd("私は月の都に向かって……");
++4: // 192
+    textPause(600);
++4: // 196
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("月の都……");
+    textAdd("ははぁんそういう事ね");
++4: // 200
+    textPause(600);
+    musicBoss();
++4: // 204
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    playerFace(0);
+    textAdd("良いでしょう");
+    textAdd("その狂夢、私が処理しましょう");
++4: // 208
+    textPause(600);
++4: // 212
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("今は眠りなさい");
+    textAdd("|52,8,かいあん");
+    textAdd("貴方の槐安は今作られる");
++4: // 216
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 246
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(2);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
++30: // 34
+    skippable(1);
+    bubblePos(356.0, 260.0);
+    textAdd("ここまでの悪夢");
+    textAdd("全て処理させて頂きました");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("肉体を乗っ取りかねない");
+    textAdd("強い精神を持っているのですね");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("あんたは何者なの？");
++4: // 54
+    textPause(600);
++4: // 58
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("|36,8,バク");
+    textAdd("私は獏");
+    textAdd("夢の世界の住人です");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("貴方は月の都に向かうと");
+    textAdd("言ってましたね、しかも生身で");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("そこでは今までのとは比べものにならない");
+    textAdd("悪夢が待ち受けている事でしょう");
++4: // 78
+    textPause(600);
++4: // 82
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("それは狂夢（ルナティックドリーム）と");
+    textAdd("呼ぶべきものです");
++4: // 86
+    textPause(600);
++4: // 90
+    bossFace(8, 0);
+    speakerBoss(0);
+    bubblePos(356.0, 260.0);
+    textAdd("十分覚悟せよ");
+    textAdd("|6,12,うつしよ");
+    textAdd("現し世から夢を見ている人間よ");
++4: // 94
+    textPause(600);
++4: // 98
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("……よく判らないけど");
++4: // 102
+    textPause(600);
++4: // 106
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("夢の世界を介して月の都と幻想郷が");
+    textAdd("繋がっていたって事なのかしら？");
++4: // 110
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 111
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 141
+    end();
+}

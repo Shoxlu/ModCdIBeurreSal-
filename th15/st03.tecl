@@ -1752,8 +1752,6 @@ Phantom02b_520:
 void main()
 {
     flagSet(32);
-	dialogRead(1);
-	wait(100000);
     wait(1);
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_440 @ 0;

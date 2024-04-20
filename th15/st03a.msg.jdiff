@@ -2,7 +2,7 @@
     "0": {
         "34_0": {
             "lines": [
-                "La Lune est si proche..."
+                "Elle n'a pas pu aller bien loin..."
             ]
         },
         "102_0": {
@@ -12,119 +12,118 @@
         },
         "164_0": {
             "lines": [
-                "Euh...",
-                "Oui, j'imagine..."
+                "Je ne vais pas te donner toutes ces informations",
+                "avant de savoir ce que tu veux faire."
             ]
         },
         "140_0": {
             "lines": [
-                "Si ce n'est pas la prêtresse Hakurei..."
+                "Si ce n'est pas la prêtresse salée..."
             ]
         },
         "156_0": {
             "lines": [
-                "Ton corps matériel ?!",
-                "Est-ce vraiment ton corps matériel ?!"
+                "Je ne suis donc pas la première à passer ici...",
+                "Où sont les autres ?"
             ]
         },
         "148_0": {
             "lines": [
-                "Plutôt éprouvant ce cauchemar, non ?",
-                "... Hein ?!"
+                "Toi aussi tu veux aller sur la Lune je présume ?"
             ]
         },
         "188_0": {
             "lines": [
-                "P-piéger ?",
-                "J'étais en route pour la capitale Lunaire..."
+                "Tu lui as donné un raccourci pour aller sur la Lune c'est ça ?",
+                "Il faut que je l'emprunte aussi, je te l'ordonne."
             ]
         },
         "180_0": {
             "lines": [
-                "... te serais-tu fait piéger ?"
+                "Ferais-je enfin face à une personne sensée ?"
             ]
         },
         "196_0": {
             "lines": [
-                "La capitale Lunaire...",
-                "Ahah. Je vois."
+                "Tu vas droit au but, c'est cool."
             ]
         },
         "172_0": {
             "lines": [
-                "Pour que ton corps matériel",
-                "soit dans le monde des Rêves..."
+                "Je dois empêcher ma déesse de mettre encore plus le bazar",
+                "et comprendre qui a répandu cette rumeur sur le sel lunaire."
             ]
         },
         "204_0": {
             "lines": [
-                "Très bien.",
-                "Je vais réparer ce rêve dérangé."
+                "Je veux bien te laisser passer mais je dois m'assurer que tu es",
+                "capable de survivre aux dangers de la Lune."
             ]
         },
         "212_0": {
             "lines": [
-                "Maintenant, dors.",
-                "Je vais te créer un rêve éphémère."
+                "Montre-moi ce dont tu es capable.",
+                "Fais triompher la vérité sur la fiction !"
             ]
         }
     },
     "1": {
         "50_0": {
             "lines": [
-                "Qu'est-ce que tu es ?"
+                "Ces fonctions m'indiquent justement que tu es aussi suspecte.",
+				"Tu es probablement impliquée dans l'incident."
             ]
         },
         "98_0": {
             "lines": [
-                "... Je n'ai pas vraiment compris, mais..."
+                "... Je n'ai pas tout compris, mais..."
             ]
         },
         "106_0": {
             "lines": [
-                "... J'imagine que la capitale Lunaire et",
-                "la terre des Illusions sont liées par le monde des Rêves ?"
+                "... J'imagine que God Reimu s'y est précipité",
+                "donc je n'ai pas trop le choix."
             ]
         },
         "90_0": {
             "lines": [
                 "Prépare toi bien,",
-                "rêveuse du monde physique."
+                "un voyage particulier t'attend."
             ]
         },
         "58_0": {
             "lines": [
-                "Je suis une Baku.",
-                "J'habite dans le monde des Rêves."
+                "Je ne suis qu'une déesse qui passe par là.",
+                "Tu n'as rien pour prouver ton allégation."
             ]
         },
         "66_0": {
             "lines": [
-                "Tu as dit que tu allais à la capitale Lunaire ?",
-                "Et avec ton corps matériel, il semblerait."
+                "Je ne suis pas l'instigatrice de ces événements rocambolesques.",
+                "Je participe uniquement pour me divertir un peu."
             ]
         },
         "74_0": {
             "lines": [
-                "Un cauchemar différent de tous ceux",
-                "que tu as rencontrés jusqu'ici t'y attend."
+                "Si tu veux atteindre la Lune, emprunte la porte derrière moi."
             ]
         },
         "82_0": {
             "lines": [
-                "Il porte bien son nom de « rêve dérangé »."
+                "Tant que tu sais où tu vas tu ne tomberas pas sur",
+				"une partie abyssale du monde."
             ]
         },
         "42_0": {
             "lines": [
-                "Tu dois posséder une grande force mentale,",
-                "pour avoir gardé le contrôle de ton corps."
+                "De toutes les personnes que j'ai croisées aujourd'hui",
+                "tu es la seule qui se sert de ses fonctions cérébrales."
             ]
         },
         "34_0": {
             "lines": [
-                "Je me suis débarrassée de tous les cauchemars",
-                "jusqu'à maintenant."
+                "Bien, tu as passé le test haut la main.",
+                "Félicitations."
             ]
         }
     }

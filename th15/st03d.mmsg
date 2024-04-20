@@ -126,18 +126,18 @@ script script0 {
 +4: // 220
     bossFace(1, 0);
     speakerBoss(0);
-	bubbleType(1);
+    bubbleType(1);
     bubblePos(356.0, 260.0);
     textAdd("|52,8,ドリームワールド");
     textAdd("ここは夢の世界");
     textAdd("夢を喰い、夢を創る私に敵うと思うなよ！");
-+4: // 216
++4: // 224
     textPause(600);
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+30: // 246
++30: // 254
     end();
 }
 
@@ -252,16 +252,16 @@ script script1 {
     textAdd("穢れた貴方には今の月の都は");
     textAdd("|6,13,ルナティック");
     textAdd("狂気の沙汰にしか見えないでしょう");
-+4: // 142
++4: // 134
     textPause(600);
     playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
-+1: // 143
++1: // 135
     stageEnd();
     musicEnd();
     skippable(0);
-+30: // 173
++30: // 165
     end();
 }
