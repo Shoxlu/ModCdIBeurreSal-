@@ -1097,7 +1097,6 @@ BossDead_316:
     anmPlay(1, 64);
     playSound(5);
     setBoss(-1);
-	dialogRead(1);
     delete();
     delete();
 }

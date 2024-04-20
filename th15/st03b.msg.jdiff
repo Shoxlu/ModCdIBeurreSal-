@@ -70,6 +70,11 @@
         }
     },
     "1": {
+        "34_0": {
+            "lines": [
+                "Alors, qui vient de se faire botter les fesses ?"
+            ]
+        },
         "42_0": {
             "lines": [
                 "J'admets que tu as été plus forte que moi,",
@@ -86,9 +91,10 @@
                 "Au moins moi j'ai la santé."
             ]
         },
-        "34_0": {
+        "66_0": {
             "lines": [
-                "Alors, qui vient de se faire botter les fesses ?"
+                "Moi *hic* aussi.",
+                "Je suis parée pour botter d'autres derrières."
             ]
         },
         "74_0": {
@@ -97,25 +103,19 @@
                 "et va boire ailleurs si j'y suis."
             ]
         },
-        "98_0": {
-            "lines": [
-                "Va te faire–"
-            ]
-        },
         "82_0": {
             "lines": [
                 "Bon bah parfait, j'y vais de suite."
             ]
         },
-        "90_0": {
+        "125_0": {
             "lines": [
                 "Encore merci, t'es un bon toutou !"
             ]
         },
-        "66_0": {
+        "133_0": {
             "lines": [
-                "Moi *hic* aussi.",
-                "Je suis parée pour botter d'autres derrières."
+                "Va te faire–"
             ]
         }
     }

@@ -191,16 +191,21 @@ script script1 {
     textAdd("そのままなら");
     textAdd("もうすぐ到着するでしょう");
 +4: // 86
-	playerHide();
     textPause(600);
+	
 +4: // 90
-    speakerPlayer();
+	//textboxHide();
++4: //94
+	playerHide();
++30: //124
+    //textboxShow();
++1:
     bubblePos(110.0, 280.0);
     textAdd("そうか");
     textAdd("それなら良いんだ");
-+4: // 94
++4: // 128
     textPause(600);
-+4: // 98
++4: // 132
     bossFace(8, 0);
     speakerBoss(0);
     bubblePos(356.0, 260.0);
