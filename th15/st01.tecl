@@ -705,7 +705,7 @@ void MainSub03()
 	float A = 1f;
 	times(20)
 	{
-		enmCreateF("Fairy4", 200f*A, 128f+RANDF2*28f,300, 100, 0);
+		enmCreateF("Fairy4", 200f*A, 128f+RANDF2*28f,200, 100, 0);
 		wait(90);
 		A *= -1f;
 		F0 += rad(180);

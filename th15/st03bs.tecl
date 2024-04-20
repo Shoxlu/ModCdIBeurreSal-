@@ -240,7 +240,6 @@ void Boss3()
 {
     lifeSet(18500);
 	GI1 = 0;
-	setBoss(0);
     unless ($TIMEOUT == 0) goto Boss3_180 @ 0;
     etCancel(640.0f);
     goto Boss3_200 @ 0;
@@ -560,7 +559,7 @@ BossCard2_468:
     anm316(0, 0);
     anmPlay(1, 73);
 	GI1 = 1;
-	setBoss(1);
+
     nop();
 	wait(60);
 	@BossCard2_at()async;
