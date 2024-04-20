@@ -31,10 +31,9 @@
         "Le thème du second niveau.",
         "",
         "Nous somme en guerre. Y'a des tirs de partout et pas une seconde",
-        "de repos.",
-        "Je voulais faire un thème plus traditionnel, on a là des ",
-        "instruments assez simple avec des moments mystérieux qui ",
-        "font leurs charmes."
+        "de repos. Je voulais faire un thème plus traditionnel,",
+        " on a là des instruments assez simple avec des ",
+        "moments mystérieux qui font leurs charmes."
     ],
     "5": [
         "@",
