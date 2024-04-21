@@ -199,6 +199,8 @@ void BossCard1()
 BossCard1_160:
     etClear(640.0f);
 BossCard1_180:
+	dialogRead(2);
+	dialogWait();
 +2: //2
     setChapter(62);
 +2: //4
@@ -218,8 +220,7 @@ BossCard1_468:
     funcSet(0);
     reset();
 	movePosTime(90, 0, 0f, 128f);
-	dialogRead(2);
-	dialogWait();
+
     playSound(27);
     moveVel(0.0f, 0.0f);
     moveVelTime(0, 0, 0.0f, 0.0f);
@@ -788,6 +789,8 @@ void LastWordCard()
 BossCard1_160:
     etClear(640.0f);
 BossCard1_180:
+	dialogRead(4);
+	dialogWait();
 +2: //2
     setChapter(63);
 +2: //4
@@ -804,8 +807,7 @@ BossCard1_448:
     etClear(640.0f);
 BossCard1_468:
     spellEnd();
-	dialogRead(4);
-	dialogWait();
+	
     funcSet(0);
     reset();
 	flagSet(2);

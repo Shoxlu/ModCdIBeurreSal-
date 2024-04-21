@@ -703,7 +703,7 @@ void MainSub03()
 {
 	F0 = rad(180);
 	float A = 1f;
-	times(20)
+	times(15)
 	{
 		enmCreateF("Fairy4", 200f*A, 128f+RANDF2*28f,200, 100, 0);
 		wait(90);
@@ -847,20 +847,13 @@ void main()
     @MainFront();
     enmKillAll();
     etClear(640.0f);
-    setChapter(4);
     wait(2);
 	dialogRead(6);
+	setChapter(4);
 	dialogWait();
-
+    wait(2);
 	enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
 	bossWait();
-	// etNew(0);
-	// etAim(0, 1);
-	// etCount(0, DS3, 1);
-	// etAngle(0, rad(90), rad(30));
-	// etSpeed(0, 1f, 1f);
-	// etSprite(0, 4, 4);
-	// etOn(0);
     @MainLatter();
     etClear(640.0f);
 	enmKillAll();
