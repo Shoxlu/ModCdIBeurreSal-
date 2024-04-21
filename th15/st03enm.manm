@@ -883,6 +883,7 @@ entry entre18{
 script script24{
 	scriptNew(script27);
 	sprite(sprite51);
+	scale(0.7f, 0.7f);
 	layer(7);
 	type(1);
 	F0 = 0f;
@@ -899,6 +900,7 @@ loop:
 script script25{
 	scriptNew(script27);
 	sprite(sprite51);
+	scale(0.7f, 0.7f);
 	layer(7);
 	type(1);
 	F0 = 0f;
