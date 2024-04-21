@@ -76,22 +76,22 @@ void MBoss1_at(int etID, float A, int color)
 {
 	etNew(etID);
 	etAim(etID, 1);
-	etCount(etID, 2:2:1:2, 1);
+	etCount(etID, 2:2:2:2, 1);
 	etSprite(etID, 22, color);
 	etSpeed(etID, 3f, 3f);
 	etAngle(etID, rad(0), 0f);
 	float Angle = A;
-	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(etID, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
-		etAngle(etID, Angle, rad(45):rad(45):0f:rad(45));
+		etAngle(etID, Angle, rad(45):rad(45):rad(45):rad(45));
 		etOn(etID);
 !ENH
 		Angle = Angle + rad(17.5);
 !L
-		Angle = Angle + rad(19.3);
+		Angle = Angle + rad(17.3);
 !*
-		wait(5:4:2:2);
+		wait(5:4:3:2);
 	}
 }
 
@@ -155,7 +155,7 @@ void MBossCard1_at()
 	etAim(0, 3);
 	etCount(0, 8, 1);
 	etSprite(0, 20, 3);
-	etSpeed(0, 3f:3f:3f:4f, 3f);
+	etSpeed(0, 3f:3f:2f:3f, 3f);
 	etAngle(0, A, 0f);
 	etDist(0, 16f);
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
