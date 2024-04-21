@@ -1,0 +1,322 @@
+entry entry0 {
+    version: 8,
+    name: "background/stage04/stage05a.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite0: { x: 0, y: 0, w: 1024, h: 512 }
+    }
+}
+
+script script0 {
+    ins_300(sprite0);
+    ins_302(8);
+    ins_3();
+}
+
+
+entry entry1 {
+    version: 8,
+    name: "background/stage04/stage05b.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite1: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script1 {
+    ins_300(sprite1);
+    ins_302(8);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_3();
+}
+
+
+entry entry2 {
+    version: 8,
+    name: "background/stage04/stage05b2.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite2: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script2 {
+    ins_300(sprite2);
+    ins_302(8);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_3();
+}
+
+
+entry entry3 {
+    version: 8,
+    name: "background/stage04/stage05b3.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite3: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script3 {
+    ins_300(sprite3);
+    ins_302(8);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_3();
+}
+
+
+entry entry4 {
+    version: 8,
+    name: "background/stage04/stage05b4.png",
+    format: 1,
+    width: 256,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 262144,
+    THTXFormat: 1,
+    THTXWidth: 256,
+    THTXHeight: 256,
+    THTXZero: 0,
+    sprites: {
+        sprite4: { x: 0, y: 0, w: 256, h: 256 }
+    }
+}
+
+script script4 {
+    ins_300(sprite4);
+    ins_302(8);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_3();
+}
+
+
+entry entry5 {
+    version: 8,
+    name: "background/stage04/stage05b1.png",
+    format: 1,
+    width: 128,
+    height: 256,
+    memoryPriority: 0,
+    lowResScale: 0,
+    hasData: 1,
+    THTXSize: 47196,
+    THTXFormat: 1,
+    THTXWidth: 69,
+    THTXHeight: 171,
+    THTXZero: 0,
+    sprites: {
+        sprite5: { x: 0, y: 0, w: 69, h: 171 }
+    }
+}
+
+script script5 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(2, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(-69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++1200: // 3300
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(220, 9, -1.5707964f, -3.1415927f, -2.0943952f);
++220: // 3520
+    ins_410(260, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++260: // 3780
+    ins_200(offset132, 3300);
+    ins_3();
+}
+
+script script6 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(1, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++1400: // 3500
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(240, 9, -1.5707964f, -3.1415927f, 2.0943952f);
++240: // 3740
+    ins_410(280, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++280: // 4020
+    ins_200(offset132, 3500);
+    ins_3();
+}
+
+script script7 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(2, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(-69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++1200: // 3300
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(300, 9, -1.5707964f, -3.1415927f, -2.0943952f);
++300: // 3600
+    ins_410(320, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++320: // 3920
+    ins_200(offset132, 3300);
+    ins_3();
+}
+
+script script8 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(1, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++1400: // 3500
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(340, 9, -1.5707964f, -3.1415927f, 2.0943952f);
++340: // 3840
+    ins_410(280, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++280: // 4120
+    ins_200(offset132, 3500);
+    ins_3();
+}
+
+script script9 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(2, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(-69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++1200: // 3300
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(180, 9, -1.5707964f, -3.1415927f, -2.0943952f);
++180: // 3480
+    ins_410(300, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++300: // 3780
+    ins_200(offset132, 3300);
+    ins_3();
+}
+
+script script10 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(1, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++1400: // 3500
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(240, 9, -1.5707964f, -3.1415927f, 2.0943952f);
++240: // 3740
+    ins_410(210, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++210: // 3950
+    ins_200(offset132, 3500);
+    ins_3();
+}
+
+script script11 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(2, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(-69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++1200: // 3300
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(340, 9, -1.5707964f, -3.1415927f, -2.0943952f);
++340: // 3640
+    ins_410(280, 9, -1.5707964f, -3.1415927f, -0.5235988f);
++280: // 3920
+    ins_200(offset132, 3300);
+    ins_3();
+}
+
+script script12 {
+    ins_300(sprite5);
+    ins_302(8);
+    ins_421(1, 1);
+    ins_401(-1.5707964f, -3.1415927f, 0.0f);
+    ins_400(69.0f, -1.0f, -110.0f);
++2100: // 2100
+    ins_0();
+    ins_410(600, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++1400: // 3500
+    ins_0();
+    ins_5(8);
+offset132:
+    ins_410(250, 9, -1.5707964f, -3.1415927f, 2.0943952f);
++250: // 3750
+    ins_410(290, 9, -1.5707964f, -3.1415927f, 0.5235988f);
++290: // 4040
+    ins_200(offset132, 3500);
+    ins_3();
+}
+
+
