@@ -24,7 +24,7 @@ void MBoss()
     setHurtbox(48.0f, 48.0f);
     setHitbox(40.0f, 40.0f);
     lifeSet(10000);
-    lifeMarker(0, 10000.0f, -8355585);
+
     setNext(1, 0, 1500, "MBossDead");
 !HL
 	setNext(1, 1800, 1500, "MBossCard1");
