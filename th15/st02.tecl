@@ -259,7 +259,7 @@ void GirlA_at2(float sign){
 	etSpeed(0, 3f, 2f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	wait(30);
-	times(10)
+	times(6)
 	{
 		etAngle(0, ABS_ANGLE+rad(60)*sign+RANDF2*rad(20), 0f);
 		etOn(0);
@@ -270,7 +270,7 @@ void GirlA_at2(float sign){
 
 void GirlB01()
 {
-
+	ins_569(1);
 	flagSet(12);
 	anmSelect(2);
     anmSetMain(0, 25);
@@ -289,6 +289,7 @@ void GirlB01()
 
 void GirlB02()
 {
+	ins_569(1);
 	flagSet(12);
 	anmSelect(2);
     anmSetMain(0, 25);
@@ -730,6 +731,7 @@ void AssistGirl01(){
 }
 
 void AssistGirl(){
+	ins_569(1);
 	moveVel(rad(90)+RANDF2*rad(10), 1f);
 	flagSet(8);
 	flagSet(2);
@@ -795,6 +797,7 @@ void waitInfinite(){
 	while(1){+1:}
 }
 void TerroristGirl(){
+	ins_569(1);
 	float A = rad(0);
 	F1 = 200f;
 	I0 = ID;
@@ -904,6 +907,7 @@ void MainSub04b(){
 
 }
 void UltimateGirl(){
+	ins_569(1);
 	anmSelect(2);
 	anmSetMain(0, 167);
 	dropExtra(2, 20);
@@ -980,6 +984,7 @@ void UltimateGirl_SpawnKamikaze(){
 
 
 void TerroristGirl03(){
+	ins_569(1);
 	anmSelect(2);
 	anmSetMain(0, 167);
 	anmSetSprite(1, ENM_AURA_L_RED);

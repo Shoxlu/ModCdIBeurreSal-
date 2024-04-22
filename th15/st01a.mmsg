@@ -388,13 +388,10 @@ script script5 {
 
 
 script script6 {
-    skippable(0);
-    bossShow(0);
-    bossFace(0, 0);
 +4: // 4
+    bossShow(0);
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(386.0, 280.0);
 +30: // 34
     skippable(0);
     bubblePos(386.0, 280.0);

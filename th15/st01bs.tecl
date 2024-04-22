@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @Boss1();
+    @Boss2();
     delete();
 }
 
@@ -184,9 +184,9 @@ void Boss2_at(int etID, float A, int color, int B)
 !ENH
 		Angle = Angle + rad(20) * _f(B);
 !L
-		Angle = Angle + rad(40) * _f(B);
+		Angle = Angle + rad(10) * _f(B);
 !*
-		wait(5:4:3:2);
+		wait(5:4:3:4);
 	}
 }
 
@@ -229,11 +229,11 @@ BossCard1_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 5400, "Boss2");
-!EN
+// !EN
     spell(2, 5400, 500000, "Une jeune fille au QI d'or");
-!HL
-    spell(2, 5400, 500000, "Une jeune deesse au QI d'or");
-!*
+// !HL
+    // spell(2, 5400, 500000, "Une jeune deesse au QI d'or");
+// !*
     movePosTime(60, 4, -90.0f, 128.0f);
     moveLimitReset();
     anm316(0, 0);
@@ -371,7 +371,7 @@ void do_again(int A)
 	wait(60:55:50:55);
 	if(GI0 == 0)
 	{
-		if(GF7 == 1f || (DIFF == 3 && GF7 <= 5f))
+		if(GF7 <= 1f:1f:1f:2f)
 		{
 			if(A == 1)
 			{
@@ -380,12 +380,8 @@ void do_again(int A)
 			{
 				enmCreateA("BossCard1_atreversed", 0f, 174f, 1, 1, 1);
 			}		
-!ENH		
-			GF7 = 0f;
-!L
 			GF7 += 1f;
-!*
-			if(GF7 == 5f)
+			if(GF7 == 1f:1f:1f:2f)
 			{
 				delete();
 			}
@@ -466,7 +462,7 @@ void Flowers()
 !H
 			etAngle(1, rad(-18), 0f);
 !L
-			etAngle(1, rad(-30), 0f);
+			etAngle(1, rad(-18), 0f);
 !*
 			etOn(1);
 	}
