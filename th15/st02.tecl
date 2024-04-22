@@ -749,7 +749,7 @@ void AssistGirl_at(){
 	etSpeed(0, 2f, 2f);
 	etSprite(0, 6, 5);
 	etExSet(0, 0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
-	times(6){
+	times(4){
 		etOn(0);
 		wait(90:90:80:80);
 	}
