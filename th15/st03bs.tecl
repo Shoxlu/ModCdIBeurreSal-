@@ -336,18 +336,18 @@ void Boss3_at2()
 	etExSet(1, 2, 0, EX_VELTIME, 30, NEG, 2.2f, NEGF);
     while(1)
     {
-    A += rad(10);
-    B += -rad(1);
-    etAngle(1, A, 0.0f);
-    etOffset(1, cos(B)*50f, sin(B)*50f);
-    etOn(1);
-	etAngle(1, A+rad(120), 0.0f);
-    etOffset(1, cos(B+rad(120))*50f, sin(B+rad(120))*50f);
-    etOn(1);
-	etAngle(1, A+rad(240), 0.0f);
-    etOffset(1, cos(B+rad(240))*50f, sin(B+rad(240))*50f);
-    etOn(1);
-    wait(4:3:2:1);
+		A += rad(10);
+		B += -rad(1);
+		etAngle(1, A, 0.0f);
+		etOffset(1, cos(B)*50f, sin(B)*50f);
+		etOn(1);
+		etAngle(1, A+rad(120), 0.0f);
+		etOffset(1, cos(B+rad(120))*50f, sin(B+rad(120))*50f);
+		etOn(1);
+		etAngle(1, A+rad(240), 0.0f);
+		etOffset(1, cos(B+rad(240))*50f, sin(B+rad(240))*50f);
+		etOn(1);
+		wait(4:3:2:2);
     }
 }
 
