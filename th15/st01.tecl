@@ -849,7 +849,7 @@ void main()
 	//wait(300);
 	setChapter(1);
     wait(2);
-	enmCreate("testLance", -192f, 320f, 1000, 1000, 1);
+	
     @MainFront();
     enmKillAll();
     etClear(640.0f);
