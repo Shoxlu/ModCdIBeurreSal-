@@ -362,7 +362,7 @@ void ECir03_at1()
     etSpeed(0, 4.0f, 4.0f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
     etSound(0, 21, -1);
-	laserNew(0, 0.0f, 128.0f, 0.0f, 16.0f);
+	//laserNew(0, 0.0f, 128.0f, 0.0f, 16.0f);
     wait($RAND % 40);
     %A = 1.570796f;
     $B = 20;
@@ -377,13 +377,9 @@ ECir03_at1_444:
 !LO
     0.785398f;
 !*
-    etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.034906585f), 0f);
-    laserOn(0);
-	etSprite(0, 18, 6);
-	wait(10);
-	etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.034906585f), 0f);
-    laserOn(0);
-	etSprite(0, 18, 3);
+    etAngle(0, rad(90) + (%RANDF2 * 0.034906585f), 0f);
+    //laserOn(0);
+	etOn(0);
     wait(60);
 ECir03_at1_684:
     if ($B--) goto ECir03_at1_444 @ 0;
@@ -424,34 +420,34 @@ void ECir04_at1()
     etSprite(0, 33, 1);
     etCount(0, 1, 1);
     etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 1.0f, 0.2f);
+    etSpeed(0, 0f, 0f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
 !E
-    4.0f;
+    2.0f;
 !N
-    6.0f;
+    3.0f;
 !H
-    8.0f;
+    4.0f;
 !LO
-    8.0f;
+    4.0f;
 !*
     etEx(0, 0, 2097152, 60, -999999, [-1.0f], -999999.0f);
     etSound(0, 21, -1);
     wait($RAND % 40);
     %A = 1.570796f;
-    diffI($B, 20, 40, 40, 40);
+    diffI($B, 10, 20, 20, 20);
     goto ECir04_at1_804 @ 0;
 ECir04_at1_564:
-    etAngle(0, %ANGLE_PLAYER + (%RANDF2 * 0.034906585f), 0.7853982f);
+    etAngle(0, rad(90) + (%RANDF2 * 0.034906585f), 0.7853982f);
     etOn(0);
 !E
-    60;
+    120;
 !N
-    40;
+    80;
 !H
-    30;
+    60;
 !LO
-    20;
+    40;
 !*
     wait([-1]);
 ECir04_at1_804:
