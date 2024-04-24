@@ -481,6 +481,7 @@ void ECir05()
     anmColor(0, 255, 255, 255);
     anmLayer(0, 8);
     @ECir05_at() async;
+	@flower();
     wait(180);
     moveVel(%ANGLE_PLAYER, 0.0f);
     ins_445(120, 0, 1.0f);
@@ -498,10 +499,11 @@ void ECir05_at()
     etNew(0);
     etSprite(0, 8, 4);
     etAngle(0, %ANGLE_PLAYER, %ANGLE_PLAYER);
-    etSpeed(0, 0.4f, 0.4f);
-    laserNew(0, 0.0f, 240.0f, 0.0f, 16.0f);
+    etSpeed(0, 100f, 100f);
+    laserNew(0, 0.0f, 500.0f, 0.0f, 16.0f);
+	laserTiming(0, 30, 10, 10, 10, 0);
     etSound(0, 18, -1);
-    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    //etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
 !E
     0.1f;
 !N
@@ -511,14 +513,14 @@ void ECir05_at()
 !LO
     0.13f;
 !*
-    etEx(0, 0, 4, 120, -999999, [-1.0f], -999999.0f);
+    //etEx(0, 0, 4, 120, -999999, [-1.0f], -999999.0f);
     etDist(0, 32.0f);
     %A = %ANGLE_PLAYER + %F0;
     diffI($B, 30, 60, 60, 60);
     goto ECir05_at_756 @ 0;
 ECir05_at_532:
     etAngle(0, %A, 0.0f);
-    laserOn(0);
+    laserStOn(0, 0);
 !E
     2;
 !N
@@ -647,7 +649,7 @@ void GirlD01()
 {
     ins_569(1);
     anmSelect(2);
-    anmSetSprite(0, 62);
+    anmSetSprite(0, 79);
     anmSetSprite(1, 93);
     dropMain(1);
     dropExtra(1, 5);
@@ -658,6 +660,8 @@ void GirlD01()
     moveVel((3.1415927f - 0.17453292f) - %F1, 2.5f);
     ins_445(70, 1, 0.0f);
     @GirlD01_at() async;
+	@GirlD01_at2()async;
+	@GirlD01_at3()async;
     wait(40);
     ins_445(120, 1, 0.2f);
     wait(120);
@@ -672,33 +676,16 @@ GirlD01_632:
 
 void GirlD01_at()
 {
-    var A, B;
+	var B;
     wait(60);
     etNew(0);
-    etAim(0, 10);
-    etSprite(0, 12, 2);
-!E
-    1;
-!N
-    3;
-!H
-    3;
-!LO
-    3;
-!E
-    5;
-!N
-    5;
-!H
-    6;
-!LO
-    7;
-!*
-    etCount(0, [-1], [-2]);
+    etAim(0, 3);
+    etSprite(0, 6, 2);
+    etCount(0, 1, 1);
+	etSound(0, -1, -1);
     etAngle(0, 0.0f, 0.02617994f);
-    etSpeed(0, 0.3f, 0.1f);
+    etSpeed(0, 0f, 0f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
 !E
     0.03f;
 !N
@@ -708,18 +695,31 @@ void GirlD01_at()
 !LO
     0.035f;
 !*
-    etEx(0, 0, 4, 120, -999999, [-1.0f], -999999.0f);
-    %A = %ANGLE_PLAYER;
+    etEx(0, 0, 4, 120, -999999, [-1.0f], NEGF);
     $B = 600;
     goto GirlD01_at_832 @ 0;
 GirlD01_at_688:
-    etAngle(0, %A, 0.017453292f);
-    %A = %A + 3.883222f;
+    etAngle(0, rad(90), 0f);
     etOn(0);
     wait(10);
 GirlD01_at_832:
     if ($B--) goto GirlD01_at_688 @ 0;
     return;
+}
+
+void GirlD01_at3()
+{
+	etNew(2);
+	etAim(2, 1);
+	etSprite(2, 8, 6);
+	etCount(2, 40, 1);
+	etSpeed(2, 3f, 3f);
+	times(10)
+	{
+		wait(60);
+		etAngle(2, -rad(90)+RANDF2*rad(2), rad(4));
+		etOn(2);
+	}
 }
 
 void GirlD01_at2()
@@ -759,13 +759,13 @@ GirlD01_at2_908:
 GirlD01_at2_952:
     if ($E--) goto GirlD01_at2_604 @ 0;
 !E
-    180;
+    50;
 !N
-    180;
+    50;
 !H
-    130;
+    35;
 !LO
-    90;
+    20;
 !*
     wait([-1]);
 GirlD01_at2_1096:
@@ -1331,44 +1331,108 @@ void MainSub05b()
     return;
 }
 
+void GirlD09()
+{
+    anmSelect(2);
+    anmSetMain(0, 40);
+    anmSetSprite(1, 93);
+    dropMain(1);
+    dropExtra(1, 9);
+    dropExtra(2, 15);
+    setHurtbox(32.0f, 32.0f);
+    setHitbox(24.0f, 24.0f);
+    moveVel(1.5707964f, 2.5f);
+    moveVelTime(70, 1, 1.5707964f, 0.3f);
+    @GirlD09_at() async;
+    wait(400);
+    moveSpeedTime(120, 1, 3.0f);
+    goto GirlD01_428 @ 0;
+GirlD01_408:
+    wait(1000);
+GirlD01_428:
+    if (1) goto GirlD01_408 @ 0;
+    delete();
+}
+
+void GirlD09_at()
+{
+	float D = 0f;
+    var A, B, C;
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 15, 6);
+!E
+    1;
+!N
+    1;
+!H
+    1;
+!LO
+    2;
+!*
+    etCount(0, [-1], 2);
+    etAngle(0, 0.0f, 0.17453292f);
+    etSpeed(0, 1.3f, 1.3f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etDist(0, 32.0f);
+!E
+    200;
+!N
+    200;
+!H
+    100;
+!LO
+    30;
+!*
+    etEx(0, 0, -2147483648, [-1], -999999, -999999.0f, -999999.0f);
+!E
+    0.01f;
+!N
+    0.01f;
+!H
+    0.01f;
+!LO
+    0.01f;
+!*
+    etEx(0, 0, 4, 230, -999999, [-1.0f], -999999.0f);
+    %B = %RANDRAD;
+    diffI($C, 65, 200, 300, 200);
+    goto GirlD01_at_912 @ 0;
+GirlD01_at_688:
+    etAngle(0, %B, D);
+    %B = %B + 3.883222f;
+	D += rad(90);
+    etOn(0);
+!E
+    6;
+!N
+    2;
+!H
+    2;
+!LO
+    2;
+!*
+    wait([-1]);
+GirlD01_at_912:
+    if ($C--) goto GirlD01_at_688 @ 0;
+    return;
+}
+
 void MainSub06()
 {
-    enmCreate("ECir06", -128.0f, 128.0f, 550, 1000, 1);
-    enmCreate("ECir06", 128.0f, 128.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -160.0f, 192.0f, 550, 1000, 1);
-    enmCreate("ECir06", 160.0f, 192.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -64.0f, 96.0f, 550, 1000, 1);
-    enmCreate("ECir06", 64.0f, 96.0f, 550, 1000, 1);
-    wait(400);
-    enmCreate("ECir06", -128.0f, 128.0f, 550, 1000, 1);
-    enmCreate("ECir06", 128.0f, 128.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -160.0f, 192.0f, 550, 1000, 1);
-    enmCreate("ECir06", 160.0f, 192.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -64.0f, 96.0f, 550, 1000, 1);
-    enmCreate("ECir06", 64.0f, 96.0f, 550, 1000, 1);
-    wait(400);
-    enmCreate("ECir06", -128.0f, 128.0f, 550, 1000, 1);
-    enmCreate("ECir06", 128.0f, 128.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -160.0f, 192.0f, 550, 1000, 1);
-    enmCreate("ECir06", 160.0f, 192.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -64.0f, 96.0f, 550, 1000, 1);
-    enmCreate("ECir06", 64.0f, 96.0f, 550, 1000, 1);
-    wait(300);
-    enmCreate("ECir06", -128.0f, 128.0f, 550, 1000, 1);
-    enmCreate("ECir06", 128.0f, 128.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -160.0f, 192.0f, 550, 1000, 1);
-    enmCreate("ECir06", 160.0f, 192.0f, 550, 1000, 1);
-    wait(40);
-    enmCreate("ECir06", -64.0f, 96.0f, 550, 1000, 1);
-    enmCreate("ECir06", 64.0f, 96.0f, 550, 1000, 1);
-    wait(400);
+    enmCreate("GirlD09", 0.0f, -32.0f, 2000, 1000, 1);
+    wait(200);
+    enmCreate("GirlD09", 0.0f, -32.0f, 2000, 1000, 1);
+    wait(200);
+    enmCreate("GirlD09", 40.0f, -32.0f, 1500, 1000, 1);
+    enmCreate("GirlD09", -40.0f, -32.0f, 1500, 1000, 1);
+    wait(200);
+    enmCreate("GirlD09", 90.0f, -32.0f, 1400, 1000, 1);
+    enmCreate("GirlD09", -90.0f, -32.0f, 1400, 1000, 1);
+    wait(200);
+    enmCreate("GirlD09", 170.0f, -32.0f, 1300, 1000, 1);
+    enmCreate("GirlD09", -170.0f, -32.0f, 1300, 1000, 1);
+    wait(200);
     return;
 }
 
