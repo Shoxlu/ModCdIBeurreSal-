@@ -1499,6 +1499,7 @@ MainSub03b_1860:
     return;
 }
 
+
 void MainSub04()
 {
     var A, B, C, D, E, F, G;
