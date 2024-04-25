@@ -1,0 +1,346 @@
+#include "main.tecl"
+void EffChargePoint3(var A, var B, var C, var D, var E, var F);
+
+void MBoss()
+{
+    setBoss(0);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    enmKillAll();
+    timerReset();
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    anmSelect(1);
+    anmSetSprite(1, 107);
+    anmSetSprite(2, 116);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    flagSet(76);
+    setHurtbox(48.0f, 48.0f);
+    setHitbox(40.0f, 40.0f);
+    lifeSet(20000);
+    //lifeMarker(0, 13000.0f, -8355585);
+    setNext(1, 0, 1800, "MBossDead");
+    setTimeout(1, "MBossEscape");
+    fog(140.0f, 16748431);
+    movePos(-192.0f, -64.0f);
+    movePosTime(100, 4, 0.0f, 128.0f);
+    wait(40);
+    @MBoss1();
+    goto MBoss_744 @ 0;
+MBoss_724:
+    wait(1000);
+MBoss_744:
+    if (1) goto MBoss_724 @ 0;
+    delete();
+}
+
+void MBoss1()
+{
+	@EffChargePoint3(1.5707964f, 0.5235988f, 8, 11, 11, 11);
+    wait(60);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    $I3 = 0;
+    flagExtDmg(1);
+    goto MBoss1_456 @ 0;
+MBoss1_256:
+    @MBoss1_at()async;
+    wait(20);
+    moveRand(60, 4, 1.0f);
+    wait(190);
+    wait(20);
+    moveRand(60, 4, 1.0f);
+    wait(190);
+MBoss1_456:
+    if (1) goto MBoss1_256 @ 0;
+    return;
+}
+
+void MBoss1_at()
+{
+    int C = 15;
+    etNew(0);
+    etAim(0, 3);
+    
+    
+    
+    while(1)
+    {
+        float A = RANDRAD;
+        int B = 0;
+        if(C == 15) {
+            C = 0;
+        }else if(C == 0) {
+            C = 15;
+        }
+        float alea = (RANDF/1000f):(RANDF/200f):(RANDF/100f):(RANDF/100f);
+        while(B < 2) {
+            etCount(0, 14:14:14:20, 1);
+
+            etSprite(0, 4, C);
+            etAngle(0, A, 0f);
+            
+            if(C == 15) {
+                etExSet(0, 0, 0, 1, 10, NEG, 0.05f, 0f);
+                if(B == 0) {
+                    etSpeed(0, 2.4f, 2.4f);
+                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, alea);
+                }else {
+                    etSpeed(0, 2.2f, 2.2f);
+                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, alea*1.5f);
+                }
+                
+                
+            }else if(C == 0) {
+                etExSet(0, 0, 0, 1, 5, NEG, 0.05f, 0f);
+                if(B == 0) {
+                    etSpeed(0, 2.0f, 2.0f);
+                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, -alea);
+                }else {
+                    etSpeed(0, 1.8f, 1.8f);
+                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, -alea*1.5f);
+                }
+                
+            }
+
+            etOn(0);
+            B = B + 1;
+            
+            if(B == 2) {
+                wait(16);
+            }
+            else {
+                wait(8);
+            }
+        }
+        
+    }
+}
+
+void MBossDead()
+{
+    spellEnd();
+    enmKillAll();
+    unless ($DIFF <= 1) goto MBossDead_384 @ 0;
+    unless ($TIMEOUT == 0) goto MBossDead_304 @ 0;
+    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_360 @ 0;
+MBossDead_304:
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_360:
+    goto MBossDead_528 @ 0;
+MBossDead_384:
+    unless ($TIMEOUT == 0) goto MBossDead_508 @ 0;
+    etCancel(640.0f);
+    goto MBossDead_528 @ 0;
+MBossDead_508:
+    etClear(640.0f);
+MBossDead_528:
+    anmPlay(1, 65);
+    moveLimitReset();
+    lifeSet(100000);
+    unless ($TIMEOUT == 0) goto MBossDead_792 @ 0;
+    dropClear();
+    dropMain(7);
+    dropExtra(1, 20);
+    dropExtra(2, 20);
+    dropArea(48.0f, 48.0f);
+    dropItems();
+MBossDead_792:
+    flagSet(3);
+    setScreenShake(30, 12, 0);
+    anmPlay(0, 28);
+    playSound(5);
+    ins_570();
+    wait(60);
+    setChapter(4);
+    wait(60);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, 192.0f, -32.0f);
+    wait(60);
+    delete();
+    delete();
+}
+
+void MBossEscape()
+{
+    setNext(0, -1, 0, "");
+    setNext(1, -1, 0, "");
+    spellEnd();
+    moveLimitReset();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto MBossEscape_280 @ 0;
+    etCancel(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    etClear(640.0f);
+MBossEscape_300:
+    lifeSet(100000);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, 0.0f, -32.0f);
+    wait(60);
+    delete();
+    delete();
+}
+
+void MCir01()
+{
+    var A;
+    ins_569(-1);
+    anmSelect(2);
+    anmSetSprite(0, 53);
+    %A = _f(1);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    flagSet(15);
+    anmScale(0, 0.5f, 0.5f);
+    anmScaleTime(0, 120, 1, 1.0f, 1.0f);
+    anmAlpha(0, 0);
+    anmAlphaTime(0, 120, 0, 255);
+    anmColor(0, 102, 60, 32);
+    anmLayer(0, 18);
+    @MCir01_at(2) async 1;
+    setDeath("MCir01Dead");
+    moveCircle(%F0, %F1, 0.0f, 0.0f);
+    moveCircleTime(120, 0, -999999.0f, %F2, 0.0f);
+    wait(120);
+    flagClear(15);
+    anmColor(0, 255, 255, 255);
+    anmLayer(0, 18);
+    wait($I0);
+    moveVel(%FINAL_ANGLE, 3.0f);
+    killAsync(1);
+    @MCir01_at2(2) async;
+    goto MCir01_772 @ 0;
+MCir01_752:
+    wait(1000);
+MCir01_772:
+    if (1) goto MCir01_752 @ 0;
+    delete();
+}
+
+void MCir01Dead()
+{
+    $BI3 = $BI3 + 220;
+    return;
+}
+
+void MCir01_at(var A)
+{
+    var B, C;
+    wait(10);
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 11, $A);
+    etCount(0, 1, 1);
+    etAngle(0, 0.0f, 0.0f);
+!E
+    2.0f;
+!N
+    2;
+!H
+    3;
+!LO
+    3;
+!*
+    etSpeed(0, [-1.0f], 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etSound(0, 21, -1);
+    %B = 0.0f;
+    $C = 400;
+    goto MCir01_at_748 @ 0;
+MCir01_at_468:
+    etAngle(0, %FINAL_ANGLE + %B, 0.0f);
+    etOn(0);
+    %B = %B + %F3;
+!E
+    4;
+!N
+    4;
+!H
+    4;
+!LO
+    4;
+!*
+    wait([-1]);
+MCir01_at_748:
+    if ($C--) goto MCir01_at_468 @ 0;
+    return;
+}
+
+void MCir01_at2(var A)
+{
+    var B, C, D;
+    wait(10);
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 11, $A);
+    etCount(0, 1, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeed(0, 2.0f, 0.2f);
+    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+    etSound(0, 21, -1);
+    %B = %F3 * _f(60);
+    $C = 100;
+    goto MCir01_at2_832 @ 0;
+MCir01_at2_424:
+    $D = 7;
+    goto MCir01_at2_688 @ 0;
+MCir01_at2_488:
+    etAngle(0, %FINAL_ANGLE + %B, 0.0f);
+    etOn(0);
+    %B = %B + %F3;
+    wait(5);
+MCir01_at2_688:
+    if ($D--) goto MCir01_at2_488 @ 0;
+!E
+    15;
+!N
+    15;
+!H
+    5;
+!LO
+    0;
+!*
+    wait([-1]);
+MCir01_at2_832:
+    if ($C--) goto MCir01_at2_424 @ 0;
+    return;
+}
+
+void MCir01b()
+{
+    var A;
+    ins_569(-1);
+    anmSelect(2);
+    anmSetSprite(0, 59);
+    %A = _f(1);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    flagSet(15);
+    anmScale(0, 0.5f, 0.5f);
+    anmScaleTime(0, 120, 1, 1.0f, 1.0f);
+    anmAlpha(0, 0);
+    anmAlphaTime(0, 120, 0, 255);
+    anmColor(0, 102, 60, 32);
+    anmLayer(0, 18);
+    @MCir01_at(6) async 1;
+    setDeath("MCir01Dead");
+    moveCircle(%F0, %F1, 0.0f, 0.0f);
+    moveCircleTime(120, 0, -999999.0f, %F2, 0.0f);
+    wait(120);
+    flagClear(15);
+    anmColor(0, 255, 255, 255);
+    wait($I0);
+    moveVel(%FINAL_ANGLE, 3.0f);
+    killAsync(1);
+    @MCir01_at2(6) async;
+    goto MCir01b_748 @ 0;
+MCir01b_728:
+    wait(1000);
+MCir01b_748:
+    if (1) goto MCir01b_728 @ 0;
+    delete();
+}
