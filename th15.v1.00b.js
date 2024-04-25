@@ -2,22 +2,6 @@
     options: {
         pobh_const_0: {
             type: "s",
-            val: "r",
-        },
-        pobh_const_1: {
-            type: "s",
-            val: "CONIN$",
-        },
-        pobh_const_2: {
-            type: "s",
-            val: "w",
-        },
-        pobh_const_3: {
-            type: "s",
-            val: "CONOUT$",
-        },
-        pobh_const_4: {
-            type: "s",
             val: "th15/icone.png",
         },
         user32_dll_str: {
@@ -160,7 +144,7 @@
         },
         "pobh.text": {
             access: "rx",
-            code: "c36666666666662e0f1f840000000000c36666666666662e0f1f840000000000c36666666666662e0f1f8400000000005756508b4c2410c704240000000089e26a00e8[0x402DB0]89c668000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c756ff15(<codecave:pobh_imports>+0x44)83c40489f883c4045e5fc39053575650ff15(<codecave:pobh_imports>+0x18)8b3d(<codecave:pobh_imports>+0x2c)6a00ffd783c4048b35(<codecave:pobh_imports>+0x24)5068<option:pobh_const_0>68<option:pobh_const_1>ffd683c40c6a01ffd783c4045068<option:pobh_const_2>68<option:pobh_const_3>ffd683c40c6a02ffd783c4045068<option:pobh_const_2>68<option:pobh_const_3>ffd683c40cc704240000000089e2b9<option:pobh_const_4>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x44)83c40485f674568b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519bb0>ffd7566a016880000000ff35<0x519bb0>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519bb0>ffd3566a00688000000050ffd76a04ff35<0x519bb0>ffd3566a01688000000050ffd731c083c4045e5f5bc3",
+            code: "c36666666666662e0f1f840000000000c36666666666662e0f1f840000000000c36666666666662e0f1f8400000000005756508b4c2410c704240000000089e26a00e8[0x402DB0]89c668000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c756ff15(<codecave:pobh_imports>+0x44)83c40489f883c4045e5fc39053575650c704240000000089e2b9<option:pobh_const_0>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x44)83c40485f674568b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519bb0>ffd7566a016880000000ff35<0x519bb0>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519bb0>ffd3566a00688000000050ffd76a04ff35<0x519bb0>ffd3566a01688000000050ffd731c083c4045e5f5bc3",
         },
         "pobh.CRT$XTX": {
             access: "r",

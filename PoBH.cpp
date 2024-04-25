@@ -2,7 +2,7 @@
 
 #include <Windows.h>
 #include <stdio.h>
-
+#define DEBUG_
 __attribute__((constructor)) void static_ctor() {
     //MessageBoxA(NULL, "This is being called from a static constructor!", "coff2binhack sample", 0);
 }
@@ -35,10 +35,14 @@ HICON load_icon(const char* filename) {
 
 
 extern "C" int hook_entry() {
+#ifdef DEBUG
 	AllocConsole();
 	freopen("CONIN$", "r", stdin);
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
+#endif // DEBUG
+
+	
 	HICON icon = load_icon("th15/icone.png");
 	if (icon) {
 		//MessageBoxA(NULL, "This works ! (ig)", "coff2binhack sample", 0);
