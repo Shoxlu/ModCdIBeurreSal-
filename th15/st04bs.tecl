@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
-    @Boss4();
+    @Boss1();
     delete();
 }
 
@@ -543,13 +543,7 @@ BossCard1_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 2220, "Boss2");
-!EN
     spell(42, 2220, 500000, "Signe de la chaleur [Cuisson lente]");
-!H
-    spell(44, 2220, 500000, "�����u���F�̏D�O�d���v");
-!L
-    spell(45, 2220, 500000, "�����u�D�i���̖��v");
-!*
     movePosTime(60, 4, 0.0f, 200.0f);
     moveLimit(0.0f, 200.0f, 240.0f, 64.0f);
     anm316(0, 0);
@@ -754,11 +748,7 @@ BossCard1_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 2220, "Boss3");
-!EN
     spell(46, 2220, 500000, "Signe de la Vapeur [Etreinte Furtive]");
-!HL
-    spell(48, 2220, 500000, "�����u���F�̏D�O�d���v");
-!*
     movePosTime(160, 9, 0.0f, 144.0f);
     moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
     anm316(0, 0);
@@ -881,11 +871,7 @@ BossCard3_468:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 3000, "Boss4");
-!EN
     spell(50, 3000, 500000, "Changement d'état [Ebullition]");
-!HL
-    spell(52, 3000, 500000, "�����u���F�̃h���[���L���b�`���[�v");
-!*
     movePosTime(60, 4, 0.0f, 0.0f);
     moveLimit(0.0f, 200f, 64.0f, 64.0f);
     anmSelect(3);
