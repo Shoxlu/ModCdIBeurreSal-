@@ -1480,6 +1480,8 @@ main_440:
     // @LogoEnemy() async;
 // +60: //60
     // nop();
+	enmCreate("Test", 0f, 128f, 100, 1, 0);
+	wait(10000);
     // @MainFront();
     // etClear(640.0f);
     // ins_571();
@@ -1508,4 +1510,13 @@ main_1232:
 main_1252:
     if (1) goto main_1232 @ 60;
     delete();
+}
+
+
+void Test(){
+	anmSelect(4);
+	//moveVel(rad(90), 1f);
+	anmSetSprite(0, 18);
+
+	wait(10000);
 }

@@ -961,16 +961,21 @@ entry entry18 {
 
 script script18{
 	sprite(sprite46);
-
+	scale(4f, 4f);
 	layer(7);
 	type(1);
-	ins_418();
+	
 	F0 = 0f;
+	I0 = 100;
+	I1 = 3;
+	//texCircle(1000);
+	//ins_418();
+	scaleTime(30, 1, 0.5f, 0.5f);
 loop:
-		ins_418();
-		pos(F0, 0f, 0f);
+		//ins_418();
+		
 		wait(1);
-		F0+=0.2f;
+
 	jmp(loop, 0);
 	stop();
 }
