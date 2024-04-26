@@ -1480,7 +1480,7 @@ main_440:
     // @LogoEnemy() async;
 // +60: //60
     // nop();
-	enmCreate("Test", 0f, 128f, 100, 1, 0);
+	enmCreate("Test", 0f, 224f, 100, 1, 0);
 	wait(10000);
     // @MainFront();
     // etClear(640.0f);
