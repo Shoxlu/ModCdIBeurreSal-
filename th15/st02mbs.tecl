@@ -179,7 +179,7 @@ void Familiar()
 	anmSetMain(0, 50);
 	etNew(0);
 	etAim(0, 9);
-	etCount(0, 5, 25:30:35:40);
+	etCount(0, 5, 20:25:30:35);
 	etSprite(0, 16, 3);
 	etAngle(0, 0f, rad(10));
 	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);

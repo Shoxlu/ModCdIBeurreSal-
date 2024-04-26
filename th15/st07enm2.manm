@@ -961,6 +961,7 @@ entry entry18 {
 
 script script18{
 	sprite(sprite46);
+	scale(5f, 5f);
 	layer(7);
 	type(1);
 	ins_418();

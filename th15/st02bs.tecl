@@ -360,12 +360,12 @@ void Boss3_at()
 	etNew(0);
 	etSprite(0, 37, 13);
 	etAim(0, 5);
-	etCount(0, 20:30:40:50, 2);
+	etCount(0, 20:30:40:45, 2);
 	etSpeed(0, 2f, 3f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etNew(1);
 	etCopy(1, 0);
-	etCount(1, 20:30:40:50, 1);
+	etCount(1, 20:30:40:45, 1);
 	etSpeed(1, 3f, 4f);
 	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	// etEx(1, 0, EX_SIZE, 1, 0, 1f, 2f);
@@ -392,7 +392,7 @@ void Boss3_at()
 
 void Boss3_starry_rain()
 {
-	int n = 6:8:9:9;
+	int n = 6:8:8:9;
 	float X = -192f+386f/_f(n*2);
 	
 	times(n)
@@ -413,11 +413,15 @@ void Boss3_starry_rain_at()
 	etEx(2, 0, EX_INVULN, 100000, NEG, NEGF, NEGF);
 	times(15)
 	{
-		etSpeed(2, 2.2f:2.1f:2.0f:2f+RANDF, 2f);
+		etSpeed(2, 2.2f:2.1f:2.1f:2f+RANDF, 2f);
 		etAngle(2, rad(270)+rad(30)*RANDF2, 0f);
 		etEx(2, 0, EX_ACCEL, 60, NEG, 1f/60f, rad(90)+rad(20)*RANDF2);
 		etOn(2);
-		wait(RAND % 4);
+!ENH
+		wait(RAND % 4+1);
+!L
+		wait(RAND%3+1);
+!*
 	}
 }
 
