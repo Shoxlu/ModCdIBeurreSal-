@@ -42,18 +42,16 @@ void MBoss1()
     moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
     $I3 = 0;
     flagExtDmg(1);
-    goto MBoss1_456 @ 0;
-MBoss1_256:
     @MBoss1_at()async;
+	while(1)
+	{
     wait(20);
     moveRand(60, 4, 1.0f);
     wait(190);
     wait(20);
     moveRand(60, 4, 1.0f);
     wait(190);
-MBoss1_456:
-    if (1) goto MBoss1_256 @ 0;
-    return;
+	}
 }
 
 void MBoss1_at()
@@ -107,10 +105,10 @@ void MBoss1_at()
             B = B + 1;
             
             if(B == 2) {
-                wait(16);
+                wait(12);
             }
             else {
-                wait(8);
+                wait(6);
             }
         }
         
