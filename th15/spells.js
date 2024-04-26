@@ -22,7 +22,7 @@
 	"42": "Signe de la chaleur « Cuisson lente »",
     "46": "Signe de la vapeur « Étreinte Furtive »",
     "50": "Changement d'état « Ébullition »",
-    "54": "« Le héron blanc à une aile »",
+    "54": "« Lumière guidant au zéro absolu »",
 	"58": "« Tissage de la réalité »",
     "60": "« Peut-on couper les fils du destin ? »",
 	"62": "Pyrotechnie : « Festival estival »",
