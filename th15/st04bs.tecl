@@ -998,7 +998,7 @@ BossCard4_408:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 3600, "BossDead");
-    spell(38, 3000, 500000, "�����u���F�̋����v");
+    spell(54, 3000, 500000, "�����u���F�̋����v");
 	spellTimeout();
 	flagSet(3);
 	moveLimitReset();
