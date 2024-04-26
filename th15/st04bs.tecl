@@ -1007,7 +1007,7 @@ void Flocon()
 	etSpeed(0, 1f, 1f);
 	etSound(0, -1, -1);
 	etSprite(0, 10, 5);
-	laserNew(0, 150f, 150f, 0f, 32f);
+	laserNew(0, 0f, 150f, 0f, 32f);
 	laserTiming(0, 30, 15, 60, 15, 0);
 	while(1)
 	{

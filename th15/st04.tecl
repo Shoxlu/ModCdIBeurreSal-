@@ -54,10 +54,10 @@ void DeathECir00()
 	etAngle(1, rad(90), 0f);
 	etSpeed(1, 2f:2.5f:2.5f:3f, 2f:2.5f:2.5f:3f);
 	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	times(3)
+	times(5)
 	{
 		etOn(1);
-		wait(10);
+		wait(8);
 	}
 }
 
@@ -169,26 +169,26 @@ void ECir01_at()
     etNew(0);
     etSprite(0, 8, 4);
     etAngle(0, %ANGLE_PLAYER, %ANGLE_PLAYER);
-    etSpeed(0, 100f, 100f);
-    laserNew(0, 0.0f, 500.0f, 0.0f, 16.0f);
-	laserTiming(0, 50, 10, 30, 10, 0);
+    etSpeed(0, 1f, 1f);
+    laserNew(0, 500f, 500.0f, 0.0f, 16.0f);
+	laserTiming(0, 50, 10, 10, 10, 0);
     etSound(0, 18, -1);
-    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 4, 120, -999999, 0.1f, -999999.0f);
+    //etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    //etEx(0, 0, 4, 120, -999999, 0.1f, -999999.0f);
     %A = %ANGLE_PLAYER + %F0;
-    diffI($B, 5, 10, 10, 10);
+    diffI($B, 10, 20, 20, 20);
     goto ECir01_at_728 @ 0;
 ECir01_at_428:
     etAngle(0, %A, 0.0f);
     laserStOn(0, 0);
 !E
-    10;
+    8;
 !N
-    5;
+    4;
 !H
-    5;
+    4;
 !LO
-    5;
+    4;
 !*
     wait([-1]);
     %A = %A - %F1;
@@ -264,13 +264,13 @@ void ECir02DeadAttackEt1()
     etAim(0, 3);
     etSprite(0, 8, 6);
 !E
-    1;
+    5;
 !N
-    1;
+    5;
 !H
-    5;
+    9;
 !LO
-    5;
+    9;
 !*
     etCount(0, [-1], 2);
     etAngle(0, rad(90), 0.0f);
@@ -499,9 +499,9 @@ void ECir05_at()
     etNew(0);
     etSprite(0, 8, 4);
     etAngle(0, %ANGLE_PLAYER, %ANGLE_PLAYER);
-    etSpeed(0, 100f, 100f);
-    laserNew(0, 0.0f, 500.0f, 0.0f, 16.0f);
-	laserTiming(0, 30, 10, 10, 10, 0);
+    etSpeed(0, 1f, 1f);
+    laserNew(0, 500f, 500.0f, 0.0f, 16.0f);
+	laserTiming(0, 30, 10, 30, 10, 0);
     etSound(0, 18, -1);
     //etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
 !E
