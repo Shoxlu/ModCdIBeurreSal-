@@ -61,5 +61,13 @@
         "",
         "Thème très étrange, qui convient à un boss très étrange aussi.",
         "On a un peu de tension avec des instants de relâche inattendus..."
+    ],
+    "14": [
+        "@",
+        "　",
+        "Thème de God Reimu",
+        "",
+        "",
+        ""
     ]
 }
