@@ -47,6 +47,8 @@ Boss_1200:
     delete();
 }
 
+
+
 void Boss1()
 {
     timerReset();
