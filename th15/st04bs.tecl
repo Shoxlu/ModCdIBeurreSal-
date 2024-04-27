@@ -74,10 +74,7 @@ void Boss1_at()
 {
     int C = 13;
     etNew(0);
-    etAim(0, 3);
-    
-    
-    
+    // etAim(0, 3);
     while(1)
     {
         float A = RANDRAD;
