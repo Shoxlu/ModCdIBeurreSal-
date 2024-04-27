@@ -43,7 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
 	dialogWait();
-    @Boss2();
+    @Boss1();
     delete();
 }
 
@@ -819,12 +819,15 @@ BossCard1_468:
     anmPlay(1, 73);
 	movePosTime(90, 0, 0f, 70f);
 +90: //94
+	GF2 = 0f;
+	GI1 = 0;
 	enmCreateA("SetupTrap", 0f, 224f, 1, 0, 0);
 	// enmCreateA("BigGirl1Sub00", -192f, 480f, 600, 1000, 10);
 	// enmCreateA("BigGirl2Sub00", 192f, 480f, 600, 1000, 10);
 	// enmCreateA("BigGirl3Sub00", -192f, 0f, 500, 1000, 12);
 	// enmCreateA("BigGirl4Sub00", 192f, 0f, 500, 1000, 12);
 	enmCreateA("DeathGirlReimuSub02", 0f, 224f, 100, 100, 1);
+	
 	wait(100000);
 }
 
@@ -853,7 +856,7 @@ void DeathGirlReimuSub02()
 	wait(200);
 	etClear(60f);
 	F1 = 0.0125f;
-!L 
+!NHL 
 	F1 = 0.00375f;
 !*
 	wait(180);
@@ -861,20 +864,12 @@ void DeathGirlReimuSub02()
 	int count = 0;
 	times(6){
 		F0 = angle;
-		I0 = count%2;
+		I0 = 0:(count % 3):(count % 2):1;
 		enmCreate("YingYangTrap", 0f, 0f, 100, 100, 2);
 		angle+= rad(60);
 		count += 1;
 		
 	}
-!L
-	// enmCreate("YingYangTrap1b", 0f, 0f, 100, 100, 2);
-	// enmCreate("YingYangTrap2b", 0f, 0f, 100, 100, 2);
-	// enmCreate("YingYangTrap3b", 0f, 0f, 100, 100, 2);
-	// enmCreate("YingYangTrap4b", 0f, 0f, 100, 100, 2);
-	// enmCreate("YingYangTrap5b", 0f, 0f, 100, 100, 2);
-	// enmCreate("YingYangTrap6b", 0f, 0f, 100, 100, 2);
-!*
 	wait(100);
 	GF2 = 0f;
 	GI1 = 1;
@@ -883,13 +878,12 @@ void DeathGirlReimuSub02()
 
 void SetupTrap()
 {
-	var A, B, C, D, E, F, G, H, COLOR;
+	float D = 0f;
+	int COLOR;
 	flagSet(2);
 	flagSet(1);
-	$C = MISS_COUNT;
-	$B = BOMB_COUNT;
-	%A = rad(90);
-	$G = 0;
+	float A = rad(90);
+	int G = 0;
 	@CreatePattern(14, 1, 23, 0, 1, 1, 0f, 0f, 0f, 0f);
 	etExSet(14, 0, 0, EX_OFFSCREEN, 40000, 0, NEGF, NEGF);
 	etExSet(14, 1, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
@@ -897,17 +891,15 @@ void SetupTrap()
 	etExSet(14, 3, 0, EX_VELTIME, 10, NEG, 0f, NEGF);
 	times(120)
 	{
-		$COLOR = 1 + RAND % 6;
+		COLOR = 1 + RAND % 6;
 		etSprite(14, 23, $COLOR);
-		etExSet(14, 1, 0, EX_WAIT, 120+$G, NEG, NEGF, NEGF);
-		etOffsetRad(14, %A, 300f);
-		%E = cos(%A)*300f;
-		%F = sin(%A)*300f;
-		mathAngle(%D, %E, %F, 0f, 0f);
-		etAngle(14, %D, 0f);
+		etExSet(14, 1, 0, EX_WAIT, 120+G, NEG, NEGF, NEGF);
+		etOffsetRad(14, A, 300f);
+		mathAngle(D, cos(A)*300f, sin(A)*300f, 0f, 0f);
+		etAngle(14, D, 0f);
 		etOn(14);
-		%A = %A + rad(3);
-		$G = $G - 1;
+		A = A + rad(3);
+		G = G - 1;
 		wait(1);
 	}
 	wait(180);
@@ -940,43 +932,37 @@ void YingYangTrap()
 	anmSetSprite(0, 65);
 	flagSet(1);
 	flagSet(16);
-!N
 	if(I0)
 	{
-!NHL
-		
 		@YingYangTrap_at() async;
-!*
 	}
-!*
 	@YingYangTrap_at2() async;
 	@YingYangTrap_at3() async;
 	moveCircle(F0, F1, 192f, 0f);
 	wait(10000);
 }
-	void YingYangTrap_at()
+void YingYangTrap_at()
 {
-	var A, B;
-	%A= rad(133);
-	$B= 1;
+	float A= rad(133);
+	int B= 1;
 	etNew(2);
 	etSprite(2, ET_ARROWHEAD, 4);
 	etAim(2, 1);
-	etAngle(2,%A, 0f);
-	etCount(2, 1, $B);
+	etAngle(2,A, 0f);
+	etCount(2, 1,B);
 	etSpeed(2, 3f, 3f);
 !L 
 	etSpeed(2, 2f, 2f); 
 !*
 	etExSet(2, 0, 0, EX_ANIM, 0, 0, NEGF, NEGF);
 	while(1){
-		mathAngle(%A, ABS_X, ABS_Y, 0f, 224f); //calcule l'angle pour tirer en direction du boss
-		etAngle(2,%A, 0f);//aplique ce nouvel angle 
+		mathAngle(A, ABS_X, ABS_Y, 0f, 224f); //calcule l'angle pour tirer en direction du boss
+		etAngle(2, A, 0f);//aplique ce nouvel angle 
 		if(GI1 == 1)
 		{
 			etOn(2);
 		}
-		diffWait(3, 3, 3, 6);
+		wait(3);
 	}
 }
 
@@ -986,6 +972,7 @@ void YingYangTrap_at2()
 	wait(0:100:100:260);
 	@CreatePattern(3, 0, 16, 3, 1, 1, 0f, rad(20), 1f, 2f);
 	etExSet(3, 0, 0, EX_ANIM, 2, 0, NEGF, NEGF);
+	etExSet(3, 0, 1, EX_BRIGHT, 1, NEG, NEGF, NEGF);
 	while(1)
 	{
 		A = 1 + RAND % 13;
@@ -994,7 +981,7 @@ void YingYangTrap_at2()
 		{
 			etOn(3);
 		}
-		wait(117:107:97:77);
+		wait(117:167:167:167);
 	}
 }
 	
@@ -1014,7 +1001,7 @@ void YingYangTrap_at3()
 		{
 			etOn(4);
 		}
-		wait(5);
+		wait(7);
 	}
 }
 
