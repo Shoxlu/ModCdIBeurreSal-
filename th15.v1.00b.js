@@ -52,13 +52,13 @@
             type: "s",
             val: "ucrtbase.dll",
         },
-        freopen_str: {
-            type: "s",
-            val: "freopen",
-        },
         __stdio_common_vfprintf_str: {
             type: "s",
             val: "__stdio_common_vfprintf",
+        },
+        freopen_str: {
+            type: "s",
+            val: "freopen",
         },
         __acrt_iob_func_str: {
             type: "s",
@@ -99,6 +99,10 @@
         strncmp_str: {
             type: "s",
             val: "strncmp",
+        },
+        puts_str: {
+            type: "s",
+            val: "puts",
         },
         pobh_name_str: {
             type: "s",
@@ -142,41 +146,61 @@
             access: "re",
             code: "8B46 14 A3 <0x520329> E9 [0x42DBA7]",
         },
-        "pobh.text": {
+        "pobh.text0": {
             access: "rx",
-            code: "c36666666666662e0f1f840000000000c36666666666662e0f1f840000000000c36666666666662e0f1f8400000000005756508b4c2410c704240000000089e26a00e8[0x402DB0]89c668000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c756ff15(<codecave:pobh_imports>+0x44)83c40489f883c4045e5fc39053575650c704240000000089e2b9<option:pobh_const_0>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x44)83c40485f674568b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519bb0>ffd7566a016880000000ff35<0x519bb0>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519bb0>ffd3566a00688000000050ffd76a04ff35<0x519bb0>ffd3566a01688000000050ffd731c083c4045e5f5bc3",
+            code: "5589e55dc366662e0f1f8400000000005589e55dc366662e0f1f8400000000005589e55dc366662e0f1f8400000000005589e583ec1c8b4508c745fc000000008b4d088d55fc31c0c7042400000000e8[0x402DB0]83ec048945f88b45fc8b4df8890c2489442404c744240801000000c744240c00000300ff15(<codecave:pobh_imports>+0x14)83ec108945f48b45f8890424ff15(<codecave:pobh_imports>+0x44)8b45f483c41c5dc3660f1f8400000000005589e583ec1c8d05<option:pobh_const_0>890424e8([codecave:pobh.text0]+0x30)8945fc837dfc000f84de0000008b45fc8b0d<0x519bb0>31d2890c24c744240480000000c7442408000000008944240cff15(<codecave:pobh_imports>+0xc)83ec108b45fc8b0d<0x519bb0>890c24c744240480000000c7442408010000008944240cff15(<codecave:pobh_imports>+0xc)83ec108b45fc8945f4a1<0x519bb0>890424c744240404000000ff15(<codecave:pobh_imports>+0x8)83ec0889c18b45f431d2890c24c744240480000000c7442408000000008944240cff15(<codecave:pobh_imports>+0xc)83ec108b45fc8945f8a1<0x519bb0>890424c744240404000000ff15(<codecave:pobh_imports>+0x8)83ec0889c18b45f8890c24c744240480000000c7442408010000008944240cff15(<codecave:pobh_imports>+0xc)83ec1031c083c41c5dc3",
         },
-        "pobh.CRT$XTX": {
+        "pobh.CRT$XCU4": {
             access: "r",
-            code: "(<codecave:pobh.text>+0x10)",
+            code: "<codecave:pobh.text0>",
+        },
+        "pobh.CRT$XTX5": {
+            access: "r",
+            code: "(<codecave:pobh.text0>+0x10)",
         },
         pobh_patch_init: {
             access: "rx",
-            code: "555357565068<option:kernel32_dll_str>e8[th_GetModuleHandleA]68<option:LoadLibraryA_str>50e8[th_GetProcAddress]89042431edbb<codecave:pobh_dlls>8b35<codecave:pobh_dlls>660f1f44000056e8[th_GetModuleHandleA]89c785c0750b56ff54240489c785c0743c8b730439f5741f6690ff34ad<codecave:pobh_import_names>57e8[th_GetProcAddress]85c0742b8904ad<codecave:pobh_imports>4539ee75e38b730883c30885f675b983c4045e5f5b5de92c000000505668<option:dll_load_failed_str>eb0d50ff34ad<codecave:pobh_import_names>68<option:import_failed_str>e8[th_GetLastError]894424086a1068<option:pobh_name_str>e8[log_mboxf]cce8([codecave:pobh.text]+0x20)c3",
+            code: "555357565068<option:kernel32_dll_str>e8[th_GetModuleHandleA]68<option:LoadLibraryA_str>50e8[th_GetProcAddress]89042431edbb<codecave:pobh_dlls>8b35<codecave:pobh_dlls>660f1f44000056e8[th_GetModuleHandleA]89c785c0750b56ff54240489c785c0743c8b730439f5741f6690ff34ad<codecave:pobh_import_names>57e8[th_GetProcAddress]85c0742b8904ad<codecave:pobh_imports>4539ee75e38b730883c30885f675b983c4045e5f5b5de92c000000505668<option:dll_load_failed_str>eb0d50ff34ad<codecave:pobh_import_names>68<option:import_failed_str>e8[th_GetLastError]894424086a1068<option:pobh_name_str>e8[log_mboxf]cc5331db0f1f8400000000000f1f440000ff149d<codecave:pobh.CRT$XCU4>4381fb0100000075f05be8([codecave:pobh.text0]+0x20)c3",
             "export": true,
         },
         pobh_dlls: {
             access: "r",
-            code: "<option:user32_dll_str>06000000<option:kernel32_dll_str>09000000<option:ucrtbase_dll_str>1500000000000000",
+            code: "<option:user32_dll_str>06000000<option:kernel32_dll_str>09000000<option:ucrtbase_dll_str>1600000000000000",
         },
         pobh_import_names: {
             access: "r",
-            code: "<option:MessageBoxA_str><option:MessageBoxW_str><option:GetWindow_str><option:SendMessageA_str><option:LoadImageA_str><option:CreateIconFromResource_str><option:AllocConsole_str><option:GetModuleHandleA_str><option:GetLastError_str><option:freopen_str><option:__stdio_common_vfprintf_str><option:__acrt_iob_func_str><option:__stdio_common_vfscanf_str><option:strtol_str><option:fgets_str><option:_invalid_parameter_noinfo_noreturn_str><option:_invoke_watson_str><option:free_str><option:malloc_str><option:_wcsicmp_str><option:strncmp_str>",
+            code: "<option:MessageBoxA_str><option:MessageBoxW_str><option:GetWindow_str><option:SendMessageA_str><option:LoadImageA_str><option:CreateIconFromResource_str><option:AllocConsole_str><option:GetModuleHandleA_str><option:GetLastError_str><option:__stdio_common_vfprintf_str><option:freopen_str><option:__acrt_iob_func_str><option:__stdio_common_vfscanf_str><option:strtol_str><option:fgets_str><option:_invalid_parameter_noinfo_noreturn_str><option:_invoke_watson_str><option:free_str><option:malloc_str><option:_wcsicmp_str><option:strncmp_str><option:puts_str>",
         },
         pobh_imports: {
             access: "rw",
-            size: 84,
+            size: 88,
         },
         pobh_patch_exit: {
             access: "rx",
-            code: "5331db0f1f8400000000000f1f440000ff149d<codecave:pobh.CRT$XTX>4381fb0100000075f05bc3",
+            code: "5331db0f1f8400000000000f1f440000ff149d<codecave:pobh.CRT$XTX5>4381fb0100000075f05bc3",
             "export": true,
         },
     },
     binhacks: {
         hook_jmp: {
             addr: "0x473135",
-            code: "E9 [codecave:pobh.text+0x70]",
+            code: "E9 [codecave:pobh.text0+0xa0]",
+        },
+        Marisa_bomb_dont_follow_player: {
+            addr: "0x41509E",
+            code: "<nop:14>",
+        },
+        Marisa_bomb_delete_tilt: {
+            addr: "0x415059",
+            code: "EB 31",
+        },
+        Marisa_bomb_keep_normal_speed: {
+            addr: "0x415094",
+            code: "C781 D0620100 0000803F",
+        },
+        Marisa_bomb_allow_shooting: {
+            addr: "0x414F56",
+            code: "<nop:7>",
         },
         Global_var_chapter_retry_counter: {
             addr: 4385798,

@@ -14,6 +14,9 @@ void main()
     @LogoEnemy() async;
 +60: //60
     nop();
+	
+	
+	
 	dialogRead(0);
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
 	{

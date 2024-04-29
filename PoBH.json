@@ -28,7 +28,6 @@
       },
       "SendMessageA": {
         "alias": "_SendMessageA@16"
-
       },
       "LoadImageA": {
         "alias": "_LoadImageA@24"
@@ -49,11 +48,11 @@
       }
     },
     "ucrtbase.dll": {
-      "freopen": {
-        "alias": "_freopen"
-      },
       "__stdio_common_vfprintf": {
         "alias": "___stdio_common_vfprintf"
+      },
+      "freopen": {
+        "alias": "_freopen"
       },
       "__acrt_iob_func": {
         "alias": "___acrt_iob_func"
@@ -84,15 +83,34 @@
       },
       "strncmp": {
         "alias": "_strncmp"
+      },
+      "puts": {
+        "alias": "_puts"
       }
     }
   },
     // Additional binhacks
     "binhacks": {
-        "hook_jmp": {
-            "addr": "0x473135",//fix this 
-            "code": "E9 [obj:_hook_entry]"
-        },
+      "hook_jmp": {
+        "addr": "0x473135",
+        "code": "E9 [obj:_hook_entry]"
+      },
+      "Marisa_bomb_dont_follow_player": {
+        "addr": "0x41509E",
+        "code": "<nop:14>"
+      },
+      "Marisa_bomb_delete_tilt": {
+        "addr": "0x415059",
+        "code": "EB 31"
+      },
+      "Marisa_bomb_keep_normal_speed": {
+        "addr": "0x415094",
+        "code": "C781 D0620100 0000803F"
+      },
+      "Marisa_bomb_allow_shooting": {
+        "addr": "0x414F56",
+        "code": "<nop:7>"
+      },
 		    "Global_var_chapter_retry_counter": {
 		      "addr": 0x42EC06,
 		      "code": "\
