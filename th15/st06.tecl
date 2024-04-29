@@ -5,49 +5,12 @@ void mainalt();
 
 void main1();
 
-void DebugSkipFunc()
-{
-    ins_901();
-    return;
-}
-
-void LogoEnemy()
-{
-    wait(1150);
-    stageLogo();
-    return;
-}
-
-
-void MainFront()
-{
-    return;
-}
-
-void MainLatter()
-{
-    return;
-}
-
-
-void MapleEnemy()
-{
-    flagSet(32);
-    goto MapleEnemy_124 @ 0;
-MapleEnemy_80:
-    anmPlayAbs(1, 106);
-    wait(5);
-MapleEnemy_124:
-    if (1) goto MapleEnemy_80 @ 0;
-    delete();
-}
 
 void main()
 {
 	flagSet(32);
     wait(1);
     setChapter(0);
-
     @LogoEnemy() async;
 +60: //60
     nop();
