@@ -123,6 +123,10 @@
         "addr": "0x414F56",
         "code": "<nop:7>"
       },
+      "Marisa_bomb_increase_dmg": {
+        "addr": "0x415219",
+        "code": "6A 14"
+      },
 		    "Global_var_chapter_retry_counter": {
 		      "addr": "0x42EC06",
 		      "code": "A1 <0x4E75B8>C9C2 0400<int3:22>"
