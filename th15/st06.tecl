@@ -1462,7 +1462,7 @@ main_300:
     wait(160);
 +60: //60
     nop();
-	dialogRead(0);
+
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
 	{
 		@mainalt();

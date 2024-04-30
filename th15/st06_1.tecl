@@ -30,7 +30,7 @@ void enameSatanae()
 
 void main1()
 {
-    
+    dialogRead(0);
     @MainBoss();
     wait(1000);
     delete();
