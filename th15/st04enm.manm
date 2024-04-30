@@ -536,17 +536,31 @@ script script7 {
 +30: // 108
     delete();
     case(17);
-    case(18);
-    case(19);
-    case(20);
-    case(21);
-    case(22);
-    case(23);
-    case(24);
     sprite(sprite33);
     caseReturn();
+    case(18);
+    sprite(sprite34);
+    caseReturn();
+    case(19);
+    sprite(sprite35);
+    caseReturn();
+    case(20);
+    sprite(sprite36);
+    caseReturn();
+    case(21);
+    sprite(sprite37);
+    caseReturn();
+    case(22);
+    sprite(sprite38);
+    caseReturn();
+    case(23);
+    sprite(sprite39);
+    caseReturn();
+    case(24);
+    sprite(sprite40);
+    caseReturn();
     case(25);
-    sprite(sprite41);
+    sprite(sprite43);
     caseReturn();
 }
 
