@@ -455,14 +455,14 @@ script script16 {//bomb setup
 	scriptNew(script35);
     scriptNew(script18);
     scriptNew(script19);
-+20: // 20
     scriptNew(script20);
     scriptNew(script21);
-    scriptNew(script17);
+	scriptNew(script17);
++60:
 offset84:
     scriptNew(script23);
 +12: // 32
-    jmp(offset84, 20);
+    jmp(offset84, 60);
     stop();
     case(1);
 +40: // 72
@@ -477,9 +477,12 @@ script script17 {
     blendMode(9);
     color(16, 64, 64);
     type(1);
-    scale(2.5f, 0.1f);
-    scaleTime(20, 4, 2.5f, 1.5f);
-    pos(0.0f, -42.0f, 0.0f);
+	pos(0.0f, -42.0f, 0.0f);
+	scale(0.001f, 0.1f);
+	scaleTime(90, 4, 2.5f, 0.1f);
++90:
+    scaleTime(30, 4, 2.5f, 1.5f);
+    
     alpha(0);
     alphaTime(30, 0, 255);
     color(96, 160, 255);
@@ -499,16 +502,19 @@ offset212:
 script script18 {
     layer(13);
     sprite(sprite49);
-    rotate(0.0f, 0.0f, 0.049087387f);
     anchor(1, 0);
     blendMode(1);
     type(1);
-    scale(2.5f, 0.1f);
-    scaleTime(20, 4, 2.5f, 2.0f);
-    pos(0.0f, -42.0f, 0.0f);
+	pos(0.0f, -42.0f, 0.0f);
+    scale(0.001f, 0.1f);
+	scaleTime(90, 4, 2.5f, 0.1f);
++90:
+    scaleTime(30, 4, 2.5f, 2.0f);
+    
     alpha(0);
     alphaTime(30, 0, 160);
     color(160, 255, 160);
+	rotate(0.0f, 0.0f, 0.049087387f);
 offset192:
     rotateTime(40, 9, 0.0f, 0.0f, -0.049087387f);
 +40: // 40
@@ -525,16 +531,19 @@ offset192:
 script script19 {
     layer(13);
     sprite(sprite49);
-    rotate(0.0f, 0.0f, -0.049087387f);
     anchor(1, 0);
     blendMode(1);
     type(1);
-    scale(2.5f, 0.1f);
-    scaleTime(20, 4, 2.5f, 2.0f);
-    pos(0.0f, -42.0f, 0.0f);
+	pos(0.0f, -42.0f, 0.0f);
+    scale(0.001f, 0.1f);
+	scaleTime(90, 4, 2.5f, 0.1f);
++90:
+    scaleTime(30, 4, 2.5f, 2.0f);
+    
     alpha(0);
     alphaTime(30, 0, 160);
     color(160, 160, 255);
+	rotate(0.0f, 0.0f, -0.049087387f);
 offset192:
     rotateTime(40, 9, 0.0f, 0.0f, 0.049087387f);
 +40: // 40
@@ -551,16 +560,19 @@ offset192:
 script script20 {
     layer(13);
     sprite(sprite49);
-    rotate(0.0f, 0.0f, 0.049087387f);
     anchor(1, 0);
     blendMode(1);
     type(1);
-    scale(2.5f, 0.1f);
-    scaleTime(20, 4, 2.5f, 2.0f);
-    pos(0.0f, -42.0f, 0.0f);
+	pos(0.0f, -42.0f, 0.0f);
+    scale(0.001f, 0.1f);
+	scaleTime(90, 4, 2.5f, 0.1f);
++90:
+    scaleTime(30, 4, 2.5f, 2.0f);
+    
     alpha(0);
     alphaTime(30, 0, 160);
     color(255, 160, 0);
+	rotate(0.0f, 0.0f, 0.049087387f);
 offset192:
     rotateTime(40, 9, 0.0f, 0.0f, -0.049087387f);
 +40: // 40
@@ -577,16 +589,19 @@ offset192:
 script script21 {
     layer(13);
     sprite(sprite49);
-    rotate(0.0f, 0.0f, -0.049087387f);
     anchor(1, 0);
     blendMode(1);
     type(1);
-    scale(2.5f, 0.1f);
-    scaleTime(20, 4, 2.5f, 2.0f);
-    pos(0.0f, -42.0f, 0.0f);
+	 pos(0.0f, -42.0f, 0.0f);
+    scale(0.001f, 0.1f);
+	scaleTime(90, 4, 2.5f, 0.1f);
++90:
+    scaleTime(30, 4, 2.5f, 2.0f);
+   
     alpha(0);
     alphaTime(30, 0, 160);
     color(255, 160, 255);
+	rotate(0.0f, 0.0f, -0.049087387f);
 offset192:
     rotateTime(40, 9, 0.0f, 0.0f, 0.049087387f);
 +40: // 40
@@ -1227,8 +1242,7 @@ script script36 {
     pos(45.0f, 0.0f, 0.0f);
     alpha(0);
     alphaTime(30, 0, 220);
-    case(1);
-+280:
++240:
     scaleTime(20, 4, 0.0f, 2.0f);
     alphaTime(20, 0, 0);
 +20: // 90
@@ -1248,8 +1262,7 @@ script script37 {
     pos(50.0f, 20.0f, 0.0f);
     alpha(0);
     alphaTime(30, 0, 220);
-    case(1);
-+280:
++240:
     scaleTime(20, 4, 0.0f, 2.0f);
     alphaTime(20, 0, 0);
 +20: // 90
@@ -1269,8 +1282,7 @@ script script38 {
     pos(50.0f, -20.0f, 0.0f);
     alpha(0);
     alphaTime(30, 0, 220);
-    case(1);
-+280:
++240:
     scaleTime(20, 4, 0.0f, 2.0f);
     alphaTime(20, 0, 0);
 +20: // 90
@@ -1290,8 +1302,7 @@ script script39 {
     pos(60.0f, -35.0f, 0.0f);
     alpha(0);
     alphaTime(30, 0, 220);
-    case(1);
-+280:
++240:
     scaleTime(20, 4, 0.0f, 2.0f);
     alphaTime(20, 0, 0);
 +20: // 90
@@ -1311,8 +1322,7 @@ script script40 {
     pos(60.0f, 35.0f, 0.0f);
     alpha(0);
     alphaTime(30, 0, 220);
-    case(1);
-+280:
++240:
     scaleTime(20, 4, 0.0f, 2.0f);
     alphaTime(20, 0, 0);
 +20: // 90

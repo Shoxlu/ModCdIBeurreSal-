@@ -36,6 +36,7 @@ HICON load_icon(const char* filename) {
 }
 
 
+
 extern "C" int hook_entry() {
 #ifdef DEBUG
 	AllocConsole();

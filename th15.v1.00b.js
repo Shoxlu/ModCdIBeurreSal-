@@ -194,6 +194,18 @@
             addr: "0x415059",
             code: "EB 31",
         },
+        Marisa_bomb_delay_begin: {
+            addr: "0x415059",
+            code: "8B46 2C 83F8 60 <nop:2> 7F 29 E9 55020000",
+        },
+        Marisa_bomb_reduce_duration: {
+            addr: "0x41500E",
+            code: "3D 0A010000",
+        },
+        Marisa_bomb_reduce_screen_shake_duration: {
+            addr: "0x414E8C",
+            code: "C747 20 C9000000",
+        },
         Marisa_bomb_keep_normal_speed: {
             addr: "0x415094",
             code: "C781 D0620100 0000803F",
@@ -203,12 +215,12 @@
             code: "<nop:7>",
         },
         Global_var_chapter_retry_counter: {
-            addr: 4385798,
-            code: "\t    A1 <0x4E75B8> \t    C9 \t    C2 0400 \t    <int3:22> \t    ",
+            addr: "0x42EC06",
+            code: "A1 <0x4E75B8>C9C2 0400<int3:22>",
         },
         Escaping_BossShow: {
-            addr: 4425600,
-            code: "\t    E9 [codecave:Changing_loaded_slot_in_memory_for_Sanae] \t    <int3:4> \t    ",
+            addr: "0x438780",
+            code: "E9 [codecave:Changing_loaded_slot_in_memory_for_Sanae] <int3:4>",
         },
         EscapingSnakesColor: {
             addr: 4232620,
