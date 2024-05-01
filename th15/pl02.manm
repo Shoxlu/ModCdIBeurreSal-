@@ -423,7 +423,7 @@ entry entry1 {
     THTXHeight: 256,
     THTXZero: 0,
     sprites: {
-        sprite44: { x: 192, y: 0, w: 384, h: 448 },
+        sprite44: { x: 0, y: 0, w: 256, h: 256 },
         sprite45: { x: 0, y: 0, w: 256, h: 300 }
     }
 }
@@ -462,64 +462,65 @@ script script16 {
     layer(6);
     alpha(0);
     scriptNew(script17);// 1ère partie de bomb
-    scriptNew(script18);// 2eme partie de bomb
-    scriptNew(script19);// 3eme partie de bomb
-+280: // 280
+	F0 = 0f;
+	int A = 5;
+loop5:
+		scriptNew(script18);// 2eme partie de bomb
+		//scriptNew(script19);// 2eme partie de bomb
+		F0 += 1f;
+		+20:
+	jmpDec(A,loop5, 0);
+	stop();
+    // scriptNew(script19);// 3eme partie de bomb
+	case(1); // 280
     delete();
 }
 
 script script17 { // 1ère partie de bomb
-    sprite(-1);
+	sprite(sprite44);
     layer(13);
     blendMode(1);
-    pos(0.0000000000000009797175f, -16.0f, 0.0f);
-    drawPoly(1.0f, 32);
-    color2(10, 55, 10);
-    alpha(1);
-    alphaTime(192, 1, 255);
-    color(0, 255, 0);
-    alpha2(0);
-    alpha2Time(180, 0, 255);
-    scale(16.0f, 16.0f);
-    scaleTime(180, 3, 64.0f, 64.0f);
-+180: // 180
-    scaleTime(20, 1, 480.0f, 480.0f);
-    alpha2Time(20, 0, 32);
-+60: // 240
-    alphaTime(40, 0, 0);
-    alpha2Time(40, 0, 0);
-+40: // 280
-    delete();
+	scale(10f,10f);
+	I0 = 1000;
+	I1 = 100;
+    texCircle(I0);
+	scaleTime(60, 9, 30f, 240f);
++60:
+	stop();
     case(1);
     alphaTime(20, 0, 0);
+	scaleTime(20, 9, 0f, 0f);
 +20: // 300
     delete();
 }
 
 script script18 {
     sprite(-1);
+	copyVars();
     layer(13);
     blendMode(1);
-    pos(13.856406f, 8.0f, 0.0f);
-    drawPoly(1.0f, 32);
-    color(255, 0, 0);
-    alpha(1);
-    alphaTime(192, 1, 255);
-    color2(100, 0, 0);
-    alpha2(0);
-    alpha2Time(255, 0, 255);
-    scale(16.0f, 16.0f);
-    scaleTime(180, 3, 64.0f, 64.0f);
-+180: // 180
-    scaleTime(20, 1, 480.0f, 480.0f);
-    alpha2Time(20, 0, 32);
-+60: // 240
-    alphaTime(40, 0, 0);
-    alpha2Time(40, 0, 0);
-+40: // 280
-    delete();
+	color(165, 0, 0);
+
+	F1 = 120f*cos(F0*rad(-144f)+rad(90f)) + 120f*cos(F0*rad(-144f)+rad(-144f)+rad(90f));
+	F2 = 120f*sin(F0*rad(-144f)+rad(90f)) + 120f*sin(F0*rad(-144f)+rad(-144f)+rad(90f));
+	
+	pos(F1, F2, 0f);
+	
+	anchor(1, 0);
+
+	rotate(0f, 0f, rad(108f)+rad(90f)+rad(36f)*F0);
+	scale(1f, 0f);
+	//float angle = F0 + rad(144);
+	//pos(cos(angle)*120f-F1/2f, sin(angle)*120f-F2/2f, 0f);
+
+	
+	drawRectRot(20f, 228.25f*2f+ 1f);
+	scaleTime(60, 9, 1f, 1f);
++60:
+	stop();
     case(1);
     alphaTime(20, 0, 0);
+	scaleTime(20, 9, 0f, 0f);
 +20: // 300
     delete();
 }
@@ -529,24 +530,13 @@ script script19 {
     layer(13);
     blendMode(1);
     blendMode(4);
-    pos(-13.856406f, 8.0f, 0.0f);
-    drawPoly(1.0f, 32);
-    color(160, 0, 255);
-    alpha(1);
-    alphaTime(192, 1, 255);
-    color2(30, 0, 50);
-    alpha2(0);
-    alpha2Time(180, 0, 255);
-    scale(16.0f, 16.0f);
-    scaleTime(180, 3, 64.0f, 64.0f);
-+180: // 180
-    scaleTime(20, 1, 480.0f, 480.0f);
-    alpha2Time(20, 0, 32);
-+60: // 240
-    alphaTime(40, 0, 0);
-    alpha2Time(40, 0, 0);
-+40: // 280
-    delete();
+	copyVars();
+		F1 = 120f*cos(F0*rad(-144f)) + 120f*cos(F0*rad(-144f)+rad(-144f));
+	F2 = 120f*sin(F0*rad(-144f)) + 120f*sin(F0*rad(-144f)+rad(-144f));
+	
+	pos(F1, F2, 0f);
+    drawPoly(10f, 1000);
+	stop();
     case(1);
     alphaTime(20, 0, 0);
 +20: // 300
