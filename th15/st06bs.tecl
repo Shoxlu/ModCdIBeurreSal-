@@ -1079,11 +1079,10 @@ void LignesOg(int count2, float angl1)
 
 void lignes1(float G, float count2, float angl1)
 {
-	var X, Y, angl2, I;
-	%I = rad(1);
-	%angl2 = rad(-90);
-	%X = cos(angl1)*140f;
-	%Y = sin(angl1)*140f+BOSS_Y;
+	float I = rad(1);
+	float angl2 = rad(-90);
+	float X = cos(angl1)*140f;
+	float Y = sin(angl1)*140f+BOSS_Y;
 	float F_X = cos(angl1 + (rad(360)/count2)*G)*140f;
 	float F_Y = sin(angl1 + (rad(360)/count2)*G)*140f+BOSS_Y;
 	int count = 50;
@@ -1094,22 +1093,22 @@ void lignes1(float G, float count2, float angl1)
 	{
 		F_X = cos(angl1 + (rad(360)/count2)*G)*140f;
 		F_Y = sin(angl1 + (rad(360)/count2)*G)*140f+BOSS_Y;
-		C = (F_X-%X)/_f(count);
-		D = (F_Y-%Y)/_f(count);
+		C = (F_X-X)/_f(count);
+		D = (F_Y-Y)/_f(count);
 		times(count)
 		{
-			etOffsetAbs(1, %X, %Y);
-			etOffsetAbs(3, %X, %Y);
-			etAngle(1, %angl2, 0f);
-			etAngle(3, %angl2, 0f);
+			etOffsetAbs(1, X, Y);
+			etOffsetAbs(3, X, Y);
+			etAngle(1, angl2, 0f);
+			etAngle(3, angl2, 0f);
 			etOn(1);
 	!LO
 			etOn(3);
 	!*
-			%X = %X + C; // X = cos(GF1)*140f -> X2 = cos(GF1 + rad(72)*G)*140f;                 %A -> sqrt((140f*2f)*(140f*2f)+(cos(rad(72)*G)*140f)*(cos(rad(72)*G)*140f))
-			%Y = %Y + D;// 
-			%angl2 = + %I;
-			%I = %I + rad(20);
+			X = X + C; // X = cos(GF1)*140f -> X2 = cos(GF1 + rad(72)*G)*140f;                 %A -> sqrt((140f*2f)*(140f*2f)+(cos(rad(72)*G)*140f)*(cos(rad(72)*G)*140f))
+			Y = Y + D;// 
+			angl2 = I;
+			I = I + rad(20);
 			//wait(1);
 		}
 		F += 20;
