@@ -1598,8 +1598,7 @@ void main()
 {
     flagSet(32);
 	dialogRead(0);
-	wait(100000);
-	@MainBoss();
+	wait(10000);
     wait(1);
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_440 @ 0;

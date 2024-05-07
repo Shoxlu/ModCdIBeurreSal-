@@ -67,7 +67,12 @@ void Boss1()
 	wait(60);
 	playSound(54);
 	wait(30);
-	@Boss1_at2();
+	@Boss1_at2()async;
+	wait(200);
+	while(1){
+		moveRand(60, 0, 1f);
+		wait(100);
+	}
 }
 
 void Boss1_at()
@@ -82,14 +87,14 @@ void Boss1_at()
 	etEx(0, 0, EX_ANIM, 2, NEG, NEGF, NEGF);
 	while(1)
 	{
-		times(35)
+		times(30)
 		{
 		etAngle(0, A, 0f);
 		etOn(0);
 		A +=rad(1);
 		wait(1);
 		}
-		times(35)
+		times(30)
 		{
 		etAngle(0, A, 0f);
 		etOn(0);
@@ -273,35 +278,45 @@ Boss3_544:
     wait(60);
     %F0 = 0.017453f;
     $I0 = 5;
-    @Boss3_at()async;
-	!L
-	@Boss3_at3()async;
-	!*
-	@Boss3_at2();
-	//@Boss3_at2()async;
-	//while(1)
-	//{
-	//wait(240);
-	//moveRand(60, 4, 1.9f);
-	//}
+	@Boss3_Circle()async;
+    @Boss3_at();
 }
 
 void Boss3_at()
 {
 	float A = rad(0);
 	etNew(0);
-    etAim(0, 3);
-    etCount(0, 5, 1);
-    etSprite(0, 4, 6);
+    etAim(0, 1);
+    etCount(0, 6, 1);
     etSpeed(0, 3f, 3f);	
-	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	etEx(0, 0, EX_VELTIME, NEG, 30, 0.8f, NEGF);
 	while(1)
 	{
-		etAngle(0, A, rad(5));
-		A +=rad(10);
+		etSprite(0, 10, 6);
+		etAngle(0, A/10f + rad(90), A);
+		A +=rad(13);
 		etOn(0);
-		wait(30:25:20:20);
+		wait(2);
+		etSprite(0, 10, 2);
+		etAngle(0, A/10f + rad(90), A);
+		A +=rad(7);
+		etOn(0);
+		wait(1);
+	}
+}
+
+void Boss3_Circle()
+{
+	etNew(1);
+    etAim(1, 3);
+    etCount(1, 40, 1);
+    etSpeed(1, 4f, 4f);
+	etSprite(1, 4, 5);
+	wait(120);
+	while(1)
+	{
+		etAngle(1, RANDRAD, 0f);
+		etOn(1);
+		wait(120);
 	}
 }
 
@@ -322,28 +337,6 @@ void Boss3_at2()
 		A +=rad(-10);
 		etOn(1);
 		wait(30:25:20:20);
-	}
-}
-
-void Boss3_at3()
-{
-	etNew(2);
-    etAim(2, 1);
-    etCount(2, 1, 1);
-    etSprite(2, 17, 1);
-    etSpeed(2, 3f, 3f); 
-	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);	
-	etEx(2, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
-	wait(120);
-	while(1)
-	{
-		etAngle(2, ANGLE_PLAYER, 0f);
-		times(5)
-		{
-		etOn(2);
-		wait(4);
-		}
-		wait(30);
 	}
 }
 

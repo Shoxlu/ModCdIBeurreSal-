@@ -1,5 +1,6 @@
 anim{"enemy.anm"; "st06enm.anm"; "st06enmalt.anm"; "front.anm";}
 ecli { "default.ecl"; "st06_1.ecl"; "st06_2.ecl";}
+#include "main.tecl"
 
 void mainalt();
 
@@ -1007,20 +1008,20 @@ void Phantom01_at()
     goto Phantom01_at_668 @ 0;
 Phantom01_at_96:
 !E
-    $RAND % 180;
+    180;
 !N
-    $RAND % 180;
+    180;
 !H
-    $RAND % 120;
+    120;
 !LO
-    $RAND % 90;
+    90;
 !*
     wait([-1]);
     etNew(0);
-    etAim(0, 0);
-    etSprite(0, 18, 2);
-    etCount(0, 1, 1);
-    etAngle(0, 0.0f, 0.0f);
+    etAim(0, 2);
+    etSprite(0, 20, 2);
+    etCount(0, 4, 2);
+    etAngle(0, 0.0f, rad(45));
 !E
     4.0f;
 !N
@@ -1090,7 +1091,7 @@ void Phantom02_at()
     etAngle(0, %RANDRAD, 0.0f);
     etSpeed(0, 3.0f, 0.2f);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
     etEx(0, 0, 2097152, 60, -999999, 0.5f, -999999.0f);
     diffI($A, 1, 1, 2, 3);
     goto ECir00_at_524 @ 0;
@@ -1106,7 +1107,7 @@ void Phantom02_at2()
 {
     etNew(0);
     etAim(0, 0);
-    etSprite(0, 18, 2);
+    etSprite(0, 19, 2);
 !E
     1;
 !N
@@ -1169,11 +1170,14 @@ void Phantom03_at()
     etSpeed(0, 2.5f, 1.0f);
     etSound(0, 38, -1);
     etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+	etSpeed(0, 2.5f, 0.0f);
     diffI($B, 3, 10, 20, 30);
     goto Phantom03_at_592 @ 0;
 Phantom03_at_324:
-    etAngle(0, 1.5707964f + (%RANDF2 * 0.34906584f), 0.34906584f);
-    etSpeed(0, 2.5f, 0.0f);
+    etAngle(0, 1.5707964f + (%RANDF2 * 0.34906584f)-rad(180), 0.34906584f);
+	etExSet(0, 0, 0, EX_OFFSCREEN, 500, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VELTIME, 60, NEG, 0.5f, NEGF);
+	etExSet(0, 2, 0, EX_VELTIME, 60, NEG, 3f, rad(90));
     etOn(0);
 !E
     90;
@@ -1184,6 +1188,7 @@ Phantom03_at_324:
 !LO
     10;
 !*
+GF1 += rad(2);
     wait([-1]);
 Phantom03_at_592:
     if ($B--) goto Phantom03_at_324 @ 0;
@@ -1462,7 +1467,6 @@ main_300:
     wait(160);
 +60: //60
     nop();
-
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
 	{
 		@mainalt();
