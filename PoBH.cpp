@@ -207,13 +207,14 @@ void __thiscall zBombSanae::bomb_sanae_clear_bullets()
 	if (time < 60) {
 		clear_circle_sanae(240.0 / 60.0 * time);
 	}
-	else if (time == 60) {
-		clear_circle_sanae(240);
-	}
-	else if (time >= SATANAE_BOMB_DURATION) {
-		clear_circle_sanae(-(time - SATANAE_BOMB_DURATION-20) * 240.0 / 20.0);//from 240 to 0 in 20 frames
+	if (time >= SATANAE_BOMB_DURATION) {
+		clear_circle_sanae(-(time - SATANAE_BOMB_DURATION - 20) * 240.0 / 20.0);//from 240 to 0 in 20 frames
 		goto end;
 	}
+	if (time >= 60) {
+		clear_circle_sanae(240);
+	}
+	
 	if (time >= 60)
 	{
 		clear_line_sanae(bomb_pos, 0);
