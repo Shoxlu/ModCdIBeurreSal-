@@ -149,6 +149,7 @@ void GirlA03()
     moveVel(rad(0), 2f);
 	wait(20);
 	moveVelTime(90, 0, rad(-180), 2f);
+	flagClear(12);
 	@GirlA_at2(-1f);
 	wait(1800);
 }
