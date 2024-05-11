@@ -14,6 +14,7 @@
 
 
 extern "C" void coff2binhack_init() {
+	init_modes();
    // MessageBoxA(NULL, "This is being called from the coff2binhack initializer!", "coff2binhack sample", 0);
 }
 
@@ -205,10 +206,12 @@ void __thiscall zBombSanae::bomb_sanae_clear_bullets()
 	if (time == bomb_ptr->timer.prev)
 		goto end;
 	if (time < 60) {
-		clear_circle_sanae(240.0 / 60.0 * time);
+		float radius = interpolate(9, 60, 0, 240, 0, time);
+		clear_circle_sanae(radius);
 	}
 	if (time >= SATANAE_BOMB_DURATION) {
-		clear_circle_sanae(-(time - SATANAE_BOMB_DURATION - 20) * 240.0 / 20.0);//from 240 to 0 in 20 frames
+		float radius = interpolate(9, 20, 240, 0, SATANAE_BOMB_DURATION, time);
+		clear_circle_sanae(radius);//from 240 to 0 in 20 frames
 		goto end;
 	}
 	if (time >= 60) {
@@ -238,14 +241,14 @@ end:
 }
 
 extern "C" void bomb_sanae() {
-#ifdef DEBUG
-	printf("beginning of the func bomb_sanae at: %x\n", (size_t)bomb_sanae);
-	printf("Bomb ptr %x, Bomb anmscripttime %d, Bomb prev time %d, Bomb pos %x\n", (size_t)BOMB_PTR, bomb_ptr->timer.current, bomb_ptr->timer.prev, &bomb_ptr->bomb_pos);
-#endif
 	zBomb* bomb_ptr = (zBomb*)BOMB_PTR;
 	zPlayer* player_ptr = PLAYER_PTR;
 	int time = bomb_ptr->timer.current;
 	zFloat3* bomb_pos = &bomb_ptr->bomb_pos;
+#ifdef DEBUG
+	printf("beginning of the func bomb_sanae at: %x\n", (size_t)bomb_sanae);
+	printf("Bomb ptr %x, Bomb anmscripttime %d, Bomb prev time %d, Bomb pos %x\n", (size_t)BOMB_PTR, bomb_ptr->timer.current, bomb_ptr->timer.prev, &bomb_ptr->bomb_pos);
+#endif
 	if (time == SATANAE_BOMB_DURATION+21) {
 		bomb_ptr->bombVm = 0;
 		goto end;
@@ -253,16 +256,18 @@ extern "C" void bomb_sanae() {
 	if (time == bomb_ptr->timer.prev)
 		goto end;
 	if (time < 60) {
-		damage_circle_sanae(240.0/60.0*time, 2, 10, 200);
+		float radius = interpolate(9, 60, 0, 240, 0, time);
+		damage_circle_sanae(radius, 2, 10, 200);
 	}
 	else if (time == 60) {
-		damage_circle_sanae(240, SATANAE_BOMB_DURATION-60, 10, 75);
+		damage_circle_sanae(240, SATANAE_BOMB_DURATION - 60, 10, 75);
 	}
 	else if (time >= SATANAE_BOMB_DURATION){
-		damage_circle_sanae(-(time-SATANAE_BOMB_DURATION-20)*240.0/20.0, 5, 20,200);//from 240 to 0 in 20 frames
+		float radius = interpolate(9, 20, 240, 0, SATANAE_BOMB_DURATION, time);
+		damage_circle_sanae(radius, 5, 20,200);
 	}
-	if (time == 60)
-	{
+
+	if (time == 60) {
 		damage_line_sanae(bomb_pos, 0, SATANAE_BOMB_DURATION -60);
 	}
 	else if (time == 80) {
@@ -277,7 +282,7 @@ extern "C" void bomb_sanae() {
 	else if (time == 140) {
 		damage_line_sanae(bomb_pos, 4, SATANAE_BOMB_DURATION - 140);
 	}
-	//player_ptr->create_damage_source_circle(&bomb_ptr->bomb_pos, 120.0, 1.0, 100, 80);
+
 end:
 #ifdef DEBUG
 	printf("end of the func bomb_sanae\n");
