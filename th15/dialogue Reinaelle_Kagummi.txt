@@ -1,0 +1,35 @@
+
+
+b:
+R: Quel endroit bizarre...
+R: Tout est renversé, c'est vraiment étrange...
+K: Alors toi aussi tu n'y comprends rien.
+R: Ah ! Un nouvel adversaire ?
+K: Je suis Kagummi, yokai des températures.
+K: Je ne te veux aucun mal, je souhaite seulement rejoindre la lune.
+K: Il parait qu'une énorme quantité de sel serait présente  là bas.
+K: Naturellement, je souhaite l'utiliser pour ses recettes.
+R: "Ses" recettes ?
+K: Tu ne la connais pas ?
+R: Mais de qui parles-tu ?!
+K: Ne pas connaitre cette déesse est une honte !
+R: Quoi tu es de mèche avec Satanae ?!
+K: Mais enfin non !
+R: Alors tu aides God Reimu !
+K: Mais arrête !
+R: Ta déesse ne doit pas être importante si personne ne la connait !
+K: Quelle indignation !
+K: Tu vas voir de quel bois je me chauffe !
+K: Prépare toi, tu vas vivre un enfer !
+
+
+e:
+R: Pfiou, j'ai eu chaud...
+K: Tu as survécu à mon pouvoir...
+K: Tu n'as pas froid aux yeux...
+R: Tu peux arrêter de faire référence aux températures ?
+K: Je crois que tu y participes...
+R: Ah ! Je crois voir la lune à travers cette porte !
+K: Quoi ?!
+R: A plus ! 
+K: Tu nous le paieras...
