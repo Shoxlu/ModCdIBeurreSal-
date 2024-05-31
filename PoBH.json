@@ -10,8 +10,41 @@
     "_g_window": {
       "addr": "0x519bb0"
     },
-    "?OpenFile@@YIPAXPBDPAHH@Z": {
+    "?th_OpenFile@@YIPAXPBDPAHH@Z": {
       "addr": "0x402DB0"
+    },
+    "?create_damage_source_circle_@zPlayer@@AAQHHPAUzFloat3@@MMMMHH@Z": {
+      "addr": "0x457060"
+    },
+    "?create_damage_source_rectangle_@zPlayer@@CQHHHPAUzFloat3@@MMMMMMMHH@Z": {
+      "addr": "0x4571d0"
+    },
+    "?create_damage_source_rectangle_@zPlayer@@CQHHHPAUzFloat3@@MMMMMMHHH@Z": {
+      "addr": "0x4571d0"
+    },
+    "?sub_41E850_cancels_bullets@zBulletManager@@CQXHHPAUzFloat3@@PAUzFloat2@@HMMMM@Z": {
+      "addr": "0x41E850"
+    },
+    "?ClearRadiusBombStupid@zBulletManager@@CQXHHPAUzFloat3@@HMMM@Z": {
+      "addr": "0x41E750"
+    },
+    "?cancel@zBullet@@QAEXH@Z": {
+      "addr": "0x41E250"
+    },
+    "_PLAYER_PTR": {
+      "addr": "0x4e9bb8"
+    },
+    "_BOMB_PTR": {
+      "addr": "0x4e9a68"
+    },
+    "_BULLET_MANAGER_PTR": {
+      "addr": "0x4e9a6c"
+    },
+    "_SPELLCARD_PTR": {
+      "addr": "0x4e9a70"
+    },
+    "_LASER_MANAGER_PTR": {
+      "addr": "0x4e9ba0"
     }
   },
     // DLL imports
@@ -91,9 +124,13 @@
   },
     // Additional binhacks
     "binhacks": {
-      "hook_jmp": {
+      "hook_window_creation_ends": {
         "addr": "0x473135",
         "code": "E9 [obj:_hook_entry]"
+      },
+      "hook_sanae_bomb": {
+        "addr": "0x4184EF",
+        "code": "E8 [obj:_bomb_sanae]"
       },
       "Marisa_bomb_dont_follow_player": {
         "addr": "0x41509E",
@@ -126,6 +163,31 @@
       "Marisa_bomb_increase_dmg": {
         "addr": "0x415219",
         "code": "6A 14"
+      },
+      "Sanae_bomb_jmp_over_damage_func": {
+        "addr": "0x4184F4",
+        "code": "EB 3D"
+      },
+      "Sanae_bomb_prevent_ending": {
+        "addr": "0x4186A3",
+        "code": "<nop:7>"
+      },
+      "Sanae_bomb_jump_to_end_before_returning": {
+        "addr": "0x4186A2",
+        "code": "EB 17",
+        "active": "false"
+      },
+      "Sanae_method_10_call_replace": {
+        "addr": "0x4186BF",
+        "code": "<nop:3>"
+      },
+      "Sanae_bomb_hook_on_tick": {
+        "addr": "0x4186D2",
+        "code": "E8 [obj:_hook_sanae_bomb_end] 5D C3"
+      },
+      "Sanae_reduce_duration": {
+        "addr": "0x418685",
+        "code": "817B 2C 54010000"
       },
 		    "Global_var_chapter_retry_counter": {
 		      "addr": "0x42EC06",

@@ -23,7 +23,7 @@
     "46": "Signe de la vapeur « Étreinte Furtive »",
     "50": "Changement d'état « Ébullition »",
     "54": "« Lumière guidant au zéro absolu »",
-	"58": "« Tissage de la réalité »",
+	"58": "« Tissage de la vérité »",
     "60": "« Peut-on couper les fils du destin ? »",
 	"62": "Pyrotechnie : « Festival estival »",
     "64": "Pyrotechnie : « Saxifrage Ryuukin »",

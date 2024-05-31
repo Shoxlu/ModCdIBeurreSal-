@@ -762,13 +762,13 @@ entry entry15 {
     version: 8,
     name: "face/enemy4/face04ct.png",
     format: 1,
-    width: 777,
-    height: 948,
+    width: 341,
+    height: 448,
     memoryPriority: 0,
-    lowResScale: 1,
+    lowResScale: 0,
     hasData: 1,
     sprites: {
-        sprite48: { x: 0, y: 0, w: 777, h: 948 }
+        sprite48: { x: 0, y: 0, w: 341, h: 448 }
     }
 }
 
@@ -778,7 +778,6 @@ script script15 {
     anchor(0, 1);
     type(2);
     pos(380.0f, -112.0f, 0.0f);
-	scale(0.5f, 0.5f);
     color(0, 0, 0);
     colorTime(30, 0, 255, 255, 255);
     posTime(30, 0, 56.0f, -16.0f, 0.0f);

@@ -463,16 +463,17 @@ script script16 {
     alpha(0);
     scriptNew(script17);// 1ère partie de bomb
 	F0 = 0f;
++60://60
 	int A = 5;
 loop5:
 		scriptNew(script18);// 2eme partie de bomb
 		//scriptNew(script19);// 2eme partie de bomb
 		F0 += 1f;
-		+20:
-	jmpDec(A,loop5, 0);
+		+20://40
+	jmpDec(A,loop5, 60);
 	stop();
     // scriptNew(script19);// 3eme partie de bomb
-	case(1); // 280
++280: // 280
     delete();
 }
 
@@ -501,12 +502,14 @@ script script18 {
     blendMode(1);
 	color(165, 0, 0);
 
-	F1 = 120f*cos(F0*rad(-144f)+rad(90f)) + 120f*cos(F0*rad(-144f)+rad(-144f)+rad(90f));
-	F2 = 120f*sin(F0*rad(-144f)+rad(90f)) + 120f*sin(F0*rad(-144f)+rad(-144f)+rad(90f));
+	F1 = 240f*cos(F0*rad(-144f)+rad(90f));
+	F2 = 240f*sin(F0*rad(-144f)+rad(90f));
 	
 	pos(F1, F2, 0f);
-	
-	anchor(1, 0);
+	F1 = 120f*cos(F0*rad(-144f)+rad(90f)) + 120f*cos(F0*rad(-144f)+rad(-144f)+rad(90f));
+	F2 = 120f*sin(F0*rad(-144f)+rad(90f)) + 120f*sin(F0*rad(-144f)+rad(-144f)+rad(90f));
+	posTime(20, 9, F1, F2, 0f);
+	//anchor(1, 0);
 
 	rotate(0f, 0f, rad(108f)+rad(90f)+rad(36f)*F0);
 	scale(1f, 0f);
@@ -515,8 +518,8 @@ script script18 {
 
 	
 	drawRectRot(20f, 228.25f*2f+ 1f);
-	scaleTime(60, 9, 1f, 1f);
-+60:
+	scaleTime(20, 9, 1f, 1f);
++20:
 	stop();
     case(1);
     alphaTime(20, 0, 0);

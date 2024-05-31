@@ -1008,20 +1008,20 @@ void Phantom01_at()
     goto Phantom01_at_668 @ 0;
 Phantom01_at_96:
 !E
-    180;
+    RAND % 180;
 !N
-    180;
+    RAND % 180;
 !H
-    120;
+    RAND % 120;
 !LO
-    90;
+    RAND % 90;
 !*
     wait([-1]);
     etNew(0);
-    etAim(0, 2);
-    etSprite(0, 20, 2);
-    etCount(0, 4, 2);
-    etAngle(0, 0.0f, rad(45));
+    etAim(0, 3);
+    etSprite(0, 19, 2);
+    etCount(0, 4, 1);
+    etAngle(0, 0.0f, 0.0f);
 !E
     4.0f;
 !N
@@ -1438,6 +1438,12 @@ void main()
 {
 	flagSet(32);
     wait(1);
+	if(SHOTTYPE == 2 || SHOTTYPE == 0)
+	{
+		@mainalt();
+	}else{
+		@main1();
+	}
     setChapter(0);
     wait(1);
     setChapter(0);

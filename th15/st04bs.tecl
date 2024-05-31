@@ -74,7 +74,7 @@ void Boss1_at()
 {
     int C = 13;
     etNew(0);
-    // etAim(0, 3);
+    etAim(0, 3);
     while(1)
     {
         float A = RANDRAD;
@@ -608,110 +608,6 @@ void BossFamiliar() {
     
 }
 
-void BossCard1_at2(var A, var B)
-{
-    var C, D, E, F;
-    etNew(0);
-    etAim(0, 5);
-    etSprite(0, 8, 5);
-!E
-    2;
-!N
-    4;
-!H
-    4;
-!LO
-    4;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(0, [-1.0f], 1.0f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 2097152, 60, -999999, 2.0f, -999999.0f);
-    etSpeed(0, 0.3f, 0.0f);
-    etOffsetAbs(0, %A, %B);
-    etNew(1);
-    etAim(1, 3);
-    etSprite(1, 16, 3);
-    etCount(1, 2, 1);
-    etAngle(1, 0.0f, 0.034906585f);
-!E
-    9.0f;
-!N
-    8.0f;
-!H
-    8.0f;
-!LO
-    8.0f;
-!*
-    etSpeed(1, [-1.0f], 1.0f);
-    etEx(1, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 256, 180, 0, -999999.0f, -999999.0f);
-    etEx(1, 0, -2147483648, 120, -999999, -999999.0f, -999999.0f);
-    etEx(1, 0, 2097152, 60, -999999, 2.0f, -999999.0f);
-    etSpeed(1, 0.3f, 0.0f);
-    etOffsetAbs(1, %A, %B);
-    %C = (%ANGLE_PLAYER + 1.5707964f) + (%RANDF2 * 0.17453292f);
-    %D = (%ANGLE_PLAYER - 1.5707964f) + (%RANDF2 * 0.17453292f);
-!L
-    %C = (%ANGLE_PLAYER + 1.5707964f) + (%RANDF2 * 0.017453292f);
-    %D = (%ANGLE_PLAYER - 1.5707964f) + (%RANDF2 * 0.017453292f);
-!*
-    %E = _f(128);
-    diffI($F, 9, 16, 16, 34);
-    goto BossCard1_at2_2604 @ 0;
-BossCard1_at2_1744:
-    etAngle(0, %C, 1.0f);
-    etOffsetRad(0, %C, %E);
-    etOn(0);
-    etAngle(1, %C, 1.0f);
-    etOffsetRad(1, %C, %E);
-    etOn(1);
-!ENH
-    %C = %C + 0.19635f;
-!L
-    %C = %C + 0.098175f;
-!*
-    etAngle(0, %D, 1.0f);
-    etOffsetRad(0, %D, %E);
-    etOn(0);
-    etAngle(1, %D, 1.0f);
-    etOffsetRad(1, %D, %E);
-    etOn(1);
-!ENH
-    %D = %D - 0.19635f;
-!L
-    %D = %D - 0.098175f;
-!ENH
-    %E = %E + _f(8);
-!L
-    %E = %E + _f(5);
-!E
-    2;
-!N
-    2;
-!H
-    2;
-!LO
-    1;
-!*
-    wait([-1]);
-BossCard1_at2_2604:
-    if ($F--) goto BossCard1_at2_1744 @ 0;
-    return;
-}
-
 void BossCard2()
 {
     var A, B, C, D;
@@ -793,48 +689,6 @@ void BossCard2_at()
     }
 }
 
-void bulletFollower()
-{
-	flagSet(1);
-	flagSet(2);
-	setDeath("Clear");
-	deathAnm(0, -1);
-	@Move1() async;
-	while((DIST_PLAYER > 5f && SHOTTYPE == 0) || (DIST_PLAYER > 7f && SHOTTYPE != 0))
-	{
-		wait(1);
-	}
-	etClear(4f);
-	if(GI3 == BOMB_COUNT && GF4 == _f(MISS_COUNT))
-	{
-		GI2 = GI2 - 50;
-		if(GI2 >= 50)
-		{
-			BI3 = BI3 + 50;
-			playSound(2);
-		}else{
-			BI3 = BI3 + 49;
-		}
-	}
-}
-
-void Clear()
-{
-	etClear(4f);
-}
-
-void Move1()
-{
-	float A = 3f/90f;
-	moveVel(F0, F1);
-	// times(90)
-	// {
-		// moveVel(F0, 5f+A);
-		// A += 3f/90f;
-		// wait(1);
-	// }
-	wait(10000);
-}
 void BossCard3()
 {
     var A, B;

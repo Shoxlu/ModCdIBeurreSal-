@@ -849,7 +849,8 @@ void main()
 	//wait(300);
 	setChapter(1);
     wait(2);
-	
+	//special();
+	//wait(100000);
     @MainFront();
     enmKillAll();
     etClear(640.0f);
@@ -873,6 +874,42 @@ void main()
 +1:
 	}
     delete();
+}
+
+
+void station(){
+	flagSet(2);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	deathAnm(-1, -1);
+	etNew(0);
+	etSprite(0, 6, 1);
+	etSpeed(0, 0.000001f, 0.000001f);
+	//etOn(0);
+	etSpeed(0, 0.05f, 0.05f);
+	laserNew(0, 10f,40f, 0f, 10f);
+	laserTiming(0, 1, 1, 10000, 1, 0);
+	//laserOn(0);
+	wait(10000);
+}
+
+void special(){
+	float x = -192f;
+	float y = 0f;
+	while(1){
+		
+		while(x < 192f){
+			while(y < 484f){
+				enmCreate("station", x, y, 100, 10, 1);
+				y+=12f;
+			}
+			x+=12f;
+			y=0f;
+		}
+		x = -192f;
+	+20000:
+	}
+
 }
 
 void main1()
