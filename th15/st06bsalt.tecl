@@ -1460,11 +1460,11 @@ BossCard5_448:
     $CAPTURE = 1;
     setNext(0, 0, 3600, "BossAlt2");
 !EN
-    spell(78, 3600, 500000, "「純粋なる狂気」");
+    spell(78, 3600, 500000, "v");
 !H
-    spell(78, 3600, 500000, "「純粋なる狂気」");
+    spell(78, 3600, 500000, "v");
 !L
-    spell(78, 3600, 500000, "「純粋なる狂気」");
+    spell(78, 3600, 500000, "v");
 !*
     movePosTime(60, 4, 0.0f, 192.0f);
     moveLimitReset();
@@ -1474,64 +1474,12 @@ BossCard5_448:
     playSound(54);
 +90: //94
     nop();
-    $A = 120;
-    %F0 = 1.0f;
-    $D = 10000;
-    goto BossCard5_1648 @ 94;
-BossCard5_1224:
-    $I0 = 4;
-    @BossCardAlt1_at();
-    wait(200);
-    playSound(52);
-    wait(130);
-    %F0 = %F0 * -1.0f;
-    $I0 = 2;
-    @BossCardAlt1_at();
-    wait(200);
-    playSound(52);
-    wait(130);
-    %F0 = %F0 * -1.0f;
-BossCard5_1648:
-    if ($D--) goto BossCard5_1224 @ 94;
-    goto BossCard5_1736 @ 94;
-BossCard5_1716:
-    wait(1000);
-BossCard5_1736:
-    if (1) goto BossCard5_1716 @ 94;
-    return;
+    wait(10000);
 }
 
 void BossCardAlt1_at()
 {
-    var A, B, C;
-    etNew(0);
-    etSprite(0, 0, $I0);
-    etAngle(0, 1.5707964f, 1.5707964f);
-    etSpeed(0, 6.0f, 6.0f);
-    laserNew(0, -1.0f, -1.0f, -1.0f, 16.0f);
-    laserTiming(0, 128, -1, -1, -1, 0);
-    etSound(0, 18, -1);
-    etExSet(0, 0, 0, 256, 500, 0, -999999.0f, -999999.0f);
-    etExSet(0, 1, 1, 8, 30, 0, 0.0f, -0.13962634f * %F0);
-    // etExSet(0, 2, 1, 8, 30, 30, 0.0f, 0.13962634f * %F0);
-    // etExSet(0, 3, 1, 8, 30, 60, -0.12f, -0.06981317f * %F0);
-    // etExSet(0, 4, 1, 8, 30, 90, 0.0f, 0.06981317f * %F0);
-    // etExSet(0, 5, 1, 8, 30, 120, 0.0f, -0.13962634f * %F0);
-    // etExSet(0, 6, 1, 8, 45, 150, 0.0f, 0.12217305f * %F0);
-    unless ($DIFF >= 2) goto BossCard5_at_1100 @ 0;
-    etExSet(0, 7, 1, 8, 60, 300, 0.01f, -0.05235988f * %F0);
-BossCard5_at_1100:
-    %A = %RANDRAD;
-    diffF(%B, 0.3926991f, 0.19634955f, 0.19634955f, 0.17453292f);
-    diffI($C, 16, 32, 32, 36);
-    goto BossCard5_at_1360 @ 0;
-BossCard5_at_1236:
-    etAngle(0, %A, 0.0f);
-    laserCuOn(0);
-    %A = %A + %B;
-BossCard5_at_1360:
-    if ($C--) goto BossCard5_at_1236 @ 0;
-    return;
+   
 }
 
 void BossCardAlt6()
