@@ -1597,6 +1597,8 @@ void Test2()
 void main()
 {
     flagSet(32);
+	dialogRead(0);
+	wait(5000);
     wait(1);
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_440 @ 0;
