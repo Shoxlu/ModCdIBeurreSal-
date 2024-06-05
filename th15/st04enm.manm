@@ -290,18 +290,13 @@ entry entry3 {
 
 entry entry4 {
     version: 8,
-    name: "face/dummy.png",
-    format: 7,
-    width: 4,
-    height: 4,
+    name: "face/enemy4/face04an.png",
+    format: 1,
+	width: 700,
+    height: 881,
     memoryPriority: 0,
-    lowResScale: 0,
+    lowResScale: 1,
     hasData: 1,
-    THTXSize: 16,
-    THTXFormat: 7,
-    THTXWidth: 4,
-    THTXHeight: 4,
-    THTXZero: 0,
     sprites: {
         sprite36: { x: 0, y: 0, w: 4, h: 4 }
     }
