@@ -298,7 +298,7 @@ entry entry4 {
     lowResScale: 1,
     hasData: 1,
     sprites: {
-        sprite36: { x: 0, y: 0, w: 4, h: 4 }
+        sprite36: { x: 0, y: 0, w: 700, h: 881 }
     }
 }
 

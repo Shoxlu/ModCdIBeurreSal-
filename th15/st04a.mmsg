@@ -121,7 +121,7 @@ script script0 {
 +4: // 228
     textPause(600);
 +4: // 232
-    bossFace(2, 0);
+    bossFace(3, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……おっと");
@@ -129,26 +129,21 @@ script script0 {
 +4: // 236
     textPause(600);
 +4: // 240
-    bossFace(5, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("……");
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
+    textAdd("j'ai le droit de me tromper jsp");
 +4: // 244
     textPause(600);
     musicBoss();
 +4: // 248
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    playerFace(0);
+    speakerBoss(0);
+	bubblePos(370.0, 270.0);
     textAdd("また黙るのね");
     textAdd("まあいいわ、私のとる行動は一つしか無い");
 +4: // 252
     textPause(600);
 +4: // 256
-    playerFace(1);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
     textAdd("異変を解決する為に");
     textAdd("あんたを倒す！");
 +4: // 260
