@@ -1598,7 +1598,7 @@ void main()
 {
     flagSet(32);
 	dialogRead(0);
-	wait(5000);
+	wait(10000);
     wait(1);
     setChapter(0);
 	//goto Boss @ 0;

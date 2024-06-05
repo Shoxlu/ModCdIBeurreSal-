@@ -30,7 +30,7 @@ script script0 {
 +4: // 46
     textPause(600);
 +4: // 50
-    playerFace(0);
+    playerFace(4);
     speakerPlayer();
     bubblePos(112.0, 270.0);
     textAdd("何というか都ごと");
@@ -72,29 +72,26 @@ script script0 {
 +4: // 172
     textPause(600);
 +4: // 176
-    bossFace(5, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……");
 +4: // 180
     textPause(600);
 +4: // 184
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
+    bossFace(2, 0);
+    bubblePos(370.0, 270.0);
     textAdd("しゃべらんのかい！");
 +4: // 188
     textPause(600);
 +4: // 192
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
+    bubblePos(370.0, 270.0);
     textAdd("月の都が何でこうなっているのか");
     textAdd("判らないけど");
 +4: // 196
     textPause(600);
 +4: // 200
-    playerFace(5);
+    playerFace(7);
     speakerPlayer();
     bubblePos(112.0, 270.0);
     textAdd("どうせあんたが幻想郷への侵略を");
@@ -124,7 +121,7 @@ script script0 {
 +4: // 228
     textPause(600);
 +4: // 232
-    bossFace(7, 0);
+    bossFace(2, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……おっと");
