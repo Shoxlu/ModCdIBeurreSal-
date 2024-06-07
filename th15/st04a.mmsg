@@ -160,16 +160,16 @@ script script0 {
 script script1 {
     skippable(0);
     playerShow(0);
-    playerFace(2);
+    playerFace(5);
     bossShow(0);
     bossFace(8, 0);
 +4: // 4
     bossFace(0, 0);
-    speakerBoss(0);
+    speakerPlayer();
     bubblePos(370.0, 270.0);
 +30: // 34
     skippable(1);
-    bubblePos(370.0, 270.0);
+    bubblePos(112.0, 270.0);
     textAdd("貴方が送り込まれた理由が");
     textAdd("判ったわ");
 +4: // 38

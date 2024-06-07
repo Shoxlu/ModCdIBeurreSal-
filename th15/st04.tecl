@@ -1597,7 +1597,7 @@ void Test2()
 void main()
 {
     flagSet(32);
-	dialogRead(0);
+	dialogRead(1);
 	wait(10000);
     wait(1);
     setChapter(0);
