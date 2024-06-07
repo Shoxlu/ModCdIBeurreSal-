@@ -772,7 +772,6 @@ void init_modes() {
 }
 
 float inline rad(float x) {
-	auto f = th_OpenFile;
 	return x * PI / 180;
 }
 
