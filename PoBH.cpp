@@ -5,9 +5,9 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "linkerHacks.h"
-#include "spells.h"
 
+#include "spells.h"
+#include "linkerHacks.h"
 #include "th15.h"
 
 

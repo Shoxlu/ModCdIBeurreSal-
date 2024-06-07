@@ -25,7 +25,12 @@ int __cdecl atexit(void(*)()) {
 namespace stdext {
     class exception;
 }
-
+namespace std {
+    void __cdecl _Xlength_error(char const*) {
+        while (1)
+            DebugBreak();
+    }
+}
 
 namespace std {
     void(__cdecl* _Raise_handler)(class stdext::exception const&) = nullptr;
