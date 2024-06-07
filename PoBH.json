@@ -5,6 +5,8 @@
     "output": "th15.v1.00b.js",
     // Codecave name prefix
     "prefix": "pobh",
+    // COMDAT jank workaround
+    "merge_comdat": false,
     // External symbol addresses
   "externs": {
     "_g_window": {
@@ -31,6 +33,12 @@
     "?cancel@zBullet@@QAEXH@Z": {
       "addr": "0x41E250"
     },
+    "?sub_420400@zSpellcard@@QAEXHPADHHHH@Z": {
+      "addr": "0x420400"
+    },
+    "?get_vm_with_id@zAnmManager@@QAEPAUzAnmVm@@H@Z": {
+      "addr": "0x488510"
+    },
     "_PLAYER_PTR": {
       "addr": "0x4e9bb8"
     },
@@ -45,11 +53,15 @@
     },
     "_LASER_MANAGER_PTR": {
       "addr": "0x4e9ba0"
+    },
+    "_ANM_MANAGER_PTR": {
+      "addr": "0x503c18"
     }
   },
     // DLL imports
   "imports": {
     "user32.dll": {
+      
       "MessageBoxA": {
         "alias": "_MessageBoxA@16"
       },
@@ -70,6 +82,9 @@
       }
     },
     "kernel32.dll": {
+      "DebugBreak": {
+        "alias": "_DebugBreak@0"
+      },
       "AllocConsole": {
         "alias": "_AllocConsole@0"
       },
@@ -124,6 +139,10 @@
   },
     // Additional binhacks
     "binhacks": {
+      "spell_card_draw_spell_name_jmp": {
+        "addr": "0x4207F4",
+        "code": "E9 [codecave:spell_card_draw_myself] "
+      },
       "hook_window_creation_ends": {
         "addr": "0x473135",
         "code": "E9 [obj:_hook_entry]"
@@ -228,6 +247,10 @@
 		    }
 	},
 	"codecaves": {
+    "spell_card_draw_myself": {
+      "access": "re",
+      "code": "E8 [obj:_check_for_hijack_name] 85C0 74 09 E8 [obj:_spellcard_draw_name] 894424 0C 68 FFFFFF00 E8 [obj:_get_current_text_vm_spell] E9 [0x4207F9] <nop:100>" //check id, if id between some, return pointer to new_str, edit the stack with the correct pointer to str, jump back to the function
+    },
     "Changing_loaded_slot_in_memory_for_Sanae": {
       "access": "re",
       "code": "\
@@ -322,10 +345,7 @@ E9 [0x438F98] \
 	},
 	"change_ecl_ins_jump_table_location2": {
 		"access": "re",
-	"code": "00 00 01 02  \
-  00 00 03 04 05 06 06 06 06 07 08 09 0A 0B 0C 0D   \
-  0E 00 0F 10 11 0D 0D 0D 0D 0D 0D 0D 0D 0D 12 0D    \
-  0D 13 AA AA AA AA AA AA AA AA AA AA AA AA AA AA    \
+	"code": "00 00 01 02 00 00 03 04 05 06 06 06 06 07 08 09 0A 0B 0C 0D 0E 00 0F 10 11 0D 0D 0D 0D 0D 0D 0D 0D 0D 12 0D 0D 13 AA AA AA AA AA AA AA AA AA AA AA AA AA AA    \
   AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA    \
   AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA    \
   AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA    \
@@ -373,4 +393,4 @@ E9 [0x438F98] \
 		"code": "8B46 14 A3 <0x520329> E9 [0x42DBA7]"
 	}
   }
-}
+  }

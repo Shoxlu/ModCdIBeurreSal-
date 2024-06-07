@@ -3,18 +3,22 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wuninitialized"
 
-
 #include <stdio.h>
 #include <math.h>
+#include "linkerHacks.h"
+#include "spells.h"
+
 #include "th15.h"
 
-#define DEBUG_
+
+#define DEBUG
 
 #define SATANAE_BOMB_DURATION 340
 
 
 extern "C" void coff2binhack_init() {
 	init_modes();
+	init_spells();
    // MessageBoxA(NULL, "This is being called from the coff2binhack initializer!", "coff2binhack sample", 0);
 }
 
@@ -288,6 +292,24 @@ end:
 	printf("end of the func bomb_sanae\n");
 #endif
 	return;
+}
+
+extern "C" zAnmVm * get_current_text_vm_spell() {
+	zAnmVm* anmVm = ANM_MANAGER_PTR->get_vm_with_id(SPELLCARD_PTR->field_14);
+	if (!anmVm)
+		SPELLCARD_PTR->field_14 = 0;
+	return anmVm;
+}
+
+extern "C" bool check_for_hijack_name() {
+	return true;
+}
+
+extern "C" const char* spellcard_draw_name() {
+
+	const char* true_name = spellnames[0];//"laspelleaezeezezezezezeazazazaz";//name.c_str();
+	printf("%s", true_name);
+	return true_name;
 }
 
 extern "C" int hook_entry() {

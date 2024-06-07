@@ -641,16 +641,26 @@ public:
 
 struct zSpellcard
 {
-	char __unknown_0;
-	_BYTE gap1[119];
+	void sub_420400(int a2, char* Format, int a4, int a5, int a6, int a7);
+	int __unknown_0;
+	int field_4;
+	int field_8;
+	int field_C;
+	int field_10;
+	int field_14;
+	_BYTE gap18[96];
 	int flags;
 	_BYTE gap7C[64];
+	char __end[];
 };
 
 struct zBombSanae: public zBomb {
 	void bomb_sanae_clear_bullets();
 };
-
+struct zAnmManager {
+	void _draw_text(zAnmVm* anm_vm, int color, int a4, int a5, int a6, char* Format, ...);
+	zAnmVm* get_vm_with_id(int id);
+};
 //struct BombInner {
 //	Float3 position; // 0x0
 //	float __float_C; // 0xC
@@ -686,8 +696,11 @@ extern "C" zPlayer * PLAYER_PTR;
 extern "C" zBulletManager * BULLET_MANAGER_PTR;
 extern "C" zSpellcard * SPELLCARD_PTR;
 extern "C" zLaserManager * LASER_MANAGER_PTR;
+extern "C" zAnmManager * ANM_MANAGER_PTR;
+
 
 void* __fastcall th_OpenFile(const char* fileName, int* p_size, int is_from_game_path);
+
 
 float (*modes[32])(float);
 
@@ -783,5 +796,7 @@ void stub_function_so_coff2binhack_gives_me_signatures() {
 	bomb->bomb_sanae_clear_bullets();
 	zBullet* bullet;
 	bullet->cancel(1);
+	zSpellcard* spell;
+	spell->sub_420400(0, 0, 0, 0, 0, 0);
 }
 
