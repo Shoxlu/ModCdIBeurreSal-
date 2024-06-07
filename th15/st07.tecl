@@ -1480,8 +1480,8 @@ main_440:
     // @LogoEnemy() async;
 // +60: //60
     // nop();
-	enmCreate("Test", 0f, 224f, 100, 1, 0);
-	wait(10000);
+	// enmCreate("Test", 0f, 224f, 100, 1, 0);
+	// wait(10000);
     // @MainFront();
     // etClear(640.0f);
     // ins_571();
@@ -1493,17 +1493,17 @@ main_440:
     enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
     // wait(2000);
     bossWait();
-    // wait(160);
-    // setChapter(6);
-    // wait(20);
-    // @MainLatter();
-    // wait(120);
-    // etClear(640.0f);
-    //ins_571();
+    wait(160);
+    setChapter(6);
+    wait(20);
+    @MainLatter();
+    wait(120);
+    etClear(640.0f);
+    ins_571();
     setChapter(41);
     wait(160);
-    //dialogRead(0);
-    //@MainBoss();
+    dialogRead(0);
+    @MainBoss();
     goto main_1252 @ 60;
 main_1232:
     wait(1000);

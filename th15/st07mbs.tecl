@@ -29,10 +29,10 @@ void MBoss()
     wait(40);
     moveLimit(0.0f, 128.0f, 280.0f, 256.0f);
     dialogWait();
-    setNext(1, 2200, 1500, "MBossCard1");
+    setNext(1, 2200, 1500, "MBossCard2");
     setTimeout(1, "MBossEscape");
     fog(140.0f, 16748431);
-    @MBoss1();
+    @MBoss2();
     goto MBoss_784 @ 0;
 MBoss_764:
     wait(1000);
@@ -45,7 +45,7 @@ void MBoss1()
 {
     setInvuln(60);
     @EffChargePoint3(1.5707964f, 0.5235988f, 8, 9, 9, 9);
-    wait(60);
+    wait(6000);
     @MBossCard1();
     return;
 }
@@ -305,8 +305,8 @@ void MBossCard2_at()
 	etSpeed(0, 3f, 2f);
 	etSprite(0, 6, 2);
 	etExSet(0, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	MBossCard2_at1() async;
-	MBossCard2_at2() async;
+	//MBossCard2_at1() async;
+	//MBossCard2_at2() async;
 	while(1)
 	{
 		// etSprite(0, 6, 2);
