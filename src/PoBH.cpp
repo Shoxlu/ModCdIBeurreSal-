@@ -11,7 +11,7 @@
 #include "th15.h"
 
 
-#define DEBUG
+#define DEBUG_
 
 #define SATANAE_BOMB_DURATION 340
 
