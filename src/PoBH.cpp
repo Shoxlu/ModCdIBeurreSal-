@@ -17,6 +17,7 @@
 
 
 extern "C" void coff2binhack_init() {
+	//Sleep(5000);
 	init_modes();
 	init_spells();
    // MessageBoxA(NULL, "This is being called from the coff2binhack initializer!", "coff2binhack sample", 0);
@@ -302,7 +303,11 @@ extern "C" zAnmVm * get_current_text_vm_spell() {
 }
 
 extern "C" bool check_for_hijack_name() {
-	return true;
+	int id = SPELLCARD_PTR->spell_id;
+	if (id >= 78 and id < 100) {
+		return true;
+	}
+	return false;
 }
 
 extern "C" const char* spellcard_draw_name() {
@@ -310,6 +315,23 @@ extern "C" const char* spellcard_draw_name() {
 	const char* true_name = spellnames[0];//"laspelleaezeezezezezezeazazazaz";//name.c_str();
 	printf("%s", true_name);
 	return true_name;
+}
+
+extern "C" void hook_hdlg() {
+	HICON icon = load_icon("th15/icone.png");
+	if (icon) {
+
+		//Change both icons to the same icon handle.
+		SendMessage(hDlg, WM_SETICON, ICON_SMALL, (LPARAM)icon);
+		SendMessage(hDlg, WM_SETICON, ICON_SMALL2, (LPARAM)icon);
+		SendMessage(hDlg, WM_SETICON, ICON_BIG, (LPARAM)icon);
+
+		//This will ensure that the application icon gets changed too.
+		SendMessage(GetWindow(hDlg, GW_OWNER), WM_SETICON, ICON_SMALL, (LPARAM)icon);
+		SendMessage(GetWindow(hDlg, GW_OWNER), WM_SETICON, ICON_SMALL2, (LPARAM)icon);
+		SendMessage(GetWindow(hDlg, GW_OWNER), WM_SETICON, ICON_BIG, (LPARAM)icon);
+
+	}
 }
 
 extern "C" int hook_entry() {
@@ -323,16 +345,18 @@ extern "C" int hook_entry() {
 
 	//printf("location of the func bomb_sanae_clear_bullets at: %x\n", zBombSanae::bomb_sanae_clear_bullets);
 #endif // DEBUG
-	
+	//Sleep(5000);
 	HICON icon = load_icon("th15/icone.png");
 	if (icon) {
 
 		//Change both icons to the same icon handle.
 		SendMessage(g_window, WM_SETICON, ICON_SMALL, (LPARAM)icon);
+		SendMessage(g_window, WM_SETICON, ICON_SMALL2, (LPARAM)icon);
 		SendMessage(g_window, WM_SETICON, ICON_BIG, (LPARAM)icon);
 
 		//This will ensure that the application icon gets changed too.
 		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_SMALL, (LPARAM)icon);
+		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_SMALL2, (LPARAM)icon);
 		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_BIG, (LPARAM)icon);
 		
 	}

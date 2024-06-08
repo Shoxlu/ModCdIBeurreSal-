@@ -648,11 +648,13 @@ struct zSpellcard
 	int field_C;
 	int field_10;
 	int field_14;
-	_BYTE gap18[96];
+	_BYTE gap18[92];
+	int spell_id;
 	int flags;
 	_BYTE gap7C[64];
 	char __end[];
 };
+
 
 struct zBombSanae: public zBomb {
 	void bomb_sanae_clear_bullets();
@@ -691,6 +693,7 @@ struct zAnmManager {
 //	// 0xBC
 //};
 extern "C" HWND g_window;
+extern "C" HWND hDlg;
 extern "C" zBomb * BOMB_PTR;
 extern "C" zPlayer * PLAYER_PTR;
 extern "C" zBulletManager * BULLET_MANAGER_PTR;

@@ -1,8 +1,8 @@
 {
     // Input COFF file
-    "input": "PoBH.obj",
+    "input": "../obj/PoBH.obj",//cringe coff2binhack not understanding this input should be relative to this json not coff2binhack.py
     // Output JSON file
-    "output": "th15.v1.00b.js",
+    "output": "../../th15.v1.00b.js",
     // Codecave name prefix
     "prefix": "pobh",
     // COMDAT jank workaround
@@ -56,6 +56,9 @@
     },
     "_ANM_MANAGER_PTR": {
       "addr": "0x503c18"
+    },
+    "_hDlg": {
+      "addr": "0x519BB4"
     }
   },
     // DLL imports
@@ -93,6 +96,9 @@
       },
       "GetLastError": {
         "alias": "_GetLastError@0"
+      },
+      "Sleep": {
+        "alias": "_Sleep@4"
       }
     },
     "ucrtbase.dll": {
@@ -146,6 +152,10 @@
       "hook_window_creation_ends": {
         "addr": "0x473135",
         "code": "E9 [obj:_hook_entry]"
+      },
+      "hook_dialog_window_creation": {
+        "addr": "0x471622",
+        "code": "E9 [codecave:hook_dialog_win_codecave]"
       },
       "hook_sanae_bomb": {
         "addr": "0x4184EF",
@@ -217,36 +227,35 @@
 		      "code": "E9 [codecave:Changing_loaded_slot_in_memory_for_Sanae] <int3:4>"
 		    },
 		    "EscapingSnakesColor": {
-		      "addr": 0x4095AC,
-		      "code": "\
-	    <nop:4> \
-	    E9 [codecave:NewCodeSnakesColor] \
-	    <int3:17> \
-	    "
+		      "addr": "0x4095AC",
+		      "code": " <nop:4> E9 [codecave:NewCodeSnakesColor] <int3:17>"
 		    },
 		    "Escaping_MusicBoss_msg": {
-		      "addr": 0x438F93,
+		      "addr":"0x438F93",
 		      "code": "E9 [codecave:ChangeBossMusic]"
 		    },
 		    "FuncSet4_better": {
-		      "addr": 0x004319AD,
-		      "code": "C7 05 C0 F0 4D 00 05 00 00 00 F3 0F 10 0D C0 F0 4D 00 F3 0F 10 81 9C 0C 00 00 F3 0F 10 C1 F3 0F 11 81 9C 0C 00 00\
-	    <nop:30>"
+		      "addr": "0x004319AD",
+		      "code": "C7 05 C0 F0 4D 00 05 00 00 00 F3 0F 10 0D C0 F0 4D 00 F3 0F 10 81 9C 0C 00 00 F3 0F 10 C1 F3 0F 11 81 9C 0C 00 00 <nop:30>"
 		    },
 		    "FuncSet4_F0_fix": {
-		      "addr": 0x004318FA,
+		      "addr": "0x004318FA",
 		      "code": "F3:0F10AB 9C020000"
 		    }, 
 		    "change_jump_table_reference": {
-			    "addr": 0x42927C,
+			    "addr": "0x42927C",
 			    "code":"0F B6 80 <codecave:change_ecl_ins_jump_table_location2> FF 24 85 <codecave:change_ecl_ins_jump_table_location>"
 		    },
 		    "add_a_case_ecl_switch": {
-			    "addr": 0x429271,
+			    "addr": "0x429271",
 			    "code": "3D <707>"
 		    }
 	},
 	"codecaves": {
+    "hook_dialog_win_codecave": {
+      "access": "re",
+      "code": " A3 B49B5100 E8 [obj:_hook_hdlg] E9 [0x0471627]"
+    },
     "spell_card_draw_myself": {
       "access": "re",
       "code": "E8 [obj:_check_for_hijack_name] 85C0 74 09 E8 [obj:_spellcard_draw_name] 894424 0C 68 FFFFFF00 E8 [obj:_get_current_text_vm_spell] E9 [0x4207F9] <nop:100>" //check id, if id between some, return pointer to new_str, edit the stack with the correct pointer to str, jump back to the function

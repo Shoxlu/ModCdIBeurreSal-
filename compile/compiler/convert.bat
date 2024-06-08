@@ -1,0 +1,2 @@
+clang++ -m32 -O3 -fno-exceptions -fno-rtti -Winvalid-noreturn -D_HAS_EXCEPTIONS=0 -fno-builtin-printf "-D_CRTIMP=__declspec(dllimport)" "-D_VCRTIMP=__declspec(dllimport)" -D_CRT_SECURE_NO_WARNINGS=1 -c ../../src/PoBH.cpp -o ../obj/PoBH.obj
+coff2binhack.py ../obj/PoBH.json
