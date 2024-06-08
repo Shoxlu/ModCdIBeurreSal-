@@ -1,13 +1,5 @@
 {
     options: {
-        pobh_const_0: {
-            type: "s",
-            val: "Mode hasn't been implemented yet: %d \n",
-        },
-        pobh_const_1: {
-            type: "s",
-            val: "th15/icone.png",
-        },
         user32_dll_str: {
             type: "s",
             val: "user32.dll",
@@ -40,6 +32,10 @@
             type: "s",
             val: "kernel32.dll",
         },
+        DebugBreak_str: {
+            type: "s",
+            val: "DebugBreak",
+        },
         AllocConsole_str: {
             type: "s",
             val: "AllocConsole",
@@ -51,6 +47,10 @@
         GetLastError_str: {
             type: "s",
             val: "GetLastError",
+        },
+        Sleep_str: {
+            type: "s",
+            val: "Sleep",
         },
         ucrtbase_dll_str: {
             type: "s",
@@ -126,6 +126,14 @@
         },
     },
     codecaves: {
+        hook_dialog_win_codecave: {
+            access: "re",
+            code: " A3 B49B5100 E8 [codecave:pobh.text0+0x1210] E9 [0x0471627]",
+        },
+        spell_card_draw_myself: {
+            access: "re",
+            code: "E8 [codecave:pobh.text0+0x11d0] 85C0 74 09 E8 [codecave:pobh.text0+0x11f0] 894424 0C 68 FFFFFF00 E8 [codecave:pobh.text0+0x11a0] E9 [0x4207F9] <nop:100>",
+        },
         Changing_loaded_slot_in_memory_for_Sanae: {
             access: "re",
             code: "8B0D <0x4E7404> 83E1 FD 83F9 01 B9 03000000 83D1 00 890D <0x4E4498> 8B4CC2 50 A1 <0x4E9A80> E9 [0x438789] ",
@@ -144,7 +152,7 @@
         },
         change_ecl_ins_jump_table_location2: {
             access: "re",
-            code: "00 00 01 02    00 00 03 04 05 06 06 06 06 07 08 09 0A 0B 0C 0D     0E 00 0F 10 11 0D 0D 0D 0D 0D 0D 0D 0D 0D 12 0D      0D 13 AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      14 15 14 15 16 17 16 17 18 19 18 19 1A 1A 1B 1C      1D 1D 1E 1E 1F 20 1F 20 21 22 22 23 16 17 16 17       24 25 26 26 15 15 26 26 27 28 27 28 29 2A 29 2A    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA 2B 2C 2D 2E 2F 30 31 32 33 34 35 36     37 38 39 3A 3B 3C 3D 3E 3F 40 41 42 43 44 45 46    41 47 48 49 4A 4B 4C 4D 4E 41 41 41 4F 50 51 52     53 54 55 56 57 58 59 5A 5B 5C 5D 5E 5F 60 61 62    63 64 65 66 67 68 69 6A 6B 6C 6D 6E AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA 6F 70 71 72 73 74 75 76     77 78 78 78 78 79 7A 7B 7C 7D 7E 7F 80 81 82 83     84 85 86 87 88 89 8A 8B 8C 8D 8E 8F 90 91 92 93      94 95 AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA 96 97 98 99      9A 9B 9C 9D 9E 9F A0 A1 A2 A3 A4 AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      A5 A6 A7 AA AA AA AA AA AA AA AA AA AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA A8 A9 AA AA AA AA AE AA",
+            code: "00 00 01 02 00 00 03 04 05 06 06 06 06 07 08 09 0A 0B 0C 0D 0E 00 0F 10 11 0D 0D 0D 0D 0D 0D 0D 0D 0D 12 0D 0D 13 AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      14 15 14 15 16 17 16 17 18 19 18 19 1A 1A 1B 1C      1D 1D 1E 1E 1F 20 1F 20 21 22 22 23 16 17 16 17       24 25 26 26 15 15 26 26 27 28 27 28 29 2A 29 2A    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA 2B 2C 2D 2E 2F 30 31 32 33 34 35 36     37 38 39 3A 3B 3C 3D 3E 3F 40 41 42 43 44 45 46    41 47 48 49 4A 4B 4C 4D 4E 41 41 41 4F 50 51 52     53 54 55 56 57 58 59 5A 5B 5C 5D 5E 5F 60 61 62    63 64 65 66 67 68 69 6A 6B 6C 6D 6E AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA 6F 70 71 72 73 74 75 76     77 78 78 78 78 79 7A 7B 7C 7D 7E 7F 80 81 82 83     84 85 86 87 88 89 8A 8B 8C 8D 8E 8F 90 91 92 93      94 95 AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA 96 97 98 99      9A 9B 9C 9D 9E 9F A0 A1 A2 A3 A4 AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      A5 A6 A7 AA AA AA AA AA AA AA AA AA AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA     AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA      AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA    AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA AA  AA AA AA AA AA AA AA AA AA A8 A9 AA AA AA AA AE AA",
         },
         change_bossmusic_ecl_ins: {
             access: "re",
@@ -152,50 +160,286 @@
         },
         "pobh.text0": {
             access: "rx",
-            code: "8b4424048b4c24088908c30f1f4400008b4424048b4c240c8b5424088910894804c366666666662e0f1f84000000000050f30f10442408f30f59c0f30f110424d9042458c366662e0f1f84000000000050f30f1005<codecave:pobh_comdat_pool>0f28c8f30f5c4c2408f30f59c9f30f5cc1f30f110424d9042458c36666662e0f1f84000000000050f30f10442408f30f100d(<codecave:pobh_comdat_pool>+0x4)0f2ec8760af30f58c0f30f59c0eb2af30f58c0f30f5805(<codecave:pobh_comdat_pool>+0x8)f30f100d<codecave:pobh_comdat_pool>0f28d1f30f5cd0f30f59d20f28c1f30f5cc2f30f58c1f30f5905(<codecave:pobh_comdat_pool>+0x4)f30f110424d9042458c3660f1f440000d9442404c366662e0f1f840000000000c705<codecave:pobh.bss2>(<codecave:pobh.text0>+0xe0)c705(<codecave:pobh.bss2>+0x4)(<codecave:pobh.text0>+0x30)c705(<codecave:pobh.bss2>+0x8)00000000c705(<codecave:pobh.bss2>+0xc)00000000c705(<codecave:pobh.bss2>+0x10)(<codecave:pobh.text0>+0x50)0f57c00f1105(<codecave:pobh.bss2>+0x14)c705(<codecave:pobh.bss2>+0x24)(<codecave:pobh.text0>+0x80)c705(<codecave:pobh.bss2>+0x28)000000000f1105(<codecave:pobh.bss2>+0x30)0f1105(<codecave:pobh.bss2>+0x40)0f1105(<codecave:pobh.bss2>+0x50)0f1105(<codecave:pobh.bss2>+0x60)0f1105(<codecave:pobh.bss2>+0x70)c36666662e0f1f84000000000083ec148b4c24188b048d<codecave:pobh.bss2>85c074538b4c242c2b4c2428f30f2ac1f30f2a4c241cf30f10542424f30f5ec1f30f5c542420f30f11542408f30f110424ffd0d95c2410f30f10442408f30f59442410f30f58442420f30f1144240cd944240c83c414c3894c2404c70424<option:pobh_const_0>e8[codecave:pobh.text6]d9ee83c414c30f1f4400000f57d26a006a00e8[0x41E750]0f57db6a006a006a00e8[0x41E850]8b0d<0x4e9a68>e8([codecave:pobh.text0]+0x220)6a01e8[0x41E250]c30f1f00575683ec108b792c3b7928750683c4105e5fc383ff3b7f43a1(<codecave:pobh.bss2>+0x24)85c00f8484000000f30f2ac7f30f5e05(<codecave:pobh_comdat_pool>+0x18)f30f110424ffd0d95c2408f30f104c2408f30f590d(<codecave:pobh_comdat_pool>+0xc)0f57c0f30f58c183c4105e5fe9([codecave:pobh.text0]+0x4d0)81ff540100007267a1(<codecave:pobh.bss2>+0x24)85c0743d81c7acfefffff30f2ac7f30f5e05(<codecave:pobh_comdat_pool>+0x10)f30f110424ffd0d95c240cf30f1044240cf30f5905(<codecave:pobh_comdat_pool>+0x14)f30f5805(<codecave:pobh_comdat_pool>+0xc)83c4105e5fe9([codecave:pobh.text0]+0x4d0)c744240409000000c70424<option:pobh_const_0>e8[codecave:pobh.text6]0f57c083c4105e5fe9([codecave:pobh.text0]+0x4d0)83c114f30f1005(<codecave:pobh_comdat_pool>+0xc)89cee8([codecave:pobh.text0]+0x4d0)89f131d2e8([codecave:pobh.text0]+0x8c0)83ff500f821fffffff89f1ba01000000e8([codecave:pobh.text0]+0x8c0)83ff640f820affffff89f1ba02000000e8([codecave:pobh.text0]+0x8c0)83ff780f82f5feffff89f1ba03000000e8([codecave:pobh.text0]+0x8c0)81ff8c0000000f82ddfeffff89f1ba0400000083c4105e5fe9([codecave:pobh.text0]+0x8c0)6666666666662e0f1f840000000000c705<codecave:pobh.bss2>(<codecave:pobh.text0>+0xe0)c705(<codecave:pobh.bss2>+0x4)(<codecave:pobh.text0>+0x30)c705(<codecave:pobh.bss2>+0x8)00000000c705(<codecave:pobh.bss2>+0xc)00000000c705(<codecave:pobh.bss2>+0x10)(<codecave:pobh.text0>+0x50)0f57c00f1105(<codecave:pobh.bss2>+0x14)c705(<codecave:pobh.bss2>+0x24)(<codecave:pobh.text0>+0x80)c705(<codecave:pobh.bss2>+0x28)000000000f1105(<codecave:pobh.bss2>+0x30)0f1105(<codecave:pobh.bss2>+0x40)0f1105(<codecave:pobh.bss2>+0x50)0f1105(<codecave:pobh.bss2>+0x60)0f1105(<codecave:pobh.bss2>+0x70)c36666662e0f1f8400000000005756508b4c2410c704240000000089e26a00e8[0x402DB0]89c668000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c756ff15(<codecave:pobh_imports>+0x44)83c40489f883c4045e5fc3905553575683ec148b742428a1<0x4e9ba0>8b48148b15<0x4e9a70>8b7a78f20f1006f20f1180ec0500008b56088990f405000085c974438b5c242cf7d783e701eb0689e985ed74328b69088379100174f18b01897c240cf30f10442430f30f11442408895c2404893424c744241001000000ff502083ec14ebc883c4145e5f5b5dc38b0d<0x4e9a68>81792c690100007f05e8([codecave:pobh.text0]+0x220)31c0c3660f1f8400000000005589e553575683e4f081ecc00000000f29442450a1<0x4e9a68>8944243ca1<0x4e9a70>8b78788b35<0x4e9a6c>8b4e6c898ed0f0410185c90f84210100008b41048986d4f041018b0985c90f841c010000f7d783e7018d9ed4f041010f28442450f30f5ae0f20f102d(<codecave:pobh_comdat_pool>+0x20)f20f1035(<codecave:pobh_comdat_pool>+0x28)f20f103d(<codecave:pobh_comdat_pool>+0x30)0f1f4400000fb7918a0c00004a6683fa010f87ae000000837924000f85a4000000f30f1081380c00008b54243cf30f5c4214f30f10913c0c0000f30f5c5218f30f59d2f30f59c0f30f1089580c0000f30f5ac90f28d9f20f59ddf20f58dcf20f5adbf30f58c2f30f59db0f2ed87256f20f59cef20f58ccf20f58cff20f5ac9f30f59c90f2ec1723d893c24f20f11642420e8[0x41E250]83ec04f20f103d(<codecave:pobh_comdat_pool>+0x30)f20f1035(<codecave:pobh_comdat_pool>+0x28)f20f102d(<codecave:pobh_comdat_pool>+0x20)f20f106424208b036666662e0f1f8400000000008986d0f0410185c0741b8b500489138b0889d085c90f8525ffffffeb0e81c6d4f0410189f3c703000000000f284424500fc6c0000f2944245031ff0f57c9f20f102d(<codecave:pobh_comdat_pool>+0x50)eb270f1f840000000000f20f108c2488000000f20f102d(<codecave:pobh_comdat_pool>+0x50)f20f58cd4783ff320f84380200000f28c1f20f1015(<codecave:pobh_comdat_pool>+0x38)f20f59c2f20f5ac0f30f5ac0f20f101d(<codecave:pobh_comdat_pool>+0x40)f20f59c3f20f1025(<codecave:pobh_comdat_pool>+0x48)f20f5ec4f20f5ac0f20f118c2488000000f20f58cdf20f59caf20f5ac9f30f5ac9f20f59cbf20f5eccf20f5ac90f57d2f30f5ad0f20f115424700f57c0f30f5ac1f20f114424688b74243cf30f1046140f29442420f20f111424e8[th_cos]dd9c24a8000000f30f1046180f284c24200f14c80f294c2420f20f10442470f20f110424e8[th_sin]dd9c24a0000000f20f108424a8000000660f168424a0000000660f5ac00f594424500f584424200f29442470f30f1046140f29442420f20f10442468f20f110424e8[th_cos]dd9c2498000000f30f1046180f284c24200f14c80f294c2420f20f10442468f20f110424e8[th_sin]dd9c2490000000f20f10842498000000660f16842490000000660f5ac00f594424500f584424200f285424700f28ca0f58c80f590d(<codecave:pobh_comdat_pool>+0x60)0f134c2444c744244c000000000f5cc20f57c9f30f5ac80fc6c055f30f5ac0f20f114c2408f20f110424e8[th_atan2]d95c2440f30f10442440f30f11442420f20f1005(<codecave:pobh_comdat_pool>+0x70)f20f118424b4000000a1<0x4e9ba0>8b48148b15<0x4e9a70>8b5a78f20f10442444f20f1180ec0500008b54244c8990f405000085c90f8405fefffff7d383e301eb1866666666662e0f1f84000000000089f185f60f84e6fdffff8b71088379100174ed8b01895c240cf30f10442420f30f114424088d9424b4000000895424048d542444891424c744241001000000ff502083ec14ebb98d65f45e5f5b5dc3905589e553575683e4f883ec6889d6f30f2acaf30f590d(<codecave:pobh_comdat_pool>+0x80)f30f114c241889cff30f1005(<codecave:pobh_comdat_pool>+0x84)f30f58c1f30f5ac0f20f11442420f20f110424e8[th_cos]dd5c2458f30f10442418f30f5805(<codecave:pobh_comdat_pool>+0x88)f30f5ac0f20f11442418f20f110424e8[th_cos]dd5c2450f20f10442420f20f110424e8[th_sin]dd5c2448f20f10442418f20f110424e8[th_sin]dd5c2440f20f10442450660f16442440660f280d(<codecave:pobh_comdat_pool>+0x90)660f59c1f20f10542458660f16542448660f59d1660f58d0660f5ac2f20f100f0f58c80f134c2434f30f104708f30f1144243cc74424300040e443c744242c0000a0410f57c0f20f2ac6f20f5905(<codecave:pobh_comdat_pool>+0xa0)f20f5805(<codecave:pobh_comdat_pool>+0xa8)f20f5ad8a1<0x4e9a70>8b4078f7d083e001894424088d44242c894424048d7c2434893c24f30f115c2420e8[0x41E850]83ec0ca1<0x4e9ba0>8b48148b15<0x4e9a70>8b5a78f20f10442434f20f1180ec0500008b54243c8990f405000085c9744bf7d383e301eb0e0f1f84000000000089f185f674368b71088379100174f18b01895c240cf30f10442420f30f114424088d54242c89542404893c24c744241001000000ff502083ec14ebc48d65f45e5f5b5dc36666662e0f1f840000000000575683ec148b35<0x4e9a68>8b7e2c81ff69010000750dc746500000000083c4145e5fc33b7e2874f583ff3b7f44a1(<codecave:pobh.bss2>+0x24)85c00f84ec000000f30f2ac7f30f5e05(<codecave:pobh_comdat_pool>+0x18)83ec04f30f110424ffd083c404d95c240cf30f104c240cf30f590d(<codecave:pobh_comdat_pool>+0xc)0f57c0f30f58c1e9c700000083ff3c755df30f1005(<codecave:pobh_comdat_pool>+0xc)f30f100d(<codecave:pobh_comdat_pool>+0xb0)b918010000ba4b000000e8([codecave:pobh.text0]+0xd20)f20f1046140f5805(<codecave:pobh_comdat_pool>+0xc0)0f130424f30f10461cf30f1144240889e0f30f1015(<codecave:pobh_comdat_pool>+0x10)f30f101d(<codecave:pobh_comdat_pool>+0xd0)6a646818010000680a2b5d40e99501000081ff540100007274a1(<codecave:pobh.bss2>+0x24)85c00f848c0100008d8facfefffff30f2ac1f30f5e05(<codecave:pobh_comdat_pool>+0x10)83ec04f30f110424ffd083c404d95c2410f30f10442410f30f5905(<codecave:pobh_comdat_pool>+0x14)f30f5805(<codecave:pobh_comdat_pool>+0xc)e9600100006a0968<option:pobh_const_0>e8[codecave:pobh.text6]83c4080f57c0f30f100d(<codecave:pobh_comdat_pool>+0xb0)b902000000bac8000000e8([codecave:pobh.text0]+0xd20)83ff777f5083ff500f849700000083ff640f85b7fefffff20f1046140f5805(<codecave:pobh_comdat_pool>+0xf0)0f130424f30f10461cf30f1144240889e0f30f1015(<codecave:pobh_comdat_pool>+0x10)f30f101d(<codecave:pobh_comdat_pool>+0xd0)6a6468f000000068e4cb9640e9c400000083ff780f848200000081ff8c0000000f8564fefffff20f1046140f5805(<codecave:pobh_comdat_pool>+0x110)0f130424f30f10461cf30f1144240889e0f30f1015(<codecave:pobh_comdat_pool>+0x10)f30f101d(<codecave:pobh_comdat_pool>+0xd0)6a6468c8000000684302bf40eb74f20f1046140f5805(<codecave:pobh_comdat_pool>+0x100)0f130424f30f10461cf30f1144240889e0f30f1015(<codecave:pobh_comdat_pool>+0x10)f30f101d(<codecave:pobh_comdat_pool>+0xd0)6a64680401000068b5b08240eb39f20f1046140f5805(<codecave:pobh_comdat_pool>+0xe0)0f130424f30f10461cf30f1144240889e0f30f1015(<codecave:pobh_comdat_pool>+0x10)f30f101d(<codecave:pobh_comdat_pool>+0xd0)6a6468dc0000006813e7aa4050e8[0x4571d0]83c4145e5fc36a0968<option:pobh_const_0>e8[codecave:pobh.text6]83c4080f57c0f30f100d(<codecave:pobh_comdat_pool>+0x10)b905000000e9adfeffff0f1f8400000000005589e553575683e4f081eca00000008954242cf30f114c242889cf8b1d<0x4e9a68>0fc6c0000f29842480000000660f57c9be32000000662e0f1f840000000000660f28c1f20f1015(<codecave:pobh_comdat_pool>+0x38)f20f59c2f20f5ac0f20f580d(<codecave:pobh_comdat_pool>+0x50)f20f114c2438f20f104c2438f30f5ac0f20f59caf20f5ac9f20f1015(<codecave:pobh_comdat_pool>+0x40)f20f59c2f20f101d(<codecave:pobh_comdat_pool>+0x48)f20f5ec3f30f5ac9f20f5ac0f20f59caf20f5ecbf20f5ac90f57d2f30f5ad0f20f11542440f30f1043140f294424100f57c0f30f5ac1f20f11442430f20f111424e8[th_cos]dd5c2468f30f1043180f284c24100f14c80f294c2410f20f10442440f20f110424e8[th_sin]dd5c2460f20f10442468660f16442460660f5ac00f598424800000000f584424100f29442440f30f1043140f29442410f20f10442430f20f110424e8[th_cos]dd5c2458f30f1043180f284c24100f14c80f294c2410f20f10442430f20f110424e8[th_sin]dd5c2450f20f10442458660f16442450660f5ac00f598424800000000f584424100f285424400f28ca0f58c80f590d(<codecave:pobh_comdat_pool>+0x60)0f134c2474c744247c000000000f5cc20f57c9f30f5ac80fc6c055f30f5ac0f20f114c2408f20f110424e8[th_atan2]8b44242c8944240c897c2408d95c24048d442474890424f30f105424280f28dae8[0x4571d0]83ec10f20f104c24384e0f854ffeffff8d65f45e5f5b5dc30f1f800000000053575650c704240000000089e2b9<option:pobh_const_1>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x44)83c40485f674568b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519bb0>ffd7566a016880000000ff35<0x519bb0>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519bb0>ffd3566a00688000000050ffd76a04ff35<0x519bb0>ffd3566a01688000000050ffd731c083c4045e5f5bc3",
+            code: "31c0c3666666662e0f1f84000000000055535756508b0d(<codecave:pobh.bss2>+0x8)a1<codecave:pobh.bss2>29c183f9277713b9<codecave:pobh.bss2>6a0ae8[codecave:pobh.text34]a1<codecave:pobh.bss2>eb2b8b15(<codecave:pobh.bss2>+0x4)89d629c689f1c1f90283f909771739d00f84cc00000083c6fc83fe1c736f89c7e9ab000000b9<codecave:pobh.rdata41>660f6ec1660f70c000f30f7f00f30f7f4010c74020<codecave:pobh.rdata41>c74024<codecave:pobh.rdata41>83c02889c28915(<codecave:pobh.bss2>+0x4)a1<codecave:pobh.bss2>c700<codecave:pobh.rdata42>b8<codecave:pobh.rdata42>8b0d<codecave:pobh.bss2>660f6ec0660f70c000f30f7f4104f30f7f4114c74124<codecave:pobh.rdata42>83c4045e5f5b5dc3890c24c1ee024689f383e3f88d3c9831edb9<codecave:pobh.rdata41>660f6ec1660f70c0000f1f4000f30f7f04a8f30f7f44a81083c50839eb75ee39de8b0c2474140f1f8000000000c707<codecave:pobh.rdata41>83c70439d775f3a1(<codecave:pobh.bss2>+0x4)be0a00000029ce83fe08730689f189c2eb4c89f783e7f889f183e1078d14b831dbbd<codecave:pobh.rdata41>660f6ec5660f70c0006666666666662e0f1f840000000000f30f7f0498f30f7f44981083c30839df75ee39fe0f8415ffffff660f1f440000c702<codecave:pobh.rdata41>83c2044975f4e9fefeffff6666666666662e0f1f840000000000ff25(<codecave:pobh_imports>+0x50)662e0f1f840000000000ff25(<codecave:pobh_imports>+0x4c)662e0f1f840000000000ff25(<codecave:pobh_imports>+0x4c)662e0f1f840000000000568b35(<codecave:pobh_imports>+0x18)660f1f840000000000ffd6ebfc6666662e0f1f8400000000008b4424048b4c24088908c30f1f4400008b4424048b4c240c8b5424088910894804c366666666662e0f1f84000000000050f30f10442408f30f59c0f30f110424d9042458c366662e0f1f84000000000050f30f1005<codecave:pobh.rdata3>0f28c8f30f5c4c2408f30f59c9f30f5cc1f30f110424d9042458c36666662e0f1f84000000000050f30f10442408f30f100d<codecave:pobh.rdata4>0f2ec8760af30f58c0f30f59c0eb2af30f58c0f30f5805<codecave:pobh.rdata5>f30f100d<codecave:pobh.rdata3>0f28d1f30f5cd0f30f59d20f28c1f30f5cc2f30f58c1f30f5905<codecave:pobh.rdata4>f30f110424d9042458c3660f1f440000d9442404c366662e0f1f840000000000c705(<codecave:pobh.bss2>+0x10)(<codecave:pobh.text0>+0x2d0)c705(<codecave:pobh.bss2>+0x14)(<codecave:pobh.text0>+0x220)c705(<codecave:pobh.bss2>+0x18)00000000c705(<codecave:pobh.bss2>+0x1c)00000000c705(<codecave:pobh.bss2>+0x20)(<codecave:pobh.text0>+0x240)0f57c00f1105(<codecave:pobh.bss2>+0x24)c705(<codecave:pobh.bss2>+0x34)(<codecave:pobh.text0>+0x270)c705(<codecave:pobh.bss2>+0x38)000000000f1105(<codecave:pobh.bss2>+0x40)0f1105(<codecave:pobh.bss2>+0x50)0f1105(<codecave:pobh.bss2>+0x60)0f1105(<codecave:pobh.bss2>+0x70)0f1105(<codecave:pobh.bss2>+0x80)c36666662e0f1f84000000000083ec148b4c24188b048d(<codecave:pobh.bss2>+0x10)85c074538b4c242c2b4c2428f30f2ac1f30f2a4c241cf30f10542424f30f5ec1f30f5c542420f30f11542408f30f110424ffd0d95c2410f30f10442408f30f59442410f30f58442420f30f1144240cd944240c83c414c3894c2404c70424<codecave:pobh.rdata43>e8[codecave:pobh.text6]d9ee83c414c30f1f4400000f57d26a006a00e8[0x41E750]0f57db6a006a006a00e8[0x41E850]8b0d<0x4e9a68>e8([codecave:pobh.text0]+0x430)6a01e8[0x41E250]83ec180f57c00f110424c744241400000000c744241000000000e8[0x420400]c30f1f4000575683ec108b792c3b7928750683c4105e5fc383ff3b7f43a1(<codecave:pobh.bss2>+0x34)85c00f8484000000f30f2ac7f30f5e05<codecave:pobh.rdata10>f30f110424ffd0d95c2408f30f104c2408f30f590d<codecave:pobh.rdata7>0f57c0f30f58c183c4105e5fe9([codecave:pobh.text0]+0x710)81ff540100007267a1(<codecave:pobh.bss2>+0x34)85c0743d81c7acfefffff30f2ac7f30f5e05<codecave:pobh.rdata8>f30f110424ffd0d95c240cf30f1044240cf30f5905<codecave:pobh.rdata9>f30f5805<codecave:pobh.rdata7>83c4105e5fe9([codecave:pobh.text0]+0x710)c744240409000000c70424<codecave:pobh.rdata43>e8[codecave:pobh.text6]0f57c083c4105e5fe9([codecave:pobh.text0]+0x710)83c114f30f1005<codecave:pobh.rdata7>89cee8([codecave:pobh.text0]+0x710)89f131d2e8([codecave:pobh.text0]+0xb00)83ff500f821fffffff89f1ba01000000e8([codecave:pobh.text0]+0xb00)83ff640f820affffff89f1ba02000000e8([codecave:pobh.text0]+0xb00)83ff780f82f5feffff89f1ba03000000e8([codecave:pobh.text0]+0xb00)81ff8c0000000f82ddfeffff89f1ba0400000083c4105e5fe9([codecave:pobh.text0]+0xb00)6666666666662e0f1f840000000000c705(<codecave:pobh.bss2>+0x10)(<codecave:pobh.text0>+0x2d0)c705(<codecave:pobh.bss2>+0x14)(<codecave:pobh.text0>+0x220)c705(<codecave:pobh.bss2>+0x18)00000000c705(<codecave:pobh.bss2>+0x1c)00000000c705(<codecave:pobh.bss2>+0x20)(<codecave:pobh.text0>+0x240)0f57c00f1105(<codecave:pobh.bss2>+0x24)c705(<codecave:pobh.bss2>+0x34)(<codecave:pobh.text0>+0x270)c705(<codecave:pobh.bss2>+0x38)000000000f1105(<codecave:pobh.bss2>+0x40)0f1105(<codecave:pobh.bss2>+0x50)0f1105(<codecave:pobh.bss2>+0x60)0f1105(<codecave:pobh.bss2>+0x70)0f1105(<codecave:pobh.bss2>+0x80)e9([codecave:pobh.text0]+0x10)0f1f8400000000005756508b74241068(<codecave:pobh.text0>+0x600)68<codecave:pobh.rdata44>e8[codecave:pobh.text6]83c408c704240000000089e289f16a00e8[0x402DB0]89c668000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c756ff15(<codecave:pobh_imports>+0x4c)83c40468<codecave:pobh.rdata45>e8[codecave:pobh.text6]83c40489f883c4045e5fc35553575683ec148b742428a1<0x4e9ba0>8b48148b15<0x4e9a70>8b7a78f20f1006f20f1180ec0500008b56088990f405000085c974438b5c242cf7d783e701eb0689e985ed74328b69088379100174f18b01897c240cf30f10442430f30f11442408895c2404893424c744241001000000ff502083ec14ebc883c4145e5f5b5dc368(<codecave:pobh.text0>+0x6e0)68<codecave:pobh.rdata46>e8[codecave:pobh.text6]83c4088b0d<0x4e9a68>81792c690100007f05e8([codecave:pobh.text0]+0x430)31c0c30f1f80000000005589e553575683e4f081ecc00000000f29442450a1<0x4e9a68>8944243ca1<0x4e9a70>8b78788b35<0x4e9a6c>8b4e6c898ed0f0410185c90f84210100008b41048986d4f041018b0985c90f841c010000f7d783e7018d9ed4f041010f28442450f30f5ae0f20f102d<codecave:pobh.rdata11>f20f1035<codecave:pobh.rdata12>f20f103d<codecave:pobh.rdata13>0f1f4400000fb7918a0c00004a6683fa010f87ae000000837924000f85a4000000f30f1081380c00008b54243cf30f5c4214f30f10913c0c0000f30f5c5218f30f59d2f30f59c0f30f1089580c0000f30f5ac90f28d9f20f59ddf20f58dcf20f5adbf30f58c2f30f59db0f2ed87256f20f59cef20f58ccf20f58cff20f5ac9f30f59c90f2ec1723d893c24f20f11642420e8[0x41E250]83ec04f20f103d<codecave:pobh.rdata13>f20f1035<codecave:pobh.rdata12>f20f102d<codecave:pobh.rdata11>f20f106424208b036666662e0f1f8400000000008986d0f0410185c0741b8b500489138b0889d085c90f8525ffffffeb0e81c6d4f0410189f3c703000000000f284424500fc6c0000f2944245031ff0f57c9f20f102d<codecave:pobh.rdata17>eb270f1f840000000000f20f108c2488000000f20f102d<codecave:pobh.rdata17>f20f58cd4783ff320f84380200000f28c1f20f1015<codecave:pobh.rdata14>f20f59c2f20f5ac0f30f5ac0f20f101d<codecave:pobh.rdata15>f20f59c3f20f1025<codecave:pobh.rdata16>f20f5ec4f20f5ac0f20f118c2488000000f20f58cdf20f59caf20f5ac9f30f5ac9f20f59cbf20f5eccf20f5ac90f57d2f30f5ad0f20f115424700f57c0f30f5ac1f20f114424688b74243cf30f1046140f29442420f20f111424e8[th_cos]dd9c24a8000000f30f1046180f284c24200f14c80f294c2420f20f10442470f20f110424e8[th_sin]dd9c24a0000000f20f108424a8000000660f168424a0000000660f5ac00f594424500f584424200f29442470f30f1046140f29442420f20f10442468f20f110424e8[th_cos]dd9c2498000000f30f1046180f284c24200f14c80f294c2420f20f10442468f20f110424e8[th_sin]dd9c2490000000f20f10842498000000660f16842490000000660f5ac00f594424500f584424200f285424700f28ca0f58c80f590d<codecave:pobh.rdata18>0f134c2444c744244c000000000f5cc20f57c9f30f5ac80fc6c055f30f5ac0f20f114c2408f20f110424e8[th_atan2]d95c2440f30f10442440f30f11442420f20f1005<codecave:pobh.rdata19>f20f118424b4000000a1<0x4e9ba0>8b48148b15<0x4e9a70>8b5a78f20f10442444f20f1180ec0500008b54244c8990f405000085c90f8405fefffff7d383e301eb1866666666662e0f1f84000000000089f185f60f84e6fdffff8b71088379100174ed8b01895c240cf30f10442420f30f114424088d9424b4000000895424048d542444891424c744241001000000ff502083ec14ebb98d65f45e5f5b5dc3905589e553575683e4f883ec6889d6f30f2acaf30f590d<codecave:pobh.rdata20>f30f114c241889cff30f1005<codecave:pobh.rdata21>f30f58c1f30f5ac0f20f11442420f20f110424e8[th_cos]dd5c2458f30f10442418f30f5805<codecave:pobh.rdata22>f30f5ac0f20f11442418f20f110424e8[th_cos]dd5c2450f20f10442420f20f110424e8[th_sin]dd5c2448f20f10442418f20f110424e8[th_sin]dd5c2440f20f10442450660f16442440660f280d<codecave:pobh.rdata23>660f59c1f20f10542458660f16542448660f59d1660f58d0660f5ac2f20f100f0f58c80f134c2434f30f104708f30f1144243cc74424300040e443c744242c0000a0410f57c0f20f2ac6f20f5905<codecave:pobh.rdata24>f20f5805<codecave:pobh.rdata25>f20f5ad8a1<0x4e9a70>8b4078f7d083e001894424088d44242c894424048d7c2434893c24f30f115c2420e8[0x41E850]83ec0ca1<0x4e9ba0>8b48148b15<0x4e9a70>8b5a78f20f10442434f20f1180ec0500008b54243c8990f405000085c9744bf7d383e301eb0e0f1f84000000000089f185f674368b71088379100174f18b01895c240cf30f10442420f30f114424088d54242c89542404893c24c744241001000000ff502083ec14ebc48d65f45e5f5b5dc36666662e0f1f84000000000053575683ec148b35<0x4e9a68>8b7e2c8d5e1468(<codecave:pobh.text0>+0xcc0)68<codecave:pobh.rdata47>e8[codecave:pobh.text6]83c40853ff7628ff762cff35<0x4e9a68>68<codecave:pobh.rdata48>e8[codecave:pobh.text6]83c41481ff69010000750cc7465000000000e94f0200003b7e280f844602000083ff3b7f44a1(<codecave:pobh.bss2>+0x34)85c00f84ec000000f30f2ac7f30f5e05<codecave:pobh.rdata10>83ec04f30f110424ffd083c404d95c240cf30f104c240cf30f590d<codecave:pobh.rdata7>0f57c0f30f58c1e9c700000083ff3c755df30f1005<codecave:pobh.rdata7>f30f100d<codecave:pobh.rdata26>b918010000ba4b000000e8([codecave:pobh.text0]+0xfa0)f20f1046140f5805<codecave:pobh.rdata27>0f130424f30f10461cf30f1144240889e0f30f1015<codecave:pobh.rdata8>f30f101d<codecave:pobh.rdata28>6a646818010000680a2b5d40e99501000081ff540100007274a1(<codecave:pobh.bss2>+0x34)85c00f84970100008d8facfefffff30f2ac1f30f5e05<codecave:pobh.rdata8>83ec04f30f110424ffd083c404d95c2410f30f10442410f30f5905<codecave:pobh.rdata9>f30f5805<codecave:pobh.rdata7>e96b0100006a0968<codecave:pobh.rdata43>e8[codecave:pobh.text6]83c4080f57c0f30f100d<codecave:pobh.rdata26>b902000000bac8000000e8([codecave:pobh.text0]+0xfa0)83ff777f5083ff500f849700000083ff640f8508010000f20f1046140f5805<codecave:pobh.rdata30>0f130424f30f10461cf30f1144240889e0f30f1015<codecave:pobh.rdata8>f30f101d<codecave:pobh.rdata28>6a6468f000000068e4cb9640e9c400000083ff780f848200000081ff8c0000000f85b5000000f20f1046140f5805<codecave:pobh.rdata32>0f130424f30f10461cf30f1144240889e0f30f1015<codecave:pobh.rdata8>f30f101d<codecave:pobh.rdata28>6a6468c8000000684302bf40eb74f20f1046140f5805<codecave:pobh.rdata31>0f130424f30f10461cf30f1144240889e0f30f1015<codecave:pobh.rdata8>f30f101d<codecave:pobh.rdata28>6a64680401000068b5b08240eb39f20f1046140f5805<codecave:pobh.rdata29>0f130424f30f10461cf30f1144240889e0f30f1015<codecave:pobh.rdata8>f30f101d<codecave:pobh.rdata28>6a6468dc0000006813e7aa4050e8[0x4571d0]68<codecave:pobh.rdata49>e8[codecave:pobh.text6]83c4185e5f5bc36a0968<codecave:pobh.rdata43>e8[codecave:pobh.text6]83c4080f57c0f30f100d<codecave:pobh.rdata8>b905000000e9a2feffff662e0f1f8400000000005589e553575683e4f081eca00000008954242cf30f114c242889cf8b1d<0x4e9a68>0fc6c0000f29842480000000660f57c9be32000000662e0f1f840000000000660f28c1f20f1015<codecave:pobh.rdata14>f20f59c2f20f5ac0f20f580d<codecave:pobh.rdata17>f20f114c2438f20f104c2438f30f5ac0f20f59caf20f5ac9f20f1015<codecave:pobh.rdata15>f20f59c2f20f101d<codecave:pobh.rdata16>f20f5ec3f30f5ac9f20f5ac0f20f59caf20f5ecbf20f5ac90f57d2f30f5ad0f20f11542440f30f1043140f294424100f57c0f30f5ac1f20f11442430f20f111424e8[th_cos]dd5c2468f30f1043180f284c24100f14c80f294c2410f20f10442440f20f110424e8[th_sin]dd5c2460f20f10442468660f16442460660f5ac00f598424800000000f584424100f29442440f30f1043140f29442410f20f10442430f20f110424e8[th_cos]dd5c2458f30f1043180f284c24100f14c80f294c2410f20f10442430f20f110424e8[th_sin]dd5c2450f20f10442458660f16442450660f5ac00f598424800000000f584424100f285424400f28ca0f58c80f590d<codecave:pobh.rdata18>0f134c2474c744247c000000000f5cc20f57c9f30f5ac80fc6c055f30f5ac0f20f114c2408f20f110424e8[th_atan2]8b44242c8944240c897c2408d95c24048d442474890424f30f105424280f28dae8[0x4571d0]83ec10f20f104c24384e0f854ffeffff8d65f45e5f5b5dc30f1f80000000008b0d<0x503c18>a1<0x4e9a70>ff7014e8[0x488510]85c07401c38b0d<0x4e9a70>c7411400000000c3662e0f1f840000000000a1<0x4e9a70>8b407483c0b283f8160f92c0c366666666662e0f1f84000000000056a1<codecave:pobh.bss2>8b305668<codecave:pobh.rdata50>e8[codecave:pobh.text6]83c40889f05ec3660f1f4400005357565068(<codecave:pobh.text0>+0x600)68<codecave:pobh.rdata44>e8[codecave:pobh.text6]83c408c704240000000089e2b9<codecave:pobh.rdata51>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x4c)83c40468<codecave:pobh.rdata45>e8[codecave:pobh.text6]83c40485f6747b8b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519BB4>ffd7566a026880000000ff35<0x519BB4>ffd7566a016880000000ff35<0x519BB4>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519BB4>ffd3566a00688000000050ffd76a04ff35<0x519BB4>ffd3566a02688000000050ffd76a04ff35<0x519BB4>ffd3566a01688000000050ffd783c4045e5f5bc3669053575650ff15(<codecave:pobh_imports>+0x1c)8b3d(<codecave:pobh_imports>+0x34)6a00ffd783c4048b35(<codecave:pobh_imports>+0x30)5068<codecave:pobh.rdata52>68<codecave:pobh.rdata53>ffd683c40c6a01ffd783c4045068<codecave:pobh.rdata54>68<codecave:pobh.rdata55>ffd683c40c6a02ffd783c4045068<codecave:pobh.rdata54>68<codecave:pobh.rdata55>ffd683c40c68(<codecave:pobh.text0>+0x12f0)68<codecave:pobh.rdata56>e8[codecave:pobh.text6]83c40868(<codecave:pobh.text0>+0xcc0)68<codecave:pobh.rdata57>e8[codecave:pobh.text6]83c40868(<codecave:pobh.text0>+0x600)68<codecave:pobh.rdata44>e8[codecave:pobh.text6]83c408c704240000000089e2b9<codecave:pobh.rdata51>6a00e8[0x402DB0]89c768000003006a01ff74240850ff15(<codecave:pobh_imports>+0x14)89c657ff15(<codecave:pobh_imports>+0x4c)83c40468<codecave:pobh.rdata45>e8[codecave:pobh.text6]83c40485f6747b8b3d(<codecave:pobh_imports>+0xc)566a006880000000ff35<0x519bb0>ffd7566a026880000000ff35<0x519bb0>ffd7566a016880000000ff35<0x519bb0>ffd78b1d(<codecave:pobh_imports>+0x8)6a04ff35<0x519bb0>ffd3566a00688000000050ffd76a04ff35<0x519bb0>ffd3566a02688000000050ffd76a04ff35<0x519bb0>ffd3566a01688000000050ffd768<codecave:pobh.rdata58>e8[codecave:pobh.text6]83c40431c083c4045e5f5bc3",
         },
         "pobh.bss2": {
             access: "rw",
-            size: 128,
+            size: 144,
+        },
+        "pobh.rdata3": {
+            access: "r",
+            code: "0000803f",
+        },
+        "pobh.rdata4": {
+            access: "r",
+            code: "0000003f",
+        },
+        "pobh.rdata5": {
+            access: "r",
+            code: "000080bf",
         },
         "pobh.text6": {
             access: "rx",
-            code: "535756508b7c24148d5c2418891c246a01ff15(<codecave:pobh_imports>+0x2c)83c40489c6e8[codecave:pobh.text33]536a005756ff7004ff30ff15(<codecave:pobh_imports>+0x24)83c41c5e5f5bc3",
+            code: "535756508b7c24148d5c2418891c246a01ff15(<codecave:pobh_imports>+0x34)83c40489c6e8[codecave:pobh.text33]536a005756ff7004ff30ff15(<codecave:pobh_imports>+0x2c)83c41c5e5f5bc3",
+        },
+        "pobh.rdata7": {
+            access: "r",
+            code: "00007043",
+        },
+        "pobh.rdata8": {
+            access: "r",
+            code: "0000a041",
+        },
+        "pobh.rdata9": {
+            access: "r",
+            code: "000070c3",
+        },
+        "pobh.rdata10": {
+            access: "r",
+            code: "00007042",
+        },
+        "pobh.rdata11": {
+            access: "r",
+            code: "000000000000e03f",
+        },
+        "pobh.rdata12": {
+            access: "r",
+            code: "000000000000e0bf",
+        },
+        "pobh.rdata13": {
+            access: "r",
+            code: "00000000000024c0",
+        },
+        "pobh.rdata14": {
+            access: "r",
+            code: "cdcccccccccc1c40",
+        },
+        "pobh.rdata15": {
+            access: "r",
+            code: "ea2e4454fb210940",
+        },
+        "pobh.rdata16": {
+            access: "r",
+            code: "0000000000806640",
+        },
+        "pobh.rdata17": {
+            access: "r",
+            code: "000000000000f03f",
+        },
+        "pobh.rdata18": {
+            access: "r",
+            code: "0000003f0000003f0000000000000000",
+        },
+        "pobh.rdata19": {
+            access: "r",
+            code: "0000f0410000f0410000000000000000",
+        },
+        "pobh.rdata20": {
+            access: "r",
+            code: "7cd920c0",
+        },
+        "pobh.rdata21": {
+            access: "r",
+            code: "db0fc93f",
+        },
+        "pobh.rdata22": {
+            access: "r",
+            code: "3a4671bf",
+        },
+        "pobh.rdata23": {
+            access: "r",
+            code: "0000000000005e400000000000005e40",
+        },
+        "pobh.rdata24": {
+            access: "r",
+            code: "55f29c762f1be43f",
+        },
+        "pobh.rdata25": {
+            access: "r",
+            code: "35cd174361a50b40",
+        },
+        "pobh.rdata26": {
+            access: "r",
+            code: "00002041",
+        },
+        "pobh.rdata27": {
+            access: "r",
+            code: "86118d42fb57b7410000000000000000",
+        },
+        "pobh.rdata28": {
+            access: "r",
+            code: "0040e443",
+        },
+        "pobh.rdata29": {
+            access: "r",
+            code: "b75e2e42f6ff6fc20000000000000000",
+        },
+        "pobh.rdata30": {
+            access: "r",
+            code: "58676d35015494420000000000000000",
+        },
+        "pobh.rdata31": {
+            access: "r",
+            code: "c75e2ec2010070c20000000000000000",
+        },
+        "pobh.rdata32": {
+            access: "r",
+            code: "84118dc21258b7410000000000000000",
         },
         "pobh.text33": {
             access: "rx",
-            code: "b8(<codecave:pobh_comdat_pool>+0x120)c3",
+            code: "b8<codecave:pobh.bss59>c3",
         },
-        pobh_comdat_pool: {
+        "pobh.text34": {
+            access: "rx",
+            code: "555357568b54241481fa000000400f83c700000089ce8b018b490829c1c1f90289cfd1efbbffffff3fbdffffff3f29fd01cf39d70f46fa39e90f47fb85c07439f7c100fcff3f74138b48fc83c0fc29c883f8200f838700000089c850ff15(<codecave:pobh_imports>+0x4c)83c404c70600000000c7460400000000c746080000000081ff0000004073558d04bd0000000081ff00040000722281fff8ffff3f733e83c02350ff15(<codecave:pobh_imports>+0x50)83c40489c183c02383e0e08948fceb1285ff740c50ff15(<codecave:pobh_imports>+0x50)83c404eb0231c089068946048d04b88946085e5f5b5dc20400e8[codecave:pobh.text36]e8[codecave:pobh.text35]ff15(<codecave:pobh_imports>+0x44)",
+        },
+        "pobh.text35": {
+            access: "rx",
+            code: "568b35(<codecave:pobh_imports>+0x18)660f1f840000000000ffd6ebfc",
+        },
+        "pobh.text36": {
+            access: "rx",
+            code: "83ec08c7442404<codecave:pobh.rdata60>c70424<codecave:pobh.rdata61>89e1e8[codecave:pobh.text37]",
+        },
+        "pobh.text37": {
+            access: "rx",
+            code: "5683ec14a1(<codecave:pobh.bss2>+0xc)85c07409890c2489ceffd089f18b01ff50080f57c00f110424c744241000000000ff15(<codecave:pobh_imports>+0x48)",
+        },
+        "pobh.text38": {
+            access: "rx",
+            code: "5689ce837c240800740a56ff15(<codecave:pobh_imports>+0x4c)83c40489f05ec20400",
+        },
+        "pobh.text39": {
+            access: "rx",
+            code: "8b490485c9b8<codecave:pobh.rdata62>0f45c1c3",
+        },
+        "pobh.text40": {
+            access: "rx",
+            code: "83ec140f57c00f110424c744241000000000ff15(<codecave:pobh_imports>+0x48)",
+        },
+        "pobh.rdata41": {
             access: "r",
-            code: "0000803f0000003f000080bf000070430000a041000070c30000704200000000000000000000e03f000000000000e0bf00000000000024c0cdcccccccccc1c40ea2e4454fb2109400000000000806640000000000000f03f00000000000000000000003f0000003f00000000000000000000f0410000f04100000000000000007cd920c0db0fc93f3a4671bf000000000000000000005e400000000000005e4055f29c762f1be43f35cd174361a50b400000204100000000000000000000000086118d42fb57b74100000000000000000040e443000000000000000000000000b75e2e42f6ff6fc2000000000000000058676d35015494420000000000000000c75e2ec2010070c2000000000000000084118dc21258b74100000000000000004c0127009f4a3f66",
+            code: "00",
+        },
+        "pobh.rdata42": {
+            access: "r",
+            code: "5465737420c3a9c3a0c3b9c3a900",
+        },
+        "pobh.rdata43": {
+            access: "r",
+            code: "4d6f6465206861736e2774206265656e20696d706c656d656e746564207965743a202564200a00",
+        },
+        "pobh.rdata44": {
+            access: "r",
+            code: "626567696e6e696e67206f66207468652066756e63206c6f61645f69636f6e2061743a2025780a00",
+        },
+        "pobh.rdata45": {
+            access: "r",
+            code: "456e64206f66207468652066756e63206c6f61645f69636f6e200a00",
+        },
+        "pobh.rdata46": {
+            access: "r",
+            code: "626567696e206f66207468652066756e6320686f6f6b5f73616e61655f626f6d625f656e642025780a00",
+        },
+        "pobh.rdata47": {
+            access: "r",
+            code: "626567696e6e696e67206f66207468652066756e6320626f6d625f73616e61652061743a2025780a00",
+        },
+        "pobh.rdata48": {
+            access: "r",
+            code: "426f6d62207074722025782c20426f6d6220616e6d73637269707474696d652025642c20426f6d6220707265762074696d652025642c20426f6d6220706f732025780a00",
+        },
+        "pobh.rdata49": {
+            access: "r",
+            code: "656e64206f66207468652066756e6320626f6d625f73616e61650a00",
+        },
+        "pobh.rdata50": {
+            access: "r",
+            code: "257300",
+        },
+        "pobh.rdata51": {
+            access: "r",
+            code: "746831352f69636f6e652e706e6700",
+        },
+        "pobh.rdata52": {
+            access: "r",
+            code: "7200",
+        },
+        "pobh.rdata53": {
+            access: "r",
+            code: "434f4e494e2400",
+        },
+        "pobh.rdata54": {
+            access: "r",
+            code: "7700",
+        },
+        "pobh.rdata55": {
+            access: "r",
+            code: "434f4e4f55542400",
+        },
+        "pobh.rdata56": {
+            access: "r",
+            code: "626567696e6e696e67206f66207468652066756e6320686f6f6b5f656e7472792061743a2025780a00",
+        },
+        "pobh.rdata57": {
+            access: "r",
+            code: "6c6f636174696f6e206f66207468652066756e6320626f6d625f73616e61652061743a2025780a00",
+        },
+        "pobh.rdata58": {
+            access: "r",
+            code: "456e64206f66207468652066756e6320686f6f6b5f656e747279200a00",
+        },
+        "pobh.bss59": {
+            access: "rw",
+            size: 8,
+        },
+        "pobh.rdata60": {
+            access: "r",
+            code: "626164206172726179206e6577206c656e67746800",
+        },
+        "pobh.rdata61": {
+            access: "r",
+            code: "<codecave:pobh.text38><codecave:pobh.text39><codecave:pobh.text40>",
+        },
+        "pobh.rdata62": {
+            access: "r",
+            code: "756e6b6e6f776e20657863657074696f6e00",
         },
         pobh_patch_init: {
             access: "rx",
-            code: "555357565068<option:kernel32_dll_str>e8[th_GetModuleHandleA]68<option:LoadLibraryA_str>50e8[th_GetProcAddress]89042431edbb<codecave:pobh_dlls>8b35<codecave:pobh_dlls>660f1f44000056e8[th_GetModuleHandleA]89c785c0750b56ff54240489c785c0743c8b730439f5741f6690ff34ad<codecave:pobh_import_names>57e8[th_GetProcAddress]85c0742b8904ad<codecave:pobh_imports>4539ee75e38b730883c30885f675b983c4045e5f5b5de92c000000505668<option:dll_load_failed_str>eb0d50ff34ad<codecave:pobh_import_names>68<option:import_failed_str>e8[th_GetLastError]894424086a1068<option:pobh_name_str>e8[log_mboxf]cce8([codecave:pobh.text0]+0x370)c3",
+            code: "555357565068<option:kernel32_dll_str>e8[th_GetModuleHandleA]68<option:LoadLibraryA_str>50e8[th_GetProcAddress]89042431edbb<codecave:pobh_dlls>8b35<codecave:pobh_dlls>660f1f44000056e8[th_GetModuleHandleA]89c785c0750b56ff54240489c785c0743c8b730439f5741f6690ff34ad<codecave:pobh_import_names>57e8[th_GetProcAddress]85c0742b8904ad<codecave:pobh_imports>4539ee75e38b730883c30885f675b983c4045e5f5b5de92c000000505668<option:dll_load_failed_str>eb0d50ff34ad<codecave:pobh_import_names>68<option:import_failed_str>e8[th_GetLastError]894424086a1068<option:pobh_name_str>e8[log_mboxf]cce8([codecave:pobh.text0]+0x580)c3",
             "export": true,
         },
         pobh_dlls: {
             access: "r",
-            code: "<option:user32_dll_str>06000000<option:kernel32_dll_str>09000000<option:ucrtbase_dll_str>1600000000000000",
+            code: "<option:user32_dll_str>06000000<option:kernel32_dll_str>0b000000<option:ucrtbase_dll_str>1800000000000000",
         },
         pobh_import_names: {
             access: "r",
-            code: "<option:MessageBoxA_str><option:MessageBoxW_str><option:GetWindow_str><option:SendMessageA_str><option:LoadImageA_str><option:CreateIconFromResource_str><option:AllocConsole_str><option:GetModuleHandleA_str><option:GetLastError_str><option:__stdio_common_vfprintf_str><option:freopen_str><option:__acrt_iob_func_str><option:__stdio_common_vfscanf_str><option:strtol_str><option:fgets_str><option:_invalid_parameter_noinfo_noreturn_str><option:_invoke_watson_str><option:free_str><option:malloc_str><option:_wcsicmp_str><option:strncmp_str><option:puts_str>",
+            code: "<option:MessageBoxA_str><option:MessageBoxW_str><option:GetWindow_str><option:SendMessageA_str><option:LoadImageA_str><option:CreateIconFromResource_str><option:DebugBreak_str><option:AllocConsole_str><option:GetModuleHandleA_str><option:GetLastError_str><option:Sleep_str><option:__stdio_common_vfprintf_str><option:freopen_str><option:__acrt_iob_func_str><option:__stdio_common_vfscanf_str><option:strtol_str><option:fgets_str><option:_invalid_parameter_noinfo_noreturn_str><option:_invoke_watson_str><option:free_str><option:malloc_str><option:_wcsicmp_str><option:strncmp_str><option:puts_str>",
         },
         pobh_imports: {
             access: "rw",
-            size: 88,
+            size: 96,
         },
     },
     binhacks: {
+        spell_card_draw_spell_name_jmp: {
+            addr: "0x4207F4",
+            code: "E9 [codecave:spell_card_draw_myself] ",
+        },
         hook_window_creation_ends: {
             addr: "0x473135",
-            code: "E9 [codecave:pobh.text0+0xf20]",
+            code: "E9 [codecave:pobh.text0+0x12f0]",
+        },
+        hook_dialog_window_creation: {
+            addr: "0x471622",
+            code: "E9 [codecave:hook_dialog_win_codecave]",
         },
         hook_sanae_bomb: {
             addr: "0x4184EF",
-            code: "E8 [codecave:pobh.text0+0xa80]",
+            code: "E8 [codecave:pobh.text0+0xcc0]",
         },
         Marisa_bomb_dont_follow_player: {
             addr: "0x41509E",
@@ -248,7 +492,7 @@
         },
         Sanae_bomb_hook_on_tick: {
             addr: "0x4186D2",
-            code: "E8 [codecave:pobh.text0+0x4b0] 5D C3",
+            code: "E8 [codecave:pobh.text0+0x6e0] 5D C3",
         },
         Sanae_reduce_duration: {
             addr: "0x418685",
@@ -263,27 +507,27 @@
             code: "E9 [codecave:Changing_loaded_slot_in_memory_for_Sanae] <int3:4>",
         },
         EscapingSnakesColor: {
-            addr: 4232620,
-            code: "\t    <nop:4> \t    E9 [codecave:NewCodeSnakesColor] \t    <int3:17> \t    ",
+            addr: "0x4095AC",
+            code: " <nop:4> E9 [codecave:NewCodeSnakesColor] <int3:17>",
         },
         Escaping_MusicBoss_msg: {
-            addr: 4427667,
+            addr: "0x438F93",
             code: "E9 [codecave:ChangeBossMusic]",
         },
         FuncSet4_better: {
-            addr: 4397485,
-            code: "C7 05 C0 F0 4D 00 05 00 00 00 F3 0F 10 0D C0 F0 4D 00 F3 0F 10 81 9C 0C 00 00 F3 0F 10 C1 F3 0F 11 81 9C 0C 00 00\t    <nop:30>",
+            addr: "0x004319AD",
+            code: "C7 05 C0 F0 4D 00 05 00 00 00 F3 0F 10 0D C0 F0 4D 00 F3 0F 10 81 9C 0C 00 00 F3 0F 10 C1 F3 0F 11 81 9C 0C 00 00 <nop:30>",
         },
         FuncSet4_F0_fix: {
-            addr: 4397306,
+            addr: "0x004318FA",
             code: "F3:0F10AB 9C020000",
         },
         change_jump_table_reference: {
-            addr: 4362876,
+            addr: "0x42927C",
             code: "0F B6 80 <codecave:change_ecl_ins_jump_table_location2> FF 24 85 <codecave:change_ecl_ins_jump_table_location>",
         },
         add_a_case_ecl_switch: {
-            addr: 4362865,
+            addr: "0x429271",
             code: "3D <707>",
         },
     },
