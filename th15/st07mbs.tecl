@@ -293,8 +293,106 @@ MBossCard2_448:
     anmPlay(1, 88);
 	MBossCard2_at();
 }
+void MBossCard2_at() {
+	int et2 = 2;
+	etNew(et2);
+	etAim(et2, 3);
+	etSprite(et2, 8, 2);
+	etCount(et2, 1, 1);
+	etSpeed(et2, 2f, 2f);
+	int et = 7;
+	etNew(et);
+	etAim(et, 3);
+	etSprite(et, 4, 4);
+	etCount(et, 1, 1);
+	etSpeed(et, 0f, 0f);
 
-void MBossCard2_at()
+	etEx(et2, 0, 2, 1, -999999, -999999f, -999999f);
+	//etEx(et2, 0, -2147483648, 40,-999999,  -999999f, -999999f);
+	// etEx(et2, 0, 4, 60,-999999,  -4f/60f, -999999f);// etExAccel(et2, 0, 60, -4f/60f, NEGF);
+	//etEx(et2, 0, -2147483648, 60,-999999,  -999999f, -999999f);// etExWait(et2, 0, 60);
+	//etEx(et2, 0, 4, 60,-999999,  3f/60f, -999999f);// etExAccel(et2, 0, 60, 6f/60f, NEGF);
+	ellipse(3,2, rad(0.2), rad(137.5), 1f) async;
+	ellipse(4,2, rad(-0.2), rad(-137.5), -1f) async;
+	
+	//ellipse2(5,rad(0.4), rad(137.5), 1f) async;
+	
+	while(1){
+		ellipse2(6, rad(1), rad(-137.5), -1f, RANDF2*rad(360));
+		+200:
+	}
+}
+
+void ellipse(int et, int etSrc, float step, float angle_step, float neg_)
+{
+	float t = 0f;
+	float a = ABS_X;
+	float b = ABS_Y;
+	float x = 0f;
+	float y = 0f;
+	float c = 70f;
+	float d = 70f;
+	float n1 = 5f;
+	float n2 = 6f;
+	float angle = rad(90);
+	etCopy(et, etSrc);
+	etEx(et, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	while(1){
+		y = c*cos(n1*t)+10f*cos(3f*t);
+		x = d*sin(n2*t)+10f*sin(10f*t);
+		etOffsetAbs(et, x+a, y+b);
+		etAngle(et, angle, 0f);
+		etOn(et);
+		t += step;
+		angle += angle_step;
+		angle_step += rad(0.8)*neg_;
+		wait(1);
+    }
+}
+
+float cos_p(float n, float c, float t, float N, float N1){
+	return n*cos(2f*PI*t*c*N/N1);
+}
+float sin_p(float n,float c,float t, float N, float N1){
+	return n*sin(2f*PI*t*c*N/N1);
+}
+
+void ellipse2(int et,float step, float angle_step, float neg_, float begin)
+{
+	float t = begin;
+	float a = ABS_X;
+	float b = ABS_Y;
+	float x = 0f;
+	float y = 0f;
+	float c = 70f;
+	float d = 70f;
+	float n1 = 5f;
+	float n2 = 6f;
+	float angle = rad(90);
+	etCopy(et, 7);
+	etExSet(et, 0, 0,EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(et, 1, 0, EX_WAIT, 120 ,NEG, NEGF, NEGF);
+	etExSet(et, 2, 0, EX_ACCEL, 60,NEG,  1f/60f, NEGF);
+	// etExWait(et2, 0, 60);
+	// etExAc
+	while(t <= rad(360)+begin){
+		
+		
+		x = cos_p(11f, -2f, t, 1f, 3f)+cos_p(12f, -5f,t, 2f, 3f)+cos_p(23f, 2f,t, 3f, 3f);
+		y = sin_p(11f, -2f, t, 1f, 3f)+sin_p(12f, -5f,t, 2f, 3f)+sin_p(23f, 2f,t, 3f, 3f);
+		//mathAngle(angle, BOSS_X, BOSS_Y, 2f*x+a,2f*y+b);
+		etOffsetAbs(et, 3f*x+a, 3f*y+b);
+		etAngle(et, angle, 0f);
+		etOn(et);
+		t += step;
+		angle+= angle_step;
+		wait(1);
+    }
+}
+
+
+
+void MBossCard2_at_()
 {
 	float A, C, B = 0f, D = 1f, E = 1f;
 	int color = 0;
