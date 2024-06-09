@@ -1,6 +1,9 @@
 #pragma once
 #include <Windows.h>
 #include <cstdint>
+#include <thcrap.h>
+
+
 #define noinline [[clang::noinline]]
 #define forceinline [[clang::always_inline]]
 #define _BYTE BYTE
@@ -41,6 +44,13 @@ struct zInt3 {
 };
 struct zInt2 {
 	int x, y;
+};
+
+struct D3COLOR {
+	char a;
+	char r;
+	char g;
+	char b;
 };
 
 
@@ -134,15 +144,6 @@ struct zPlayerHitbox_related
 	int hitbox_radius;
 };
 
-
-
-struct D3DCOLOR
-{
-	char b;
-	char g;
-	char r;
-	char a;
-};
 
 struct D3DMATRIX
 {
@@ -286,9 +287,9 @@ struct zAnmVmPrefix
 	char __unknown_1322;
 	_BYTE gap52B[9];
 	int flags_related_to_world_ui_lists__only_in_lolk;
-	D3DCOLOR color_1;
-	D3DCOLOR color_2;
-	D3DCOLOR mixed_inherited_color;
+	D3COLOR color_1;
+	D3COLOR color_2;
+	D3COLOR mixed_inherited_color;
 };
 
 
@@ -655,6 +656,69 @@ struct zSpellcard
 	char __end[];
 };
 
+struct zGlobalsInner
+{
+	int CURRENT_STAGE;
+	int __CURRENT_STAGE_COPY;
+	int CURRENT_CHAPTER;
+	int TIME_IN_STAGE;
+	int TIME_IN_CHAPTER;
+	int CHARACTER;
+	int SUBSHOT__ZERO_IN_TH15;
+	int CURRENT_SCORE;
+	int DIFFICULTY;
+	int CONTINUES_USED;
+	int RANK;
+	int GRAZE_TOTAL;
+	int GRAZE_IN_CHAPTER;
+	int SPELL_ID;
+	char __unknown_56;
+	int GLOBAL_MISS_COUNT;
+	int NUM_POINT_ITEMS_COLLECTED;
+	int CURRENT_PIV;
+	int INITIAL_PIV;
+	int MAXIMUM_PIV;
+	int CURRENT_POWER;
+	int __CURRENT_POWER_COPY;
+	int POWER_PER_LEVEL;
+	char __unknown_92;
+	int CURRENT_LIVES;
+	int CURRENT_LIFE_FRAGMENTS;
+	int __POSSIBLY_EXTENDS_RECEIVED_FROM_LIFE_FRAGMENTS;
+	int CURRENT_BOMBS;
+	int CURRENT_BOMB_FRAGMENTS;
+	char __unknown_116;
+	_BYTE gap75[15];
+	zFloat3 LAST_POINT_OR_POWER_COLLECTED_POS;
+	int __DDC_ITEM_SPAWN_COUNT;
+	int ENEMIES_SPAWNED_IN_CHAPTER;
+	int ENEMIES_DESTROYED_IN_CHAPTER;
+	char music_filename[256];
+	char __unknown_412;
+	_BYTE gap19D[7];
+	int __MAYBE__POINTDEVICE_RESETS_TOTAL;
+	int __MAYBE__POINTDEVICE_RESETS_BY_STAGE[8];
+	int __MAYBE__POINTDEVICE_RESETS_IN_CHAPTER;
+};
+
+
+struct zGlobals
+{
+	zGlobalsInner inner;
+	int HIGH_SCORE;
+	int HIGH_SCORE_CONTINUES_DIGIT;
+	char __unknown_468;
+	zGlobalsInner snapshot_inner;
+	int MODEFLAGS;
+	int __field_3a8;
+	char __unknown_940;
+	_BYTE gap3AD[11];
+	double __field_3b8;
+	char autosave_filename_buffer[24];
+	int __unknown_984;
+	int field_3DC;
+};
+
 
 struct zBombSanae: public zBomb {
 	void bomb_sanae_clear_bullets();
@@ -700,6 +764,7 @@ extern "C" zBulletManager * BULLET_MANAGER_PTR;
 extern "C" zSpellcard * SPELLCARD_PTR;
 extern "C" zLaserManager * LASER_MANAGER_PTR;
 extern "C" zAnmManager * ANM_MANAGER_PTR;
+extern "C" zGlobals GLOBALS;
 
 
 void* __fastcall th_OpenFile(const char* fileName, int* p_size, int is_from_game_path);

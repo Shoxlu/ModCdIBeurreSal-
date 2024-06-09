@@ -5,13 +5,15 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <thcrap.h>
+#include <thcrap_tsa.h>
 
 #include "spells.h"
 #include "linkerHacks.h"
 #include "th15.h"
 
 
-#define DEBUG_
+#define DEBUG
 
 #define SATANAE_BOMB_DURATION 340
 
@@ -310,11 +312,36 @@ extern "C" bool check_for_hijack_name() {
 	return false;
 }
 
-extern "C" const char* spellcard_draw_name() {
 
-	const char* true_name = spellnames[0];//"laspelleaezeezezezezezeazazazaz";//name.c_str();
-	printf("%s", true_name);
-	return true_name;
+const char* find_spell_name(std::string extension) {
+	const char* new_name = NULL;
+	int true_id = (SPELLCARD_PTR->spell_id);
+	json_t* spells = jsondata_game_get("spells.js");
+	int base_id = SPELLCARD_PTR->spell_id - GLOBALS.inner.DIFFICULTY;
+	std::vector<std::string> ids = { std::to_string(base_id)+extension, 
+		std::to_string(base_id + 1) + extension,
+		std::to_string(base_id + 2) + extension,
+		std::to_string(base_id + 3) + extension };
+	for (auto& i : ids) {
+		if ((new_name = json_object_get_string(spells, i.c_str())))
+		{
+			return new_name;
+		}
+	}
+	return "";
+}
+
+extern "C" const char* spellcard_draw_name() {
+	
+	const char* new_name = NULL;
+	if (GLOBALS.inner.CHARACTER == 1 or GLOBALS.inner.CHARACTER == 3) {
+		new_name = find_spell_name("S");
+	}
+	else {
+		new_name = find_spell_name("G");
+	}
+	printf("%s", new_name);
+	return new_name;
 }
 
 extern "C" void hook_hdlg() {

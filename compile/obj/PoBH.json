@@ -59,12 +59,23 @@
     },
     "_hDlg": {
       "addr": "0x519BB4"
+    },
+    "_GLOBALS": {
+      "addr": "0x4e73f0"
     }
   },
     // DLL imports
   "imports": {
+    "thcrap.dll": {
+      "json_object_get_string": {
+        "alias": "_json_object_get_string"
+      },
+      "jsondata_game_get": {
+        "alias": "_jsondata_game_get"
+      }
+    },
     "user32.dll": {
-      
+
       "MessageBoxA": {
         "alias": "_MessageBoxA@16"
       },
@@ -140,6 +151,12 @@
       },
       "puts": {
         "alias": "_puts"
+      },
+      "_memccpy": {
+        "alias": "__memccpy"
+      },
+      "strnlen": {
+        "alias": "_strnlen"
       }
     }
   },
