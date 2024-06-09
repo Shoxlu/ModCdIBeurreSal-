@@ -32,7 +32,8 @@
     "70": "Puissance maximale : « Moon Breaker »",
 	"74": "« Point de non retour »",
     "76": "« La prêtresse du crépuscule »",
-    "78": "Signe du Beurre",
+    "78G": "Signe du Beurre Salé",
+    "78S": "Signe du Beurre Doux",
     "82": "Signe du Beurre",
 	"108": "« Mémoires de la haine et de la destruction »"
 }
