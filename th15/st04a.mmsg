@@ -213,9 +213,9 @@ script script1 {
 +4: // 78
     textPause(600);
 +4: // 82
-    bossFace(6, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+	playerFace(7);  
+    speakerPlayer();
+    bubblePos(112.0, 270.0);
     textAdd("だから上手くいってるときには");
     textAdd("余り喋ってはいけないのよ");
 +4: // 86
@@ -234,11 +234,12 @@ script script1 {
     textAdd("へー、でも急に喋り出したって事は");
 +4: // 102
     textPause(600);
+	playerHide();
 +4: // 106
     bossFace(0, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
-    textAdd("これから破滅的な手段にて");
+    textAdd("attends !");
     textAdd("新しい展開が始まるでしょう");
 +4: // 110
     textPause(600);
@@ -251,111 +252,8 @@ script script1 {
 +4: // 118
     textPause(600);
 +4: // 122
-    playerFace(6);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
     textAdd("はい？");
-+4: // 126
     textPause(600);
-+4: // 130
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    textAdd("幻想郷に攻めてきたのは");
-    textAdd("貴方達でしょ？　破壊者は貴方達じゃ");
-+4: // 134
-    textPause(600);
-+4: // 138
-    bossFace(6, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    playerFace(7);
-    textAdd("本当に侵略を受けているのは");
-    textAdd("月の都なの");
-+4: // 142
-    textPause(600);
-+4: // 146
-    bossFace(6, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("それも我々月の民には");
-    textAdd("手が出せない方法で");
-+4: // 150
-    textPause(600);
-+4: // 154
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("全滅を回避する為に");
-    textAdd("幻想郷への移住を検討していたの");
-+4: // 158
-    textPause(600);
-+4: // 162
-    bossFace(6, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("もっとも、月の民達はそんなこと");
-    textAdd("知らないのですが");
-+4: // 166
-    textPause(600);
-+4: // 170
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    textAdd("月の都が侵略されて");
-    textAdd("それで幻想郷を侵略？");
-+4: // 174
-    textPause(600);
-+4: // 178
-    playerFace(3);
-    speakerPlayer();
-    bubblePos(112.0, 270.0);
-    textAdd("とんだご都合主義ね");
-+4: // 182
-    textPause(600);
-+4: // 186
-    bossFace(6, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("ですが、その運命もたった今");
-    textAdd("逆転し始めた");
-+4: // 190
-    textPause(600);
-+4: // 194
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    playerFace(0);
-    textAdd("幻想郷への移住は");
-    textAdd("成功しないでしょう");
-+4: // 198
-    textPause(600);
-+4: // 202
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("その代わり、地上人である貴方が");
-    textAdd("月の都を救うのです！");
-+4: // 206
-    textPause(600);
-+4: // 210
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("|88,16,・・・・・");
-    textAdd("さあ、私が口にするわ");
-    textAdd("もう貴方は運命から逃れられないわよ");
-+4: // 214
-    textPause(600);
-+4: // 218
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("運命は逆転し始めた");
-    textAdd("いざ敵の本拠地、静かの海に向かえ！");
-+4: // 222
-    textPause(600);
-    playerHide();
     bossHide(0);
     textboxHide();
     skippable(0);
