@@ -297,7 +297,7 @@ void MBossCard2_at() {
 	int et2 = 2;
 	etNew(et2);
 	etAim(et2, 3);
-	etSprite(et2, 8, 2);
+	etSprite(et2, 6, 5);
 	etCount(et2, 1, 1);
 	etSpeed(et2, 2f, 2f);
 	int et = 7;
