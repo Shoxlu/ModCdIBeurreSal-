@@ -7,6 +7,90 @@ void mainalt();
 void main1();
 
 void MainBossSpell();
+
+
+
+
+void Rain(){
+	flagSet(3);
+	flagSet(16);
+	if(SHOTTYPE == 2 || SHOTTYPE == 0)
+	{
+		@RainGR();
+	}else{
+		@RainST();
+	}
+	
+}
+
+void RainST(){
+}
+
+void RainGR(){
+	BigShinyRainSpawn() async;
+	wait(200);
+	Talismans_cercle() async;
+	wait(2000);
+}
+
+void Talismans_cercle(){
+	etNew(1);
+	etAim(1, 2);
+	etAngle(1, 0f, 0f);
+	etSprite(1, 11, 15);
+	etSpeed(1, 3f:4f:4f:5f, 3f:4f:4f:5f);
+	etCount(1, 12:12:16:18, 1);
+	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	float waittime = 60f;
+	int counter = 0;
+	while(1){
+		etOffset(1, 192f, 0f);
+		etOn(1);
+		etOffset(1, -192f, 0f);
+		etOn(1);
+		wait(_S(waittime));
+		counter+=_S(waittime);
+		if (counter >= 300){
+			waittime = (waittime/1.5);
+			counter = 0;
+		}
+		if(waittime <= 10f){
+			waittime = 10f;
+		}
+	}
+}
+
+void BigShinyRainSpawn(){
+	times(5:6:7:7){
+			
+		@BigShinyRain() async;
+		wait(7+RAND%30);
+		@BigShinyRain() async;
+		wait(2+RAND%30);
+		@BigShinyRain() async;
+		wait(160+RAND%30);
+	}
+}
+void BigShinyRain(){
+	etNew(0);
+	etAim(0, 1);
+	etAngle(0, rad(90), 0f);
+	etSprite(0, 33, 4);
+	etCount(0, 1, 1);
+	etSpeed(0, 3f, 3f);
+	etExSet(0, 0, 0, EX_ANIM,3, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_SIZE, 1, 0, 1f, 0.85f);
+	int color = 4;
+	while(1){
+		etOffset(0, RANDF2*190f, 0f);
+		etSprite(0, 33, color);
+		etOn(0);
+		color += 2;
+		color = 4+color % 4;
+		wait(60:60:50:50);
+	}
+}
+
 void ECir00()
 {
     var A;
@@ -491,26 +575,26 @@ void MainBossDebug2()
 
 void MainFront()
 {
-    @MainSub00();
-    wait(600);
-    @MainSub01();
-    wait(140);
-    enmKillAll();
-    etClear(640.0f);
-    setChapter(1);
-    wait(10);
-    @MainSub02();
-    wait(260);
-    enmKillAll();
-    etClear(640.0f);
-    setChapter(2);
-    wait(10);
-    @MainSub03();
-    wait(670);
-    enmKillAll();
-    etClear(640.0f);
-    setChapter(3);
-    wait(10);
+    // @MainSub00();
+    // wait(600);
+    // @MainSub01();
+    // wait(140);
+    // enmKillAll();
+    // etClear(640.0f);
+    // setChapter(1);
+    // wait(10);
+    // @MainSub02();
+    // wait(260);
+    // enmKillAll();
+    // etClear(640.0f);
+    // setChapter(2);
+    // wait(10);
+    // @MainSub03();
+    // wait(670);
+    // enmKillAll();
+    // etClear(640.0f);
+    // setChapter(3);
+    // wait(10);
     @MainSub04();
     return;
 }
@@ -696,48 +780,8 @@ void MainSub03()
 
 void MainSub04()
 {
-    var A, B, C, D, E;
-    wait(120);
-    %A = _f(-160);
-    playSound(52);
-    $B = 32;
-    goto MainSub04_512 @ 0;
-MainSub04_180:
-    enmCreate("Phantom02", %A + (%RANDF2 * _f(16)), _f(128) + (%RANDF2 * _f(32)), 170, 1000, 1);
-    %A = %A + _f(10);
-    wait(3);
-MainSub04_512:
-    if ($B--) goto MainSub04_180 @ 0;
-    wait(180);
-    playSound(52);
-    $C = 32;
-    goto MainSub04_992 @ 0;
-MainSub04_660:
-    enmCreate("Phantom02", %A + (%RANDF2 * _f(16)), _f(128) + (%RANDF2 * _f(32)), 170, 1000, 1);
-    %A = %A - _f(10);
-    wait(3);
-MainSub04_992:
-    if ($C--) goto MainSub04_660 @ 0;
-    wait(180);
-    playSound(52);
-    $D = 32;
-    goto MainSub04_1472 @ 0;
-MainSub04_1140:
-    enmCreate("Phantom02", %A + (%RANDF2 * _f(16)), _f(128) + (%RANDF2 * _f(32)), 170, 1000, 1);
-    %A = %A + _f(10);
-    wait(3);
-MainSub04_1472:
-    if ($D--) goto MainSub04_1140 @ 0;
-    wait(180);
-    playSound(52);
-    $E = 32;
-    goto MainSub04_1952 @ 0;
-MainSub04_1620:
-    enmCreate("Phantom02", %A + (%RANDF2 * _f(16)), _f(128) + (%RANDF2 * _f(32)), 170, 1000, 1);
-    %A = %A - _f(10);
-    wait(3);
-MainSub04_1952:
-    if ($E--) goto MainSub04_1620 @ 0;
+	enmCreate("Rain", 0f, 0f, 100, 10, 0);
+	wait(10000);
     return;
 }
 
@@ -1438,14 +1482,7 @@ void main()
 {
 	flagSet(32);
     wait(1);
-	if(SHOTTYPE == 2 || SHOTTYPE == 0)
-	{
-		@mainalt();
-	}else{
-		@main1();
-	}
-    setChapter(0);
-    wait(1);
+
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_300 @ 0;
     @MainBossSpell();
