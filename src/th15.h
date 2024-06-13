@@ -1,7 +1,8 @@
 #pragma once
 #include <Windows.h>
+#include <vector>
 #include <cstdint>
-#include <thcrap.h>
+//#include <thcrap.h>
 
 
 #define noinline [[clang::noinline]]

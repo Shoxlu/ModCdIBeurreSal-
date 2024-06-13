@@ -3,17 +3,19 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wuninitialized"
 
+#include <thcrap.h>
+//#include <thcrap_tsa.h>
 #include <stdio.h>
 #include <math.h>
-#include <thcrap.h>
-#include <thcrap_tsa.h>
+#include <vector>
+#include <string>
 
-#include "spells.h"
+
 #include "linkerHacks.h"
 #include "th15.h"
 
 
-#define DEBUG
+#define DEBUG_
 
 #define SATANAE_BOMB_DURATION 340
 
@@ -21,7 +23,6 @@
 extern "C" void coff2binhack_init() {
 	//Sleep(5000);
 	init_modes();
-	init_spells();
    // MessageBoxA(NULL, "This is being called from the coff2binhack initializer!", "coff2binhack sample", 0);
 }
 
@@ -304,12 +305,12 @@ extern "C" zAnmVm * get_current_text_vm_spell() {
 	return anmVm;
 }
 
-extern "C" bool check_for_hijack_name() {
+extern "C" int check_for_hijack_name() {
 	int id = SPELLCARD_PTR->spell_id;
 	if (id >= 78 and id < 100) {
-		return true;
+		return 1;
 	}
-	return false;
+	return 0;
 }
 
 
