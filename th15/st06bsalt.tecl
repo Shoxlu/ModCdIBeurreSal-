@@ -1467,12 +1467,36 @@ BossCard5_448:
     playSound(54);
 +90: //94
     nop();
+	BossCardAlt1_at();
     wait(10000);
 }
 
 void BossCardAlt1_at()
 {
-   
+	while(1){
+		Mer();
+		wait(60);
+		PushPlayer();
+		wait(60);
+		ClearBullets();
+		wait(20);
+	}
+}
+
+void Mer(){
+	etNew(0);
+	etAim(0, 1);
+	etAngle(0, 0f, 0f);
+	etCount(0, 1, 1);
+	etSprite(0, 29, 4);
+}
+
+void PushPlayer(){
+
+}
+
+void ClearBullets(){
+
 }
 
 void BossCardAlt6()
