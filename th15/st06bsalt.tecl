@@ -176,7 +176,7 @@ Boss2_1168:
     BossAlt2_at(1, -1f, rad(90), 8, 32, 1) async; 
 	BossAlt2_at(5, 1f, 0f, 8, 33, 4) async;
     BossAlt2_at(6, -1f, rad(90), 8, 33, 4) async;
-!L
+!HL
     BossAlt2_2() async;
 !*	
     BossAlt2_3();
@@ -198,10 +198,10 @@ void BossAlt2_at(int etID,float B, float A, int color, int sprite, int color2)
     etExSet(etID, 0, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
     etExSet(etID, 1, 0, EX_SETSPRITE, sprite, color2, NEGF, NEGF);
     while(1){
-    etOn(etID);
-    A = A +(rad(12.5f)*B);
-    etAngle(etID, A, 0f);
-    wait(10);
+		etOn(etID);
+		A = A +(rad(12.5f)*B);
+		etAngle(etID, A, 0f);
+		wait(10);
     }
 }
 
@@ -209,14 +209,14 @@ void BossAlt2_2()
 {
     etNew(3);
     etAim(3, 1);
-    etCount(3, 5, 1);
+    etCount(3, 5:5:5:7, 1);
     etAngle(3, rad(90), rad(20));
-    etSprite(3, 22, 2);
+    etSprite(3, 12, 0);
     etSpeed(3, 1f, 1f);
     
     etExSet(3, 0, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
     etExSet(3, 1, 0, EX_VEL, NEG, NEG, NEGF, 5f);
-    etExSet2(3, 2, 0, EX_ANGLE, 30, 1, 1, NEG, 0f, 5f, NEGF, NEGF);
+    etExSet2(3, 2, 0, EX_ANGLE, 30, 1, 1, NEG, 0f, 0f:0f:3f:5f, NEGF, NEGF);
     
     while(1){
 		etOn(3);
@@ -230,12 +230,12 @@ void BossAlt2_3()
     etAim(2, 2);
     etCount(2, 20, 1);
     etAngle(2, rad(90), 0f);
-    etSprite(2, 12, 7);
+    etSprite(2, 20, 6);
     etSpeed(2, 2f, 3f);
     
     while(1){
 		etOn(2);
-		wait(35:20:10:20);
+		wait(35:20:20:20);
     }
 }
 
@@ -309,8 +309,8 @@ void BossAlt3_at()
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	times(60)
 	{
-	etOn(0);
-	wait(3);
+		etOn(0);
+		wait(3);
 	}
 }
 
@@ -320,17 +320,19 @@ void BossAlt3_atAim()
     etAim(1, 0);
     etCount(1, 1, 5:6:5:6);
     etSpeed(1, 5f, 2f);
-	etEx(1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etEx(1, 0, EX_ANIM, 3, NEG, NEGF, NEGF);
 	times(3:3:6:6)
 	{
-	etSprite(1, 11, 8);
-	etOffset(1, RANDF2*30f, RANDF2*30f);
-	etOn(1);
-	wait(30:30:15:15);
-	etSprite(1, 11, 13);
-	etOffset(1, RANDF2*30f, RANDF2*30f);
-	etOn(1);
-	wait(30:30:15:15);
+		etSprite(1, 11, 8);
+		etOffset(1, RANDF2*30f, RANDF2*30f);
+		playSound(22);
+		etOn(1);
+		wait(30:30:15:15);
+		etSprite(1, 11, 13);
+		etOffset(1, RANDF2*30f, RANDF2*30f);
+		playSound(22);
+		etOn(1);
+		wait(30:30:15:15);
 	}
 }
 
@@ -1065,16 +1067,8 @@ void BossCardAlt2_atb()
     etNew(1);
     etAim(1, 1);
     etSprite(1, 33, 0);
-!E
-    2;
-!N
-    3;
-!H
-    3;
-!LO
-    3;
-!*
-    etCount(1, [-1], 1);
+
+    etCount(1, 2:3:3:3, 1);
 !E
     0.785398f;
 !N
@@ -1095,16 +1089,7 @@ void BossCardAlt2_atb()
     etNew(1);
     etAim(1, 1);
     etSprite(1, 33, 0);
-!E
-    2;
-!N
-    3;
-!H
-    2;
-!LO
-    2;
-!*
-    etCount(1, [-1], 1);
+    etCount(1, 2:3:3:3, 1);
 !E
     0.785398f;
 !N
