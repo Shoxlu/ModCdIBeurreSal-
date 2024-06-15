@@ -1,29 +1,14 @@
-#define _USE_MATH_DEFINES 
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wuninitialized"
-
-#include <thcrap.h>
-//#include <thcrap_tsa.h>
-#include <stdio.h>
-#include <math.h>
-#include <vector>
-#include <string>
+#include "PoBH.h"
 
 
-#include "linkerHacks.h"
-#include "th15.h"
-
-
-#define DEBUG_
+#define DEBUG
 
 #define SATANAE_BOMB_DURATION 340
 
-
 extern "C" void coff2binhack_init() {
 	//Sleep(5000);
+	test();
 	init_modes();
-   // MessageBoxA(NULL, "This is being called from the coff2binhack initializer!", "coff2binhack sample", 0);
 }
 
 
@@ -362,6 +347,7 @@ extern "C" void hook_hdlg() {
 	}
 }
 
+
 extern "C" int hook_entry() {
 #ifdef DEBUG
 	AllocConsole();
@@ -369,11 +355,13 @@ extern "C" int hook_entry() {
 	freopen("CONOUT$", "w", stdout);
 	freopen("CONOUT$", "w", stderr);
 	printf("beginning of the func hook_entry at: %x\n", (size_t)hook_entry);
-	printf("location of the func bomb_sanae at: %x\n", (size_t)bomb_sanae);
-
+	//printf("location of the func bomb_sanae at: %x\n", (size_t)bomb_sanae);
 	//printf("location of the func bomb_sanae_clear_bullets at: %x\n", zBombSanae::bomb_sanae_clear_bullets);
+
 #endif // DEBUG
-	//Sleep(5000);
+
+	InitDiscord();
+
 	HICON icon = load_icon("th15/icone.png");
 	if (icon) {
 

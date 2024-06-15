@@ -1,6 +1,6 @@
 {
     // Input COFF file
-    "input": "../obj/PoBH.obj",//cringe coff2binhack not understanding this input should be relative to this json not coff2binhack.py
+    "input": "../obj/final.obj",//cringe coff2binhack not understanding this input should be relative to this json not coff2binhack.py
     // Output JSON file
     "output": "../../th15.v1.00b.js",
     // Codecave name prefix
@@ -66,6 +66,91 @@
   },
     // DLL imports
   "imports": {
+    "jansson.dll": {
+      "json_string_value": {
+        "alias": "_json_string_value"
+      },
+      "json_object_get": {
+        "alias": "_json_object_get"
+      },
+      "json_integer_value": {
+        "alias": "_json_integer_value"
+      },
+      "json_loads": {
+        "alias": "_json_loads"
+      },
+      "json_delete": {
+        "alias": "_json_delete"
+      },
+      "json_dumps": {
+        "alias": "_json_dumps"
+      },
+      "json_object_set_new": {
+        "alias": "_json_object_set_new"
+      },
+      "json_string": {
+        "alias": "_json_string"
+      },
+      "json_integer": {
+        "alias": "_json_integer"
+      },
+      "json_object": {
+        "alias": "_json_object"
+      }
+    },
+    "winmm.dll": {
+      "timeGetTime": {
+        "alias": "_timeGetTime@0"
+      }
+    },
+    "msvcp140.dll": {
+      "?_Xlength_error@std@@YAXPBD@Z": {
+        "alias": "?_Xlength_error@std@@YAXPBD@Z"
+      },
+      "_Mtx_init_in_situ": {
+        "alias": "__Mtx_init_in_situ"
+      },
+      "?_Throw_Cpp_error@std@@YAXH@Z": {},
+      "_Thrd_join": {
+        "alias": "__Thrd_join"
+      },
+      "_Thrd_id": {
+        "alias": "__Thrd_id"
+      },
+      "_Query_perf_counter": {
+        "alias": "__Query_perf_counter"
+      },
+      "_Query_perf_frequency": {
+        "alias": "__Query_perf_frequency"
+      },
+      "_Cnd_timedwait": {
+        "alias": "__Cnd_timedwait"
+      },
+      "_Xtime_get_ticks": {
+        "alias": "__Xtime_get_ticks"
+      },
+      "_Mtx_lock": {
+        "alias": "__Mtx_lock"
+      },
+      "_Mtx_unlock": {
+        "alias": "__Mtx_unlock"
+      },
+      "_Cnd_do_broadcast_at_thread_exit": {
+        "alias": "__Cnd_do_broadcast_at_thread_exit"
+      },
+      "_Cnd_broadcast": {
+        "alias": "__Cnd_broadcast"
+      },
+      "_Mtx_destroy_in_situ": {
+        "alias": "__Mtx_destroy_in_situ"
+      },
+      "_Cnd_destroy_in_situ": {
+        "alias": "__Cnd_destroy_in_situ"
+      },
+      "_Cnd_init_in_situ": {
+        "alias": "__Cnd_init_in_situ"
+      }
+    },
     "thcrap.dll": {
       "json_object_get_string": {
         "alias": "_json_object_get_string"
@@ -75,7 +160,6 @@
       }
     },
     "user32.dll": {
-
       "MessageBoxA": {
         "alias": "_MessageBoxA@16"
       },
@@ -110,9 +194,48 @@
       },
       "Sleep": {
         "alias": "_Sleep@4"
-      }
+      },
+      "CloseHandle": {
+        "alias": "_CloseHandle@4"
+      },
+      "ReadFile": {
+        "alias": "_ReadFile@20"
+      },
+      "PeekNamedPipe": {
+        "alias": "_PeekNamedPipe@24"
+      },
+      "WriteFile": {
+        "alias": "_WriteFile@20"
+      },
+      "CreateFileW": {
+        "alias": "_CreateFileW@28"
+      },
+      "WaitNamedPipeW": {
+        "alias": "_WaitNamedPipeW@8"
+      },
+      "GetCurrentProcessId": {
+        "alias": "_GetCurrentProcessId@0"
+      },
+	  "ReadFile": {
+		"alias": "_ReadFile@20"
+		},
+		"PeekNamedPipe": {
+			"alias": "_PeekNamedPipe@24"
+		},
+		"CreateFileA": {
+			"alias": "_CreateFileA@28"
+		},
+		"WaitNamedPipeA": {
+			"alias": "_WaitNamedPipeA@8"
+		},
+		"CreateThread": {
+			"alias": "_CreateThread@24"
+		}
     },
     "ucrtbase.dll": {
+      "_wassert": {
+        "alias": "__wassert"
+      },
       "__stdio_common_vfprintf": {
         "alias": "___stdio_common_vfprintf"
       },
@@ -157,11 +280,27 @@
       },
       "strnlen": {
         "alias": "_strnlen"
+      },
+      "abort": {
+        "alias": "_abort"
+      },
+      "strncpy": {
+        "alias": "_strncpy"
+      },
+      "_beginthreadex": {
+        "alias": "__beginthreadex"
+      },
+      "terminate": {
+        "alias": "_terminate"
+      },
+      "_time64": {
+        "alias": "__time64"
       }
     }
   },
     // Additional binhacks
     "binhacks": {
+
       "spell_card_draw_spell_name_jmp": {
         "addr": "0x4207F4",
         "code": "E9 [codecave:spell_card_draw_myself] "
@@ -269,6 +408,7 @@
 		    }
 	},
 	"codecaves": {
+
     "hook_dialog_win_codecave": {
       "access": "re",
       "code": " A3 B49B5100 E8 [obj:_hook_hdlg] E9 [0x0471627]"

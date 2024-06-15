@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include <Windows.h>
-
+#include <iostream>
+#include <concrt.h>
 // Sorry
 
 void* __cdecl operator new(unsigned int size) {
@@ -24,12 +25,6 @@ int __cdecl atexit(void(*)()) {
 
 namespace stdext {
     class exception;
-}
-namespace std {
-    void __cdecl _Xlength_error(char const*) {
-        while (1)
-            DebugBreak();
-    }
 }
 
 namespace std {
