@@ -20,6 +20,7 @@ void MainBossalt()
 void enameGR()
 {
 	flagSet(128);
+	flagSet(3);
 	anmSelect(5);
 	anmSetSprite(0, 171);
 	wait(1000);
