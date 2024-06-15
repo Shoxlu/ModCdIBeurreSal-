@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss3();
+    @Boss1();
     delete();
 }
 
@@ -277,44 +277,58 @@ Boss3_544:
 	moveLimit(0.0f, 128.0f, 200.0f, 32.0f);
     @Boss3_pos() async;
     wait(60);
-    %F0 = 0.017453f;
-    $I0 = 5;
 	float Base = rad(90);
+	@Boss3_at2() async;
 	while(1)
 	{
-	Base = RANDRAD;
-	times(15)
-	{
-	@Boss3_at(Base+RANDF2*rad(10))async;
-	wait(10);
-	Base += rad(144);
-	}
-	moveRand(60, 4, 4f);
-	wait(60);
-	Base = RANDRAD;
-	times(15)
-	{
-	@Boss3_at2(Base+RANDF2*rad(10))async;
-	wait(10);
-	Base += -rad(144);
-	}
-	moveRand(60, 4, 4f);
-	wait(60);
+		Base = RANDRAD;
+		times(15:15:16:16)
+		{
+			@Boss3_at(Base+RANDF2*rad(10), 9, -1f) async;
+			wait(10);
+			Base += rad(144);
+		}
+		moveRand(60, 4, 4f);
+		wait(60);
+		Base = RANDRAD;
+		times(15:15:16:16)
+		{
+			@Boss3_at(Base+RANDF2*rad(10), 11, 1f) async;
+			wait(10);
+			Base += -rad(144);
+		}
+		moveRand(60, 4, 4f);
+		wait(60);
 	}
 }
 
-void Boss3_at(float Base)
+void Boss3_at2(){
+	etNew(1);
+	etAim(1, 2);
+	etSprite(1, 20, 1);
+	etSpeed(1, 3f, 3f);
+	etCount(1, 20, 1);
+	etAngle(1, 0f, 0f);
+	etEx(1, 0, EX_ANIM, 3, NEG, NEGF, NEGF);
+	etEx(1, 0, EX_DIST, NEG, NEG, NEGF, NEGF);
+	while(1){
+		etOn(1);
+		wait(64:54:48:34);
+	}
+}
+
+void Boss3_at(float Base, int color, float is_neg)
 {
 	float A = Base;
 	float B = 3f;
 	etNew(0);
     etAim(0, 3);
     etCount(0, 1, 2);
-    etSprite(0, 15, 9);
+    etSprite(0, 15, color);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	times(18)
+	times(16:17:18:19)
 	{
-		etAngle(0, A, -rad(2));
+		etAngle(0, A, is_neg*rad(2));
 		etSpeed(0, B, B*0.90);
 		etOn(0);
 		A += rad(9);
@@ -323,25 +337,6 @@ void Boss3_at(float Base)
 	}
 }
 
-void Boss3_at2(float Base)
-{
-	float A = Base;
-	float B = 3f;
-	etNew(0);
-    etAim(0, 3);
-    etCount(0, 1, 2);
-    etSprite(0, 15, 11);
-	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	times(18)
-	{
-		etAngle(0, A, rad(2));
-		etSpeed(0, B, B*0.90);
-		etOn(0);
-		A += -rad(9);
-		B = B - 0.1;
-		wait(1);
-	}
-}
 
 void Boss3_pos()
 {
