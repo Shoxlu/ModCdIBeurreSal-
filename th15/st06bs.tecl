@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss3();
+    @Boss4();
     delete();
 }
 
@@ -89,17 +89,17 @@ void Boss1_at()
 	{
 		times(30)
 		{
-		etAngle(0, A, 0f);
-		etOn(0);
-		A +=rad(1);
-		wait(1);
+			etAngle(0, A, 0f);
+			etOn(0);
+			A +=rad(1);
+			wait(1);
 		}
 		times(30)
 		{
-		etAngle(0, A, 0f);
-		etOn(0);
-		A +=rad(-1);
-		wait(1);
+			etAngle(0, A, 0f);
+			etOn(0);
+			A +=rad(-1);
+			wait(1);
 		}
 	}
 
@@ -173,8 +173,8 @@ Boss2_552:
 	@Boss2_at2()async;
     while(1)
 	{
-    wait(180);
-	moveRand(60, 4, 1.9f);
+		wait(180);
+		moveRand(60, 4, 1.9f);
 	}
 }
 
@@ -214,10 +214,10 @@ void Boss2_at2()
     {
         times(5)
         {
-        etAngle(1, A, 0f);
-        etOn(1);
-        A +=rad(-0.5);
-        wait(1);
+			etAngle(1, A, 0f);
+			etOn(1);
+			A +=rad(-0.5);
+			wait(1);
         }
         A +=rad(-12):rad(-10):rad(-8):rad(-6);
         etAngle(1, A, 0f);
@@ -288,6 +288,7 @@ Boss3_544:
 			wait(10);
 			Base += rad(144);
 		}
+		wait(10);
 		moveRand(60, 4, 4f);
 		wait(60);
 		Base = RANDRAD;
@@ -297,6 +298,7 @@ Boss3_544:
 			wait(10);
 			Base += -rad(144);
 		}
+		wait(10);
 		moveRand(60, 4, 4f);
 		wait(60);
 	}
