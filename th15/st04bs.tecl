@@ -72,60 +72,13 @@ void Boss1()
 
 void Boss1_at()
 {
-    int C = 13;
     etNew(0);
-    etAim(0, 3);
-    while(1)
-    {
-        float A = RANDRAD;
-        int B = 0;
-        if(C == 13) {
-            C = 7;
-        }else if(C == 7) {
-            C = 13;
-        }
-        float alea = (RANDF/1000f):(RANDF/200f):(RANDF/100f):(RANDF/100f);
-        while(B < 2) {
-            etCount(0, 28:28:28:40, 1);
-
-            etSprite(0, 4, C);
-            etAngle(0, A, 0f);
-            
-            if(C == 13) {
-                etExSet(0, 0, 0, 1, 10, NEG, 0.05f, 0f);
-                if(B == 0) {
-                    etSpeed(0, 1.2f, 1.2f);
-                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, alea);
-                }else {
-                    etSpeed(0, 1.1f, 1.1f);
-                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, alea*1.5f);
-                }
-                
-                
-            }else if(C == 7) {
-                etExSet(0, 0, 0, 1, 5, NEG, 0.05f, 0f);
-                if(B == 0) {
-                    etSpeed(0, 1.0f, 1.0f);
-                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, -alea);
-                }else {
-                    etSpeed(0, 0.9f, 0.9f);
-                    etExSet(0, 1, 0, EX_ANGLE_ACCEL, 100, NEG, 0f, -alea*1.5f);
-                }
-                
-            }
-
-            etOn(0);
-            B = B + 1;
-            
-            if(B == 2) {
-                wait(20);
-            }
-            else {
-                wait(10);
-            }
-        }
-        
-    }
+    etAim(0, 10);
+	etCount(0, 30, 4);
+	etSprite(0, 4, 6);
+    etAngle(0, rad(90), rad(4));
+	etSpeed(0, 2f, 1.5f);
+	etOn(0);
 }
 
 void BulletAim() {
