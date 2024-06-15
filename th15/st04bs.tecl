@@ -52,7 +52,7 @@ Boss_1200:
 void Boss1()
 {
     timerReset();
-    setNext(0, 2000, 2400, "BossCard1");
+    setNext(0, 2000, 3000, "BossCard1");
     lifeMarker(0, 2000.0f, -24448);
     stars(3);
     anmSelect(3);
@@ -106,7 +106,7 @@ void FireSpellCard2() {
     etSprite(1, 25, 0);
     etSpeed(1, 2f, 2f);
 
-    
+    etEx(1, 0, EX_INVULN, 99999, NEG, NEGF, NEGF);
     while(1)
     {
         int A = 0;
@@ -172,7 +172,7 @@ void SteamSpellCard2(float angleP) {
 void Boss2()
 {
     setInvuln(120);
-    lifeSet(19100);
+    lifeSet(16100);
     unless ($TIMEOUT == 0) goto Boss2_200 @ 0;
     etCancel(640.0f);
     goto Boss2_220 @ 0;
@@ -207,7 +207,7 @@ Boss2_544:
     $CAPTURE = 1;
     anmSelect(3);
     anmSetMain(0, 0);
-    setNext(0, 2100, 2520, "BossCard2");
+    setNext(0, 2100, 3020, "BossCard2");
     lifeMarker(0, 2100.0f, -24448);
     stars(2);
     anmSelect(3);
@@ -310,7 +310,7 @@ void Boss2_at2()
 
 void Boss3()
 {
-    lifeSet(18500);
+    lifeSet(16500);
 	GI1 = 0;
 	setBoss(0);
     unless ($TIMEOUT == 0) goto Boss3_180 @ 0;
@@ -346,7 +346,7 @@ Boss3_524:
     $CAPTURE = 1;
     anmSelect(3);
     anmSetMain(0, 0);
-    setNext(0, 2500, 2400, "BossCard3");
+    setNext(0, 2500, 3000, "BossCard3");
     lifeMarker(0, 2500.0f, -24448);
     stars(1);
     setInvuln(120);
