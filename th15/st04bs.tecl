@@ -73,10 +73,10 @@ void Boss1()
 void Boss1_at()
 {
     etNew(0);
-    etAim(0, 10);
-	etCount(0, 30, 4);
+    etAim(0, 3);
+	etCount(0, 40, 4);
 	etSprite(0, 4, 6);
-    etAngle(0, rad(90), rad(4));
+    etAngle(0, rad(90), rad(9));
 	etSpeed(0, 2f, 1.5f);
 	etOn(0);
 }
