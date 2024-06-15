@@ -1501,13 +1501,13 @@ main_300:
     @LogoEnemy() async;
 +60: //60
     nop();
-    @MainFront();
-    wait(400);
+    //@MainFront();
+    //wait(400);
     ins_902();
     enmKillAll();
     etClear(640.0f);
     setChapter(41);
-    wait(160);
+    //wait(160);
 +60: //60
     nop();
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
