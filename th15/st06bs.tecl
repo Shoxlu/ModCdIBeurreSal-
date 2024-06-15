@@ -353,7 +353,7 @@ Boss3_pos_104:
 
 void Boss4()
 {
-    lifeSet(14700);
+    lifeSet(18700);
     unless ($TIMEOUT == 0) goto Boss4_180 @ 0;
     etCancel(640.0f);
     goto Boss4_200 @ 0;
@@ -420,7 +420,7 @@ void Boss4_at99()
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
-		etAngle(0, A, rad(5));
+		etAngle(0, A, rad(4):rad(6):rad(7):rad(7));
 		etOn(0);
 		A += rad(67);
 		wait(2);
