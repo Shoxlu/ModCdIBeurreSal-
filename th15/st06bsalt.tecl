@@ -253,7 +253,7 @@ Boss3_200:
 +2: //4
     ins_569(4);
     stars(4);
-    moveLimit(0.0f, 100.0f, 280.0f, 64.0f);
+    moveLimit(0.0f, 128.0f, 280.0f, 40.0f);
     @BossItemPhase(60, 30, 64.0f);
     timerReset();
     killAllAsync();
@@ -289,12 +289,12 @@ Boss3_544:
     playSound(6);
     anmSelect(4);
     anmSetSprite(3, 6);
-	@BossAlt3_at()async;
-	@BossAlt3_atAim()async;
 	while(1)
 	{
-		wait(180);
-		moveRand(90, 1, 2f);
+		@BossAlt3_at()async;
+		@BossAlt3_atAim();
+		moveRand(60, 1, 4f);
+		wait(60);
 	}
 }
 
@@ -307,7 +307,7 @@ void BossAlt3_at()
     etSpeed(0, 6f, 6f);
 	etAngle(0, -rad(90), rad(162));
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	while(1)
+	times(60)
 	{
 	etOn(0);
 	wait(3);
@@ -321,7 +321,7 @@ void BossAlt3_atAim()
     etCount(1, 1, 6);
     etSpeed(1, 5f, 2f);
 	etEx(1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	while(1)
+	times(3)
 	{
 	etSprite(1, 11, 8);
 	etOffset(1, RANDF2*20f, RANDF2*20f);
