@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss1();
+    @Boss3();
     delete();
 }
 
@@ -191,10 +191,10 @@ void Boss2_at()
     {
         times(5)
         {
-        etAngle(0, A, 0f);
-        etOn(0);
-        A +=rad(0.5);
-        wait(1);
+			etAngle(0, A, 0f);
+			etOn(0);
+			A +=rad(0.5);
+			wait(1);
         }
         A +=rad(10):rad(8):rad(6):rad(4);
         etAngle(0, A, 0f);
@@ -331,7 +331,7 @@ void Boss3_at(float Base, int color, float is_neg)
 		etAngle(0, A, is_neg*rad(2));
 		etSpeed(0, B, B*0.90);
 		etOn(0);
-		A += rad(9);
+		A += rad(9)*-is_neg;
 		B = B - 0.1;
 		wait(1);
 	}
@@ -351,7 +351,7 @@ Boss3_pos_104:
 
 void Boss4()
 {
-    lifeSet(12700);
+    lifeSet(14700);
     unless ($TIMEOUT == 0) goto Boss4_180 @ 0;
     etCancel(640.0f);
     goto Boss4_200 @ 0;
@@ -439,19 +439,19 @@ void Boss4_at()
 		B = RAND % 3 + 25;
 		times(8)
 		{
-		etSpeed(1, 2f+RANDF*1f, 2f+RANDF*1f);
-		etAngle(1, RANDF2*rad(5)+rad(90), 0f);
-		etSprite(1, B, 0);
-		etOffsetAbs(1, A + RANDF*50f, RANDF*50f);
-		etOn(1);
-		A += 50f;
-		B += 1;
-		if (B > 28)
-		{
-		B = 25;
+			etSpeed(1, 2f+RANDF*1f, 2f+RANDF*1f);
+			etAngle(1, RANDF2*rad(5)+rad(90), 0f);
+			etSprite(1, B, 0);
+			etOffsetAbs(1, A + RANDF*50f, RANDF*50f);
+			etOn(1);
+			A += 50f;
+			B += 1;
+			if (B > 28)
+			{
+				B = 25;
+			}
 		}
-		}
-		wait(20);
+		wait(50:40:30:20);
 	}
 }
 
