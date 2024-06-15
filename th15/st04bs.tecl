@@ -563,9 +563,6 @@ void BossFamiliar() {
         wait(360);
     }
     
-
-
-    
 }
 
 void BossCard2()
