@@ -62,22 +62,29 @@ void Boss1()
     wait(60);
     anmPlay(1, 86);
     playSound(6);
-	@Boss1_at()async;
+	float A = 0f;
 	while(1)
 	{
-		wait(480);
-		//moveRand(20, 14, 2f);
+		A = RANDRAD;
+		@Boss1_at(6, rad(6), 3, A);
+		@Boss1_at(3, -rad(6), 5, A);
+		wait(90);
+		A = RANDRAD;
+		@Boss1_at(3, -rad(6), 5, A);
+		@Boss1_at(6, rad(6), 3, A);
+		moveRand(20, 14, 2f);
+		wait(90);
 	}
 }
 
-void Boss1_at()
+void Boss1_at(int A, float B, int C, float D)
 {
     etNew(0);
-    etAim(0, 10);
-	etCount(0, 30, 4);
-	etSprite(0, 4, 6);
-    etAngle(0, rad(90), rad(4));
-	etSpeed(0, 2f, 1.5f);
+    etAim(0, C);
+	etCount(0, 40, 4);
+	etSprite(0, 4, A);
+    etAngle(0, D, B);
+	etSpeed(0, 3f, 2f);
 	etOn(0);
 }
 
