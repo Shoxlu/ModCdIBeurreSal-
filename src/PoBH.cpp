@@ -1,7 +1,7 @@
 #include "PoBH.h"
 
 
-#define DEBUG
+#define DEBUG_
 
 #define SATANAE_BOMB_DURATION 340
 
