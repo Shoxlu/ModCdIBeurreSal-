@@ -279,29 +279,67 @@ Boss3_544:
     wait(60);
     %F0 = 0.017453f;
     $I0 = 5;
+	float Base = rad(90);
 	while(1)
 	{
-	@Boss3_at();
-	moveRand(60, 4, 1.9f);
+	Base = RANDRAD;
+	times(15)
+	{
+	@Boss3_at(Base+RANDF2*rad(10))async;
+	wait(10);
+	Base += rad(144);
+	}
+	moveRand(60, 4, 4f);
+	wait(60);
+	Base = RANDRAD;
+	times(15)
+	{
+	@Boss3_at2(Base+RANDF2*rad(10))async;
+	wait(10);
+	Base += -rad(144);
+	}
+	moveRand(60, 4, 4f);
 	wait(60);
 	}
 }
 
-void Boss3_at()
+void Boss3_at(float Base)
 {
-	float A = rad(90);
+	float A = Base;
+	float B = 3f;
 	etNew(0);
     etAim(0, 3);
-    etCount(0, 5, 5);
+    etCount(0, 1, 2);
     etSprite(0, 15, 9);
-	etSpeed(0, 2.4f, 2f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	times(5)
+	times(18)
 	{
-		etAngle(0, A, rad(5));
+		etAngle(0, A, -rad(2));
+		etSpeed(0, B, B*0.90);
 		etOn(0);
-		A += rad(30);
-		wait(2);
+		A += rad(9);
+		B = B - 0.1;
+		wait(1);
+	}
+}
+
+void Boss3_at2(float Base)
+{
+	float A = Base;
+	float B = 3f;
+	etNew(0);
+    etAim(0, 3);
+    etCount(0, 1, 2);
+    etSprite(0, 15, 11);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	times(18)
+	{
+		etAngle(0, A, rad(2));
+		etSpeed(0, B, B*0.90);
+		etOn(0);
+		A += -rad(9);
+		B = B - 0.1;
+		wait(1);
 	}
 }
 
