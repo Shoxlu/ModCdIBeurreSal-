@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss1();
+    @Boss3();
     delete();
 }
 
@@ -279,80 +279,29 @@ Boss3_544:
     wait(60);
     %F0 = 0.017453f;
     $I0 = 5;
-	@Boss3_at()async;
-	@Boss3_at2()async;
 	while(1)
 	{
-	wait(140:140:120:120);
+	@Boss3_at();
 	moveRand(60, 4, 1.9f);
+	wait(60);
 	}
 }
 
 void Boss3_at()
 {
-    float A = rad(90);
+	float A = rad(90);
 	etNew(0);
     etAim(0, 3);
-    etCount(0, 10:15:15:20, 1);
-    etSprite(0, 21, 5);
-	//etOffset(0, -100.0f, 0.0f);
-    etSpeed(0, -2.5f, -2.5f);
-	etDist(0, 480f);
-	etExSet(0, 0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
-	etExSet(0, 1, 0, EX_OFFSCREEN, 1000, 0, NEGF, NEGF);
-	etExSet(0, 2, 0, EX_WAIT, 195, NEG, NEGF, NEGF);
-	etExSet(0, 3, 0, EX_BRIGHT, 0, NEG, NEGF, NEGF);
-	etExSet(0, 4, 0, EX_VEL, NEG, NEG, NEGF, 3f);
-	etExSet(0, 5, 0, EX_ANGLE_ACCEL, 60, NEG, 0f, rad(2));
-	while(1)
+    etCount(0, 5, 5);
+    etSprite(0, 15, 9);
+	etSpeed(0, 2.4f, 2f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	times(5)
 	{
-		etAngle(0, rad(90), 0f);
+		etAngle(0, A, rad(5));
 		etOn(0);
-		wait(70:70:60:60);
-	}
-}
-
-void Boss3_at2()
-{
-    float A = rad(90);
-	etNew(1);
-    etAim(1, 5);
-    etCount(1, 10:15:15:20, 1);
-    etSprite(1, 21, 1);
-	//etOffset(1, -100.0f, 0.0f);
-    etSpeed(1, -2.5f, -2.5f);
-	etDist(1, 480f);
-	etExSet(1, 0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
-	etExSet(1, 1, 0, EX_OFFSCREEN, 1000, 0, NEGF, NEGF);
-	etExSet(1, 2, 0, EX_WAIT, 195, NEG, NEGF, NEGF);
-	etExSet(1, 3, 0, EX_BRIGHT, 0, NEG, NEGF, NEGF);
-	etExSet(1, 4, 0, EX_VEL, NEG, NEG, NEGF, 3f);
-	etExSet(1, 5, 0, EX_ANGLE_ACCEL, 60, NEG, 0f, -rad(2));
-	while(1)
-	{
-		etAngle(1, rad(90), 0f);
-		etOn(1);
-		wait(70:70:60:60);
-	}
-}
-
-void Boss3_at3()
-{
-	etNew(2);
-	etSprite(2, 17, 1);
-	etAim(2, 3);
-	etCount(2, 1, 1);
-	etSpeed(2, 4f, 4f);
-	etEx(2, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	while(1)
-	{
-		wait(40);
-		etAngle(2, rad(90), 0f);
-		times(5)
-		{
-			etOn(2);
-			wait(4);
-		}
+		A += rad(30);
+		wait(2);
 	}
 }
 

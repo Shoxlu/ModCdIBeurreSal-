@@ -305,7 +305,7 @@ void BossAlt3_at()
 	etSprite(0, 0, 0);
     etCount(0, 30, 1);
     etSpeed(0, 6f, 6f);
-	etAngle(0, -rad(90), rad(162));
+	etAngle(0, -rad(90), rad(162):rad(164):rad(166):rad(168));
 	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	times(60)
 	{
@@ -318,19 +318,19 @@ void BossAlt3_atAim()
 {
     etNew(1);
     etAim(1, 0);
-    etCount(1, 1, 6);
+    etCount(1, 1, 5:6:5:6);
     etSpeed(1, 5f, 2f);
 	etEx(1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
-	times(3)
+	times(3:3:6:6)
 	{
 	etSprite(1, 11, 8);
-	etOffset(1, RANDF2*20f, RANDF2*20f);
+	etOffset(1, RANDF2*30f, RANDF2*30f);
 	etOn(1);
-	wait(30);
+	wait(30:30:15:15);
 	etSprite(1, 11, 13);
-	etOffset(1, RANDF2*20f, RANDF2*20f);
+	etOffset(1, RANDF2*30f, RANDF2*30f);
 	etOn(1);
-	wait(30);
+	wait(30:30:15:15);
 	}
 }
 
