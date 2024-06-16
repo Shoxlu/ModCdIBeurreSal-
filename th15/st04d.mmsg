@@ -1,0 +1,427 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("これは一体！？");
++4: // 38
+    textPause(600);
++4: // 42
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何故こんなに冷え切っているのかしら");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("それに誰もいないだなんて……");
++4: // 54
+    textPause(600);
++4: // 58
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 118
+    skippable(0);
++30: // 148
+    skippable(1);
+    bossShow(0);
++4: // 152
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("あ、サグメ様……");
+    textAdd("この現状は一体");
++4: // 156
+    textPause(600);
++4: // 160
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    intro(0);
+    textAdd("……兎？");
++4: // 164
+    textPause(600);
++4: // 168
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("今、月の民は全員仮の月の都に");
+    textAdd("退避している筈なのに");
++4: // 172
+    textPause(600);
++4: // 176
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("仮の……月の都？");
++4: // 180
+    textPause(600);
++4: // 184
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("もしかしてみんな");
+    textAdd("夢の世界にいるとか");
++4: // 188
+    textPause(600);
++4: // 192
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("察しが良いわね");
++4: // 196
+    textPause(600);
++4: // 200
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("月の民はみな夢の世界を");
+    textAdd("本物の都と勘違いしている");
++4: // 204
+    textPause(600);
++4: // 208
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("それこそ月の都の狂夢");
++4: // 212
+    textPause(600);
++4: // 216
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("いつも喋らないサグメ様が");
+    textAdd("饒舌になっているなんて");
++4: // 220
+    textPause(600);
++4: // 224
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何か本当におかしな事が");
+    textAdd("起きているんだわ");
++4: // 228
+    textPause(600);
++4: // 232
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("貴方は地上に堕ちた兎ね");
+    textAdd("八意様のところの");
++4: // 236
+    textPause(600);
+    musicBoss();
++4: // 240
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("まさか獏がこちらへ通すとは");
+    textAdd("思わなかったけど……");
++4: // 244
+    textPause(600);
++4: // 248
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("|88,16,・・・");
+    textAdd("もしかして可能性が");
+    textAdd("あるというのか……");
++4: // 252
+    textPause(600);
++4: // 256
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("試してみるわ");
+    textAdd("地上に堕ちた貴方の力を！");
++4: // 260
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 290
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
++30: // 34
+    skippable(1);
+    bubblePos(370.0, 270.0);
+    bubbleType(0);
+    textAdd("判った判った");
+    textAdd("もう十分よ");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("八意様が貴方を遣った");
+    textAdd("理由が判ったわ");
++4: // 46
+    textPause(600);
++4: // 50
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("貴方なら月の都を");
+    textAdd("救えるかも知れない");
++4: // 54
+    textPause(600);
++4: // 58
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("えええ？");
+    textAdd("月の都をー？");
++4: // 62
+    textPause(600);
++4: // 66
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("今、月の都はある敵によって");
+    textAdd("侵略されようとしている");
++4: // 70
+    textPause(600);
++4: // 74
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("侵略だって？");
++4: // 78
+    textPause(600);
++4: // 82
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("それも我々月の民には");
+    textAdd("手が出せない生命の力でね");
++4: // 86
+    textPause(600);
++4: // 90
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("慌てて月の都を凍結停止させて");
+    textAdd("全員を退避したけど");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("このままでは狂夢によって");
+    textAdd("月の民の精神も持たない");
++4: // 102
+    textPause(600);
++4: // 106
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("だから早いうちに");
+    textAdd("幻想郷へ遷都しようと考えていたの");
++4: // 110
+    textPause(600);
++4: // 114
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("うひょっ！？");
+    textAdd("遷都！？");
++4: // 118
+    textPause(600);
++4: // 122
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("いやー、驚きすぎました");
+    textAdd("その事は地上に来ている月の兎は……");
++4: // 126
+    textPause(600);
++4: // 130
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("勿論知らないわ");
++4: // 134
+    textPause(600);
++4: // 138
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("地上に月の都の別荘を作ろう");
+    textAdd("程度にしか教えていない");
++4: // 142
+    textPause(600);
++4: // 146
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("……月の民の上司はいつもそう");
+    textAdd("隠蔽に隠蔽でもう嫌になっちゃう");
++4: // 150
+    textPause(600);
++4: // 154
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("でもなんでそれを私に？");
++4: // 158
+    textPause(600);
++4: // 162
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("貴方に教えたのは");
+    textAdd("貴方が敵を討つ条件を満たしていたからよ");
++4: // 166
+    textPause(600);
++4: // 170
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("敵は生命の源を牛耳る力を");
+    textAdd("持っています");
++4: // 174
+    textPause(600);
++4: // 178
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("|118,12,われわれ");
+    textAdd("生死を拒絶する月の民を");
+    textAdd("逆手にとった狡い敵なのですが……");
++4: // 182
+    textPause(600);
++4: // 186
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("貴方はもう生死を拒絶しないのね");
+    textAdd("身も心も地上に堕ちていた");
++4: // 190
+    textPause(600);
++4: // 194
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("貴方はもう穢れている");
+    textAdd("だから貴方なら敵のところに行ける");
++4: // 198
+    textPause(600);
++4: // 202
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("ふー恐ろしい話");
+    textAdd("有難うございました");
++4: // 206
+    textPause(600);
++4: // 210
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("永琳様も輝夜様も、最初から判って");
+    textAdd("私や人間に行かせようとしたんだわ");
++4: // 214
+    textPause(600);
++4: // 218
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("人の危険なんて");
+    textAdd("どうでも良いのよね");
++4: // 222
+    textPause(600);
++4: // 226
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("私が計画を話してしまったので");
+    textAdd("もう幻想郷に遷都は出来ないでしょう");
++4: // 230
+    textPause(600);
++4: // 234
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("だからもう貴方しか頼りが無いの");
+    textAdd("判るでしょ？");
++4: // 238
+    textPause(600);
++4: // 242
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("はあ、サグメ様がそう仰るのなら");
+    textAdd("そういう事になっちゃうんでしょうね");
++4: // 246
+    textPause(600);
++4: // 250
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("強制的に");
++4: // 254
+    textPause(600);
++4: // 258
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("判っているのなら行きなさい！");
+    textAdd("いざ敵の本拠地、静かの海に向かえ！");
++4: // 262
+    textPause(600);
++4: // 266
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("これはいわば勅命よ");
+    textAdd("私の天津神部分からの……");
++4: // 270
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 271
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 301
+    end();
+}

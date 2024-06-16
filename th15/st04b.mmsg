@@ -1,0 +1,388 @@
+#pragma mapfile "map/any.msgm"
+
+meta {
+    table: {
+        0: {script: "script0", flags: 256},
+        1: {script: "script1", flags: 256},
+    },
+}
+
+
+script script0 {
+    skippable(0);
+    playerShow(0);
++4: // 4
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
++30: // 34
+    skippable(1);
+    bubbleType(0);
+    bubblePos(110.0, 280.0);
+    textAdd("月の都……なのか？");
++4: // 38
+    textPause(600);
++4: // 42
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何だか生きている物の姿が");
+    textAdd("殆ど無い");
++4: // 46
+    textPause(600);
++4: // 50
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("さっき出会った奴くらいだな");
++4: // 54
+    textPause(600);
++4: // 58
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("もしかしたらまだ");
+    textAdd("夢の中なのかも知れんが");
++4: // 62
+    textPause(600);
++4: // 66
+    skippable(0);
+    speakerBoss(0);
+    bubblePos(224.0, 144.0);
+    eclResume();
+    textClear();
++60: // 126
+    skippable(0);
++30: // 156
+    skippable(1);
+    bossShow(0);
++4: // 160
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    playerFace(0);
+    intro(0);
+    textAdd("…………");
++4: // 164
+    textPause(600);
++4: // 168
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("噂をすれば");
++4: // 172
+    textPause(600);
++4: // 176
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("……ほう、人間？");
++4: // 180
+    textPause(600);
++4: // 184
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("……");
++4: // 188
+    textPause(600);
++4: // 192
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("なんだ、愛想の無い奴だな");
++4: // 196
+    textPause(600);
++4: // 200
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("地上から来た人間なんだ");
+    textAdd("もっと驚いても良いんだぜ？");
++4: // 204
+    textPause(600);
++4: // 208
+    bossFace(7, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("……");
++4: // 212
+    textPause(600);
++4: // 216
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("幻想郷に何をしようと");
+    textAdd("しているんだ？");
++4: // 220
+    textPause(600);
++4: // 224
+    playerFace(5);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("何で月の都にお前くらいしか");
+    textAdd("見当たらないんだ？");
++4: // 228
+    textPause(600);
++4: // 232
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("……まだ喋るには早い");
++4: // 236
+    textPause(600);
+    musicBoss();
++4: // 240
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    playerFace(0);
+    textAdd("そうか、喋らないなら");
+    textAdd("こっちから行くぜ");
++4: // 244
+    textPause(600);
++4: // 248
+    playerFace(1);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("色々知ってそうな");
+    textAdd("顔をしてるもんな");
++4: // 252
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++30: // 282
+    end();
+}
+
+
+script script1 {
+    skippable(0);
+    playerShow(0);
+    playerFace(1);
+    bossShow(0);
+    bossFace(8, 0);
++4: // 4
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
++30: // 34
+    skippable(1);
+    bubblePos(370.0, 270.0);
+    bubbleType(0);
+    textAdd("貴方が送り込まれた理由が");
+    textAdd("判ったわ");
++4: // 38
+    textPause(600);
++4: // 42
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("きっと八意様の差し金ね");
++4: // 46
+    textPause(600);
++4: // 50
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("そんなに強いんですもの");
+    textAdd("貴方ならきっと……");
++4: // 54
+    textPause(600);
++4: // 58
+    playerFace(2);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("なんだ、喋れるんじゃ無いか");
++4: // 62
+    textPause(600);
++4: // 66
+    playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("幻想郷に攻め込んできたのは");
+    textAdd("お前の仕業なのか？");
++4: // 70
+    textPause(600);
++4: // 74
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("そうですね");
++4: // 78
+    textPause(600);
++4: // 82
+    bossFace(5, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("幻想郷遷都計画に関しては");
+    textAdd("あくまでも保険としてですが");
++4: // 86
+    textPause(600);
++4: // 90
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("遷都、だと？");
++4: // 94
+    textPause(600);
++4: // 98
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("しないに越した事は");
+    textAdd("無いんですけどねぇ");
++4: // 102
+    textPause(600);
++4: // 106
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("月の都をこのまま凍結させ");
+    textAdd("続けるわけにも行かないし");
++4: // 110
+    textPause(600);
++4: // 114
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("ま、仕方が無いのよね");
++4: // 118
+    textPause(600);
++4: // 122
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("話がまるで読めないな");
++4: // 126
+    textPause(600);
++4: // 130
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    playerFace(7);
+    textAdd("本当に侵略を受けているのは");
+    textAdd("月の都なの");
++4: // 134
+    textPause(600);
++4: // 138
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("それも我々月の民には");
+    textAdd("手が出せない方法で");
++4: // 142
+    textPause(600);
++4: // 146
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("全滅を回避する為に");
+    textAdd("幻想郷への移住を検討していいた");
++4: // 150
+    textPause(600);
++4: // 154
+    playerFace(7);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("月の都が侵略されているだと？");
++4: // 158
+    textPause(600);
++4: // 162
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("ええそうです");
++4: // 166
+    textPause(600);
++4: // 170
+    bossFace(6, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("もっとも、月の民達はそんなこと");
+    textAdd("知らないのですが");
++4: // 174
+    textPause(600);
++4: // 178
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("私は言葉で世界の行く末を");
+    textAdd("変える存在です");
++4: // 182
+    textPause(600);
++4: // 186
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("|8,16,・・");
+    textAdd("あの都市伝説が広まったとき");
+    textAdd("遷都は現実化し、危機は回避できる");
++4: // 190
+    textPause(600);
++4: // 194
+    playerFace(6);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("判ったような判らんような");
++4: // 198
+    textPause(600);
++4: // 202
+    playerFace(3);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
+    textAdd("だが、幻想郷を巻き込まないでくれ");
+    textAdd("迷惑だ");
++4: // 206
+    textPause(600);
++4: // 210
+    bossFace(1, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("もう心配は要らないわ");
++4: // 214
+    textPause(600);
++4: // 218
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("私が喋ってしまったから");
+    textAdd("運命はまた変わる");
++4: // 222
+    textPause(600);
++4: // 226
+    bossFace(0, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("遷都は実現しないでしょう");
++4: // 230
+    textPause(600);
++4: // 234
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("だから私は貴方に賭けるわ");
+    textAdd("もう逃れられないわよ");
++4: // 238
+    textPause(600);
++4: // 242
+    bossFace(2, 0);
+    speakerBoss(0);
+    bubblePos(370.0, 270.0);
+    textAdd("ついに運命は逆さに動き始めた");
+    textAdd("いざ敵の本拠地、静かの海に向かえ！");
++4: // 246
+    textPause(600);
+    playerHide();
+    bossHide(0);
+    textboxHide();
+    skippable(0);
++1: // 247
+    stageEnd();
+    musicEnd();
+    skippable(0);
++30: // 277
+    end();
+}
