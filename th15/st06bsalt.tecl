@@ -1475,7 +1475,7 @@ void Mer(){
 	times(23){
 		enmCreateA("MerLignes", x, y, 100, 10, 0);
 		I0 = 3+I0%2;
-		x+= 23f;
+		x+= 25f:24f:23f:23f;
 	}
 	wait(600);
 }
@@ -1497,10 +1497,10 @@ void MerLignes(){
 	//etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etSprite(0, 20, I0);
 	times(24){
-		int time = 30+RAND%120;
-		int time_disappear = 180-time;
+		int time = 30+RAND%(90:110:120:130);
+		//int time_disappear = 180-time;
 		etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
-		etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
+		//etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
 		etOn(0);
 		wait(17);
 	}
@@ -1526,7 +1526,7 @@ void Sel(){
 void PushPlayer(){
 	etNew(1);
 	etAim(1, 2);
-	etCount(1, 30, 1);
+	etCount(1, 26:30:33:36, 1);
 	etAngle(1, 0f, 0f);
 	etSprite(1, 18, 0);
 	etSpeed(1, 1f, 1f);
