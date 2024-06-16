@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @BossAlt3();
+    @BossCardAlt1();
     delete();
 }
 
@@ -1444,7 +1444,7 @@ BossCard5_448:
 !L
     spell(78, 3600, 500000, "v");
 !*
-    movePosTime(60, 4, 0.0f, 192.0f);
+	movePosTime(90, 3, 0f, 84f);
     moveLimitReset();
     anm316(0, 0);
     anmPlay(1, 79);
@@ -1469,19 +1469,73 @@ void BossCardAlt1_at()
 }
 
 void Mer(){
+	float x = -192f-19f/4f;
+	float y = 460f;
+	I0 = 3;
+	times(23){
+		enmCreateA("MerLignes", x, y, 100, 10, 0);
+		I0 = 3+I0%2;
+		x+= 23f;
+	}
+	wait(600);
+}
+
+void MerLignes(){
+	flagSet(3);
 	etNew(0);
 	etAim(0, 1);
-	etAngle(0, 0f, 0f);
+	etAngle(0, rad(-90), 0f);
 	etCount(0, 1, 1);
-	etSprite(0, 29, 4);
+	etSpeed(0, 1.5f, 1.5f);
+
+	etExSet(0, 0, 0, EX_INVULN, 99999, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_HITBOX, NEG, NEG, 0.85, NEGF);
+	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
+	etExSub(0, 3, "Sel");
+	etExSet(0, 4, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
+	etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	etSprite(0, 20, I0);
+	times(24){
+		int time = 30+RAND%120;
+		int time_disappear = 180-time;
+		etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
+		etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
+		etOn(0);
+		wait(17);
+	}
+}
+
+void Sel(){
+	flagSet(3);
+	etNew(0);
+	etAim(0, 1);
+	etAngle(0, RANDRAD, 0f);
+	etSprite(0, 0, 15);
+	etSpeed(0, 0f, 0f);
+	etCount(0, 1, 1);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_VELTIME, 120, 0, 0.5f+RANDF*0.5f, NEGF);
+	etOffset(0, RANDF2*5f, RANDF2*5f);
+	etProtectRange(5f);
+	wait(60);
+	etOn(0);
 }
 
 void PushPlayer(){
-
+	etNew(1);
+	etAim(1, 2);
+	etCount(1, 30, 1);
+	etAngle(1, 0f, 0f);
+	etSprite(1, 18, 0);
+	etSpeed(1, 1f, 1f);
+	etOn(1);
+	wait(200);
 }
 
 void ClearBullets(){
-
+	etClearAll();
 }
 
 void BossCardAlt6()
