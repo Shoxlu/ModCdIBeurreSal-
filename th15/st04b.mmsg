@@ -23,7 +23,7 @@ script script0 {
 +4: // 38
     textPause(600);
 +4: // 42
-    playerFace(0);
+    playerFace(7);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("何だか生きている物の姿が");
