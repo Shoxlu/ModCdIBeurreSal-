@@ -121,9 +121,9 @@ void FireSpellCard2() {
             @SteamSpellCard2(memoPlayerAngle)async;
 
 
-            etAngle(1, memoPlayerAngle+dist, 0f);
+            etAngle(1, ANGLE_PLAYER+dist, 0f);
             etOn(1);
-            etAngle(1, memoPlayerAngle-dist, 0f);
+            etAngle(1, ANGLE_PLAYER-dist, 0f);
             etOn(1);
 
             wait(25);
