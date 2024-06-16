@@ -1463,7 +1463,7 @@ void BossCardAlt1_at()
 		wait(60);
 		PushPlayer();
 		wait(60);
-		ClearBullets();
+		//ClearBullets();
 		wait(20);
 	}
 }
@@ -1494,7 +1494,7 @@ void MerLignes(){
 	etExSet(0, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
 	etExSub(0, 3, "Sel");
 	etExSet(0, 4, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
-	etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	//etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etSprite(0, 20, I0);
 	times(24){
 		int time = 30+RAND%120;
