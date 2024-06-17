@@ -7,8 +7,8 @@
         },
         "42_0": {
             "lines": [
-                "C'est trop bizarre, aucune boisson ne m'a.",
-                "permis de voir de pareilles choses avant."
+                "C't'endroit est trop bizarre, aucune boisson ne",
+                "m'a permis de voir de pareilles choses avant."
             ]
         },
         "50_0": {
@@ -24,17 +24,18 @@
         },
         "168_0": {
             "lines": [
-                "Quand on parle du loup."
+                "Oh, y'a des habitants ici ?"
             ]
         },
         "176_0": {
             "lines": [
-                "... ah, une humaine ?"
+                "Oh, non, je suis de passage, comme toi."
             ]
         },
         "184_0": {
             "lines": [
-                "..."
+                "Je suppose que toi aussi tu cherches",
+				"une porte vers la Lune ?"
             ]
         },
         "160_0": {

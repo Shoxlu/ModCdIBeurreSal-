@@ -73,14 +73,14 @@ script script0 {
 +4: // 172
     textPause(600);
 +4: // 176
-    bossFace(7, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……ほう、人間？");
 +4: // 180
     textPause(600);
 +4: // 184
-    bossFace(5, 0);
+    bossFace(2, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……");
