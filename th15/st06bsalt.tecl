@@ -678,9 +678,9 @@ void BossCardalt5_at()
 			etAngle(2, angle_base, 0f);
 		}
 		wait(120);
-		GF0 = 1f;
+		F0 = 1f;
 		enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
-		GF0 = -1f;
+		F0 = -1f;
 		enmCreateA("Lignes", 0f, 0f, -1, 1000, 1);
 		wait(580:540:460:400);
 		angle_base = RANDRAD;
@@ -766,31 +766,41 @@ void check_for_deletion(){
 void move()
 {
 	var A;
-	int B = 40;
+	int move_duration = 40;
 	int C = 0;
+	float base_angle = GF1;
+	float angle = base_angle;
 	//movePos((BOSS_X + cos(GF1)* 140f)*_f(LIFE)*-1f, BOSS_Y + (sin(GF1) * 140f));
 	//etAngle(1, %A, 0f);
-	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(80)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(80)*_f(LIFE))) * 140f));
-	wait(B);
-	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(160)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(160)*_f(LIFE))) * 140f));
-	wait(B);
-	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(160)*_f(LIFE)*-1f))* 140f), BOSS_Y + (sin(GF1+(rad(160)*_f(LIFE)*-1f)) * 140f));
-	wait(B);
+	angle = base_angle+rad(80)*F0;
+	move_to_point_circle(angle, 140f, move_duration);
+	angle = base_angle+rad(160)*F0;
+	move_to_point_circle(angle, 140f, move_duration);
+	angle = base_angle+rad(160)*-F0;
+	move_to_point_circle(angle, 140f, move_duration);
+
 	// movePosTime(B, 1, (BOSS_X + cos(GF1-rad(40))* 140f)*_f(LIFE), BOSS_Y + (sin(GF1-rad(40)) * 140f));
 	// wait(B);
-	movePosTime(B*2, 1, (BOSS_X + cos(GF1+(rad(40)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(40)*_f(LIFE))) * 140f));
-	wait(B*2);
-	movePosTime(B*2, 1, (BOSS_X + cos(GF1+(rad(120)*_f(LIFE)*-1f))* 140f), BOSS_Y + (sin(GF1+(rad(120)*_f(LIFE)*-1f)) * 140f));
-	wait(B*2);
-	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(120)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(120)*_f(LIFE))) * 140f));
-	wait(B);
-	movePosTime(B, 1, (BOSS_X + cos(GF1+(rad(40)*_f(LIFE)))* 140f), BOSS_Y + (sin(GF1+(rad(40)*_f(LIFE))) * 140f));
-	wait(B);
+	angle = base_angle+rad(40)*F0;
+	move_to_point_circle(angle, 140f, move_duration*2);
+	angle = base_angle+rad(120)*-F0;
+	move_to_point_circle(angle, 140f, move_duration*2);
+	angle=base_angle+rad(120)*F0;
+	move_to_point_circle(angle, 140f, move_duration);
+	angle = base_angle+rad(140)*F0;
+	move_to_point_circle(angle, 140f, move_duration);
+
 	// mathAngle(%A, ABS_X, ABS_Y, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
 	// etAngle(1, %A, 0f);
 	// movePosTime(100, 1, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
 	GI0 = 2;
 }
+
+void move_to_point_circle(float angle, float radius, int move_duration){
+	movePosTime(move_duration, 1, BOSS_X + cos(angle)* radius, BOSS_Y + sin(angle) * radius);
+	wait(move_duration);
+}
+
 
 void Explosion()
 {
@@ -1454,6 +1464,7 @@ void Mer(){
 	}
 	x = -192f-19f/4f;
 	wait(30);
+	playSound(6);
 	times(23){
 		enmCreateA("MerLignes", x, y, 100, 10, 0);
 		I0 = 3+I0%2;
@@ -1478,15 +1489,9 @@ void MerLignes(){
 	//etExSet(0, 4, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
 	//etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etSprite(0, 20, I0);
-	int time = 30+RAND%(90:110:120:130);
-	//int time_disappear = 180-time;
-	etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
-	//etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
-	etOn(0);
-	wait(17);
 	etSound(0, -1, -1);
-	times(23){
-		time = 30+RAND%(90:110:120:130);
+	times(24){
+		int time = 30+RAND%(90:110:120:130);
 		//int time_disappear = 180-time;
 		etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
 		//etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
