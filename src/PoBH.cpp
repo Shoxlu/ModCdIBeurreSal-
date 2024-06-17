@@ -1,7 +1,7 @@
 #include "PoBH.h"
 
 
-#define DEBUG_
+#define DEBUG
 
 #define SATANAE_BOMB_DURATION 340
 
@@ -364,16 +364,18 @@ extern "C" int hook_entry() {
 
 	HICON icon = load_icon("th15/icone.png");
 	if (icon) {
-
+		LRESULT result;
+		printf("Icon : %x\n", icon);
 		//Change both icons to the same icon handle.
-		SendMessage(g_window, WM_SETICON, ICON_SMALL, (LPARAM)icon);
-		SendMessage(g_window, WM_SETICON, ICON_SMALL2, (LPARAM)icon);
-		SendMessage(g_window, WM_SETICON, ICON_BIG, (LPARAM)icon);
+		result = SendMessage(g_window, WM_SETICON, ICON_SMALL, (LPARAM)icon);
+		printf("Message ICON_SMALL: %x\n", result);
+		result = SendMessage(g_window, WM_SETICON, ICON_SMALL2, (LPARAM)icon);
+		printf("Message ICON_SMALL2: %x\n", result);
+		result = SendMessage(g_window, WM_SETICON, ICON_BIG, (LPARAM)icon);
+		printf("Message ICON_BIG: %x\n", result);
 
-		//This will ensure that the application icon gets changed too.
-		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_SMALL, (LPARAM)icon);
-		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_SMALL2, (LPARAM)icon);
-		SendMessage(GetWindow(g_window, GW_OWNER), WM_SETICON, ICON_BIG, (LPARAM)icon);
+		
+		printf("Last error : %d\n", GetLastError());
 		
 	}
 
