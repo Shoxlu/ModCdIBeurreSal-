@@ -1768,7 +1768,7 @@ void main()
     flagSet(32);
     wait(1);
 	//goto Dialog @ 0;
-	goto Boss @ 0;
+	//goto Boss @ 0;
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_440 @ 0;
     unless ($SPELL_ID <= 1) goto main_316 @ 0;

@@ -63,25 +63,7 @@ void Boss1()
     anmPlay(1, 86);
     playSound(6);
 	movePosTime(60, 0, 0f, 50f);
-	@Phi();
-	//@Boss1_at();
-}
-
-void Phi()
-{
-	float A = 0.01f;
-	etNew(0);
-	etAim(0, 3);
-    etSprite(0, 26, 0);
-	etCount(0, 2, 1);
-	etSpeed(0, 3f, 3f);
-	while(1)
-	{
-		etAngle(0, A, 0f);
-		etOn(0);
-		A = A*1.618f;
-		wait(5);
-	}
+	@Boss1_at();
 }
 
 void Boss1_at()
