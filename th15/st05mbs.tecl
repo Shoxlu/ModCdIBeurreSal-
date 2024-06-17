@@ -1,0 +1,102 @@
+
+void BossItemPhase(var A, var B, var C);
+
+void MBoss()
+{
+    setBoss(0);
+    $MISS_COUNT = 0;
+    $BOMB_COUNT = 0;
+    $CAPTURE = 1;
+    enmKillAll();
+    timerReset();
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    ins_569(-1);
+    setBoss(0);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    flagSet(18);
+    setHurtbox(48.0f, 48.0f);
+    setHitbox(48.0f, 48.0f);
+    setInvuln(60);
+    lifeSet(13200);
+    movePosTime(60, 4, -128.0f, 112.0f);
+    wait(60);
+    dialogRead(2);
+    wait(10);
+    dialogWait();
+    wait(2);
+    playSound(41);
+    movePosTime(20, 4, 128.0f, 112.0f);
+    dialogWait();
+    wait(2);
+    playSound(41);
+    movePosTime(20, 4, 0.0f, 100.0f);
+    wait(22);
+    anmSelect(3);
+    anmSelectedPlay(0);
+    anmPlayPos(1, 73, 6.0f, -38.0f, 0.0f);
+    playSound(54);
+    wait(100);
+    anmPlayPos(1, 88, 6.0f, -38.0f, 0.0f);
+    playSound(6);
+    dialogWait();
+    movePosTime(40, 1, 224.0f, 96.0f);
+    wait(40);
+    delete();
+    delete();
+}
+
+void MBossDead()
+{
+    spellEnd();
+    enmKillAll();
+    moveLimitReset();
+    unless ($TIMEOUT == 0) goto MBossDead_240 @ 0;
+    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    goto MBossDead_296 @ 0;
+MBossDead_240:
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_296:
+    dropClear();
+    dropMain(3);
+    dropItems();
+    @BossItemPhase(20, 18, 64.0f);
+    lifeSet(100000);
+    setBoss(-1);
+    setScreenShake(30, 12, 0);
+    anmPlay(0, 28);
+    anmPlay(1, 65);
+    playSound(5);
+    setChapter(0);
+    flagSet(19);
+    anmSelect(3);
+    anmSetMain(0, 0);
+    wait(120);
+    movePosTime(60, 4, 224.0f, 64.0f);
+    wait(60);
+    delete();
+    delete();
+}
+
+void MBossEscape()
+{
+    setNext(0, -1, 0, "");
+    setNext(1, -1, 0, "");
+    spellEnd();
+    moveLimitReset();
+    enmKillAll();
+    unless ($TIMEOUT == 0) goto MBossEscape_280 @ 0;
+    etCancel(640.0f);
+    goto MBossEscape_300 @ 0;
+MBossEscape_280:
+    etClear(640.0f);
+MBossEscape_300:
+    lifeSet(100000);
+    setChapter(0);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, 224.0f, 64.0f);
+    wait(60);
+    delete();
+    delete();
+}
