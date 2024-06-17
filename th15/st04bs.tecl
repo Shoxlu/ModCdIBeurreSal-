@@ -246,7 +246,7 @@ void Boss2_at()
         }
         float alea = (RANDF/1000f):(RANDF/200f):(RANDF/100f):(RANDF/100f);
         while(B < 3) {
-            etCount(0, 28:28:28:40, 1);
+            etCount(0, 24:24:24:38, 1);
 
             etSprite(0, 4, C);
             etAngle(0, A, 0f);
@@ -380,13 +380,13 @@ void Boss3_at()
         float A = RANDRAD;
         int B = 0;
         if(C == 13) {
-            C = 6;
-        }else if(C == 6) {
+            C = 14;
+        }else if(C == 14) {
             C = 13;
         }
-        float alea = (RANDF/1000f):(RANDF/200f):(RANDF/100f):(RANDF/100f);
+        float alea = (RANDF/100f):(RANDF/20f):(RANDF/10f):(RANDF/10f);
         while(B < 1) {
-            etCount(0, 28:28:28:32, 1);
+            etCount(0, 20:20:20:24, 1);
 
             etSprite(0, 4, C);
             etAngle(0, A, 0f);
@@ -399,7 +399,7 @@ void Boss3_at()
                 }
                 
                 
-            }else if(C == 6) {
+            }else if(C == 14) {
                 etExSet(0, 0, 0, 1, 5, NEG, 0.05f, 0f);
                 if(B == 0) {
                     etSpeed(0, 0.8f, 0.8f);
