@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @BossCardAlt1();
+    @BossAlt1();
     delete();
 }
 
@@ -647,7 +647,7 @@ BossCard1_448:
 void BossCardalt5_at()
 {
 	
-	var A;
+	
 	etNew(0);
 	etAim(0, 1);
 	etCount(0, 1, 1);
@@ -661,11 +661,11 @@ void BossCardalt5_at()
 	etCopy(2, 0);
 	etSprite(2, 33, 6);
 	GF1 = 0f;
-	%A = rad(270);
+	float angle_base = rad(270);
 	// %A = RANDRAD;
-	GF1 = %A;
-	etAngle(0, %A, rad(40));
-	etAngle(2, %A, rad(40));
+	GF1 = angle_base;
+	etAngle(0, angle_base, rad(40));
+	etAngle(2, angle_base, rad(40));
 	while(1)
 	{
 		times(9)
@@ -673,9 +673,9 @@ void BossCardalt5_at()
 			etOn(0);
 			etOn(2);
 			wait(20);
-			%A = %A + rad(40);
-			etAngle(0, %A, 0f);
-			etAngle(2, %A, 0f);
+			angle_base += rad(40);
+			etAngle(0, angle_base, 0f);
+			etAngle(2, angle_base, 0f);
 		}
 		wait(120);
 		GF0 = 1f;
@@ -683,112 +683,84 @@ void BossCardalt5_at()
 		GF0 = -1f;
 		enmCreateA("Lignes", 0f, 0f, -1, 1000, 1);
 		wait(580:540:460:400);
-		%A = %RANDRAD;
-		GF1 = %A;
-		etAngle(0, %A, 0f);
-		etAngle(2, %A, 0f);
+		angle_base = RANDRAD;
+		GF1 = angle_base;
+		etAngle(0, angle_base, 0f);
+		etAngle(2, angle_base, 0f);
 		//GF1 += 20f;
 	}
 }
 
 void Lignes()
 {
-	var A, B, angl2, count1;
-	int color = 13;
-	int G = 0;
+	flagSet(3);
+
 	int wait1 = 3:2:2:2;
 	int wait2 = 220:150:120:120;
 	float Speed = 5f:4f:4f:4f;
-	flagSet(3);
+	float angl2 = rad(1.75):rad(1.75):rad(2):rad(2.5);
+	int count1 = 4;
 	GI0 = 1;
 	etNew(1);
 	etAim(1, 1);
 	etCount(1, 1, 1);
 	etSpeed(1, 0f, 0f);
-	etSprite(1, 11, color);
+	etSprite(1, 11, 13);
 	etExSet(1, 0, 0, EX_INVULN, 450, NEG, NEGF, NEGF);
 	etExSet(1, 2, 0, EX_VELTIME, 60, 0, 3f, NEGF);
 	move() async;
 	movePos((BOSS_X + cos(GF1)* 140f), BOSS_Y + (sin(GF1) * 140f));
-	mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
 	GI1 = 1;
-	%angl2 = rad(1.75):rad(1.75):rad(2):rad(2.5);
-	$count1 = 4;
+	
 	while(1)
 	{
-				etSprite(1, 11, color);
-				etExSet(1, 1, 0, EX_WAIT, 320, NEG, NEGF, NEGF);
-				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed, NEGF);
-				%B = %A - %angl2 * 1.5f;
-				times($count1)
-				{
-					etAngle(1, %B, 0f);
-					if(color > 14)
-					{
-						color = 13;
-					}
-					etSprite(1, 11, color);
-					etOn(1); // 1. angle = %A + 0Åã
-					%B +=%angl2;
-					color += 1;
-				}
-				if(GI0 == 2)
-				{
-					delete();
-				}
-				wait(wait1);
-				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
-				G += 1;
-				etSprite(1, 11, color);
-				etExSet(1, 1, 0, EX_WAIT, wait2+160, NEG, NEGF, NEGF);
-				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 2f, NEGF);
-				%B = %A - %angl2 * 1.5f;
-				times($count1)
-				{
-					etAngle(1, %B, 0f);
-					if(color > 14)
-					{
-						color = 13;
-					}
-					etSprite(1, 11, color);
-					etOn(1); // 1. angle = %A + 0Åã
-					%B +=%angl2;
-					color += 1;
-				}
-				if(GI0 == 2)
-				{
-					delete();
-				}
-				wait(wait1);
-				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
-				G += 1;
-				etSprite(1, 11, color);
-				etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
-				etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
-				%B = %A - %angl2 * 1.5f;
-				times($count1)
-				{
-					etAngle(1, %B, 0f);
-					if(color > 14)
-					{
-						color = 13;
-					}
-					etSprite(1, 11, color);
-					etOn(1); // 1. angle = %A + 0Åã
-					%B +=%angl2;
-					color += 1;
-				}
-				if(GI0 == 2)
-				{
-					delete();
-				}
-				wait(wait1);
-				mathAngle(%A, ABS_X, ABS_Y, 0f, 198f);
-				G += 1;
-			//G = 0;
+		
+		etExSet(1, 1, 0, EX_WAIT, 320, NEG, NEGF, NEGF);
+		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed, NEGF);
+		shoot_fan(angl2, count1);
+		check_for_deletion();
+		wait(wait1);
+		
+		etExSet(1, 1, 0, EX_WAIT, wait2+160, NEG, NEGF, NEGF);
+		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 2f, NEGF);
+		shoot_fan(angl2, count1);
+		check_for_deletion();
+		wait(wait1);
+		
+		etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
+		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
+		shoot_fan(angl2, count1);
+		check_for_deletion();
+		wait(wait1);
+		
+
 	}
 		
 	wait(10000);
+}
+
+void shoot_fan(float angl2, int count1){
+	int color = 0;
+	float angle_to_center;
+	mathAngle(angle_to_center, ABS_X, ABS_Y, 0f, 198f);
+	float bullet_angle = angle_to_center - angl2 * 1.5f;
+	times(count1)
+	{
+		etAngle(1, bullet_angle, 0f);
+		etSprite(1, 11, 13+color);
+		etOn(1); 
+		bullet_angle +=angl2;
+
+		color = (color+1)%2;
+	}
+}
+
+void check_for_deletion(){
+	if(GI0 == 2)
+	{
+		delete();
+	}
+	return;
 }
 
 void move()
@@ -1444,13 +1416,13 @@ BossCard5_448:
 !L
     spell(78, 3600, 500000, "v");
 !*
-	movePosTime(90, 3, 0f, 84f);
+	movePosTime(90, 0, 0f, 84f);
     moveLimitReset();
     anm316(0, 0);
     anmPlay(1, 79);
     anmPlay(1, 75);
     playSound(54);
-+90: //94
++120: //94
     nop();
 	BossCardAlt1_at();
     wait(10000);
@@ -1472,6 +1444,16 @@ void Mer(){
 	float x = -192f-19f/4f;
 	float y = 460f;
 	I0 = 3;
+	int A = 0;
+	times(23){
+		if(A%2 == 0){
+			playSound(SE_CHARGE4);
+			anmPlayPos(1,75, x, 448f, 0f);
+		}
+		x+= 25f:24f:23f:23f;
+	}
+	x = -192f-19f/4f;
+	wait(30);
 	times(23){
 		enmCreateA("MerLignes", x, y, 100, 10, 0);
 		I0 = 3+I0%2;
@@ -1493,11 +1475,18 @@ void MerLignes(){
 	etExSet(0, 2, 0, EX_WAIT, 90, NEG, NEGF, NEGF);
 	etExSet(0, 3, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
 	etExSub(0, 3, "Sel");
-	etExSet(0, 4, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
+	//etExSet(0, 4, 0, EX_WAIT, 120, NEG, NEGF, NEGF);
 	//etExSet(0, 5, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etSprite(0, 20, I0);
-	times(24){
-		int time = 30+RAND%(90:110:120:130);
+	int time = 30+RAND%(90:110:120:130);
+	//int time_disappear = 180-time;
+	etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
+	//etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
+	etOn(0);
+	wait(17);
+	etSound(0, -1, -1);
+	times(23){
+		time = 30+RAND%(90:110:120:130);
 		//int time_disappear = 180-time;
 		etExSet(0, 2, 0, EX_WAIT, time, NEG, NEGF, NEGF);
 		//etExSet(0, 4, 0, EX_WAIT, time_disappear, NEG, NEGF, NEGF);
@@ -1519,7 +1508,7 @@ void Sel(){
 	etEx(0, 0, EX_VELTIME, 120, 0, 0.5f+RANDF*0.5f, NEGF);
 	etOffset(0, RANDF2*5f, RANDF2*5f);
 	etProtectRange(5f);
-	wait(60);
+	wait(120);
 	etOn(0);
 }
 
