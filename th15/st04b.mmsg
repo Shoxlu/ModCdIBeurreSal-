@@ -87,14 +87,14 @@ script script0 {
 +4: // 188
     textPause(600);
 +4: // 192
-    playerFace(4);
+    playerFace(1);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("なんだ、愛想の無い奴だな");
 +4: // 196
     textPause(600);
 +4: // 200
-    playerFace(1);
+    playerFace(7);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("地上から来た人間なんだ");
@@ -117,7 +117,7 @@ script script0 {
 +4: // 220
     textPause(600);
 +4: // 224
-    playerFace(5);
+    playerFace(2);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("何で月の都にお前くらいしか");
