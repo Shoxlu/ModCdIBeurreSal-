@@ -47,7 +47,7 @@ Boss_996:
 Boss_1200:
     debug22(3, "Boss7");
 	lifeSet(12800);
-    @BossAlt1();
+    @BossAlt5();
     delete();
 }
 
@@ -765,22 +765,15 @@ void check_for_deletion(){
 
 void move()
 {
-	var A;
 	int move_duration = 40;
-	int C = 0;
 	float base_angle = GF1;
 	float angle = base_angle;
-	//movePos((BOSS_X + cos(GF1)* 140f)*_f(LIFE)*-1f, BOSS_Y + (sin(GF1) * 140f));
-	//etAngle(1, %A, 0f);
 	angle = base_angle+rad(80)*F0;
 	move_to_point_circle(angle, 140f, move_duration);
 	angle = base_angle+rad(160)*F0;
 	move_to_point_circle(angle, 140f, move_duration);
 	angle = base_angle+rad(160)*-F0;
 	move_to_point_circle(angle, 140f, move_duration);
-
-	// movePosTime(B, 1, (BOSS_X + cos(GF1-rad(40))* 140f)*_f(LIFE), BOSS_Y + (sin(GF1-rad(40)) * 140f));
-	// wait(B);
 	angle = base_angle+rad(40)*F0;
 	move_to_point_circle(angle, 140f, move_duration*2);
 	angle = base_angle+rad(120)*-F0;
@@ -790,9 +783,7 @@ void move()
 	angle = base_angle+rad(140)*F0;
 	move_to_point_circle(angle, 140f, move_duration);
 
-	// mathAngle(%A, ABS_X, ABS_Y, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
-	// etAngle(1, %A, 0f);
-	// movePosTime(100, 1, (BOSS_X + (cos(rad(210))* 140f))*_f(LIFE), BOSS_Y + (sin(rad(210)) * 140f));
+
 	GI0 = 2;
 }
 
@@ -1461,6 +1452,7 @@ void Mer(){
 			anmPlayPos(1,75, x, 448f, 0f);
 		}
 		x+= 25f:24f:23f:23f;
+		A += 1;
 	}
 	x = -192f-19f/4f;
 	wait(30);
