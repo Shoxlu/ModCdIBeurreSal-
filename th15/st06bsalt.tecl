@@ -69,6 +69,7 @@ void BossAlt1()
     @BossAlt1_at() async;
 	@BossAlt1_at1();
 }
+
 void Move()
 {
 	wait(200);
@@ -77,6 +78,7 @@ void Move()
 		wait(100);
 	}
 }
+
 void BossAlt1_at()
 {
 	etNew(0);
@@ -199,7 +201,7 @@ void BossAlt2_at(int etID,float B, float A, int color, int sprite, int color2)
     etExSet(etID, 1, 0, EX_SETSPRITE, sprite, color2, NEGF, NEGF);
     while(1){
 		etOn(etID);
-		A = A +(rad(12.5f)*B);
+		A = A +(rad(13.5f)*B);
 		etAngle(etID, A, 0f);
 		wait(10);
     }
@@ -678,11 +680,13 @@ void BossCardalt5_at()
 			etAngle(2, angle_base, 0f);
 		}
 		wait(120);
-		F0 = 1f;
+		F0 = rad(0);
 		enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
-		F0 = -1f;
-		enmCreateA("Lignes", 0f, 0f, -1, 1000, 1);
-		wait(580:540:460:400);
+		F0 += rad(-120);
+		enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
+		F0 += rad(-120);
+		enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
+		wait(380:340:260:200);
 		angle_base = RANDRAD;
 		GF1 = angle_base;
 		etAngle(0, angle_base, 0f);
@@ -694,7 +698,8 @@ void BossCardalt5_at()
 void Lignes()
 {
 	flagSet(3);
-
+	flagSet(8);
+	flagSet(4);
 	int wait1 = 3:2:2:2;
 	int wait2 = 220:150:120:120;
 	float Speed = 5f:4f:4f:4f;
@@ -709,7 +714,7 @@ void Lignes()
 	etExSet(1, 0, 0, EX_INVULN, 450, NEG, NEGF, NEGF);
 	etExSet(1, 2, 0, EX_VELTIME, 60, 0, 3f, NEGF);
 	move() async;
-	movePos((BOSS_X + cos(GF1)* 140f), BOSS_Y + (sin(GF1) * 140f));
+	movePos(BOSS_X, BOSS_Y);
 	GI1 = 1;
 	
 	while(1)
@@ -763,28 +768,65 @@ void check_for_deletion(){
 	return;
 }
 
-void move()
-{
-	int move_duration = 40;
-	float base_angle = GF1;
-	float angle = base_angle;
-	angle = base_angle+rad(80)*F0;
-	move_to_point_circle(angle, 140f, move_duration);
-	angle = base_angle+rad(160)*F0;
-	move_to_point_circle(angle, 140f, move_duration);
-	angle = base_angle+rad(160)*-F0;
-	move_to_point_circle(angle, 140f, move_duration);
-	angle = base_angle+rad(40)*F0;
-	move_to_point_circle(angle, 140f, move_duration*2);
-	angle = base_angle+rad(120)*-F0;
-	move_to_point_circle(angle, 140f, move_duration*2);
-	angle=base_angle+rad(120)*F0;
-	move_to_point_circle(angle, 140f, move_duration);
-	angle = base_angle+rad(140)*F0;
-	move_to_point_circle(angle, 140f, move_duration);
+// void move()
+// {
+	// int move_duration = 40;
+	// float base_angle = GF1;
+	// float angle = base_angle;
+	// angle = base_angle+rad(80)*F0;
+	// move_to_point_circle(angle, 140f, move_duration);
+	// angle = base_angle+rad(160)*F0;
+	// move_to_point_circle(angle, 140f, move_duration);
+	// angle = base_angle+rad(160)*-F0;
+	// move_to_point_circle(angle, 140f, move_duration);
+	// angle = base_angle+rad(40)*F0;
+	// move_to_point_circle(angle, 140f, move_duration*2);
+	// angle = base_angle+rad(120)*-F0;
+	// move_to_point_circle(angle, 140f, move_duration*2);
+	// angle=base_angle+rad(120)*F0;
+	// move_to_point_circle(angle, 140f, move_duration);
+	// angle = base_angle+rad(140)*F0;
+	// move_to_point_circle(angle, 140f, move_duration);
+	// GI0 = 2;
+// }
 
 
-	GI0 = 2;
+void move(){
+	//move_to_point_circle(F0, 140f, 40);
+	// moveVel(F0, 1.6f*1.8f);
+	//moveVel(F0, 2f);
+	// moveVelTime(120, 0, rad(-180)+rad(-360)+F0, 0.5f);
+	// //moveAngleTime(360, 0, rad(90)+F0);
+	// wait(120);
+	// moveVel( rad(-180)+rad(-360)+F0, 1.6f*1.8f);
+	// moveVelTime(120, 0, rad(-180)+rad(-360)*2f+F0, 0.5f);
+	//moveAngleTime(360, 0, rad(90)+F0);
+
+	float center_x = BOSS_X+cos(GF1+F0)*100f;
+	float center_y = BOSS_Y+sin(GF1+F0)*100f;
+	//enmCreateA("Test", center_x, center_y, 100, 1, 0);
+	float radius = 100f;
+	float angle= 0f;
+	mathAngle(angle, center_x, center_y, BOSS_X, BOSS_Y);
+	float x = cos(angle)*radius;
+	float y = sin(angle)*radius;
+	int time = 100;
+	times(time){
+		movePos(center_x+x, center_y+y);
+		x = cos(angle)*radius;
+		y = sin(angle)*radius;
+		angle -= rad(2)*(200f/_f(time));//(rad(2)*200f*(200/100)
+		radius += -100f*120f/140f/_f(time);
+		//speed -=1f/360f;
+		wait(1);
+	}
+	GI0=2;
+}
+
+void Test(){
+	etNew(0);
+	etSpeed(0, 0f, 0f);
+	etOn(0);
 }
 
 void move_to_point_circle(float angle, float radius, int move_duration){
