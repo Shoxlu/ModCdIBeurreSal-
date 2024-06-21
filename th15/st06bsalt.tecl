@@ -660,41 +660,37 @@ void BossCardalt5_at()
 	etExSet(0, 4, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etCopy(2, 0);
 	etSprite(2, 33, 6);
-	GF1 = 0f;
 	// %A = RANDRAD;
 	float angle = rad(270);
 	int wait_sub = 0;
 	while(1)
 	{
 		BossCard5_at2(angle) async;
-		angle=RANDRAD;
-		wait(70);
+		angle+=rad(60);
+		wait(70+180);
 		//GF1 += 20f;
 	}
 }
 
 void BossCard5_at2(float angle_base){
-	times(9)
-	{
-		etAngle(0, angle_base, 0f);
-		etAngle(2, angle_base, 0f);
-		etOn(0);
-		etOn(2);
-		wait(20);
-		angle_base += rad(40);
+	// times(9)
+	// {
+		// etAngle(0, angle_base, 0f);
+		// etAngle(2, angle_base, 0f);
+		// etOn(0);
+		// etOn(2);
+		// wait(20);
+		// angle_base += rad(40);
 		
-	}
+	// }
 	wait(60);
 	F0 = rad(0)+angle_base;
 	enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
-	F0 += rad(-120);
+	F0 = angle_base+rad(-120);
 	enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
-	F0 += rad(-120);
+	F0 = angle_base+rad(-120)*2f;
 	enmCreateA("Lignes", 0f, 0f, 1, 1000, 1);
-	wait((280:240:160:1));
-	//wait_sub -= 10;
-	etAngle(0, angle_base, 0f);
-	etAngle(2, angle_base, 0f);
+
 }
 
 void Lignes()
@@ -704,23 +700,23 @@ void Lignes()
 	flagSet(4);
 	int wait1 = 5:4:4:4;
 	int wait2 = 220:150:120:120;
-	float Speed = 5f:4f:4f:4f;
+	float Speed = 4f:4f:4f:4f;
 	float angle = -rad(180)+RANDRAD;
 	float angl2 = rad(1.75):rad(1.75):rad(2.00):rad(2.50);
 	int count1 = 4;
-	GI0 = 1;
 	etNew(1);
 	etAim(1, 1);
 	etCount(1, 1, 1);
 	etSpeed(1, 0f, 0f);
 	etSprite(1, 11, 13);
-	etExSet(1, 0, 0, EX_INVULN, 10050, NEG, NEGF, NEGF);
+	etExSet(1, 0, 0, EX_INVULN, 750, NEG, NEGF, NEGF);
 	etExSet(1, 2, 0, EX_VELTIME, 60, 0, 3f, NEGF);
-	move() async;
+	int duration = 100;
+	move(100) async;
 	movePos(BOSS_X, BOSS_Y);
-	GI1 = 1;
-	
-	while(1)
+	int time = 0;
+
+	while(time < duration)
 	{
 		
 		// etExSet(1, 1, 0, EX_WAIT, 320, NEG, NEGF, NEGF);
@@ -728,23 +724,23 @@ void Lignes()
 		// shoot_fan(angl2, count1);
 		// check_for_deletion();
 		// wait(wait1);
-		
+		etSprite(1, 11, 13);
 		etExSet(1, 1, 0, EX_WAIT, wait2+160, NEG, NEGF, NEGF);
-		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3f, NEGF);
+		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 2f, NEGF);
+		shoot_fan(angle, angl2, count1);
+		check_for_deletion();
+		//wait(wait1);
+		etSprite(1, 11, 14);
+		etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
+		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
 		shoot_fan(angle, angl2, count1);
 		check_for_deletion();
 		wait(wait1);
-		
-		// etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
-		// etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
-		// shoot_fan(angl2, count1);
-		// check_for_deletion();
-		//wait(wait1);
+		time += wait1;
 		angle+=rad(137.5);
 
 	}
-		
-	wait(10000);
+
 }
 
 void shoot_fan(float angle, float angl2, int count1){
@@ -755,7 +751,7 @@ void shoot_fan(float angle, float angl2, int count1){
 	times(count1)
 	{
 		etAngle(1,angle+bullet_angle, 0f);
-		etSprite(1, 11, 13+color);
+		//etSprite(1, 11, 13+color);
 		etOn(1); 
 		bullet_angle +=angl2;
 
@@ -794,7 +790,7 @@ void check_for_deletion(){
 // }
 
 
-void move(){
+void move(int duration){
 	//move_to_point_circle(F0, 140f, 40);
 	// moveVel(F0, 1.6f*1.8f);
 	//moveVel(F0, 2f);
@@ -805,22 +801,22 @@ void move(){
 	// moveVelTime(120, 0, rad(-180)+rad(-360)*2f+F0, 0.5f);
 	//moveAngleTime(360, 0, rad(90)+F0);
 	float radius = 80f;
-	float center_x = BOSS_X+cos(F0)*80f;
-	float center_y = BOSS_Y+sin(F0)*80f;
+	float center_x = BOSS_X+cos(F0)*radius;
+	float center_y = BOSS_Y+sin(F0)*radius;
 	//enmCreateA("Test", center_x, center_y, 100, 1, 0);
 	
 	float angle= 0f;
 	mathAngle(angle, center_x, center_y, BOSS_X, BOSS_Y);
 	float x = cos(angle)*radius;
 	float y = sin(angle)*radius;
-	int duration = 100;
+	movePos(center_x+x, center_y+y);
 	int waittime = 3;
 	int time = duration/waittime;
 	times(time){
 		movePos(center_x+x, center_y+y);
 		x = cos(angle)*radius;
 		y = sin(angle)*radius;
-		angle -= rad(2.4)*(200f/_f(time));//(rad(2)*200f*(200/100)
+		angle -= rad(2)*(200f/_f(time));//(rad(2)*200f*(200/100)
 		radius += -100f*120f/140f/_f(time);
 		//speed -=1f/360f;
 		wait(waittime);
