@@ -305,15 +305,15 @@ entry entry4 {
 
 entry entry5 {
     version: 8,
-    name: "face/dummy.png",
-    format: 7,
+    name: "face/enemy4/face04sw.png",
+    format: 1,
     width: 700,
     height: 881,
     memoryPriority: 0,
     lowResScale: 0,
     hasData: 1,
     sprites: {
-        sprite37: { x: 0, y: 0, w: 4, h: 4 }
+        sprite37: { x: 0, y: 0, w: 700, h: 881 }
     }
 }
 

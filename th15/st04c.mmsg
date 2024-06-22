@@ -66,32 +66,29 @@ script script0 {
 +4: // 164
     textPause(600);
 +4: // 168
-    bossFace(5, 0);
+    bossFace(1, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……");
 +4: // 172
     textPause(600);
 +4: // 176
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
+	bossFace(2, 0);
     textAdd("すみませーん");
     textAdd("もしもーし");
 +4: // 180
     textPause(600);
 +4: // 184
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
     textAdd("……");
 +4: // 188
     textPause(600);
 +4: // 192
-    playerFace(4);
+    playerFace(2);
     speakerPlayer();
     bubblePos(110.0, 280.0);
-    bubbleType(2);
     textAdd("もしかして耳が悪いのかな");
 +4: // 196
     textPause(600);
@@ -119,14 +116,13 @@ script script0 {
 +4: // 220
     textPause(600);
 +4: // 224
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
+	bossFace(6, 0);
+	bubblePos(370.0, 270.0);
     textAdd("貴方は月の民ですよねぇ");
 +4: // 228
     textPause(600);
 +4: // 232
-    playerFace(0);
+    playerFace(6);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("色々お聞きしたいことが");
@@ -134,7 +130,7 @@ script script0 {
 +4: // 236
     textPause(600);
 +4: // 240
-    bossFace(6, 0);
+    bossFace(4, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("……");
@@ -158,7 +154,7 @@ script script0 {
 +4: // 260
     textPause(600);
 +4: // 264
-    bossFace(5, 0);
+    bossFace(3, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("まだ確定してないから");
