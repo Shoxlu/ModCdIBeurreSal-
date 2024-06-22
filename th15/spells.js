@@ -34,7 +34,9 @@
     "76": "« La prêtresse du crépuscule »",
     "78G": "Signe du Beurre Salé",
     "78S": "Signe du Beurre Doux",
-    "82": "Signe du Beurre",
-	"94G": "Autorité Divine «Grand Ordre du Beurre Salé»",
+    "82G": "Signe du Beurre",
+    "82G": "Signe du Non-Beurre",
+	"94G": "Autorité Divine « Grand Ordre du Beurre Salé »",
+	"94S": "Autorite Profane « Grand Ordre du Beurre Doux »",
 	"108": "« Mémoires de la haine et de la destruction »"
 }

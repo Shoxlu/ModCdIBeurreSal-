@@ -724,13 +724,13 @@ void Lignes()
 		// shoot_fan(angl2, count1);
 		// check_for_deletion();
 		// wait(wait1);
-		etSprite(1, 11, 13);
+		etSprite(1, 11, 8);
 		etExSet(1, 1, 0, EX_WAIT, wait2+160, NEG, NEGF, NEGF);
 		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 2f, NEGF);
 		shoot_fan(angle, angl2, count1);
 		check_for_deletion();
 		//wait(wait1);
-		etSprite(1, 11, 14);
+		etSprite(1, 11, 15);
 		etExSet(1, 1, 0, EX_WAIT, wait2+240, NEG, NEGF, NEGF);
 		etExSet(1, 2, 0, EX_VELTIME, 60, 0, Speed - 3.5f, NEGF);
 		shoot_fan(angle, angl2, count1);

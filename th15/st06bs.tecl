@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss4();
+    @Boss5();
     delete();
 }
 
@@ -1020,8 +1020,6 @@ BossCard5_448:
 
 void BossCard5_at()
 {
-	
-	var A;
 	int count2 = 5;
 	etNew(0);
 	etAim(0, 3);
@@ -1035,12 +1033,9 @@ void BossCard5_at()
 	etExSet(0, 4, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
 	etCopy(2, 0);
 	etSprite(2, 33, 1);
-	GF1 = 0f;
-	%A = rad(270);
-	// %A = RANDRAD;
-	GF1 = %A;
-	etAngle(0, %A, rad(40));
-	etAngle(2, %A, rad(40));
+	float A = rad(270);
+	etAngle(0, A, rad(40));
+	etAngle(2, A, rad(40));
 	while(1)
 	{
 		times(2)
@@ -1050,40 +1045,33 @@ void BossCard5_at()
 				etOn(0);
 				etOn(2);
 				wait(10:8:6:6);
-				%A = %A + rad(72);
-				etAngle(0, %A, 0f);
-				etAngle(2, %A, 0f);
+				A = A + rad(72);
+				etAngle(0, A, 0f);
+				etAngle(2, A, 0f);
 			}
 			wait(120);
-			//%A = GF1;
-			LignesOg(count2, %A) async;
-			%A +=rad(180);
-			etAngle(0, %A, 0f);
-			etAngle(2, %A, 0f);
-			wait(30:30:20:10);
+			LignesOg(count2, A) async;
+			A +=rad(180);
+			etAngle(0, A, 0f);
+			etAngle(2, A, 0f);
+			wait(30:20:20:10);
 		}
-			wait(60:40:25:25);
-			%A = %RANDRAD;
-			GF1 = %A;
-			etAngle(0, %A, 0f);
-			etAngle(2, %A, 0f);
+		wait(50:25:25:25);
+		A = RANDRAD;
+		etAngle(0, A, 0f);
+		etAngle(2, A, 0f);
 	}
 }
 
 void LignesOg(int count2, float angl1)
 {
-	var A, B, angl2, count1;
-	int color = 13;
-	int wait1 = 3:3:2:2;
-	int wait2 = 320:320:320:120;
-	float Speed = 5f:4f:4f:4f;
 	float G = 2f;
 	etNew(1);
 	etAim(1, 1);
 	etCount(1, 1, 1);
 	etSprite(1, 6, 2);
 	etSpeed(1, 0f, 0f);
-	etExSet(1, 0, 0, EX_INVULN, 1, NEG, NEGF, NEGF);
+	etExSet(1, 0, 1, EX_INVULN, 400, NEG, NEGF, NEGF);
 	etExSet(1, 1, 1, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etExSet(1, 2, 0, EX_WAIT, 180, NEG, NEGF, NEGF);
 	etExSet(1, 3, 0, EX_VELTIME, 60, 0, 1.5f, NEGF); 
@@ -1096,22 +1084,21 @@ void LignesOg(int count2, float angl1)
 
 void lignes1(float G, float count2, float angl1)
 {
-	float I = rad(1);
-	float angl2 = rad(-90);
+	float angl2 =  rad(0);
 	float X = cos(angl1)*140f;
 	float Y = sin(angl1)*140f+BOSS_Y;
 	float F_X = cos(angl1 + (rad(360)/count2)*G)*140f;
 	float F_Y = sin(angl1 + (rad(360)/count2)*G)*140f+BOSS_Y;
-	int count = 50;
-	float C;
-	float D;
-	int F = 0;
+	int count = 50:40:45:50;
+	float step_x;
+	float step_y;
+	int waitsub = 0;
 	times(_S(count2))
 	{
 		F_X = cos(angl1 + (rad(360)/count2)*G)*140f;
 		F_Y = sin(angl1 + (rad(360)/count2)*G)*140f+BOSS_Y;
-		C = (F_X-X)/_f(count);
-		D = (F_Y-Y)/_f(count);
+		step_x = (F_X-X)/_f(count);
+		step_y = (F_Y-Y)/_f(count);
 		times(count)
 		{
 			etOffsetAbs(1, X, Y);
@@ -1119,18 +1106,17 @@ void lignes1(float G, float count2, float angl1)
 			etAngle(1, angl2, 0f);
 			etAngle(3, angl2, 0f);
 			etOn(1);
-	!LO
+	!NHLO
 			etOn(3);
 	!*
-			X = X + C; // X = cos(GF1)*140f -> X2 = cos(GF1 + rad(72)*G)*140f;                 %A -> sqrt((140f*2f)*(140f*2f)+(cos(rad(72)*G)*140f)*(cos(rad(72)*G)*140f))
-			Y = Y + D;// 
-			angl2 = I;
-			I = I + rad(20);
+			X = X + step_x;
+			Y = Y + step_y; 
+			angl2 += rad(20);
 			//wait(1);
 		}
-		F += 20;
-		etExSet(1, 2, 0, EX_WAIT, 180-F, NEG, NEGF, NEGF);
-		etExSet(3, 2, 0, EX_WAIT, 180-F, NEG, NEGF, NEGF);
+		waitsub += 20;
+		etExSet(1, 2, 0, EX_WAIT, 180-waitsub, NEG, NEGF, NEGF);
+		etExSet(3, 2, 0, EX_WAIT, 180-waitsub, NEG, NEGF, NEGF);
 		wait(20);
 		G += 2f;
 	}
@@ -1143,9 +1129,9 @@ void moveOg()
 	int C = 0;
 	times(5)
 	{
-	moveVel(GF1 + B - rad(270), 8f);
-	wait(40);
-	B += rad(140);// -70 = 5x - 720 + 70 .... 650 = 5x + 70.... 580 = 5x .... 580 /5 = x
+		moveVel(GF1 + B - rad(270), 8f);
+		wait(40);
+		B += rad(140);// -70 = 5x - 720 + 70 .... 650 = 5x + 70.... 580 = 5x .... 580 /5 = x
 	}
 	moveVel(0f, 0f);
 	GI0 = 2;
