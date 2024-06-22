@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss5();
+    @BossCard1();
     delete();
 }
 
@@ -674,39 +674,57 @@ BossCard1_448:
 	@BossCard1_at();
 }
 
-void BossCard1_at()
-{
+
+void BossCard1_at(){
 	etNew(0);
 	etAim(0, 3);
-	etCount(0, 3, 1);
-	etAngle(0, rad(90), rad(30));
-	etSpeed(0, 2f, 2f);
-	etSprite(0, 32, 3);
-	etExSet(0, 0, 0, EX_SIZE, 70, NEG, 0.2f, 2.5f);
-	// etExSet2(0, 1, 0, 134217728, 1, 16, 6, 67072, -999999.0f, 2.0f, 0.0f, 280.0f);
-    // etExSet2(0, 2, 0, 16384, 30, 30, 120, 30, 120.0f, 0.0f, 0.0f, 0.0f);
-	//etExSet2(0, 1, 0, 134217728, 0, 8, 10, 1, -999999.0f, 4f, 128.0f, 128.0f);
-  //  etExSet2(0, 2, 0, EX_SHOOT, 18, 38, 3, 0, 0.0f, 16.0f, 0.0f, 0.0f);
-	etExSet(0, 1, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
-	etExSub(0, 1, "Explosion");
-	etExSet(0, 2, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
-	while(1)
-	{
+	etCount(0, 10, 3);
+	etAngle(0, RANDRAD, RANDRAD);
+	etSpeed(0, 3f, 1f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_ANGLE_ACCEL, 200, NEG, 0.01, rad(5));
+	times(100){
 		etOn(0);
-		wait(200);
+		wait(10);
 	}
+	wait(100000);
 }
 
-void Explosion()
-{
-	etNew(1);
-	etAim(1, 7);
-	etCount(1, 14, 13);
-	etAngle(1, rad(90), rad(24));
-	etSpeed(1, 2f, 4f);
-	etSprite(1, 8, 1 + RAND % 15);
-	etOn(1);
+void Gras(){
 }
+// void BossCard1_at1()
+// {
+	// etNew(0);
+	// etAim(0, 3);
+	// etCount(0, 3, 1);
+	// etAngle(0, rad(90), rad(30));
+	// etSpeed(0, 2f, 2f);
+	// etSprite(0, 32, 3);
+	// etExSet(0, 0, 0, EX_SIZE, 70, NEG, 0.2f, 2.5f);
+	// // etExSet2(0, 1, 0, 134217728, 1, 16, 6, 67072, -999999.0f, 2.0f, 0.0f, 280.0f);
+    // // etExSet2(0, 2, 0, 16384, 30, 30, 120, 30, 120.0f, 0.0f, 0.0f, 0.0f);
+	// //etExSet2(0, 1, 0, 134217728, 0, 8, 10, 1, -999999.0f, 4f, 128.0f, 128.0f);
+  // //  etExSet2(0, 2, 0, EX_SHOOT, 18, 38, 3, 0, 0.0f, 16.0f, 0.0f, 0.0f);
+	// etExSet(0, 1, 0, EX_SPECIAL, NEG, NEG, NEGF, NEGF);
+	// etExSub(0, 1, "Explosion");
+	// etExSet(0, 2, 0, EX_DELETE, 0, NEG, NEGF, NEGF);
+	// while(1)
+	// {
+		// etOn(0);
+		// wait(200);
+	// }
+// }
+
+// void Explosion()
+// {
+	// etNew(1);
+	// etAim(1, 7);
+	// etCount(1, 14, 13);
+	// etAngle(1, rad(90), rad(24));
+	// etSpeed(1, 2f, 4f);
+	// etSprite(1, 8, 1 + RAND % 15);
+	// etOn(1);
+// }
 
 void BossCard2()
 {
