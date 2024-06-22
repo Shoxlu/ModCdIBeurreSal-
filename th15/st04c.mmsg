@@ -199,14 +199,15 @@ script script1 {
 +4: // 50
     bossFace(0, 0);
     speakerBoss(0);
+	bubbleType(2);
     bubblePos(370.0, 270.0);
     textAdd("もう私は決めたわ");
 +4: // 54
     textPause(600);
 +4: // 58
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    playerFace(4);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
     textAdd("全てお話ししましょう");
 +4: // 62
     textPause(600);
@@ -214,6 +215,7 @@ script script1 {
     playerFace(0);
     speakerPlayer();
     bubblePos(110.0, 280.0);
+	bubbleType(0);
     textAdd("はあ、では幻想郷に");
     textAdd("何をしようとしているのですか？");
 +4: // 70
@@ -227,152 +229,38 @@ script script1 {
 +4: // 78
     textPause(600);
 +4: // 82
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+	bubbleType(0);
     textAdd("これはある敵の侵略からの");
     textAdd("防御策なのですが……");
 +4: // 86
     textPause(600);
 +4: // 90
-    bossFace(5, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+	playerFace(0);
+    speakerPlayer();
+    bubblePos(110.0, 280.0);
     textAdd("生命の源を牛耳る敵の策に");
     textAdd("手も足も出ない状況なのです");
 +4: // 94
     textPause(600);
 +4: // 98
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
+	playerFace(1);
     textAdd("我々月の民は、生死を");
     textAdd("拒絶しますので……");
 +4: // 102
     textPause(600);
 +4: // 106
-    playerFace(0);
     speakerPlayer();
     bubblePos(110.0, 280.0);
     textAdd("はあはあ");
 +4: // 110
     textPause(600);
 +4: // 114
+	playerHide();
     bossFace(0, 0);
     speakerBoss(0);
     bubblePos(370.0, 270.0);
     textAdd("このまま凍結させ続ける訳にも");
     textAdd("いかないので");
-+4: // 118
-    textPause(600);
-+4: // 122
-    bossFace(5, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("あくまでも保険としてですが");
-    textAdd("幻想郷遷都計画が持ち上がりました");
-+4: // 126
-    textPause(600);
-+4: // 130
-    playerFace(7);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("せんと？");
-    textAdd("って何でしたっけ");
-+4: // 134
-    textPause(600);
-+4: // 138
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("お引っ越しの事よ");
-    textAdd("しないに越した事は無いんですが");
-+4: // 142
-    textPause(600);
-+4: // 146
-    playerFace(0);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("はあ、なる程");
-    textAdd("月の都も大変なんですね");
-+4: // 150
-    textPause(600);
-+4: // 154
-    playerFace(2);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("まあ幻想郷は良いところですので");
-    textAdd("引っ越しちゃっても良いかも");
-+4: // 158
-    textPause(600);
-+4: // 162
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("そうでしたか……");
-    textAdd("ちょっと見込み違いだったのかな");
-+4: // 166
-    textPause(600);
-+4: // 170
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("てっきり八意様の差し金かと");
-    textAdd("思ったのですが");
-+4: // 174
-    textPause(600);
-+4: // 178
-    playerFace(4);
-    speakerPlayer();
-    bubblePos(110.0, 280.0);
-    textAdd("いやまあその");
-+4: // 182
-    textPause(600);
-+4: // 186
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("しかしもう遅い");
-+4: // 190
-    textPause(600);
-+4: // 194
-    bossFace(1, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("私はサグメ。言葉で世界の行く末を");
-    textAdd("変える存在です");
-+4: // 198
-    textPause(600);
-+4: // 202
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("私が喋ってしまったから");
-    textAdd("運命はまた変わる");
-+4: // 206
-    textPause(600);
-+4: // 210
-    bossFace(0, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("遷都は実現しないでしょう");
-+4: // 214
-    textPause(600);
-+4: // 218
-    bossFace(2, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    playerFace(7);
-    textAdd("月の都の命運は貴方に賭けるしかない");
-    textAdd("もう逃れられないわよ");
-+4: // 222
-    textPause(600);
-+4: // 226
-    bossFace(2, 0);
-    speakerBoss(0);
-    bubblePos(370.0, 270.0);
-    textAdd("ついに運命は逆さに動き始めた");
-    textAdd("いざ敵の本拠地、静かの海に向かえ！");
 +4: // 230
     textPause(600);
     playerHide();
