@@ -81,7 +81,7 @@ void Boss1_at(int A, float B, int C, float D)
 {
     etNew(0);
     etAim(0, C);
-	etCount(0, 40, 4);
+	etCount(0, 22:28:34:40, 4);
 	etSprite(0, 4, A);
     etAngle(0, D, B);
 	etSpeed(0, 3f, 2f);
