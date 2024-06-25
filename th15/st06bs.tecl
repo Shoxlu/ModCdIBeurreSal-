@@ -671,26 +671,29 @@ BossCard1_448:
 +90: //94
     nop();
     wait(60);
+	float sens = 1f;
 	while(1){
-		@BossCard1_at();
+		@BossCard1_at(sens);
+		sens=-sens;
 		wait(100);
 	}
 }
 
 
-void BossCard1_at(){
+void BossCard1_at(float sens){
 	etNew(0);
 	etAim(0, 3);
 	etSprite(0,34, 8);
 	etCount(0, 10, 3);
 	etAngle(0, RANDRAD, RANDRAD);
-	etSpeed(0, 3f, 1f);
+	float speed = 2f:2f:2.5f:3f;
+	etSpeed(0, speed, 1f);
 	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etEx(0, 0, EX_ANGLE_ACCEL, 200, NEG, 0.01, rad(5));
 	etNew(1);
 	etAim(1, 3);
 	etSprite(1, 4, 13); 
-	etCount(1, 10, 1);
+	etCount(1, 8:10:10:10, 1);
 	etAngle(1, RANDRAD, RANDRAD);
 	etSpeed(1, 3f, 1f);
 	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
@@ -701,9 +704,9 @@ void BossCard1_at(){
 	int wait_time = 0;
 	float random_angle = 0f;
 	times(50){
-		random_angle = RANDF2*rad(0.5);
-		etExSet(1, 2, 0, EX_ANGLE_ACCEL, 200, NEG, 0.005, rad(3)+random_angle);
-		etExSet(1, 3, 0, EX_ANGLE_ACCEL, 100, NEG, -0.04, rad(3)+random_angle);
+		random_angle = RANDF2*rad(0.2):rad(0.5):rad(0.7):rad(0.9);
+		etExSet(1, 2, 0, EX_ANGLE_ACCEL, 200, NEG, 0.005, sens*rad(3)+random_angle);
+		etExSet(1, 3, 0, EX_ANGLE_ACCEL, 100, NEG, -0.04, sens*rad(3)+random_angle);
 		etExSet(1, 4, 0, EX_WAIT, 50*10-wait_time, NEG, NEGF, NEGF);
 		etAngle(0, RANDRAD, RANDRAD);
 		etAngle(1, RANDRAD, RANDRAD);
