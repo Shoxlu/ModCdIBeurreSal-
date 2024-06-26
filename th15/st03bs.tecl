@@ -175,8 +175,8 @@ Boss2_544:
     $CAPTURE = 1;
     anmSelect(3);
     anmSetMain(0, 0);
-    setNext(0, 2600, 2520, "BossCard2");
-    lifeMarker(0, 2600.0f, -24448);
+    setNext(0, 2800, 2520, "BossCard2");
+    lifeMarker(0, 2800.0f, -24448);
     stars(2);
     anmSelect(3);
     anmSetMain(0, 0);
@@ -570,36 +570,23 @@ BossCard2_468:
 	wait(30);
 	@BossCard2_at4()async;
 	wait(30);
-	@BossCard2_at5()async;
-	wait(180);
+	@Anim()async;
+	@BossCard2_at5();
+	wait(200);
 	killAllAsync();
-	@Wall();
-	wait(180);
 	etClear(500f);
+	wait(60);
 	}
 }
 
-void Wall()
+void Anim()
 {
-	float A = 0f;
-	float Hauteur = 0f;
-	etNew(5);
-	etAim(5, 3);
-	etCount(5, 30, 1);
-	etSpeed(5, 1.1f, 1.1f);
-	etExSet(5, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	times(20)
-	{
-		etAngle(5, RANDRAD, 0f);
-		etOffset(5, 120f+RANDF2*40f, RANDF2*40f);
-		etSprite(5, 6, 6);
-		etOn(5);
-		etAngle(5, RANDRAD, 0f);
-		etOffset(5, -120f-RANDF2*40f, RANDF2*40f);
-		etSprite(5, 6, 3);
-		etOn(5);
-		wait(8);
-	}
+	wait(220);
+	anmPlay(1, 75);
+    playSound(54);
+    wait(30);
+    anmPlay(1, 86);
+    playSound(6);
 }
 
 void BossCard2_at()
@@ -611,10 +598,18 @@ void BossCard2_at()
 	etCount(0, 1, 1);
 	etSpeed(0, 8f, 8f);
 	etEx(0, 0, EX_VELTIME, 20, NEG, 1f, NEGF);
-	while(1)
+	times(210:210:420:420)
 	{
 		A += rad(7.5524);
 		etAngle(0, A, 0f);
+		etOn(0);
+		wait(2:2:1:1);
+	}
+	etCount(0, 1, 5);
+	times(120:120:240:240)
+	{
+		A += rad(7.5524);
+		etAngle(0, A, rad(1));
 		etOn(0);
 		wait(2:2:1:1);
 	}
@@ -629,7 +624,15 @@ void BossCard2_at2()
 	etCount(1, 1, 3:3:4:5);
 	etExSet(1, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etSpeed(1, 2f, 3f);
-	while(1)
+	times(90)
+	{
+		A += -rad(17);
+		etAngle(1, A, 0f);
+		etOn(1);
+		wait(4);
+	}
+	etExSet(1, 1, 0, EX_BOUNCE, 1, 13, NEGF, NEGF);
+	times(36)
 	{
 		A += -rad(17);
 		etAngle(1, A, 0f);
@@ -647,10 +650,18 @@ void BossCard2_at3()
 	etCount(2, 6, 1);
 	etSpeed(2, 1.8f, 1.8f);
 	etExSet(2, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	while(1)
+	times(40)
 	{
 		A += rad(10);
 		etAngle(2, A, 0f);
+		etOn(2);
+		wait(10);
+	}
+	etCount(2, 6, 5);
+	times(20)
+	{
+		A += rad(10);
+		etAngle(2, A, rad(1));
 		etOn(2);
 		wait(10);
 	}
@@ -665,7 +676,7 @@ void BossCard2_at4()
 	etCount(3, 20, 1);
 	etSpeed(3, 1.2f, 1.2f);
 	etExSet(3, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
-	while(1)
+	times(5)
 	{
 		A += -rad(10);
 		etAngle(3, A, 0f);
@@ -687,7 +698,7 @@ void BossCard2_at5()
 	etSpeed(4, 3f, 3f);
 	etCount(4, 6, 1);
 	laserNew(4, 0f, 70f, NEGF, 5f);
-	while(1)
+	times(3)
 	{
 	A += -rad(10);
 	B = A;
