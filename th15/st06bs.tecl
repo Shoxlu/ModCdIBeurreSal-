@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @BossCard1();
+    @Boss1();
     delete();
 }
 
@@ -655,13 +655,7 @@ BossCard1_448:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 3300, "Boss2");
-!EN
-    spell(78, 3300, 500000, "「掌の純光」");
-!H
-    spell(78, 3300, 500000, "「掌の純光」");
-!L
-    spell(78, 3300, 500000, "「掌の純光」");
-!*
+    spell(78, 3300, 500000, "2");
 	anmPlayAbs(3, 28);
     movePosTime(60, 4, 0.0f, 128.0f);
     moveLimit(0.0f, 128.0f, 240.0f, 224.0f);
@@ -795,28 +789,185 @@ BossCard2_448:
 +90: //94
     nop();
     moveLimit(0.0f, 128.0f, 240.0f, 16.0f);
+	@BossCard2_at_tancarville() async;
+	wait(180);
 	@BossCard2_at();
-	wait(1000);
+	wait(10000);
 }
 
-void BossCard2_at()
-{
-	float X = -192f;
-	float Y = 450f;
-	float RANDVALUE = 0f;
-	@CreatePattern(0, 1, 8, 8, 1, 1, rad(-90), 0f, 2f, 2f);
-	@CreatePattern(1, 1, 8, 8, 1, 1, rad(-90), 0f, 2f, 2f);
+void BossCard2_at(){
+	etNew(2);
+	etAim(2, 3);
+	etAngle(2, 0f, 0f);
+	etSprite(2, 11, 10);
+	etCount(2, 4, 2:3:3:3);
+	etSpeed(2, 2f, 2f);
+	float angle = 0f;
+	float angle2 = 0f;
 	while(1)
 	{
-		RANDVALUE = _f(RAND % 193);
-		X = X + 13f;
-		etOffsetAbs(0, RANDVALUE, Y);
-		etOffsetAbs(1, -RANDVALUE, Y);
-		etOn(0);
-		etOn(1);
-		wait(3);
+		etAngle(2, angle, rad(2));
+		etOn(2);	
+		angle += rad(20.5);
+		//angle += angle2;
+		
+		wait(6:6:6:5);
 	}
 }
+
+float BossCard2_droite_rightside(float x){
+	return 6f*x/7f;
+}
+float BossCard2_droite_leftside(float x){
+	return -6f*x/7f;
+}
+
+void BossCard2_rightside(){
+	BossCard2_ligne(BOSS_X, BOSS_Y+10f, BOSS_X+190f, BOSS_Y-34.706, 60, 1) async;//(170f, -40f) y = -4x/17 => 17y+4x+c = 0 <=>17*(Boss_Y+10f)+4*Boss_X+c=0 <=> c= -17*Boss_Y -170f - 4*Boss_X <=>     
+	BossCard2_ligne(BOSS_X, BOSS_Y-10f, BOSS_X+113.185, BOSS_Y-100.548, 60, 1) async;//(100f, -80f) y= -8x/10 => 10y +8x + c = 0 <=> 10*(BOSS_Y-10f)+8*BOSS_X+c=0 <=> c = -10*BOSS_Y+100f-8*BOSS_X
+	wait(60);
+	BossCard2_ligne(BOSS_X+113.185, BOSS_Y-100.548,  BOSS_X+190f, BOSS_Y-34.706, 60, 1) async;//(-70f, -60f);->(-7, -6) -7y+6x + c = 0 <=> y = -6x/-7 - c/-7
+	wait(60);
+	float c = 20f;
+	etExSet(0, 1, 0, EX_WAIT, 100, NEG, NEGF, NEGF); 
+	etExSet(0, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF); 
+	while(1){
+		c = -50f+RANDF*70f;
+		BossCard2_rightside_barre(c) async;
+		c = 120f-RANDF*70f;
+		BossCard2_rightside_barre(c) async;
+		BossCard2_rightside_barre(-70f) async;
+		if(RAND%4==0){
+			BossCard2_rightside_barre(150f) async;
+		}
+		wait(90:90:90:90);
+	}
+}
+
+
+void BossCard2_leftside(){
+		
+	BossCard2_ligne(BOSS_X, BOSS_Y+10f, BOSS_X-190f, BOSS_Y-34.706, 60, 1) async;//(-170f, -40f) -17y + 4x +c 0 <=> c = 17*BOSS_Y+170f -4*BOSS_X <=> y = -4x/-17 -c/-17
+	BossCard2_ligne(BOSS_X, BOSS_Y-10f, BOSS_X-113.185, BOSS_Y-100.548, 60, 1) async;//(-100f, -80f) -10y + 8x + c = 0 <=> c = +10*(BOSS_Y-10f)-8*BOSS_X <=> c = +10f*BOSS_Y -100f -8*BOSS_X <=>  y= -8x/-10 - c/-10
+	wait(60);
+	BossCard2_ligne(BOSS_X-113.185, BOSS_Y-100.548, BOSS_X-190f, BOSS_Y-34.706, 60, 1) async;//(70f, -60f);->(7, -6) 7y +6x + c= 0 <=> y = -6x/7 -c/7
+	wait(60);
+	float c = 20f;//from -70f to 120f (prolly)
+	etExSet(0, 1, 0, EX_WAIT, 170, NEG, NEGF, NEGF); 
+	etExSet(0, 2, 0, EX_DELETE, 1, NEG, NEGF, NEGF);
+	while(1){
+		c = -50f+RANDF*70f;
+		BossCard2_leftside_barre(c) async;
+		c = 120f-RANDF*70f;
+		BossCard2_leftside_barre(c) async;
+		BossCard2_leftside_barre(-70f) async;
+		
+		wait(90:90:90:90);
+	}
+}
+
+void BossCard2_leftside_barre(float c){
+	float a = BOSS_Y - 10f - (8f*BOSS_X)/10f;
+	float d = BOSS_Y + 10f - (4f*BOSS_X)/17f ;
+	float x = (-a+c)*70f/116f; //
+	float y = BossCard2_droite_leftside(x)+c;
+	float x2= (-d+c)*119f/130f; //(-138+c)*119f/130f = -190f <=> c = -190f*130/119+138
+	float y2 = BossCard2_droite_leftside(x2)+c;
+	
+	BossCard2_ligne_pattern(x2, y2, x, y, 60, 2, 20:20:15:15) async;
+}
+
+void BossCard2_rightside_barre(float c){
+
+	float a = BOSS_Y-10f +(8f*BOSS_X)/10f;
+	float d = BOSS_Y +10f + (4f*BOSS_X)/17f ;
+	float x = (a-c)*70f/116f;
+	float y = BossCard2_droite_rightside(x)+c;
+	float x2= (d-c)*119f/130f;
+	float y2 = BossCard2_droite_rightside(x2)+c;
+	
+	BossCard2_ligne_pattern(x2, y2, x, y, 60, 2, 20:20:15:15) async;
+}
+
+void BossCard2_at_tancarville(){
+	etNew(0);
+	etExSet(0, 0, 0, EX_INVULN, 100000000, NEG, NEGF, NEGF);
+	BossCard2_leftside() async;
+	BossCard2_rightside();
+}
+
+
+void BossCard2_ligne_pattern(float x1, float y1, float x2, float y2, int steps, int waittime, int n_times_laser){
+	etNew(1);
+	etAim(1, 1);
+	etSprite(1, 8, 2);
+	etCount(1, 1, 1);
+	etAngle(1, rad(90), 0f);
+	etSpeed(1, 2f, 2f);
+	laserNew(1, 0f, 0f, 0f, 10f);
+	laserTiming(1,20,10,1000,10, 0);
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 0, 0f, rad(1));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 20, 0f, -rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 40, 0f, rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 60, 0f, -rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 80, 0f, rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 100, 0f, -rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 120, 0f, rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 140, 0f, -rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 160, 0f, rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 180, 0f, -rad(2));
+	etEx(1, 0, EX_ANGLE_ACCEL, 20, 200, 0f, rad(2));
+
+	//etEx(1, 0, EX_GOTO, 0, 1000,NEGF, NEGF);
+	etSpeed(0, 0f, 0f);
+	float x = x1;
+	float y = y1;
+	int a = 0;
+	times(steps){
+		etOffsetAbs(0, x, y);
+		etOn(0);
+		etOffsetAbs(1, x, y);
+		if(a%n_times_laser == 0) {
+			laserCuOn(1);
+		}
+		x+= (x2-x1)/(_f(steps));
+		y+= (y2-y1)/(_f(steps));
+		wait(waittime);
+		a+=1;
+	}
+}
+
+void BossCard2_ligne(float x1, float y1, float x2, float y2, int steps, int waittime){
+	etSpeed(0, 0f, 0f);
+	float x = x1;
+	float y = y1;
+	times(steps){
+		etOffsetAbs(0, x, y);
+		etOn(0);
+		x+= (x2-x1)/(_f(steps));
+		y+= (y2-y1)/(_f(steps));
+		wait(waittime);
+	}
+}
+
+// void BossCard2_at()
+// {
+	// float X = -192f;
+	// float Y = 450f;
+	// float RANDVALUE = 0f;
+	// @CreatePattern(0, 1, 8, 8, 1, 1, rad(-90), 0f, 2f, 2f);
+	// @CreatePattern(1, 1, 8, 8, 1, 1, rad(-90), 0f, 2f, 2f);
+	// while(1)
+	// {
+		// RANDVALUE = _f(RAND % 193);
+		// X = X + 13f;
+		// etOffsetAbs(0, RANDVALUE, Y);
+		// etOffsetAbs(1, -RANDVALUE, Y);
+		// etOn(0);
+		// etOn(1);
+		// wait(3);
+	// }
+// }
  // debut:
 		// if(X < 192f)
 		// {
