@@ -43,8 +43,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss3");
-
-    @Boss1();
+    @BossCard2();
     delete();
 }
 
@@ -559,19 +558,48 @@ BossCard2_468:
     anm316(0, 0);
     anmPlay(1, 73);
 	GI1 = 1;
-
     nop();
+	while(1)
+	{
 	wait(60);
 	@BossCard2_at()async;
-	wait(120);
+	wait(30);
 	@BossCard2_at2()async;
-	wait(120);
+	wait(30);
 	@BossCard2_at3()async;
-	wait(120);
-	!HL
+	wait(30);
+	@BossCard2_at4()async;
+	wait(30);
 	@BossCard2_at5()async;
-	!*
-	@BossCard2_at4();
+	wait(180);
+	killAllAsync();
+	@Wall();
+	wait(180);
+	etClear(500f);
+	}
+}
+
+void Wall()
+{
+	float A = 0f;
+	float Hauteur = 0f;
+	etNew(5);
+	etAim(5, 3);
+	etCount(5, 30, 1);
+	etSpeed(5, 1.1f, 1.1f);
+	etExSet(5, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	times(20)
+	{
+		etAngle(5, RANDRAD, 0f);
+		etOffset(5, 120f+RANDF2*40f, RANDF2*40f);
+		etSprite(5, 6, 6);
+		etOn(5);
+		etAngle(5, RANDRAD, 0f);
+		etOffset(5, -120f-RANDF2*40f, RANDF2*40f);
+		etSprite(5, 6, 3);
+		etOn(5);
+		wait(8);
+	}
 }
 
 void BossCard2_at()
@@ -599,6 +627,7 @@ void BossCard2_at2()
 	etAim(1, 3);
 	etSprite(1, 22, 6);
 	etCount(1, 1, 3:3:4:5);
+	etExSet(1, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	etSpeed(1, 2f, 3f);
 	while(1)
 	{
@@ -617,6 +646,7 @@ void BossCard2_at3()
 	etSprite(2, 8, 8);
 	etCount(2, 6, 1);
 	etSpeed(2, 1.8f, 1.8f);
+	etExSet(2, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
 		A += rad(10);
@@ -634,14 +664,13 @@ void BossCard2_at4()
 	etSprite(3, 19, 5);
 	etCount(3, 20, 1);
 	etSpeed(3, 1.2f, 1.2f);
+	etExSet(3, 0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
 	while(1)
 	{
 		A += -rad(10);
 		etAngle(3, A, 0f);
-		!NHL
 		etOn(3);
 		playSound(38);
-		!*
 		wait(120);
 	}
 }
@@ -658,12 +687,11 @@ void BossCard2_at5()
 	etSpeed(4, 3f, 3f);
 	etCount(4, 6, 1);
 	laserNew(4, 0f, 70f, NEGF, 5f);
-	wait(240);
 	while(1)
 	{
 	A += -rad(10);
 	B = A;
-	!H
+	!ENH
 	times(12)
 	{
 		B += rad(30);
@@ -678,8 +706,7 @@ void BossCard2_at5()
 		laserOn(4);
 	}
 	!*
-	playSound(19);
-	wait(60);
+	wait(120);
 	}
 }
 

@@ -1753,6 +1753,7 @@ Phantom02b_520:
 void main()
 {
     flagSet(32);
+	@MainBoss();
     wait(1);
     setChapter(0);
     unless ($SPELL_ID >= 0) goto main_440 @ 0;
