@@ -24,6 +24,10 @@ void Rain(){
 }
 
 void RainST(){
+	BigShinyRainSpawnST() async;
+	wait(200);
+	TalismansST() async;
+	wait(2000);
 }
 
 void RainGR(){
@@ -32,6 +36,19 @@ void RainGR(){
 	Talismans_cercle() async;
 	wait(2000);
 }
+
+void BigShinyRainSpawnST(){
+	times(5:6:7:7){
+			
+		@BigShinyRain(1, 5) async;
+		wait(7+RAND%30);
+		@BigShinyRain(5, 1) async;
+		wait(2+RAND%30);
+		@BigShinyRain(1, 5) async;
+		wait(160+RAND%30);
+	}
+}
+
 
 void Talismans_cercle(){
 	etNew(1);
@@ -60,33 +77,65 @@ void Talismans_cercle(){
 	}
 }
 
+
+void TalismansST(){
+	etNew(1);
+	etAim(1, 2);
+	etAngle(1, 0f, 0f);
+	etSprite(1, 11, 15);
+	etSpeed(1, 3f:4f:4f:5f, 3f:4f:4f:5f);
+	etCount(1, 12:12:16:18, 1);
+	etExSet(1, 0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	float waittime = 60f;
+	int counter = 0;
+	while(1){
+		float x = RANDF*192f;
+		etOffset(1, x, 0f);
+		etOn(1);
+		etOffset(1, -x, 0f);
+		etOn(1);
+		wait(_S(waittime));
+		counter+=_S(waittime);
+		if (counter >= 300){
+			waittime = (waittime/1.5);
+			counter = 0;
+		}
+		if(waittime <= 9f){
+			waittime = 9f;
+		}
+	}
+}
+
 void BigShinyRainSpawn(){
-	times(5:6:7:7){
+	times(4:5:6:6){
 			
-		@BigShinyRain() async;
+		@BigShinyRain(4, 6) async;
 		wait(7+RAND%30);
-		@BigShinyRain() async;
+		@BigShinyRain(6, 4) async;
 		wait(2+RAND%30);
-		@BigShinyRain() async;
+		@BigShinyRain(4, 6) async;
 		wait(160+RAND%30);
 	}
 }
-void BigShinyRain(){
+void BigShinyRain(int color1, int color2){
 	etNew(0);
 	etAim(0, 1);
 	etAngle(0, rad(90), 0f);
-	etSprite(0, 33, 4);
+	etSprite(0, 33, color1);
 	etCount(0, 1, 1);
 	etSpeed(0, 3f, 3f);
 	etExSet(0, 0, 0, EX_ANIM,3, NEG, NEGF, NEGF);
 	etExSet(0, 1, 0, EX_SIZE, 1, 0, 1f, 0.85f);
-	int color = 4;
 	while(1){
 		etOffset(0, RANDF2*190f, 0f);
-		etSprite(0, 33, color);
+		etSprite(0, 33, color1);
 		etOn(0);
-		color += 2;
-		color = 4+color % 4;
+
+		wait(60:60:50:50);
+		etOffset(0, RANDF2*190f, 0f);
+		etSprite(0, 33, color2);
+		etOn(0);
+
 		wait(60:60:50:50);
 	}
 }
@@ -1501,8 +1550,8 @@ main_300:
     @LogoEnemy() async;
 +60: //60
     nop();
-    //@MainFront();
-    //wait(400);
+    @MainFront();
+    wait(400);
     ins_902();
     enmKillAll();
     etClear(640.0f);
@@ -1510,6 +1559,7 @@ main_300:
     //wait(160);
 +60: //60
     nop();
+	wait(1000);
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
 	{
 		@mainalt();
