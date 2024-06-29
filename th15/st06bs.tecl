@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss1();
+    @Boss7();
     delete();
 }
 
@@ -1520,7 +1520,7 @@ BossCard7_468:
 +90: //94
     nop();
     $A = 120;
-	@Bowap() async;
+	//@Bowap() async;
     @BossCard7_at(5, 2) async;
     goto BossCard7_1344 @ 94;
 BossCard7_1324:

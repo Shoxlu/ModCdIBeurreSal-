@@ -1542,20 +1542,21 @@ void BossCardAlt7_at(int etId, int color, float angle, float sens)
 	etNew(etId);//initializes etMgr 0
 	etAim(etId, 3);
 	etCount(etId, 10, 1);
-	etSpeed(etId, 3f, 3f);
+	etSpeed(etId, 2f:2.5f:3f:3f, 3f);
 	etAngle(etId, angle, rad(10));
 	etSprite(etId, 11, color);
+	etEx(etId, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	int n_bullets = 10;
 	while(1){
 		etAngle(etId, angle, rad(10));
 		etCount(etId, n_bullets, 1);
 		etOn(etId);
-		n_bullets = (n_bullets+  10);
+		n_bullets = (n_bullets +  10);
 		if(n_bullets >= 40){
 			n_bullets = 10;
 		}
-		angle+= rad(1.2)*sens;//rad(1.2) ou rad(10.2)
-		wait(15);
+		angle+= rad(1.2):rad(1.2):rad(1.2):rad(1.2)*sens;//rad(1.2) ou rad(10.2)
+		wait(23:23:20:15);
 	}
 }
 
@@ -1565,7 +1566,7 @@ void BossCardAlt7_at2_ring(int etid, float x, float y)
 	etAim(etid, 3);
 	etSprite(etid,0, 12);
 	etSpeed(etid, 0.01f, 0.01f);
-	etCount(etid, 10, 1);
+	etCount(etid, 9:10:11:11, 1);
 	etEx(etid, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
 	etOffsetAbs(etid, x, y);
 	etDist(etid, 70f);
@@ -1574,10 +1575,10 @@ void BossCardAlt7_at2_ring(int etid, float x, float y)
 		//times(10){
 			etAngle(etid, RANDRAD, 0f);
 			mathAngle(angle, x, y, PLAYER_X, PLAYER_Y);
-			etExSet(etid, 1, 0, EX_VELTIME, 300, 1, 1.5f, RANDRAD);
+			etExSet(etid, 1, 0, EX_VELTIME, 300:300:300:300, 1, 1.5f:1.5f:1.5f:1.5f, RANDRAD);
 			etOn(etid);
 		//}
-		wait(10);
+		wait(16:12:12:10);
 	}
 }
 
@@ -1592,7 +1593,7 @@ void BossCardAlt7_at3(int etid, int color)
 	etCount(etid, 20, 1);
 	while(1){
 		etOn(etid);
-		wait(60);
+		wait(80:60:45:45);
 	}
 
 }
