@@ -292,7 +292,7 @@ extern "C" zAnmVm * get_current_text_vm_spell() {
 
 extern "C" int check_for_hijack_name() {
 	int id = SPELLCARD_PTR->spell_id;
-	if (id >= 78 and id < 100) {
+	if (id >= 78 and id < 106) {
 		return 1;
 	}
 	return 0;

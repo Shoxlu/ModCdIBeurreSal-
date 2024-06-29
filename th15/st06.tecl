@@ -1550,8 +1550,8 @@ main_300:
     @LogoEnemy() async;
 +60: //60
     nop();
-    @MainFront();
-    wait(400);
+    // @MainFront();
+    // wait(400);
     ins_902();
     enmKillAll();
     etClear(640.0f);
@@ -1559,7 +1559,7 @@ main_300:
     //wait(160);
 +60: //60
     nop();
-	wait(1000);
+	//wait(1000);
 	if(SHOTTYPE == 2 || SHOTTYPE == 0)
 	{
 		@mainalt();
