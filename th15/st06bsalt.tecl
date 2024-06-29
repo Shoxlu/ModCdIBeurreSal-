@@ -1510,7 +1510,7 @@ BossCard7_468:
     playSound(54);
 +90: //94
     nop();
-    BossCardAlt7_at(0, 8, 0f) async;
+    BossCardAlt7_at(0, 8, 0f, 1f) async;
 	while ((LIFE > 5500) && (TIME <= (30 * 60))){
 		wait(1);
 	}
@@ -1522,7 +1522,7 @@ BossCard7_468:
 		wait(1);
 	}
     etClear(640.0f);
-	BossCardAlt7_at(3, 13, rad(90)) async;
+	BossCardAlt7_at(3, 13, rad(90), -1f) async;
 	while ((LIFE > 1200) && (TIME <= (90 * 60))){
 		wait(1);
 	}
@@ -1537,22 +1537,24 @@ BossCard7_468:
     return;
 }
 
-void BossCardAlt7_at(int etId, int color, float angle)
+void BossCardAlt7_at(int etId, int color, float angle, float sens)
 {
 	etNew(etId);//initializes etMgr 0
-	etAim(etId, 2);
+	etAim(etId, 3);
 	etCount(etId, 10, 1);
 	etSpeed(etId, 3f, 3f);
 	etAngle(etId, angle, rad(10));
 	etSprite(etId, 11, color);
 	int n_bullets = 10;
 	while(1){
+		etAngle(etId, angle, rad(10));
 		etCount(etId, n_bullets, 1);
 		etOn(etId);
 		n_bullets = (n_bullets+  10);
 		if(n_bullets >= 40){
 			n_bullets = 10;
 		}
+		angle+= rad(1.2)*sens;//rad(1.2) ou rad(10.2)
 		wait(15);
 	}
 }

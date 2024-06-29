@@ -31,7 +31,7 @@ void enameGR()
 
 void mainalt()
 {
-	dialogRead(0);
+	//dialogRead(0);
     @MainBossalt();
     wait(1000);
     delete();
