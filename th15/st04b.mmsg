@@ -59,7 +59,7 @@ script script0 {
 +4: // 160
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     playerFace(0);
     intro(0);
     textAdd("…………");
@@ -75,14 +75,14 @@ script script0 {
 +4: // 176
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……ほう、人間？");
 +4: // 180
     textPause(600);
 +4: // 184
     bossFace(2, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……");
 +4: // 188
     textPause(600);
@@ -104,7 +104,7 @@ script script0 {
 +4: // 208
     bossFace(7, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……");
 +4: // 212
     textPause(600);
@@ -127,7 +127,7 @@ script script0 {
 +4: // 232
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……まだ喋るには早い");
 +4: // 236
     textPause(600);
@@ -167,7 +167,7 @@ script script1 {
 +4: // 4
     bossFace(0, 0);
     speakerPlayer();
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
 +30: // 34
     skippable(1);
     bubblePos(110.0, 280.0);
@@ -179,14 +179,14 @@ script script1 {
 +4: // 42
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("きっと八意様の差し金ね");
 +4: // 46
     textPause(600);
 +4: // 50
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("そんなに強いんですもの");
     textAdd("貴方ならきっと……");
 +4: // 54
@@ -209,14 +209,14 @@ script script1 {
 +4: // 74
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("そうですね");
 +4: // 78
     textPause(600);
 +4: // 82
     bossFace(5, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("幻想郷遷都計画に関しては");
     textAdd("あくまでも保険としてですが");
 +4: // 86
@@ -231,7 +231,7 @@ script script1 {
 +4: // 98
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("しないに越した事は");
     textAdd("無いんですけどねぇ");
 +4: // 102
@@ -239,7 +239,7 @@ script script1 {
 +4: // 106
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("月の都をこのまま凍結させ");
     textAdd("続けるわけにも行かないし");
 +4: // 110
@@ -247,7 +247,7 @@ script script1 {
 +4: // 114
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("ま、仕方が無いのよね");
 +4: // 118
     textPause(600);
@@ -273,7 +273,7 @@ script script1 {
 +4: // 146
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("全滅を回避する為に");
     textAdd("幻想郷への移住を検討していいた");
 +4: // 150
@@ -289,21 +289,21 @@ script script1 {
 +4: // 162
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("ええそうです");
 +4: // 166
     textPause(600);
 +4: // 170
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("もっとも、月の民達はそんなこと");
     textAdd("知らないのですが");
 +4: // 174
     textPause(600);
 +4: // 178
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("私は言葉で世界の行く末を");
     textAdd("変える存在です");
 +4: // 246

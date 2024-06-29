@@ -51,7 +51,7 @@ script script0 {
 +4: // 152
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     playerFace(6);
     intro(0);
     textAdd("…………");
@@ -67,25 +67,25 @@ script script0 {
 +4: // 168
     bossFace(7, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……ほう、人間？");
 +4: // 172
     textPause(600);
 +4: // 176
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……");
 +4: // 180
     textPause(600);
 +4: // 184
     bossFace(2, 0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("しゃべらんのかい！");
 +4: // 188
     textPause(600);
 +4: // 192
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("月の都が何でこうなっているのか");
     textAdd("判らないけど");
 +4: // 196
@@ -101,7 +101,7 @@ script script0 {
 +4: // 208
     bossFace(7, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("ふむ、それはそうだけど……");
 +4: // 212
     textPause(600);
@@ -116,14 +116,14 @@ script script0 {
 +4: // 224
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……貴方の役目は一体？");
 +4: // 228
     textPause(600);
 +4: // 232
     bossFace(3, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……おっと");
     textAdd("余り喋っては作戦が失敗する");
 +4: // 236
@@ -138,7 +138,7 @@ script script0 {
     musicBoss();
 +4: // 248
     speakerBoss(0);
-	bubblePos(370.0, 270.0);
+	bubblePos(350.0, 270.0);
     textAdd("また黙るのね");
     textAdd("まあいいわ、私のとる行動は一つしか無い");
 +4: // 252
@@ -166,7 +166,7 @@ script script1 {
 +4: // 4
     bossFace(0, 0);
     speakerPlayer();
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
 +30: // 34
     skippable(1);
     bubblePos(112.0, 270.0);
@@ -177,14 +177,14 @@ script script1 {
 +4: // 42
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("きっと八意様の差し金ね");
 +4: // 46
     textPause(600);
 +4: // 50
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("そんなに強いんですもの");
     textAdd("貴方ならきっと……");
 +4: // 54
@@ -200,14 +200,14 @@ script script1 {
 +4: // 66
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("私はサグメ");
 +4: // 70
     textPause(600);
 +4: // 74
     bossFace(5, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("言葉で世界を方向変換させる");
     textAdd("力を持っているの");
 +4: // 78
@@ -223,7 +223,7 @@ script script1 {
 +4: // 90
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("口は禍の元ってね");
 +4: // 94
     textPause(600);
@@ -238,7 +238,7 @@ script script1 {
 +4: // 106
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("attends !");
     textAdd("新しい展開が始まるでしょう");
 +4: // 110
@@ -246,7 +246,7 @@ script script1 {
 +4: // 114
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("私は貴方に乗るわ");
     textAdd("破壊者は貴方になる");
 +4: // 118

@@ -52,9 +52,9 @@ script script0 {
 +4: // 152
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     playerFace(0);
-    intro(0);
+    
     textAdd("…………");
 +4: // 156
     textPause(600);
@@ -68,7 +68,8 @@ script script0 {
 +4: // 168
     bossFace(1, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
+	intro(0);
     textAdd("……");
 +4: // 172
     textPause(600);
@@ -95,7 +96,7 @@ script script0 {
 +4: // 200
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     bubbleType(0);
     textAdd("……そうでは無い");
 +4: // 204
@@ -110,14 +111,14 @@ script script0 {
 +4: // 216
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("何故人間がここに居るのか");
     textAdd("考えていただけよ");
 +4: // 220
     textPause(600);
 +4: // 224
 	bossFace(6, 0);
-	bubblePos(370.0, 270.0);
+	bubblePos(350.0, 270.0);
     textAdd("貴方は月の民ですよねぇ");
 +4: // 228
     textPause(600);
@@ -132,7 +133,7 @@ script script0 {
 +4: // 240
     bossFace(4, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("……");
 +4: // 244
     textPause(600);
@@ -148,7 +149,7 @@ script script0 {
 +4: // 256
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     bubbleType(0);
     textAdd("……そうでは無い");
 +4: // 260
@@ -156,7 +157,7 @@ script script0 {
 +4: // 264
     bossFace(3, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("まだ確定してないから");
     textAdd("何も話す訳にはいかないのよ！");
 +4: // 268
@@ -191,7 +192,7 @@ script script1 {
 +4: // 42
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("試すような形になってしまって");
     textAdd("申し訳ない");
 +4: // 46
@@ -200,7 +201,7 @@ script script1 {
     bossFace(0, 0);
     speakerBoss(0);
 	bubbleType(2);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("もう私は決めたわ");
 +4: // 54
     textPause(600);
@@ -223,7 +224,7 @@ script script1 {
 +4: // 74
     bossFace(6, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("見ての通り、月の都は現在");
     textAdd("凍結されています");
 +4: // 78
@@ -258,7 +259,7 @@ script script1 {
 	playerHide();
     bossFace(0, 0);
     speakerBoss(0);
-    bubblePos(370.0, 270.0);
+    bubblePos(350.0, 270.0);
     textAdd("このまま凍結させ続ける訳にも");
     textAdd("いかないので");
 +4: // 230
