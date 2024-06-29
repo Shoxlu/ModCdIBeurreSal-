@@ -1,6 +1,8 @@
 anim { "enemy.anm"; "st05enm.anm"; "special.anm"; }
 ecli { "default.ecl"; "st05mbs.ecl"; "st05bs.ecl"; }
 
+#include "main.tecl"
+
 void MainBossSpell();
 
 void MainMBossSpell();
@@ -112,19 +114,25 @@ void GirlA01_at()
 
 void GirlA01_at2()
 {
-    wait(20 + (RAND % 120));
+    wait(20 + (RAND % 80));
     int A = 10;
+	etNew(0);
+	etAim(0, 0);
+	etCount(0, 1:3:5:5, 1:1:3:5);
+	etSpeed(0, 2.2f:2.2f:3.2f:4.2f, 1.0f:2.2f:2.0f:2.2f);
+	etExSet(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
+	etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+	
     times(A){	
-		etNew(0);
-		etAim(0, 0);
+		
 		etSprite(0, 8, 2+RAND%3*2);
-		etCount(0, 1:3:5:5, 1:1:3:5);
-		etAngle(0, 0.0f, 0.05235988f);
-		etSpeed(0, 2.2f:2.2f:3.2f:4.2f, 1.0f:2.2f:2.0f:2.2f);
-		etExSet(0, 0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-		etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+		etAngle(0, -rad(2), rad(15));
 		etOn(0);
-		wait(10 + (RAND % 60));
+		etAngle(0, rad(0), rad(15));
+		etOn(0);
+		etAngle(0, rad(2), rad(15));
+		etOn(0);
+		wait(10 + (RAND % 50));
 	}
 }
 
@@ -877,7 +885,7 @@ void GirlD01()
     ins_445(60, 1, 0.0f);
     @GirlD01_at() async;
     wait(120);
-    ins_445(80, 1, 1.0f);
+    ins_445(80, 1, 0.1f);
     wait(60);
     goto GirlD01_416 @ 0;
 GirlD01_396:
@@ -892,28 +900,45 @@ void GirlD01_at()
     var A, B;
     wait(10);
     etNew(0);
-    etAim(0, 1);
-    etSprite(0, 19, 3);
-    etCount(0, 2, 1);
+    etAim(0, 3);
+    etSprite(0, 25, 0);
+    etCount(0, 10, 1);
     etAngle(0, 0.0f, 0.0f);
-    etSpeed(0, 1.0f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
-    %A = 1.570796f;
-    diffI($B, 2, 4, 5, 6);
-    goto GirlD01_at_760 @ 0;
-GirlD01_at_488:
-    etExSet2(0, 4, 0, 134217728, 1, 38, 6, 67072, 1.5707964f, 8.0f, 512.0f, 512.0f);
-    etExSet2(0, 5, 0, 16384, 60, 30, 120, 30, 16.0f, 0.0f, 0.0f, 0.0f);
-    etAngle(0, 1.5707964f, %A);
-    etOn(0);
-    %A = %A - 0.261799f;
-    wait(10);
-GirlD01_at_760:
-    if ($B--) goto GirlD01_at_488 @ 0;
-    return;
+    etSpeed(0, 0.2f, 0.2f);
+	etDist(0, 50f);
+	etEx(0, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_BRIGHT, 1, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_VELTIME, 200, 0, 2f, NEGF);
+	float angle = rad(40);
+	wait(60);
+	while(1){
+		GirlD01_at2(angle, 1f);
+		wait(30);
+		angle+= rad(40);
+		GirlD01_at2(angle, -1f);
+		wait(30);
+		angle+= rad(40);
+	}
+}
+
+void GirlD01_at2(float angle, float sens){
+	int counter = 0;
+	times(3){
+		etAngle(0, angle, 0f);
+		etSprite(0, 25+3*(counter%2), 0);
+		etOn(0);
+		wait(2);
+		angle+= rad(4)*sens;
+		counter+=1;
+	}
+	times(3){
+		etAngle(0, angle, 0f);
+		etSprite(0, 28-3*(counter%2), 0);
+		etOn(0);
+		wait(2);
+		angle+= rad(4)*sens;
+		counter+=1;
+	}
 }
 
 void GirlD02()
@@ -1287,7 +1312,7 @@ GirlD05_at2_868:
 
 void LogoEnemy()
 {
-    wait(1060);
+    wait(660);
     stageLogo();
     return;
 }
@@ -1450,17 +1475,13 @@ MainMsgDebug_184:
 
 void MainSub00()
 {
-    var A;
-    $A = 50;
-    goto MainSub00_512 @ 0;
-MainSub00_100:
-    %F0 = 0.3926991f + (%RANDF2 * 0.34906584f);
-    enmCreate("GirlA01", -224.0f, _f(64) + (%RANDF2 * 32.0f), 50, 1000, 1);
-    enmCreateM("GirlA01", 224.0f, _f(64) + (%RANDF2 * 32.0f), 50, 1000, 1);
-    wait(20);
-MainSub00_512:
-    if ($A--) goto MainSub00_100 @ 0;
-    return;
+    int A = 30;
+    times(A){
+		F0 = 0.3926991f + (RANDF2 * 0.34906584f);
+		enmCreate("GirlA01", -224.0f, 64f + (RANDF2 * 32.0f), 50, 1000, 1);
+		enmCreateM("GirlA01", 224.0f, 64f + (RANDF2 * 32.0f), 50, 1000, 1);
+		wait(20);
+	}
 }
 
 void MainSub01()
