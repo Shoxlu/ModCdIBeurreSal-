@@ -1521,7 +1521,7 @@ BossCard7_468:
     nop();
     $A = 120;
 	//@Bowap() async;
-    @BossCard7_at(5, 2) async;
+    @BossCard7_at() async;
     goto BossCard7_1344 @ 94;
 BossCard7_1324:
     wait(1);
@@ -1529,8 +1529,7 @@ BossCard7_1344:
     if (($LIFE > 5500) && ($TIME <= (30 * 60))) goto BossCard7_1324 @ 94;
     playSound(27);
     etClear(640.0f);
-    @BossCard7_at2(5, 4) async;
-    @BossCard7_at2b(5, 4) async;
+    @BossCard7_at2() async;
     goto BossCard7_1720 @ 94;
 BossCard7_1700:
     wait(1);
@@ -1582,97 +1581,58 @@ void Bowap()
 	}
 }
 
-void BossCard7_at(var A, var B)
+void BossCard7_at()
 {
-    var C, D;
-    $C = 0;
-    etNew($C);
-    etAim($C, 3);
-    etSprite($C, $A, $B);
-!E
-    15;
-!N
-    22;
-!H
-    24;
-!LO
-    28;
-!*
-    etCount($C, [-1], 1);
-    etAngle($C, 1.5707964f, 0.0f);
-    etSpeed($C, 2.0f, 0.2f);
-    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($C, 48.0f);
-    $D = 10000;
-    goto BossCard7_at_592 @ 0;
-BossCard7_at_444:
-    etOffsetRad($C, %RANDRAD, 32.0f);
-    etOn($C);
-!E
-    30;
-!N
-    30;
-!H
-    30;
-!LO
-    20;
-!*
-    wait([-1]);
-BossCard7_at_592:
-    if ($D--) goto BossCard7_at_444 @ 0;
-    return;
+    float A = RANDRAD;
+    etNew(0);
+    etAim(0, 3);
+    etCount(0, 5, 1);
+    etSprite(0, 12, 2);
+    etSpeed(0, 10f, 10f);
+	etEx(0, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(0, 1, 0, EX_VELTIME, 10, NEG, 1.6f, NEGF);
+	etExSet(0, 2, 0, EX_WAIT, 10, NEG, NEGF, NEGF);
+	etExSet(0, 3, 0, EX_ANGLE_ACCEL, 40, NEG, 0f, rad(1));
+    while(1)
+    {
+        times(5)
+        {
+			etAngle(0, A, 0f);
+			etOn(0);
+			A +=rad(2);
+			wait(2);
+        }
+        A +=rad(20.5):rad(17):rad(13):rad(8.5);
+        etAngle(0, A, 0f);
+		wait(18:12:8:8);
+    }
 }
 
-void BossCard7_at2(var A, var B)
+void BossCard7_at2()
 {
-    var C, D;
-    $C = 1;
-    etNew($C);
-    etAim($C, 3);
-    etSprite($C, $A, $B);
-!E
-    7;
-!N
-    10;
-!H
-    10;
-!LO
-    10;
-!*
-    etCount($C, [-1], 1);
-    etAngle($C, 1.5707964f, 0.0f);
-!E
-    1.0f;
-!N
-    1.0f;
-!H
-    1.4f;
-!LO
-    1.9f;
-!*
-    etSpeed($C, [-1.0f], 0.2f);
-    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($C, 48.0f);
-    etOffsetAbs($C, 96.0f, 144.0f);
-    $D = 10000;
-    goto BossCard7_at2_728 @ 0;
-BossCard7_at2_552:
-    etAngle($C, %RANDRAD, 0.0f);
-    etOffsetRad($C, %RANDRAD, 32.0f);
-    etOn($C);
-!E
-    40;
-!N
-    40;
-!H
-    40;
-!LO
-    30;
-!*
-    wait([-1]);
-BossCard7_at2_728:
-    if ($D--) goto BossCard7_at2_552 @ 0;
-    return;
+    float A = RANDRAD;
+    etNew(1);
+    etAim(1, 3);
+    etCount(1, 5, 1);
+    etSprite(1, 12, 10);
+    etSpeed(1, 10f, 10f);
+	etEx(1, 0, EX_ANIM, 0, NEG, NEGF, NEGF);
+	etExSet(1, 1, 0, EX_VELTIME, 10, NEG, 1.6f, NEGF);
+	etExSet(1, 2, 0, EX_WAIT, 10, NEG, NEGF, NEGF);
+	etExSet(1, 3, 0, EX_ANGLE_ACCEL, 40, NEG, 0f, -rad(1));
+    while(1)
+    {
+        times(5)
+        {
+			etAngle(1, A, 0f);
+			etOn(1);
+			A += -rad(2);
+			wait(2);
+        }
+        A += -rad(20):-rad(16):-rad(12):-rad(8);
+        etAngle(1, A, 0f);
+		wait(18:12:8:8);
+    }
 }
 
 void BossCard7_at2b(var A, var B)
