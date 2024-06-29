@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss7();
+    @Boss6();
     delete();
 }
 
@@ -1370,13 +1370,7 @@ BossCard6_488:
     $BOMB_COUNT = 0;
     $CAPTURE = 1;
     setNext(0, 0, 1800, "Boss7");
-!EN
-    spell(98, 1800, 500000, "「溢れ出る瑕穢」");
-!H
-    spell(98, 1800, 500000, "「溢れ出る瑕穢」");
-!L
-    spell(98, 1800, 500000, "「地上穢の純化」");
-!*
+    spell(98, 1800, 500000, "6");
     spellTimeout();
     movePosTime(60, 4, 0.0f, 192.0f);
     moveLimitReset();
@@ -1387,83 +1381,35 @@ BossCard6_488:
     playSound(54);
 +90: //94
     nop();
-    $A = 120;
-    %B = _f(100);
-    %F0 = 1.0f;
-    floatTime(0, %B, 1800, 0, 120.0f, 50.0f);
-    $C = 10000;
-    goto BossCard6_1556 @ 94;
-BossCard6_1384:
-    %F1 = %RANDRAD;
-    @BossCard6_at();
-!L
-    @BossCard6_ath();
-!*
-    $A = _S(%B);
-    wait($A);
-BossCard6_1556:
-    if ($C--) goto BossCard6_1384 @ 94;
-    goto BossCard6_1644 @ 94;
-BossCard6_1624:
-    wait(1000);
-BossCard6_1644:
-    if (1) goto BossCard6_1624 @ 94;
-    return;
+	BossCard6_at_lasers();
+	while(1){
+		+1:
+	}
 }
 
-void BossCard6_at()
-{
-    etNew(0);
-    etAim(0, 3);
-    etSprite(0, 5, 2);
-!E
-    10;
-!N
-    22;
-!H
-    26;
-!LO
-    22;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, %F1, 0.0f);
-    etSpeed(0, 1.5f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 200, 0, -999999.0f, -999999.0f);
-    etEx2(0, 0, 16, 60, 1, 1, 0, 0.0f, 0.0f, -999999.0f, -999999.0f);
-    etEx(0, 0, 4, 120, -999999, 0.02f, -999999.0f);
-    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
-    etDist(0, 48.0f);
-    etOn(0);
-    return;
+void BossCard6_at_lasers(){
+	F0 = rad(90);
+	I0 = 0;
+	times(5){
+		I0 += 1;
+		enmCreate("BS6_laser_enm", cos(F0)*100f, sin(F0)*100f, 1, 1, 0);
+		F0 += rad(360)/5f;
+	}
+	
 }
 
-void BossCard6_ath()
-{
-    etNew(0);
-    etAim(0, 3);
-    etSprite(0, 5, 6);
-!E
-    10;
-!N
-    22;
-!H
-    11;
-!LO
-    11;
-!*
-    etCount(0, [-1], 1);
-    etAngle(0, %F1, 0.0f);
-    etSpeed(0, 1.5f, 0.2f);
-    etEx(0, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etEx(0, 0, 256, 200, 0, -999999.0f, -999999.0f);
-    etEx(0, 0, -2147483648, 30, -999999, -999999.0f, -999999.0f);
-    etEx2(0, 0, 16, 60, 1, 1, 0, 0.0f, 0.0f, -999999.0f, -999999.0f);
-    etEx(0, 0, 4, 120, -999999, 0.04f, -999999.0f);
-    etOffsetAbs(0, %PLAYER_X2, %PLAYER_Y2);
-    etDist(0, 48.0f);
-    etOn(0);
-    return;
+void BS6_laser_enm(){
+	flagSet(32);
+	anmSelect(2);
+	anmSetMain(0, 0);
+	etNew(0);
+	etAim(0, 1);
+	etAngle(0, 0f, 0f);
+	etSprite(0, 38, 2);
+	laserNew(0, 500f, 500f, 1f, 20f);
+	laserStOn(0, I0);
+	laserStAngle(I0, -F0);
+	wait(10000);
 }
 
 void BossCard7()
