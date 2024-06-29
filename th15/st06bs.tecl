@@ -1468,43 +1468,24 @@ BossCard7_468:
     $A = 120;
 	//@Bowap() async;
     @BossCard7_at() async;
-    goto BossCard7_1344 @ 94;
-BossCard7_1324:
-    wait(1);
-BossCard7_1344:
-    if (($LIFE > 5500) && ($TIME <= (30 * 60))) goto BossCard7_1324 @ 94;
+	while ((LIFE > 5500) && (TIME <= (30 * 60))){
+		wait(1);
+	}
     playSound(27);
     etClear(640.0f);
-    @BossCard7_at2() async;
-    goto BossCard7_1720 @ 94;
-BossCard7_1700:
-    wait(1);
-BossCard7_1720:
-    if (($LIFE > 3500) && ($TIME <= (60 * 60))) goto BossCard7_1700 @ 94;
-    playSound(27);
+	@BossCard7_at2() async;
+	while ((LIFE > 3500) && (TIME <= (60 * 60))){
+		wait(1);
+	}
+	 playSound(27);
     etClear(640.0f);
-    @BossCard7_at3(5, 6) async;
+	@BossCard7_at3(5, 6) async;
     @BossCard7_at3b(5, 6) async;
-    goto BossCard7_2096 @ 94;
-BossCard7_2076:
-    wait(1);
-BossCard7_2096:
-    if (($LIFE > 1200) && ($TIME <= (90 * 60))) goto BossCard7_2076 @ 94;
-    playSound(27);
-    @BossCard7_at4(20, 3) async;
-    %F0 = 1.0f;
-    $D = 10000;
-    goto BossCard7_2480 @ 94;
-BossCard7_2460:
-    wait(330);
-BossCard7_2480:
-    if ($D--) goto BossCard7_2460 @ 94;
-    goto BossCard7_2568 @ 94;
-BossCard7_2548:
-    wait(1000);
-BossCard7_2568:
-    if (1) goto BossCard7_2548 @ 94;
-    return;
+	while ((LIFE > 1200) && (TIME <= (90 * 60))){
+		wait(1);
+	}
+	@BossCard7_at4(20, 3) async;
+   
 }
 
 void Bowap()
