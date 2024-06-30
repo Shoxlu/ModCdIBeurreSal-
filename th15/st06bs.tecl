@@ -45,7 +45,7 @@ Boss_996:
     @BossCard2();
 Boss_1200:
     debug22(3, "Boss7");
-    @Boss6();
+    @Boss7();
     delete();
 }
 
@@ -1454,7 +1454,7 @@ BossCard7_468:
 !L
     spell(102, 7200, 500000, "ƒ•„uƒˆ‚È’e–‹’n–v");
 !*
-    lifeMarker(0, 5500.0f, -24448);
+    lifeMarker(0, 6000.0f, -24448);
     lifeMarker(1, 3500.0f, -24448);
     lifeMarker(2, 1200.0f, -24448);
     movePosTime(60, 4, 0.0f, 128.0f);
@@ -1468,7 +1468,7 @@ BossCard7_468:
     $A = 120;
 	//@Bowap() async;
     @BossCard7_at() async;
-	while ((LIFE > 5500) && (TIME <= (30 * 60))){
+	while ((LIFE > 6000) && (TIME <= (30 * 60))){
 		wait(1);
 	}
     playSound(27);
@@ -1477,15 +1477,16 @@ BossCard7_468:
 	while ((LIFE > 3500) && (TIME <= (60 * 60))){
 		wait(1);
 	}
-	 playSound(27);
+	playSound(27);
     etClear(640.0f);
-	@BossCard7_at3(5, 6) async;
-    @BossCard7_at3b(5, 6) async;
+	@BossCard7_at3() async;
+    @BossCard7_at3b() async;
 	while ((LIFE > 1200) && (TIME <= (90 * 60))){
 		wait(1);
 	}
-	@BossCard7_at4(20, 3) async;
-   
+	BossCard7_at4(4, 5) async;
+	wait(30);
+	BossCard7_at4(5, 1);
 }
 
 void Bowap()
@@ -1614,130 +1615,56 @@ BossCard7_at2b_728:
     return;
 }
 
-void BossCard7_at3(var A, var B)
+void BossCard7_at3()
 {
-    var C, D;
-    $C = 3;
-    etNew($C);
-    etAim($C, 3);
-    etSprite($C, $A, $B);
-!E
-    40;
-!N
-    52;
-!H
-    52;
-!LO
-    52;
-!*
-    etCount($C, [-1], 1);
-    etAngle($C, 1.5707964f, 0.0f);
-!E
-    1.5f;
-!N
-    2.0f;
-!H
-    2.4f;
-!LO
-    2.5f;
-!*
-    etSpeed($C, [-1.0f], 0.2f);
-    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($C, 48.0f);
-    etOffsetAbs($C, 160.0f, 160.0f);
-    $D = 10000;
-    goto BossCard7_at3_728 @ 0;
-BossCard7_at3_552:
-    etAngle($C, %RANDRAD, 0.0f);
-    etOffsetRad($C, %RANDRAD, 32.0f);
-    etOn($C);
-!E
-    120;
-!N
-    110;
-!H
-    100;
-!LO
-    60;
-!*
-    wait([-1]);
-BossCard7_at3_728:
-    if ($D--) goto BossCard7_at3_552 @ 0;
-    return;
+    etNew(2);
+    etAim(2, 3);
+    etSprite(2, 30, 3);
+	etSpeed(2, 5f, 1f);
+	etCount(2, 3, 2:2:3:3);
+	etOffset(2, -110f, 0f);
+	etExSet(2, 0, 0, EX_VELTIME, 30, NEG, 0f, NEGF);
+	etDist(2, 10f);
+	while(1)
+	{
+		etAngle(2, RANDRAD, -rad(20));
+		etExSet(2, 1, 0, EX_VELTIME, 30, NEG, 1.4f, RANDRAD);
+		etOn(2);
+		wait(50:40:40:30);
+	}
 }
 
-void BossCard7_at3b(var A, var B)
+void BossCard7_at3b()
 {
-    var C, D;
-    $C = 4;
-    etNew($C);
-    etAim($C, 3);
-    etSprite($C, $A, $B);
-!E
-    40;
-!N
-    52;
-!H
-    52;
-!LO
-    52;
-!*
-    etCount($C, [-1], 1);
-    etAngle($C, 1.5707964f, 0.0f);
-!E
-    1.5f;
-!N
-    2.0f;
-!H
-    2.4f;
-!LO
-    2.5f;
-!*
-    etSpeed($C, [-1.0f], 0.2f);
-    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($C, 48.0f);
-    etOffsetAbs($C, -160.0f, 160.0f);
-    $D = 10000;
-    goto BossCard7_at3b_728 @ 0;
-BossCard7_at3b_552:
-    etAngle($C, %RANDRAD, 0.0f);
-    etOffsetRad($C, %RANDRAD, 32.0f);
-    etOn($C);
-!E
-    120;
-!N
-    110;
-!H
-    100;
-!LO
-    60;
-!*
-    wait([-1]);
-BossCard7_at3b_728:
-    if ($D--) goto BossCard7_at3b_552 @ 0;
-    return;
+    etNew(3);
+    etAim(3, 3);
+    etSprite(3, 30, 3);
+	etSpeed(3, 5f, 1f);
+	etCount(3, 3, 2:2:3:3);
+	etOffset(3, 110f, 0f);
+	etExSet(3, 0, 0, EX_VELTIME, 30, NEG, 0f, NEGF);
+	etDist(3, 10f);
+	while(1)
+	{
+		etAngle(3, RANDRAD, rad(20));
+		etExSet(3, 1, 0, EX_VELTIME, 30, NEG, 1.4f, RANDRAD);
+		etOn(3);
+		wait(50:40:40:30);
+	}
 }
 
-void BossCard7_at4(var A, var B)
+void BossCard7_at4(int etid, int color)
 {
-    var C, D;
-    $C = 5;
-    etNew($C);
-    etAim($C, 5);
-    etSprite($C, $A, $B);
-    etCount($C, 24, 1);
-    etAngle($C, 1.5707964f, 0.0f);
-    etSpeed($C, 4.0f, 0.2f);
-    etEx($C, 0, 2, 1, -999999, -999999.0f, -999999.0f);
-    etDist($C, 64.0f);
-    $D = 10000;
-    goto BossCard7_at4_404 @ 0;
-BossCard7_at4_364:
-    etOn($C);
-    wait(10);
-BossCard7_at4_404:
-    if ($D--) goto BossCard7_at4_364 @ 0;
-    return;
+	etNew(etid);
+	etAim(etid, 5);
+	etSprite(etid, 33, color);
+	etSpeed(etid, 4f, 4f);
+	etAngle(etid, rad(90), 0f);
+	etCount(etid, 20, 1);
+	while(1){
+		etOn(etid);
+		wait(80:60:45:45);
+	}
 }
 
 void BossDead()
