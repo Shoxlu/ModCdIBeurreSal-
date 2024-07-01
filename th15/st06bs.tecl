@@ -1455,8 +1455,8 @@ BossCard7_468:
     spell(102, 7200, 500000, "ƒ•„uƒˆ‚È’e–‹’n–v");
 !*
     lifeMarker(0, 6000.0f, -24448);
-    lifeMarker(1, 3500.0f, -24448);
-    lifeMarker(2, 1200.0f, -24448);
+    lifeMarker(1, 4000.0f, -24448);
+    lifeMarker(2, 2000.0f, -24448);
     movePosTime(60, 4, 0.0f, 128.0f);
     moveLimitReset();
     anm316(0, 0);
@@ -1474,14 +1474,14 @@ BossCard7_468:
     playSound(27);
     etClear(640.0f);
 	@BossCard7_at2() async;
-	while ((LIFE > 3500) && (TIME <= (60 * 60))){
+	while ((LIFE > 4000) && (TIME <= (60 * 60))){
 		wait(1);
 	}
 	playSound(27);
     etClear(640.0f);
 	@BossCard7_at3() async;
     @BossCard7_at3b() async;
-	while ((LIFE > 1200) && (TIME <= (90 * 60))){
+	while ((LIFE > 2000) && (TIME <= (90 * 60))){
 		wait(1);
 	}
 	BossCard7_at4(4, 5) async;
@@ -1617,39 +1617,75 @@ BossCard7_at2b_728:
 
 void BossCard7_at3()
 {
+	float A = -20f;
     etNew(2);
     etAim(2, 3);
-    etSprite(2, 30, 3);
-	etSpeed(2, 5f, 1f);
-	etCount(2, 3, 2:2:3:3);
-	etOffset(2, -110f, 0f);
-	etExSet(2, 0, 0, EX_VELTIME, 30, NEG, 0f, NEGF);
-	etDist(2, 10f);
+	etSpeed(2, 0f, 0f);
+	etCount(2, 1, 1);
+	etExSet(2, 0, 0, EX_OFFSCREEN, 300, NEG, NEGF, NEGF);
+	etExSet(2, 1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(2, 2, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
 	while(1)
 	{
-		etAngle(2, RANDRAD, -rad(20));
-		etExSet(2, 1, 0, EX_VELTIME, 30, NEG, 1.4f, RANDRAD);
+		while(A >= -200f)
+		{
+		etSprite(2, RAND % 2 + 25, 0);
+		etAngle(2, ANGLE_PLAYER, -rad(20));
+		etOffset(2, A+RANDF2*5f, 0f);
+		etExSet(2, 3, 0, EX_VELTIME, 30, NEG, 2f+RANDF*0.5f, NEGF);
 		etOn(2);
-		wait(50:40:40:30);
+		wait(8:6:5:4);
+		A += -20f;
+		}
+		wait(40);
+		while(A <= -20f)
+		{
+		etSprite(2, RAND % 2 + 25, 0);
+		etAngle(2, ANGLE_PLAYER, -rad(20));
+		etOffset(2, A+RANDF2*5f, 0f);
+		etExSet(2, 3, 0, EX_VELTIME, 30, NEG, 2f+RANDF*0.5f, NEGF);
+		etOn(2);
+		wait(8:6:5:4);
+		A += 20f;
+		}
+		wait(40);
 	}
 }
 
 void BossCard7_at3b()
 {
+	float A = 20f;
     etNew(3);
     etAim(3, 3);
-    etSprite(3, 30, 3);
-	etSpeed(3, 5f, 1f);
-	etCount(3, 3, 2:2:3:3);
-	etOffset(3, 110f, 0f);
-	etExSet(3, 0, 0, EX_VELTIME, 30, NEG, 0f, NEGF);
-	etDist(3, 10f);
+	etSpeed(3, 0f, 0f);
+	etCount(3, 1, 1);
+	etExSet(3, 0, 0, EX_OFFSCREEN, 300, NEG, NEGF, NEGF);
+	etExSet(3, 1, 0, EX_ANIM, 1, NEG, NEGF, NEGF);
+	etExSet(3, 2, 0, EX_WAIT, 30, NEG, NEGF, NEGF);
 	while(1)
 	{
-		etAngle(3, RANDRAD, rad(20));
-		etExSet(3, 1, 0, EX_VELTIME, 30, NEG, 1.4f, RANDRAD);
+		while(A <= 200f)
+		{
+		etSprite(3, RAND % 2 + 25, 0);
+		etAngle(3, ANGLE_PLAYER, rad(20));
+		etOffset(3, A+RANDF2*5f, 0f);
+		etExSet(3, 3, 0, EX_VELTIME, 30, NEG, 2f+RANDF*0.5f, NEGF);
 		etOn(3);
-		wait(50:40:40:30);
+		wait(8:6:5:4);
+		A += 20f;
+		}
+		wait(40);
+		while(A >= 20f)
+		{
+		etSprite(3, RAND % 2 + 25, 0);
+		etAngle(3, ANGLE_PLAYER, rad(20));
+		etOffset(3, A+RANDF2*5f, 0f);
+		etExSet(3, 3, 0, EX_VELTIME, 30, NEG, 2f+RANDF*0.5f, NEGF);
+		etOn(3);
+		wait(8:6:5:4);
+		A += -20f;
+		}
+		wait(40);
 	}
 }
 
@@ -1658,12 +1694,12 @@ void BossCard7_at4(int etid, int color)
 	etNew(etid);
 	etAim(etid, 5);
 	etSprite(etid, 33, color);
-	etSpeed(etid, 4f, 4f);
+	etSpeed(etid, 3f, 3f);
 	etAngle(etid, rad(90), 0f);
 	etCount(etid, 20, 1);
 	while(1){
 		etOn(etid);
-		wait(80:60:45:45);
+		wait(120:100:70:70);
 	}
 }
 
